@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="About — Writings" description="A short note on who this site is for.">
+  <article class="container-narrow about">
+    <p class="hand kicker">about</p>
+    <h1>Hi, I'm Shela.</h1>
+    <p class="lede">
+      This is a quiet place on the internet where I keep what I'm learning —
+      about content systems, faith, health, and the long obedience of
+      building a life that keeps growing.
+    </p>
+    <p>
+      I work in content marketing for a B2B SaaS company by day, build AI-powered
+      content systems by night, and try to walk faithfully with God through it all.
+      Some of what's here is professional. Some of it is devotional. Some of it
+      is field notes from a life in progress.
+    </p>
+    <p>
+      Nothing here is polished. It's a journal, not a portfolio. But it's a
+      journal that wants to be useful — so if you find something that helps,
+      that's the whole point.
+    </p>
+    <p class="sig hand">— Shela</p>
+  </article>
+</Base>
+<style>
+  .about { padding: 3rem 0 5rem; }
+  .kicker { font-size: 1.3rem; color: var(--accent-soft); margin: 0; }
+  .lede { font-size: clamp(1.1rem, 1rem + 0.4vw, 1.3rem); color: var(--ink-soft); line-height: 1.6; margin: 1rem 0 2rem; font-style: italic; }
+  .sig { font-size: 1.6rem; color: var(--accent); margin-top: 2rem; }
+</style>

@@ -1,0 +1,90 @@
+---
+import Base from '../../layouts/Base.astro';
+import ContentCard from '../../components/ContentCard.astro';
+import { getAllEntries, entryUrl } from '../../lib/content';
+import { TOPICS, topicBySlug } from '../../topics';
+
+export async function getStaticPaths() {
+  return TOPICS.map((t) => ({ params: { topic: t.slug } }));
+}
+
+const { topic } = Astro.params;
+const topicObj = topicBySlug(topic!);
+const allEntries = await getAllEntries();
+const entries = allEntries.filter((e) => e.data.topics.includes(topic!));
+const base = import.meta.env.BASE_URL;
+
+if (!topicObj) {
+  return Astro.redirect(`${base}/`);
+}
+
+const relatedTopics = new Map<string, number>();
+for (const e of entries) {
+  for (const t of e.data.topics) {
+    if (t !== topic) relatedTopics.set(t, (relatedTopics.get(t) ?? 0) + 1);
+  }
+}
+const related = Array.from(relatedTopics.entries())
+  .sort((a, b) => b[1] - a[1])
+  .slice(0, 5)
+  .map(([slug]) => topicBySlug(slug))
+  .filter(Boolean);
+---
+<Base title={`${topicObj!.name} — Writings`} description={topicObj!.description}>
+  <section class="container-narrow topic-head">
+    <p class="hand kicker">topic</p>
+    <h1>{topicObj!.name}</h1>
+    <p class="subtitle">{topicObj!.description}</p>
+  </section>
+
+  <section class="container">
+    <div class="card-grid">
+      {entries.map((entry, i) => (
+        <ContentCard
+          href={entryUrl(entry, base)}
+          title={entry.data.title}
+          description={entry.data.description}
+          date={entry.data.date}
+          type={entry.data.type}
+          topics={entry.data.topics}
+          image={entry.data.image}
+          tiltSeed={i + 1}
+        />
+      ))}
+      {entries.length === 0 && (
+        <p class="empty">No entries on this topic yet.</p>
+      )}
+    </div>
+  </section>
+
+  {related.length > 0 && (
+    <section class="container">
+      <h2>Related topics</h2>
+      <div class="related-row nav-font">
+        {related.map((t) => (
+          <a href={`${base}/topics/${t!.slug}/`} class="type-chip">{t!.name}</a>
+        ))}
+      </div>
+    </section>
+  )}
+</Base>
+
+<style>
+  .topic-head { text-align: center; padding: 3rem 0 1rem; }
+  .kicker { font-size: 1.4rem; color: var(--accent-soft); margin: 0; }
+  .subtitle { color: var(--ink-soft); }
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: clamp(1.5rem, 3vw, 2.25rem);
+    padding: 2rem 0;
+  }
+  .related-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0 3rem; }
+  .type-chip {
+    padding: 0.55rem 1rem; min-height: 44px; display: inline-flex; align-items: center;
+    background: var(--paper); border: 1px solid var(--line); border-radius: 999px;
+    color: var(--ink-soft); text-decoration: none; font-size: 0.9rem;
+  }
+  .type-chip:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+  .empty { color: var(--ink-faded); font-style: italic; grid-column: 1 / -1; text-align: center; }
+</style>

@@ -1,0 +1,152 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import { TYPES } from '../../topics';
+import { topicBySlug } from '../../topics';
+import { getAllEntries, entryUrl, entryTypeToCollection } from '../../lib/content';
+
+type AnyEntry =
+  | CollectionEntry<'guides'>
+  | CollectionEntry<'stories'>
+  | CollectionEntry<'notes'>
+  | CollectionEntry<'reflections'>
+  | CollectionEntry<'tools'>;
+
+export async function getStaticPaths() {
+  const collections = ['guides', 'stories', 'notes', 'reflections', 'tools'] as const;
+  const typeFromCollection: Record<typeof collections[number], string> = {
+    guides: 'guide',
+    stories: 'story',
+    notes: 'note',
+    reflections: 'reflection',
+    tools: 'tool',
+  };
+  const paths: { params: { type: string; slug: string }; props: { entry: AnyEntry } }[] = [];
+  for (const c of collections) {
+    const entries = await getCollection(c);
+    for (const entry of entries) {
+      paths.push({
+        params: { type: typeFromCollection[c], slug: entry.id.replace(/\.md$/, '') },
+        props: { entry: entry as AnyEntry },
+      });
+    }
+  }
+  return paths;
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const base = import.meta.env.BASE_URL;
+
+const dateStr = entry.data.date.toLocaleDateString('en-US', {
+  year: 'numeric', month: 'long', day: 'numeric',
+});
+const typeLabel = TYPES.find((t) => t.slug === entry.data.type)?.label ?? entry.data.type;
+
+const all = await getAllEntries();
+const relatedManual = (entry.data.related ?? [])
+  .map((slug) => all.find((e) => e.id.replace(/\.md$/, '') === slug))
+  .filter(Boolean) as AnyEntry[];
+
+const sameTopicAuto = all
+  .filter((e) => e.id !== entry.id && e.data.topics.some((t) => entry.data.topics.includes(t)))
+  .slice(0, 4);
+---
+<Base title={entry.data.title} description={entry.data.description}>
+  <article class="container-narrow article">
+    <header class="article-head">
+      <div class="meta nav-font">
+        <span class="type-pill">{typeLabel}</span>
+        <span class="dot">·</span>
+        <time datetime={entry.data.date.toISOString()}>{dateStr}</time>
+      </div>
+      <h1>{entry.data.title}</h1>
+      <p class="lede">{entry.data.description}</p>
+      {entry.data.topics.length > 0 && (
+        <div class="topic-row nav-font">
+          {entry.data.topics.map((t) => {
+            const topic = topicBySlug(t);
+            return topic ? (
+              <a href={`${base}/topics/${topic.slug}/`} class="topic-tag">{topic.name}</a>
+            ) : null;
+          })}
+        </div>
+      )}
+    </header>
+
+    {entry.data.image && (
+      <img src={entry.data.image} alt="" class="hero-image" />
+    )}
+
+    <div class="prose">
+      <Content />
+    </div>
+
+    {(relatedManual.length > 0 || sameTopicAuto.length > 0) && (
+      <aside class="related">
+        <h2>More to read</h2>
+        <ul class="related-list">
+          {relatedManual.map((e) => (
+            <li><a href={entryUrl(e, base)}>{e.data.title}</a></li>
+          ))}
+          {sameTopicAuto.map((e) => (
+            <li><a href={entryUrl(e, base)}>{e.data.title}</a></li>
+          ))}
+        </ul>
+      </aside>
+    )}
+  </article>
+</Base>
+
+<style>
+  .article { padding: 2rem 0 4rem; }
+  .article-head { margin-bottom: 2rem; }
+  .meta { color: var(--ink-faded); font-size: 0.85rem; display: flex; gap: 0.6rem; align-items: center; margin-bottom: 0.75rem; }
+  .type-pill { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.72rem; color: var(--accent); font-weight: 600; }
+  .dot { color: var(--ink-faded); }
+  .lede { font-size: clamp(1.1rem, 1rem + 0.4vw, 1.3rem); color: var(--ink-soft); line-height: 1.55; margin: 1rem 0 1.5rem; font-style: italic; }
+  .topic-row { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+  .topic-tag {
+    font-size: 0.78rem; padding: 0.25rem 0.6rem;
+    background: rgba(90, 74, 122, 0.08); color: var(--accent);
+    border-radius: 999px; text-decoration: none;
+  }
+  .topic-tag:hover { background: rgba(90, 74, 122, 0.16); text-decoration: none; }
+  .hero-image { width: 100%; height: auto; border-radius: 4px; margin: 1.5rem 0; box-shadow: var(--shadow); }
+  .prose { font-size: clamp(17px, 1rem + 0.15vw, 19px); line-height: 1.75; }
+  .prose p { margin: 0 0 1.4rem; }
+  .prose h2 { margin-top: 2.75rem; }
+  .prose h3 { margin-top: 2.25rem; font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; letter-spacing: 0; font-weight: 600; }
+  .prose blockquote {
+    border-left: 3px solid var(--accent-soft);
+    padding: 0.5rem 0 0.5rem 1.25rem;
+    margin: 1.5rem 0;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+  .prose code {
+    background: rgba(90, 74, 122, 0.08);
+    padding: 0.1rem 0.35rem;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  .prose pre {
+    background: #1a1623;
+    color: #f4ede0;
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  .prose pre code { background: transparent; padding: 0; color: inherit; }
+  .prose ul, .prose ol { padding-left: 1.4rem; margin: 0 0 1.4rem; }
+  .prose li { margin-bottom: 0.4rem; }
+  .prose img { max-width: 100%; height: auto; border-radius: 3px; }
+  .prose hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
+  .related { border-top: 1px solid var(--line); margin-top: 4rem; padding-top: 2rem; }
+  .related h2 { font-size: 1.25rem; margin: 0 0 1rem; }
+  .related-list { list-style: none; padding: 0; margin: 0; }
+  .related-list li { margin-bottom: 0.5rem; }
+</style>

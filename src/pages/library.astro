@@ -1,0 +1,160 @@
+---
+import Base from '../layouts/Base.astro';
+import ContentCard from '../components/ContentCard.astro';
+import { getAllEntries, entryUrl } from '../lib/content';
+import { TOPICS, TYPES } from '../topics';
+
+const entries = await getAllEntries();
+const base = import.meta.env.BASE_URL;
+
+const entryData = entries.map((e, i) => ({
+  url: entryUrl(e, base),
+  title: e.data.title,
+  description: e.data.description,
+  type: e.data.type,
+  topics: e.data.topics,
+  date: e.data.date.toISOString(),
+  image: e.data.image ?? '',
+  tiltSeed: i + 1,
+}));
+---
+<Base title="Library — Writings" description="Every piece of writing, filterable by type and topic.">
+  <section class="container-narrow library-head">
+    <h1>Library</h1>
+    <p class="subtitle">Every entry, filterable. The more gets written, the richer the web.</p>
+  </section>
+
+  <section class="container filters-section">
+    <div class="filters nav-font" data-filters>
+      <div class="filter-group">
+        <span class="filter-label">Type</span>
+        <div class="chip-row">
+          <button class="chip active" data-filter-type="all">All</button>
+          {TYPES.map((t) => (
+            <button class="chip" data-filter-type={t.slug}>{t.label}</button>
+          ))}
+        </div>
+      </div>
+      <div class="filter-group">
+        <span class="filter-label">Topic</span>
+        <div class="chip-row">
+          <button class="chip active" data-filter-topic="all">All</button>
+          {TOPICS.map((t) => (
+            <button class="chip" data-filter-topic={t.slug}>{t.name}</button>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <div id="library-grid" class="card-grid">
+      {entries.map((entry, i) => (
+        <ContentCard
+          href={entryUrl(entry, base)}
+          title={entry.data.title}
+          description={entry.data.description}
+          date={entry.data.date}
+          type={entry.data.type}
+          topics={entry.data.topics}
+          image={entry.data.image}
+          tiltSeed={i + 1}
+        />
+      ))}
+    </div>
+    <p id="empty-msg" class="empty" hidden>Nothing matches that filter yet.</p>
+    {entries.length === 0 && (
+      <p class="empty">The library is empty — the first entry is on its way.</p>
+    )}
+  </section>
+</Base>
+
+<script>
+  const grid = document.getElementById('library-grid');
+  if (grid) {
+    const cards = Array.from(grid.children) as HTMLElement[];
+    const cardData: Array<{ el: HTMLElement; type: string; topics: string[] }> = cards.map((el) => {
+      const pill = el.querySelector('.type-pill');
+      const typeText = (pill?.textContent ?? '').trim().toLowerCase();
+      const topicEls = el.querySelectorAll('.topic-tag');
+      const topics: string[] = [];
+      topicEls.forEach((t) => {
+        const href = (t as HTMLAnchorElement).getAttribute('href') ?? '';
+        const m = href.match(/\/topics\/([^/]+)\//);
+        if (m) topics.push(m[1]);
+      });
+      return { el, type: typeText, topics };
+    });
+
+    let activeType = 'all';
+    let activeTopic = 'all';
+
+    const apply = () => {
+      let shown = 0;
+      cardData.forEach((c) => {
+        const typeOk = activeType === 'all' || c.type === activeType;
+        const topicOk = activeTopic === 'all' || c.topics.includes(activeTopic);
+        const show = typeOk && topicOk;
+        c.el.style.display = show ? '' : 'none';
+        if (show) shown++;
+      });
+      const empty = document.getElementById('empty-msg');
+      if (empty) empty.hidden = shown > 0;
+    };
+
+    document.querySelectorAll('[data-filter-type]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('[data-filter-type]').forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeType = (btn as HTMLElement).dataset.filterType ?? 'all';
+        apply();
+      });
+    });
+    document.querySelectorAll('[data-filter-topic]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('[data-filter-topic]').forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeTopic = (btn as HTMLElement).dataset.filterTopic ?? 'all';
+        apply();
+      });
+    });
+
+    const params = new URLSearchParams(window.location.search);
+    const t = params.get('type');
+    const tp = params.get('topic');
+    if (t) {
+      const btn = document.querySelector(`[data-filter-type="${t}"]`);
+      if (btn) (btn as HTMLElement).click();
+    }
+    if (tp) {
+      const btn = document.querySelector(`[data-filter-topic="${tp}"]`);
+      if (btn) (btn as HTMLElement).click();
+    }
+  }
+</script>
+
+<style>
+  .library-head { text-align: center; padding: 3rem 0 1rem; }
+  .subtitle { color: var(--ink-soft); }
+  .filters-section { margin: 2rem 0; }
+  .filters { display: flex; flex-direction: column; gap: 1.25rem; }
+  .filter-group { display: flex; gap: 1rem; align-items: flex-start; flex-wrap: wrap; }
+  .filter-label { color: var(--ink-faded); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; padding-top: 0.55rem; min-width: 60px; }
+  .chip-row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .chip {
+    padding: 0.5rem 0.9rem; min-height: 40px;
+    background: var(--paper); border: 1px solid var(--line); border-radius: 999px;
+    color: var(--ink-soft); font-size: 0.85rem; cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s;
+  }
+  .chip:hover { border-color: var(--accent-soft); color: var(--accent); }
+  .chip.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: clamp(1.5rem, 3vw, 2.25rem);
+    padding: 1rem 0 2rem;
+  }
+  .empty { color: var(--ink-faded); font-style: italic; text-align: center; padding: 2rem 0; }
+</style>
