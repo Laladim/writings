@@ -4,7 +4,7 @@ type: "note"
 topics: ["faith-theology", "learning-in-public"]
 date: 2023-11-14
 description: "A short note on why the Lord's prayer says today and not year. Seven years in and the fear has not gone away. That is not the problem."
-image: "https://res.cloudinary.com/dimapmlre/image/upload/v1777044317/state-heroes/writings-v3-not-yearly-bread.jpg"
+image: "https://res.cloudinary.com/dimapmlre/image/upload/v1777045740/state-heroes/writings-v5-not-yearly-bread.jpg"
 ---
 
 I wake up at 4 AM. My body knows it is three in the afternoon Central Standard Time, which means my team is already in the middle of their day, and the laptop already has emails waiting in it that I cannot see yet.

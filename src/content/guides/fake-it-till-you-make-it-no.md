@@ -4,7 +4,7 @@ type: "guide"
 topics: ["freelancing"]
 date: 2024-02-09
 description: "The loudest voice in freelancing right now is telling you to charge fast and figure it out later. I do not believe in it. Here is why, and here is what I want you to do instead."
-image: "https://res.cloudinary.com/dimapmlre/image/upload/v1777044434/state-heroes/writings-v3-fake-it-till-you-make-it-no.jpg"
+image: "https://res.cloudinary.com/dimapmlre/image/upload/v1777045848/state-heroes/writings-v5-fake-it-till-you-make-it-no.jpg"
 ---
 
 The loudest voice in the freelancing space right now is telling you to charge fast and figure it out later.
