@@ -38,6 +38,7 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 const base = import.meta.env.BASE_URL;
 
+const weekdayStr = entry.data.date.toLocaleDateString('en-US', { weekday: 'long' });
 const dateStr = entry.data.date.toLocaleDateString('en-US', {
   year: 'numeric', month: 'long', day: 'numeric',
 });
@@ -57,6 +58,8 @@ const sameTopicAuto = all
     <header class="article-head">
       <div class="meta nav-font">
         <span class="type-pill">{typeLabel}</span>
+        <span class="dot">·</span>
+        <span class="weekday-long">{weekdayStr}</span>
         <span class="dot">·</span>
         <time datetime={entry.data.date.toISOString()}>{dateStr}</time>
       </div>
@@ -103,6 +106,7 @@ const sameTopicAuto = all
   .article-head { margin-bottom: 2rem; }
   .meta { color: var(--ink-faded); font-size: 0.85rem; display: flex; gap: 0.6rem; align-items: center; margin-bottom: 0.75rem; }
   .type-pill { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.72rem; color: var(--accent); font-weight: 600; }
+  .weekday-long { font-family: 'Caveat', cursive; font-size: 1.15rem; color: var(--accent-soft); line-height: 1; }
   .dot { color: var(--ink-faded); }
   .lede { font-size: clamp(1.1rem, 1rem + 0.4vw, 1.3rem); color: var(--ink-soft); line-height: 1.55; margin: 1rem 0 1.5rem; font-style: italic; }
   .topic-row { display: flex; gap: 0.4rem; flex-wrap: wrap; }
