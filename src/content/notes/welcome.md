@@ -4,6 +4,7 @@ type: "note"
 topics: ["learning-in-public"]
 date: 2026-04-24
 description: "A short note on why this site exists and what it wants to be."
+image: "https://res.cloudinary.com/dimapmlre/image/upload/v1777044263/state-heroes/writings-v3-welcome.jpg"
 featured: true
 ---
 

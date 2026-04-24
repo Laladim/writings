@@ -4,7 +4,7 @@ type: "reflection"
 topics: ["faith-theology"]
 date: 2023-03-06
 description: "I have been in this industry seven years and I still wake up afraid. That is not the problem. This is what I wish someone had told me about fear when I started."
-image: "https://res.cloudinary.com/dimapmlre/image/upload/v1777043096/state-heroes/writings-v2-the-fear-of-the-lord.jpg"
+image: "https://res.cloudinary.com/dimapmlre/image/upload/v1777044487/state-heroes/writings-v3-the-fear-of-the-lord.jpg"
 ---
 
 I have been in this industry seven years and I still wake up afraid.
