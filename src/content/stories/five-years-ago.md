@@ -4,6 +4,7 @@ type: "story"
 topics: ["freelancing", "health", "faith-theology"]
 date: 2022-08-17
 description: "Five years ago I was broke, broken, and lost. A tumor in my brain, a missing spleen, a missing gallbladder, and a spine that was already forty years older than I was. This is what I wish someone had said to me then."
+image: "https://res.cloudinary.com/dimapmlre/image/upload/v1777042047/state-heroes/writings-five-years-ago.jpg"
 ---
 
 Five years ago, I was broke, broken, and lost.
