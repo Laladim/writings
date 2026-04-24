@@ -92,16 +92,8 @@ for (const e of entries) {
     grid-template-columns: repeat(12, 1fr);
     gap: clamp(3rem, 7vh, 5.5rem) clamp(1rem, 2vw, 2rem);
   }
-  .gallery > :nth-child(6n+1) { grid-column: 3 / span 5; }
-  .gallery > :nth-child(6n+2) { grid-column: 8 / span 5; }
-  .gallery > :nth-child(6n+3) { grid-column: 1 / span 4; }
-  .gallery > :nth-child(6n+4) { grid-column: 5 / span 6; }
-  .gallery > :nth-child(6n+5) { grid-column: 4 / span 6; }
-  .gallery > :nth-child(6n+0) { grid-column: 2 / span 5; }
-
   @media (max-width: 820px) {
     .gallery { gap: 3.5rem 1rem; }
-    .gallery > * { grid-column: 1 / -1 !important; }
   }
 
   .empty { grid-column: 1 / -1; color: var(--ink-faded); font-style: italic; text-align: center; }
@@ -152,4 +144,19 @@ for (const e of entries) {
     letter-spacing: 0.02em;
   }
   .see-all:hover { text-decoration: underline; }
+</style>
+
+<style is:global>
+  /* Grid positions live outside Astro scoping because ContentCard
+     renders its own scoped wrapper. These rules target the gallery's
+     direct children regardless of which component emitted them. */
+  .gallery > *:nth-child(6n+1) { grid-column: 3 / span 5; }
+  .gallery > *:nth-child(6n+2) { grid-column: 8 / span 5; }
+  .gallery > *:nth-child(6n+3) { grid-column: 1 / span 4; }
+  .gallery > *:nth-child(6n+4) { grid-column: 5 / span 6; }
+  .gallery > *:nth-child(6n+5) { grid-column: 4 / span 6; }
+  .gallery > *:nth-child(6n+0) { grid-column: 2 / span 5; }
+  @media (max-width: 820px) {
+    .gallery > * { grid-column: 1 / -1 !important; }
+  }
 </style>

@@ -157,16 +157,21 @@ const base = import.meta.env.BASE_URL;
     grid-template-columns: repeat(12, 1fr);
     gap: clamp(3rem, 7vh, 5.5rem) clamp(1rem, 2vw, 2rem);
   }
-  .gallery > :nth-child(6n+1) { grid-column: 3 / span 5; }
-  .gallery > :nth-child(6n+2) { grid-column: 8 / span 5; }
-  .gallery > :nth-child(6n+3) { grid-column: 1 / span 4; }
-  .gallery > :nth-child(6n+4) { grid-column: 5 / span 6; }
-  .gallery > :nth-child(6n+5) { grid-column: 4 / span 6; }
-  .gallery > :nth-child(6n+0) { grid-column: 2 / span 5; }
   @media (max-width: 820px) {
     .gallery { gap: 3.5rem 1rem; }
-    .gallery > * { grid-column: 1 / -1 !important; }
   }
 
   .empty { color: var(--ink-faded); font-style: italic; text-align: center; padding: 2rem 0; }
+</style>
+
+<style is:global>
+  .gallery > *:nth-child(6n+1) { grid-column: 3 / span 5; }
+  .gallery > *:nth-child(6n+2) { grid-column: 8 / span 5; }
+  .gallery > *:nth-child(6n+3) { grid-column: 1 / span 4; }
+  .gallery > *:nth-child(6n+4) { grid-column: 5 / span 6; }
+  .gallery > *:nth-child(6n+5) { grid-column: 4 / span 6; }
+  .gallery > *:nth-child(6n+0) { grid-column: 2 / span 5; }
+  @media (max-width: 820px) {
+    .gallery > * { grid-column: 1 / -1 !important; }
+  }
 </style>
