@@ -6,26 +6,16 @@ import { TOPICS, TYPES } from '../topics';
 
 const entries = await getAllEntries();
 const base = import.meta.env.BASE_URL;
-
-const entryData = entries.map((e, i) => ({
-  url: entryUrl(e, base),
-  title: e.data.title,
-  description: e.data.description,
-  type: e.data.type,
-  topics: e.data.topics,
-  date: e.data.date.toISOString(),
-  image: e.data.image ?? '',
-  tiltSeed: i + 1,
-}));
 ---
-<Base title="Library — Writings" description="Every piece of writing, filterable by type and topic.">
-  <section class="container-narrow library-head">
-    <h1>Library</h1>
-    <p class="subtitle">Every entry, filterable. The more gets written, the richer the web.</p>
+<Base title="Library — Writings" description="Every entry, filterable by type and topic.">
+  <section class="library-head">
+    <p class="hand kicker">library</p>
+    <h1>Every entry, filterable.</h1>
+    <p class="subtitle">The more gets written, the richer the web.</p>
   </section>
 
-  <section class="container filters-section">
-    <div class="filters nav-font" data-filters>
+  <section class="filters-section">
+    <div class="filters nav-font">
       <div class="filter-group">
         <span class="filter-label">Type</span>
         <div class="chip-row">
@@ -47,25 +37,21 @@ const entryData = entries.map((e, i) => ({
     </div>
   </section>
 
-  <section class="container">
-    <div id="library-grid" class="card-grid">
-      {entries.map((entry, i) => (
+  <section class="gallery-wrap">
+    <div id="library-grid" class="gallery">
+      {entries.map((entry) => (
         <ContentCard
           href={entryUrl(entry, base)}
           title={entry.data.title}
-          description={entry.data.description}
           date={entry.data.date}
           type={entry.data.type}
           topics={entry.data.topics}
           image={entry.data.image}
-          tiltSeed={i + 1}
         />
       ))}
     </div>
     <p id="empty-msg" class="empty" hidden>Nothing matches that filter yet.</p>
-    {entries.length === 0 && (
-      <p class="empty">The library is empty — the first entry is on its way.</p>
-    )}
+    {entries.length === 0 && <p class="empty">The library is empty — the first entry is on its way.</p>}
   </section>
 </Base>
 
@@ -73,18 +59,11 @@ const entryData = entries.map((e, i) => ({
   const grid = document.getElementById('library-grid');
   if (grid) {
     const cards = Array.from(grid.children) as HTMLElement[];
-    const cardData: Array<{ el: HTMLElement; type: string; topics: string[] }> = cards.map((el) => {
-      const pill = el.querySelector('.type-pill');
-      const typeText = (pill?.textContent ?? '').trim().toLowerCase();
-      const topicEls = el.querySelectorAll('.topic-tag');
-      const topics: string[] = [];
-      topicEls.forEach((t) => {
-        const href = (t as HTMLAnchorElement).getAttribute('href') ?? '';
-        const m = href.match(/\/topics\/([^/]+)\//);
-        if (m) topics.push(m[1]);
-      });
-      return { el, type: typeText, topics };
-    });
+    const cardData = cards.map((el) => ({
+      el,
+      type: (el.dataset.type ?? '').toLowerCase(),
+      topics: (el.dataset.topics ?? '').split(',').filter(Boolean),
+    }));
 
     let activeType = 'all';
     let activeTopic = 'all';
@@ -134,27 +113,60 @@ const entryData = entries.map((e, i) => ({
 </script>
 
 <style>
-  .library-head { text-align: center; padding: 3rem 0 1rem; }
+  .library-head {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+    padding: clamp(3rem, 8vh, 5rem) clamp(1rem, 3vw, 2rem) 1.5rem;
+  }
+  .kicker { font-size: 1.3rem; color: var(--accent-soft); margin: 0; }
   .subtitle { color: var(--ink-soft); }
-  .filters-section { margin: 2rem 0; }
+
+  .filters-section { max-width: 1100px; margin: 0 auto; padding: 1.5rem clamp(1rem, 3vw, 2rem) 1rem; }
   .filters { display: flex; flex-direction: column; gap: 1.25rem; }
   .filter-group { display: flex; gap: 1rem; align-items: flex-start; flex-wrap: wrap; }
-  .filter-label { color: var(--ink-faded); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; padding-top: 0.55rem; min-width: 60px; }
-  .chip-row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .filter-label {
+    color: var(--ink-faded);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    padding-top: 0.55rem;
+    min-width: 50px;
+  }
+  .chip-row { display: flex; gap: 0.4rem; flex-wrap: wrap; }
   .chip {
-    padding: 0.5rem 0.9rem; min-height: 40px;
-    background: var(--paper); border: 1px solid var(--line); border-radius: 999px;
-    color: var(--ink-soft); font-size: 0.85rem; cursor: pointer;
+    padding: 0.45rem 0.85rem;
+    min-height: 36px;
+    background: transparent;
+    border: 1px solid var(--line);
+    color: var(--ink-soft);
+    font-size: 0.8rem;
+    cursor: pointer;
     font-family: inherit;
+    letter-spacing: 0.02em;
     transition: all 0.15s;
   }
   .chip:hover { border-color: var(--accent-soft); color: var(--accent); }
   .chip.active { background: var(--accent); color: #fff; border-color: var(--accent); }
-  .card-grid {
+
+  .gallery-wrap { padding: clamp(2rem, 5vh, 4rem) clamp(1rem, 3vw, 2rem) clamp(3rem, 8vh, 6rem); }
+  .gallery {
+    max-width: 1100px;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: clamp(1.5rem, 3vw, 2.25rem);
-    padding: 1rem 0 2rem;
+    grid-template-columns: repeat(12, 1fr);
+    gap: clamp(3rem, 7vh, 5.5rem) clamp(1rem, 2vw, 2rem);
   }
+  .gallery > :nth-child(6n+1) { grid-column: 3 / span 5; }
+  .gallery > :nth-child(6n+2) { grid-column: 8 / span 5; }
+  .gallery > :nth-child(6n+3) { grid-column: 1 / span 4; }
+  .gallery > :nth-child(6n+4) { grid-column: 5 / span 6; }
+  .gallery > :nth-child(6n+5) { grid-column: 4 / span 6; }
+  .gallery > :nth-child(6n+0) { grid-column: 2 / span 5; }
+  @media (max-width: 820px) {
+    .gallery { gap: 3.5rem 1rem; }
+    .gallery > * { grid-column: 1 / -1 !important; }
+  }
+
   .empty { color: var(--ink-faded); font-style: italic; text-align: center; padding: 2rem 0; }
 </style>
