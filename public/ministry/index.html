@@ -1,0 +1,2169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#5a4a7a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<title>IBCM Sunday School — For Lala</title>
+<style>
+  :root {
+    --cream: #faf8f4;
+    --cream-deep: #f0ebe2;
+    --navy: #5a4a7a;
+    --navy-soft: #4a3a6a;
+    --ink: #1a1623;
+    --ink-soft: #4a4358;
+    --gold: #c8985f;
+    --gold-soft: #d4ab7a;
+    --burgundy: #a0756a;
+    --sage: #5a8a72;
+    --rule: #e4ded2;
+    --panel: #fffdf8;
+    --lavender: #7a6a8f;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: clamp(16px, 1rem + 0.25vw, 19px);
+    line-height: 1.72;
+    color: var(--ink);
+    background: var(--cream);
+    overflow-wrap: break-word;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  a, button { touch-action: manipulation; }
+
+  nav.sidebar a { min-height: 44px; display: flex; align-items: center; }
+
+  h1, h2, h3, h4, .eyebrow, .nav-item, .callout-label, .pillar-label, .scripture-ref {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+
+  header.hero {
+    background: var(--navy);
+    color: var(--cream);
+    padding: max(5rem, calc(env(safe-area-inset-top) + 4rem)) max(2rem, env(safe-area-inset-right)) 4rem max(2rem, env(safe-area-inset-left));
+    text-align: center;
+    border-bottom: 6px solid var(--gold);
+  }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.72rem;
+    color: var(--gold-soft);
+    margin-bottom: 1.2rem;
+    display: block;
+  }
+
+  header.hero h1 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    font-weight: 400;
+    font-style: italic;
+    margin: 0 0 1.2rem;
+    letter-spacing: -0.01em;
+  }
+
+  header.hero .lead {
+    font-size: 1.05rem;
+    max-width: 38rem;
+    margin: 0 auto 2rem;
+    color: var(--cream-deep);
+    opacity: 0.92;
+  }
+
+  header.hero blockquote {
+    margin: 0 auto;
+    max-width: 34rem;
+    padding: 1.2rem 2rem;
+    border-top: 1px solid rgba(212, 171, 122, 0.3);
+    border-bottom: 1px solid rgba(212, 171, 122, 0.3);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--gold-soft);
+  }
+
+  header.hero blockquote cite {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.78rem;
+    font-style: normal;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cream-deep);
+    opacity: 0.7;
+  }
+
+  .layout {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    max-width: 1180px;
+    margin: 0 auto;
+    gap: 3rem;
+    padding: 3rem 2rem 6rem;
+  }
+
+  nav.sidebar {
+    position: sticky;
+    top: 1.5rem;
+    align-self: start;
+    border-left: 2px solid var(--rule);
+    padding-left: 1.1rem;
+    max-height: calc(100vh - 3rem);
+    overflow-y: auto;
+  }
+
+  nav.sidebar h2 {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--ink-soft);
+    margin: 0 0 0.8rem;
+  }
+
+  nav.sidebar ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: navcount;
+  }
+
+  nav.sidebar li {
+    counter-increment: navcount;
+    margin-bottom: 0.55rem;
+  }
+
+  nav.sidebar a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 0.88rem;
+    line-height: 1.35;
+    display: block;
+    padding: 0.15rem 0;
+    transition: color 0.15s;
+  }
+
+  nav.sidebar a::before {
+    content: counter(navcount, decimal-leading-zero) "  ";
+    color: var(--gold);
+    font-size: 0.7rem;
+    font-weight: 700;
+  }
+
+  nav.sidebar a:hover {
+    color: var(--burgundy);
+  }
+
+  main {
+    max-width: 42rem;
+  }
+
+  section {
+    padding: 3rem 0 2.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  section:last-child { border-bottom: none; }
+
+  section > .chapter-label {
+    font-family: -apple-system, 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.7rem;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+  }
+
+  section > h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 400;
+    margin: 0 0 1.6rem;
+    color: var(--navy);
+    line-height: 1.2;
+  }
+
+  section > h3 {
+    font-size: 1.1rem;
+    color: var(--navy-soft);
+    margin: 2rem 0 0.8rem;
+    font-weight: 600;
+  }
+
+  p { margin: 0 0 1.1rem; }
+
+  em { color: var(--burgundy); font-style: italic; }
+
+  strong { color: var(--navy); font-weight: 600; }
+
+  a { color: var(--burgundy); }
+
+  blockquote {
+    margin: 1.6rem 0;
+    padding: 0.2rem 0 0.2rem 1.5rem;
+    border-left: 3px solid var(--gold);
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 1.02rem;
+  }
+
+  blockquote cite {
+    display: block;
+    margin-top: 0.4rem;
+    font-size: 0.78rem;
+    font-style: normal;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  .scripture {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--burgundy);
+    padding: 1.2rem 1.4rem;
+    margin: 1.6rem 0;
+    font-size: 0.98rem;
+  }
+
+  .scripture .scripture-ref {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--burgundy);
+    margin-bottom: 0.5rem;
+  }
+
+  .scripture p { margin: 0; font-style: italic; color: var(--navy-soft); }
+
+  .callout {
+    background: var(--cream-deep);
+    border-radius: 4px;
+    padding: 1.2rem 1.4rem;
+    margin: 1.6rem 0;
+    border: 1px solid var(--rule);
+  }
+
+  .callout .callout-label {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+
+  .callout.warning {
+    background: #f5e7e4;
+    border-color: #e5cec8;
+  }
+  .callout.warning .callout-label { color: var(--burgundy); }
+
+  .callout.action {
+    background: #e8f0ea;
+    border-color: #cfe0d5;
+  }
+  .callout.action .callout-label { color: var(--sage); }
+
+  /* Triangle diagram */
+  .triangle-wrapper {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    padding: 2.5rem 1.5rem 2rem;
+    margin: 2rem 0;
+    text-align: center;
+    border-radius: 4px;
+  }
+
+  .triangle-wrapper svg {
+    max-width: 380px;
+    width: 100%;
+    height: auto;
+  }
+
+  .triangle-caption {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    margin-top: 1rem;
+    font-style: italic;
+  }
+
+  /* Pillar card */
+  .pillar {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    padding: 1.5rem 1.5rem 1.2rem;
+    margin-bottom: 1.2rem;
+    border-radius: 4px;
+    border-top: 3px solid var(--gold);
+  }
+
+  .pillar h3 {
+    margin: 0 0 0.4rem;
+    color: var(--navy);
+    font-size: 1.05rem;
+  }
+
+  .pillar .pillar-label {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.68rem;
+    color: var(--gold);
+    margin-bottom: 0.3rem;
+  }
+
+  .pillar p { margin-bottom: 0.6rem; font-size: 0.92rem; color: var(--ink-soft); }
+  .pillar p:last-child { margin-bottom: 0; }
+
+  /* Assessment */
+  .assessment {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 1.8rem;
+    margin: 2rem 0;
+  }
+
+  .assessment h3 { margin-top: 0; }
+
+  .assessment-block {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px dashed var(--rule);
+  }
+  .assessment-block:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .assessment-block > strong {
+    display: inline-block;
+    color: var(--burgundy);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.7rem;
+  }
+
+  .assessment ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.3rem 0 0;
+  }
+
+  .assessment li {
+    margin-bottom: 0.55rem;
+    padding-left: 1.8rem;
+    position: relative;
+    font-size: 0.92rem;
+  }
+
+  .assessment li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.42em;
+    width: 1rem;
+    height: 1rem;
+    border: 1.5px solid var(--gold);
+    border-radius: 2px;
+    background: var(--cream);
+  }
+
+  /* Weekly rhythm table */
+  table.rhythm {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.92rem;
+  }
+
+  table.rhythm th, table.rhythm td {
+    padding: 0.8rem 0.9rem;
+    text-align: left;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+
+  table.rhythm th {
+    background: var(--navy);
+    color: var(--cream);
+    font-weight: 600;
+    font-family: -apple-system, 'Inter', sans-serif;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  table.rhythm td:first-child {
+    font-family: -apple-system, 'Inter', sans-serif;
+    font-weight: 600;
+    color: var(--burgundy);
+    white-space: nowrap;
+    width: 110px;
+  }
+
+  table.rhythm td:nth-child(2) {
+    font-weight: 600;
+    color: var(--navy);
+    width: 140px;
+  }
+
+  /* Time of day schedule */
+  .schedule {
+    margin: 1.5rem 0;
+    border-left: 2px solid var(--gold);
+    padding-left: 1.2rem;
+  }
+
+  .schedule-item { margin-bottom: 0.8rem; }
+
+  .schedule-time {
+    font-family: -apple-system, 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--burgundy);
+    text-transform: uppercase;
+  }
+
+  .schedule-body {
+    font-size: 0.94rem;
+    color: var(--ink);
+  }
+
+  /* Footer */
+  footer {
+    background: var(--navy);
+    color: var(--cream-deep);
+    text-align: center;
+    padding: 3rem max(2rem, env(safe-area-inset-right)) max(3rem, calc(env(safe-area-inset-bottom) + 2rem)) max(2rem, env(safe-area-inset-left));
+    font-size: 0.85rem;
+  }
+
+  footer p { margin: 0.4rem 0; opacity: 0.85; }
+
+  footer .signature {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--gold-soft);
+    margin-top: 1.2rem;
+  }
+
+  /* Mobile */
+  @media (max-width: 820px) {
+    .layout {
+      grid-template-columns: 1fr;
+      padding: 2rem 1.2rem 4rem;
+      gap: 1.5rem;
+    }
+    nav.sidebar {
+      position: static;
+      max-height: none;
+      border-left: none;
+      border-top: 2px solid var(--rule);
+      padding: 1.2rem 0 0;
+    }
+    nav.sidebar ol {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.3rem 1rem;
+    }
+    header.hero { padding: 3.5rem 1.2rem 3rem; }
+    main { max-width: 100%; }
+    body { font-size: 17px; }
+  }
+
+  /* Script section: moves, cues, testimony */
+  section > h4 {
+    font-size: 1rem;
+    color: var(--burgundy);
+    margin: 1.8rem 0 0.7rem;
+    font-weight: 600;
+    font-family: -apple-system, 'Inter', sans-serif;
+    letter-spacing: 0.02em;
+  }
+
+  .move-duration, .part-duration {
+    display: inline-block;
+    font-family: -apple-system, 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-left: 0.6rem;
+    vertical-align: middle;
+  }
+
+  .cue {
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    font-style: italic;
+    margin: 1rem 0;
+    padding: 0.55rem 1rem;
+    border-left: 2px dashed var(--gold-soft);
+    background: rgba(200, 152, 95, 0.07);
+    border-radius: 0 3px 3px 0;
+  }
+
+  .testimony {
+    background: #fbf2e1;
+    border: 1px solid var(--gold-soft);
+    border-left: 4px solid var(--burgundy);
+    padding: 1.6rem 1.8rem;
+    margin: 2rem 0;
+    border-radius: 4px;
+  }
+
+  .testimony .testimony-label {
+    display: block;
+    font-family: -apple-system, 'Inter', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--burgundy);
+    font-weight: 700;
+    margin-bottom: 0.9rem;
+  }
+
+  .testimony p {
+    font-size: 0.96rem;
+    color: var(--ink);
+    line-height: 1.7;
+  }
+
+  .testimony p:last-child { margin-bottom: 0; }
+
+  .carry-sentence {
+    text-align: center;
+    font-style: italic;
+    color: var(--burgundy);
+    font-size: 1.08rem;
+    margin: 1.2rem 0 1.4rem;
+  }
+
+  /* Site-level top nav (growing mini-site) */
+  .site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--navy);
+    border-bottom: 1px solid rgba(212, 171, 122, 0.35);
+    padding: 0 max(1rem, env(safe-area-inset-right)) 0 max(1rem, env(safe-area-inset-left));
+  }
+  .site-nav-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 0.2rem;
+  }
+  .site-nav-brand {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    color: var(--gold-soft);
+    font-size: 0.92rem;
+    margin-right: auto;
+    padding: 0.9rem 0.2rem;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+  }
+  .site-nav-brand:hover { color: var(--cream); }
+  .site-nav a.nav-item {
+    color: var(--cream-deep);
+    text-decoration: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 1rem 0.9rem;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .site-nav a.nav-item:hover,
+  .site-nav a.nav-item:focus {
+    color: var(--gold-soft);
+    border-bottom-color: var(--gold);
+  }
+  @media (max-width: 640px) {
+    .site-nav-inner { justify-content: center; gap: 0; }
+    .site-nav-brand { display: none; }
+    .site-nav a.nav-item {
+      padding: 0.9rem 0.55rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+    }
+  }
+
+  /* Top-level area headers (Guides / Lessons / About / Resources) */
+  section.area-header {
+    background: var(--cream-deep);
+    border-left: 6px solid var(--gold);
+    border-bottom: 1px solid var(--rule);
+    padding: 2.4rem 1.8rem 2rem;
+    margin: 3rem 0 1.2rem;
+    border-radius: 0 4px 4px 0;
+  }
+  section.area-header:first-of-type { margin-top: 1rem; }
+  section.area-header .area-label {
+    font-family: -apple-system, 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.7rem;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+  }
+  section.area-header h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 400;
+    font-style: italic;
+    margin: 0 0 0.8rem;
+    color: var(--navy);
+    line-height: 1.15;
+  }
+  section.area-header p {
+    color: var(--ink-soft);
+    margin: 0 0 0.6rem;
+    font-size: 0.98rem;
+  }
+  section.area-header p:last-child { margin-bottom: 0; }
+  section.area-header ul {
+    margin: 0.8rem 0 0;
+    padding-left: 1.2rem;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+  section.area-header ul li { margin-bottom: 0.35rem; }
+
+  /* Feedback records log (appended per lesson) */
+  .feedback-block {
+    margin: 2.8rem 0 1rem;
+    padding: 1.8rem 1.6rem 2rem;
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-top: 4px solid var(--sage);
+    border-radius: 4px;
+  }
+  .feedback-block > h3 {
+    font-family: -apple-system, 'Inter', sans-serif;
+    color: var(--sage);
+    margin: 0 0 0.4rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .feedback-block > .feedback-intro {
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    margin: 0 0 1.4rem;
+    font-style: italic;
+  }
+  .feedback-entry {
+    padding: 1.4rem 0 0.4rem;
+    border-top: 1px dashed var(--rule);
+  }
+  .feedback-entry:first-of-type { border-top: none; padding-top: 0.2rem; }
+  .feedback-entry .entry-date {
+    font-family: -apple-system, 'Inter', sans-serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  .feedback-entry h4 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    color: var(--navy);
+    font-size: 1.12rem;
+    margin: 0 0 1rem;
+    font-style: italic;
+  }
+  .feedback-entry dl { margin: 0; }
+  .feedback-entry dt {
+    font-family: -apple-system, 'Inter', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 700;
+    margin-top: 1rem;
+  }
+  .feedback-entry dt:first-child { margin-top: 0; }
+  .feedback-entry dd {
+    margin: 0.3rem 0 0;
+    color: var(--ink);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .feedback-entry dd em { color: var(--ink-soft); }
+
+  /* Page view routing (single-file SPA) */
+  .page { display: none; }
+  .page.is-active { display: block; }
+
+  /* Lessons sidebar — collapsible per-lesson accordion */
+  nav.sidebar.sidebar-lessons { max-height: calc(100vh - 2rem); }
+  nav.sidebar.sidebar-lessons .sidebar-lead {
+    font-family: -apple-system, 'Inter', sans-serif;
+    font-size: 0.76rem;
+    color: var(--ink-soft);
+    margin: -0.3rem 0 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1.4;
+  }
+  .lesson-item {
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .lesson-item:last-child { border-bottom: none; }
+  .lesson-item > summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 0.7rem 0.3rem 0.7rem 1.4rem;
+    position: relative;
+    font-family: -apple-system, 'Inter', sans-serif;
+    min-height: 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 3px;
+    transition: background 0.15s;
+    gap: 0.05rem;
+  }
+  .lesson-item > summary::-webkit-details-marker { display: none; }
+  .lesson-item > summary::marker { content: ""; }
+  .lesson-item > summary::before {
+    content: "";
+    position: absolute;
+    left: 0.3rem;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border-left: 5px solid var(--gold);
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    transform: translateY(-50%);
+    transition: transform 0.18s ease;
+  }
+  .lesson-item[open] > summary::before {
+    transform: translateY(-50%) rotate(90deg);
+  }
+  .lesson-item > summary:hover { background: var(--cream-deep); }
+  .lesson-item > summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .lesson-num {
+    font-size: 0.66rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 700;
+  }
+  .lesson-title {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.25;
+  }
+  .lesson-meta {
+    font-size: 0.7rem;
+    color: var(--ink-soft);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+
+  /* Sub-TOC inside each lesson */
+  nav.sidebar ol.lesson-toc {
+    list-style: none;
+    margin: 0.4rem 0 0.8rem;
+    padding: 0 0 0 1.4rem;
+    counter-reset: lessoncount;
+  }
+  nav.sidebar ol.lesson-toc > li {
+    counter-increment: lessoncount;
+    margin-bottom: 0.55rem;
+  }
+  nav.sidebar ol.lesson-toc > li > a {
+    display: block;
+    padding: 0.2rem 0;
+    line-height: 1.35;
+    text-decoration: none;
+  }
+  nav.sidebar ol.lesson-toc > li > a::before {
+    content: counter(lessoncount, decimal-leading-zero) "  ";
+    color: var(--gold);
+    font-size: 0.66rem;
+    font-weight: 700;
+  }
+  nav.sidebar ol.lesson-toc .toc-label {
+    display: inline;
+    color: var(--navy);
+    font-family: -apple-system, 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  nav.sidebar ol.lesson-toc .toc-meta {
+    display: block;
+    font-family: -apple-system, 'Inter', sans-serif;
+    font-size: 0.68rem;
+    color: var(--ink-soft);
+    font-weight: 400;
+    margin: 0.1rem 0 0 1.1rem;
+    letter-spacing: 0.01em;
+  }
+  nav.sidebar ol.lesson-toc > li > a:hover .toc-label,
+  nav.sidebar ol.lesson-toc > li > a:hover .toc-meta { color: var(--burgundy); }
+
+  nav.sidebar ol.lesson-toc-sub {
+    list-style: none;
+    margin: 0.4rem 0 0.2rem 0.4rem;
+    padding: 0 0 0 0.8rem;
+    border-left: 2px solid var(--rule);
+    counter-reset: sublesson;
+  }
+  nav.sidebar ol.lesson-toc-sub li {
+    counter-increment: sublesson;
+    margin-bottom: 0.3rem;
+  }
+  nav.sidebar ol.lesson-toc-sub li::before { content: none; }
+  nav.sidebar ol.lesson-toc-sub a {
+    display: block;
+    padding: 0.15rem 0;
+    color: var(--ink-soft);
+    font-family: -apple-system, 'Inter', sans-serif;
+    font-size: 0.74rem;
+    font-weight: 500;
+    line-height: 1.3;
+    text-decoration: none;
+  }
+  nav.sidebar ol.lesson-toc-sub a::before { content: none; }
+  nav.sidebar ol.lesson-toc-sub a:hover { color: var(--burgundy); }
+
+  nav.sidebar ol.lesson-toc li.toc-divider {
+    margin-top: 0.9rem;
+    padding-top: 0.7rem;
+    border-top: 1px solid var(--rule);
+  }
+  nav.sidebar ol.lesson-toc li.toc-divider .toc-label { color: var(--sage); }
+
+  /* Active nav state */
+  .site-nav a.nav-item[aria-current="page"] {
+    color: var(--gold-soft);
+    border-bottom-color: var(--gold);
+  }
+
+  /* Single-column page layout (About, Resources) */
+  .layout.layout-single {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 780px;
+    padding-top: 0;
+    padding-bottom: 0;
+    gap: 0;
+  }
+  .layout.layout-single main { max-width: 100%; }
+
+  /* Slimmer per-page intro (used for About, Resources, Lessons opener) */
+  .page-intro {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 3.8rem max(2rem, env(safe-area-inset-right)) 3rem max(2rem, env(safe-area-inset-left));
+    text-align: center;
+    border-bottom: 4px solid var(--gold);
+  }
+  .page-intro .eyebrow {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.72rem;
+    color: var(--gold-soft);
+    margin-bottom: 1rem;
+    font-family: -apple-system, 'Inter', sans-serif;
+    font-weight: 600;
+  }
+  .page-intro h1 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 400;
+    font-style: italic;
+    margin: 0 0 1rem;
+    letter-spacing: -0.01em;
+    color: var(--cream);
+  }
+  .page-intro .lead {
+    font-size: 1rem;
+    max-width: 38rem;
+    margin: 0 auto;
+    color: var(--cream-deep);
+    opacity: 0.92;
+    line-height: 1.6;
+  }
+
+  /* Standalone body text for single-col pages */
+  .page-body {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 3rem max(1.5rem, env(safe-area-inset-right)) 4.5rem max(1.5rem, env(safe-area-inset-left));
+  }
+  .page-body h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+    font-weight: 400;
+    color: var(--navy);
+    margin: 2.5rem 0 1rem;
+    line-height: 1.25;
+  }
+  .page-body h2:first-child { margin-top: 0; }
+  .page-body p { font-size: 1rem; line-height: 1.72; }
+
+  /* Resource list rows */
+  .resource-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.6rem 0;
+  }
+  .resource-list li {
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .resource-list li:last-child { border-bottom: none; }
+  .resource-list .resource-title {
+    display: block;
+    color: var(--navy);
+    font-family: -apple-system, 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+  .resource-list .resource-meta {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+  .resource-list .resource-meta a { color: var(--burgundy); }
+
+  /* Print */
+  @media print {
+    body { background: white; font-size: 11pt; }
+    header.hero { background: white; color: black; padding: 1.5rem 0; border-bottom: 2px solid black; }
+    header.hero h1 { color: black; }
+    header.hero .lead, header.hero blockquote { color: #333; }
+    nav.sidebar { display: none; }
+    .layout { grid-template-columns: 1fr; padding: 0.5rem; max-width: 100%; }
+    main { max-width: 100%; }
+    section { page-break-inside: avoid; padding: 1rem 0; }
+    .callout, .scripture, .pillar, .assessment, .triangle-wrapper { page-break-inside: avoid; }
+    footer { background: white; color: black; border-top: 2px solid black; }
+    a { color: black; text-decoration: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Primary">
+  <div class="site-nav-inner">
+    <a class="site-nav-brand" href="#/guides" data-nav="guides">IBCM Sunday School &middot; Lala</a>
+    <a class="nav-item" href="#/guides" data-nav="guides">Guides</a>
+    <a class="nav-item" href="#/lessons" data-nav="lessons">Lessons</a>
+    <a class="nav-item" href="#/about" data-nav="about">About</a>
+    <a class="nav-item" href="#/resources" data-nav="resources">Resources</a>
+  </div>
+</nav>
+
+<section class="page" data-page="guides" id="page-guides">
+
+<header class="hero" id="top">
+  <span class="eyebrow">Guide 01 &middot; A Training Curriculum for</span>
+  <h1>Foundations for Sunday School Teaching</h1>
+  <p class="lead">For Lala. Serving 8 children, ages 10 to 12, at International Baptist Church of Manila. Built on the Royal Triangle Method and John Piper's six habits of lifelong learning.</p>
+  <blockquote>
+    "You cannot impart what you do not possess. Children can feel the difference between duty and delight."
+    <cite>&mdash; John Piper</cite>
+  </blockquote>
+</header>
+
+<div class="layout">
+
+<nav class="sidebar" aria-label="Guide 1 contents">
+  <h2>Guide 1 &middot; Contents</h2>
+  <ol>
+    <li><a href="#preface">Preface</a></li>
+    <li><a href="#the-triangle">The Royal Triangle</a></li>
+    <li><a href="#desire">Desire</a></li>
+    <li><a href="#ability">Ability</a></li>
+    <li><a href="#opportunity">Opportunity</a></li>
+    <li><a href="#assessment">Self-Assessment</a></li>
+    <li><a href="#weekly-rhythm">The Weekly Rhythm</a></li>
+    <li><a href="#lesson-day">The Lesson Day</a></li>
+    <li><a href="#feedback-loop">The Feedback Loop</a></li>
+    <li><a href="#warnings">Eight Warnings</a></li>
+    <li><a href="#charge">The Charge</a></li>
+  </ol>
+</nav>
+
+<main>
+
+<section id="preface">
+  <div class="chapter-label">Chapter 1</div>
+  <h2>Preface: Why You Are Here</h2>
+
+  <p>Eight children. Ages ten to twelve. Sunday morning at International Baptist Church of Manila. One of them is American. The rest, a beautiful mix of the international families God has drawn into our congregation. Filipino, Korean, maybe a little of both. Tired from Saturday. Sitting on plastic chairs. Some came because they wanted to. Some came because their mom and dad made them.</p>
+
+  <p>And for one hour, they are <em>yours</em>.</p>
+
+  <p>Friend, here is why this curriculum exists. When that hour begins, you should not be winging it. You should not be reading a script out loud. You should not be praying God will somehow fill in the gaps you left open.</p>
+
+  <p>By Sunday, the truth has already gone through YOU. What comes out of your mouth is <em>your</em> voice. Your own delight. Your own grief over sin. Your own gladness in Christ. Shaped by faithful study. Ordered by a framework that works.</p>
+
+  <p>This is not teacher-training the way a company trains staff. This is <em>teacher-formation</em>. The goal is not to make you a better performer. The goal is to form you into a woman whose joy in Christ spills over into eight small hearts. Once a week. For as long as the Lord keeps you in that room.</p>
+
+  <div class="callout">
+    <span class="callout-label">Three Things to Hold in Mind</span>
+    <p style="margin:0"><strong>1.</strong> You have one hour. The world has twenty. Do not fight that with volume. Fight it with <em>depth</em>.<br>
+    <strong>2.</strong> You are not their savior. Jesus is. Your job is to <em>point</em>.<br>
+    <strong>3.</strong> You will never know, in this life, what God does through your faithfulness. That is not yours to measure. That is yours to <em>trust</em>.</p>
+  </div>
+</section>
+
+<section id="the-triangle">
+  <div class="chapter-label">Chapter 2</div>
+  <h2>The Royal Triangle: God at the Center</h2>
+
+  <p>The Royal Triangle Method is your own framework. And it is already Reformed theology, just in applied form. Watch what happens when you map it onto Sunday School teaching. Each side of the triangle becomes a <em>ministry</em> you render. And God at the center is the One giving it, sustaining it, and receiving it back.</p>
+
+  <div class="triangle-wrapper">
+    <svg viewBox="0 0 400 340" xmlns="http://www.w3.org/2000/svg" aria-label="Royal Triangle: Desire, Ability, Opportunity with God at the center">
+      <!-- Triangle -->
+      <polygon points="200,40 60,290 340,290" fill="none" stroke="#c8985f" stroke-width="2.5"/>
+
+      <!-- God at center -->
+      <circle cx="200" cy="210" r="44" fill="#5a4a7a"/>
+      <text x="200" y="207" text-anchor="middle" fill="#d4ab7a" font-family="Cormorant Garamond, Georgia, serif" font-style="italic" font-size="18">God</text>
+      <text x="200" y="224" text-anchor="middle" fill="#faf8f4" font-family="Inter, sans-serif" font-size="8" letter-spacing="1.5">CENTER</text>
+
+      <!-- Desire label -->
+      <text x="200" y="28" text-anchor="middle" fill="#1a1623" font-family="Inter, sans-serif" font-size="14" font-weight="700" letter-spacing="3">DESIRE</text>
+      <text x="200" y="45" text-anchor="middle" fill="#a0756a" font-family="Cormorant Garamond, Georgia, serif" font-size="11" font-style="italic">love him</text>
+
+      <!-- Ability label -->
+      <text x="60" y="315" text-anchor="middle" fill="#1a1623" font-family="Inter, sans-serif" font-size="14" font-weight="700" letter-spacing="3">ABILITY</text>
+      <text x="60" y="330" text-anchor="middle" fill="#a0756a" font-family="Cormorant Garamond, Georgia, serif" font-size="11" font-style="italic">serve him</text>
+
+      <!-- Opportunity label -->
+      <text x="340" y="315" text-anchor="middle" fill="#1a1623" font-family="Inter, sans-serif" font-size="14" font-weight="700" letter-spacing="3">OPPORTUNITY</text>
+      <text x="340" y="330" text-anchor="middle" fill="#a0756a" font-family="Cormorant Garamond, Georgia, serif" font-size="11" font-style="italic">steward for him</text>
+    </svg>
+    <p class="triangle-caption">God is at the center of the triangle, not one of the sides. Every pillar exists <em>from him, through him, and to him</em>. (Romans 11:36)</p>
+  </div>
+
+  <p>In the next three chapters, we are going to walk each side of the triangle. One by one. And name what has to be true for you to teach faithfully.</p>
+
+  <p>Don't let the list overwhelm you. That is not the point. The point is this: you can look at your own week, honestly, and see where the triangle is <em>weak</em>. Then you spend your preparation energy right there. Not spread thin. Not everywhere at once. <em>There</em>.</p>
+
+  <blockquote>
+    "Happiness comes down to three things. You need the Desire, the reason to get out of bed. You need the Ability, the skills to actually do the work. And you need the Opportunity, the open door. All three, together, under God."
+    <cite>— Lala, Royal Triangle Method</cite>
+  </blockquote>
+</section>
+
+<section id="desire">
+  <div class="chapter-label">Chapter 3 · Pillar One</div>
+  <h2>Desire: The Steering Wheel of the Soul</h2>
+
+  <div class="scripture">
+    <span class="scripture-ref">Psalm 37:4</span>
+    <p>Delight yourself in the Lord, and he will give you the desires of your heart.</p>
+  </div>
+
+  <p>Every good Sunday School hour begins days before anyone walks into the room. It begins at your kitchen table. With your Bible open. With your own heart saying yes, one more time, to being drawn toward Christ. Because you cannot give away what you do not have.</p>
+
+  <p>Desire is the steering wheel of the soul. Wherever your love points, that is where you will take these children.</p>
+
+  <p>If you love Christ more than you love being seen as a good teacher, you will take them to Christ. If you love the gospel more than you love the approval of their parents, you will preach the gospel. If you are hungry for the Word yourself, they will smell the bread on your breath.</p>
+
+  <h3>What Desire Looks Like in a Sunday School Teacher</h3>
+
+  <div class="pillar">
+    <span class="pillar-label">Desire for God himself</span>
+    <h3>You read the passage not to teach it, but to be fed by it.</h3>
+    <p>When you sit down with Titus 3 this week, the first question is not <em>"How do I explain this to the children?"</em> The first question is <em>"What does this show me about God? And will I let it change me first?"</em> Teach from overflow. Never from obligation.</p>
+  </div>
+
+  <div class="pillar">
+    <span class="pillar-label">Delight in these particular children</span>
+    <h3>You can name each of the eight, and you want them to walk in faith.</h3>
+    <p>Sunday School is not a generic ministry. Each face is a unique soul. A person is honored when they are <em>enjoyed</em> (Romans 12:10). If you walk into that room hoping the hour ends quickly, trust me, they will feel it. And if you walk in glad to see them, they will feel that too.</p>
+  </div>
+
+  <div class="pillar">
+    <span class="pillar-label">Hunger for the gospel</span>
+    <h3>You are not done needing the mercy of Titus 3:5.</h3>
+    <p>The teacher who still believes she "knows better," yet still needs grace every single day, is the teacher who can actually teach grace. Your own need of the cross is not a liability. It is the <em>fuel</em> of honest teaching.</p>
+  </div>
+
+  <div class="callout action">
+    <span class="callout-label">Desire Practices (weekly)</span>
+    <p style="margin:0">• Pray Psalm 119:18 before every study session.<br>
+    • Read the passage on Monday <em>as a worshiper</em>, not as a teacher. Take notes only about what God is showing you.<br>
+    • Name the eight children by name in prayer on Wednesday.<br>
+    • On Saturday night, sit still for five minutes. Ask: <em>"Is my heart glad about tomorrow?"</em> If no, ask God why, and listen.</p>
+  </div>
+</section>
+
+<section id="ability">
+  <div class="chapter-label">Chapter 4 · Pillar Two</div>
+  <h2>Ability: Talents for Kingdom Work</h2>
+
+  <div class="scripture">
+    <span class="scripture-ref">1 Peter 4:10</span>
+    <p>As each has received a gift, use it to serve one another, as good stewards of God's varied grace.</p>
+  </div>
+
+  <p>Desire alone does not teach Titus 3 to a ten-year-old. You need the <em>ability</em> too. The ability to handle the text. To translate it into their language. To anticipate their questions. To structure an hour that holds their attention.</p>
+
+  <p>Do not think of this as a lesser work than desire. It is not. It is the <em>hand</em> that desire moves.</p>
+
+  <p>Excellence here is worship (Colossians 3:23). <em>Hindi pwedeng tsamba-tsamba lang.</em> This cannot be haphazard. These eight children are worth your preparation.</p>
+
+  <h3>The Two Frameworks That Do the Heavy Lifting</h3>
+
+  <div class="pillar">
+    <span class="pillar-label">Framework A</span>
+    <h3>Piper's Six Habits of Lifelong Learning</h3>
+    <p>From <em>Foundations for Lifelong Learning: Education in Serious Joy</em> (Crossway, 2023). Every lesson you teach should move the children through all six habits. Not as stages of a lecture. As the six things a lifelong learner does, naturally, with any truth they meet:</p>
+
+    <p style="margin-top:0.8rem"><strong>Observation</strong> (Ch. 1, p. 19) — <em>seeing or hearing or tasting or smelling or touching what is really there.</em> Look at the text. Circle three words.<br>
+    <strong>Understanding</strong> (Ch. 2, p. 48) — <em>the mind's grasp of how things fit together.</em> Define big words. Show connections.<br>
+    <strong>Evaluation</strong> (Ch. 3, p. 73) — <em>make judgments about truth, goodness, beauty, worth.</em> Is this true? Does this match reality?<br>
+    <strong>Feeling</strong> (Ch. 4, p. 91) — <em>feel properly what we have observed, understood, and evaluated.</em> Joy. Grief. Wonder.<br>
+    <strong>Application</strong> (Ch. 5, p. 118) — <em>turn observation, understanding, evaluation, and feeling into action.</em> This week. Monday morning.<br>
+    <strong>Expression</strong> (Ch. 6, p. 137) — <em>verbal communication of what we have observed, understood, evaluated, and felt.</em> Memory verse. Prayer. Telling a friend.</p>
+  </div>
+
+  <div class="pillar">
+    <span class="pillar-label">Framework B</span>
+    <h3>The Mirror → Miracle → New Life → Sentence Pattern</h3>
+    <p>Most New Testament passages already arrange themselves this way. Titus 3. Romans 1 to 8. Ephesians 2. Let the text's own shape teach you what the lesson's shape should be:</p>
+    <p style="margin-top:0.8rem"><strong>The Mirror.</strong> What does this show us about <em>us</em>? Who we were apart from grace.<br>
+    <strong>The Miracle.</strong> What did God <em>do</em>? The gospel in this passage. Biggest slice of the hour.<br>
+    <strong>The New Life.</strong> How do we now <em>live</em>? Concrete, tween-sized obedience.<br>
+    <strong>The Sentence.</strong> One verse to carry home. Written on a card. Memorized.</p>
+  </div>
+
+  <h3>The Communication Principle</h3>
+
+  <blockquote>
+    "If we love the truth, we will love clarity in speaking the truth, because the value of truth for others is in its being communicated clearly. Christians love people. Therefore, we do not want to keep them in the dark but bring them into the light of truth."
+    <cite>— John Piper, Foundations for Lifelong Learning, pp. 142–143</cite>
+  </blockquote>
+
+  <p>Clarity is an act of love. When you take the time to define <em>regeneration</em> in kid-words, you are loving them. When you give a concrete example instead of a vague abstraction, you are loving them. Muddy teaching is not humble. It is lazy.</p>
+
+  <div class="callout action">
+    <span class="callout-label">Ability Practices (weekly)</span>
+    <p style="margin:0">• Read the passage cold on Monday. Write down every question you cannot answer.<br>
+    • On Tuesday, query your NotebookLM or read Piper on the passage. Close the open questions.<br>
+    • On Wednesday, draft the six habits move-by-move. Don't write prose yet — just the bones.<br>
+    • On Thursday, write the kid-script in DG voice. Read it aloud once to yourself.<br>
+    • On Friday, print the teacher outline. Memorize the one carry-out sentence yourself.</p>
+  </div>
+</section>
+
+<section id="opportunity">
+  <div class="chapter-label">Chapter 5 · Pillar Three</div>
+  <h2>Opportunity: The Immeasurable Moment</h2>
+
+  <div class="scripture">
+    <span class="scripture-ref">Luke 12:48</span>
+    <p>Everyone to whom much was given, of him much will be required, and from him to whom they entrusted much, they will demand the more.</p>
+  </div>
+
+  <p>One hour. Eight souls. A church that invited you in. Parents who trusted you. Sunday mornings, for as many weeks as the Lord gives you this season.</p>
+
+  <p>This is not nothing, friend. This is an <em>appointment from God</em>.</p>
+
+  <blockquote>
+    "You will never have just this place and this moment again. It is, therefore, a unique appointment from God. Ten thousand good deeds are not possible in this place and this moment. But several are. A word. A gesture. An act. God's providence is your appointment."
+    <cite>— John Piper, Foundations for Lifelong Learning</cite>
+  </blockquote>
+
+  <p>Opportunity is the third pillar. And please hear me: it is <em>not</em> the smallest one. Some of the most faithful teachers in the world have strong desire and strong ability, and they still waste the opportunity. Why? Because they do not see what a single hour can hold.</p>
+
+  <p>Piper called this the <em>immeasurable moment</em>. One sentence, spoken on one Sunday, lodging in a child's heart for the next forty years. That is what you are stewarding.</p>
+
+  <h3>Three Things to Believe About Your Opportunity</h3>
+
+  <div class="pillar">
+    <span class="pillar-label">It is providential, not random.</span>
+    <h3>God put you in that room on purpose.</h3>
+    <p>Out of all the rooms in Manila on Sunday morning, you are in <em>that</em> one. Out of all the teachers the church could have chosen, they chose <em>you</em>. Out of all the weeks those eight children will ever live, these are the weeks they are under <em>your</em> care. This is not chance, friend. This is providence.</p>
+  </div>
+
+  <div class="pillar">
+    <span class="pillar-label">It will not last forever.</span>
+    <h3>These children will be twelve, then teenagers, then gone.</h3>
+    <p>The window of childhood Bible teaching is short. A child who is ten today is thirteen in three summers. You are not stewarding an infinite opportunity. You are stewarding <em>this one</em>. So do not coast. Do not put off the hard topics. Teach as if the years are counting down. Because they are.</p>
+  </div>
+
+  <div class="pillar">
+    <span class="pillar-label">It is enough.</span>
+    <h3>An hour is not small if the Spirit fills it.</h3>
+    <p>Piper has a name for the lie you will hear in your own head. He calls it <em>quantitative hopelessness</em>. The lie that twenty hours of screens crushes one hour of truth. Do not believe it. Stand firm. A sentence from the Spirit is not measured in minutes. It is measured in what it does to a heart over forty years.</p>
+  </div>
+
+  <div class="callout action">
+    <span class="callout-label">Opportunity Practices (weekly)</span>
+    <p style="margin:0">• Say out loud, every Sunday morning: <em>"This is a unique appointment from God."</em><br>
+    • Greet each of the eight children by name at the door. Personally. Before the lesson starts.<br>
+    • Protect your preparation time from drift. An opportunity dismissed is an opportunity given to someone else to squander.<br>
+    • Keep a record. Even a sentence per Sunday. In twenty years, you will want to know what God did.</p>
+  </div>
+</section>
+
+<section id="assessment">
+  <div class="chapter-label">Chapter 6</div>
+  <h2>The RTM Self-Assessment</h2>
+
+  <p>Here is how to use the Royal Triangle to <em>focus your energy this week</em>. Run this check every Monday morning, as you begin preparing. Do not answer in general. Answer specifically. About <em>this</em> Sunday. About <em>these</em> eight children. This week.</p>
+
+  <div class="assessment">
+    <h3>Where is the triangle weak this week?</h3>
+
+    <div class="assessment-block">
+      <strong>Desire · Tick every one that is TRUE right now</strong>
+      <ul>
+        <li>I have been reading the passage this week as a worshiper, not just as a teacher.</li>
+        <li>I can name each of the eight children, and I am glad they will be there.</li>
+        <li>I have prayed Psalm 119:18 over my preparation at least twice.</li>
+        <li>I feel hunger in my own soul for the gospel of Titus 3:5, not just a duty to teach it.</li>
+        <li>I am not doing this for the approval of the church or of Lala. I am doing it for Jesus.</li>
+      </ul>
+    </div>
+
+    <div class="assessment-block">
+      <strong>Ability · Tick every one that is TRUE right now</strong>
+      <ul>
+        <li>I have read the passage at least twice this week, slowly.</li>
+        <li>I can state the one sentence I want the children to carry home.</li>
+        <li>I know how I will move them through all six habits — Observation, Understanding, Evaluation, Feeling, Application, Expression.</li>
+        <li>Every big theological word in my script is defined in kid-words.</li>
+        <li>I have at least three concrete examples drawn from a ten-to-twelve-year-old's real world.</li>
+        <li>I have anticipated the five hard questions a smart kid might ask.</li>
+      </ul>
+    </div>
+
+    <div class="assessment-block">
+      <strong>Opportunity · Tick every one that is TRUE right now</strong>
+      <ul>
+        <li>I believe this Sunday is a unique appointment from God, not a generic hour.</li>
+        <li>My materials are printed and ready by Saturday afternoon.</li>
+        <li>I have not let other good things crowd this preparation.</li>
+        <li>I plan to arrive early enough to greet each child by name.</li>
+        <li>I will log a reflection afterward so I can steward the next opportunity better.</li>
+      </ul>
+    </div>
+
+    <h3 style="margin-top:2rem">How to read the result</h3>
+    <p>Count the unticked boxes under each pillar. <strong>The pillar with the most gaps is where your energy goes this week.</strong> That is it. That is the assessment.</p>
+    <p style="margin:0"><strong>If Desire is weakest,</strong> stop planning. Stop. Go read. Go pray. Go worship. A well-prepared lesson delivered by a cold heart is worse than no lesson at all.<br>
+    <strong>If Ability is weakest,</strong> study. Go deeper into the text. Query the Piper NotebookLM. Talk to an elder. Do not fake it.<br>
+    <strong>If Opportunity is weakest,</strong> clear the calendar. Protect the time. Print the materials. Arrive early. The steward who hides the talent is the steward God rebukes.</p>
+  </div>
+</section>
+
+<section id="weekly-rhythm">
+  <div class="chapter-label">Chapter 7</div>
+  <h2>The Weekly Rhythm</h2>
+
+  <p>Here is the shape a week takes when you treat Sunday School seriously. Adjust it to your life. Move days around if you need to. Just don't let any of the three pillars get orphaned.</p>
+
+  <table class="rhythm">
+    <thead>
+      <tr><th>Day</th><th>Focus</th><th>What You Do</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Monday</td>
+        <td>Desire</td>
+        <td>Read the passage as a worshiper. No teacher-mind yet. Journal one sentence: <em>"What did God show me?"</em> Pray for the eight by name.</td>
+      </tr>
+      <tr>
+        <td>Tuesday</td>
+        <td>Ability · Study</td>
+        <td>Query the Piper NotebookLM on the passage. Read the piper-quotes-index for relevant themes. Close every unanswered question. Read Look At The Book if available.</td>
+      </tr>
+      <tr>
+        <td>Wednesday</td>
+        <td>Ability · Structure</td>
+        <td>Draft the six habits move-by-move. Just bones: what word, what question, what example. Identify the carry-out sentence.</td>
+      </tr>
+      <tr>
+        <td>Thursday</td>
+        <td>Ability · Script</td>
+        <td>Write the narrative kid-script in DG voice. Read aloud once. Adjust anything that sounds like prose to a grown-up.</td>
+      </tr>
+      <tr>
+        <td>Friday</td>
+        <td>Opportunity · Prep</td>
+        <td>Print student handouts, teacher outline, memory cards, parent take-home. Gather any object-lesson materials. Run the RTM self-assessment.</td>
+      </tr>
+      <tr>
+        <td>Saturday</td>
+        <td>Desire + Opportunity</td>
+        <td>Read the script aloud one more time in your own voice. Go to bed early. Do not start anything new.</td>
+      </tr>
+      <tr>
+        <td>Sunday</td>
+        <td>Delivery</td>
+        <td>Arrive early. Greet each child by name. Pray Psalm 119:18 before entering the room. Teach from the outline, not the script. Trust the Spirit.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <span class="callout-label">Minimum Viable Week</span>
+    <p style="margin:0">When a week gets crushed and the full rhythm is impossible, do this, and only this. <strong>(1)</strong> Read the passage twice yourself. <strong>(2)</strong> Write down the one sentence you want them to carry. <strong>(3)</strong> Decide on one concrete application example. You can survive a compressed week. You cannot survive showing up having done none of these three.</p>
+  </div>
+</section>
+
+<section id="lesson-day">
+  <div class="chapter-label">Chapter 8</div>
+  <h2>The Lesson Day</h2>
+
+  <p>The hour has a structure. But remember, the structure is there to serve the goal. Not the other way around. The goal is a sight of Christ. The structure is the river that carries them to Him.</p>
+
+  <div class="schedule">
+    <div class="schedule-item">
+      <div class="schedule-time">Before class · Arrive 20 min early</div>
+      <div class="schedule-body">Set the room. Put the handouts on each chair. Pray through the room — one prayer for each child's chair. Greet each child at the door by name.</div>
+    </div>
+    <div class="schedule-item">
+      <div class="schedule-time">Minutes 0 to 5 · Hook</div>
+      <div class="schedule-body">Open with one question that names a common ten-to-twelve experience. No announcements. No throat-clearing.</div>
+    </div>
+    <div class="schedule-item">
+      <div class="schedule-time">Minutes 5 to 7 · Prayer</div>
+      <div class="schedule-body">Psalm 119:18. Let one child echo a phrase at a time. Short. Not performative.</div>
+    </div>
+    <div class="schedule-item">
+      <div class="schedule-time">Minutes 7 to 14 · LOOK (Observation)</div>
+      <div class="schedule-body">Read the passage aloud with cast members. Have them circle three words each. Agassiz and the Fish: <em>Look, look, look.</em></div>
+    </div>
+    <div class="schedule-item">
+      <div class="schedule-time">Minutes 14 to 22 · UNDERSTAND (Understanding)</div>
+      <div class="schedule-body">Unpack word by word. Define on the spot. Show logical connections — <em>for, so that, therefore, but.</em></div>
+    </div>
+    <div class="schedule-item">
+      <div class="schedule-time">Minutes 22 to 28 · IS IT TRUE? (Evaluation)</div>
+      <div class="schedule-body">Test against reality. Welcome honest objections. Answer the hard questions.</div>
+    </div>
+    <div class="schedule-item">
+      <div class="schedule-time">Minutes 28 to 34 · HOW WE FEEL (Feeling)</div>
+      <div class="schedule-body">Name the right affection. Model it on your own face. Do not manufacture — actually feel it.</div>
+    </div>
+    <div class="schedule-item">
+      <div class="schedule-time">Minutes 34 to 44 · WHAT WE DO (Application)</div>
+      <div class="schedule-body">Pair the children. Each pair lands on one concrete example this week. Share. Affirm.</div>
+    </div>
+    <div class="schedule-item">
+      <div class="schedule-time">Minutes 44 to 52 · HOW WE TELL IT (Expression)</div>
+      <div class="schedule-body">The memory verse on a card, in their own handwriting. Say it three times — loud, medium, whisper.</div>
+    </div>
+    <div class="schedule-item">
+      <div class="schedule-time">Minutes 52 to 60 · Closing prayer + parent take-home</div>
+      <div class="schedule-body">ACTS prayer. Hand each child the parent half-sheet. Name something specific you saw in them today.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="callout-label">The 90-Second Rule</span>
+    <p style="margin:0">Children ten to twelve check out of pure monologue at about ninety seconds. So do not talk longer than that without a pause. A question. A word to circle. A role to play. A piece of paper in their hand. The script already has pauses built in. <em>Honor them.</em></p>
+  </div>
+</section>
+
+<section id="feedback-loop">
+  <div class="chapter-label">Chapter 9</div>
+  <h2>The Feedback Loop</h2>
+
+  <p>Listen to this one carefully. You will not get better at teaching simply by teaching more Sundays. You will get better by <em>reflecting</em> on the Sundays you already taught.</p>
+
+  <p>Keep a short log. Nothing elaborate. Five questions. Written down within three hours of the lesson ending, while your memory is still warm.</p>
+
+  <div class="assessment">
+    <h3>The Five Reflection Questions</h3>
+    <ul style="list-style:none;padding:0;margin:0;font-size:1rem">
+      <li style="margin-bottom:1rem;padding:0;"><strong>1.</strong> Did the children repeat the carry-out sentence back to me by the end of the hour?</li>
+      <li style="margin-bottom:1rem;padding:0;"><strong>2.</strong> Which move carried them? Where did their eyes light up, or their pencils go faster?</li>
+      <li style="margin-bottom:1rem;padding:0;"><strong>3.</strong> Which move lost them? When did the energy drop?</li>
+      <li style="margin-bottom:1rem;padding:0;"><strong>4.</strong> Was there a Spirit-surprise — a question, a comment, a moment — I did not plan?</li>
+      <li style="padding:0;"><strong>5.</strong> One thing to <em>keep</em> next week. One thing to <em>drop</em>.</li>
+    </ul>
+  </div>
+
+  <p>Store these reflections in <code>personal-skills/ibc-sunday-school/lessons/post-lesson-reflections.md</code>. After ten lessons, you will have something precious. A private treasury of what actually works with <em>these</em> eight children. That is worth more than any curriculum you could buy.</p>
+</section>
+
+<section id="warnings">
+  <div class="chapter-label">Chapter 10</div>
+  <h2>Eight Warnings</h2>
+
+  <p>These are the eight failure modes. Every one of them is a real temptation. Not hypothetical. Real. Re-read these every few months. Especially when the Sundays start feeling routine.</p>
+
+  <div class="callout warning">
+    <span class="callout-label">Warning 1 · Pascal's Wager Sunday School</span>
+    <p style="margin:0">Never say <em>"accept Jesus just in case Christianity is true."</em> Saving faith is seeing Christ as beautiful, not hedging a bet. Piper called this the <em>wrong strategy</em>, and one young man rejected fifteen years of preaching partly because of it.</p>
+  </div>
+
+  <div class="callout warning">
+    <span class="callout-label">Warning 2 · Moralism dressed as discipleship</span>
+    <p style="margin:0">"Be good kids" is not the gospel. If your lesson's main point could be taught by a polite atheist, you have missed it. Route every command through the cross.</p>
+  </div>
+
+  <div class="callout warning">
+    <span class="callout-label">Warning 3 · "You know better" guilt-heaping</span>
+    <p style="margin:0">When a child misbehaves, redirect with grace. Shame does not sanctify. Name the sin. Name the Savior. Move on.</p>
+  </div>
+
+  <div class="callout warning">
+    <span class="callout-label">Warning 4 · Quantitative hopelessness</span>
+    <p style="margin:0">Do not compare your hour to their twenty hours of screens and conclude it is hopeless. One sentence from the Spirit is enough. Do not give up because the math looks bad.</p>
+  </div>
+
+  <div class="callout warning">
+    <span class="callout-label">Warning 5 · Dumbing down the theology</span>
+    <p style="margin:0">Use the real words — <em>regeneration, justified, heir, mercy, propitiation.</em> Then define them. Children can hold big words. Do not rob them of the Bible's own vocabulary.</p>
+  </div>
+
+  <div class="callout warning">
+    <span class="callout-label">Warning 6 · Craft as main event</span>
+    <p style="margin:0">The inheritance certificate, the washing basin, the drawing activity — these serve the text. They are never the point. If the children leave remembering only the craft and not the gospel, the hour was wasted.</p>
+  </div>
+
+  <div class="callout warning">
+    <span class="callout-label">Warning 7 · Teaching verses 1–2 without verses 3–7</span>
+    <p style="margin:0">This is Piper's forest warning. Never teach commands without the gospel that grounds them. Titus 3:1–2 without 3:3–7 is "good counsel but no God."</p>
+  </div>
+
+  <div class="callout warning">
+    <span class="callout-label">Warning 8 · Importing what you do not possess</span>
+    <p style="margin:0">If you have not seen Christ as beautiful this week, do not try to show the children a beauty you have not seen. Stop and ask God to show you first. Desire is non-negotiable. The other pillars cannot substitute for it.</p>
+  </div>
+</section>
+
+<section id="charge">
+  <div class="chapter-label">Chapter 11</div>
+  <h2>The Charge</h2>
+
+  <p>Lala.</p>
+
+  <p>You are not a professional. You are a woman who loves Christ. And you are being asked to hand over what is most precious to you, one hour a week, to eight children who may not yet know how precious it is.</p>
+
+  <p>That is a holy transaction. Do not take it lightly. And do not take it on yourself.</p>
+
+  <p>Your triangle is not flat, friend. Look at it.</p>
+
+  <p>Desire is strong. You would not be reading this if it weren't. Ability is growing. You have Piper's books on your shelf. His NotebookLM at your fingertips. A skill suite in your repository. And the whole counsel of Scripture sitting in the Bible right beside you. Opportunity has been <em>given</em> to you. The church said yes. The parents said yes. The Lord said yes.</p>
+
+  <p>So the only question left, friend, is this. Will you steward the triangle?</p>
+
+  <p>On Sunday, when you walk into that room, you will be tempted to feel small. The temptation is a lie. You are <em>not</em> small. You are a steward of an immeasurable moment. Sent by the Father of the eternal Son. Filled with the Spirit who was poured out richly through Jesus Christ our Savior. Carrying a sentence that could bend a child's life toward glory for the next forty years.</p>
+
+  <p>So do this. Pray Psalm 119:18. Greet each child by name. Read the text slowly. Point at Christ. Trust the Spirit. Write your reflection afterward. Then come back next Sunday and do it again.</p>
+
+  <blockquote>
+    "You have one life. That's all. You were made for God. Don't waste it."
+    <cite>&mdash; John Piper, Don't Waste Your Life</cite>
+  </blockquote>
+
+  <p>Go teach.</p>
+
+  <div class="scripture">
+    <span class="scripture-ref">Titus 3:5</span>
+    <p>He saved us, not because of works done by us in righteousness, but according to his own mercy, by the washing of regeneration and renewal of the Holy Spirit.</p>
+  </div>
+</section>
+
+</main>
+</div>
+</section>
+<!-- end Guides page -->
+
+<section class="page" data-page="lessons" id="page-lessons">
+
+<div class="page-intro">
+  <span class="eyebrow">Sunday Lessons</span>
+  <h1>Lessons</h1>
+  <p class="lead">Each lesson pairs the read-aloud script with an ongoing feedback log. After every Sunday, add a dated entry to the log &mdash; what landed, what didn't, what the children asked, what to adjust next time.</p>
+</div>
+
+<div class="layout">
+
+<nav class="sidebar sidebar-lessons" aria-label="Lessons">
+  <h2>Lessons</h2>
+  <p class="sidebar-lead">Click a lesson to expand its teaching guide.</p>
+
+  <details class="lesson-item" open>
+    <summary>
+      <span class="lesson-num">Lesson 01</span>
+      <span class="lesson-title">Titus 3:1&ndash;8</span>
+      <span class="lesson-meta">6 moves &middot; ~55 min</span>
+    </summary>
+    <ol class="lesson-toc">
+      <li><a href="#titus-3-script"><span class="toc-label">Lesson Top</span><span class="toc-meta">Overview &amp; note on order</span></a></li>
+      <li><a href="#before-we-start"><span class="toc-label">Before We Start</span><span class="toc-meta">&asymp; 3 min &middot; hook</span></a></li>
+      <li><a href="#look-move-1"><span class="toc-label">Move 1 &middot; LOOK</span><span class="toc-meta">&asymp; 8 min &middot; Paul, Titus, Crete, read</span></a></li>
+      <li>
+        <a href="#understand-move-2"><span class="toc-label">Move 2 &middot; UNDERSTAND</span><span class="toc-meta">&asymp; 20 min &middot; biggest slice</span></a>
+        <ol class="lesson-toc-sub">
+          <li><a href="#mirror-part-a">Part A &middot; The Mirror (v.3)</a></li>
+          <li><a href="#miracle-part-b">Part B &middot; The Miracle (v.4&ndash;7)</a></li>
+          <li><a href="#fruit-part-c">Part C &middot; The Fruit (v.1&ndash;2)</a></li>
+          <li><a href="#summary-part-d">Part D &middot; The Summary (v.8)</a></li>
+        </ol>
+      </li>
+      <li><a href="#is-it-true-move-3"><span class="toc-label">Move 3 &middot; IS IT TRUE?</span><span class="toc-meta">&asymp; 5 min &middot; trust</span></a></li>
+      <li><a href="#how-we-feel-move-4"><span class="toc-label">Move 4 &middot; HOW WE FEEL</span><span class="toc-meta">&asymp; 4 min &middot; gratitude + future grace</span></a></li>
+      <li><a href="#what-we-do-move-5"><span class="toc-label">Move 5 &middot; WHAT WE DO</span><span class="toc-meta">&asymp; 10 min &middot; this week</span></a></li>
+      <li><a href="#how-we-tell-it-move-6"><span class="toc-label">Move 6 &middot; HOW WE TELL IT</span><span class="toc-meta">&asymp; 4 min &middot; carry sentence</span></a></li>
+      <li><a href="#closing-prayer"><span class="toc-label">Closing Prayer</span><span class="toc-meta">&asymp; 3 min</span></a></li>
+      <li class="toc-divider"><a href="#lesson-1-feedback"><span class="toc-label">Feedback Records</span><span class="toc-meta">log after each Sunday</span></a></li>
+    </ol>
+  </details>
+
+  <!-- Future lessons: duplicate the <details class="lesson-item"> block above.
+       Use open attribute only on the lesson you want expanded by default.
+       Increment lesson-num. Update sub-anchors to new section IDs. -->
+
+</nav>
+
+<main>
+
+<section id="titus-3-script">
+  <div class="chapter-label">Lesson 1 &middot; Worked Example</div>
+  <h2>The Read-Aloud Script: Titus 3:1&ndash;8</h2>
+
+  <p style="font-size:1.05rem;color:var(--ink-soft);font-style:italic;margin-top:-0.4rem;">"God's Mercy Changed Us, So We Live Differently with Outsiders"</p>
+
+  <p>Read-aloud script for Lala. Internalize, then set down. Deliver in your own voice. Pause where marked.</p>
+
+  <div class="callout">
+    <span class="callout-label">A Word on Order</span>
+    <p style="margin:0">The teaching order matters. We <strong>READ</strong> the text in biblical order (v.1 &rarr; v.8). We <strong>UNPACK</strong> it in logical order: first the gospel (v.3&ndash;7) that changed us, then the behavior (v.1&ndash;2) that flows from it, then the summary (v.8). <em>Paul's logic, not his sentence order, carries the lesson.</em></p>
+  </div>
+
+  <h3 id="before-we-start">Before We Start <span class="move-duration">&asymp; 3 min</span></h3>
+
+  <p>Children, let me ask you a quick question.</p>
+  <p>Who often tells you what to do?</p>
+  <p>Think about it for a second. On a normal day, from when you wake up to when you go to bed, how many people tell you what to do? Your mom and dad tell you to brush your teeth. Your teacher tells you when to sit down. The guard at the mall tells you where to line up. Sometimes even your younger sibling tells you what to do, isn't it?</p>
+  <p>Now here's a harder question. Do you LIKE being told what to do? Are you feeling happy to do what they say you must do?</p>
+  <p>I don't think any of us really do. Something inside us rises up and says, "You can't tell me what to do. You're not my boss."</p>
+  <p>Here is what we are going to find out today. Paul wrote a letter that tells people who love Jesus that we should be GENTLE and COURTEOUS and READY TO HELP, even toward people who aren't nice, even toward people who don't love Jesus. That sounds hard. Maybe impossible. So he tells us WHY. He tells us what God did to us on the inside that makes it possible. It's the most beautiful thing in the Bible. Let's find it.</p>
+
+  <div class="cue">[PAUSE. Small show of hands: "Ready to meet some new friends from the Bible?"]</div>
+
+  <h3 id="look-move-1">LOOK &middot; Who Is In This Letter, and What Does It Say? <span class="move-duration">Move 1 &middot; &asymp; 8 min</span></h3>
+
+  <p>Before we read, let me tell you about the people.</p>
+
+  <p><strong>Meet Paul.</strong> Paul is the man who wrote this letter. Here is something wild about Paul. Before he knew Jesus, Paul actually HATED Christians. He put them in jail. He agreed when they got killed. He thought he was doing God a favor. Then one day he was walking on a road to a city called Damascus, and the risen Jesus appeared to him in a bright light and said, "Paul, why are you hurting my people?" In that moment, Paul's whole life changed. He went from hunting Christians to becoming the bravest missionary in the Bible. He traveled across the Roman Empire, starting churches and writing long letters to help people follow Christ. Many of those letters are in our New Testament. Titus is one of them.</p>
+
+  <p><strong>Meet Titus.</strong> Titus was a young Greek pastor Paul had trained. Paul called him "my true child in a common faith" &mdash; like Paul was Titus's spiritual dad. Titus was probably a new believer Paul had discipled from the start. Paul trusted him with hard jobs.</p>
+
+  <p><strong>Meet Crete.</strong> Crete is an island. You can google it on a map later. It is in the Mediterranean Sea, south of Greece. The people who lived in Crete had a pretty bad reputation. Paul even quotes one of their own writers in chapter 1, who wrote, "Cretans are always liars, evil beasts, lazy gluttons." Rough place. Into that rough place, Paul planted a church. Then he left Titus in charge. This letter is Paul helping Titus figure out how those new Christians should LIVE in that rough place, around rough people.</p>
+
+  <p>Okay. Open your Bibles to Titus chapter 3. We are going to read verses 1 through 8. I will read, you follow along with your finger. Listen for four things:</p>
+
+  <ol>
+    <li>What Paul tells people who love Jesus to DO toward outsiders (v.1&ndash;2).</li>
+    <li>What Paul says we USED to be like (v.3).</li>
+    <li>What GOD did to change us (v.4&ndash;7).</li>
+    <li>What Paul wants Titus to keep reminding people about (v.8).</li>
+  </ol>
+
+  <div class="cue">[Read Titus 3:1&ndash;8 straight through, aloud and slowly.]</div>
+
+  <div class="scripture">
+    <span class="scripture-ref">Titus 3:1&ndash;8 (ESV)</span>
+    <p>"Remind them to be submissive to rulers and authorities, to be obedient, to be ready for every good work, to speak evil of no one, to avoid quarreling, to be gentle, and to show perfect courtesy toward all people. For we ourselves were once foolish, disobedient, led astray, slaves to various passions and pleasures, passing our days in malice and envy, hated by others and hating one another. But when the goodness and loving kindness of God our Savior appeared, he saved us, not because of works done by us in righteousness, but according to his own mercy, by the washing of regeneration and renewal of the Holy Spirit, whom he poured out on us richly through Jesus Christ our Savior, so that being justified by his grace we might become heirs according to the hope of eternal life. The saying is trustworthy, and I want you to insist on these things, so that those who have believed in God may be careful to devote themselves to good works. These things are excellent and profitable for people."</p>
+  </div>
+
+  <div class="cue">[PAUSE. "One quick question before we go deeper. Did you notice the word FOR at the start of verse 3? That little word is doing a huge job. It's the hinge between what Christians DO and WHY we can do it. Keep that in mind."]</div>
+
+  <h3 id="understand-move-2">UNDERSTAND &middot; Walking Through the Logic <span class="move-duration">Move 2 &middot; &asymp; 20 min &middot; Biggest Slice</span></h3>
+
+  <p>Paul wrote these verses in a certain ORDER, but I want to teach them in a different order &mdash; the logical order. Because the gospel in verses 3 to 7 is the FOUNDATION, and the behavior in verses 1 to 2 is the FRUIT, and verse 8 is the SUMMARY. Foundation first.</p>
+
+  <h4 id="mirror-part-a">Part A &middot; THE MIRROR (verse 3, who we WERE) <span class="part-duration">&asymp; 5 min</span></h4>
+
+  <p>Paul says: "For we ourselves were ONCE foolish, disobedient, led astray, slaves to various passions and pleasures, passing our days in malice and envy, hated by others and hating one another."</p>
+
+  <p>Notice something important. Paul does not say "YOU were all these things." He says "WE were." He puts himself in the mirror first. Every human being, apart from Jesus, is like this on the inside.</p>
+
+  <p>Let me define the hard words.</p>
+  <ul>
+    <li><strong>Foolish</strong> means not wise. Believing silly things. Chasing things that don't last.</li>
+    <li><strong>Led astray</strong> means following the wrong crowd, walking away from what is true.</li>
+    <li><strong>Slaves to passions</strong> means your feelings were your boss. Whatever you felt like doing, you did.</li>
+    <li><strong>Malice</strong> means wanting BAD things to happen to someone else.</li>
+    <li><strong>Envy</strong> means being angry that someone else has what you want.</li>
+  </ul>
+
+  <div class="cue">[PAUSE. Look around the room. Soft voice.] "I want you to be honest for a moment. Have you felt ANY of these this week? Envy when your friend got a new phone? Malice when your sister messed up your things? Led astray when the group at school convinced you to do something you knew was wrong? Just notice it. Don't say it out loud. But notice that Paul is not making this up. This is us."</div>
+
+  <p>That is the mirror. Now we turn the page.</p>
+
+  <h4 id="miracle-part-b">Part B &middot; THE MIRACLE (verses 4&ndash;7, what GOD DID) <span class="part-duration">&asymp; 12 min</span></h4>
+
+  <p>Verse 4 begins with the most beautiful word in the Bible. BUT.</p>
+
+  <p>"BUT when the goodness and loving kindness of God our Savior appeared, he saved us..."</p>
+
+  <p>Everything changes on that word BUT. Let's unpack it.</p>
+
+  <p>"Goodness" means God does what is right. "Loving kindness" means God is warm and sincere toward us even when we don't deserve it. It's one thing to be a good judge. It's another to be a good judge who is ALSO kind. God is both. And that goodness and loving kindness APPEARED &mdash; meaning it came out of hiding. When did it appear? When Jesus came. A Savior is someone who rescues people who can't save themselves. Jesus stepped into the world as our Savior.</p>
+
+  <p>Now verse 5 is the key verse of the whole lesson. Listen very carefully.</p>
+
+  <p>"He saved us, NOT because of works done by us in righteousness..."</p>
+
+  <p>Stop. That word NOT is huge. Paul is nailing something down. God did NOT save us because we earned it. NOT because we were nicer than other people. NOT because we said good prayers or went to church enough or helped old ladies cross the street. NOT. If Paul thought we earned our salvation, he would have said so. But he goes the other way &mdash; hard.</p>
+
+  <p>"...but according to his own MERCY, by the washing of REGENERATION and renewal of the Holy Spirit."</p>
+
+  <p>Three big words here. Let me define them.</p>
+
+  <p><strong>Mercy</strong> means not getting the punishment we deserved. Imagine your mom told you not to play with her vase, but you did not follow her, you played with it while she was not looking, then, you broke your mom's favorite vase, and you expected her to be angry, but instead she said, "I forgive you. Let's have ice cream." That is a tiny picture of mercy. God had every right to punish us for being foolish and disobedient. Instead, he saved us. That is mercy.</p>
+
+  <p><strong>Regeneration</strong> is a giant word that means being BORN AGAIN &mdash; God making you ALIVE when you used to be DEAD.</p>
+
+  <p>Do you remember Lazarus? Lazarus was one of Jesus's friends. He got sick, and he died. His family wrapped his body and put him in a tomb. By the time Jesus arrived at the village, Lazarus had been dead for four days. Four days. So dead that his sister Martha said to Jesus, "Lord, by now there will be a smell." Then Jesus walked up to the tomb and shouted, "Lazarus, come out!" And the dead man &mdash; still wrapped in his grave clothes &mdash; walked out of the tomb. Alive. With Jesus's voice ringing in his ears.</p>
+
+  <p>That is a picture of what God does inside a person when he saves them.</p>
+
+  <p>Now you might be thinking, "Wait. But I'm not dead. I'm alive. I'm sitting right here." Good question. Listen carefully: the Bible says there are TWO kinds of dead. There is dead like Lazarus &mdash; your body stops and you are in a tomb. And there is ANOTHER kind of dead we cannot see with our eyes. Ephesians chapter 2 says that before God saved us, we were "dead in our trespasses and sins." That means on the INSIDE &mdash; in our hearts, in our souls &mdash; we were spiritually dead. Walking around. Breathing. Laughing. Eating snacks. But DEAD toward God. Disconnected from him. Unable to love him or come to him on our own.</p>
+
+  <p>That is what Paul is describing in verse 3. Foolish. Disobedient. Slaves to our feelings. That is what a spiritually dead heart looks like from the outside.</p>
+
+  <p>So how does a spiritually dead person become alive? How does regeneration actually happen?</p>
+
+  <p>Here is the good news &mdash; the gospel &mdash; in one breath:</p>
+
+  <blockquote>God is perfect and holy. We sinned against him and broke his law. But God loved us so much that he sent his only Son, Jesus. Jesus lived a perfect life &mdash; the life we could never live. Then he died on the cross in our place, taking the punishment we deserved. On the third day, he rose from the dead. He is alive right now, sitting at the right hand of God the Father.</blockquote>
+
+  <p>That is what we BELIEVE. And when a person truly believes this &mdash; when you turn away from your sin and trust Jesus as your Savior &mdash; God does a miracle inside you. He forgives all your sins. He gives you a brand new heart. He calls your dead spirit to life, just like Jesus called Lazarus out of the tomb. You are born again. You have a regenerated heart.</p>
+
+  <p>And here is something important. When the Bible uses the word "Christian," THIS is what it means. Not just somebody who goes to church on Sundays. Not just somebody whose parents love Jesus. A Christian is a person who has been born again &mdash; someone whose dead heart God has made alive through Jesus.</p>
+
+  <p>Jesus once told a man named Nicodemus, late at night, "You must be born again." Nicodemus was a religious teacher who came to Jesus in secret because he wanted to know the truth. Jesus did not tell him, "Try harder. Clean up a little." Jesus told him, "You need totally new life, and only I can give it." That is regeneration. That is what verse 5 is talking about.</p>
+
+  <p>And here is the beautiful next thing. The moment God gives a person this new life, he also sends Someone to live INSIDE that person. Read with me into verse 6: "...whom he poured out on us richly through Jesus Christ our Savior..."</p>
+
+  <p>Who is the "whom"? The <strong>Holy Spirit</strong>. Who is the Holy Spirit? The Holy Spirit is God himself &mdash; yes, there is one God who exists as Father, Son, and Holy Spirit. When a person is born again, the Holy Spirit comes to live inside that person, like a helper who never leaves. God doesn't save you and then wave goodbye from a distance. He moves IN.</p>
+
+  <p>Notice HOW the Spirit comes to us. Verse 6 says God poured him out RICHLY through Jesus Christ our Savior. Not a drop. Not a measured teaspoon. A FLOOD. God is generous with his Spirit. If you belong to Jesus, you are not alone. You have God himself living inside you, helping you live this new life.</p>
+
+  <p>And verse 7 finishes the thought: "so that being JUSTIFIED by his GRACE we might become HEIRS according to the hope of eternal life."</p>
+
+  <p>Three more words.</p>
+  <ul>
+    <li><strong>Justified</strong> means God the Judge bangs his gavel in the courtroom of heaven and says, "Not guilty. Case dismissed." Why? Because Jesus already paid for the crime. People who are born again do not stand before God hoping for a tie. We stand justified.</li>
+    <li><strong>Grace</strong> means a gift you did not earn and cannot repay.</li>
+    <li><strong>Heir</strong> &mdash; an heir is someone who inherits. If a rich uncle dies and leaves his house to you, you are the heir. You didn't earn the house. You got it because you belong to the family. Paul says people who are born again are HEIRS OF GOD. We inherit eternal life. We inherit a place in the new creation. We inherit God himself.</li>
+  </ul>
+
+  <div class="cue">[PAUSE. Slow breath. Look at them.] "Just sit with that for a second. We were foolish. We were envious. We did not deserve anything. BUT the goodness and loving kindness of God appeared. He saved us by mercy. He made us new. He poured out his Spirit. And he made us heirs. That is the gospel. That is the middle of this lesson."</div>
+
+  <div class="testimony">
+    <span class="testimony-label">Lala's Testimony &middot; &asymp; 3 min</span>
+    <p>Children, let me tell you something that happened to me. Because what we just learned &mdash; being called out of spiritual death into life &mdash; is not just a story in the Bible. It happened to me.</p>
+    <p>When I was younger, I was very sick. I had a disease in my blood. And because of that disease, my eyes and my skin turned YELLOW. Not a pretty yellow &mdash; a sick yellow. For TWENTY years, I looked like that.</p>
+    <p>Kids at school were not always kind. They called me names. "Dilaw." "Yellow." "Nana." Some of them even called me "Lala" &mdash; after the yellow Teletubby. You remember Lala, right? The yellow one? That was me.</p>
+    <p>I grew up thinking I was ugly. I thought nobody would ever love me. I thought I was worthless. And worst of all &mdash; I thought God had made a MISTAKE with my life. I would look up and say, "Lord, you got it wrong. Why would you make me like this?"</p>
+    <p>On the outside, I was alive. I went to school. I studied hard. I got good grades. But remember the two kinds of dead we just talked about? On the INSIDE &mdash; in my heart, in my soul &mdash; I was DEAD. Dead toward God. I did not love him. I did not trust him. I thought he was my enemy.</p>
+    <p>Then God did something I did not expect. He sent people into my life &mdash; a kind young man and his family &mdash; who told me the gospel. The same gospel we just read together. They told me God is holy, and we sinned, BUT Jesus lived a perfect life and died on the cross in my place, and he rose from the dead. They told me God did NOT make a mistake with my life. They told me God had been writing a love story in my life the whole time &mdash; I just couldn't see it yet.</p>
+    <p>And then, children, just like Jesus called Lazarus out of the tomb &mdash; God called my name. Not out loud. Not in a voice from the sky. But inside. My dead heart heard him. And my dead heart woke up. I believed. I turned away from my sin. I trusted Jesus as my Savior.</p>
+    <p>And God did exactly what Titus 3:5 says. He washed me. He made me NEW. He poured out his Holy Spirit in my heart. He made me an HEIR.</p>
+    <p>Now let me tell you something else. I am STILL sick. My body still hurts. Sometimes I cannot stand for days because of pain in my back. Sometimes I have bleeding in my brain. The pain has not gone away.</p>
+    <p>But I am not afraid anymore. I am not ashamed of who I am. I do not think God made a mistake. Because when I look at my life now, I see this: God was holding on to me the whole time, even when I didn't know it. <em>[Lock your forearms together and show them.]</em> Like arms locked together. Even when I was about to fall, God was holding on. He was saying, "I will not let go."</p>
+    <p>That is what being born again looks like from the inside. One moment I was dead &mdash; walking around, but dead. The next moment, Jesus called my name, and I came out of the tomb. Alive. With his voice ringing in my ears.</p>
+    <p>I am standing here today because God is good. And he is writing a story in YOUR life too. Some of you already know him &mdash; you have already heard his voice, and your heart is alive. Some of you might still be in the tomb, waiting for him to call your name.</p>
+    <p><strong>Listen for it, children. He is calling. Don't miss it.</strong></p>
+  </div>
+
+  <h4 id="fruit-part-c">Part C &middot; THE FRUIT (verses 1&ndash;2, how we live toward OUTSIDERS) <span class="part-duration">&asymp; 3 min</span></h4>
+
+  <p>Now go back up to verses 1 and 2. NOW it makes sense.</p>
+
+  <p>Paul says: "Remind them to be submissive to rulers and authorities, to be obedient, to be ready for every good work, to speak evil of no one, to avoid quarreling, to be gentle, and to show perfect courtesy toward all people."</p>
+
+  <p>Notice who these commands are about. Rulers. Authorities. "No one." "All people." These are not commands about how to treat other people who love Jesus. These are commands about how people who are born again should treat OUTSIDERS &mdash; people who do not yet know Jesus. The Roman government in Paul's day was run by people who did not worship Jesus. Paul's readers lived next to pagan neighbors, unbelieving teachers, rough Cretan locals. Paul is saying: your behavior toward those people matters.</p>
+
+  <p>Let me define the words quickly.</p>
+  <ul>
+    <li><strong>Submissive</strong> means putting yourself UNDER someone's authority, even if they don't believe in Jesus.</li>
+    <li><strong>Obedient</strong> means actually doing what they ask.</li>
+    <li><strong>Ready for every good work</strong> means eager, on tiptoes, looking for ways to help &mdash; even if the person needing help doesn't believe in Jesus.</li>
+    <li><strong>Speak evil of no one</strong> means don't trash-talk people behind their back &mdash; even people who don't believe in Jesus, even people who are mean to you.</li>
+    <li><strong>Avoid quarreling</strong> means don't pick fights with words.</li>
+    <li><strong>Gentle</strong> means soft, not rough. <strong>Courtesy</strong> means polite, respectful.</li>
+  </ul>
+
+  <p>Here is the beautiful thing. We can do these things toward outsiders BECAUSE God did what he did in verses 3 to 7. We were once exactly like them &mdash; foolish, envious, hating and hated. But God had mercy on us. So when we meet an unkind guard, or a mean classmate, or a grumpy neighbor, we don't say "you deserve what's coming." We say, "I was once you. And God was good to me. So I will be good to you."</p>
+
+  <p>In Titus chapter 2 Paul uses a beautiful word for this &mdash; he says that when people who have been born again live well in front of outsiders, our behavior "adorns the doctrine of God." Adorn means to make something look beautiful, like a crown on a queen's head. Your kindness to outsiders makes the gospel look beautiful to them. Your grumpiness makes it look small.</p>
+
+  <h4 id="summary-part-d">Part D &middot; THE SUMMARY (verse 8) <span class="part-duration">&asymp; 1 min</span></h4>
+
+  <p>Verse 8 ties it all together. "The saying is trustworthy, and I want you to insist on these things, so that those who have believed in God may be careful to devote themselves to good works."</p>
+
+  <p>Paul says: this is TRUSTWORTHY. Insist on it. Keep hammering it. Why? So that people who have BELIEVED &mdash; believed what? Believed verses 4 to 7, the gospel &mdash; may be careful to DEVOTE themselves to good works.</p>
+
+  <p>The order is sacred. Believe first. Then devote yourself to good works. Never the other way around. If you do it backward, you get moralism &mdash; "be a good kid so God will love you." That is not how God saves people. The truth is: God loved you first, by mercy. He made your dead heart alive. And now your whole life is a thank-you note back to him.</p>
+
+  <div class="cue">[PAUSE. "Any questions about what we just walked through? Anything that didn't make sense?"]</div>
+
+  <h3 id="is-it-true-move-3">IS IT TRUE? &middot; Can We Trust This? <span class="move-duration">Move 3 &middot; &asymp; 5 min</span></h3>
+
+  <p>Let's be honest for a minute.</p>
+
+  <p>Paul makes two big claims in these verses. Let's test them.</p>
+
+  <p><strong>Claim 1:</strong> We were all once foolish and envious before God saved us. Is that true? Have you felt ANY of those things in yourself this week? [Give 10 seconds of quiet.] Yeah. Paul's not exaggerating. He is telling the truth about the human heart.</p>
+
+  <p><strong>Claim 2:</strong> God saves people by MERCY, not by works. Is that true? Here is the test. If salvation were earned by being good, then the BEST kid would have the BEST salvation. But Scripture says we all fall short, and that Jesus paid for ALL of it on the cross. That is why the gospel is good news. Good news is only good news if there was something we needed saving from. There was. There is. And he did.</p>
+
+  <p>One more question. Is it actually possible to treat outsiders the way Paul says? Be gentle to rude people? Show courtesy to a guard who shouted at you? Help someone who doesn't believe in Jesus? On our own, no. But the Spirit was poured out on us richly (verse 6). That means we are not trying to obey on our own steam. God gave us power to live this way.</p>
+
+  <p>This passage is true. It matches what we see in our own hearts. It matches the gospel Jesus preached. And it points us to a life we could never live on our own.</p>
+
+  <h3 id="how-we-feel-move-4">HOW WE FEEL &middot; Looking Back and Looking Forward <span class="move-duration">Move 4 &middot; &asymp; 4 min</span></h3>
+
+  <p>Close your eyes for ten seconds and listen to verse 5 one more time.</p>
+
+  <blockquote>"He saved us, not because of works done by us in righteousness, but according to his own mercy, by the washing of regeneration and renewal of the Holy Spirit."</blockquote>
+
+  <p>How does that make you feel?</p>
+  <ul>
+    <li><strong>Relieved?</strong> Maybe. Because you don't have to perform your way to heaven.</li>
+    <li><strong>Grateful?</strong> Maybe. Because God did what you could not do.</li>
+    <li><strong>Loved?</strong> I hope so. Because a God of mercy is a God who loves sinners like us.</li>
+  </ul>
+
+  <p>Now here is something many grown-up Christians miss, and I don't want you to miss it. Gratitude is good. Thanking God for what he has already done is right. But gratitude ALONE is not enough to power the Christian life. If the only reason you obey God is to pay him back for saving you, you will burn out. You cannot pay God back. He saved you by mercy, remember? Not by works.</p>
+
+  <p>So let me ask you: what makes a person ABLE to actually do what verses 1 and 2 say this week? Be gentle with a rude classmate? Help a grumpy guard? Speak well of the kid nobody sits with?</p>
+
+  <p>The answer is not only looking BACK with thanks for what God did. It is also looking FORWARD with TRUST in what God has PROMISED to do.</p>
+
+  <p>Listen carefully. The same God who saved you yesterday is the same God who has made promises about tomorrow. Look at verse 7 again. Paul ends the gospel with this beautiful word: "heirs according to the HOPE of eternal life." Hope. In the Bible, hope is not a wish. It is not crossing your fingers. Hope is a PROMISE FROM GOD that you can count on.</p>
+
+  <p>There is a verse in the book of Lamentations that says, "The steadfast love of the Lord never ceases; his mercies are NEW every morning." New every morning. That means when you wake up on Monday &mdash; with a school day ahead and a classmate who hurts your feelings and a rude person who annoys you &mdash; God has FRESH GRACE already waiting for you. Fresh strength. Fresh patience. Fresh courage to do the hard thing. You must believe God will help you do His commandments because God keeps his promises.</p>
+
+  <p>So here is the secret of the life God gives to people with regenerated hearts:</p>
+  <ul>
+    <li>We look <strong>BACKWARD</strong> and remember what God did &mdash; mercy, regeneration, the Spirit poured out. That is <em>gratitude</em>.</li>
+    <li>AND we look <strong>FORWARD</strong> and trust what God has promised &mdash; new mercies every morning, help in every hard moment, an inheritance of eternal life waiting at the end. That is <em>faith</em>.</li>
+  </ul>
+
+  <p>Gratitude looks back. Faith looks forward. Both together make the Christian life go.</p>
+
+  <p>When we FEEL the gospel this way &mdash; BOTH the mercy behind us and the promises ahead of us &mdash; verses 1 and 2 stop feeling like a burden. Being gentle to a rude classmate stops feeling impossible, because YOU ARE NOT DOING IT ON YOUR OWN. God is going with you. And he has more grace waiting for Monday morning than you know what to do with.</p>
+
+  <p>The deepest believer is not the hardest-working believer. The deepest believer is the one most SATISFIED in God &mdash; looking back with thanks, looking forward with trust.</p>
+
+  <div class="cue">[PAUSE. Let one beat of silence go by before moving on.]</div>
+
+  <h3 id="what-we-do-move-5">WHAT WE DO &middot; This Week, Toward Outsiders <span class="move-duration">Move 5 &middot; &asymp; 10 min</span></h3>
+
+  <p>Here is where it gets concrete. This week, you are going to be surrounded by OUTSIDERS &mdash; people who don't know Jesus, or people who are hard to love. Let's name who they are in YOUR life.</p>
+
+  <p><strong>Who are the outsiders in your week?</strong></p>
+  <ul>
+    <li>A classmate who is mean or who makes fun of people who love Jesus</li>
+    <li>The guard at the mall or at school who barks orders</li>
+    <li>A driver who cut you off</li>
+    <li>A teacher who is grumpy</li>
+    <li>A helper at home you take for granted</li>
+    <li>The new kid nobody sits with</li>
+    <li>A neighbor who never smiles</li>
+    <li>A cranky relative</li>
+    <li>A kid who has a different religion than you</li>
+  </ul>
+
+  <p>Those are your outsiders. Paul says &mdash; and now you know WHY &mdash; be gentle, courteous, ready to help, not trash-talking, not quarreling, submissive, obedient. Not because they deserve it. Because God was merciful to you when you did not deserve it.</p>
+
+  <div class="callout action">
+    <span class="callout-label">Pair-Up Activity</span>
+    <p>I'm going to pair you up. Each pair gets one of Paul's seven commands. You have 3 minutes. Come up with ONE real example of what that command looks like, toward a REAL outsider in your life, this week.</p>
+    <p style="margin:0">Here are the seven commands again. Pick or I'll assign:</p>
+    <ol style="margin-top:0.4rem;margin-bottom:0">
+      <li>Submissive to rulers and authorities (teachers, guards, government)</li>
+      <li>Obedient (real obedience, even when you disagree)</li>
+      <li>Ready for every good work (helping without being asked)</li>
+      <li>Speak evil of no one (no trash talk, especially about people who don't yet believe in Jesus)</li>
+      <li>Avoid quarreling (walk away from dumb fights)</li>
+      <li>Be gentle (soft, not rough)</li>
+      <li>Show perfect courtesy toward all people (the guard, the driver, the cafeteria worker, the new kid)</li>
+    </ol>
+  </div>
+
+  <div class="cue">[PAUSE. 3 minutes. Walk around. Listen in. Help them get specific.]</div>
+  <div class="cue">[Each pair shares one example.]</div>
+
+  <p>Notice something amazing. None of these are about being religious. Paul doesn't say people who love Jesus should sing louder songs or pray longer prayers in public. He says people who have been born again should be GENTLE. COURTEOUS. READY TO HELP. Because that is what adorns the gospel in a world full of outsiders.</p>
+
+  <p>And the gospel motive is always the same. You don't do this to earn Jesus' love. You do it because Jesus already loves you, by mercy, through Jesus Christ our Savior.</p>
+
+  <h3 id="how-we-tell-it-move-6">HOW WE TELL IT &middot; The Sentence to Carry <span class="move-duration">Move 6 &middot; &asymp; 4 min</span></h3>
+
+  <p>Grab your index cards and markers. We are going to write one sentence that holds this whole lesson together.</p>
+
+  <p>Ready? Here it is:</p>
+
+  <div class="scripture">
+    <span class="scripture-ref">Titus 3:5 &middot; The Sentence to Carry</span>
+    <p>"He saved us, not because of works done by us in righteousness, but according to his own mercy."</p>
+  </div>
+
+  <p>Write it on your card. In YOUR handwriting.</p>
+
+  <p>Now on three, everyone say it with me.</p>
+
+  <p>One, two, three:</p>
+
+  <p class="carry-sentence">"He saved us, not because of works done by us in righteousness, but according to his own mercy."</p>
+
+  <div class="cue">[Say it 3 times: loud, medium, whisper.]</div>
+
+  <p>Put this card somewhere you'll see it every day this week. Your mirror. Your desk. Inside your school notebook. When a classmate is mean to you, read it. When you don't want to be kind to the guard, read it. When you feel proud of how good you've been, read it. This sentence will come back and find you when you need it.</p>
+
+  <h3 id="closing-prayer">Closing Prayer <span class="move-duration">&asymp; 3 min</span></h3>
+
+  <p>Let's pray.</p>
+
+  <blockquote>
+    "Father, thank you that you are good and loving and kind. Thank you that you appeared to us in Jesus our Savior. We confess that we were once foolish, and disobedient, and envious. We could not save ourselves. BUT you had mercy on us. You washed us. You made us new. You poured out your Spirit on us richly. You made us heirs.<br><br>
+    This week, help us to live as people who remember what you did. Help us to be gentle with the people who are hard to love. Help us to be courteous to the guard and the helper and the new kid and the classmate who doesn't know you. Not because they earned it. But because you gave us mercy we didn't earn.<br><br>
+    And when our hearts forget, bring us back to Titus 3:5. In Jesus' name, Amen."
+  </blockquote>
+
+  <p style="text-align:center;font-style:italic;color:var(--gold);letter-spacing:0.05em;">Grace be with you all.</p>
+
+  <div class="callout">
+    <span class="callout-label">Teacher's Notes &middot; Not Read Aloud &middot; For Lala Only</span>
+
+    <p><strong>The focus Lala chose:</strong> Gospel of v.3&ndash;7 as FOUNDATION &rarr; Living toward outsiders in v.1&ndash;2 as FRUIT &rarr; v.8 as SUMMARY. We skip v.9&ndash;15 (divisive people + Paul's travel notes). That's a teaching decision that HONORS Piper's forest warning perfectly &mdash; we teach the commands in v.1&ndash;2 only through the lens of the gospel in v.3&ndash;7.</p>
+
+    <p><strong>Why "outsiders" is the right framing:</strong> v.1&ndash;2 is explicitly about how Christians treat people OUTSIDE the faith &mdash; rulers (often pagan), "no one," "all people." Paul is giving Titus evangelistic ethics. Christian behavior in front of a watching unbelieving world ADORNS (or diminishes) the doctrine of God (Titus 2:10). For 10-to-12 year olds in an international Manila school, outsiders are everywhere: guards, drivers, helpers, non-Christian classmates, new kids. This makes the lesson both biblical and practically alive.</p>
+
+    <p style="margin-bottom:0.5rem"><strong>Timing (60 min hard stop) &middot; updated Apr 22 to integrate Lala's 3-min testimony and the Future-Grace balance in Move 4:</strong></p>
+    <ul style="font-size:0.92rem">
+      <li>0:00 &mdash; Welcome + Hook (3)</li>
+      <li>0:03 &mdash; Prayer Ps 119:18 (2)</li>
+      <li>0:05 &mdash; Move 1 LOOK (7) &mdash; characters + read-aloud</li>
+      <li>0:12 &mdash; Move 2 UNDERSTAND (25) &mdash; THE GOSPEL + TESTIMONY
+        <ul>
+          <li>Mirror v.3 (4)</li>
+          <li>Miracle v.4&ndash;7 (18) &mdash; Lazarus &middot; spiritual-death bridge &middot; gospel summary &middot; how regeneration happens &middot; Christian definition &middot; Lala's 3-min testimony &middot; Nicodemus &middot; Holy Spirit &middot; heir</li>
+          <li>Fruit v.1&ndash;2 (2)</li>
+          <li>Summary v.8 (1)</li>
+        </ul>
+      </li>
+      <li>0:37 &mdash; Move 3 IS IT TRUE? (2) &mdash; first to cut entirely</li>
+      <li>0:39 &mdash; Move 4 HOW WE FEEL (4) &mdash; Gratitude (past) + Faith in Future Grace</li>
+      <li>0:43 &mdash; Move 5 WHAT WE DO (9) &mdash; pair activity, tightened to 1 example per pair</li>
+      <li>0:52 &mdash; Move 6 HOW WE TELL IT (4) &mdash; card</li>
+      <li>0:56 &mdash; Closing prayer (4)</li>
+    </ul>
+
+    <p style="margin-bottom:0.5rem"><strong>Cut priorities if running long:</strong></p>
+    <ul style="font-size:0.92rem">
+      <li>Move 3 entirely (saves 2 min)</li>
+      <li>Trim Move 4 to 1 min (just re-read v.5 with a 10-sec silence)</li>
+      <li>Move 5 shortened to 1 example per pair, not a round of sharing (saves 3 min)</li>
+      <li><strong>Never cut the Miracle in Move 2 &mdash; including the testimony.</strong> The gospel summary + testimony are now a non-negotiable core together. Your testimony IS the gospel in the first person for them; it lands where abstract theology alone cannot reach. If you must walk out at the 50-min mark, end on Titus 3:5 after you've explained the gospel and testified. That is the lesson succeeding.</li>
+    </ul>
+
+    <p>If the testimony itself needs to shrink from 3 min to 2, cut the "still sick / deeper joy now" middle section, keep the arc: sick + yellow &rarr; dead inside &rarr; God sent people with the gospel &rarr; called my name like Lazarus &rarr; born again &rarr; arms locked &rarr; God doesn't make mistakes &rarr; he is calling you too.</p>
+
+    <p style="margin-bottom:0.5rem"><strong>Teaching order vs. text order (important):</strong></p>
+    <ul style="font-size:0.92rem">
+      <li>You READ in biblical order (v.1&ndash;8 straight through) so the kids follow the actual text in their Bibles.</li>
+      <li>You UNPACK in logical order: Mirror v.3 &rarr; Miracle v.4&ndash;7 &rarr; Fruit v.1&ndash;2 &rarr; Summary v.8.</li>
+      <li>Before you unpack, call it out: "Paul wrote these in a certain order, but the LOGIC goes: gospel first, then behavior. We're going to follow the logic." This teaches them that the Bible's sentence order and its theological order are not always the same &mdash; a huge gift for their future Bible reading.</li>
+    </ul>
+
+    <p><strong>Characters to introduce fresh:</strong> Paul + Titus in Move 1. Lazarus + Nicodemus in Move 2 (when teaching regeneration). Plus the place: Crete in Move 1.</p>
+
+    <p><strong>Big-word glossary (keep open during teaching):</strong> apostle, submissive, obedient, quarreling, gentle, courtesy, foolish, led astray, slaves to passions, malice, envy, goodness, loving kindness, Savior, appeared, mercy, regeneration, born again, regenerated heart, Christian (= person who has been born again), Holy Spirit, poured out richly, justified, grace, heir, eternal life, adorn (from Titus 2:10), devote, trustworthy.</p>
+
+    <p><strong>Word swaps for clarity:</strong> Throughout this script, the word "Christian" has been replaced (except where defined in Move 2) with clearer phrases like "people who love Jesus" / "people who have been born again" / "people with regenerated hearts." Reason: 10-to-12 year olds can hear "Christian" as "person who goes to church" rather than "person whose heart God has made alive." We teach them what Scripture actually means by the word.</p>
+
+    <p style="margin-bottom:0.5rem"><strong>The THREE theological moves that MUST land:</strong></p>
+    <ol style="font-size:0.92rem">
+      <li><strong>The FOR hinge.</strong> v.1&ndash;2 commands flow FROM v.3&ndash;7 gospel, not the other way around. The "FOR" at the start of v.3 is the hinge. Point to it on the page. Make them see it with their eyes.</li>
+      <li><strong>The Gospel + How Regeneration Happens.</strong> Kids hear the gospel stated plainly (God is holy, we sinned, Jesus lived / died / rose, we believe and turn) and understand that regeneration is what HAPPENS when we believe. This is new ground for a 10-to-12 year old in their spiritual vocabulary.</li>
+      <li><strong>Gratitude + Faith in Future Grace (Move 4).</strong> Gratitude for past grace is NOT enough to power the Christian life &mdash; Piper's whole argument in <em>Future Grace</em> (Crossway, 2012). What empowers obedience to v.1&ndash;2 is TRUSTING God's promises about tomorrow. The text itself lands at v.7 "heirs according to the HOPE of eternal life" &mdash; Paul's own closing beat is future-grace. Anchor verses: Lamentations 3:22&ndash;23 "his mercies are new every morning" &middot; Romans 8:32 "he who did not spare his own Son&hellip;how will he not also&hellip;graciously give us all things?" &middot; Titus 3:7 "hope of eternal life." Key Piper quotes from the NotebookLM (25d64215&hellip;): "At its heart, faith in future grace means being satisfied with all that God promises to be for us in Jesus" (Future Grace Ch. 16); "The fight of faith is the fight to keep your heart contented in Christ, to keep it satisfied with all that God promises to be for you in Jesus" (Ch. 17).</li>
+    </ol>
+
+    <p style="margin:0">If they walk away understanding (1) v.1&ndash;2 flows from v.3&ndash;7, (2) regeneration = God calling a dead heart alive through the gospel we believe, and (3) obedience runs on gratitude PLUS trust in God's promises &mdash; the hour was a success.</p>
+  </div>
+
+  <div class="feedback-block" id="lesson-1-feedback">
+    <h3>Feedback Records &middot; Lesson 1</h3>
+    <p class="feedback-intro">After each Sunday I teach this lesson, add a new dated entry at the top. Duplicate the template. Keep the history &mdash; what landed, what didn't, what the children asked, what to adjust. Future lessons will reference these notes.</p>
+
+    <div class="feedback-entry">
+      <div class="entry-date">Template &middot; duplicate and date when used</div>
+      <h4>Sunday at IBCM &mdash; 8 children, ages 10 to 12</h4>
+      <dl>
+        <dt>Date Taught</dt>
+        <dd><em>YYYY-MM-DD</em></dd>
+
+        <dt>Children Present</dt>
+        <dd><em>Names or count. Note any first-time visitors.</em></dd>
+
+        <dt>What Landed</dt>
+        <dd><em>Which moves or phrases woke them up? Which moment did the room go quiet? Where did eyes light up?</em></dd>
+
+        <dt>What Didn't Land</dt>
+        <dd><em>Where did they drift? Which definition missed? Which cue felt flat? Be honest with yourself.</em></dd>
+
+        <dt>Questions They Asked</dt>
+        <dd><em>Exact words if you can remember. The questions are gold for next time.</em></dd>
+
+        <dt>Adjustments for Next Teaching</dt>
+        <dd><em>Cut what? Add what? Reorder what? Shorten Move 1 by two minutes?</em></dd>
+
+        <dt>Prayer Requests &middot; Prayers Prayed</dt>
+        <dd><em>What the children asked prayer for. What you prayed over them. Any promptings from the Spirit to follow up on.</em></dd>
+
+        <dt>A Sentence on My Own Heart</dt>
+        <dd><em>Did I teach from delight or duty? What did the Lord show me while teaching? Where do I need his mercy this week?</em></dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+</main>
+</div>
+</section>
+<!-- end Lessons page -->
+
+<section class="page" data-page="about" id="page-about">
+
+<div class="page-intro">
+  <span class="eyebrow">About</span>
+  <h1>About this Site</h1>
+  <p class="lead">The ongoing record of Lala's Sunday School teaching at International Baptist Church of Manila.</p>
+</div>
+
+<div class="layout layout-single">
+<main>
+<div class="page-body">
+
+  <h2>Who this is for</h2>
+  <p>Lala teaches eight children, ages ten to twelve, one hour each Sunday at International Baptist Church of Manila. This site is her own workshop &mdash; the place where the guides she is forming herself under, the lessons she is preparing, and the feedback she is gathering week after week all live in one place.</p>
+
+  <h2>How it is organized</h2>
+  <p>There are four areas. <strong>Guides</strong> holds the teacher-formation curriculum &mdash; the foundation she reads and re-reads before preparing any lesson. <strong>Lessons</strong> holds each lesson she has written, paired with a dated feedback log so she can see what landed, what didn't, and how to adjust. <strong>About</strong> is this page. <strong>Resources</strong> holds the books, archives, and tools she leans on.</p>
+
+  <h2>What it is built on</h2>
+  <p>The Royal Triangle Method &mdash; Desire, Ability, Opportunity, with God at the center. John Piper's six habits of lifelong learning. The conviction, spoken by Piper, that children can feel the difference between duty and delight. And the Scripture's own teaching that every good work flows from the mercy of God poured out richly through Jesus Christ our Savior (Titus 3:5&ndash;6).</p>
+
+  <h2>How it grows</h2>
+  <p>Guides will be added as Lala writes them (How to Prepare a Lesson, How to Read the Bible with Children, How to Lead a Prayer). Lessons will be added as she prepares them. Feedback entries will be added after every Sunday she teaches. The resources list will grow as she reads.</p>
+
+  <blockquote>
+    "You have one life. That's all. You were made for God. Don't waste it."
+    <cite>&mdash; John Piper</cite>
+  </blockquote>
+
+</div>
+</main>
+</div>
+</section>
+<!-- end About page -->
+
+<section class="page" data-page="resources" id="page-resources">
+
+<div class="page-intro">
+  <span class="eyebrow">Resources</span>
+  <h1>Teaching Resources</h1>
+  <p class="lead">Books, archives, and tools Lala leans on. Added to as she reads and teaches.</p>
+</div>
+
+<div class="layout layout-single">
+<main>
+<div class="page-body">
+
+  <h2>Sermon &amp; teaching archives</h2>
+  <ul class="resource-list">
+    <li>
+      <span class="resource-title">Desiring God</span>
+      <span class="resource-meta">John Piper's full sermon and article archive. <a href="https://www.desiringgod.org/" target="_blank" rel="noopener">desiringgod.org</a></span>
+    </li>
+    <li>
+      <span class="resource-title">John Piper NotebookLM</span>
+      <span class="resource-meta">Private NotebookLM corpus of Piper's books for cross-referenced study on any text.</span>
+    </li>
+  </ul>
+
+  <h2>Core books</h2>
+  <ul class="resource-list">
+    <li>
+      <span class="resource-title">John Piper &middot; <em>Future Grace</em> (Crossway, 2012)</span>
+      <span class="resource-meta">The framework for obedience powered by trusting God's promises about tomorrow, not just gratitude for yesterday. Read before teaching any command-from-the-gospel text.</span>
+    </li>
+    <li>
+      <span class="resource-title">John Piper &middot; <em>Don't Waste Your Life</em> (Crossway, 2003)</span>
+      <span class="resource-meta">Steward the hour. The closing quote of Guide 1 comes from this book.</span>
+    </li>
+    <li>
+      <span class="resource-title">John Piper &middot; <em>Six Habits of Lifelong Learning</em></span>
+      <span class="resource-meta">The formation framework behind the Ability pillar of the Royal Triangle.</span>
+    </li>
+    <li>
+      <span class="resource-title"><em>Future additions</em></span>
+      <span class="resource-meta">ESV Study Bible notes &middot; J. Gresham Machen on doctrine for teachers &middot; Sally Lloyd-Jones on reading Scripture with children &middot; prayer guides for children.</span>
+    </li>
+  </ul>
+
+  <h2>Study tools</h2>
+  <ul class="resource-list">
+    <li>
+      <span class="resource-title">Bible Hub</span>
+      <span class="resource-meta">Cross-references, original language tools, commentaries. <a href="https://biblehub.com/" target="_blank" rel="noopener">biblehub.com</a></span>
+    </li>
+    <li>
+      <span class="resource-title">Westminster Shorter Catechism</span>
+      <span class="resource-meta">Framework for doctrinal clarity when explaining hard words to children. <a href="https://www.opc.org/sc.html" target="_blank" rel="noopener">opc.org/sc.html</a></span>
+    </li>
+  </ul>
+
+</div>
+</main>
+</div>
+</section>
+<!-- end Resources page -->
+
+<footer>
+  <p>IBCM Sunday School &mdash; A growing site for Lala</p>
+  <p>Built on the Royal Triangle Method, John Piper's Six Habits of Lifelong Learning, and the Desiring God teaching archive.</p>
+  <p class="signature">For Lala &mdash; started April 22, 2026</p>
+</footer>
+
+<script>
+(function () {
+  var PAGES = ['guides', 'lessons', 'about', 'resources'];
+  var TITLES = {
+    guides: 'Guides — IBCM Sunday School',
+    lessons: 'Lessons — IBCM Sunday School',
+    about: 'About — IBCM Sunday School',
+    resources: 'Resources — IBCM Sunday School'
+  };
+  var DEFAULT_PAGE = 'guides';
+
+  function parsePage() {
+    var hash = (window.location.hash || '').replace(/^#\/?/, '');
+    // Support both #/guides and legacy #guides and bare #anchor-in-page
+    var page = hash.split(/[\/\?]/)[0];
+    if (PAGES.indexOf(page) !== -1) return page;
+    return null;
+  }
+
+  function showPage(page, opts) {
+    opts = opts || {};
+    if (PAGES.indexOf(page) === -1) page = DEFAULT_PAGE;
+
+    document.querySelectorAll('.page').forEach(function (el) {
+      if (el.getAttribute('data-page') === page) {
+        el.classList.add('is-active');
+      } else {
+        el.classList.remove('is-active');
+      }
+    });
+
+    document.querySelectorAll('.site-nav a[data-nav]').forEach(function (a) {
+      if (a.getAttribute('data-nav') === page) {
+        a.setAttribute('aria-current', 'page');
+      } else {
+        a.removeAttribute('aria-current');
+      }
+    });
+
+    document.title = TITLES[page] || TITLES[DEFAULT_PAGE];
+
+    if (opts.scroll !== false) {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    }
+  }
+
+  function handleInitial() {
+    var page = parsePage();
+    if (!page) {
+      page = DEFAULT_PAGE;
+      if (history && history.replaceState) {
+        history.replaceState(null, '', '#/' + page);
+      } else {
+        window.location.hash = '#/' + page;
+      }
+    }
+    showPage(page, { scroll: false });
+  }
+
+  window.addEventListener('hashchange', function () {
+    var page = parsePage();
+    if (page) showPage(page);
+  });
+
+  // Nav clicks: let the browser update the hash normally, then handle via hashchange.
+  // But to guarantee smooth behavior even when clicking the already-active link, bind direct click too.
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[data-nav]');
+    if (!a) return;
+    var page = a.getAttribute('data-nav');
+    if (PAGES.indexOf(page) === -1) return;
+    // If same page, still scroll to top
+    if (window.location.hash === '#/' + page) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  });
+
+  // Go.
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', handleInitial);
+  } else {
+    handleInitial();
+  }
+})();
+</script>
+
+</body>
+</html>
