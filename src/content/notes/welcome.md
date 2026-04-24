@@ -39,4 +39,4 @@ and to keep writing them until they add up to something useful.
 
 Start wherever. Leave whenever. Come back when something nudges you to.
 
-— Shela
+— Lala

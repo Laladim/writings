@@ -1,6 +1,6 @@
 # writings
 
-A content library for Shela Heramis. Lives at `laladim.github.io/writings/`.
+A content library for Lala. Lives at `laladim.github.io/writings/`.
 
 Built with Astro. Content is markdown in `src/content/{notes,stories,guides,reflections,tools}/`. Push to `main`, auto-deploys via GitHub Actions.
 
