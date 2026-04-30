@@ -27,7 +27,7 @@
 
   * { box-sizing: border-box; }
 
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: auto; }
 
   body {
     margin: 0;
@@ -1007,6 +1007,90 @@
     footer { background: white; color: black; border-top: 2px solid black; }
     a { color: black; text-decoration: none; }
   }
+
+  /* Lessons index — card grid for the #/lessons landing page */
+  nav.lessons-index {
+    max-width: 880px;
+    margin: 2.5rem auto 4rem;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.4rem;
+  }
+  nav.lessons-index .lesson-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    padding: 1.5rem 1.6rem;
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--gold);
+    border-radius: 4px;
+    text-decoration: none;
+    color: var(--ink);
+    transition: transform 0.15s, border-left-color 0.15s, box-shadow 0.15s;
+  }
+  nav.lessons-index .lesson-card:hover,
+  nav.lessons-index .lesson-card:focus-visible {
+    transform: translateY(-2px);
+    border-left-color: var(--burgundy);
+    box-shadow: 0 6px 16px -8px rgba(26, 22, 35, 0.18);
+  }
+  nav.lessons-index .lesson-card .lesson-num {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--gold);
+    font-weight: 700;
+  }
+  nav.lessons-index .lesson-card .lesson-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--navy);
+    line-height: 1.2;
+  }
+  nav.lessons-index .lesson-card .lesson-subtitle {
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    line-height: 1.4;
+  }
+  nav.lessons-index .lesson-card .lesson-meta {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    margin-top: 0.4rem;
+  }
+
+  /* Per-lesson page intro — back link + previous/next sibling links */
+  .page-intro .eyebrow .back-link {
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color 0.15s;
+  }
+  .page-intro .eyebrow .back-link:hover,
+  .page-intro .eyebrow .back-link:focus-visible {
+    border-bottom-color: var(--gold);
+  }
+  nav.sidebar-lessons p.sidebar-other {
+    margin-top: 1.4rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.85rem;
+  }
+  nav.sidebar-lessons p.sidebar-other a {
+    color: var(--burgundy);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color 0.15s;
+  }
+  nav.sidebar-lessons p.sidebar-other a:hover,
+  nav.sidebar-lessons p.sidebar-other a:focus-visible {
+    border-bottom-color: var(--burgundy);
+  }
 </style>
 </head>
 <body>
@@ -1540,52 +1624,67 @@
 </section>
 <!-- end Guides page -->
 
+<!-- LESSONS INDEX page -->
 <section class="page" data-page="lessons" id="page-lessons">
 
 <div class="page-intro">
   <span class="eyebrow">Sunday Lessons</span>
   <h1>Lessons</h1>
-  <p class="lead">Each lesson pairs the read-aloud script with an ongoing feedback log. After every Sunday, add a dated entry to the log &mdash; what landed, what didn't, what the children asked, what to adjust next time.</p>
+  <p class="lead">Each lesson is its own page. Click a card to open. After every Sunday, add a dated entry to the lesson's feedback log &mdash; what landed, what didn't, what the children asked, what to adjust next time.</p>
+</div>
+
+<nav class="lessons-index" aria-label="All lessons">
+  <a href="#/lesson-1" class="lesson-card">
+    <span class="lesson-num">Lesson 01</span>
+    <span class="lesson-title">Titus 3:1&ndash;8</span>
+    <span class="lesson-subtitle">Mercy Changed Us, So We Live Differently with Outsiders</span>
+    <span class="lesson-meta">6 moves &middot; ~55 min</span>
+  </a>
+  <a href="#/lesson-2" class="lesson-card">
+    <span class="lesson-num">Lesson 02</span>
+    <span class="lesson-title">Acts 6:1&ndash;7</span>
+    <span class="lesson-subtitle">The Word of God Increases When His People Serve in Their Right Place</span>
+    <span class="lesson-meta">6 moves &middot; ~57 min</span>
+  </a>
+</nav>
+
+</section>
+<!-- end Lessons index page -->
+
+<!-- LESSON 01 page -->
+<section class="page" data-page="lesson-1" id="page-lesson-1">
+
+<div class="page-intro">
+  <span class="eyebrow"><a href="#/lessons" class="back-link">&larr; All Lessons</a></span>
+  <h1>Lesson 01 &middot; Titus 3:1&ndash;8</h1>
+  <p class="lead">"Mercy Changed Us, So We Live Differently with Outsiders"</p>
 </div>
 
 <div class="layout">
 
-<nav class="sidebar sidebar-lessons" aria-label="Lessons">
-  <h2>Lessons</h2>
-  <p class="sidebar-lead">Click a lesson to expand its teaching guide.</p>
-
-  <details class="lesson-item" open>
-    <summary>
-      <span class="lesson-num">Lesson 01</span>
-      <span class="lesson-title">Titus 3:1&ndash;8</span>
-      <span class="lesson-meta">6 moves &middot; ~55 min</span>
-    </summary>
-    <ol class="lesson-toc">
-      <li><a href="#titus-3-script"><span class="toc-label">Lesson Top</span><span class="toc-meta">Overview &amp; note on order</span></a></li>
-      <li><a href="#before-we-start"><span class="toc-label">Before We Start</span><span class="toc-meta">&asymp; 3 min &middot; hook</span></a></li>
-      <li><a href="#look-move-1"><span class="toc-label">Move 1 &middot; LOOK</span><span class="toc-meta">&asymp; 8 min &middot; Paul, Titus, Crete, read</span></a></li>
-      <li>
-        <a href="#understand-move-2"><span class="toc-label">Move 2 &middot; UNDERSTAND</span><span class="toc-meta">&asymp; 20 min &middot; biggest slice</span></a>
-        <ol class="lesson-toc-sub">
-          <li><a href="#mirror-part-a">Part A &middot; The Mirror (v.3)</a></li>
-          <li><a href="#miracle-part-b">Part B &middot; The Miracle (v.4&ndash;7)</a></li>
-          <li><a href="#fruit-part-c">Part C &middot; The Fruit (v.1&ndash;2)</a></li>
-          <li><a href="#summary-part-d">Part D &middot; The Summary (v.8)</a></li>
-        </ol>
-      </li>
-      <li><a href="#is-it-true-move-3"><span class="toc-label">Move 3 &middot; IS IT TRUE?</span><span class="toc-meta">&asymp; 5 min &middot; trust</span></a></li>
-      <li><a href="#how-we-feel-move-4"><span class="toc-label">Move 4 &middot; HOW WE FEEL</span><span class="toc-meta">&asymp; 4 min &middot; gratitude + future grace</span></a></li>
-      <li><a href="#what-we-do-move-5"><span class="toc-label">Move 5 &middot; WHAT WE DO</span><span class="toc-meta">&asymp; 10 min &middot; this week</span></a></li>
-      <li><a href="#how-we-tell-it-move-6"><span class="toc-label">Move 6 &middot; HOW WE TELL IT</span><span class="toc-meta">&asymp; 4 min &middot; carry sentence</span></a></li>
-      <li><a href="#closing-prayer"><span class="toc-label">Closing Prayer</span><span class="toc-meta">&asymp; 3 min</span></a></li>
-      <li class="toc-divider"><a href="#lesson-1-feedback"><span class="toc-label">Feedback Records</span><span class="toc-meta">log after each Sunday</span></a></li>
-    </ol>
-  </details>
-
-  <!-- Future lessons: duplicate the <details class="lesson-item"> block above.
-       Use open attribute only on the lesson you want expanded by default.
-       Increment lesson-num. Update sub-anchors to new section IDs. -->
-
+<nav class="sidebar sidebar-lessons" aria-label="Lesson 01 contents">
+  <h2>This Lesson</h2>
+  <ol class="lesson-toc">
+    <li><a href="#titus-3-script"><span class="toc-label">Lesson Top</span><span class="toc-meta">Overview &amp; note on order</span></a></li>
+    <li><a href="#before-we-start"><span class="toc-label">Before We Start</span><span class="toc-meta">&asymp; 3 min &middot; hook</span></a></li>
+    <li><a href="#look-move-1"><span class="toc-label">Move 1 &middot; LOOK</span><span class="toc-meta">&asymp; 8 min &middot; Paul, Titus, Crete, read</span></a></li>
+    <li>
+      <a href="#understand-move-2"><span class="toc-label">Move 2 &middot; UNDERSTAND</span><span class="toc-meta">&asymp; 20 min &middot; biggest slice</span></a>
+      <ol class="lesson-toc-sub">
+        <li><a href="#mirror-part-a">Part A &middot; The Mirror (v.3)</a></li>
+        <li><a href="#miracle-part-b">Part B &middot; The Miracle (v.4&ndash;7)</a></li>
+        <li><a href="#fruit-part-c">Part C &middot; The Fruit (v.1&ndash;2)</a></li>
+        <li><a href="#summary-part-d">Part D &middot; The Summary (v.8)</a></li>
+      </ol>
+    </li>
+    <li><a href="#is-it-true-move-3"><span class="toc-label">Move 3 &middot; IS IT TRUE?</span><span class="toc-meta">&asymp; 5 min &middot; trust</span></a></li>
+    <li><a href="#how-we-feel-move-4"><span class="toc-label">Move 4 &middot; HOW WE FEEL</span><span class="toc-meta">&asymp; 4 min &middot; gratitude + future grace</span></a></li>
+    <li><a href="#what-we-do-move-5"><span class="toc-label">Move 5 &middot; WHAT WE DO</span><span class="toc-meta">&asymp; 10 min &middot; this week</span></a></li>
+    <li><a href="#how-we-tell-it-move-6"><span class="toc-label">Move 6 &middot; HOW WE TELL IT</span><span class="toc-meta">&asymp; 4 min &middot; carry sentence</span></a></li>
+    <li><a href="#closing-prayer"><span class="toc-label">Closing Prayer</span><span class="toc-meta">&asymp; 3 min</span></a></li>
+    <li class="toc-divider"><a href="#lesson-1-feedback"><span class="toc-label">Feedback Records</span><span class="toc-meta">log after each Sunday</span></a></li>
+  </ol>
+  <p class="sidebar-other"><a href="#/lesson-2">Next: Lesson 02 &middot; Acts 6:1&ndash;7 &rarr;</a></p>
 </nav>
 
 <main>
@@ -2001,7 +2100,422 @@
 </main>
 </div>
 </section>
-<!-- end Lessons page -->
+<!-- end Lesson 01 page -->
+
+<!-- LESSON 02 page -->
+<section class="page" data-page="lesson-2" id="page-lesson-2">
+
+<div class="page-intro">
+  <span class="eyebrow"><a href="#/lessons" class="back-link">&larr; All Lessons</a></span>
+  <h1>Lesson 02 &middot; Acts 6:1&ndash;7</h1>
+  <p class="lead">"The Word of God Increases When His People Serve in Their Right Place"</p>
+</div>
+
+<div class="layout">
+
+<nav class="sidebar sidebar-lessons" aria-label="Lesson 02 contents">
+  <h2>This Lesson</h2>
+  <ol class="lesson-toc">
+    <li><a href="#acts-6-script"><span class="toc-label">Lesson Top</span><span class="toc-meta">Overview &amp; note on order</span></a></li>
+    <li><a href="#acts-before-we-start"><span class="toc-label">Before We Start</span><span class="toc-meta">&asymp; 3 min &middot; sari-sari hook</span></a></li>
+    <li><a href="#acts-look-move-1"><span class="toc-label">Move 1 &middot; LOOK</span><span class="toc-meta">&asymp; 8 min &middot; Luke, Jerusalem, read</span></a></li>
+    <li>
+      <a href="#acts-understand-move-2"><span class="toc-label">Move 2 &middot; UNDERSTAND</span><span class="toc-meta">&asymp; 20 min &middot; biggest slice</span></a>
+      <ol class="lesson-toc-sub">
+        <li><a href="#acts-problem-part-a">Part A &middot; The Problem (v.1&ndash;2)</a></li>
+        <li><a href="#acts-wisdom-part-b">Part B &middot; The Wisdom (v.3&ndash;4)</a></li>
+        <li><a href="#acts-grace-part-c">Part C &middot; The Grace (v.5&ndash;6)</a></li>
+        <li><a href="#acts-harvest-part-d">Part D &middot; The Harvest (v.7)</a></li>
+      </ol>
+    </li>
+    <li><a href="#acts-is-it-true-move-3"><span class="toc-label">Move 3 &middot; IS IT TRUE?</span><span class="toc-meta">&asymp; 5 min &middot; trust</span></a></li>
+    <li><a href="#acts-how-we-feel-move-4"><span class="toc-label">Move 4 &middot; HOW WE FEEL</span><span class="toc-meta">&asymp; 4 min &middot; the worth of the Word</span></a></li>
+    <li><a href="#acts-what-we-do-move-5"><span class="toc-label">Move 5 &middot; WHAT WE DO</span><span class="toc-meta">&asymp; 10 min &middot; small story, big story</span></a></li>
+    <li><a href="#acts-how-we-tell-it-move-6"><span class="toc-label">Move 6 &middot; HOW WE TELL IT</span><span class="toc-meta">&asymp; 4 min &middot; carry sentence</span></a></li>
+    <li><a href="#acts-closing-prayer"><span class="toc-label">Closing Prayer</span><span class="toc-meta">&asymp; 3 min</span></a></li>
+    <li class="toc-divider"><a href="#lesson-2-feedback"><span class="toc-label">Feedback Records</span><span class="toc-meta">log after each Sunday</span></a></li>
+  </ol>
+  <p class="sidebar-other"><a href="#/lesson-1">&larr; Previous: Lesson 01 &middot; Titus 3:1&ndash;8</a></p>
+</nav>
+
+<main>
+
+<section id="acts-6-script">
+  <div class="chapter-label">Lesson 2 &middot; Worked Example</div>
+  <h2>The Read-Aloud Script: Acts 6:1&ndash;7</h2>
+
+  <p style="font-size:1.05rem;color:var(--ink-soft);font-style:italic;margin-top:-0.4rem;">"The Word of God Increases When His People Serve in Their Right Place"</p>
+
+  <p>Read-aloud script for Lala. Internalize, then set down. Deliver in your own voice. Pause where marked.</p>
+
+  <div class="callout">
+    <span class="callout-label">A Word on Order</span>
+    <p style="margin:0">The teaching order matters. We <strong>READ</strong> the text in biblical order (v.1 &rarr; v.7). We <strong>UNPACK</strong> it in logical order: first the PROBLEM (v.1&ndash;2), then the WISDOM the apostles gave (v.3&ndash;4), then the GRACE in how the church chose (v.5&ndash;6), then the HARVEST God gave (v.7). <em>The whole story is built to land on verse 7. Verse 7 is the prize.</em></p>
+  </div>
+
+  <h3 id="acts-before-we-start">Before We Start <span class="move-duration">&asymp; 3 min</span></h3>
+
+  <p>Children, let me ask you a quick question.</p>
+  <p>Imagine a sari-sari store. The owner does everything alone. She is selling, she is cooking, she is cleaning, she is delivering. She is even chasing the kids who try to steal pandesal. By the end of the week, what happens to her store?</p>
+  <p>She gets tired. She closes early. The food runs out. The customers in the back of the line never get fed. The store is supposed to serve the neighborhood, but it only serves the people in front.</p>
+  <p>Now what changes if she finally trusts ONE good helper to handle the cooking? She has time to actually serve customers. The store does MORE, not less. Everyone gets fed.</p>
+  <p>Today we are going to read a story from the very early church, only a few months after Jesus rose from the dead. The church had a sari-sari store problem. The apostles were trying to do everything. People were getting missed. Listen to how they fixed it. Because the way they fixed it is the reason Luke wrote verse 7. The whole story is built to land on verse 7. Listen for verse 7.</p>
+
+  <div class="cue">[PAUSE. Small show of hands: "Ready to meet some new friends from the Bible?"]</div>
+
+  <h3 id="acts-look-move-1">LOOK &middot; Who Is In This Story, and What Does It Say? <span class="move-duration">Move 1 &middot; &asymp; 8 min</span></h3>
+
+  <p>Before we read, let me tell you who is in this story.</p>
+
+  <p><strong>Meet Luke.</strong> Luke is the man who wrote the book of Acts. Luke was a doctor. He traveled with the apostle Paul. He wrote two books in our New Testament &mdash; the Gospel of Luke (which is about Jesus's life) and the book of Acts (which is about what Jesus kept doing through his Holy Spirit AFTER he rose from the dead). Acts is the story of how the church started, in Jerusalem, and grew across the world. Today's story is in chapter 6.</p>
+
+  <p><strong>Meet the early church in Jerusalem.</strong> By the time we get to chapter 6, the Jerusalem church is HUGE. Maybe more than five thousand men, plus the women, plus the kids. People are coming to faith every day. The apostles &mdash; Peter, John, James, the rest of the twelve &mdash; are preaching, healing, praying, leading. The church meets in homes. People share food. They share money. They take care of widows and orphans together. It is beautiful. But it is also messy.</p>
+
+  <p><strong>Meet two groups of Christians inside the church.</strong> One group is the <strong>Hellenists</strong>. Hellenist means Greek-speaking. These were Jewish Christians who grew up speaking Greek &mdash; some had moved to Jerusalem from other countries. The other group is the <strong>Hebrews</strong>. The Hebrews were Jewish Christians who grew up in Israel speaking Aramaic, the local language. Same Jesus. Same gospel. Same church. Different language. Different culture. A bit like if your IBCM church had a Tagalog group and a Korean group inside the same building.</p>
+
+  <p>Now in any group of human beings, what happens when you mix two cultures? Sometimes one group feels left out. That is what happens here. Listen for it.</p>
+
+  <p>Open your Bibles to Acts chapter 6. We are going to read verses 1 through 7. I will read, you follow along with your finger. Listen for FOUR things:</p>
+
+  <ol>
+    <li>The PROBLEM in the church (v.1).</li>
+    <li>The APOSTLES' RULE about what they will and will not do (v.2&ndash;4).</li>
+    <li>The SEVEN MEN the church chose, and their names (v.5&ndash;6).</li>
+    <li>The HARVEST God gave at the end (v.7). This is the climax. Listen for what happens to the WORD OF GOD.</li>
+  </ol>
+
+  <div class="cue">[Read Acts 6:1&ndash;7 straight through, aloud and slowly.]</div>
+
+  <div class="scripture">
+    <span class="scripture-ref">Acts 6:1&ndash;7 (ESV)</span>
+    <p>"Now in these days when the disciples were increasing in number, a complaint by the Hellenists arose against the Hebrews because their widows were being neglected in the daily distribution. And the twelve summoned the full number of the disciples and said, 'It is not right that we should give up preaching the word of God to serve tables. Therefore, brothers, pick out from among you seven men of good repute, full of the Spirit and of wisdom, whom we will appoint to this duty. But we will devote ourselves to prayer and to the ministry of the word.' And what they said pleased the whole gathering, and they chose Stephen, a man full of faith and of the Holy Spirit, and Philip, and Prochorus, and Nicanor, and Timon, and Parmenas, and Nicolaus, a proselyte of Antioch. These they set before the apostles, and they prayed and laid their hands on them. And the word of God continued to increase, and the number of the disciples multiplied greatly in Jerusalem, and a great many of the priests became obedient to the faith."</p>
+  </div>
+
+  <div class="cue">[PAUSE. "Did you catch verse 7? The PRIESTS &mdash; the same priests who had been arresting the apostles in chapters 4 and 5 &mdash; are now coming to Jesus. Hold that. We will come back to it."]</div>
+
+  <h3 id="acts-understand-move-2">UNDERSTAND &middot; Walking Through the Logic <span class="move-duration">Move 2 &middot; &asymp; 20 min &middot; Biggest Slice</span></h3>
+
+  <p>Luke wrote these verses in a certain order, and that order is good. But I want to walk through them in FOUR parts so you can see how the story works. The PROBLEM, the WISDOM, the GRACE, and the HARVEST.</p>
+
+  <h4 id="acts-problem-part-a">Part A &middot; THE PROBLEM (verses 1&ndash;2, what was wrong) <span class="part-duration">&asymp; 5 min</span></h4>
+
+  <p>Verse 1 says: "Now in these days when the disciples were increasing in number, a complaint by the Hellenists arose against the Hebrews because their widows were being neglected in the daily distribution."</p>
+
+  <p>Notice the words "increasing in number." The church was GROWING. That is good. But growth is messy. When the church was small, everybody knew everybody. The apostles could see every widow, every family, every need. As soon as the church grew bigger, somebody got missed. And that somebody was the Hellenist widows. The Greek-speaking widows. The minority. Probably the quietest voices in the room.</p>
+
+  <p>Now here is something important. The Hebrews were not bad people. They were not trying to neglect anybody. They were busy. The apostles were not lazy. They were stretched thin. But the result was still the same. Widows were going hungry.</p>
+
+  <div class="cue">[PAUSE. Soft voice.] "I want you to be honest for a moment. Have you ever been the one who was missed? In a group of friends, in a class, in a family &mdash; have you ever felt like nobody noticed you? Don't say it out loud. Just notice that the Hellenist widows in this story were real people who knew that feeling. The Bible does not pretend they did not matter."</div>
+
+  <p>Now look at verse 2. The apostles call the WHOLE church together &mdash; not just the leaders, the WHOLE church &mdash; and they say something surprising.</p>
+
+  <p>"It is not right that we should give up preaching the word of God to serve tables."</p>
+
+  <p>Wait. The apostles said NO to waiting tables? Was that selfish?</p>
+
+  <p>No. Listen carefully. The apostles did not say feeding widows is unimportant. They said feeding widows is so important that it must be done by the right people, in the right way, by men full of the Spirit. But it cannot be done by US, the apostles, because if we abandon prayer and the ministry of the word, the WHOLE church will collapse. The Word of God is the engine of the whole thing. If we get pulled off the Word, the church loses its life.</p>
+
+  <p>Sometimes the most loving thing a leader can do is refuse a good job that is not their job. The apostles knew their place. Their place was prayer and the Word. The widows needed feeding. Both were good. Both were needed. But not both for the same people.</p>
+
+  <h4 id="acts-wisdom-part-b">Part B &middot; THE WISDOM (verses 3&ndash;4, the apostles' rule) <span class="part-duration">&asymp; 5 min</span></h4>
+
+  <p>Verse 3: "Therefore, brothers, pick out from among you seven men of good repute, full of the Spirit and of wisdom, whom we will appoint to this duty."</p>
+
+  <p>Three things the seven men had to be. Let me show you each one.</p>
+
+  <p><strong>Of good repute.</strong> Repute means reputation. Good repute means people speak well of you because of how you live. Not famous. Not loud. Not popular. Just trusted. The kind of person who is the same in private as in public. The kind of kid the teacher trusts to lock the classroom. The kind of person whose word you can count on.</p>
+
+  <p><strong>Full of the Spirit.</strong> Full of the Holy Spirit. Born again. The Spirit poured out on them, like Titus 3 talked about. Their HEART belongs to Jesus, not just their reputation.</p>
+
+  <p><strong>Full of wisdom.</strong> Wisdom means knowing what to do in real life when the rules don't tell you. Wisdom is what makes a teacher know when to be strict and when to be soft. Wisdom is what makes a parent know when to talk and when to listen. Wisdom is the Bible's word for skill in living.</p>
+
+  <p>Now here is the question I want you to wrestle with. Why did the men chosen to wait tables &mdash; just to hand out food to widows &mdash; need to be FULL OF THE SPIRIT and FULL OF WISDOM? Could you not just hire competent helpers? Why so high a standard for waiting tables?</p>
+
+  <div class="cue">[Wait. Let them try answers. The right answer is below.]</div>
+
+  <p>Here is why, children. Because in the church of Jesus, there is NO SMALL JOB. Every service in the church, from preaching the gospel to washing the dishes, is a witness to Jesus. The widow who finally gets her food sees Jesus through the kindness of the man who hands her the bowl. The cook in the church kitchen is a missionary at the stove. There is no menial work in the body of Christ. That is why even table-service requires Spirit-filled, well-reputed people.</p>
+
+  <p>Now verse 4. The apostles say: "But we will devote ourselves to prayer and to the ministry of the word."</p>
+
+  <p>That word DEVOTE is strong. It means I will give my whole self to this. I will not be pulled off it. I will not let other things take its place. The apostles devote themselves to TWO things: prayer, and the ministry of the word. Talking to God, and bringing God's word to people. Up and down. Down and up. That is the heartbeat of every faithful church leader, then and now. The pastors and elders at IBCM today answer to this same Acts 6:4 standard.</p>
+
+  <h4 id="acts-grace-part-c">Part C &middot; THE GRACE (verses 5&ndash;6, who the church chose) <span class="part-duration">&asymp; 4 min</span></h4>
+
+  <p>Verse 5: "And what they said pleased the whole gathering, and they chose Stephen, a man full of faith and of the Holy Spirit, and Philip, and Prochorus, and Nicanor, and Timon, and Parmenas, and Nicolaus, a proselyte of Antioch."</p>
+
+  <p>Read those seven names again with me. Slowly.</p>
+
+  <p style="margin-left:1.5rem;font-style:italic">Stephen. Philip. Prochorus. Nicanor. Timon. Parmenas. Nicolaus.</p>
+
+  <p>What language do those names sound like to your ear? They are not Hebrew names. They are GREEK names. Every single one. Even Nicolaus is described as "a proselyte of Antioch" &mdash; meaning he was originally a non-Jewish person from far away who became a Jew, and then a Christian.</p>
+
+  <p>Now think about this. The complaint came from the Hellenists, the Greek-speakers. The minority. Their widows were being missed. And what did the church do? They chose seven men with Greek names. They lifted up the very people who had complained. They put the wounded in charge of the wound.</p>
+
+  <p>That, children, is GRACE in church politics. The Hebrew majority did not say to the Hellenists, "Stop complaining. We are doing the best we can." They did not silence them. They did not push them down. They said, "Here. Take leadership. You see the problem better than we do. Lead the fix." That is what Jesus does in his church. He lifts up the wounded. He does not shame them quiet.</p>
+
+  <p>Verse 6 says: "These they set before the apostles, and they prayed and laid their hands on them."</p>
+
+  <p>Praying. Laying on of hands. This is the church taking the seven men seriously. Setting them apart. Asking God to bless their work. Blessing them publicly so the whole church knew who they were and what they were doing.</p>
+
+  <h4 id="acts-harvest-part-d">Part D &middot; THE HARVEST (verse 7, what GOD did) <span class="part-duration">&asymp; 6 min</span></h4>
+
+  <p>Verse 7. The whole story has been building to this. Listen carefully.</p>
+
+  <div class="scripture">
+    <span class="scripture-ref">Acts 6:7 (ESV) &middot; The Climax</span>
+    <p>"And the word of God continued to increase, and the number of the disciples multiplied greatly in Jerusalem, and a great many of the priests became obedient to the faith."</p>
+  </div>
+
+  <p>Three things happened. Watch them stack up.</p>
+
+  <p><strong>One. The word of God continued to INCREASE.</strong> Now I want you to look at that sentence in your Bible. WHO is the subject of the sentence? Who is doing the increasing?</p>
+
+  <div class="cue">[Wait. Let them search.]</div>
+
+  <p>The Word of God itself. Not the apostles. Not the seven men. The WORD. Luke does not write, "and the apostles increased the Word." He writes, "the WORD OF GOD continued to increase." The Word does the increasing. The Word is the subject. The Word is alive.</p>
+
+  <p>Children, I want you to feel this. The Bible is not just sentences on a page. The Bible is the living voice of God. When the Word is preached and read and obeyed, the Word does what God sends it to do. There is a verse in Isaiah 55 that says God's word "shall not return to me empty, but it shall accomplish that which I purpose, and shall succeed in the thing for which I sent it." The Word always works. We don't make it work. We just clear the runway. And the Word flies.</p>
+
+  <p><strong>Two. The number of disciples multiplied GREATLY.</strong> Not just grew. Multiplied. Not by addition. By multiplication. The church was already huge in chapter 6 verse 1. Now Luke says it MULTIPLIED. From thousands to maybe tens of thousands. From a Jerusalem problem to a Jerusalem revival.</p>
+
+  <p><strong>Three. And a great many of the PRIESTS became obedient to the faith.</strong> Stop on this one. Who are the priests? The priests were the religious leaders of the temple. Remember chapters 4 and 5? In Acts chapter 4, the priests had ARRESTED Peter and John for preaching about Jesus. In chapter 5, they arrested the apostles AGAIN and beat them. The priests were the enemies of the church. The priests were the very men who had handed Jesus over to be crucified just a few months before.</p>
+
+  <p>And now? "A GREAT MANY of the priests became obedient to the faith."</p>
+
+  <p>The men who killed Jesus were coming to faith in Jesus.</p>
+
+  <p>How? How did the priests, the hardest hearts in Jerusalem, end up bowing the knee to the Christ they had crucified?</p>
+
+  <p>The answer is right there in the verse. The Word of God increased. The Word, set free by faithful order in the church, broke through the hardest hearts in the city.</p>
+
+  <p>The Word of God is alive, children. It is more powerful than the priests. It is more powerful than the people who hate Jesus today. It can break through the hardest heart you know &mdash; the angry classmate, the cousin who mocks the Bible, the parent who won't believe. The Word of God is alive. It is still increasing. And our job is not to make it work. Our job is to keep it central, to be people of good repute who serve in our right place, and to trust the Word to do what only the Word can do.</p>
+
+  <div class="cue">[PAUSE. Slow breath. Look at them.] "Sit with that for a second. The same Word that converted the priests in Acts 6:7 is the Word we are reading right now. It is alive. It is at work. It is the most valuable thing in this room."</div>
+
+  <div class="testimony">
+    <span class="testimony-label">Lala's Note &middot; &asymp; 2 min &middot; FILL IN YOUR OWN BEFORE SUNDAY</span>
+    <p style="font-style:italic;color:var(--ink-soft)">Optional 2-minute personal moment. Pick one of these prompts and tell the children a real story from your own life:</p>
+    <ul style="font-style:italic;color:var(--ink-soft);margin-top:-0.4rem">
+      <li>A "hidden servant" at IBCM or somewhere else who shaped your faith without ever being thanked publicly &mdash; and what they taught you about Acts 6.</li>
+      <li>A small obedience God asked of you in a quiet season (no audience, no recognition) that he later used in a bigger way &mdash; the small-story / big-story pattern.</li>
+      <li>A moment when you felt the Word of God increase in your own heart &mdash; a verse that grew on you over months, until it changed something.</li>
+    </ul>
+    <p style="font-style:italic;color:var(--ink-soft);margin-top:0">Speak from memory, not paper. Lock arms at the right beat. Tears are okay. End with something like: "...and that is why this story in Acts 6 is not just history. The Word of God is still increasing. He is still using small obediences to grow big stories. He may be doing it in you right now."</p>
+  </div>
+
+  <h3 id="acts-is-it-true-move-3">IS IT TRUE? &middot; Can We Trust This? <span class="move-duration">Move 3 &middot; &asymp; 5 min</span></h3>
+
+  <p>Let's be honest for a minute.</p>
+
+  <p>Luke makes three big claims in verse 7. Let's test them.</p>
+
+  <p><strong>Claim 1:</strong> The Word of God is alive. It does its own work. Is that true? The Bible book of Hebrews chapter 4 says, "the word of God is living and active, sharper than any two-edged sword, piercing to the division of soul and of spirit." Living. Active. Sharp. Not a dead book. Not just words on a page. Alive. And here is the second test. Acts itself uses this exact phrase &mdash; "the word of God increased" or "the word of the Lord spread" &mdash; not just here in chapter 6, but again in Acts 12:24, Acts 13:49, and Acts 19:20. Four times. Four different cities. Same alive Word.</p>
+
+  <p><strong>Claim 2:</strong> The Word converts even the hardest hearts. Is that true? Look at your own life. If you love Jesus today, who first heard about Jesus in your family? Who carried the Word into your home? Somebody, somewhere, was hard-hearted toward Jesus until the Word reached them. The Word converted the priests of Jerusalem who killed Jesus. The Word converted the apostle Paul who was hunting Christians to put them in jail. The Word converts the hardest hearts. There is no one too far gone for the Word.</p>
+
+  <p><strong>Claim 3:</strong> The Word grows when God's people serve in their right place. Is that true? Yes. Imagine the apostles had given up and started waiting tables themselves. The whole church would have lost prayer and the ministry of the word. The Word would have slowed. There would be no Acts 7. No Stephen sermon. No Acts 8. No Philip with the Ethiopian. No Acts 9. No Saul on the road to Damascus. We probably would not be sitting in this room today. The Word grew through the apostles staying on the Word and the seven men staying on the tables. Each in their right place.</p>
+
+  <p>This passage is true. The Word is alive. The Word converts. The Word grows when God's people serve in their right place.</p>
+
+  <h3 id="acts-how-we-feel-move-4">HOW WE FEEL &middot; The Worth of the Word, the Unhurried God <span class="move-duration">Move 4 &middot; &asymp; 4 min</span></h3>
+
+  <p>Two things this passage should make us feel.</p>
+
+  <p><strong>First, the WORTH of the Word of God.</strong> If the apostles thought the ministry of the Word was so precious that it could not be left even for hungry widows, then the Word must be more valuable than we usually feel. Let me ask you something. How many minutes did you read the Bible this past week? How many minutes did you spend on TikTok or YouTube or video games? Be honest with yourself. Now think: which one increases the kingdom of God in your heart? Not which one is fun. Which one is worth more.</p>
+
+  <p>The Word of God is more valuable than the table. More valuable than the food. More valuable than the building. More valuable than the schedule. The men of good repute were chosen so the Word would not be crowded out. That tells us what the Word is worth.</p>
+
+  <p>The deepest believer is not the busiest believer. The deepest believer is the one most SATISFIED with God speaking to them through his Word.</p>
+
+  <p><strong>Second, the UNHURRIED GOD.</strong> Look at the story again. The widows were neglected. The church was about to split. The Word was about to slow. And what did God do? Did he panic? Did he abandon his church? Did he strike the apostles for being slow? No. He gave them, through the Spirit, the wisdom to organize themselves so that his Word could keep running. Then he made the Word increase anyway.</p>
+
+  <p>Children, your God is not anxious about your problems. He is calm. He is sovereign. He is at work. He is the kind of God who, when his people are in a mess, gives them ordered grace to work it out, and then makes his Word increase anyway. When your week feels like Acts 6:1 &mdash; complaints, missed people, things falling apart &mdash; remember that the same God who held the early church holds you. He is not nervous. He is not pacing. He is at work.</p>
+
+  <div class="cue">[PAUSE. Let one beat of silence go by before moving on.]</div>
+
+  <h3 id="acts-what-we-do-move-5">WHAT WE DO &middot; This Week, in Your Right Place <span class="move-duration">Move 5 &middot; &asymp; 10 min</span></h3>
+
+  <p>Here is where it gets concrete.</p>
+
+  <p>Every life is a story. Every story you read in the Bible is a small story inside a bigger story. And the bigger story is one big story &mdash; the gospel. Jesus living, Jesus dying, Jesus rising, Jesus building his church, the Word of God increasing across the world, until Jesus comes back. That is the BIGGEST story. It is the only story that lasts forever.</p>
+
+  <p>Your life is a small story inside that biggest story. And here is the beautiful pattern in Acts 6. Look at the seven men in verse 5. Two of those names show up again later in Acts. <strong>Stephen</strong>, in chapter 7, becomes the first Christian to die for Jesus. He looks up to heaven, sees the glory of God, and says, "Lord Jesus, receive my spirit." His face shines like the face of an angel. <strong>Philip</strong>, in chapter 8, runs alongside an Ethiopian official's chariot, explains the book of Isaiah, and baptizes him. The Ethiopian carries the gospel home to Africa.</p>
+
+  <p>Both of those big-story moments started where? Verse 5. Waiting tables. Serving widows. The small story was the seedbed of the big story.</p>
+
+  <p>That is your pattern too. Right now your right place may feel small. Your right place this week is being a kid who honors his parents, treats classmates well, learns the Word, helps without being asked. Nobody famous will see it. Maybe nobody will notice. But God is writing the small story into a bigger story. He is the author. We just write the small lines.</p>
+
+  <div class="callout action">
+    <span class="callout-label">Small-Story Card</span>
+    <p>I'm going to give each of you a card. On the front, write your name and one SMALL-STORY ACT OF OBEDIENCE for this week. One thing nobody will probably see. Something a kid your age can really do by Tuesday.</p>
+    <p style="margin:0">Examples to get you started:</p>
+    <ol style="margin-top:0.4rem;margin-bottom:0">
+      <li>Say thank you to the helper at home, by name, every morning this week.</li>
+      <li>Sit with the kid nobody sits with at lunch on Monday.</li>
+      <li>Memorize Acts 6:7 by Friday. The Word increases when it lives in hearts.</li>
+      <li>Help one sibling without being asked.</li>
+      <li>Say good morning to the guard at school every day this week.</li>
+      <li>Speak well of one classmate behind their back when others are trash-talking.</li>
+      <li>Pray for one pastor or Christian leader you know, every night this week.</li>
+    </ol>
+    <p style="margin-top:0.6rem;margin-bottom:0">On the back of the card, leave a blank space. The back is for the BIG STORY. That part is God's job. He writes that one.</p>
+  </div>
+
+  <div class="cue">[PAUSE. 3 minutes. Walk around. Listen in. Help them get specific.]</div>
+
+  <p>Now let's do one more thing together. Let's name the HIDDEN SERVANTS at IBCM &mdash; the people who serve and almost never get thanked.</p>
+
+  <div class="callout">
+    <span class="callout-label">Honor Roll &middot; on the whiteboard</span>
+    <p style="margin:0">Out loud, who serves at IBCM that nobody usually notices? I'll write them on the board.</p>
+  </div>
+
+  <div class="cue">[They will name: cleaners, cooks, children's workers, sound team, deacons, security guard, the parents who set up chairs, the drivers who bring families. Write them all.]</div>
+
+  <p>Pick one this week. Find them. Look them in the eye. Say thank you for serving God in your right place. Tell them Acts 6 is about them. The Word of God is increasing in IBCM because of people like you.</p>
+
+  <p>You don't do this to earn Jesus' love. You do it because the Word of God has set you free, and you want to serve in your right place too. Your small story inside his big story.</p>
+
+  <h3 id="acts-how-we-tell-it-move-6">HOW WE TELL IT &middot; The Sentence to Carry <span class="move-duration">Move 6 &middot; &asymp; 4 min</span></h3>
+
+  <p>Grab your index cards and markers. We are going to write one sentence that holds this whole lesson together.</p>
+
+  <p>Ready? Here it is:</p>
+
+  <div class="scripture">
+    <span class="scripture-ref">Acts 6:7 &middot; The Sentence to Carry</span>
+    <p>"And the word of God continued to increase, and the number of the disciples multiplied greatly in Jerusalem."</p>
+  </div>
+
+  <p>Write it on your card. In YOUR handwriting.</p>
+
+  <p>Now on three, everyone say it with me.</p>
+
+  <p>One, two, three:</p>
+
+  <p class="carry-sentence">"And the word of God continued to increase, and the number of the disciples multiplied greatly in Jerusalem."</p>
+
+  <div class="cue">[Say it 3 times: loud, medium, whisper.]</div>
+
+  <p>Put this card somewhere you'll see it every day this week. Your mirror. Your desk. Inside your school notebook. When you feel small this week, read it. When the day at school feels meaningless, read it. When you wonder if your small story matters, read it. The Word of God is alive. It is still increasing. And every faithful kid who serves in their right place is part of that increase.</p>
+
+  <h3 id="acts-closing-prayer">Closing Prayer <span class="move-duration">&asymp; 3 min</span></h3>
+
+  <p>Let's pray.</p>
+
+  <blockquote>
+    "Father, your Word is alive. You are building your church. The gates of hell will not prevail against it. We thank you that you are not anxious about us. You are calm. You are sovereign. You are at work.<br><br>
+    We confess that we grumble like the Hellenists. We want the visible jobs, not the hidden ones. We let your Word become small in our hearts. We forget how valuable your Word is. Forgive us.<br><br>
+    Thank you for the seven men of good repute. Thank you that you converted even the priests who killed your Son. Thank you that the Word continues to increase in IBCM, in Manila, in our families, in our school.<br><br>
+    Make us children of good repute this week. Help us to serve in our right place. Help us to honor the hidden servants we have never thanked. Make your Word increase in us. In Jesus' name, Amen."
+  </blockquote>
+
+  <p style="text-align:center;font-style:italic;color:var(--gold);letter-spacing:0.05em;">The Word of God continues to increase. So do you.</p>
+
+  <div class="callout">
+    <span class="callout-label">Teacher's Notes &middot; Not Read Aloud &middot; For Lala Only</span>
+
+    <p><strong>The focus Lala chose:</strong> Verse 7 as the climax of the whole story. Everything before verse 7 (the complaint, the apostles' rule, the seven names, the laying on of hands) is the runway. Verse 7 is the takeoff. The lesson succeeds when the children walk out understanding that the WORD is the subject of verse 7 (the Word increases; we don't increase the Word) and that they have a place in that increase.</p>
+
+    <p><strong>Why the "small story / big story" framing matters:</strong> This is Lala's own pastoral conviction &mdash; every life has a story, and every story is part of the bigger story (the gospel). Acts 6 is the cleanest passage in the New Testament for teaching this pattern, because two of the seven table-servants (Stephen and Philip) go on to do famous things in the very next chapters. The text itself shows that small obedience precedes big-story moments. Anchor this in Move 5. Don't let it become a self-help "your story matters" sentiment. The point is that Christ is building HIS church, and our small obediences serve HIS bigger story, not ours.</p>
+
+    <p style="margin-bottom:0.5rem"><strong>Timing (60 min hard stop):</strong></p>
+    <ul style="font-size:0.92rem">
+      <li>0:00 &mdash; Welcome + Sari-sari Hook (3)</li>
+      <li>0:03 &mdash; Move 1 LOOK (8) &mdash; Luke + Jerusalem + Hellenists/Hebrews + read-aloud</li>
+      <li>0:11 &mdash; Move 2 UNDERSTAND (20) &mdash; THE BIGGEST SLICE
+        <ul>
+          <li>Part A The Problem v.1&ndash;2 (5)</li>
+          <li>Part B The Wisdom v.3&ndash;4 (5)</li>
+          <li>Part C The Grace v.5&ndash;6 (4)</li>
+          <li>Part D The Harvest v.7 (6) &mdash; including optional 2-min Lala's Note</li>
+        </ul>
+      </li>
+      <li>0:31 &mdash; Move 3 IS IT TRUE? (5)</li>
+      <li>0:36 &mdash; Move 4 HOW WE FEEL (4) &mdash; Worth of the Word + Unhurried God</li>
+      <li>0:40 &mdash; Move 5 WHAT WE DO (10) &mdash; Small-story card + Hidden-servants honor roll</li>
+      <li>0:50 &mdash; Move 6 HOW WE TELL IT (4) &mdash; Acts 6:7 carry-sentence card</li>
+      <li>0:54 &mdash; Closing Prayer (3)</li>
+      <li>0:57 &mdash; Buffer (3)</li>
+    </ul>
+
+    <p style="margin-bottom:0.5rem"><strong>Cut priorities if running long:</strong></p>
+    <ul style="font-size:0.92rem">
+      <li>Lala's Note in Part D (saves 2 min) &mdash; first to cut. Optional from the start.</li>
+      <li>Move 3 entirely (saves 5 min) &mdash; cut to give Move 5 more breathing room if the kids are engaged.</li>
+      <li>Trim Move 4 to 1 min &mdash; just the "worth of the Word" half, drop the unhurried-God half.</li>
+      <li>Move 5 shortened: 2 min for the small-story card, 5 min for the hidden-servants honor roll.</li>
+      <li><strong>Never cut Part D in Move 2 or the carry-sentence card in Move 6.</strong> Verse 7 is the prize. The card is the takeaway. If you must walk out at the 50-min mark, end on Acts 6:7 in their handwriting.</li>
+    </ul>
+
+    <p style="margin-bottom:0.5rem"><strong>Companion materials</strong> (for Saturday-night prep, see the full Truth78 packet in Life-Dashboard):</p>
+    <ul style="font-size:0.92rem">
+      <li><code>personal-skills/ibc-sunday-school/lessons/acts-6-the-word-increases/lesson-1/00-piper-opinion.md</code> &mdash; pre-lesson brief, Pastor John's reasoning on the shape of the lesson.</li>
+      <li><code>1-teacher-lesson.md</code> &mdash; full Truth78 packet teacher lesson with cover page, casting list, hard-questions table.</li>
+      <li><code>1-parent-page.md</code> &mdash; one-page send-home for parents (or solo students).</li>
+      <li><code>1-student-notebook.md</code> &mdash; student worksheet with Quote to Consider (Isaiah 55:11) + Small-Story / Big-Story diagram + Check It Out exegesis on the subject of verse 7.</li>
+      <li><code>1-visuals-spec.md</code> &mdash; eight visuals at three fidelity tiers (Sari-Sari Store Card, BUT Pivot fold-flap, Seven Names Strip, Small-Story Cards, Kinked-Hose demo, Mustard Seeds).</li>
+      <li><code>mvp-teacher-lesson.md</code> + <code>mvp-student-notebook.md</code> &mdash; Saturday-night minimum-viable variant.</li>
+    </ul>
+
+    <p style="margin-bottom:0.5rem"><strong>The THREE theological moves that MUST land:</strong></p>
+    <ol style="font-size:0.92rem">
+      <li><strong>The WORD is the subject of verse 7.</strong> The Word increases; we don't increase the Word. The Word is alive (Hebrews 4:12). The Word does what God sends it to do (Isaiah 55:11). Make the kids see, in the actual text, that "the word of God" is the grammatical subject of "continued to increase." Point to it. Have them read it aloud once with their finger underlining the subject.</li>
+      <li><strong>There is no menial work in the church.</strong> Even waiting tables required men of good repute, full of the Spirit and of wisdom (v.3). The cleaner, the cook, the children's worker, the deacon at IBCM are all serving Jesus, and their work makes the Word free to increase. The Hidden-Servants Honor Roll in Move 5 is the practical landing of this point.</li>
+      <li><strong>Small story serves big story serves the BIGGEST story.</strong> Stephen and Philip are the proof. Both waited tables in Acts 6, both went on to be used by God in Acts 7&ndash;8. Their small obedience was the seedbed. The biggest story is Christ building his church (Matt 16:18). The kids' small story this week is real obedience inside the big story God is writing through them.</li>
+    </ol>
+
+    <p>If they walk away understanding (1) the WORD is alive and increases, (2) there is no menial work in the church, and (3) their small story serves God's big story &mdash; the hour was a success.</p>
+
+    <p style="margin:0"><strong>Big-word glossary:</strong> Hellenists, Hebrews, complaint, neglected, distribution, apostles, summoned, devote, ministry of the word, repute, full of the Spirit, wisdom, proselyte (Gentile convert), laid hands on, increase (= grew + spread), multiplied, priests, obedient to the faith.</p>
+  </div>
+
+  <div class="feedback-block" id="lesson-2-feedback">
+    <h3>Feedback Records &middot; Lesson 2</h3>
+    <p class="feedback-intro">After each Sunday I teach this lesson, add a new dated entry at the top. Duplicate the template. Keep the history &mdash; what landed, what didn't, what the children asked, what to adjust. Future lessons will reference these notes.</p>
+
+    <div class="feedback-entry">
+      <div class="entry-date">Template &middot; duplicate and date when used</div>
+      <h4>Sunday at IBCM &mdash; 8 children, ages 10 to 12</h4>
+      <dl>
+        <dt>Date Taught</dt>
+        <dd><em>YYYY-MM-DD</em></dd>
+
+        <dt>Children Present</dt>
+        <dd><em>Names or count. Note any first-time visitors.</em></dd>
+
+        <dt>What Landed</dt>
+        <dd><em>Did Acts 6:7 land? Which moment carried them &mdash; the sari-sari hook, the Greek names, the priests becoming obedient, the small-story card?</em></dd>
+
+        <dt>What Didn't Land</dt>
+        <dd><em>Where did they drift? Did the Hellenist / Hebrew distinction confuse them? Did Move 3 IS IT TRUE feel skippable?</em></dd>
+
+        <dt>Questions They Asked</dt>
+        <dd><em>Exact words if you can remember. Especially any kid asking why the Word increased even though the church was a mess.</em></dd>
+
+        <dt>Hidden Servants They Named</dt>
+        <dd><em>List the names from the whiteboard honor roll. Did any of the kids actually thank one of those servants this week? Ask next Sunday.</em></dd>
+
+        <dt>Small Stories They Wrote</dt>
+        <dd><em>What did each kid write on their card as their small-story act of obedience? Keep this list. The pattern over weeks is precious.</em></dd>
+
+        <dt>Adjustments for Next Teaching</dt>
+        <dd><em>Cut what? Add what? Reorder what? Did the 20-minute Move 2 hold them?</em></dd>
+
+        <dt>Prayer Requests &middot; Prayers Prayed</dt>
+        <dd><em>What the children asked prayer for. What you prayed over them. Any promptings from the Spirit to follow up on.</em></dd>
+
+        <dt>A Sentence on My Own Heart</dt>
+        <dd><em>Did I teach from delight or duty? Did I trust the Word to do its own work, or did I try to do its work for it?</em></dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+</main>
+</div>
+</section>
+<!-- end Lesson 02 page -->
 
 <section class="page" data-page="about" id="page-about">
 
@@ -2108,13 +2622,17 @@
 
 <script>
 (function () {
-  var PAGES = ['guides', 'lessons', 'about', 'resources'];
+  var PAGES = ['guides', 'lessons', 'lesson-1', 'lesson-2', 'about', 'resources'];
   var TITLES = {
     guides: 'Guides — IBCM Sunday School',
     lessons: 'Lessons — IBCM Sunday School',
+    'lesson-1': 'Lesson 01 · Titus 3:1–8 — IBCM Sunday School',
+    'lesson-2': 'Lesson 02 · Acts 6:1–7 — IBCM Sunday School',
     about: 'About — IBCM Sunday School',
     resources: 'Resources — IBCM Sunday School'
   };
+  // Map sub-pages to the top-nav group they belong to (so top-nav highlight is correct on lesson sub-pages)
+  var NAV_GROUP = { 'lesson-1': 'lessons', 'lesson-2': 'lessons' };
   var DEFAULT_PAGE = 'guides';
 
   function parsePage() {
@@ -2137,8 +2655,9 @@
       }
     });
 
+    var topNavTarget = NAV_GROUP[page] || page;
     document.querySelectorAll('.site-nav a[data-nav]').forEach(function (a) {
-      if (a.getAttribute('data-nav') === page) {
+      if (a.getAttribute('data-nav') === topNavTarget) {
         a.setAttribute('aria-current', 'page');
       } else {
         a.removeAttribute('aria-current');
@@ -2179,7 +2698,7 @@
     if (PAGES.indexOf(page) === -1) return;
     // If same page, still scroll to top
     if (window.location.hash === '#/' + page) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: 'auto' });
     }
   });
 
