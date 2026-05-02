@@ -1064,6 +1064,37 @@
     margin-top: 0.4rem;
   }
 
+  /* Materials hub — sections grouped by lesson */
+  .materials-section {
+    max-width: 880px;
+    margin: 0 auto 3rem;
+    padding: 0 2rem;
+  }
+  .materials-section + .materials-section { margin-top: 2.5rem; }
+  .materials-section-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin: 0 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .materials-section-title a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px dashed transparent;
+    transition: border-bottom-color 0.15s, color 0.15s;
+  }
+  .materials-section-title a:hover {
+    color: var(--burgundy);
+    border-bottom-color: var(--burgundy);
+  }
+  .materials-section nav.lessons-index {
+    margin: 0;
+    padding: 0;
+  }
+
   /* Per-lesson page intro — back link + previous/next sibling links */
   .page-intro .eyebrow .back-link {
     color: var(--gold);
@@ -1101,6 +1132,7 @@
     <a class="site-nav-brand" href="#/guides" data-nav="guides">IBCM Sunday School &middot; Lala</a>
     <a class="nav-item" href="#/guides" data-nav="guides">Guides</a>
     <a class="nav-item" href="#/lessons" data-nav="lessons">Lessons</a>
+    <a class="nav-item" href="#/materials" data-nav="materials">Materials</a>
     <a class="nav-item" href="#/about" data-nav="about">About</a>
     <a class="nav-item" href="#/resources" data-nav="resources">Resources</a>
   </div>
@@ -2133,7 +2165,7 @@
     <li><a href="#acts-what-we-do-move-5"><span class="toc-label">Move 5 &middot; WHAT WE DO</span><span class="toc-meta">&asymp; 10 min &middot; small story, big story</span></a></li>
     <li><a href="#acts-how-we-tell-it-move-6"><span class="toc-label">Move 6 &middot; HOW WE TELL IT</span><span class="toc-meta">&asymp; 4 min &middot; carry sentence</span></a></li>
     <li><a href="#acts-closing-prayer"><span class="toc-label">Closing Prayer</span><span class="toc-meta">&asymp; 3 min</span></a></li>
-    <li class="toc-divider"><a href="#/lesson-2-materials"><span class="toc-label">Materials</span><span class="toc-meta">comics &amp; visuals</span></a></li>
+    <li class="toc-divider"><a href="#/materials"><span class="toc-label">Materials</span><span class="toc-meta">comics &amp; visuals</span></a></li>
     <li><a href="#lesson-2-feedback"><span class="toc-label">Feedback Records</span><span class="toc-meta">log after each Sunday</span></a></li>
   </ol>
   <p class="sidebar-other"><a href="#/lesson-1">&larr; Previous: Lesson 01 &middot; Titus 3:1&ndash;8</a></p>
@@ -2518,32 +2550,35 @@
 </section>
 <!-- end Lesson 02 page -->
 
-<!-- LESSON 02 MATERIALS hub page -->
-<section class="page" data-page="lesson-2-materials" id="page-lesson-2-materials">
+<!-- MATERIALS hub page (global, grouped by lesson) -->
+<section class="page" data-page="materials" id="page-materials">
 
 <div class="page-intro">
-  <span class="eyebrow"><a href="#/lesson-2" class="back-link">&larr; Lesson 02</a></span>
-  <h1>Lesson 02 &middot; Materials</h1>
-  <p class="lead">Comics, visuals, and other companion materials for Acts 6:1&ndash;7. Each material is a standalone page that opens in a new tab &mdash; share with parents and children, or display from the IBCM projector.</p>
+  <span class="eyebrow">All Materials</span>
+  <h1>Materials</h1>
+  <p class="lead">Comics, visuals, and other companion materials for every lesson. Each material is a standalone page that opens in a new tab &mdash; share with parents and children, or display from the IBCM projector. New materials are added as each lesson is taught.</p>
 </div>
 
-<nav class="lessons-index" aria-label="Lesson 02 materials">
-  <a href="lesson-2-materials/acts-6-comic.html" target="_blank" rel="noopener" class="lesson-card">
-    <span class="lesson-num">Comic</span>
-    <span class="lesson-title">The Word of God Increases</span>
-    <span class="lesson-subtitle">A hand-drawn Bible comic retelling Acts 6:1&ndash;7 for IBCM kids &mdash; the early church, the neglected widows, the seven men, and the priests who came to faith.</span>
-    <span class="lesson-meta">11 panels &middot; opens in new tab</span>
-  </a>
-  <a href="lesson-2-materials/bigger-story-comic.html" target="_blank" rel="noopener" class="lesson-card">
-    <span class="lesson-num">Comic</span>
-    <span class="lesson-title">The Bigger Story</span>
-    <span class="lesson-subtitle">Companion comic showing how Stephen and Philip&rsquo;s small story of waiting tables in Acts 6 became the seedbed of God&rsquo;s big story in Acts 7&ndash;8 &mdash; and how every child&rsquo;s small story fits inside the BIGGEST story.</span>
-    <span class="lesson-meta">4 panels &middot; opens in new tab</span>
-  </a>
-</nav>
+<div class="materials-section" id="materials-lesson-2">
+  <h2 class="materials-section-title"><a href="#/lesson-2">Lesson 02 &middot; Acts 6:1&ndash;7</a></h2>
+  <nav class="lessons-index" aria-label="Lesson 02 materials">
+    <a href="lesson-2-materials/acts-6-comic.html" target="_blank" rel="noopener" class="lesson-card">
+      <span class="lesson-num">Comic</span>
+      <span class="lesson-title">The Word of God Increases</span>
+      <span class="lesson-subtitle">A hand-drawn Bible comic retelling Acts 6:1&ndash;7 for IBCM kids &mdash; the early church, the neglected widows, the seven men, and the priests who came to faith.</span>
+      <span class="lesson-meta">11 panels &middot; opens in new tab</span>
+    </a>
+    <a href="lesson-2-materials/bigger-story-comic.html" target="_blank" rel="noopener" class="lesson-card">
+      <span class="lesson-num">Comic</span>
+      <span class="lesson-title">The Bigger Story</span>
+      <span class="lesson-subtitle">Companion comic showing how Stephen and Philip&rsquo;s small story of waiting tables in Acts 6 became the seedbed of God&rsquo;s big story in Acts 7&ndash;8 &mdash; and how every child&rsquo;s small story fits inside the BIGGEST story.</span>
+      <span class="lesson-meta">4 panels &middot; opens in new tab</span>
+    </a>
+  </nav>
+</div>
 
 </section>
-<!-- end Lesson 02 Materials page -->
+<!-- end Materials page -->
 
 <section class="page" data-page="about" id="page-about">
 
@@ -2650,18 +2685,18 @@
 
 <script>
 (function () {
-  var PAGES = ['guides', 'lessons', 'lesson-1', 'lesson-2', 'lesson-2-materials', 'about', 'resources'];
+  var PAGES = ['guides', 'lessons', 'lesson-1', 'lesson-2', 'materials', 'about', 'resources'];
   var TITLES = {
     guides: 'Guides — IBCM Sunday School',
     lessons: 'Lessons — IBCM Sunday School',
     'lesson-1': 'Lesson 01 · Titus 3:1–8 — IBCM Sunday School',
     'lesson-2': 'Lesson 02 · Acts 6:1–7 — IBCM Sunday School',
-    'lesson-2-materials': 'Lesson 02 · Materials — IBCM Sunday School',
+    materials: 'Materials — IBCM Sunday School',
     about: 'About — IBCM Sunday School',
     resources: 'Resources — IBCM Sunday School'
   };
   // Map sub-pages to the top-nav group they belong to (so top-nav highlight is correct on lesson sub-pages)
-  var NAV_GROUP = { 'lesson-1': 'lessons', 'lesson-2': 'lessons', 'lesson-2-materials': 'lessons' };
+  var NAV_GROUP = { 'lesson-1': 'lessons', 'lesson-2': 'lessons' };
   var DEFAULT_PAGE = 'guides';
 
   function parsePage() {
