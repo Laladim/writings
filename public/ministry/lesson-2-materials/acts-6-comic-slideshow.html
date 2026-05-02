@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Acts 6:1&ndash;7 Slideshow &middot; The Word of God Increases</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Bangers&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f5f1f0;
+    --white: #ffffff;
+    --purple: #5a4a7a;
+    --purple-deep: #4a3a6a;
+    --gold: #c8985f;
+    --gold-deep: #a88d5e;
+    --charcoal: #3a3a3a;
+    --warm-gray: #6b6565;
+    --sand: #e0dbd8;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background: var(--cream);
+    color: var(--charcoal);
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    user-select: none;
+    -webkit-user-select: none;
+    overscroll-behavior: none;
+  }
+  .slideshow {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3.5rem 1.5rem 5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.45s ease, transform 0.45s ease;
+    transform: translateY(2rem);
+  }
+  .slide.is-active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  .slide-cover {
+    background: linear-gradient(180deg, var(--cream) 0%, var(--sand) 100%);
+  }
+  .slide-cover-inner {
+    text-align: center;
+    max-width: 720px;
+  }
+  .slide-cover .cover-eyebrow {
+    color: var(--gold-deep);
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+  .slide-cover h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    color: var(--purple-deep);
+    margin: 0 0 1rem;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+  }
+  .slide-cover .cover-rule {
+    width: 60px;
+    height: 3px;
+    background: var(--gold);
+    margin: 1rem auto 1.5rem;
+    border: 0;
+  }
+  .slide-cover .cover-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--warm-gray);
+    margin: 0 0 2rem;
+  }
+  .slide-cover .cover-hint {
+    font-size: 0.85rem;
+    color: var(--warm-gray);
+    letter-spacing: 0.05em;
+  }
+  .slide-cover .cover-hint kbd {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    margin: 0 0.2rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    color: var(--purple-deep);
+    background: var(--white);
+    border: 1px solid var(--sand);
+    border-bottom-width: 2px;
+    border-radius: 4px;
+  }
+  .slide-panel {
+    width: 100%;
+    height: 100%;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .slide-art {
+    flex: 1 1 auto;
+    width: 100%;
+    max-height: calc(100vh - 18rem);
+    border: 3px solid var(--purple-deep);
+    border-radius: 6px;
+    box-shadow: 0 6px 0 -2px var(--gold), 0 14px 26px rgba(60, 40, 80, 0.14);
+    overflow: hidden;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .slide-art img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+  .slide-caption {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 880px;
+    padding: 1rem 0;
+    text-align: center;
+  }
+  .caption-narration {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2.2vw, 1.35rem);
+    color: var(--charcoal);
+    margin: 0 0 0.6rem;
+    line-height: 1.45;
+  }
+  .caption-scripture {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: var(--purple);
+    font-style: italic;
+    margin: 0;
+    padding-top: 0.55rem;
+    border-top: 1px dashed var(--sand);
+    display: inline-block;
+  }
+  .top-bar {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 10;
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+  }
+  .top-bar a, .top-bar button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.8rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--purple);
+    background: var(--white);
+    border: 1px solid var(--sand);
+    border-radius: 999px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+  }
+  .top-bar a:hover, .top-bar button:hover {
+    background: var(--purple);
+    color: var(--cream);
+    border-color: var(--purple);
+  }
+  .progress {
+    position: fixed;
+    bottom: 1.4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 10;
+    pointer-events: none;
+  }
+  .progress-counter {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: var(--warm-gray);
+    letter-spacing: 0.1em;
+    background: var(--white);
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid var(--sand);
+    box-shadow: 0 2px 6px rgba(60,40,80,0.08);
+  }
+  .progress-dots {
+    display: flex;
+    gap: 0.4rem;
+  }
+  .progress-dots span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--sand);
+    transition: background 0.2s, transform 0.2s;
+  }
+  .progress-dots span.is-active {
+    background: var(--gold);
+    transform: scale(1.4);
+  }
+  .nav-arrows {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 5;
+  }
+  .nav-arrows button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: var(--white);
+    border: 1px solid var(--sand);
+    box-shadow: 0 2px 8px rgba(60,40,80,0.1);
+    color: var(--purple);
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+    pointer-events: auto;
+    opacity: 0.55;
+    transition: opacity 0.15s, background 0.15s, color 0.15s;
+  }
+  .nav-arrows button:hover { opacity: 1; background: var(--purple); color: var(--cream); }
+  .nav-arrows .nav-prev { left: 1.5rem; }
+  .nav-arrows .nav-next { right: 1.5rem; }
+  .nav-arrows button[disabled] { opacity: 0.2; cursor: default; }
+  @media (max-width: 700px) {
+    .slide { padding: 4rem 1rem 5.5rem; }
+    .slide-art { max-height: calc(100vh - 16rem); }
+    .nav-arrows .nav-prev { left: 0.5rem; }
+    .nav-arrows .nav-next { right: 0.5rem; }
+    .nav-arrows button { width: 2.4rem; height: 2.4rem; font-size: 1.1rem; }
+    .top-bar a, .top-bar button { padding: 0.35rem 0.6rem; font-size: 0.72rem; }
+  }
+  @media (display-mode: fullscreen) {
+    .top-bar, .progress, .nav-arrows { transition: opacity 0.3s; }
+  }
+</style>
+</head>
+<body>
+<div class="top-bar">
+  <a href="../#/materials" aria-label="Back to materials">&larr; Materials</a>
+  <button class="fullscreen-btn" aria-label="Toggle fullscreen">Fullscreen</button>
+</div>
+<div class="slideshow" role="region" aria-label="Comic slideshow">
+    <section class="slide slide-cover">
+      <div class="slide-cover-inner">
+        <div class="cover-eyebrow">A Bible Comic for IBCM Kids</div>
+        <h1>The Word of God Increases</h1>
+        <hr class="cover-rule">
+        <p class="cover-subtitle">The story of Acts 6:1&ndash;7</p>
+        <p class="cover-hint">Press <kbd>Space</kbd> or <kbd>&rarr;</kbd> to advance, <kbd>F</kbd> for fullscreen, swipe on touch devices.</p>
+      </div>
+    </section>
+    <section class="slide">
+      <div class="slide-panel">
+        <div class="slide-art">
+          <img src="illustrations/slide_09_jerusalem_church_scene__8a96e2a67292.png" alt="">
+        </div>
+        <div class="slide-caption">
+          <p class="caption-narration">The early church in Jerusalem was growing fast. People shared their food, their money, and their lives together. It was beautiful, but it was also messy. When you put thousands of people together, somebody always gets missed.</p>
+          <p class="caption-scripture">&ldquo;Now in these days when the disciples were increasing in number&hellip;&rdquo; — Acts 6:1</p>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div class="slide-panel">
+        <div class="slide-art">
+          <img src="illustrations/slide_19_widow_neglected__f6e0c546d3a8.png" alt="">
+        </div>
+        <div class="slide-caption">
+          <p class="caption-narration">Some of the Greek-speaking widows were being missed in the daily food distribution. They sat at the back of the line with empty bowls, and the food never reached them.</p>
+          <p class="caption-scripture">&ldquo;&hellip;a complaint by the Hellenists arose against the Hebrews because their widows were being neglected.&rdquo; — Acts 6:1</p>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div class="slide-panel">
+        <div class="slide-art">
+          <img src="illustrations/slide_10_hellenists_vs_hebrews__b40baab5d367.png" alt="">
+        </div>
+        <div class="slide-caption">
+          <p class="caption-narration">Two groups inside one church. The Hellenists spoke Greek. The Hebrews spoke Aramaic. Same Jesus, same gospel, same family — but a quiet gap between them. The Hellenist believers spoke up about their widows.</p>
+          <p class="caption-scripture">&ldquo;&hellip;a complaint by the Hellenists arose against the Hebrews&hellip;&rdquo; — Acts 6:1</p>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div class="slide-panel">
+        <div class="slide-art">
+          <img src="illustrations/slide_21_apostles_refusal__32af79434642.png" alt="">
+        </div>
+        <div class="slide-caption">
+          <p class="caption-narration">The twelve apostles called the whole church together. Peter spoke for them all. &lsquo;It is not right that we should give up preaching the word of God to serve tables.&rsquo; Both jobs are good. But not both for the same hands.</p>
+          <p class="caption-scripture">&ldquo;It is not right that we should give up preaching the word of God to serve tables.&rdquo; — Acts 6:2</p>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div class="slide-panel">
+        <div class="slide-art">
+          <img src="illustrations/slide_58_apostles_devoted_v4__c7f0a27674ba.png" alt="">
+        </div>
+        <div class="slide-caption">
+          <p class="caption-narration">&lsquo;But we&hellip; we will devote ourselves to prayer and to the ministry of the word.&rsquo; The apostles knew their place. Talking to God. Bringing God&rsquo;s word to people. Up and down. Down and up. The heartbeat of the church.</p>
+          <p class="caption-scripture">&ldquo;But we will devote ourselves to prayer and to the ministry of the word.&rdquo; — Acts 6:4</p>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div class="slide-panel">
+        <div class="slide-art">
+          <img src="illustrations/slide_63_church_assembly_peter_addresses__d2284f7e0b4d.png" alt="">
+        </div>
+        <div class="slide-caption">
+          <p class="caption-narration">The whole church gathered to hear Peter — Hellenists and Hebrews together, men and women, parents and children. He stood before them all and laid out the plan: the apostles would stay devoted to prayer and the Word; the church would choose seven trusted men to serve the widows.</p>
+          <p class="caption-scripture">&ldquo;And the twelve summoned the full number of the disciples and said&hellip;&rdquo; — Acts 6:2</p>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div class="slide-panel">
+        <div class="slide-art">
+          <img src="illustrations/slide_30_seven_men_lineup__432561df59d1.png" alt="">
+        </div>
+        <div class="slide-caption">
+          <p class="caption-narration">&lsquo;Pick out seven men of good repute, full of the Spirit and full of wisdom.&rsquo; The whole church chose seven men with Greek names — Stephen, Philip, Prochorus, Nicanor, Timon, Parmenas, Nicolaus. The wounded were given the leadership.</p>
+          <p class="caption-scripture">&ldquo;&hellip;they chose Stephen&hellip; and Philip, and Prochorus, and Nicanor, and Timon, and Parmenas, and Nicolaus.&rdquo; — Acts 6:5</p>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div class="slide-panel">
+        <div class="slide-art">
+          <img src="illustrations/slide_33_laying_on_of_hands__faeb8343b3cf.png" alt="">
+        </div>
+        <div class="slide-caption">
+          <p class="caption-narration">The apostles set the seven before the church. They prayed over them. They laid hands on them. The seven were sent — blessed, named, and trusted to serve the widows in their right place.</p>
+          <p class="caption-scripture">&ldquo;These they set before the apostles, and they prayed and laid their hands on them.&rdquo; — Acts 6:6</p>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div class="slide-panel">
+        <div class="slide-art">
+          <img src="illustrations/slide_64_widows_receive_bread__454190c4c057.png" alt="">
+        </div>
+        <div class="slide-caption">
+          <p class="caption-narration">And the widows who had once sat with empty bowls now received their daily bread. The seven moved through the lines, and no one was missed. The hurt was healed in the very place it had happened. The complaint became care.</p>
+          <p class="caption-scripture">&ldquo;&hellip;that they should serve tables.&rdquo; — Acts 6:2</p>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div class="slide-panel">
+        <div class="slide-art">
+          <img src="illustrations/slide_59_word_increased_multiplied__33de42bca0b3.png" alt="">
+        </div>
+        <div class="slide-caption">
+          <p class="caption-narration">And then God did what only God can do. The Word of God CONTINUED TO INCREASE. The number of disciples MULTIPLIED greatly in Jerusalem. Not by addition. By multiplication. From thousands into tens of thousands. The Word was alive.</p>
+          <p class="caption-scripture">&ldquo;And the word of God continued to increase, and the number of the disciples multiplied greatly in Jerusalem&hellip;&rdquo; — Acts 6:7a-b</p>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div class="slide-panel">
+        <div class="slide-art">
+          <img src="illustrations/slide_40_priest_converted__c4d33aa616ae.png" alt="">
+        </div>
+        <div class="slide-caption">
+          <p class="caption-narration">And then the most surprising thing of all. The priests of the temple — the very men who had handed Jesus over to be killed — began to bow the knee to the Christ they had crucified. The Word still breaks the hardest hearts.</p>
+          <p class="caption-scripture">&ldquo;&hellip;and a great many of the priests became obedient to the faith.&rdquo; — Acts 6:7c</p>
+        </div>
+      </div>
+    </section>
+</div>
+<div class="nav-arrows">
+  <button class="nav-prev" aria-label="Previous panel">&larr;</button>
+  <button class="nav-next" aria-label="Next panel">&rarr;</button>
+</div>
+<div class="progress">
+  <div class="progress-counter">1 / 12</div>
+  <div class="progress-dots" aria-hidden="true"></div>
+</div>
+<script>
+(function () {
+  var slideshow = document.querySelector('.slideshow');
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var prevBtn = document.querySelector('.nav-prev');
+  var nextBtn = document.querySelector('.nav-next');
+  var counter = document.querySelector('.progress-counter');
+  var dotsWrap = document.querySelector('.progress-dots');
+  var fullscreenBtn = document.querySelector('.fullscreen-btn');
+  var current = 0;
+
+  function buildDots() {
+    if (!dotsWrap) return;
+    dotsWrap.innerHTML = '';
+    slides.forEach(function () { dotsWrap.appendChild(document.createElement('span')); });
+  }
+  function render() {
+    slides.forEach(function (s, i) { s.classList.toggle('is-active', i === current); });
+    if (counter) counter.textContent = (current + 1) + ' / ' + slides.length;
+    if (dotsWrap) {
+      Array.prototype.forEach.call(dotsWrap.children, function (d, i) {
+        d.classList.toggle('is-active', i === current);
+      });
+    }
+    if (prevBtn) prevBtn.disabled = current === 0;
+    if (nextBtn) nextBtn.disabled = current === slides.length - 1;
+  }
+  function go(delta) {
+    var next = current + delta;
+    if (next < 0 || next >= slides.length) return;
+    current = next;
+    render();
+  }
+  function next() { go(1); }
+  function prev() { go(-1); }
+  function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen && document.documentElement.requestFullscreen();
+    } else {
+      document.exitFullscreen && document.exitFullscreen();
+    }
+  }
+
+  // Keyboard
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown' || e.key === 'j') {
+      e.preventDefault();
+      next();
+    } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft' || e.key === 'PageUp' || e.key === 'k') {
+      e.preventDefault();
+      prev();
+    } else if (e.key === 'Home') {
+      current = 0;
+      render();
+    } else if (e.key === 'End') {
+      current = slides.length - 1;
+      render();
+    } else if (e.key === 'f' || e.key === 'F') {
+      toggleFullscreen();
+    } else if (e.key === 'Escape' && document.fullscreenElement) {
+      // browser handles exit; render to refresh on resize
+    }
+  });
+
+  // Click-to-advance (anywhere on the slideshow except buttons / links)
+  slideshow.addEventListener('click', function (e) {
+    if (e.target.closest('a, button')) return;
+    next();
+  });
+
+  // Touch swipe
+  var touchStartX = null, touchStartY = null;
+  slideshow.addEventListener('touchstart', function (e) {
+    if (e.touches.length !== 1) return;
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+  slideshow.addEventListener('touchend', function (e) {
+    if (touchStartX === null) return;
+    var t = e.changedTouches[0];
+    var dx = t.clientX - touchStartX;
+    var dy = t.clientY - touchStartY;
+    var absX = Math.abs(dx), absY = Math.abs(dy);
+    var threshold = 40;
+    if (Math.max(absX, absY) < threshold) {
+      // small movement — treat as tap (handled by click)
+    } else if (absX > absY) {
+      // horizontal: left swipe = next, right swipe = prev
+      if (dx < 0) next(); else prev();
+    } else {
+      // vertical: up swipe = next, down swipe = prev
+      if (dy < 0) next(); else prev();
+    }
+    touchStartX = touchStartY = null;
+  }, { passive: true });
+
+  if (prevBtn) prevBtn.addEventListener('click', function (e) { e.stopPropagation(); prev(); });
+  if (nextBtn) nextBtn.addEventListener('click', function (e) { e.stopPropagation(); next(); });
+  if (fullscreenBtn) fullscreenBtn.addEventListener('click', function (e) { e.stopPropagation(); toggleFullscreen(); });
+
+  // Mouse-wheel: throttle to one step per scroll burst
+  var wheelLock = false;
+  slideshow.addEventListener('wheel', function (e) {
+    if (wheelLock) return;
+    if (Math.abs(e.deltaY) < 30) return;
+    wheelLock = true;
+    if (e.deltaY > 0) next(); else prev();
+    setTimeout(function () { wheelLock = false; }, 700);
+  }, { passive: true });
+
+  buildDots();
+  render();
+})();
+</script>
+</body>
+</html>
