@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Bigger Story &middot; Acts 6:1&ndash;7 Companion Comic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Bangers&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f5f1f0;
+    --white: #ffffff;
+    --purple: #5a4a7a;
+    --purple-deep: #4a3a6a;
+    --gold: #c8985f;
+    --gold-deep: #a88d5e;
+    --charcoal: #3a3a3a;
+    --warm-gray: #6b6565;
+    --sand: #e0dbd8;
+    --rose: #a0756a;
+    --sage: #5a8a72;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--cream);
+    color: var(--charcoal);
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.5;
+    padding: 2.5rem 1.25rem 4rem;
+    min-height: 100vh;
+  }
+  .comic-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .back-link-bar {
+    margin-bottom: 1.5rem;
+  }
+  .back-link {
+    color: var(--purple);
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-bottom: 1px dashed var(--purple);
+    padding-bottom: 0.1rem;
+  }
+  .back-link:hover {
+    color: var(--gold-deep);
+    border-bottom-color: var(--gold-deep);
+  }
+  .comic-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--sand);
+  }
+  .comic-eyebrow {
+    color: var(--gold-deep);
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+  }
+  .comic-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    color: var(--purple-deep);
+    margin: 0.6rem 0 0.4rem;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+  }
+  .comic-rule {
+    width: 60px;
+    height: 3px;
+    background: var(--gold);
+    margin: 1rem auto 1rem;
+    border: 0;
+  }
+  .comic-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--warm-gray);
+    font-size: 1.25rem;
+    margin: 0;
+  }
+  .part-header {
+    text-align: center;
+    margin: 3.5rem 0 2rem;
+    padding: 1.4rem 1.5rem;
+    background: var(--purple-deep);
+    border-radius: 6px;
+    box-shadow: 0 4px 0 -1px var(--gold);
+  }
+  .part-header:first-of-type { margin-top: 0; }
+  .part-eyebrow {
+    color: var(--gold);
+    font-family: 'Bangers', cursive;
+    font-size: 1.1rem;
+    letter-spacing: 0.3em;
+  }
+  .part-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--cream);
+    margin: 0.3rem 0 0;
+    font-weight: 900;
+    letter-spacing: -0.005em;
+  }
+  .part-subtitle {
+    color: var(--cream);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    opacity: 0.85;
+    margin: 0.3rem 0 0;
+  }
+  .panel-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 1.6rem;
+  }
+  .panel {
+    background: var(--white);
+    border: 3px solid var(--purple-deep);
+    border-radius: 6px;
+    box-shadow: 0 6px 0 -2px var(--gold), 0 10px 18px rgba(60, 40, 80, 0.10);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  }
+  .panel:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 0 -2px var(--gold), 0 14px 22px rgba(60, 40, 80, 0.14);
+  }
+  .panel-large { grid-column: span 6; }
+  .panel-medium { grid-column: span 3; }
+  .panel-small { grid-column: span 2; }
+  .panel-art {
+    position: relative;
+    background: var(--cream);
+    overflow: hidden;
+  }
+  .panel-art img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .panel-num {
+    position: absolute;
+    top: 0.7rem;
+    left: 0.7rem;
+    background: var(--gold);
+    color: var(--white);
+    font-family: 'Bangers', cursive;
+    font-size: 1.35rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    text-align: center;
+    border-radius: 50%;
+    border: 3px solid var(--white);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+  }
+  .panel-caption {
+    padding: 1.1rem 1.3rem 1.2rem;
+    background: var(--cream);
+    border-top: 2px solid var(--sand);
+    flex: 1;
+  }
+  .caption-narration {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.08rem;
+    color: var(--charcoal);
+    margin: 0 0 0.65rem;
+    line-height: 1.45;
+  }
+  .caption-scripture {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    color: var(--purple);
+    font-style: italic;
+    margin: 0;
+    padding-top: 0.55rem;
+    border-top: 1px dashed var(--sand);
+    letter-spacing: 0.01em;
+  }
+  .comic-footer {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--sand);
+  }
+  .footer-tag {
+    color: var(--gold-deep);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    margin: 0;
+  }
+  .footer-meta {
+    color: var(--warm-gray);
+    font-size: 0.78rem;
+    margin-top: 0.6rem;
+    letter-spacing: 0.05em;
+  }
+  @media (max-width: 700px) {
+    .panel-medium, .panel-small { grid-column: span 6; }
+    body { padding: 1.5rem 0.75rem 3rem; }
+    .part-title { font-size: 1.4rem; }
+  }
+</style>
+</head>
+<body>
+<div class="comic-wrap">
+
+  <div class="back-link-bar">
+    <a class="back-link" href="../#/lesson-2-materials">&larr; Lesson 02 &middot; Materials</a>
+  </div>
+
+  <header class="comic-header">
+    <div class="comic-eyebrow">A Bible Comic for IBCM Kids</div>
+    <h1 class="comic-title">The Bigger Story</h1>
+    <hr class="comic-rule">
+    <p class="comic-subtitle">Your small story inside the BIGGEST story</p>
+  </header>
+
+  <main class="panel-grid">
+    <article class="panel panel-large">
+      <div class="panel-art">
+        <img src="illustrations/slide_60_small_story_big_story__dba26cdd41f1.png" alt="Panel 1">
+        <span class="panel-num">1</span>
+      </div>
+      <div class="panel-caption">
+        <p class="caption-narration">Every story you read in the Bible is a small story inside a bigger story. The bigger story is one BIG story — the gospel. Jesus living, Jesus dying, Jesus rising, Jesus building his church, the Word increasing across the world, until Jesus comes back. That is the BIGGEST story. It is the only story that lasts forever. Your life is a small story inside that biggest story.</p>
+        <p class="caption-scripture">&ldquo;In the beginning was the Word&hellip; and the Word was God.&rdquo; — John 1:1</p>
+      </div>
+    </article>
+    <article class="panel panel-medium">
+      <div class="panel-art">
+        <img src="illustrations/slide_61_stephen_first_martyr__ace6a00228a5.png" alt="Panel 2">
+        <span class="panel-num">2</span>
+      </div>
+      <div class="panel-caption">
+        <p class="caption-narration">STEPHEN, in chapter 7, becomes the first Christian to die for Jesus. He looks up to heaven, sees the glory of God, and says, &lsquo;Lord Jesus, receive my spirit.&rsquo; His face shines like the face of an angel.</p>
+        <p class="caption-scripture">&ldquo;Lord Jesus, receive my spirit.&rdquo; — Acts 7:59</p>
+      </div>
+    </article>
+    <article class="panel panel-medium">
+      <div class="panel-art">
+        <img src="illustrations/slide_62_philip_and_ethiopian__f3437eba2c03.png" alt="Panel 3">
+        <span class="panel-num">3</span>
+      </div>
+      <div class="panel-caption">
+        <p class="caption-narration">PHILIP, in chapter 8, runs alongside an Ethiopian official&rsquo;s chariot, explains the book of Isaiah, and baptizes him. The Ethiopian carries the gospel home to Africa.</p>
+        <p class="caption-scripture">&ldquo;Then Philip opened his mouth, and beginning with this Scripture he told him the good news about Jesus.&rdquo; — Acts 8:35</p>
+      </div>
+    </article>
+    <article class="panel panel-large">
+      <div class="panel-art">
+        <img src="illustrations/slide_30_seven_men_lineup__bd378dc31cd5.png" alt="Panel 4">
+        <span class="panel-num">4</span>
+      </div>
+      <div class="panel-caption">
+        <p class="caption-narration">Both big-story moments started where? Right HERE. Verse 5. Waiting tables. Serving widows. The small story was the seedbed of the big story. Your right place this week may feel small. But God is the author. He writes the small lines into the big story.</p>
+        <p class="caption-scripture">&ldquo;&hellip;and they chose Stephen&hellip; and Philip&hellip;&rdquo; — Acts 6:5</p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="comic-footer">
+    <p class="footer-tag">&ldquo;Small story, big story, BIGGEST story.&rdquo;</p>
+    <p class="footer-meta">Lesson 02 &middot; IBCM Sunday School &middot; Teacher Lala</p>
+  </footer>
+</div>
+</body>
+</html>
