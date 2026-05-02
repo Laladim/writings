@@ -55,6 +55,9 @@
     object-fit: contain;
     display: block;
   }
+  /* Hide cursor in fullscreen for clean projector view */
+  html:fullscreen .slideshow,
+  html:-webkit-full-screen .slideshow { cursor: none; }
 </style>
 </head>
 <body>
@@ -93,6 +96,7 @@
   var slideshow = document.querySelector('.slideshow');
   var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
   var current = 0;
+  var hasTriedFullscreen = false;
 
   function render() {
     slides.forEach(function (s, i) { s.classList.toggle('is-active', i === current); });
@@ -105,15 +109,41 @@
   }
   function next() { go(1); }
   function prev() { go(-1); }
+  function enterFullscreen() {
+    var el = document.documentElement;
+    var req = el.requestFullscreen || el.webkitRequestFullscreen || el.mozRequestFullScreen || el.msRequestFullscreen;
+    if (req) { try { req.call(el); } catch (e) {} }
+  }
+  function exitFullscreen() {
+    var fn = document.exitFullscreen || document.webkitExitFullscreen || document.mozCancelFullScreen || document.msExitFullscreen;
+    if (fn) { try { fn.call(document); } catch (e) {} }
+  }
+  function isFullscreen() {
+    return !!(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement);
+  }
   function toggleFullscreen() {
-    if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen && document.documentElement.requestFullscreen();
-    } else {
-      document.exitFullscreen && document.exitFullscreen();
+    if (isFullscreen()) exitFullscreen(); else enterFullscreen();
+  }
+  // First user interaction: enter fullscreen silently and DON'T advance/act.
+  // Subsequent interactions navigate normally.
+  function gateFullscreen() {
+    if (hasTriedFullscreen) return false;
+    hasTriedFullscreen = true;
+    if (!isFullscreen()) {
+      enterFullscreen();
+      return true; // intercepted — caller should not also advance
     }
+    return false;
   }
 
   document.addEventListener('keydown', function (e) {
+    var navKey =
+      e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === ' ' ||
+      e.key === 'PageDown' || e.key === 'j' ||
+      e.key === 'ArrowUp' || e.key === 'ArrowLeft' || e.key === 'PageUp' || e.key === 'k' ||
+      e.key === 'Home' || e.key === 'End';
+    if (navKey && gateFullscreen()) { e.preventDefault(); return; }
+
     if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown' || e.key === 'j') {
       e.preventDefault();
       next();
@@ -131,7 +161,10 @@
     }
   });
 
-  slideshow.addEventListener('click', function () { next(); });
+  slideshow.addEventListener('click', function () {
+    if (gateFullscreen()) return;
+    next();
+  });
 
   var touchStartX = null, touchStartY = null;
   slideshow.addEventListener('touchstart', function (e) {
@@ -147,11 +180,14 @@
     var absX = Math.abs(dx), absY = Math.abs(dy);
     var threshold = 40;
     if (Math.max(absX, absY) < threshold) {
-      // tap — already handled by click
-    } else if (absX > absY) {
-      if (dx < 0) next(); else prev();
+      // tap — handled by click handler above
     } else {
-      if (dy < 0) next(); else prev();
+      if (gateFullscreen()) { touchStartX = touchStartY = null; return; }
+      if (absX > absY) {
+        if (dx < 0) next(); else prev();
+      } else {
+        if (dy < 0) next(); else prev();
+      }
     }
     touchStartX = touchStartY = null;
   }, { passive: true });
@@ -160,6 +196,7 @@
   slideshow.addEventListener('wheel', function (e) {
     if (wheelLock) return;
     if (Math.abs(e.deltaY) < 30) return;
+    if (gateFullscreen()) return;
     wheelLock = true;
     if (e.deltaY > 0) next(); else prev();
     setTimeout(function () { wheelLock = false; }, 700);
