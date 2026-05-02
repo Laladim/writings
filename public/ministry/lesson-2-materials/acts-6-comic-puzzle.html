@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Put the Story in Order &middot; Acts 6:1&ndash;7</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@500;600;700&family=Source+Serif+4:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #faf8f4;
+    --cream-deep: #f0ebe2;
+    --navy: #5a4a7a;
+    --navy-soft: #4a3a6a;
+    --gold: #c8985f;
+    --gold-soft: #d4ab7a;
+    --burgundy: #a0756a;
+    --green: #6f9c6b;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--cream);
+    color: var(--navy-soft);
+    font-family: 'Source Serif 4', Georgia, serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  header {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 28px 24px 20px;
+    border-bottom: 6px solid var(--gold);
+    text-align: center;
+  }
+  header h1 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(28px, 5vw, 44px);
+    margin: 0 0 6px;
+    letter-spacing: 0.5px;
+  }
+  header .ref {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--gold-soft);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+  header .ref a { color: var(--gold-soft); text-decoration: none; border-bottom: 1px solid transparent; }
+  header .ref a:hover { border-bottom-color: var(--gold-soft); }
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+  }
+  .instructions {
+    text-align: center;
+    font-size: clamp(16px, 2.2vw, 19px);
+    color: var(--navy-soft);
+    margin: 0 auto 22px;
+    max-width: 720px;
+    line-height: 1.45;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    list-style: none;
+    margin: 0 0 24px;
+    padding: 0;
+  }
+  @media (max-width: 720px) {
+    .grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  }
+  .tile {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    background: var(--cream-deep);
+    border: 3px solid transparent;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: grab;
+    box-shadow: 0 2px 6px rgba(74, 58, 106, 0.08);
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: element;
+  }
+  .tile:focus-visible {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 4px rgba(200, 152, 95, 0.3);
+  }
+  .tile.is-grabbing {
+    cursor: grabbing;
+  }
+  .tile.is-keyboard-active {
+    border-color: var(--gold);
+    transform: scale(1.04);
+    box-shadow: 0 6px 18px rgba(74, 58, 106, 0.2);
+  }
+  .tile.is-correct {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(111, 156, 107, 0.25);
+  }
+  .tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+  }
+  .tile .badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: var(--navy);
+    color: var(--cream);
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+  }
+  .tile.is-correct .badge { background: var(--green); }
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 18px;
+  }
+  button {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 12px 28px;
+    border-radius: 10px;
+    border: 2px solid var(--navy);
+    background: var(--navy);
+    color: var(--cream);
+    cursor: pointer;
+    transition: background 0.15s, transform 0.05s;
+    min-width: 180px;
+  }
+  button:hover { background: var(--navy-soft); }
+  button:active { transform: translateY(1px); }
+  button.secondary {
+    background: var(--cream);
+    color: var(--navy);
+  }
+  button.secondary:hover { background: var(--cream-deep); }
+  button.gold {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--cream);
+  }
+  button.gold:hover { background: var(--gold-soft); border-color: var(--gold-soft); }
+  button:disabled { opacity: 0.4; cursor: not-allowed; }
+  .feedback {
+    text-align: center;
+    min-height: 56px;
+    margin-top: 14px;
+    padding: 14px 18px;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(20px, 3vw, 26px);
+    color: var(--navy);
+    font-style: italic;
+    line-height: 1.4;
+  }
+  .feedback.is-success {
+    color: var(--green);
+    font-weight: 600;
+  }
+  .feedback.is-partial {
+    color: var(--burgundy);
+  }
+  .a11y-help {
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--navy-soft);
+    opacity: 0.7;
+    margin-top: 30px;
+  }
+  .sortable-ghost {
+    opacity: 0.3;
+  }
+  .sortable-chosen {
+    border-color: var(--gold) !important;
+  }
+  .sortable-drag {
+    box-shadow: 0 12px 24px rgba(74, 58, 106, 0.3) !important;
+  }
+  /* Confetti canvas — full screen overlay, non-blocking */
+  .confetti-canvas {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Put the Story in Order</h1>
+  <div class="ref"><a href="https://www.biblegateway.com/passage/?search=Acts+6%3A1-7&version=ESV" target="_blank" rel="noopener">Acts 6:1&ndash;7 &middot; ESV</a></div>
+</header>
+<main>
+  <p class="instructions">Drag the pictures into the order the story happened. The numbers show each picture's spot. Tap <strong>Check My Answer</strong> when you're ready.</p>
+
+  <ul class="grid" id="grid" aria-label="Comic panels — drag to reorder"></ul>
+
+  <div class="controls">
+    <button id="check-btn" type="button">Check My Answer</button>
+    <button id="shuffle-btn" type="button" class="secondary">Shuffle Again</button>
+    <button id="show-btn" type="button" class="gold" hidden>Show Me the Answer</button>
+    <button id="play-again-btn" type="button" class="secondary" hidden>Play Again</button>
+  </div>
+  <div class="feedback" id="feedback" aria-live="polite"></div>
+
+  <p class="a11y-help">Keyboard: Tab to a picture, then press &larr; or &rarr; to swap it with its neighbor.</p>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.7/Sortable.min.js" integrity="sha384-DgmC6Xe2bSN2WjTDXzWYbUbxyhNP+NNkGDR/g78pCXV7E7rcVTGxVg0uIVCUUcBc" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.4/dist/confetti.browser.min.js" integrity="sha384-JSZXO0kKYHTylAsDYTb+7Kg2eUyalm19b8Pydcdf8sQ1cCKYZr9lLahoKT9+LFY5" crossorigin="anonymous"></script>
+<script>
+(function () {
+  // ---- Source of truth: chronological order of Acts 6:1-7 panels ----
+  var CORRECT_ORDER = [
+    { file: 'slide_09_jerusalem_church_scene__8a96e2a67292.png',           alt: 'The early church in Jerusalem' },
+    { file: 'slide_10_hellenists_vs_hebrews__b40baab5d367.png',            alt: 'Greek-speaking and Hebrew-speaking believers' },
+    { file: 'slide_19_widow_neglected__f6e0c546d3a8.png',                  alt: 'A widow being overlooked' },
+    { file: 'slide_21_apostles_refusal__32af79434642.png',                 alt: 'The apostles say they cannot leave teaching' },
+    { file: 'slide_63_church_assembly_peter_addresses__d2284f7e0b4d.png',  alt: 'Peter addresses the gathered church' },
+    { file: 'slide_58_apostles_devoted_v4__c7f0a27674ba.png',              alt: 'The apostles devoted to prayer and the word' },
+    { file: 'slide_65_church_applauds_plan__556cc1b4c66b.png',             alt: 'The church agrees with the plan' },
+    { file: 'slide_30_seven_men_lineup__432561df59d1.png',                 alt: 'Seven men chosen to serve' },
+    { file: 'slide_33_laying_on_of_hands__faeb8343b3cf.png',               alt: 'The apostles laying hands on the seven' },
+    { file: 'slide_64_widows_receive_bread__454190c4c057.png',             alt: 'Widows receiving bread' },
+    { file: 'slide_59_word_increased_multiplied__33de42bca0b3.png',        alt: 'The word of God increased and multiplied' },
+    { file: 'slide_40_priest_converted__c4d33aa616ae.png',                 alt: 'A priest comes to faith' }
+  ];
+  var TOTAL = CORRECT_ORDER.length;
+
+  // ---- DOM refs ----
+  var grid = document.getElementById('grid');
+  var checkBtn = document.getElementById('check-btn');
+  var shuffleBtn = document.getElementById('shuffle-btn');
+  var showBtn = document.getElementById('show-btn');
+  var playAgainBtn = document.getElementById('play-again-btn');
+  var feedback = document.getElementById('feedback');
+
+  var failCount = 0;
+  var sortable = null;
+
+  // ---- Fisher-Yates shuffle that rejects the already-correct permutation ----
+  function shuffled() {
+    var attempt = 0;
+    while (attempt < 20) {
+      var arr = CORRECT_ORDER.slice();
+      for (var i = arr.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var t = arr[i]; arr[i] = arr[j]; arr[j] = t;
+      }
+      var same = true;
+      for (var k = 0; k < arr.length; k++) {
+        if (arr[k].file !== CORRECT_ORDER[k].file) { same = false; break; }
+      }
+      if (!same) return arr;
+      attempt++;
+    }
+    return arr;
+  }
+
+  // ---- Render ----
+  function renderGrid(items) {
+    grid.innerHTML = '';
+    items.forEach(function (item, idx) {
+      var li = document.createElement('li');
+      li.className = 'tile';
+      li.setAttribute('data-file', item.file);
+      li.setAttribute('tabindex', '0');
+      li.setAttribute('role', 'listitem');
+      li.setAttribute('aria-label', 'Position ' + (idx + 1) + ': ' + item.alt);
+
+      var badge = document.createElement('span');
+      badge.className = 'badge';
+      badge.textContent = (idx + 1);
+
+      var img = document.createElement('img');
+      img.src = 'illustrations/' + item.file;
+      img.alt = item.alt;
+      img.loading = 'lazy';
+
+      li.appendChild(badge);
+      li.appendChild(img);
+      grid.appendChild(li);
+    });
+  }
+
+  function refreshBadges() {
+    var tiles = grid.querySelectorAll('.tile');
+    tiles.forEach(function (t, idx) {
+      t.querySelector('.badge').textContent = (idx + 1);
+      t.setAttribute('aria-label', 'Position ' + (idx + 1) + ': ' + (t.querySelector('img').alt || ''));
+      t.classList.remove('is-correct');
+    });
+  }
+
+  // ---- Init Sortable ----
+  function initSortable() {
+    if (sortable) sortable.destroy();
+    sortable = new Sortable(grid, {
+      animation: 200,
+      ghostClass: 'sortable-ghost',
+      chosenClass: 'sortable-chosen',
+      dragClass: 'sortable-drag',
+      forceFallback: false,
+      delay: 0,
+      delayOnTouchOnly: false,
+      touchStartThreshold: 4,
+      onStart: function (evt) {
+        evt.item.classList.add('is-grabbing');
+      },
+      onEnd: function (evt) {
+        evt.item.classList.remove('is-grabbing');
+        refreshBadges();
+        clearFeedback();
+      }
+    });
+  }
+
+  // ---- Check ----
+  function check() {
+    var tiles = grid.querySelectorAll('.tile');
+    var correctCount = 0;
+    tiles.forEach(function (t, idx) {
+      var f = t.getAttribute('data-file');
+      if (f === CORRECT_ORDER[idx].file) {
+        t.classList.add('is-correct');
+        correctCount++;
+      } else {
+        t.classList.remove('is-correct');
+      }
+    });
+
+    if (correctCount === TOTAL) {
+      onWin();
+    } else {
+      failCount++;
+      feedback.className = 'feedback is-partial';
+      feedback.textContent = 'You got ' + correctCount + ' out of ' + TOTAL + ' in the right place. Keep trying!';
+      if (failCount >= 3 && showBtn.hidden) {
+        showBtn.hidden = false;
+      }
+    }
+  }
+
+  function clearFeedback() {
+    feedback.className = 'feedback';
+    feedback.textContent = '';
+    grid.querySelectorAll('.tile.is-correct').forEach(function (t) { t.classList.remove('is-correct'); });
+  }
+
+  // ---- Win flow ----
+  function onWin() {
+    feedback.className = 'feedback is-success';
+    feedback.innerHTML = '🎉 You got it! The early church chose seven men so the apostles could keep teaching God’s word.';
+    checkBtn.hidden = true;
+    shuffleBtn.hidden = true;
+    showBtn.hidden = true;
+    playAgainBtn.hidden = false;
+    if (sortable) { sortable.option('disabled', true); }
+    fireConfetti();
+  }
+
+  function fireConfetti() {
+    if (typeof confetti !== 'function') return;
+    var burst = function (origin) {
+      confetti({
+        particleCount: 80,
+        spread: 70,
+        startVelocity: 45,
+        origin: origin,
+        colors: ['#5a4a7a', '#c8985f', '#a0756a', '#6f9c6b', '#d4ab7a']
+      });
+    };
+    burst({ x: 0.2, y: 0.6 });
+    setTimeout(function () { burst({ x: 0.8, y: 0.6 }); }, 180);
+    setTimeout(function () { burst({ x: 0.5, y: 0.5 }); }, 360);
+  }
+
+  // ---- Show Me animation ----
+  function showAnswer() {
+    var current = Array.prototype.slice.call(grid.querySelectorAll('.tile'));
+    var byFile = {};
+    current.forEach(function (t) { byFile[t.getAttribute('data-file')] = t; });
+    // Re-append tiles in the correct order; CSS animation gives a soft slide
+    CORRECT_ORDER.forEach(function (item) {
+      var tile = byFile[item.file];
+      if (tile) grid.appendChild(tile);
+    });
+    refreshBadges();
+    feedback.className = 'feedback';
+    feedback.textContent = 'This is the right order. Try shuffling and putting it together yourself!';
+    showBtn.hidden = true;
+    if (sortable) { sortable.option('disabled', true); }
+    checkBtn.disabled = true;
+  }
+
+  // ---- Reset ----
+  function reset() {
+    failCount = 0;
+    showBtn.hidden = true;
+    playAgainBtn.hidden = true;
+    checkBtn.hidden = false;
+    checkBtn.disabled = false;
+    shuffleBtn.hidden = false;
+    clearFeedback();
+    renderGrid(shuffled());
+    initSortable();
+  }
+
+  // ---- Keyboard a11y: arrow keys swap focused tile with neighbor ----
+  grid.addEventListener('keydown', function (e) {
+    var t = e.target;
+    if (!t.classList || !t.classList.contains('tile')) return;
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight' && e.key !== 'ArrowUp' && e.key !== 'ArrowDown') return;
+    e.preventDefault();
+    var tiles = Array.prototype.slice.call(grid.querySelectorAll('.tile'));
+    var idx = tiles.indexOf(t);
+    if (idx === -1) return;
+    var cols = window.matchMedia('(max-width: 720px)').matches ? 2 : 4;
+    var swapIdx = idx;
+    if (e.key === 'ArrowLeft')  swapIdx = idx - 1;
+    if (e.key === 'ArrowRight') swapIdx = idx + 1;
+    if (e.key === 'ArrowUp')    swapIdx = idx - cols;
+    if (e.key === 'ArrowDown')  swapIdx = idx + cols;
+    if (swapIdx < 0 || swapIdx >= tiles.length) return;
+    var other = tiles[swapIdx];
+    // Swap DOM positions
+    var tParent = t.parentNode;
+    var tNext = t.nextSibling === other ? t : t.nextSibling;
+    tParent.insertBefore(t, other);
+    tParent.insertBefore(other, tNext);
+    refreshBadges();
+    clearFeedback();
+    t.focus();
+  });
+
+  // ---- Wire up ----
+  checkBtn.addEventListener('click', check);
+  shuffleBtn.addEventListener('click', reset);
+  showBtn.addEventListener('click', showAnswer);
+  playAgainBtn.addEventListener('click', reset);
+
+  // ---- Boot ----
+  renderGrid(shuffled());
+  initSortable();
+})();
+</script>
+</body>
+</html>
