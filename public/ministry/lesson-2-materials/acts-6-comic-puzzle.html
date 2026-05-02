@@ -30,17 +30,36 @@
   header {
     background: var(--navy);
     color: var(--cream);
-    padding: 28px 24px 20px;
+    padding: 18px 24px 14px;
     border-bottom: 6px solid var(--gold);
     text-align: center;
+    position: relative;
   }
   header h1 {
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-weight: 600;
-    font-size: clamp(28px, 5vw, 44px);
-    margin: 0 0 6px;
+    font-size: clamp(24px, 3.6vw, 36px);
+    margin: 0 0 4px;
     letter-spacing: 0.5px;
   }
+  .fs-toggle {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    background: transparent;
+    border: 1.5px solid var(--gold-soft);
+    color: var(--gold-soft);
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    min-width: 0;
+    letter-spacing: 0.5px;
+    transition: background 0.15s, color 0.15s;
+  }
+  .fs-toggle:hover { background: var(--gold-soft); color: var(--navy); }
   header .ref {
     font-family: 'Inter', sans-serif;
     font-size: 14px;
@@ -51,24 +70,23 @@
   header .ref a { color: var(--gold-soft); text-decoration: none; border-bottom: 1px solid transparent; }
   header .ref a:hover { border-bottom-color: var(--gold-soft); }
   main {
-    max-width: 1200px;
     margin: 0 auto;
-    padding: 24px 20px 60px;
+    padding: 16px clamp(8px, 1.5vw, 24px) 40px;
   }
   .instructions {
     text-align: center;
-    font-size: clamp(16px, 2.2vw, 19px);
+    font-size: clamp(15px, 1.8vw, 18px);
     color: var(--navy-soft);
-    margin: 0 auto 22px;
-    max-width: 720px;
+    margin: 0 auto 14px;
+    max-width: 820px;
     line-height: 1.45;
   }
   .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 14px;
+    gap: clamp(8px, 1.2vw, 16px);
     list-style: none;
-    margin: 0 0 24px;
+    margin: 0 0 18px;
     padding: 0;
   }
   @media (max-width: 720px) {
@@ -103,8 +121,27 @@
   }
   .tile.is-correct {
     border-color: var(--green);
-    box-shadow: 0 0 0 3px rgba(111, 156, 107, 0.25);
+    box-shadow: 0 0 0 4px rgba(111, 156, 107, 0.45), 0 4px 12px rgba(111, 156, 107, 0.3);
   }
+  .tile.is-wrong {
+    border-color: var(--burgundy);
+    box-shadow: 0 0 0 4px rgba(160, 117, 106, 0.4), 0 4px 12px rgba(160, 117, 106, 0.25);
+  }
+  .tile.is-correct .badge { background: var(--green); }
+  .tile.is-wrong .badge { background: var(--burgundy); }
+  /* Pulse animation when a tile is freshly placed */
+  @keyframes pulse-correct {
+    0%   { box-shadow: 0 0 0 0 rgba(111, 156, 107, 0); }
+    35%  { box-shadow: 0 0 0 12px rgba(111, 156, 107, 0.55), 0 4px 16px rgba(111, 156, 107, 0.45); }
+    100% { box-shadow: 0 0 0 4px rgba(111, 156, 107, 0.45), 0 4px 12px rgba(111, 156, 107, 0.3); }
+  }
+  @keyframes pulse-wrong {
+    0%   { box-shadow: 0 0 0 0 rgba(160, 117, 106, 0); }
+    35%  { box-shadow: 0 0 0 12px rgba(160, 117, 106, 0.5), 0 4px 16px rgba(160, 117, 106, 0.4); }
+    100% { box-shadow: 0 0 0 4px rgba(160, 117, 106, 0.4), 0 4px 12px rgba(160, 117, 106, 0.25); }
+  }
+  .tile.just-placed.is-correct { animation: pulse-correct 0.55s ease-out; }
+  .tile.just-placed.is-wrong   { animation: pulse-wrong 0.55s ease-out; }
   .tile img {
     width: 100%;
     height: 100%;
@@ -207,12 +244,24 @@
     pointer-events: none;
     z-index: 9999;
   }
+  /* Fullscreen mode — minimize chrome, maximize tiles */
+  :fullscreen header { padding: 8px 18px 6px; }
+  :fullscreen header h1 { font-size: clamp(20px, 2.6vw, 28px); }
+  :fullscreen header .ref { font-size: 12px; }
+  :fullscreen .a11y-help { display: none; }
+  :fullscreen main { padding: 8px clamp(6px, 1vw, 16px) 14px; }
+  :fullscreen .instructions { margin-bottom: 8px; font-size: 14px; }
+  :fullscreen .grid { gap: clamp(6px, 0.8vw, 12px); margin-bottom: 10px; }
+  :-webkit-full-screen header { padding: 8px 18px 6px; }
+  :-webkit-full-screen header h1 { font-size: clamp(20px, 2.6vw, 28px); }
+  :-webkit-full-screen .a11y-help { display: none; }
 </style>
 </head>
 <body>
 <header>
   <h1>Put the Story in Order</h1>
   <div class="ref"><a href="https://www.biblegateway.com/passage/?search=Acts+6%3A1-7&version=ESV" target="_blank" rel="noopener">Acts 6:1&ndash;7 &middot; ESV</a></div>
+  <button type="button" class="fs-toggle" id="fs-btn" title="Toggle fullscreen (F)">⛶ Fullscreen</button>
 </header>
 <main>
   <p class="instructions">Drag the pictures into the order the story happened. The numbers show each picture's spot. Tap <strong>Check My Answer</strong> when you're ready.</p>
@@ -261,6 +310,7 @@
 
   var failCount = 0;
   var sortable = null;
+  var hasMovedAtLeastOnce = false;
 
   // ---- Fisher-Yates shuffle that rejects the already-correct permutation ----
   function shuffled() {
@@ -312,7 +362,32 @@
     tiles.forEach(function (t, idx) {
       t.querySelector('.badge').textContent = (idx + 1);
       t.setAttribute('aria-label', 'Position ' + (idx + 1) + ': ' + (t.querySelector('img').alt || ''));
-      t.classList.remove('is-correct');
+    });
+  }
+
+  // Evaluate every tile against CORRECT_ORDER and apply green/red shadows.
+  // `pulseTile` (optional) gets a one-shot pulse animation.
+  function markCorrectness(pulseTile) {
+    if (!hasMovedAtLeastOnce) return; // don't judge the initial shuffle
+    var tiles = grid.querySelectorAll('.tile');
+    tiles.forEach(function (t, idx) {
+      var f = t.getAttribute('data-file');
+      var correct = (f === CORRECT_ORDER[idx].file);
+      t.classList.toggle('is-correct', correct);
+      t.classList.toggle('is-wrong', !correct);
+    });
+    if (pulseTile) {
+      pulseTile.classList.remove('just-placed');
+      // force reflow so the animation restarts on each drop
+      void pulseTile.offsetWidth;
+      pulseTile.classList.add('just-placed');
+      setTimeout(function () { pulseTile.classList.remove('just-placed'); }, 600);
+    }
+  }
+
+  function clearCorrectnessMarks() {
+    grid.querySelectorAll('.tile').forEach(function (t) {
+      t.classList.remove('is-correct', 'is-wrong', 'just-placed');
     });
   }
 
@@ -333,24 +408,24 @@
       },
       onEnd: function (evt) {
         evt.item.classList.remove('is-grabbing');
+        hasMovedAtLeastOnce = true;
         refreshBadges();
         clearFeedback();
+        markCorrectness(evt.item);
       }
     });
   }
 
   // ---- Check ----
   function check() {
+    // Force evaluation now even if no drag has happened yet (e.g., user clicks Check
+    // immediately on the initial shuffle to see what's right).
+    hasMovedAtLeastOnce = true;
+    markCorrectness(null);
     var tiles = grid.querySelectorAll('.tile');
     var correctCount = 0;
     tiles.forEach(function (t, idx) {
-      var f = t.getAttribute('data-file');
-      if (f === CORRECT_ORDER[idx].file) {
-        t.classList.add('is-correct');
-        correctCount++;
-      } else {
-        t.classList.remove('is-correct');
-      }
+      if (t.getAttribute('data-file') === CORRECT_ORDER[idx].file) correctCount++;
     });
 
     if (correctCount === TOTAL) {
@@ -365,10 +440,11 @@
     }
   }
 
+  // Clears only the feedback message text, NOT the per-tile green/red shadows.
+  // Per-tile shadows are persistent feedback for the student.
   function clearFeedback() {
     feedback.className = 'feedback';
     feedback.textContent = '';
-    grid.querySelectorAll('.tile.is-correct').forEach(function (t) { t.classList.remove('is-correct'); });
   }
 
   // ---- Win flow ----
@@ -410,6 +486,8 @@
       if (tile) grid.appendChild(tile);
     });
     refreshBadges();
+    hasMovedAtLeastOnce = true;
+    markCorrectness(null); // all green now
     feedback.className = 'feedback';
     feedback.textContent = 'This is the right order. Try shuffling and putting it together yourself!';
     showBtn.hidden = true;
@@ -420,12 +498,14 @@
   // ---- Reset ----
   function reset() {
     failCount = 0;
+    hasMovedAtLeastOnce = false;
     showBtn.hidden = true;
     playAgainBtn.hidden = true;
     checkBtn.hidden = false;
     checkBtn.disabled = false;
     shuffleBtn.hidden = false;
     clearFeedback();
+    clearCorrectnessMarks();
     renderGrid(shuffled());
     initSortable();
   }
@@ -452,9 +532,44 @@
     var tNext = t.nextSibling === other ? t : t.nextSibling;
     tParent.insertBefore(t, other);
     tParent.insertBefore(other, tNext);
+    hasMovedAtLeastOnce = true;
     refreshBadges();
     clearFeedback();
+    markCorrectness(t);
     t.focus();
+  });
+
+  // ---- Fullscreen ----
+  var fsBtn = document.getElementById('fs-btn');
+  function isFullscreen() {
+    return !!(document.fullscreenElement || document.webkitFullscreenElement);
+  }
+  function enterFs() {
+    var el = document.documentElement;
+    var req = el.requestFullscreen || el.webkitRequestFullscreen;
+    if (req) { try { req.call(el); } catch (e) {} }
+  }
+  function exitFs() {
+    var fn = document.exitFullscreen || document.webkitExitFullscreen;
+    if (fn) { try { fn.call(document); } catch (e) {} }
+  }
+  function toggleFs() {
+    if (isFullscreen()) exitFs(); else enterFs();
+  }
+  function syncFsLabel() {
+    if (!fsBtn) return;
+    fsBtn.textContent = isFullscreen() ? '⛶ Exit Fullscreen' : '⛶ Fullscreen';
+  }
+  if (fsBtn) fsBtn.addEventListener('click', toggleFs);
+  document.addEventListener('fullscreenchange', syncFsLabel);
+  document.addEventListener('webkitfullscreenchange', syncFsLabel);
+  document.addEventListener('keydown', function (e) {
+    // Only trigger F when not editing text and not handled by tile keyboard nav above
+    if (e.target && e.target.classList && e.target.classList.contains('tile')) return;
+    if (e.key === 'f' || e.key === 'F') {
+      e.preventDefault();
+      toggleFs();
+    }
   });
 
   // ---- Wire up ----
