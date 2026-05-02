@@ -461,18 +461,42 @@
 
   function fireConfetti() {
     if (typeof confetti !== 'function') return;
-    var burst = function (origin) {
-      confetti({
-        particleCount: 80,
-        spread: 70,
-        startVelocity: 45,
-        origin: origin,
-        colors: ['#5a4a7a', '#c8985f', '#a0756a', '#6f9c6b', '#d4ab7a']
-      });
+    // Ministry palette + bright celebration accents so it pops on cream background
+    var defaults = {
+      colors: ['#c8985f', '#d4ab7a', '#6f9c6b', '#a0756a', '#5a4a7a',
+               '#ffd166', '#ef476f', '#06d6a0', '#118ab2', '#ffffff'],
+      shapes: ['square', 'circle'],
+      scalar: 1.3,
+      zIndex: 10000,
+      ticks: 220,
+      disableForReducedMotion: false
     };
-    burst({ x: 0.2, y: 0.6 });
-    setTimeout(function () { burst({ x: 0.8, y: 0.6 }); }, 180);
-    setTimeout(function () { burst({ x: 0.5, y: 0.5 }); }, 360);
+    function blast(opts) {
+      var merged = {};
+      for (var k in defaults) merged[k] = defaults[k];
+      for (var k2 in opts) merged[k2] = opts[k2];
+      confetti(merged);
+    }
+
+    // 1. Twin cannons from bottom corners
+    blast({ particleCount: 160, spread: 80, startVelocity: 55, angle: 60,  origin: { x: 0, y: 0.85 } });
+    blast({ particleCount: 160, spread: 80, startVelocity: 55, angle: 120, origin: { x: 1, y: 0.85 } });
+
+    // 2. Center fountain
+    setTimeout(function () {
+      blast({ particleCount: 200, spread: 120, startVelocity: 50, origin: { x: 0.5, y: 0.6 } });
+    }, 220);
+
+    // 3. Rain from above
+    setTimeout(function () {
+      blast({ particleCount: 140, spread: 180, startVelocity: 30, gravity: 0.6,
+              scalar: 1.5, angle: 270, origin: { x: 0.5, y: 0 } });
+    }, 500);
+
+    // 4. Grand finale — 360° explosion from center
+    setTimeout(function () {
+      blast({ particleCount: 220, spread: 360, startVelocity: 65, origin: { x: 0.5, y: 0.5 } });
+    }, 950);
   }
 
   // ---- Show Me animation ----
