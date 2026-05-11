@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Build Your Resume — SWAHG Open University</title>
+<meta name="description" content="Pick the skills you'll grow into. See which SWAHG lessons teach them. See how many real jobs match. A study planner for your future-self resume.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#5a4a7a;
+    --primary-deep:#4a3a6a;
+    --accent:#c8985f;
+    --accent-deep:#a88d5e;
+    --bg:#f5f1f0;
+    --surface:#ffffff;
+    --text:#3a3a3a;
+    --text-soft:#6b6565;
+    --border:#e0dbd8;
+    --lavender:#7a6a8f;
+    --sage:#5a8a72;
+    --rose:#a0756a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:64px}
+  body{
+    background:var(--bg);color:var(--text);
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    font-size:16px;line-height:1.55;
+  }
+  .mockupNotice{
+    background:#fdf4ec;border-bottom:2px solid var(--accent);
+    padding:10px 20px;text-align:center;font-size:13px;color:var(--accent-deep);
+    font-weight:500;
+  }
+  .mockupNotice strong{color:var(--primary)}
+  .topnav{position:sticky;top:0;background:rgba(255,255,255,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);z-index:50}
+  .topnav-inner{max-width:1200px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+  .logo{font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--primary);font-size:20px;text-decoration:none}
+  .logo .sub{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-deep);display:block;margin-top:-2px;font-weight:600;font-family:'Inter',sans-serif}
+  .topnav-actions{display:flex;gap:10px;font-size:13px}
+  .top-btn{background:transparent;border:1px solid var(--border);color:var(--text-soft);padding:7px 12px;border-radius:6px;font-size:13px;font-family:inherit;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:5px}
+  .top-btn:hover{border-color:var(--primary);color:var(--primary)}
+  .top-btn.primary{background:var(--primary);color:#fff;border-color:var(--primary)}
+  .top-btn.primary:hover{background:var(--primary-deep);color:#fff}
+
+  .wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+  section{padding:36px 0}
+
+  /* HERO */
+  #hero{padding:48px 20px 32px;background:linear-gradient(180deg,#fdfbfa 0%,var(--bg) 100%)}
+  .hero-tag{display:inline-block;background:#f7f4fa;color:var(--primary);padding:6px 14px;border-radius:30px;font-size:12px;font-weight:600;letter-spacing:.05em;margin-bottom:12px}
+  h1.hero-h{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(30px,5vw,46px);line-height:1.1;color:var(--primary);margin-bottom:10px;letter-spacing:-.015em}
+  h1.hero-h em{color:var(--accent);font-style:normal}
+  .hero-lead{font-size:16px;color:var(--text-soft);max-width:680px;margin-bottom:6px}
+
+  /* MAIN GRID: skills picker (left) + live panel (right) */
+  .main-grid{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:flex-start;margin-top:18px}
+  @media (max-width:1000px){.main-grid{grid-template-columns:1fr}}
+
+  /* Sample resumes */
+  .samples{margin-bottom:30px}
+  .samples h2{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--primary);font-weight:600;margin-bottom:6px}
+  .samples-sub{font-size:13px;color:var(--text-soft);margin-bottom:14px}
+  .sample-row{display:flex;gap:10px;overflow-x:auto;padding-bottom:6px;scroll-snap-type:x mandatory}
+  .sample-card{
+    flex-shrink:0;width:240px;background:var(--surface);border:1px solid var(--border);
+    border-radius:10px;padding:16px;scroll-snap-align:start;cursor:pointer;
+    transition:all .15s;text-decoration:none;color:inherit;
+  }
+  .sample-card:hover{border-color:var(--primary);transform:translateY(-1px)}
+  .sample-card.featured{border:2px solid var(--accent);background:linear-gradient(135deg,#fdfbfa,#fdf4ec)}
+  .sample-card .badge{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent-deep);font-weight:700;margin-bottom:6px}
+  .sample-card h4{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--primary);font-weight:600;margin-bottom:4px}
+  .sample-card p{font-size:13px;color:var(--text-soft);line-height:1.5}
+
+  /* Skill picker */
+  .skill-section{margin-bottom:24px}
+  .skill-section h3{
+    font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--primary);
+    font-weight:600;margin-bottom:6px;display:flex;align-items:center;gap:10px;
+  }
+  .skill-section h3 .role-badge{
+    font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#fff;
+    background:var(--primary);padding:3px 10px;border-radius:12px;font-family:'Inter',sans-serif;font-weight:600;
+  }
+  .skill-section h3 .role-badge.foundation{background:var(--accent)}
+  .skill-section h3 .role-badge.smm{background:var(--primary)}
+  .skill-section h3 .role-badge.support{background:var(--sage)}
+  .skill-section h3 .role-badge.admin{background:var(--lavender)}
+  .skill-section h3 .role-badge.content{background:var(--rose)}
+  .skill-section h3 .role-badge.account{background:#7a8aa8}
+  .skill-section h3 .role-badge.sdr{background:#a87aaf}
+  .skill-section h3 .role-badge.apply{background:var(--accent-deep)}
+  .skill-section .section-sub{font-size:13px;color:var(--text-soft);margin-bottom:10px}
+
+  .skills{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px}
+  .skill{
+    background:var(--surface);border:1.5px solid var(--border);border-radius:10px;
+    padding:12px 14px;cursor:pointer;transition:all .15s;display:flex;gap:10px;align-items:flex-start;
+  }
+  .skill:hover{border-color:var(--lavender);background:#fdfbfa}
+  .skill.checked{border-color:var(--primary);background:#f7f4fa}
+  .skill .box{
+    flex-shrink:0;width:22px;height:22px;border:1.5px solid var(--border);border-radius:5px;
+    display:flex;align-items:center;justify-content:center;color:transparent;background:#fff;font-weight:700;
+  }
+  .skill.checked .box{background:var(--primary);border-color:var(--primary);color:#fff}
+  .skill .info{flex:1;min-width:0}
+  .skill .name{font-size:14px;font-weight:500;color:var(--text);line-height:1.3;margin-bottom:2px}
+  .skill .desc{font-size:12px;color:var(--text-soft);line-height:1.45;margin-bottom:5px}
+  .skill .meta{font-size:11px;color:var(--text-soft);display:flex;gap:10px;flex-wrap:wrap}
+  .skill .meta .gap{color:var(--rose);font-weight:600}
+  .skill .meta .gap.high{color:#c45a5a}
+  .skill .lesson{font-size:11px;color:var(--primary);font-style:italic;margin-top:4px}
+
+  /* Live panel */
+  .live-panel{position:sticky;top:72px;align-self:start}
+  .live-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px;
+    box-shadow:0 2px 12px rgba(74,58,106,0.05);
+  }
+  .live-card .panel-title{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--primary);font-weight:600;margin-bottom:4px}
+  .live-card .panel-sub{font-size:12px;color:var(--text-soft);margin-bottom:14px}
+  .stat-row{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:10px 0;border-bottom:1px solid var(--border);
+  }
+  .stat-row:last-of-type{border-bottom:none}
+  .stat-row .lbl{font-size:13px;color:var(--text-soft)}
+  .stat-row .val{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--primary)}
+  .stat-row .val.gold{color:var(--accent)}
+  .stat-row .val small{font-size:12px;color:var(--text-soft);font-weight:400;font-family:'Inter',sans-serif;display:block;text-align:right}
+
+  .diff-bar{margin-top:14px;padding:10px 14px;border-radius:8px;font-size:13px;font-weight:500;text-align:center}
+  .diff-bar.foundational{background:#eef5f0;color:var(--sage);border:1px solid #c5dccd}
+  .diff-bar.building{background:#fdf4ec;color:var(--accent-deep);border:1px solid #e8c8a0}
+  .diff-bar.stretch{background:#f3eef2;color:var(--lavender);border:1px solid #d4c5d8}
+  .diff-bar.empty{background:#fdfbfa;color:var(--text-soft);border:1px solid var(--border);font-style:italic}
+  .diff-explain{font-size:12px;color:var(--text-soft);margin-top:8px;line-height:1.5;text-align:center}
+
+  .live-actions{display:flex;gap:8px;margin-top:18px}
+  .live-actions button{
+    flex:1;background:var(--primary);color:#fff;border:none;padding:11px;border-radius:8px;
+    font-size:13px;font-weight:500;font-family:inherit;cursor:pointer;
+  }
+  .live-actions button.ghost{background:transparent;color:var(--primary);border:1.5px solid var(--primary)}
+  .live-actions button:hover{background:var(--primary-deep)}
+  .live-actions button.ghost:hover{background:var(--primary);color:#fff}
+
+  /* Resume preview */
+  #preview{background:#fdfbfa}
+  .resume-card{
+    background:linear-gradient(180deg,#fffdfb,#fdfbf8);
+    border:1px solid var(--border);border-radius:6px;
+    padding:40px 44px;box-shadow:0 4px 20px rgba(74,58,106,0.06);
+    max-width:780px;margin:18px auto 0;
+    font-family:'Cormorant Garamond',serif;color:var(--text);
+  }
+  @media (max-width:600px){.resume-card{padding:28px 22px}}
+  .resume-card .name{
+    font-size:32px;font-weight:600;color:var(--primary);letter-spacing:-.01em;
+    border-bottom:2px solid var(--accent);padding-bottom:8px;margin-bottom:4px;
+  }
+  .resume-card .title-line{font-style:italic;font-size:16px;color:var(--text-soft);margin-bottom:18px}
+  .resume-card h4{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-deep);font-weight:700;margin-top:22px;margin-bottom:8px}
+  .resume-card .summary{font-style:italic;color:var(--text);font-size:15px;line-height:1.55;margin-bottom:12px}
+  .resume-card ul{font-family:'Inter',sans-serif;list-style:none;padding:0;color:var(--text);font-size:14px}
+  .resume-card ul li{padding:5px 0 5px 18px;position:relative;line-height:1.5}
+  .resume-card ul li::before{content:'✦';color:var(--accent);position:absolute;left:0;font-size:11px;top:8px}
+  .resume-card ul li.empty{color:var(--text-soft);font-style:italic;font-family:'Cormorant Garamond',serif}
+  .resume-card ul li.empty::before{content:'·';color:var(--border)}
+  .resume-card .target{
+    margin-top:18px;padding-top:14px;border-top:1px dashed var(--border);
+    font-size:13px;color:var(--text-soft);font-family:'Inter',sans-serif;
+  }
+  .resume-card .target strong{color:var(--primary)}
+
+  /* MODAL */
+  .modal-bg{
+    position:fixed;inset:0;background:rgba(58,42,90,0.6);
+    display:none;align-items:center;justify-content:center;z-index:200;padding:20px;
+  }
+  .modal-bg.open{display:flex}
+  .modal{
+    background:var(--surface);border-radius:14px;max-width:680px;width:100%;
+    max-height:88vh;overflow-y:auto;padding:30px;position:relative;
+  }
+  .modal .close{position:absolute;top:14px;right:14px;background:transparent;border:none;font-size:22px;color:var(--text-soft);cursor:pointer;line-height:1}
+  .modal .close:hover{color:var(--primary)}
+  .modal h3{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--primary);font-weight:600;margin-bottom:6px}
+  .modal .modal-sub{font-size:13px;color:var(--text-soft);margin-bottom:18px}
+  .modal .mini-resume{background:#fdfbfa;border:1px solid var(--border);border-radius:8px;padding:18px;font-size:14px}
+  .modal .mini-resume strong{color:var(--primary)}
+  .modal .mini-resume ul{margin:8px 0 0 18px;color:var(--text-soft);font-size:13px}
+
+  .empty-state{text-align:center;padding:32px 20px;color:var(--text-soft);font-style:italic;font-family:'Cormorant Garamond',serif;font-size:16px}
+
+  footer{background:var(--primary-deep);color:#fff;padding:36px 20px 28px;text-align:center}
+  footer p{color:rgba(255,255,255,0.7);font-size:13px;margin-bottom:8px}
+  footer a{color:rgba(255,255,255,0.85)}
+
+  .lorem{color:#7f7676;font-style:italic;opacity:.9}
+
+  /* Print styles */
+  @media print {
+    .topnav,.mockupNotice,.live-panel,.samples,.skill-section,#hero,footer,.modal-bg{display:none !important}
+    .resume-card{box-shadow:none;border:none}
+    body{background:white}
+  }
+</style>
+</head>
+<body>
+
+<div class="mockupNotice">
+  <strong>MOCKUP PREVIEW</strong> — Build the resume of the freelancer you're becoming. This is a planning guide, not a credentialing tool. Lorem ipsum bodies, real titles + structure.
+</div>
+
+<nav class="topnav">
+  <div class="topnav-inner">
+    <a href="#hero" class="logo">SWAHG<span class="sub">Resume Builder</span></a>
+    <div class="topnav-actions">
+      <a href="https://laladim.github.io/writings/swahg-start/" class="top-btn">← Take the quiz</a>
+      <a href="https://laladim.github.io/writings/swahg-path/" class="top-btn">My path</a>
+      <button class="top-btn primary" onclick="window.print()">Print resume</button>
+    </div>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="wrap">
+    <span class="hero-tag">STUDY PLANNER · NOT A TRACKER</span>
+    <h1 class="hero-h">Build the resume of the <em>freelancer you're becoming.</em></h1>
+    <p class="hero-lead">Pick the skills you want on your future resume. We'll show you which SWAHG lessons teach them, how many real jobs match, and how much time it'll take. No credentials, no progress tracking. Just a clear map of what's worth studying.</p>
+  </div>
+</section>
+
+<section class="wrap">
+
+  <!-- SAMPLE RESUMES -->
+  <div class="samples">
+    <h2>Sample target resumes</h2>
+    <p class="samples-sub">Tap one to see what a finished resume can look like by role. Use them as inspiration, not a script.</p>
+    <div class="sample-row">
+      <a class="sample-card featured" onclick="openModal('liz')">
+        <div class="badge" style="color:var(--accent)">★ FEATURED</div>
+        <h4>Liz's First-Year Resume</h4>
+        <p>Reconstructed from a real SWAHG graduate's first-year story. Bilingual, honest, not over-polished.</p>
+      </a>
+      <a class="sample-card" onclick="openModal('smm')">
+        <div class="badge">📱 SMM Manager</div>
+        <h4>Mid-Level SMM Sample</h4>
+        <p>43 active jobs · $24–58/hr range</p>
+      </a>
+      <a class="sample-card" onclick="openModal('support')">
+        <div class="badge">🎧 Customer Support</div>
+        <h4>Customer Support Sample</h4>
+        <p>58 active jobs · 24% of market</p>
+      </a>
+      <a class="sample-card" onclick="openModal('admin')">
+        <div class="badge">📋 Admin VA</div>
+        <h4>Admin VA Sample</h4>
+        <p>29 + 30 No Calls active jobs</p>
+      </a>
+      <a class="sample-card" onclick="openModal('content')">
+        <div class="badge">✍️ Content Creator</div>
+        <h4>Content Creator Sample</h4>
+        <p>21 active jobs · Higher ceiling</p>
+      </a>
+    </div>
+  </div>
+
+  <div class="main-grid">
+
+    <!-- SKILLS PICKER (LEFT) -->
+    <div>
+
+      <div class="skill-section">
+        <h3><span class="role-badge foundation">Foundation</span>Everyone benefits</h3>
+        <p class="section-sub">These show up in almost every freelancer-VA job description. Start here.</p>
+        <div class="skills" id="skills-foundation"></div>
+      </div>
+
+      <div class="skill-section">
+        <h3><span class="role-badge smm">SMM</span>Social Media Manager</h3>
+        <p class="section-sub">18% of all active jobs · $24–58/hr range. SWAHG's most-covered path.</p>
+        <div class="skills" id="skills-smm"></div>
+      </div>
+
+      <div class="skill-section">
+        <h3><span class="role-badge support">Support</span>Customer Support</h3>
+        <p class="section-sub">#1 single job category — 24% of all listings (58 jobs). New Tier-2 module being built.</p>
+        <div class="skills" id="skills-support"></div>
+      </div>
+
+      <div class="skill-section">
+        <h3><span class="role-badge admin">Admin</span>Admin VA / Executive Assistant</h3>
+        <p class="section-sub">Original SWAHG specialty. 29 active + 30 No Calls jobs.</p>
+        <div class="skills" id="skills-admin"></div>
+      </div>
+
+      <div class="skill-section">
+        <h3><span class="role-badge content">Content</span>Content Creator</h3>
+        <p class="section-sub">21 active jobs. Higher skill ceiling, often contract.</p>
+        <div class="skills" id="skills-content"></div>
+      </div>
+
+      <div class="skill-section">
+        <h3><span class="role-badge account">Account</span>Account Manager</h3>
+        <p class="section-sub">13% of market (32 jobs). Bridges "got hired" → "kept the client." New Tier-2.</p>
+        <div class="skills" id="skills-account"></div>
+      </div>
+
+      <div class="skill-section">
+        <h3><span class="role-badge sdr">SDR</span>Sales Development Rep</h3>
+        <p class="section-sub">13% of market (31 jobs). Surfaces select material from your DESIRE corpus.</p>
+        <div class="skills" id="skills-sdr"></div>
+      </div>
+
+      <div class="skill-section">
+        <h3><span class="role-badge apply">Apply</span>Job-readiness</h3>
+        <p class="section-sub">These get the lessons-into-a-job. Pair with at least one of the role categories above.</p>
+        <div class="skills" id="skills-apply"></div>
+      </div>
+
+    </div>
+
+    <!-- LIVE PANEL (RIGHT) -->
+    <aside class="live-panel">
+      <div class="live-card">
+        <div class="panel-title">Your plan, live</div>
+        <div class="panel-sub">Updates as you check skills</div>
+
+        <div class="stat-row">
+          <span class="lbl">Skills selected</span>
+          <span class="val" id="stat-skills">0</span>
+        </div>
+        <div class="stat-row">
+          <span class="lbl">Jobs that match</span>
+          <span class="val gold" id="stat-jobs">0 <small>of 244 active</small></span>
+        </div>
+        <div class="stat-row">
+          <span class="lbl">Lessons in your plan</span>
+          <span class="val" id="stat-lessons">0</span>
+        </div>
+        <div class="stat-row">
+          <span class="lbl">Estimated study time</span>
+          <span class="val" id="stat-hours">0 <small id="stat-months">hours</small></span>
+        </div>
+
+        <div class="diff-bar empty" id="stat-diff">Pick at least one skill to see difficulty</div>
+        <div class="diff-explain" id="diff-explain">Difficulty is anchored to community averages, not judgment.</div>
+
+        <div class="live-actions">
+          <button onclick="savePlan()">Save plan</button>
+          <button class="ghost" onclick="window.print()">Print</button>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+<!-- RESUME PREVIEW -->
+<section id="preview">
+  <div class="wrap" style="text-align:center">
+    <span class="hero-tag" style="background:#fdf4ec;color:var(--accent-deep)">YOUR FUTURE RESUME</span>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--primary);font-weight:600;margin-top:12px;margin-bottom:6px">A preview of what you're building toward</h2>
+    <p style="font-size:14px;color:var(--text-soft);max-width:580px;margin:0 auto">Skills update as you select them. Print or save to your phone when you're ready.</p>
+
+    <div class="resume-card" id="resume-preview">
+      <div class="name">[Your Name]</div>
+      <div class="title-line">Freelance VA · Philippines · Remote-ready</div>
+
+      <h4>Summary</h4>
+      <p class="summary lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Filipino freelancer with a heart for service, English-Tagalog bilingual, available remote across Asia-Pacific and Worldwide timezones.</p>
+
+      <h4>Skills</h4>
+      <ul id="resume-skills">
+        <li class="empty">Pick skills from the list above and they'll appear here.</li>
+      </ul>
+
+      <h4>Community + Training</h4>
+      <ul>
+        <li class="lorem">SWAHG Open University — 30K-member community of Filipino freelancers (lorem)</li>
+        <li class="lorem">Ongoing training across 65+ free lessons</li>
+      </ul>
+
+      <div class="target" id="resume-target">
+        <strong>Target roles:</strong> <span class="lorem">Pick skills to see which jobs you'll be ready to apply for.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL FOR SAMPLE RESUMES -->
+<div class="modal-bg" id="modal-bg" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">×</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<footer>
+  <p>SWAHG Open University · Resume Builder (planning guide, not a tracker)</p>
+  <p style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-top:8px;opacity:.5">MOCKUP · Lorem ipsum bodies · Real titles + structure</p>
+  <p style="margin-top:12px"><a href="https://laladim.github.io/writings/swahg-mockup/">Back to plan overview</a> · <a href="https://laladim.github.io/writings/swahg-start/">Take the quiz</a> · <a href="https://laladim.github.io/writings/swahg-path/">View sample path</a></p>
+</footer>
+
+<script>
+// ---- SKILL DATA ----
+// Each skill: id, category, name, desc, lesson, hours, communityGap (% who have it)
+const SKILLS = [
+  // FOUNDATION
+  {id:'F1', cat:'foundation', name:'Professional Email Setup', desc:'Build a clean, on-brand work email + signature.', lesson:'Email Address Expert Secrets', hrs:2, gap:85},
+  {id:'F2', cat:'foundation', name:'Online Tool Hygiene', desc:'Drive + Calendar + Browser organization basics.', lesson:'Browser & Storage Expert Secrets', hrs:3, gap:70},
+  {id:'F3', cat:'foundation', name:'Written English Communication', desc:'Sharper written English for chat, email, tickets.', lesson:'English Communications 101', hrs:8, gap:55},
+  {id:'F4', cat:'foundation', name:'Time Tracking Discipline', desc:'Toggl/Clockify/Hubstaff + the habit behind them.', lesson:'NEW: Time Tracking Discipline', hrs:2, gap:2, isNew:true},
+
+  // SMM
+  {id:'S1', cat:'smm', name:'Content Calendar Planning', desc:'Plan a week of posts; map content to client goals.', lesson:'SMM Core Strategies', hrs:4, gap:18},
+  {id:'S2', cat:'smm', name:'Instagram Strategy', desc:'Reels, stories, posts — what works on the platform now.', lesson:'Instagram Strategy', hrs:3, gap:25},
+  {id:'S3', cat:'smm', name:'Facebook Business Page Management', desc:'Manage a real page, post + reply + report.', lesson:'FB Mobile Management', hrs:4, gap:30},
+  {id:'S4', cat:'smm', name:'Content Scheduling Tools', desc:'Buffer / Hootsuite / Later / Metricool fluency.', lesson:'NEW: SMM Tools Deep Dive', hrs:3, gap:7, isNew:true},
+  {id:'S5', cat:'smm', name:'Visual Design with Canva', desc:'Brand-aligned graphics, carousels, IG covers.', lesson:'Creative / Artistic Skills', hrs:6, gap:35},
+  {id:'S6', cat:'smm', name:'Hashtag Research', desc:'Plus best-time-to-post + audience analysis.', lesson:'SMM Handbook', hrs:2, gap:22},
+  {id:'S7', cat:'smm', name:'Engagement Reporting', desc:'Monthly client reports clients actually read.', lesson:'NEW: SMM Reporting', hrs:3, gap:12, isNew:true},
+  {id:'S8', cat:'smm', name:'Short-form Video / Reels', desc:'Hook, edit, post Reels with CapCut on mobile.', lesson:'NEW: Video Editing for VAs', hrs:8, gap:13, isNew:true},
+
+  // SUPPORT
+  {id:'C1', cat:'support', name:'Email Ticket Handling', desc:'Triage, respond, escalate inbound support emails.', lesson:'NEW: No Calls Customer Support', hrs:4, gap:8, isNew:true},
+  {id:'C2', cat:'support', name:'Live Chat Communication', desc:'Tone, pacing, multi-conversation handling.', lesson:'NEW: No Calls Customer Support', hrs:4, gap:6, isNew:true},
+  {id:'C3', cat:'support', name:'Help Center Tools', desc:'Zendesk / Intercom / Freshdesk basics.', lesson:'NEW: No Calls Customer Support', hrs:5, gap:5, isNew:true},
+  {id:'C4', cat:'support', name:'Customer Journey Empathy', desc:'Diagnose root cause, not just the surface complaint.', lesson:'Professional Online Presence', hrs:3, gap:18},
+  {id:'C5', cat:'support', name:'Escalation Triage', desc:'When to keep, when to hand off, how to document.', lesson:'NEW: No Calls Customer Support', hrs:2, gap:4, isNew:true},
+  {id:'C6', cat:'support', name:'Macro / Canned Response Writing', desc:'Templates that don\'t sound like templates.', lesson:'NEW: No Calls Customer Support', hrs:2, gap:3, isNew:true},
+
+  // ADMIN
+  {id:'A1', cat:'admin', name:'Calendar Management', desc:'Booking, blocking, rescheduling across timezones.', lesson:'Specialized Business Skills', hrs:3, gap:28},
+  {id:'A2', cat:'admin', name:'Inbox Triage', desc:'Zero-inbox discipline + delegation flow.', lesson:'Email Address Expert Secrets', hrs:3, gap:30},
+  {id:'A3', cat:'admin', name:'Project Tracking', desc:'Trello + Asana + ClickUp + Notion fluency.', lesson:'Trello Love + NEW: PM Tool Fluency', hrs:6, gap:23, isNew:true},
+  {id:'A4', cat:'admin', name:'Document Organization', desc:'Drive folder systems clients actually follow.', lesson:'Storage Expert Secrets', hrs:2, gap:65},
+  {id:'A5', cat:'admin', name:'Meeting Notes + Action Items', desc:'Capture, distill, distribute — without losing nuance.', lesson:'Specialized Business Skills', hrs:2, gap:40},
+
+  // CONTENT
+  {id:'N1', cat:'content', name:'Personal Brand Voice', desc:'Find + sustain a tone that\'s recognizably yours.', lesson:'Personal Branding Class', hrs:5, gap:18},
+  {id:'N2', cat:'content', name:'Blog Writing', desc:'Long-form structure: hook, payoff, share-worthy.', lesson:'NEW: Long-form Writing', hrs:8, gap:15, isNew:true},
+  {id:'N3', cat:'content', name:'Carousel Design', desc:'10-slide IG/LinkedIn carousels that stop the scroll.', lesson:'NEW: Content Production', hrs:4, gap:20, isNew:true},
+  {id:'N4', cat:'content', name:'Short-form Video Editing', desc:'CapCut fundamentals for Reels, TikTok, Shorts.', lesson:'NEW: Video Editing for VAs', hrs:10, gap:13, isNew:true},
+  {id:'N5', cat:'content', name:'Story-driven Captions', desc:'Captions that build community, not just engagement.', lesson:'Personal Branding Class', hrs:4, gap:22},
+  {id:'N6', cat:'content', name:'Hook Writing', desc:'First 3 seconds / first 12 words. The pivot of every post.', lesson:'NEW: Long-form Writing', hrs:3, gap:18, isNew:true},
+  {id:'N7', cat:'content', name:'Content Repurposing', desc:'One idea → 5 platforms. The compounding move.', lesson:'NEW: Content Production', hrs:4, gap:10, isNew:true},
+
+  // ACCOUNT MANAGER
+  {id:'M1', cat:'account', name:'Client Onboarding', desc:'First 30 days that prevent churn.', lesson:'Choosing My Client + NEW: Account Mgmt', hrs:3, gap:12, isNew:true},
+  {id:'M2', cat:'account', name:'Status Update Cadence', desc:'Weekly written updates that keep clients calm.', lesson:'NEW: Account Mgmt', hrs:2, gap:8, isNew:true},
+  {id:'M3', cat:'account', name:'Cross-sell Identification', desc:'Spot the next service the client already needs.', lesson:'NEW: Account Mgmt', hrs:3, gap:5, isNew:true},
+
+  // SDR
+  {id:'D1', cat:'sdr', name:'Cold Outreach Sequences', desc:'Multi-touch sequences that don\'t feel spammy.', lesson:'NEW: SDR Cold Outreach', hrs:5, gap:4, isNew:true},
+  {id:'D2', cat:'sdr', name:'Persuasion Through Story', desc:'Story-frame the offer; reduce sales-resistance.', lesson:'NEW: SDR Cold Outreach (DESIRE corpus)', hrs:4, gap:6, isNew:true},
+  {id:'D3', cat:'sdr', name:'CRM Basics', desc:'HubSpot / Pipedrive / GoHighLevel for SDRs.', lesson:'NEW: CRM Basics for VAs', hrs:4, gap:14, isNew:true},
+  {id:'D4', cat:'sdr', name:'Discovery Question Frameworks', desc:'BANT / SPIN — questions that find the real need.', lesson:'NEW: SDR Cold Outreach', hrs:3, gap:5, isNew:true},
+
+  // APPLY
+  {id:'J1', cat:'apply', name:'Powerful Resume Writing', desc:'Achievement-focused, not duty-focused.', lesson:'NEW: Resume + Achievement Toolkit', hrs:4, gap:30, isNew:true},
+  {id:'J2', cat:'apply', name:'Portfolio Building', desc:'3 case studies + visuals that hire you.', lesson:'OPPORTUNITY corpus (50 files)', hrs:6, gap:25},
+  {id:'J3', cat:'apply', name:'Interview Preparation', desc:'Common questions + STAR framework + your stories.', lesson:'NEW: Apply Mode', hrs:3, gap:35, isNew:true},
+];
+
+// Maps categories to job-count weights (rough mockup math)
+const JOB_BUCKETS = {
+  foundation:{cap:244, perSkill:8},   // pairs with any role
+  smm:{cap:43, perSkill:5},
+  support:{cap:58, perSkill:8},
+  admin:{cap:59, perSkill:7},  // 29 + 30 No Calls
+  content:{cap:21, perSkill:3},
+  account:{cap:32, perSkill:8},
+  sdr:{cap:31, perSkill:6},
+  apply:{cap:0, perSkill:0},   // multiplies existing jobs by readiness
+};
+
+// ---- RENDER SKILLS ----
+const checked = new Set();
+SKILLS.forEach(s => {
+  const container = document.getElementById(`skills-${s.cat}`);
+  if (!container) return;
+  const div = document.createElement('div');
+  div.className = 'skill';
+  div.dataset.id = s.id;
+  const gapClass = s.gap < 15 ? 'high' : '';
+  const newBadge = s.isNew ? ' · <span style="color:var(--accent-deep);font-weight:600">NEW Tier-2</span>' : '';
+  div.innerHTML = `
+    <div class="box">✓</div>
+    <div class="info">
+      <div class="name">${s.name}</div>
+      <div class="desc">${s.desc}</div>
+      <div class="meta">
+        <span>📖 ${s.hrs} hr</span>
+        <span class="gap ${gapClass}">⊘ ${s.gap}% have this</span>
+      </div>
+      <div class="lesson">📘 ${s.lesson}${newBadge}</div>
+    </div>
+  `;
+  div.addEventListener('click', () => toggle(s.id, div));
+  container.appendChild(div);
+});
+
+function toggle(id, el) {
+  if (checked.has(id)) {
+    checked.delete(id);
+    el.classList.remove('checked');
+  } else {
+    checked.add(id);
+    el.classList.add('checked');
+  }
+  updateLive();
+}
+
+function updateLive() {
+  const sel = SKILLS.filter(s => checked.has(s.id));
+  document.getElementById('stat-skills').textContent = sel.length;
+
+  // Job match calc
+  let jobs = 0;
+  const catCounts = {};
+  sel.forEach(s => { catCounts[s.cat] = (catCounts[s.cat] || 0) + 1; });
+  Object.entries(catCounts).forEach(([cat, n]) => {
+    const b = JOB_BUCKETS[cat];
+    if (!b) return;
+    if (cat === 'foundation') {
+      // foundation adds breadth, not depth
+      jobs += Math.min(244, Math.round(n * 12));
+    } else if (cat === 'apply') {
+      // apply-readiness — boost rather than add
+    } else {
+      jobs += Math.min(b.cap, Math.round(n * b.perSkill));
+    }
+  });
+  jobs = Math.min(jobs, 244);
+  // Apply readiness modifier
+  const applyN = catCounts.apply || 0;
+  if (applyN > 0 && jobs > 0) {
+    jobs = Math.min(244, Math.round(jobs * (1 + 0.1 * applyN)));
+  }
+  document.getElementById('stat-jobs').innerHTML = `${jobs} <small>of 244 active</small>`;
+
+  // Lessons (unique lesson names from selected skills)
+  const uniqLessons = new Set(sel.map(s => s.lesson));
+  document.getElementById('stat-lessons').textContent = uniqLessons.size;
+
+  // Hours + months
+  const hrs = sel.reduce((a, s) => a + s.hrs, 0);
+  const monthsAt5 = (hrs / 5 / 4).toFixed(1);
+  document.getElementById('stat-hours').innerHTML = `${hrs} <small>${hrs > 0 ? `≈ ${monthsAt5} mo at 5h/wk` : 'hours'}</small>`;
+
+  // Difficulty
+  const diff = document.getElementById('stat-diff');
+  const explain = document.getElementById('diff-explain');
+  if (sel.length === 0) {
+    diff.className = 'diff-bar empty';
+    diff.textContent = 'Pick at least one skill to see difficulty';
+    explain.textContent = 'Difficulty is anchored to community averages, not judgment.';
+  } else if (sel.length <= 4) {
+    diff.className = 'diff-bar foundational';
+    diff.textContent = 'Foundational · One small step at a time';
+    explain.textContent = `${sel.length} skill${sel.length>1?'s':''} selected. Tight scope. Most learners can finish this in under a month.`;
+  } else if (sel.length <= 10) {
+    diff.className = 'diff-bar building';
+    diff.textContent = 'Building · Solid plan, sustained effort';
+    explain.textContent = `${sel.length} skills. Real career-shaping scope. Sustainable at 5–8 hrs per week.`;
+  } else {
+    diff.className = 'diff-bar stretch';
+    const lowGap = sel.filter(s => s.gap < 15).length;
+    diff.textContent = 'Stretch · Ambitious — and worth it';
+    explain.textContent = `${sel.length} skills. ${lowGap} are below 15% community coverage — you'd be ahead of most freelancers when you finish. Plan for 6+ months.`;
+  }
+
+  // Resume preview
+  const list = document.getElementById('resume-skills');
+  if (sel.length === 0) {
+    list.innerHTML = '<li class="empty">Pick skills from the list above and they\'ll appear here.</li>';
+  } else {
+    list.innerHTML = sel.map(s => `<li>${s.name} <span class="lorem" style="font-size:13px;color:var(--text-soft);font-style:italic">— ${s.desc.toLowerCase().replace(/\.$/,'')}</span></li>`).join('');
+  }
+
+  const target = document.getElementById('resume-target');
+  if (sel.length === 0) {
+    target.innerHTML = '<strong>Target roles:</strong> <span class="lorem">Pick skills to see which jobs you\'ll be ready to apply for.</span>';
+  } else {
+    const roleNames = {smm:'Social Media Manager',support:'Customer Support',admin:'Admin VA',content:'Content Creator',account:'Account Manager',sdr:'Sales Dev Rep'};
+    const targetCats = Object.entries(catCounts)
+      .filter(([c, n]) => roleNames[c] && n >= 1)
+      .sort((a, b) => b[1] - a[1])
+      .map(([c]) => roleNames[c]);
+    if (targetCats.length) {
+      target.innerHTML = `<strong>Target roles:</strong> ${targetCats.join(' · ')} <span style="color:var(--accent-deep);font-weight:500">· ${jobs} active matching listings right now</span>`;
+    } else {
+      target.innerHTML = '<strong>Target roles:</strong> <span class="lorem">Add a role-specific skill (SMM / Support / Admin / Content) to lock in a target.</span>';
+    }
+  }
+}
+
+// ---- SAMPLE RESUMES (MODAL) ----
+const SAMPLES = {
+  liz: {
+    title: "Liz's First-Year Resume (reconstructed)",
+    sub: 'Real-feel sample, lightly anonymized. The honest version, not the polished one.',
+    body: `<div class="mini-resume">
+      <strong>Liz Galacio</strong><br>
+      <em>Filipino freelance Admin VA + Graphic Designer · Remote · English/Tagalog</em>
+      <p style="margin:10px 0;font-style:italic;color:var(--text-soft)">"Naninwala ako sa mga newbie kasi naranasan ko rin yan." — short summary that's hers, not a template.</p>
+      <strong>Skills</strong>
+      <ul class="lorem">
+        <li>Lorem ipsum Trello and Drive organization</li>
+        <li>Consectetur Canva graphic design for social</li>
+        <li>Adipiscing administrative + calendar management</li>
+        <li>Sed do client communication (chat + email)</li>
+      </ul>
+      <strong>Community + Training</strong>
+      <ul class="lorem">
+        <li>SWAHG Social Media Masterclass — completed 2019</li>
+        <li>SWAHG Admin VA Core — community admin since 2020</li>
+      </ul>
+      <p style="margin-top:12px;font-size:13px;color:var(--text-soft)"><strong>What she'd tell you:</strong> "I'm not fluent in English but still, I gave it a shot because there is no harm in trying — and voila! I got the position."</p>
+    </div>`
+  },
+  smm: {
+    title: 'Mid-Level Social Media Manager',
+    sub: 'Sample target resume for the SMM lane. 43 active jobs match this profile.',
+    body: `<div class="mini-resume">
+      <strong>[Your Name]</strong><br>
+      <em>Filipino freelance Social Media Manager · Remote (APAC + Worldwide) · 2–3 yrs experience</em>
+      <p class="lorem" style="margin:10px 0;font-style:italic;color:var(--text-soft)">Lorem ipsum dolor sit amet — strategist who turns brand voice into measurable engagement.</p>
+      <strong>Skills</strong>
+      <ul class="lorem">
+        <li>Content calendar planning + execution</li>
+        <li>Instagram Reels strategy + production</li>
+        <li>Buffer / Hootsuite / Later scheduling fluency</li>
+        <li>Canva visual design + brand-aligned carousels</li>
+        <li>Monthly engagement reporting</li>
+        <li>Hashtag research + audience analysis</li>
+      </ul>
+      <strong>Community + Training</strong>
+      <ul class="lorem">
+        <li>SWAHG Open University — SMM Core Training (9 lessons)</li>
+        <li>Personal Branding Class — completed</li>
+        <li>Live community of 30K Filipino freelancers</li>
+      </ul>
+      <p style="margin-top:12px;font-size:13px;color:var(--text-soft)"><strong>Target pay:</strong> $24–58/hr (mid-level remote SMM)</p>
+    </div>`
+  },
+  support: {
+    title: 'Customer Support (Async / No Calls)',
+    sub: 'Sample target resume for the Customer Support lane. 58 active jobs · 43 are No Calls.',
+    body: `<div class="mini-resume">
+      <strong>[Your Name]</strong><br>
+      <em>Filipino freelance Customer Support Specialist · Remote async · English/Tagalog</em>
+      <p class="lorem" style="margin:10px 0;font-style:italic;color:var(--text-soft)">Lorem ipsum — patient, written-English specialist who turns first-touch tickets into 5-star reviews.</p>
+      <strong>Skills</strong>
+      <ul class="lorem">
+        <li>Email ticket handling + triage</li>
+        <li>Live chat with multi-conversation fluency</li>
+        <li>Zendesk / Intercom / Freshdesk help-center tools</li>
+        <li>Macro / canned response writing</li>
+        <li>Escalation triage + documentation</li>
+        <li>Customer journey empathy</li>
+      </ul>
+      <strong>Community + Training</strong>
+      <ul class="lorem">
+        <li>SWAHG No Calls Customer Support Module</li>
+        <li>English Communications 101</li>
+      </ul>
+      <p style="margin-top:12px;font-size:13px;color:var(--text-soft)"><strong>Target pay:</strong> $18–35/hr remote async</p>
+    </div>`
+  },
+  admin: {
+    title: 'Admin VA / Executive Assistant',
+    sub: 'Sample target resume for the Admin VA lane. 29 + 30 No Calls active jobs.',
+    body: `<div class="mini-resume">
+      <strong>[Your Name]</strong><br>
+      <em>Filipino freelance Admin VA · Remote · Detail-oriented + bilingual</em>
+      <p class="lorem" style="margin:10px 0;font-style:italic;color:var(--text-soft)">Lorem ipsum — the right-hand for a busy founder. Calendar, inbox, files, project tracking — done quietly and well.</p>
+      <strong>Skills</strong>
+      <ul class="lorem">
+        <li>Calendar management across timezones</li>
+        <li>Inbox triage with delegation flow</li>
+        <li>Project tracking (Trello + Asana + Notion)</li>
+        <li>Drive folder systems clients actually follow</li>
+        <li>Meeting notes + action items</li>
+        <li>Time tracking discipline (Toggl/Clockify)</li>
+      </ul>
+      <strong>Community + Training</strong>
+      <ul class="lorem">
+        <li>SWAHG Admin VA Internship — graduate</li>
+        <li>Specialized Business Skills + Trello Love</li>
+      </ul>
+      <p style="margin-top:12px;font-size:13px;color:var(--text-soft)"><strong>Target pay:</strong> $20–35/hr typical</p>
+    </div>`
+  },
+  content: {
+    title: 'Content Creator',
+    sub: 'Sample target resume for the Content Creator lane. 21 active jobs · higher ceiling.',
+    body: `<div class="mini-resume">
+      <strong>[Your Name]</strong><br>
+      <em>Filipino freelance Content Creator · Writing + Video + Visual · Bilingual</em>
+      <p class="lorem" style="margin:10px 0;font-style:italic;color:var(--text-soft)">Lorem ipsum — multi-format content built around brand voice + audience trust, not vanity metrics.</p>
+      <strong>Skills</strong>
+      <ul class="lorem">
+        <li>Personal brand voice development</li>
+        <li>Blog writing (long-form structure)</li>
+        <li>Short-form video editing (CapCut)</li>
+        <li>Carousel design (IG / LinkedIn)</li>
+        <li>Story-driven captions + hook writing</li>
+        <li>Content repurposing across 5 platforms</li>
+      </ul>
+      <strong>Community + Training</strong>
+      <ul class="lorem">
+        <li>SWAHG Personal Branding Class + Creative Skills track</li>
+        <li>Long-form Writing + Content Production (Tier-2)</li>
+      </ul>
+      <p style="margin-top:12px;font-size:13px;color:var(--text-soft)"><strong>Target pay:</strong> $15–35/hr (sometimes higher for video specialists)</p>
+    </div>`
+  }
+};
+
+function openModal(key) {
+  const s = SAMPLES[key];
+  if (!s) return;
+  document.getElementById('modal-content').innerHTML = `
+    <h3>${s.title}</h3>
+    <p class="modal-sub">${s.sub}</p>
+    ${s.body}
+  `;
+  document.getElementById('modal-bg').classList.add('open');
+}
+function closeModal() { document.getElementById('modal-bg').classList.remove('open'); }
+
+// SAVE PLAN
+function savePlan() {
+  const ids = Array.from(checked);
+  if (!ids.length) { alert('Pick at least one skill before saving.'); return; }
+  localStorage.setItem('swahg.resumePlan', JSON.stringify(ids));
+  alert('Saved! Your plan will be here when you come back to this page.');
+}
+// Auto-load on page load
+window.addEventListener('DOMContentLoaded', () => {
+  const saved = localStorage.getItem('swahg.resumePlan');
+  if (!saved) return;
+  try {
+    const ids = JSON.parse(saved);
+    ids.forEach(id => {
+      const el = document.querySelector(`.skill[data-id="${id}"]`);
+      if (el) { checked.add(id); el.classList.add('checked'); }
+    });
+    updateLive();
+  } catch (e) {}
+});
+
+updateLive();
+</script>
+
+</body>
+</html>

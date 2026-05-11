@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Your Path — Social Media Manager · SWAHG Open University</title>
+<meta name="description" content="Mockup of the personalized SWAHG path experience. The journey a learner sees AFTER taking the Find Your Path quiz.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#5a4a7a;
+    --primary-deep:#4a3a6a;
+    --accent:#c8985f;
+    --accent-deep:#a88d5e;
+    --bg:#f5f1f0;
+    --surface:#ffffff;
+    --text:#3a3a3a;
+    --text-soft:#6b6565;
+    --border:#e0dbd8;
+    --lavender:#7a6a8f;
+    --rose:#a0756a;
+    --sage:#5a8a72;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:70px}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    font-size:16px;line-height:1.6;
+  }
+  .mockupNotice{
+    background:#fdf4ec;border-bottom:2px solid var(--accent);
+    padding:10px 20px;text-align:center;font-size:13px;color:var(--accent-deep);
+    font-weight:500;
+  }
+  .mockupNotice strong{color:var(--primary)}
+  .topnav{position:sticky;top:0;background:rgba(255,255,255,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);z-index:50}
+  .topnav-inner{max-width:1100px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .logo{font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--primary);font-size:20px;text-decoration:none}
+  .logo .sub{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-deep);display:block;margin-top:-2px;font-weight:600;font-family:'Inter',sans-serif}
+  .switch-btn{
+    background:transparent;border:1px solid var(--border);color:var(--text-soft);
+    padding:8px 14px;border-radius:6px;font-size:13px;cursor:pointer;font-family:inherit;
+    transition:all .15s;
+  }
+  .switch-btn:hover{border-color:var(--primary);color:var(--primary)}
+
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+  .narrow{max-width:780px;margin:0 auto;padding:0 20px}
+  section{padding:48px 0;border-bottom:1px solid var(--border)}
+
+  /* HEADER */
+  #pathHeader{padding:60px 20px 48px;background:linear-gradient(180deg,#fdfbfa 0%,var(--bg) 100%)}
+  .path-tag{
+    display:inline-block;background:#f7f4fa;color:var(--primary);padding:6px 14px;
+    border-radius:30px;font-size:12px;font-weight:600;letter-spacing:.05em;margin-bottom:14px;
+  }
+  h1.path-h{
+    font-family:'Cormorant Garamond',serif;font-weight:600;
+    font-size:clamp(34px,5.5vw,52px);line-height:1.1;color:var(--primary);
+    margin-bottom:14px;letter-spacing:-.015em;
+  }
+  h1.path-h em{color:var(--accent);font-style:normal}
+  .path-lead{font-size:17px;color:var(--text-soft);max-width:640px;line-height:1.55;margin-bottom:24px}
+  .path-stats{display:flex;gap:24px;flex-wrap:wrap;margin-top:22px}
+  .path-stat{}
+  .path-stat .num{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--accent);line-height:1}
+  .path-stat .lbl{font-size:12px;color:var(--text-soft);margin-top:4px;letter-spacing:.05em}
+
+  /* Section headers */
+  .section-label{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--accent-deep);font-weight:700;margin-bottom:12px}
+  h2.section-h{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(26px,3.8vw,34px);line-height:1.15;color:var(--primary);margin-bottom:12px;letter-spacing:-.01em}
+  .section-lead{color:var(--text-soft);font-size:16px;line-height:1.55;margin-bottom:24px;max-width:640px}
+
+  /* STARTING SEQUENCE */
+  .lesson-seq{display:flex;flex-direction:column;gap:14px;margin-top:18px}
+  .lesson-step{
+    background:var(--surface);border:1px solid var(--border);border-radius:12px;
+    display:flex;gap:18px;padding:20px 22px;align-items:flex-start;
+    transition:all .15s;cursor:pointer;text-decoration:none;color:inherit;
+    position:relative;overflow:hidden;
+  }
+  .lesson-step::before{
+    content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--border);
+  }
+  .lesson-step.next::before{background:var(--accent)}
+  .lesson-step.next{background:linear-gradient(90deg,#fdf4ec 0%,#fff 12%)}
+  .lesson-step.done::before{background:var(--sage)}
+  .lesson-step:hover{border-color:var(--primary);transform:translateY(-1px);box-shadow:0 4px 14px rgba(74,58,106,0.06)}
+  .step-circle{
+    flex-shrink:0;width:46px;height:46px;border-radius:50%;
+    background:var(--surface);border:2px solid var(--border);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--text-soft);
+  }
+  .lesson-step.next .step-circle{border-color:var(--accent);background:#fdf4ec;color:var(--accent-deep)}
+  .lesson-step.done .step-circle{border-color:var(--sage);background:#eef5f0;color:var(--sage)}
+  .lesson-step.done .step-circle::after{content:'✓'}
+  .lesson-step.done .step-circle{font-size:20px}
+  .lesson-step.done .step-circle .num{display:none}
+  .lesson-info{flex:1}
+  .lesson-info .status{
+    display:inline-block;font-size:11px;text-transform:uppercase;letter-spacing:.12em;
+    color:var(--text-soft);font-weight:600;margin-bottom:4px;
+  }
+  .lesson-step.next .lesson-info .status{color:var(--accent-deep)}
+  .lesson-step.done .lesson-info .status{color:var(--sage)}
+  .lesson-info h3{font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--primary);font-weight:600;margin-bottom:4px;line-height:1.2}
+  .lesson-info .why{font-size:14px;color:var(--text-soft);line-height:1.5}
+  .lesson-info .meta{font-size:12px;color:var(--text-soft);margin-top:8px;display:flex;gap:14px;flex-wrap:wrap}
+
+  /* BLUEPRINT LOCATION */
+  #blueprint-pos{background:#fdfbfa}
+  .blueprint-mini{
+    background:var(--surface);border-radius:14px;border:1px solid var(--border);
+    padding:24px;margin-top:18px;
+  }
+  .stages-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}
+  @media (max-width:600px){.stages-row{grid-template-columns:1fr 1fr}}
+  .stage-pill{
+    border:1.5px solid var(--border);background:#fdfbfa;border-radius:10px;
+    padding:14px 14px;text-align:center;font-size:14px;color:var(--text-soft);
+    position:relative;
+  }
+  .stage-pill.current{
+    border-color:var(--accent);background:#fdf4ec;color:var(--accent-deep);font-weight:600;
+  }
+  .stage-pill.current::after{content:'YOU ARE HERE';position:absolute;top:-9px;left:50%;transform:translateX(-50%);font-size:9px;background:var(--accent);color:#fff;padding:2px 8px;border-radius:10px;letter-spacing:.1em;font-weight:700}
+  .stage-pill.done{border-color:var(--sage);background:#eef5f0;color:var(--sage)}
+  .stage-pill .lbl{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;opacity:.7;margin-bottom:2px;font-weight:600}
+  .stage-arrow{color:var(--accent);text-align:center;font-size:18px;margin:6px 0}
+
+  /* 12-MONTH ROADMAP */
+  .roadmap{margin-top:22px}
+  .roadmap-month{
+    display:grid;grid-template-columns:120px 1fr;gap:24px;
+    padding:18px 0;border-top:1px solid var(--border);align-items:flex-start;
+  }
+  @media (max-width:600px){.roadmap-month{grid-template-columns:1fr;gap:8px}}
+  .roadmap-month:first-of-type{border-top:none}
+  .roadmap-period{
+    font-family:'Cormorant Garamond',serif;color:var(--primary);font-size:20px;font-weight:600;
+  }
+  .roadmap-period .sub{display:block;font-size:11px;color:var(--text-soft);text-transform:uppercase;letter-spacing:.1em;font-weight:600;font-family:'Inter',sans-serif}
+  .roadmap-cards{display:flex;gap:10px;flex-wrap:wrap}
+  .road-card{
+    background:#fdfbfa;border:1px solid var(--border);border-radius:8px;padding:10px 14px;
+    font-size:13px;color:var(--primary);font-weight:500;
+  }
+  .road-card.new{background:#fdf4ec;border-color:#e8c8a0;color:var(--accent-deep)}
+  .road-card.hero{background:linear-gradient(135deg,#c8985f,#a88d5e);color:#fff;border-color:var(--accent-deep)}
+  .road-card .meta{display:block;font-weight:400;font-size:11px;color:var(--text-soft);margin-top:2px}
+  .road-card.hero .meta{color:rgba(255,255,255,0.75)}
+
+  /* JOB LANE */
+  #job-lane{background:var(--bg)}
+  .job-snapshot{
+    background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;
+  }
+  .job-snapshot .head{padding:20px 22px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+  .job-snapshot .head h3{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--primary);font-weight:600}
+  .job-snapshot .head .count{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;color:var(--accent);line-height:1}
+  .job-snapshot .count .label{font-size:11px;color:var(--text-soft);text-transform:uppercase;letter-spacing:.1em;display:block;font-weight:600;font-family:'Inter',sans-serif;margin-top:2px}
+  .job-row{
+    padding:14px 22px;border-bottom:1px solid var(--border);
+    display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px;align-items:center;font-size:14px;
+  }
+  .job-row:last-child{border-bottom:none}
+  @media (max-width:600px){.job-row{grid-template-columns:1fr;gap:4px}}
+  .job-row .title{font-weight:500;color:var(--primary)}
+  .job-row .co{font-size:12px;color:var(--text-soft);display:block;margin-top:2px}
+  .job-row .pay{color:var(--sage);font-weight:500}
+  .job-row .sen{font-size:12px;color:var(--text-soft);text-transform:uppercase;letter-spacing:.05em}
+  .lorem{color:#7f7676;font-style:italic;opacity:.9}
+
+  /* CHECKPOINTS */
+  #checkpoints{background:#fdfbfa}
+  .check-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:18px}
+  .check-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px;
+  }
+  .check-card .icon{font-size:20px;width:34px;height:34px;background:#f7f4fa;color:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:10px;font-weight:600;font-family:'Cormorant Garamond',serif}
+  .check-card h4{font-size:15px;color:var(--primary);font-weight:600;margin-bottom:4px}
+  .check-card p{font-size:13px;color:var(--text-soft);line-height:1.5}
+
+  /* COMMUNITY */
+  #community{background:linear-gradient(180deg,var(--primary) 0%,var(--primary-deep) 100%);color:#fff}
+  #community h2.section-h{color:#fff}
+  #community .section-label{color:rgba(255,255,255,0.7)}
+  #community .section-lead{color:rgba(255,255,255,0.85)}
+  .comm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px}
+  .comm-card{
+    background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.18);
+    border-radius:12px;padding:20px;
+  }
+  .comm-card h4{color:var(--accent);font-size:15px;font-weight:600;margin-bottom:6px}
+  .comm-card p{color:rgba(255,255,255,0.8);font-size:13px;line-height:1.5;margin-bottom:10px}
+  .comm-card a{color:#fff;text-decoration:underline;font-size:13px;font-weight:500}
+
+  /* PATH SWITCHER */
+  #switcher{background:var(--bg)}
+  .switch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:18px}
+  .switch-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:10px;
+    padding:18px;cursor:pointer;text-decoration:none;color:inherit;
+    transition:all .15s;
+  }
+  .switch-card:hover{border-color:var(--primary);transform:translateY(-1px)}
+  .switch-card h4{font-family:'Cormorant Garamond',serif;color:var(--primary);font-size:18px;font-weight:600;margin-bottom:4px}
+  .switch-card p{font-size:13px;color:var(--text-soft)}
+  .switch-card .stat{font-size:11px;color:var(--accent-deep);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-top:8px;display:block}
+
+  footer{background:var(--primary-deep);color:#fff;padding:40px 20px 30px;text-align:center}
+  footer p{color:rgba(255,255,255,0.7);font-size:13px;margin-bottom:8px}
+  footer a{color:rgba(255,255,255,0.85);text-decoration:underline}
+</style>
+</head>
+<body>
+
+<div class="mockupNotice">
+  <strong>MOCKUP PREVIEW</strong> — Sample personalized path (Social Media Manager). This is what a learner sees AFTER taking the Find Your Path quiz. Lorem ipsum bodies, real titles + structure.
+</div>
+
+<!-- TOP NAV -->
+<nav class="topnav">
+  <div class="topnav-inner">
+    <a href="#pathHeader" class="logo">SWAHG<span class="sub">Your Path</span></a>
+    <button class="switch-btn" onclick="document.getElementById('switcher').scrollIntoView()">↺ Switch path</button>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<section id="pathHeader">
+  <div class="wrap">
+    <span class="path-tag">YOUR PERSONALIZED ROADMAP</span>
+    <h1 class="path-h">Your path: <em>Social Media Manager</em></h1>
+    <p class="path-lead">Based on your answers — comfortable on calls, 4–6 hours per day, SMM is the lane that excites you, you've touched Canva + IG before, focused 1–2 month timing — here's the journey we've mapped for you. Real lessons. Real jobs. Real timeline.</p>
+    <div class="path-stats">
+      <div class="path-stat"><div class="num">3</div><div class="lbl">Starting lessons</div></div>
+      <div class="path-stat"><div class="num">12</div><div class="lbl">Total lessons in path</div></div>
+      <div class="path-stat"><div class="num">43</div><div class="lbl">Live SMM jobs right now</div></div>
+      <div class="path-stat"><div class="num">$24–58<span style="font-size:14px">/hr</span></div><div class="lbl">Typical pay range</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STARTING SEQUENCE -->
+<section id="starting">
+  <div class="wrap">
+    <div class="section-label">Step 1 · Start here</div>
+    <h2 class="section-h">Your starting 3 lessons (in order)</h2>
+    <p class="section-lead">Do these in this order. Each one takes 25–45 min. Total: about 2 hours across 3 evenings.</p>
+
+    <div class="lesson-seq">
+      <a href="#" class="lesson-step next">
+        <div class="step-circle"><span class="num">1</span></div>
+        <div class="lesson-info">
+          <div class="status">⮕ Start here</div>
+          <h3>Getting Hired Fast</h3>
+          <div class="why lorem">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium — Shela's exact framework for landing the first SMM client. Watch this before anything else.</div>
+          <div class="meta">📖 35 min · 🎥 Video + blog (refreshed 2026) · 🎯 Foundation</div>
+        </div>
+      </a>
+      <a href="#" class="lesson-step">
+        <div class="step-circle"><span class="num">2</span></div>
+        <div class="lesson-info">
+          <div class="status">Up next</div>
+          <h3>SMM Core Strategies</h3>
+          <div class="why lorem">Quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo — the mindset + brand voice foundation. Long lesson, take it in 2 sittings.</div>
+          <div class="meta">📖 45 min · 🎥 Video + blog · 🎯 Mindset</div>
+        </div>
+      </a>
+      <a href="#" class="lesson-step">
+        <div class="step-circle"><span class="num">3</span></div>
+        <div class="lesson-info">
+          <div class="status">Then</div>
+          <h3>Personal Branding Class</h3>
+          <div class="why lorem">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit — you become the proof. Build your own brand before pitching yours to clients.</div>
+          <div class="meta">📖 40 min · 🎥 Video + blog · 🎯 Brand voice</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- BLUEPRINT LOCATION -->
+<section id="blueprint-pos">
+  <div class="wrap">
+    <div class="section-label">Step 2 · Where you are on the bigger journey</div>
+    <h2 class="section-h">You are here on the Blueprint</h2>
+    <p class="section-lead">Your 3 starting lessons sit inside the <strong>Warming Up</strong> stage. After that, you'll move through Launch (resume, portfolio, applying) into Working (interviews, first clients). Then the post-launch loop.</p>
+
+    <div class="blueprint-mini">
+      <div class="stages-row">
+        <div class="stage-pill done"><span class="lbl">Stage 1</span>Preparation</div>
+        <div class="stage-pill current"><span class="lbl">Stage 2</span>Warming Up</div>
+        <div class="stage-pill"><span class="lbl">Stage 3</span>Launch</div>
+        <div class="stage-pill"><span class="lbl">Stage 4</span>Working on it!</div>
+      </div>
+      <div class="stage-arrow">↓ then ↓</div>
+      <div class="stages-row">
+        <div class="stage-pill"><span class="lbl">Stage 5</span>Onboarding</div>
+        <div class="stage-pill"><span class="lbl">Stage 6</span>Skill Upgrade</div>
+        <div class="stage-pill"><span class="lbl">Stage 7</span>Higher Level</div>
+        <div class="stage-pill"><span class="lbl">Stage 8</span>Freelancer or Business?</div>
+      </div>
+      <p style="margin-top:16px;font-size:13px;color:var(--text-soft);text-align:center"><a href="https://laladim.github.io/writings/swahg-mockup/#blueprint" style="color:var(--primary);font-weight:500">See full Blueprint with all lessons →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- 12-MONTH ROADMAP -->
+<section id="roadmap">
+  <div class="wrap">
+    <div class="section-label">Step 3 · Realistic 12-month roadmap</div>
+    <h2 class="section-h">Your full lesson sequence</h2>
+    <p class="section-lead">Not just the starting 3. Here's everything we recommend over 12 months, in the order you'll actually need it.</p>
+
+    <div class="roadmap">
+      <div class="roadmap-month">
+        <div class="roadmap-period">Month 1<span class="sub">Foundation</span></div>
+        <div class="roadmap-cards">
+          <div class="road-card">Getting Hired Fast <span class="meta">SMM Core Training</span></div>
+          <div class="road-card">SMM Core Strategies <span class="meta">SMM Core Training</span></div>
+          <div class="road-card">Personal Branding Class <span class="meta">Writing Personal Brand</span></div>
+        </div>
+      </div>
+      <div class="roadmap-month">
+        <div class="roadmap-period">Month 2<span class="sub">Tool fluency</span></div>
+        <div class="roadmap-cards">
+          <div class="road-card">Instagram Strategy <span class="meta">SMM Core Training</span></div>
+          <div class="road-card">FB + Chatbot Training <span class="meta">SMM Core Training</span></div>
+          <div class="road-card">SMM Handbook <span class="meta">SMM Core Training</span></div>
+          <div class="road-card new">PM Tool Fluency <span class="meta">NEW · expands Trello Love</span></div>
+        </div>
+      </div>
+      <div class="roadmap-month">
+        <div class="roadmap-period">Month 3<span class="sub">Resume + portfolio + applying</span></div>
+        <div class="roadmap-cards">
+          <div class="road-card">Creating Powerful Resume <span class="meta">Career Path Training</span></div>
+          <div class="road-card">Creating your Portfolio <span class="meta">Writing Personal Brand</span></div>
+          <div class="road-card">Choosing my Client <span class="meta">Enhancement Training</span></div>
+          <div class="road-card new">Email Marketing for VAs <span class="meta">NEW · rewrite</span></div>
+        </div>
+      </div>
+      <div class="roadmap-month">
+        <div class="roadmap-period">Months 4–6<span class="sub">First clients</span></div>
+        <div class="roadmap-cards">
+          <div class="road-card">Internship (SWAHG Admin VA) <span class="meta">Hands-on practice</span></div>
+          <div class="road-card">Skill Practice <span class="meta">Working on it!</span></div>
+          <div class="road-card">Creating Proposal <span class="meta">Career Path Training</span></div>
+          <div class="road-card new">Time Tracking Discipline <span class="meta">NEW · 2-lesson</span></div>
+        </div>
+      </div>
+      <div class="roadmap-month">
+        <div class="roadmap-period">Months 7–9<span class="sub">Retention + growth</span></div>
+        <div class="roadmap-cards">
+          <div class="road-card new">Account Management 101 <span class="meta">NEW · 4-lesson</span></div>
+          <div class="road-card new">CRM Basics for VAs <span class="meta">NEW · 3-lesson</span></div>
+          <div class="road-card">Specialized Business Skills <span class="meta">Career Path Training</span></div>
+        </div>
+      </div>
+      <div class="roadmap-month">
+        <div class="roadmap-period">Months 10–12<span class="sub">Higher Level</span></div>
+        <div class="roadmap-cards">
+          <div class="road-card new">Video Editing for Content VAs <span class="meta">NEW · 5-lesson</span></div>
+          <div class="road-card">Multiple Skills / Multiple Clients <span class="meta">Higher Level</span></div>
+          <div class="road-card">Decision: Freelancer or Build a Brand?</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOB LANE -->
+<section id="job-lane">
+  <div class="wrap">
+    <div class="section-label">Step 4 · Your live job lane</div>
+    <h2 class="section-h">Where you'll apply</h2>
+    <p class="section-lead">These are the 5 most recently posted Social Media Manager listings, refreshed every Monday. Open the full sheet for all 43.</p>
+
+    <div class="job-snapshot">
+      <div class="head">
+        <div>
+          <h3>📱 Social Media Manager</h3>
+          <p style="font-size:13px;color:var(--text-soft);margin-top:4px">Refreshed weekly from RemoteOK, Remotive, OnlineJobs.ph</p>
+        </div>
+        <div class="count">43<div class="label">Active listings</div></div>
+      </div>
+      <div class="job-row">
+        <div><span class="title lorem">Lorem Social Media Manager</span><span class="co lorem">consectetur Ipsum LLC</span></div>
+        <div class="sen">Mid · Remote</div>
+        <div class="pay">$28–46/hr</div>
+      </div>
+      <div class="job-row">
+        <div><span class="title lorem">Dolor Sit Social Lead</span><span class="co lorem">adipiscing Studio</span></div>
+        <div class="sen">Junior · Contract</div>
+        <div class="pay">$22–32/hr</div>
+      </div>
+      <div class="job-row">
+        <div><span class="title lorem">Eiusmod Tempor SMM Specialist</span><span class="co lorem">incididunt Co.</span></div>
+        <div class="sen">Mid · Full-time</div>
+        <div class="pay">$26–42/hr</div>
+      </div>
+      <div class="job-row">
+        <div><span class="title lorem">Magna Content & Social Manager</span><span class="co lorem">aliqua Brands</span></div>
+        <div class="sen">Senior · Remote</div>
+        <div class="pay">$42–58/hr</div>
+      </div>
+      <div class="job-row">
+        <div><span class="title lorem">Veniam Social Media Scheduler</span><span class="co lorem">nostrud Marketing</span></div>
+        <div class="sen">Mid · Contract</div>
+        <div class="pay">$24–35/hr</div>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:18px"><a href="https://docs.google.com/spreadsheets/d/1HqBfHi017TQcN4RPOrajpiWAD55x1yl2ijALg0Lq5LE/edit" target="_blank" style="color:var(--primary);font-weight:500;text-decoration:underline">Open full live job sheet (all 43 listings) →</a></p>
+  </div>
+</section>
+
+<!-- CHECKPOINTS -->
+<section id="checkpoints">
+  <div class="wrap">
+    <div class="section-label">Step 5 · How you'll know you're ready</div>
+    <h2 class="section-h">Path mile markers</h2>
+    <p class="section-lead">Six checkpoints. Hit each one and you're application-ready.</p>
+
+    <div class="check-grid">
+      <div class="check-card">
+        <div class="icon">1</div>
+        <h4>Mirror moment</h4>
+        <p class="lorem">Sed ut perspiciatis — you can name your starting point honestly, no shame.</p>
+      </div>
+      <div class="check-card">
+        <div class="icon">2</div>
+        <h4>One skill deeper</h4>
+        <p class="lorem">Quia voluptas — you've picked ONE SMM tool and used it daily for 14 days.</p>
+      </div>
+      <div class="check-card">
+        <div class="icon">3</div>
+        <h4>Practice shipped</h4>
+        <p class="lorem">Ut enim ad minima — you've built a real sample portfolio (3 brands, not yours).</p>
+      </div>
+      <div class="check-card">
+        <div class="icon">4</div>
+        <h4>Checkpoint posted</h4>
+        <p class="lorem">Quis nostrum — you've shared one piece of work publicly + got community feedback.</p>
+      </div>
+      <div class="check-card">
+        <div class="icon">5</div>
+        <h4>Community lock-in</h4>
+        <p class="lorem">Excepteur sint — you've attended 2 Monday Meetings and know 3 people by name.</p>
+      </div>
+      <div class="check-card">
+        <div class="icon">6</div>
+        <h4>First application</h4>
+        <p class="lorem">Cupidatat non — you've applied to ≥5 jobs from the SMM tab. Apply mode active.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section id="community">
+  <div class="wrap">
+    <div class="section-label">Step 6 · You're not doing this alone</div>
+    <h2 class="section-h">Your community moves</h2>
+    <p class="section-lead">Three concrete community steps tied to your path. Don't skip these — Liz, Claudz, Jean all credit community over content for their first job.</p>
+
+    <div class="comm-grid">
+      <div class="comm-card">
+        <h4>Monday Meeting</h4>
+        <p class="lorem">Magna aliqua. Bring one question about a job listing from the sheet.</p>
+        <a href="#">Add to your calendar →</a>
+      </div>
+      <div class="comm-card">
+        <h4>FB Group Intro Post</h4>
+        <p class="lorem">Reprehenderit voluptate. Post: "Hi! I'm on the SMM path — first lesson done."</p>
+        <a href="#">Open SWAHG FB Group →</a>
+      </div>
+      <div class="comm-card">
+        <h4>SWAHG Admin VA Internship</h4>
+        <p class="lorem">Cupidatat proident — most SWAHG graduates start here. Real client practice, no live calls required.</p>
+        <a href="#">Apply for internship →</a>
+      </div>
+      <div class="comm-card">
+        <h4>Weekly Digest</h4>
+        <p class="lorem">Sunt in culpa qui officia — weekly email with new lesson + 3 fresh SMM jobs.</p>
+        <a href="#">Subscribe (free) →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PATH SWITCHER -->
+<section id="switcher">
+  <div class="wrap">
+    <div class="section-label">Step 7 · Not quite right?</div>
+    <h2 class="section-h">Switch to a different path</h2>
+    <p class="section-lead">Your answers pointed you at SMM. If something has shifted — different interest, different time horizon — pick another path. No judgment, no penalty.</p>
+
+    <div class="switch-grid">
+      <a href="#" class="switch-card">
+        <h4>No Calls VA Track</h4>
+        <p class="lorem">For text-only roles — chat, email, written account management.</p>
+        <span class="stat">185 active No Calls jobs · Hero product</span>
+      </a>
+      <a href="#" class="switch-card">
+        <h4>Customer Support Path</h4>
+        <p class="lorem">Live chat, email tickets, helping customers solve problems.</p>
+        <span class="stat">58 jobs · 24% of market · #1 single category</span>
+      </a>
+      <a href="#" class="switch-card">
+        <h4>Admin VA Path</h4>
+        <p class="lorem">Calendar, inbox, files, project tracking for one client.</p>
+        <span class="stat">29 jobs + 30 No Calls jobs</span>
+      </a>
+      <a href="#" class="switch-card">
+        <h4>Content Creator Path</h4>
+        <p class="lorem">Writing, design, video, building a brand presence.</p>
+        <span class="stat">21 jobs · Higher skill ceiling</span>
+      </a>
+      <a href="#" class="switch-card">
+        <h4>"Figure It Out" Path</h4>
+        <p class="lorem">Not sure yet? 3 lessons help you map your skills to a role.</p>
+        <span class="stat">43 Top Picks across all categories</span>
+      </a>
+      <a href="https://laladim.github.io/writings/swahg-start/" class="switch-card" style="border-color:var(--primary);background:#f7f4fa">
+        <h4>↺ Retake the quiz</h4>
+        <p>Answer the 5 questions again with fresh eyes.</p>
+        <span class="stat" style="color:var(--primary)">Find Your Path →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>SWAHG Open University · Your personalized SMM Manager path</p>
+  <p style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-top:8px;opacity:.5">MOCKUP · Real titles + structure · Lorem ipsum bodies · 2026 refresh</p>
+  <p style="margin-top:14px"><a href="https://laladim.github.io/writings/swahg-mockup/">Back to overall plan mockup</a> · <a href="https://laladim.github.io/writings/swahg-start/">Open the real quiz</a></p>
+</footer>
+
+</body>
+</html>

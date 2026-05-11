@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>SWAHG — Where Should I Start?</title>
+<meta name="description" content="Find your 3-lesson starting path at SWAHG Open University. 5 quick questions, personalized to your goals and current skills.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#5a4a7a;
+    --primary-deep:#4a3a6a;
+    --accent:#c8985f;
+    --accent-deep:#a88d5e;
+    --bg:#f5f1f0;
+    --surface:#ffffff;
+    --text:#3a3a3a;
+    --text-soft:#6b6565;
+    --border:#e0dbd8;
+    --lavender:#7a6a8f;
+    --rose:#a0756a;
+    --sage:#5a8a72;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    min-height:100vh;
+    padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+  .wrap{max-width:680px;margin:0 auto;padding:24px 20px 60px}
+  header.brand{text-align:center;padding:32px 0 20px}
+  header.brand .kicker{
+    font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--accent-deep);font-weight:600;margin-bottom:10px;
+  }
+  header.brand h1{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:600;
+    color:var(--primary);
+    font-size:clamp(28px,7vw,40px);
+    line-height:1.15;letter-spacing:-.01em;
+  }
+  header.brand p.sub{
+    margin-top:14px;color:var(--text-soft);font-size:15px;max-width:480px;margin-left:auto;margin-right:auto;
+  }
+  .progress{
+    display:flex;gap:6px;margin:28px auto 24px;max-width:240px;
+  }
+  .progress span{
+    flex:1;height:3px;background:var(--border);border-radius:2px;transition:background .25s;
+  }
+  .progress span.done{background:var(--accent)}
+  .progress span.active{background:var(--primary)}
+  .panel{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:28px 22px;
+    margin-bottom:18px;
+    box-shadow:0 1px 2px rgba(74,58,106,.04);
+    display:none;
+  }
+  .panel.active{display:block;animation:fade .3s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+  .qnum{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-deep);font-weight:600;margin-bottom:10px}
+  .qtitle{
+    font-family:'Cormorant Garamond',serif;font-weight:600;font-size:24px;color:var(--primary);
+    margin-bottom:8px;line-height:1.25;
+  }
+  .qhint{color:var(--text-soft);font-size:14px;margin-bottom:18px;font-style:italic}
+  .opts{display:flex;flex-direction:column;gap:10px}
+  .opt{
+    border:1.5px solid var(--border);
+    background:#fdfbfa;
+    padding:14px 16px;border-radius:10px;cursor:pointer;
+    transition:all .15s;
+    font-size:15px;text-align:left;width:100%;
+    color:var(--text);font-family:inherit;
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+  }
+  .opt:hover{border-color:var(--lavender);background:#fff}
+  .opt.selected{border-color:var(--primary);background:#f7f4fa;color:var(--primary);font-weight:500}
+  .opt small{display:block;font-weight:400;color:var(--text-soft);font-size:13px;margin-top:3px;font-style:italic}
+  .opt .check{
+    flex-shrink:0;width:20px;height:20px;border:1.5px solid var(--border);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;color:transparent;
+  }
+  .multi .opt .check{border-radius:4px}
+  .opt.selected .check{background:var(--primary);border-color:var(--primary);color:#fff}
+  .nav{
+    display:flex;justify-content:space-between;margin-top:24px;gap:12px;
+  }
+  .btn{
+    border:none;padding:12px 22px;border-radius:8px;
+    font-size:15px;font-weight:500;font-family:inherit;cursor:pointer;
+    transition:all .15s;
+  }
+  .btn-primary{background:var(--primary);color:#fff}
+  .btn-primary:hover{background:var(--primary-deep)}
+  .btn-primary:disabled{background:var(--border);color:var(--text-soft);cursor:not-allowed}
+  .btn-ghost{background:transparent;color:var(--text-soft);border:1px solid var(--border)}
+  .btn-ghost:hover{color:var(--primary);border-color:var(--primary)}
+  .opt-flex {display:flex;flex-direction:column}
+
+  /* Intro panel */
+  #intro.panel{text-align:center;padding:32px 22px}
+  #intro h2{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--primary);margin-bottom:12px;font-weight:600}
+  #intro p{color:var(--text-soft);max-width:460px;margin:0 auto 22px}
+  #intro .startBtn{margin:0 auto;display:inline-flex;gap:8px;align-items:center;padding:14px 28px}
+  .checklist{text-align:left;max-width:380px;margin:0 auto 24px;color:var(--text-soft);font-size:14px}
+  .checklist li{list-style:none;padding-left:24px;position:relative;margin-bottom:8px}
+  .checklist li::before{content:"✓";color:var(--accent);position:absolute;left:0;font-weight:600}
+
+  /* Result panel */
+  #result h2{
+    font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--primary);
+    margin-bottom:6px;font-weight:600;line-height:1.2;
+  }
+  #result .lead{
+    color:var(--text-soft);margin-bottom:20px;font-size:15px;line-height:1.55;
+  }
+  .urgentBanner{
+    background:#fdf4ec;border:1px solid #e8c8a0;border-radius:8px;
+    padding:12px 14px;margin-bottom:18px;font-size:14px;color:var(--accent-deep);
+  }
+  .urgentBanner strong{color:var(--primary)}
+  .sectionLabel{
+    font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-deep);
+    font-weight:600;margin-top:20px;margin-bottom:10px;
+  }
+  .lessonList{display:flex;flex-direction:column;gap:10px}
+  .lesson{
+    border:1px solid var(--border);border-left:3px solid var(--primary);
+    padding:14px 16px;border-radius:8px;background:#fdfbfa;text-decoration:none;color:inherit;
+    display:block;transition:all .15s;
+  }
+  .lesson:hover{border-left-color:var(--accent);background:#fff;transform:translateX(2px)}
+  .lesson .num{
+    display:inline-block;width:22px;height:22px;line-height:22px;text-align:center;
+    background:var(--primary);color:#fff;border-radius:50%;font-size:12px;font-weight:600;margin-right:8px;
+  }
+  .lesson .title{font-weight:500;color:var(--primary);font-size:15px}
+  .lesson .why{display:block;color:var(--text-soft);font-size:13px;margin-top:4px;line-height:1.5;padding-left:30px}
+  .lesson.bonus{border-left-color:var(--accent);background:#fbf8f2}
+  .lesson.bonus .num{background:var(--accent)}
+  .lesson.preq{border-left-color:var(--sage)}
+  .lesson.preq .num{background:var(--sage)}
+  .jobCard{
+    background:linear-gradient(135deg,#f7f4fa,#fdfbfa);
+    border:1px solid var(--border);border-radius:10px;padding:16px;margin-top:12px;
+  }
+  .jobCard .label{font-size:12px;text-transform:uppercase;letter-spacing:.15em;color:var(--accent-deep);font-weight:600}
+  .jobCard h4{font-family:'Cormorant Garamond',serif;color:var(--primary);font-size:20px;margin-top:6px;font-weight:600}
+  .jobCard a{color:var(--primary);text-decoration:underline;font-weight:500;font-size:14px;display:inline-block;margin-top:6px}
+  .nextStep{
+    background:var(--primary);color:#fff;padding:18px 18px;border-radius:10px;margin-top:18px;
+  }
+  .nextStep .label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.7;margin-bottom:6px;font-weight:600}
+  .nextStep p{margin:0;line-height:1.55;font-size:15px}
+  .footer{
+    margin-top:30px;text-align:center;color:var(--text-soft);font-size:13px;line-height:1.6;
+  }
+  .footer a{color:var(--primary)}
+  .restart{margin-top:24px;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="brand">
+    <div class="kicker">SWAHG Open University</div>
+    <h1>Where Should I Start?</h1>
+    <p class="sub">Five quick questions. We'll match you to your 3-lesson starting path and one current job lane you can apply to.</p>
+  </header>
+
+  <div class="progress" id="progress">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <!-- Intro -->
+  <section class="panel active" id="intro">
+    <h2>Bago tayo magsimula</h2>
+    <p>SWAHG has 58 free lessons. This little quiz finds the right 3 for you, based on where you are <em>today</em>—not where you wish you were.</p>
+    <ul class="checklist">
+      <li>Takes 90 seconds</li>
+      <li>You can change answers anytime</li>
+      <li>You get a real job lane, not a generic "good luck"</li>
+    </ul>
+    <button class="btn btn-primary startBtn" onclick="start()">Let's start →</button>
+  </section>
+
+  <!-- Q1 — English on calls -->
+  <section class="panel" id="q1">
+    <div class="qnum">Question 1 of 5</div>
+    <div class="qtitle">How confident are you with English on a live call?</div>
+    <div class="qhint">Walang tama o mali — honest lang ang sagot.</div>
+    <div class="opts" data-q="english">
+      <button class="opt" data-val="yes">
+        <div class="opt-flex">Yes, I'm comfortable on Zoom or phone calls in English.<small>Calls don't scare me.</small></div>
+        <span class="check">✓</span>
+      </button>
+      <button class="opt" data-val="improving">
+        <div class="opt-flex">Improving, but a bit hesitant.<small>I can do it kung kailangan, but I'm still nervous.</small></div>
+        <span class="check">✓</span>
+      </button>
+      <button class="opt" data-val="text">
+        <div class="opt-flex">I prefer text-only roles — no live calls.<small>Chat and email lang muna.</small></div>
+        <span class="check">✓</span>
+      </button>
+    </div>
+    <div class="nav">
+      <button class="btn btn-ghost" onclick="goto(0)">← Back</button>
+      <button class="btn btn-primary" id="b1" onclick="goto(2)" disabled>Next →</button>
+    </div>
+  </section>
+
+  <!-- Q2 — Time availability -->
+  <section class="panel" id="q2">
+    <div class="qnum">Question 2 of 5</div>
+    <div class="qtitle">How much time can you give to this?</div>
+    <div class="qhint">Realistic, not aspirational.</div>
+    <div class="opts" data-q="time">
+      <button class="opt" data-val="side">
+        <div class="opt-flex">I'm working full-time elsewhere — this is a side hustle for now.<small>Evening + weekend lang ang available ko.</small></div>
+        <span class="check">✓</span>
+      </button>
+      <button class="opt" data-val="partial">
+        <div class="opt-flex">I have 4–6 hours per day for this.<small>Pwede ako mag-focus ng part of the day.</small></div>
+        <span class="check">✓</span>
+      </button>
+      <button class="opt" data-val="full">
+        <div class="opt-flex">Full-time available — this is my main pursuit.<small>All-in ako sa freelancing.</small></div>
+        <span class="check">✓</span>
+      </button>
+    </div>
+    <div class="nav">
+      <button class="btn btn-ghost" onclick="goto(1)">← Back</button>
+      <button class="btn btn-primary" id="b2" onclick="goto(3)" disabled>Next →</button>
+    </div>
+  </section>
+
+  <!-- Q3 — Dream role -->
+  <section class="panel" id="q3">
+    <div class="qnum">Question 3 of 5</div>
+    <div class="qtitle">Which role attracts you most right now?</div>
+    <div class="qhint">If you're not sure, the last option is for you.</div>
+    <div class="opts" data-q="role">
+      <button class="opt" data-val="smm">
+        <div class="opt-flex">Social Media Manager<small>IG, FB, content calendars, scheduling</small></div>
+        <span class="check">✓</span>
+      </button>
+      <button class="opt" data-val="support">
+        <div class="opt-flex">Customer Support<small>Live chat, email tickets, helping customers solve problems</small></div>
+        <span class="check">✓</span>
+      </button>
+      <button class="opt" data-val="admin">
+        <div class="opt-flex">Admin VA / Executive Assistant<small>Calendar, inbox, files, project tracking for one client</small></div>
+        <span class="check">✓</span>
+      </button>
+      <button class="opt" data-val="content">
+        <div class="opt-flex">Content Creator<small>Writing, design, video, building a brand presence</small></div>
+        <span class="check">✓</span>
+      </button>
+      <button class="opt" data-val="unsure">
+        <div class="opt-flex">I'm not sure yet — show me my options.<small>Help me figure out anong fit sa skills ko.</small></div>
+        <span class="check">✓</span>
+      </button>
+    </div>
+    <div class="nav">
+      <button class="btn btn-ghost" onclick="goto(2)">← Back</button>
+      <button class="btn btn-primary" id="b3" onclick="goto(4)" disabled>Next →</button>
+    </div>
+  </section>
+
+  <!-- Q4 — Tool experience (multi) -->
+  <section class="panel" id="q4">
+    <div class="qnum">Question 4 of 5</div>
+    <div class="qtitle">Which of these have you actually used before?</div>
+    <div class="qhint">Tap all that apply. Be honest — "I clicked around once" doesn't count.</div>
+    <div class="opts multi" data-q="tools">
+      <button class="opt" data-val="pm">
+        <div class="opt-flex">Trello, Asana, ClickUp, or Notion<small>Project management or task boards</small></div>
+        <span class="check">✓</span>
+      </button>
+      <button class="opt" data-val="design">
+        <div class="opt-flex">Canva, Photoshop, or video editing tools<small>Even simple cover photos count.</small></div>
+        <span class="check">✓</span>
+      </button>
+      <button class="opt" data-val="meta">
+        <div class="opt-flex">Facebook Business or Instagram Creator tools<small>You've posted, scheduled, or managed for a page.</small></div>
+        <span class="check">✓</span>
+      </button>
+      <button class="opt" data-val="scheduler">
+        <div class="opt-flex">Buffer, Hootsuite, Later, or similar schedulers<small>Bulk-scheduled at least one week of posts.</small></div>
+        <span class="check">✓</span>
+      </button>
+      <button class="opt" data-val="fresh">
+        <div class="opt-flex">I'm starting completely fresh.<small>Wala pa akong na-try na anumang tool. Honest answer.</small></div>
+        <span class="check">✓</span>
+      </button>
+    </div>
+    <div class="nav">
+      <button class="btn btn-ghost" onclick="goto(3)">← Back</button>
+      <button class="btn btn-primary" id="b4" onclick="goto(5)" disabled>Next →</button>
+    </div>
+  </section>
+
+  <!-- Q5 — Timing -->
+  <section class="panel" id="q5">
+    <div class="qnum">Question 5 of 5</div>
+    <div class="qtitle">When do you want to land your first client?</div>
+    <div class="qhint">No judgment. Just shapes your starting path.</div>
+    <div class="opts" data-q="timing">
+      <button class="opt" data-val="urgent">
+        <div class="opt-flex">2 weeks — I need income soon.<small>Apply-mode na ako.</small></div>
+        <span class="check">✓</span>
+      </button>
+      <button class="opt" data-val="focused">
+        <div class="opt-flex">1–2 months — I'm focused.<small>Mag-aaral muna ng matino bago mag-apply.</small></div>
+        <span class="check">✓</span>
+      </button>
+      <button class="opt" data-val="learner">
+        <div class="opt-flex">3+ months — I'm here to learn first.<small>Walang rush. I want to do it right.</small></div>
+        <span class="check">✓</span>
+      </button>
+    </div>
+    <div class="nav">
+      <button class="btn btn-ghost" onclick="goto(4)">← Back</button>
+      <button class="btn btn-primary" id="b5" onclick="finish()" disabled>See my starting path →</button>
+    </div>
+  </section>
+
+  <!-- Result -->
+  <section class="panel" id="result">
+    <h2 id="rTitle">Here's your starting path</h2>
+    <p class="lead" id="rLead"></p>
+
+    <div id="urgentArea"></div>
+
+    <div class="sectionLabel">Your 3 lessons (in order)</div>
+    <div class="lessonList" id="lessonList"></div>
+
+    <div class="sectionLabel">Apply to roles like these</div>
+    <div class="jobCard" id="jobCard"></div>
+
+    <div class="nextStep" id="nextStep"></div>
+
+    <div class="restart">
+      <button class="btn btn-ghost" onclick="restart()">Start over</button>
+    </div>
+  </section>
+
+  <div class="footer">
+    <p>SWAHG Open University · Built with the community, by the community.<br>
+    Questions? <a href="https://sites.google.com/view/swahg-openuniversity/contact">Reach out</a> · <a href="https://sites.google.com/view/swahg-openuniversity/home">Back to home</a></p>
+  </div>
+
+</div>
+
+<script>
+  // -------- State --------
+  const state = {
+    step: 0,
+    answers: { english: null, time: null, role: null, tools: [], timing: null }
+  };
+  const panels = ['intro','q1','q2','q3','q4','q5','result'];
+  const progressBars = document.getElementById('progress').children;
+  const nextBtns = ['', 'b1','b2','b3','b4','b5'];
+
+  // -------- Routing tables --------
+  const SWAHG = 'https://sites.google.com/view/swahg-openuniversity';
+  const JOB_SHEET = 'https://docs.google.com/spreadsheets/d/1HqBfHi017TQcN4RPOrajpiWAD55x1yl2ijALg0Lq5LE/edit';
+  const ASYNC = {
+    title: 'The No Calls VA Track',
+    lead: "Because you told me calls aren't your strength, I'm sending you down the path 30% of Filipino freelancers go down — No Calls job roles. There are <strong>185 active jobs right now</strong> that never require you on a live English call. This is real, not a backup plan.",
+    lessons: [
+      { url: SWAHG + '/stories/the-day-i-stepped-out-of-my-comfort-zone-liz', title: "Liz's Story — The Day She Stepped Out", why: "Read this first. Liz wasn't fluent in English either. You'll see exactly how she got past that." },
+      { url: SWAHG + '/courses/english-101', title: 'English Communications 101', why: 'Even text-only roles benefit from sharper written English. 30 minutes well spent.' },
+      { url: SWAHG + '/courses/enhancement-training/choosing-my-client', title: 'Choosing My Client', why: 'How to filter out clients who will pressure you into calls.' }
+    ],
+    jobTab: 'No Calls',
+    jobUrl: JOB_SHEET + '#gid=378265801',
+    jobDesc: '185 active No Calls roles. No phone, no Zoom. Email + chat support, text-based account management, content writing.',
+    nextStep: "Post in the SWAHG FB Group: 'Hi! I'm starting the No Calls VA path. Tell me one thing you wish you knew when you started.' Watch the responses pour in."
+  };
+  const ROLE_MAP = {
+    smm: {
+      title: 'Your Social Media Manager Starting Path',
+      lead: 'Social Media Manager is <strong>18% of all active PH-eligible remote jobs</strong> right now. SWAHG has the deepest content for this lane — 9 lessons in SMM Core Training alone.',
+      lessons: [
+        { url: SWAHG + '/courses/smm-core-training/getting-hired-fast', title: 'Getting Hired Fast', why: "Shela's exact framework for landing the first SMM client. Watch this before anything else." },
+        { url: SWAHG + '/courses/smm-core-training/smm-core-strategies', title: 'SMM Core Strategies', why: 'The mindset + brand voice foundation. Long video — take it in 2 sittings.' },
+        { url: SWAHG + '/courses/writing-personal-brand/personal-branding', title: 'Personal Branding Class', why: 'You become the proof. Build your own brand before pitching yours to clients.' }
+      ],
+      jobTab: '📱 Social Media',
+      jobUrl: JOB_SHEET + '#gid=1059092353',
+      jobDesc: '43 active SMM roles, mostly mid-level, $24–58/hr. Real listings, refreshed weekly.',
+      nextStep: 'Attend the next SWAHG Monday Meeting. Bring one question about a job listing from the sheet.'
+    },
+    support: {
+      title: 'Your Customer Support Starting Path',
+      lead: "Customer Support is <strong>the #1 single job category — 24% of all listings</strong> (58 jobs right now). SWAHG's dedicated Customer Support module is on the build queue (coming soon). For now, these three lessons are your foundation.",
+      lessons: [
+        { url: SWAHG + '/courses/english-101', title: 'English Communications 101', why: 'Written English is the actual job here. Tickets, emails, chats. Sharpen this first.' },
+        { url: SWAHG + '/stories/the-day-i-stepped-out-of-my-comfort-zone-liz', title: "Liz's Story", why: "Confidence-build. Liz wasn't fluent either, and she landed Admin VA + Graphic Designer roles." },
+        { url: SWAHG + '/courses/enhancement-training/choosing-my-client', title: 'Choosing My Client', why: 'Filter for support roles that match your tone (warm, patient).' }
+      ],
+      jobTab: '🎧 Email/Chat Support',
+      jobUrl: JOB_SHEET + '#gid=1433172002',
+      jobDesc: '43 active text-based support roles. Most are remote, mid-level, $20–35/hr.',
+      nextStep: 'Apply to ONE listing from the Email/Chat Support tab this week. Just one. Practice the muscle.'
+    },
+    admin: {
+      title: 'Your Admin VA Starting Path',
+      lead: "Admin VA is the original SWAHG specialty — and what Liz, Claudz, and many SWAHG Admins started with. <strong>23 active listings + 30 in No Calls</strong> right now.",
+      lessons: [
+        { url: SWAHG + '/courses/fresh-starter/freelancer-or-va', title: 'Freelancer or VA?', why: "Know which one you're going for. The expectations are different." },
+        { url: SWAHG + '/courses/freelancer-essentials/trello-love', title: 'Trello Love', why: "Project management is 80% of the Admin VA job. Master one tool deeply before adding more." },
+        { url: SWAHG + '/courses/career-path-training/specialized-business-skills', title: 'Specialized Business Skills', why: "What separates a paid Admin VA from a free intern: knowing which deliverables clients actually pay for." }
+      ],
+      jobTab: '📋 Admin / VA',
+      jobUrl: JOB_SHEET + '#gid=1918648016',
+      jobDesc: '29 active Admin/VA listings, plus 30+ No Calls ones. Mid-level, $20–35/hr typical.',
+      nextStep: "Apply for the SWAHG Admin VA internship. It's the most direct path to a real first client — many SWAHG Admins started there."
+    },
+    content: {
+      title: 'Your Content Creator Starting Path',
+      lead: "Content Creator roles are <strong>9% of active listings (21 jobs)</strong> — smaller pool but higher-skill ceiling. Pair this with personal-brand-building.",
+      lessons: [
+        { url: SWAHG + '/courses/writing-personal-brand/personal-branding', title: 'Personal Branding Class', why: 'Your content is your portfolio. Build yours BEFORE pitching to clients.' },
+        { url: SWAHG + '/courses/career-path-training/creativeartistic-skills', title: 'Creative / Artistic Skills', why: 'Inventory of what counts as "content creation" — broader than just graphics.' },
+        { url: SWAHG + '/courses/writing-personal-brand', title: 'Writing Personal Brand (Intro)', why: 'Voice + tone fundamentals. The skill that compounds across every Content Creator role.' }
+      ],
+      jobTab: '✍️ Content Creator',
+      jobUrl: JOB_SHEET + '#gid=109929442',
+      jobDesc: '21 active Content Creator roles. Often contract, $15–35/hr, sometimes higher for video specialists.',
+      nextStep: 'Post one piece of original content this week on your FB or IG. Tag SWAHG. Watch which posts get traction — that data shapes your portfolio.'
+    },
+    unsure: {
+      title: 'Your "Figure It Out" Starting Path',
+      lead: "Not sure yet? Perfect — most successful SWAHG members started exactly here. These 3 lessons help you map your existing skills to the right role.",
+      lessons: [
+        { url: SWAHG + '/courses/fresh-starter/freelancer-or-va', title: 'Freelancer or VA?', why: 'First decision point: are you specializing or generalizing? Watch this before anything else.' },
+        { url: SWAHG + '/courses/fresh-starter/10-secret-skills', title: '10 Secret Skills', why: 'The skills clients actually pay for. You probably already have 3–5 of them.' },
+        { url: SWAHG + '/courses/fresh-starter/where-to-start', title: 'Where to Start?', why: "Shela's framework for picking your first lane based on your current skills, not your dreams." }
+      ],
+      jobTab: '🏆 Top Picks',
+      jobUrl: JOB_SHEET + '#gid=774401264',
+      jobDesc: '43 hand-curated, highest-quality listings across every role category. Browse to feel out what excites you.',
+      nextStep: 'Browse the Top Picks tab. Pick 3 listings that excite you. Note what they have in common — that\'s your real interest.'
+    }
+  };
+
+  // -------- Selection logic --------
+  document.querySelectorAll('.opts').forEach(box => {
+    const q = box.dataset.q;
+    const multi = box.classList.contains('multi');
+    box.querySelectorAll('.opt').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const v = btn.dataset.val;
+        if (multi) {
+          if (state.answers[q].includes(v)) {
+            state.answers[q] = state.answers[q].filter(x => x !== v);
+            btn.classList.remove('selected');
+          } else {
+            state.answers[q].push(v);
+            btn.classList.add('selected');
+          }
+        } else {
+          state.answers[q] = v;
+          box.querySelectorAll('.opt').forEach(b => b.classList.remove('selected'));
+          btn.classList.add('selected');
+        }
+        updateNextBtns();
+      });
+    });
+  });
+
+  function updateNextBtns() {
+    const a = state.answers;
+    document.getElementById('b1').disabled = !a.english;
+    document.getElementById('b2').disabled = !a.time;
+    document.getElementById('b3').disabled = !a.role;
+    document.getElementById('b4').disabled = a.tools.length === 0;
+    document.getElementById('b5').disabled = !a.timing;
+  }
+
+  function start() { goto(1); }
+
+  function goto(step) {
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    document.getElementById(panels[step]).classList.add('active');
+    state.step = step;
+    // Update progress bars (steps 1-5 → bars 0-4)
+    Array.from(progressBars).forEach((bar, i) => {
+      bar.className = '';
+      if (step > 0 && i < step - 1) bar.classList.add('done');
+      else if (step > 0 && i === step - 1) bar.classList.add('active');
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function finish() {
+    const a = state.answers;
+
+    // Decide path: text-only English overrides role
+    let path;
+    if (a.english === 'text') {
+      path = ASYNC;
+    } else {
+      path = ROLE_MAP[a.role] || ROLE_MAP.unsure;
+    }
+
+    document.getElementById('rTitle').textContent = path.title;
+    document.getElementById('rLead').innerHTML = path.lead;
+
+    // Urgent banner if Q5 === urgent
+    const ua = document.getElementById('urgentArea');
+    ua.innerHTML = '';
+    if (a.timing === 'urgent') {
+      ua.innerHTML = `<div class="urgentBanner">
+        <strong>Apply-mode active:</strong> You're in 2-week mode. Watch the first 2 lessons, then commit to applying to <strong>5 jobs this week</strong> from your job tab below. Don't watch every lesson before applying — that's a trap. Apply while you learn.
+      </div>`;
+    } else if (a.timing === 'learner' && a.time !== 'side') {
+      ua.innerHTML = `<div class="urgentBanner">
+        <strong>Slow path activated:</strong> You said 3+ months — good. After your 3 lessons, walk through <a href="${SWAHG}/courses/freelancing-Jouney" style="color:var(--primary);text-decoration:underline">the full Freelancing Journey series</a> (6 lessons + 3 bonus tips). Then come back to apply.
+      </div>`;
+    } else if (a.time === 'side') {
+      ua.innerHTML = `<div class="urgentBanner">
+        <strong>Side-hustle pace:</strong> These lessons are finishable in 15–30 min sittings. Do one per evening. No need to marathon — sustainability beats speed.
+      </div>`;
+    }
+
+    // Build lesson list
+    const ll = document.getElementById('lessonList');
+    ll.innerHTML = '';
+
+    // Prepend handbook if fresh
+    if (a.tools.includes('fresh')) {
+      ll.innerHTML += `<a class="lesson preq" href="${SWAHG}/courses/freelancer-essentials/handbook" target="_blank">
+        <span class="num">0</span><span class="title">Open University Guidelines (start here first)</span>
+        <span class="why">You said you're starting fresh — read this orientation before your 3 lessons. 10 minutes.</span>
+      </a>`;
+    }
+
+    path.lessons.forEach((l, i) => {
+      ll.innerHTML += `<a class="lesson" href="${l.url}" target="_blank">
+        <span class="num">${i + 1}</span><span class="title">${l.title}</span>
+        <span class="why">${l.why}</span>
+      </a>`;
+    });
+
+    // Append bonus path if learner-mode AND not already pre-pended
+    if (a.timing === 'learner' && !a.tools.includes('fresh')) {
+      ll.innerHTML += `<a class="lesson bonus" href="${SWAHG}/courses/freelancing-Jouney" target="_blank">
+        <span class="num">+</span><span class="title">Bonus: The Freelancing Journey (6 lessons + 3 bonus tips)</span>
+        <span class="why">After your 3 core lessons — for the patient path.</span>
+      </a>`;
+    }
+
+    // Job card
+    document.getElementById('jobCard').innerHTML = `
+      <div class="label">Live job board</div>
+      <h4>${path.jobTab}</h4>
+      <p style="color:var(--text-soft);font-size:14px;margin-top:4px">${path.jobDesc}</p>
+      <a href="${path.jobUrl}" target="_blank">Open the live job sheet →</a>
+    `;
+
+    // Next step
+    document.getElementById('nextStep').innerHTML = `
+      <div class="label">Your next move</div>
+      <p>${path.nextStep}</p>
+    `;
+
+    goto(6);
+  }
+
+  function restart() {
+    state.step = 0;
+    state.answers = { english: null, time: null, role: null, tools: [], timing: null };
+    document.querySelectorAll('.opt.selected').forEach(b => b.classList.remove('selected'));
+    updateNextBtns();
+    goto(0);
+  }
+</script>
+
+</body>
+</html>
