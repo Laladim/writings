@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>SWAHG Open University — Free Remote-Work Training for Filipino Freelancers</title>
+<meta name="description" content="Where you go to figure out how to land your first remote client — without paying for a course, without pretending to be someone you're not, and without leaving your kids. Free forever.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#5a4a7a;
+    --primary-deep:#4a3a6a;
+    --primary-soft:#f3eef7;
+    --accent:#c8985f;
+    --accent-deep:#a88d5e;
+    --bg:#f5f1f0;
+    --surface:#ffffff;
+    --text:#3a3a3a;
+    --text-soft:#6b6565;
+    --border:#e0dbd8;
+    --sage:#5a8a72;
+    --rose:#a0756a;
+    --lavender:#7a6a8f;
+    --prep-bg:#f9d8d8;
+    --warmup-bg:#f6a89c;
+    --launch-bg:#f6c95c;
+    --working-bg:#fceea1;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:70px}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.6}
+
+  .topnav{position:sticky;top:0;background:rgba(255,255,255,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);z-index:50}
+  .topnav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .logo{font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--primary);font-size:22px;letter-spacing:-.01em;text-decoration:none}
+  .logo .sub{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-deep);display:block;margin-top:-3px;font-weight:600;font-family:'Inter',sans-serif}
+  .nav-links{display:flex;gap:22px;font-size:14px;flex-wrap:wrap;align-items:center}
+  .nav-links a{color:var(--text-soft);text-decoration:none;transition:color .15s;white-space:nowrap}
+  .nav-links a:hover{color:var(--primary)}
+  .nav-links a[aria-current="page"]{color:var(--primary);font-weight:600;border-bottom:2px solid var(--accent);padding-bottom:2px}
+  .nav-links a.cta{background:var(--primary);color:#fff;padding:8px 16px;border-radius:6px;font-weight:500}
+  .nav-links a.cta:hover{background:var(--primary-deep);color:#fff}
+  @media (max-width:768px){
+    .nav-links{display:flex;overflow-x:auto;gap:14px;font-size:13px;-webkit-overflow-scrolling:touch;padding-bottom:4px}
+    .nav-links::-webkit-scrollbar{display:none}
+    .nav-links a.cta{flex-shrink:0}
+  }
+
+  section{padding:60px 20px}
+  section:not(:last-of-type){border-bottom:1px solid var(--border)}
+  .wrap{max-width:1180px;margin:0 auto}
+  .narrow{max-width:780px;margin:0 auto}
+  .section-label{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--accent-deep);font-weight:700;margin-bottom:14px}
+
+  h1.hero-h{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(36px,6vw,62px);line-height:1.05;letter-spacing:-.02em;color:var(--primary);margin-bottom:20px}
+  h2.section-h{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(28px,4.5vw,42px);line-height:1.12;color:var(--primary);margin-bottom:14px;letter-spacing:-.01em}
+  h3{font-family:'Cormorant Garamond',serif;font-weight:600;color:var(--primary);font-size:22px;margin-bottom:8px}
+  p.lead{font-size:18px;color:var(--text-soft);line-height:1.55;max-width:680px;margin-bottom:24px}
+  p{margin-bottom:14px}
+
+  /* HERO */
+  #hero{padding:80px 20px 70px;background:linear-gradient(180deg,#fdfbfa 0%,var(--bg) 100%);text-align:center}
+  .hero-tag{display:inline-block;background:var(--primary-soft);color:var(--primary);padding:6px 14px;border-radius:30px;font-size:12px;font-weight:600;letter-spacing:.05em;margin-bottom:20px}
+  .hero-h em{font-style:normal;color:var(--accent-deep)}
+  #hero p.lead{margin:0 auto 28px}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:8px}
+  .btn{
+    border:none;padding:13px 24px;border-radius:8px;font-size:15px;font-weight:500;
+    font-family:inherit;cursor:pointer;text-decoration:none;
+    display:inline-flex;align-items:center;gap:8px;transition:all .15s;
+  }
+  .btn-primary{background:var(--primary);color:#fff}
+  .btn-primary:hover{background:var(--primary-deep);transform:translateY(-1px)}
+  .btn-ghost{background:transparent;color:var(--primary);border:1.5px solid var(--primary)}
+  .btn-ghost:hover{background:var(--primary);color:#fff}
+
+  /* Stats strip */
+  .stats-strip{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+    max-width:780px;margin:32px auto 0;
+    padding:24px 20px;background:var(--surface);border:1px solid var(--border);border-radius:14px;
+  }
+  @media (max-width:680px){.stats-strip{grid-template-columns:1fr 1fr}}
+  .stat{text-align:center}
+  .stat .num{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--accent);font-weight:600;line-height:1.1;display:block}
+  .stat .lbl{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-soft);font-weight:600;margin-top:4px;display:block;line-height:1.3}
+
+  /* THE 4 DOORS */
+  #doors{background:#faf7f5}
+  .doors-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:36px}
+  @media (max-width:780px){.doors-grid{grid-template-columns:1fr}}
+  .door{
+    background:var(--surface);border:1.5px solid var(--border);border-radius:18px;
+    padding:30px 28px;text-decoration:none;color:inherit;transition:all .18s;
+    display:flex;flex-direction:column;gap:8px;position:relative;
+    min-height:240px;
+  }
+  .door:hover{
+    border-color:var(--primary);transform:translateY(-3px);
+    box-shadow:0 14px 32px rgba(74,58,106,0.10);
+  }
+  .door .door-q{
+    font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--accent-deep);
+    font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;
+  }
+  .door h3{font-size:26px;margin-bottom:6px;color:var(--primary);font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1.15}
+  .door p{color:var(--text-soft);font-size:15px;margin-bottom:14px;flex-grow:1}
+  .door .door-cta{
+    color:var(--primary);font-weight:600;font-size:14px;
+    display:inline-flex;align-items:center;gap:4px;
+    margin-top:auto;
+  }
+  .door .door-cta .arrow{transition:transform .15s}
+  .door:hover .door-cta .arrow{transform:translateX(4px)}
+  .door .pill{
+    position:absolute;top:24px;right:24px;
+    padding:4px 10px;border-radius:14px;font-size:11px;font-weight:700;
+    letter-spacing:.04em;text-transform:uppercase;font-family:'Inter',sans-serif;
+  }
+  .door-1 .pill{background:var(--prep-bg);color:#7c3a3a}
+  .door-2 .pill{background:var(--warmup-bg);color:#6e2c20}
+  .door-3 .pill{background:var(--launch-bg);color:#5a3e0e}
+  .door-4 .pill{background:var(--working-bg);color:#5a4a10}
+
+  /* Mobile-friendly "lost?" rescue at bottom of hero on small */
+  .mobile-rescue{display:none}
+  @media (max-width:768px){
+    .mobile-rescue{
+      display:block;background:var(--primary-soft);color:var(--primary);
+      padding:14px 20px;text-align:center;font-size:13px;font-weight:500;
+      border-bottom:1px solid var(--border);
+    }
+    .mobile-rescue a{color:var(--primary);font-weight:600;text-decoration:underline}
+  }
+
+  /* HOW IT WORKS */
+  #how{background:var(--bg)}
+  .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px}
+  @media (max-width:780px){.how-grid{grid-template-columns:1fr}}
+  .how-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:14px;
+    padding:26px 24px;
+  }
+  .how-card .icon{font-size:32px;line-height:1;margin-bottom:14px;display:block}
+  .how-card h3{font-size:20px;margin-bottom:6px}
+  .how-card p{font-size:14px;color:var(--text-soft);margin:0;line-height:1.55}
+
+  /* FLOW DIAGRAM */
+  #flow{background:#faf7f5;padding:70px 20px}
+  .flow-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:36px;position:relative}
+  @media (max-width:900px){.flow-steps{grid-template-columns:1fr 1fr}}
+  @media (max-width:560px){.flow-steps{grid-template-columns:1fr}}
+  .flow-step{
+    background:var(--surface);border:1px solid var(--border);border-radius:12px;
+    padding:18px 16px 18px 16px;position:relative;
+    border-top:3px solid var(--accent);
+  }
+  .flow-step .n{
+    font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--accent);
+    font-weight:700;letter-spacing:.15em;margin-bottom:6px;display:block;
+  }
+  .flow-step h4{font-family:'Cormorant Garamond',serif;color:var(--primary);font-size:18px;font-weight:600;margin-bottom:4px;line-height:1.2}
+  .flow-step p{font-size:13px;color:var(--text-soft);margin:0;line-height:1.45}
+  .flow-step .link{font-size:12px;color:var(--primary);font-weight:600;margin-top:8px;display:inline-block;text-decoration:none;border-bottom:1px dashed var(--primary)}
+  .flow-step .link:hover{color:var(--primary-deep);border-bottom-style:solid}
+  .flow-step::after{
+    content:"→";position:absolute;right:-12px;top:50%;
+    transform:translateY(-50%);font-size:24px;color:var(--accent);font-weight:700;
+    background:#faf7f5;width:24px;text-align:center;
+  }
+  .flow-step:last-child::after{display:none}
+  @media (max-width:900px){.flow-step::after{display:none}}
+
+  /* STORY TEASER */
+  #story{background:var(--primary);color:#fff;padding:70px 20px;text-align:center}
+  #story h2{color:#fff;margin-bottom:18px}
+  #story p{color:rgba(255,255,255,0.92);font-size:18px;max-width:680px;margin:0 auto 12px;line-height:1.55;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500}
+  #story .attribution{font-size:13px;color:rgba(255,255,255,0.7);font-family:'Inter',sans-serif;font-style:normal;margin-top:14px;letter-spacing:.05em}
+  #story .btn-light{background:#fff;color:var(--primary);margin-top:24px}
+  #story .btn-light:hover{background:var(--primary-soft);transform:translateY(-1px)}
+
+  /* FINAL CTA */
+  #final{background:var(--bg);padding:80px 20px;text-align:center}
+  #final h2{margin-bottom:14px}
+  #final p.lead{margin:0 auto 28px}
+  .final-doors{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:18px}
+  .final-door{
+    background:var(--surface);border:1.5px solid var(--border);border-radius:10px;
+    padding:14px 20px;font-size:14px;color:var(--primary);font-weight:600;
+    text-decoration:none;transition:all .15s;display:inline-flex;align-items:center;gap:6px;
+  }
+  .final-door:hover{border-color:var(--primary);background:var(--primary-soft)}
+
+  /* FOOTER */
+  footer{padding:50px 20px 70px;background:var(--primary-deep);color:#fff;text-align:center}
+  footer h3{color:#fff;font-family:'Cormorant Garamond',serif;font-size:26px;margin-bottom:8px;font-weight:600}
+  footer p{color:rgba(255,255,255,0.85);max-width:600px;margin:0 auto 22px;font-size:15px}
+  footer a.foot-link{color:#fff;text-decoration:underline;margin:0 12px;font-size:14px;display:inline-block;margin-bottom:6px}
+  footer .credit{margin-top:24px;font-size:12px;color:rgba(255,255,255,0.55)}
+
+  /* Accessibility: focus rings */
+  a:focus-visible,button:focus-visible,.door:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:8px}
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="topnav-inner">
+    <a href="../swahg/index.html" class="logo">SWAHG<span class="sub">Open University</span></a>
+    <div class="nav-links">
+      <a href="../swahg/index.html" aria-current="page">Home</a>
+      <a href="../swahg-blueprint/index.html">Blueprint</a>
+      <a href="../swahg-start/index.html">Find My Path</a>
+      <a href="../swahg-curriculum/index.html">My Curriculum</a>
+      <a href="../swahg-resume-builder/index.html">Resume Builder</a>
+      <a href="https://sites.google.com/view/swahg-openuniversity/home" class="cta" target="_blank" rel="noopener">Live SWAHG ↗</a>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-rescue">
+  Need to jump in fast? <a href="../swahg-start/index.html">Take the 5-question quiz →</a>
+</div>
+
+<section id="hero">
+  <div class="wrap narrow">
+    <span class="hero-tag">Free · Filipino-built · Always</span>
+    <h1 class="hero-h">Land your first remote client <em>without paying for a course.</em></h1>
+    <p class="lead">SWAHG Open University is for the Filipino freelancer who wants to figure out remote work — without pretending to be someone she's not, without leaving her kids, and without giving anyone her credit card. Pick the door that fits where you are today.</p>
+    <div class="hero-cta">
+      <a href="#doors" class="btn btn-primary">Pick a Door ↓</a>
+      <a href="../swahg-start/index.html" class="btn btn-ghost">Not sure? Take the quiz →</a>
+    </div>
+    <div class="stats-strip" id="statsStrip">
+      <div class="stat"><span class="num" id="stat-lessons">…</span><span class="lbl">Lessons</span></div>
+      <div class="stat"><span class="num" id="stat-coming">…</span><span class="lbl">Coming soon</span></div>
+      <div class="stat"><span class="num">244</span><span class="lbl">Active PH jobs</span></div>
+      <div class="stat"><span class="num">₱0</span><span class="lbl">Forever</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="doors">
+  <div class="wrap">
+    <div class="section-label" style="text-align:center">Four Doors · One Goal</div>
+    <h2 class="section-h" style="text-align:center;max-width:780px;margin:0 auto 14px">Pick the door that fits where you are today.</h2>
+    <p class="lead" style="text-align:center;margin:0 auto 8px">Each door takes you to a different SWAHG tool. They all share the same lessons underneath — so you can switch doors anytime without losing progress.</p>
+
+    <div class="doors-grid">
+      <a href="../swahg-blueprint/index.html" class="door door-1">
+        <span class="pill">Start here if curious</span>
+        <span class="door-q">Door 1 · The Map</span>
+        <h3>"Show me the whole journey first."</h3>
+        <p>The Blueprint is the visual map of SWAHG — 4 stages from Preparation to Working, plus the growth loop after. Click any box to see which lessons live there. Best if you like seeing the whole picture before committing.</p>
+        <span class="door-cta">Open the Blueprint <span class="arrow">→</span></span>
+      </a>
+
+      <a href="../swahg-start/index.html" class="door door-2">
+        <span class="pill">Recommended for newbies</span>
+        <span class="door-q">Door 2 · The Quiz</span>
+        <h3>"I don't know where to start."</h3>
+        <p>Five questions, three minutes. We'll match you to your 3 starter lessons and one live job lane you can apply to within 2 weeks. No fluff. Built for moms with no time and shaky confidence.</p>
+        <span class="door-cta">Take the Find Your Path quiz <span class="arrow">→</span></span>
+      </a>
+
+      <a href="../swahg-curriculum/index.html" class="door door-3">
+        <span class="pill">Build a real plan</span>
+        <span class="door-q">Door 3 · Your Curriculum</span>
+        <h3>"Build me a plan I can finish."</h3>
+        <p>Tell us your goal role, your English level, and how many hours per week you have. We hand back an ordered lesson queue with a finish-by date — and the "why" for each lesson. Save it as a PDF.</p>
+        <span class="door-cta">Build my curriculum <span class="arrow">→</span></span>
+      </a>
+
+      <a href="../swahg-resume-builder/index.html" class="door door-4">
+        <span class="pill">Already learning</span>
+        <span class="door-q">Door 4 · Skills + Jobs</span>
+        <h3>"Show me which skills unlock which jobs."</h3>
+        <p>Check off the 40 most-in-demand VA skills as you learn them. Watch the live job-match count update. See which SWAHG lesson teaches each one. Build your future-self resume one box at a time.</p>
+        <span class="door-cta">Open the Resume Builder <span class="arrow">→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap narrow">
+    <div class="section-label" style="text-align:center">How SWAHG Works</div>
+    <h2 class="section-h" style="text-align:center">No clickbait. No upsells. <em style="color:var(--accent-deep);font-style:normal">Just the next concrete step.</em></h2>
+    <p class="lead" style="text-align:center;margin:0 auto 20px">Three rules SWAHG runs on — set by Shela, the SWAHG founder, in 2019 and unchanged since.</p>
+
+    <div class="how-grid">
+      <div class="how-card">
+        <span class="icon" aria-hidden="true">📚</span>
+        <h3>Free, forever.</h3>
+        <p>No "and then sell them a $497 course" energy. SWAHG was free in 2019, free today, free tomorrow. If anyone tells you otherwise, that's not us.</p>
+      </div>
+      <div class="how-card">
+        <span class="icon" aria-hidden="true">🇵🇭</span>
+        <h3>Built for Pinoys.</h3>
+        <p>Tagalog and Taglish welcome. Faith-warm, not faith-required. PH job market specifically — 244 active listings, refreshed weekly. No US-centric "401k" advice.</p>
+      </div>
+      <div class="how-card">
+        <span class="icon" aria-hidden="true">⏱️</span>
+        <h3>Finishable in fragments.</h3>
+        <p>Lessons are 15–25 minutes. Designed for the mom who has 20 minutes after the kids are asleep. Sustainability beats speed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="flow">
+  <div class="wrap">
+    <div class="section-label" style="text-align:center">The Typical Journey</div>
+    <h2 class="section-h" style="text-align:center;margin-bottom:14px">From "I want to try" to your first paycheck.</h2>
+    <p class="lead" style="text-align:center;margin:0 auto">Most SWAHG members ladder through these 4 tools. You can skip steps if you already know where you're going.</p>
+
+    <div class="flow-steps">
+      <div class="flow-step">
+        <span class="n">Step 1</span>
+        <h4>Take the Quiz</h4>
+        <p>5 questions → your starter lessons + a live job lane.</p>
+        <a class="link" href="../swahg-start/index.html">Find your path →</a>
+      </div>
+      <div class="flow-step">
+        <span class="n">Step 2</span>
+        <h4>See the Blueprint</h4>
+        <p>The 4-stage map — see where the quiz placed you.</p>
+        <a class="link" href="../swahg-blueprint/index.html">Open Blueprint →</a>
+      </div>
+      <div class="flow-step">
+        <span class="n">Step 3</span>
+        <h4>Build a Curriculum</h4>
+        <p>Get an ordered plan with a finish-by date.</p>
+        <a class="link" href="../swahg-curriculum/index.html">Build plan →</a>
+      </div>
+      <div class="flow-step">
+        <span class="n">Step 4</span>
+        <h4>Track + Apply</h4>
+        <p>Use the Resume Builder. Apply to real jobs.</p>
+        <a class="link" href="../swahg-resume-builder/index.html">Open builder →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="story">
+  <div class="wrap narrow">
+    <p>"I need to be fluent in English but I'm not fluent in English. But still, I gave it a shot."</p>
+    <p class="attribution">— Liz, SWAHG Admin VA + Graphic Designer · The day she stepped out of her comfort zone</p>
+    <a href="https://sites.google.com/view/swahg-openuniversity/stories/the-day-i-stepped-out-of-my-comfort-zone-liz" target="_blank" rel="noopener" class="btn btn-light">Read Liz's full story →</a>
+  </div>
+</section>
+
+<section id="final">
+  <div class="wrap narrow">
+    <div class="section-label">Pick a Door</div>
+    <h2 class="section-h">There's no wrong way in.</h2>
+    <p class="lead">The Blueprint, the Quiz, the Curriculum, the Resume Builder — all four read from the same lessons. Switch doors anytime. Your progress isn't tracked anywhere, so there's nothing to lose by clicking around.</p>
+    <div class="final-doors">
+      <a href="../swahg-blueprint/index.html" class="final-door">📍 The Blueprint</a>
+      <a href="../swahg-start/index.html" class="final-door">🧭 Find My Path Quiz</a>
+      <a href="../swahg-curriculum/index.html" class="final-door">📋 Build My Curriculum</a>
+      <a href="../swahg-resume-builder/index.html" class="final-door">📝 Resume Builder</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <h3>One map. Four doors. Free forever.</h3>
+  <p>SWAHG Open University is run by Shela. No company behind it. No course funnel. Just lessons that helped real Filipinos land real remote jobs — written down and made free.</p>
+  <div>
+    <a href="https://sites.google.com/view/swahg-openuniversity/home" class="foot-link" target="_blank" rel="noopener">Live SWAHG site ↗</a>
+    <a href="https://sites.google.com/view/swahg-openuniversity/stories" class="foot-link" target="_blank" rel="noopener">Community Stories</a>
+    <a href="../" class="foot-link">Writings by Lala</a>
+  </div>
+  <div class="credit">SWAHG Open University · Rebuild v1 · May 2026</div>
+</footer>
+
+<script src="../swahg-lessons.js"></script>
+<script>
+/* Populate live stats from registry */
+window.addEventListener("DOMContentLoaded",()=>{
+  if(!window.SWAHG_LESSONS) return;
+  const lessons = Object.values(window.SWAHG_LESSONS.lessons);
+  const liveCount = lessons.filter(l => l.status === "live" || l.status === "built").length;
+  const newCount = lessons.filter(l => l.status === "new" || l.status === "rewrite").length;
+  document.getElementById("stat-lessons").textContent = liveCount;
+  document.getElementById("stat-coming").textContent = newCount;
+});
+</script>
+</body>
+</html>

@@ -37,7 +37,18 @@
   }
   .mockupNotice strong{color:var(--primary)}
   .topnav{position:sticky;top:0;background:rgba(255,255,255,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);z-index:50}
-  .topnav-inner{max-width:1200px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+  .topnav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .topnav .nav-links{display:flex;gap:22px;font-size:14px;flex-wrap:wrap;align-items:center}
+  .topnav .nav-links a{color:var(--text-soft);text-decoration:none;transition:color .15s;white-space:nowrap}
+  .topnav .nav-links a:hover{color:var(--primary)}
+  .topnav .nav-links a[aria-current="page"]{color:var(--primary);font-weight:600;border-bottom:2px solid var(--accent);padding-bottom:2px}
+  .topnav .nav-links a.cta{background:var(--primary);color:#fff;padding:8px 16px;border-radius:6px;font-weight:500}
+  .topnav .nav-links a.cta:hover{background:var(--primary-deep);color:#fff}
+  @media (max-width:768px){
+    .topnav .nav-links{display:flex;overflow-x:auto;gap:14px;font-size:13px;-webkit-overflow-scrolling:touch;padding-bottom:4px}
+    .topnav .nav-links::-webkit-scrollbar{display:none}
+    .topnav .nav-links a.cta{flex-shrink:0}
+  }
   .logo{font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--primary);font-size:20px;text-decoration:none}
   .logo .sub{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-deep);display:block;margin-top:-2px;font-weight:600;font-family:'Inter',sans-serif}
   .topnav-actions{display:flex;gap:10px;font-size:13px}
@@ -220,11 +231,14 @@
 
 <nav class="topnav">
   <div class="topnav-inner">
-    <a href="#hero" class="logo">SWAHG<span class="sub">Resume Builder</span></a>
-    <div class="topnav-actions">
-      <a href="https://laladim.github.io/writings/swahg-start/" class="top-btn">← Take the quiz</a>
-      <a href="https://laladim.github.io/writings/swahg-path/" class="top-btn">My path</a>
-      <button class="top-btn primary" onclick="window.print()">Print resume</button>
+    <a href="../swahg/index.html" class="logo">SWAHG<span class="sub">Open University</span></a>
+    <div class="nav-links">
+      <a href="../swahg/index.html">Home</a>
+      <a href="../swahg-blueprint/index.html">Blueprint</a>
+      <a href="../swahg-start/index.html">Find My Path</a>
+      <a href="../swahg-curriculum/index.html">My Curriculum</a>
+      <a href="../swahg-resume-builder/index.html" aria-current="page">Resume Builder</a>
+      <a href="https://sites.google.com/view/swahg-openuniversity/home" class="cta" target="_blank" rel="noopener">Live SWAHG ↗</a>
     </div>
   </div>
 </nav>
@@ -403,72 +417,117 @@
   </div>
 </div>
 
+<section style="padding:50px 20px;background:#faf7f5;border-top:1px solid var(--border)">
+  <div style="max-width:1180px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:24px">
+      <div style="font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--accent-deep);font-weight:700;margin-bottom:8px">Or try a different door</div>
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--primary);font-weight:600;margin:0">Three more SWAHG tools, same lessons.</h3>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:900px;margin:0 auto">
+      <a href="../swahg-blueprint/index.html" style="background:#fff;border:1.5px solid var(--border);border-left:4px solid #f9d8d8;border-radius:10px;padding:18px 20px;text-decoration:none;color:inherit;transition:all .15s" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.borderLeftColor='#f9d8d8'">
+        <div style="font-size:11px;color:var(--accent-deep);font-weight:700;letter-spacing:.1em;margin-bottom:4px">SEE THE WHOLE JOURNEY</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--primary);font-weight:600;margin-bottom:4px">Open the Blueprint →</div>
+        <div style="font-size:13px;color:var(--text-soft)">Visual map. 30+ boxes. Click any one to see lessons.</div>
+      </a>
+      <a href="../swahg-start/index.html" style="background:#fff;border:1.5px solid var(--border);border-left:4px solid #f6a89c;border-radius:10px;padding:18px 20px;text-decoration:none;color:inherit;transition:all .15s" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.borderLeftColor='#f6a89c'">
+        <div style="font-size:11px;color:var(--accent-deep);font-weight:700;letter-spacing:.1em;margin-bottom:4px">DON'T KNOW WHERE TO START?</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--primary);font-weight:600;margin-bottom:4px">Take the 5-question quiz →</div>
+        <div style="font-size:13px;color:var(--text-soft)">3 minutes. Get matched to your 3 starter lessons.</div>
+      </a>
+      <a href="../swahg-curriculum/index.html" style="background:#fff;border:1.5px solid var(--border);border-left:4px solid #f6c95c;border-radius:10px;padding:18px 20px;text-decoration:none;color:inherit;transition:all .15s" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.borderLeftColor='#f6c95c'">
+        <div style="font-size:11px;color:var(--accent-deep);font-weight:700;letter-spacing:.1em;margin-bottom:4px">FULL STUDY PLAN</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--primary);font-weight:600;margin-bottom:4px">Build my curriculum →</div>
+        <div style="font-size:13px;color:var(--text-soft)">Ordered queue with finish-by date.</div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <footer>
   <p>SWAHG Open University · Resume Builder (planning guide, not a tracker)</p>
   <p style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-top:8px;opacity:.5">MOCKUP · Lorem ipsum bodies · Real titles + structure</p>
-  <p style="margin-top:12px"><a href="https://laladim.github.io/writings/swahg-mockup/">Back to plan overview</a> · <a href="https://laladim.github.io/writings/swahg-start/">Take the quiz</a> · <a href="https://laladim.github.io/writings/swahg-path/">View sample path</a></p>
+  <p style="margin-top:12px"><a href="../swahg/index.html">SWAHG Home</a> · <a href="../swahg-blueprint/index.html">Blueprint</a> · <a href="../swahg-start/index.html">Find My Path</a> · <a href="../swahg-curriculum/index.html">My Curriculum</a></p>
 </footer>
 
+<script src="../swahg-lessons.js"></script>
 <script>
 // ---- SKILL DATA ----
 // Each skill: id, category, name, desc, lesson, hours, communityGap (% who have it)
+/* Each skill carries a `lesson_slug` pointing into window.SWAHG_LESSONS.lessons.
+   The `lesson` free-text remains as a fallback display when the slug is null or
+   the registry hasn't been extended yet. URL + current status come from the registry. */
 const SKILLS = [
   // FOUNDATION
-  {id:'F1', cat:'foundation', name:'Professional Email Setup', desc:'Build a clean, on-brand work email + signature.', lesson:'Email Address Expert Secrets', hrs:2, gap:85},
-  {id:'F2', cat:'foundation', name:'Online Tool Hygiene', desc:'Drive + Calendar + Browser organization basics.', lesson:'Browser & Storage Expert Secrets', hrs:3, gap:70},
-  {id:'F3', cat:'foundation', name:'Written English Communication', desc:'Sharper written English for chat, email, tickets.', lesson:'English Communications 101', hrs:8, gap:55},
-  {id:'F4', cat:'foundation', name:'Time Tracking Discipline', desc:'Toggl/Clockify/Hubstaff + the habit behind them.', lesson:'NEW: Time Tracking Discipline', hrs:2, gap:2, isNew:true},
+  {id:'F1', cat:'foundation', name:'Professional Email Setup', desc:'Build a clean, on-brand work email + signature.', lesson:'Email Address Expert Secrets', lesson_slug:'email-address-is-gold', hrs:2, gap:85},
+  {id:'F2', cat:'foundation', name:'Online Tool Hygiene', desc:'Drive + Calendar + Browser organization basics.', lesson:'Browser & Storage Expert Secrets', lesson_slug:'browser-expert-secrets', hrs:3, gap:70},
+  {id:'F3', cat:'foundation', name:'Written English Communication', desc:'Sharper written English for chat, email, tickets.', lesson:'English Communications 101', lesson_slug:'english-101', hrs:8, gap:55},
+  {id:'F4', cat:'foundation', name:'Time Tracking Discipline', desc:'Toggl/Clockify/Hubstaff + the habit behind them.', lesson:'Time Tracking Discipline', lesson_slug:'time-tracking-discipline', hrs:2, gap:2, isNew:true},
 
   // SMM
-  {id:'S1', cat:'smm', name:'Content Calendar Planning', desc:'Plan a week of posts; map content to client goals.', lesson:'SMM Core Strategies', hrs:4, gap:18},
-  {id:'S2', cat:'smm', name:'Instagram Strategy', desc:'Reels, stories, posts — what works on the platform now.', lesson:'Instagram Strategy', hrs:3, gap:25},
-  {id:'S3', cat:'smm', name:'Facebook Business Page Management', desc:'Manage a real page, post + reply + report.', lesson:'FB Mobile Management', hrs:4, gap:30},
-  {id:'S4', cat:'smm', name:'Content Scheduling Tools', desc:'Buffer / Hootsuite / Later / Metricool fluency.', lesson:'NEW: SMM Tools Deep Dive', hrs:3, gap:7, isNew:true},
-  {id:'S5', cat:'smm', name:'Visual Design with Canva', desc:'Brand-aligned graphics, carousels, IG covers.', lesson:'Creative / Artistic Skills', hrs:6, gap:35},
-  {id:'S6', cat:'smm', name:'Hashtag Research', desc:'Plus best-time-to-post + audience analysis.', lesson:'SMM Handbook', hrs:2, gap:22},
-  {id:'S7', cat:'smm', name:'Engagement Reporting', desc:'Monthly client reports clients actually read.', lesson:'NEW: SMM Reporting', hrs:3, gap:12, isNew:true},
-  {id:'S8', cat:'smm', name:'Short-form Video / Reels', desc:'Hook, edit, post Reels with CapCut on mobile.', lesson:'NEW: Video Editing for VAs', hrs:8, gap:13, isNew:true},
+  {id:'S1', cat:'smm', name:'Content Calendar Planning', desc:'Plan a week of posts; map content to client goals.', lesson:'SMM Core Strategies', lesson_slug:'smm-core-strategies', hrs:4, gap:18},
+  {id:'S2', cat:'smm', name:'Instagram Strategy', desc:'Reels, stories, posts — what works on the platform now.', lesson:'Instagram Strategy', lesson_slug:'instagram-strategy', hrs:3, gap:25},
+  {id:'S3', cat:'smm', name:'Facebook Business Page Management', desc:'Manage a real page, post + reply + report.', lesson:'FB Mobile Management', lesson_slug:'smm-core-strategies', hrs:4, gap:30},
+  {id:'S4', cat:'smm', name:'Content Scheduling Tools', desc:'Buffer / Hootsuite / Later / Metricool fluency.', lesson:'SMM Tools Deep Dive', lesson_slug:'smm-core-strategies', hrs:3, gap:7, isNew:true},
+  {id:'S5', cat:'smm', name:'Visual Design with Canva', desc:'Brand-aligned graphics, carousels, IG covers.', lesson:'Creative / Artistic Skills', lesson_slug:'creative-artistic-skills', hrs:6, gap:35},
+  {id:'S6', cat:'smm', name:'Hashtag Research', desc:'Plus best-time-to-post + audience analysis.', lesson:'SMM Handbook', lesson_slug:'smm-core-strategies', hrs:2, gap:22},
+  {id:'S7', cat:'smm', name:'Engagement Reporting', desc:'Monthly client reports clients actually read.', lesson:'SMM Reporting', lesson_slug:'smm-core-strategies', hrs:3, gap:12, isNew:true},
+  {id:'S8', cat:'smm', name:'Short-form Video / Reels', desc:'Hook, edit, post Reels with CapCut on mobile.', lesson:'Video Editing for VAs', lesson_slug:'video-editing-content-vas', hrs:8, gap:13, isNew:true},
 
   // SUPPORT
-  {id:'C1', cat:'support', name:'Email Ticket Handling', desc:'Triage, respond, escalate inbound support emails.', lesson:'NEW: No Calls Customer Support', hrs:4, gap:8, isNew:true},
-  {id:'C2', cat:'support', name:'Live Chat Communication', desc:'Tone, pacing, multi-conversation handling.', lesson:'NEW: No Calls Customer Support', hrs:4, gap:6, isNew:true},
-  {id:'C3', cat:'support', name:'Help Center Tools', desc:'Zendesk / Intercom / Freshdesk basics.', lesson:'NEW: No Calls Customer Support', hrs:5, gap:5, isNew:true},
-  {id:'C4', cat:'support', name:'Customer Journey Empathy', desc:'Diagnose root cause, not just the surface complaint.', lesson:'Professional Online Presence', hrs:3, gap:18},
-  {id:'C5', cat:'support', name:'Escalation Triage', desc:'When to keep, when to hand off, how to document.', lesson:'NEW: No Calls Customer Support', hrs:2, gap:4, isNew:true},
-  {id:'C6', cat:'support', name:'Macro / Canned Response Writing', desc:'Templates that don\'t sound like templates.', lesson:'NEW: No Calls Customer Support', hrs:2, gap:3, isNew:true},
+  {id:'C1', cat:'support', name:'Email Ticket Handling', desc:'Triage, respond, escalate inbound support emails.', lesson:'No Calls Customer Support', lesson_slug:'customer-support-foundations', hrs:4, gap:8, isNew:true},
+  {id:'C2', cat:'support', name:'Live Chat Communication', desc:'Tone, pacing, multi-conversation handling.', lesson:'No Calls Customer Support', lesson_slug:'customer-support-foundations', hrs:4, gap:6, isNew:true},
+  {id:'C3', cat:'support', name:'Help Center Tools', desc:'Zendesk / Intercom / Freshdesk basics.', lesson:'No Calls Customer Support', lesson_slug:'customer-support-foundations', hrs:5, gap:5, isNew:true},
+  {id:'C4', cat:'support', name:'Customer Journey Empathy', desc:'Diagnose root cause, not just the surface complaint.', lesson:'Professional Online Presence', lesson_slug:'online-presence', hrs:3, gap:18},
+  {id:'C5', cat:'support', name:'Escalation Triage', desc:'When to keep, when to hand off, how to document.', lesson:'No Calls Customer Support', lesson_slug:'customer-support-foundations', hrs:2, gap:4, isNew:true},
+  {id:'C6', cat:'support', name:'Macro / Canned Response Writing', desc:'Templates that don\'t sound like templates.', lesson:'No Calls Customer Support', lesson_slug:'customer-support-foundations', hrs:2, gap:3, isNew:true},
 
   // ADMIN
-  {id:'A1', cat:'admin', name:'Calendar Management', desc:'Booking, blocking, rescheduling across timezones.', lesson:'Specialized Business Skills', hrs:3, gap:28},
-  {id:'A2', cat:'admin', name:'Inbox Triage', desc:'Zero-inbox discipline + delegation flow.', lesson:'Email Address Expert Secrets', hrs:3, gap:30},
-  {id:'A3', cat:'admin', name:'Project Tracking', desc:'Trello + Asana + ClickUp + Notion fluency.', lesson:'Trello Love + NEW: PM Tool Fluency', hrs:6, gap:23, isNew:true},
-  {id:'A4', cat:'admin', name:'Document Organization', desc:'Drive folder systems clients actually follow.', lesson:'Storage Expert Secrets', hrs:2, gap:65},
-  {id:'A5', cat:'admin', name:'Meeting Notes + Action Items', desc:'Capture, distill, distribute — without losing nuance.', lesson:'Specialized Business Skills', hrs:2, gap:40},
+  {id:'A1', cat:'admin', name:'Calendar Management', desc:'Booking, blocking, rescheduling across timezones.', lesson:'Specialized Business Skills', lesson_slug:'specialized-business-skills', hrs:3, gap:28},
+  {id:'A2', cat:'admin', name:'Inbox Triage', desc:'Zero-inbox discipline + delegation flow.', lesson:'Email Address Expert Secrets', lesson_slug:'email-address-is-gold', hrs:3, gap:30},
+  {id:'A3', cat:'admin', name:'Project Tracking', desc:'Trello + Asana + ClickUp + Notion fluency.', lesson:'Trello Love + PM Tool Fluency', lesson_slug:'pm-tool-fluency', hrs:6, gap:23, isNew:true},
+  {id:'A4', cat:'admin', name:'Document Organization', desc:'Drive folder systems clients actually follow.', lesson:'Storage Expert Secrets', lesson_slug:'storage-expert-secrets', hrs:2, gap:65},
+  {id:'A5', cat:'admin', name:'Meeting Notes + Action Items', desc:'Capture, distill, distribute — without losing nuance.', lesson:'Specialized Business Skills', lesson_slug:'specialized-business-skills', hrs:2, gap:40},
 
   // CONTENT
-  {id:'N1', cat:'content', name:'Personal Brand Voice', desc:'Find + sustain a tone that\'s recognizably yours.', lesson:'Personal Branding Class', hrs:5, gap:18},
-  {id:'N2', cat:'content', name:'Blog Writing', desc:'Long-form structure: hook, payoff, share-worthy.', lesson:'NEW: Long-form Writing', hrs:8, gap:15, isNew:true},
-  {id:'N3', cat:'content', name:'Carousel Design', desc:'10-slide IG/LinkedIn carousels that stop the scroll.', lesson:'NEW: Content Production', hrs:4, gap:20, isNew:true},
-  {id:'N4', cat:'content', name:'Short-form Video Editing', desc:'CapCut fundamentals for Reels, TikTok, Shorts.', lesson:'NEW: Video Editing for VAs', hrs:10, gap:13, isNew:true},
-  {id:'N5', cat:'content', name:'Story-driven Captions', desc:'Captions that build community, not just engagement.', lesson:'Personal Branding Class', hrs:4, gap:22},
-  {id:'N6', cat:'content', name:'Hook Writing', desc:'First 3 seconds / first 12 words. The pivot of every post.', lesson:'NEW: Long-form Writing', hrs:3, gap:18, isNew:true},
-  {id:'N7', cat:'content', name:'Content Repurposing', desc:'One idea → 5 platforms. The compounding move.', lesson:'NEW: Content Production', hrs:4, gap:10, isNew:true},
+  {id:'N1', cat:'content', name:'Personal Brand Voice', desc:'Find + sustain a tone that\'s recognizably yours.', lesson:'Personal Branding Class', lesson_slug:'personal-branding', hrs:5, gap:18},
+  {id:'N2', cat:'content', name:'Blog Writing', desc:'Long-form structure: hook, payoff, share-worthy.', lesson:'Long-form Writing', lesson_slug:'creative-artistic-skills', hrs:8, gap:15, isNew:true},
+  {id:'N3', cat:'content', name:'Carousel Design', desc:'10-slide IG/LinkedIn carousels that stop the scroll.', lesson:'Content Production', lesson_slug:'creative-artistic-skills', hrs:4, gap:20, isNew:true},
+  {id:'N4', cat:'content', name:'Short-form Video Editing', desc:'CapCut fundamentals for Reels, TikTok, Shorts.', lesson:'Video Editing for VAs', lesson_slug:'video-editing-content-vas', hrs:10, gap:13, isNew:true},
+  {id:'N5', cat:'content', name:'Story-driven Captions', desc:'Captions that build community, not just engagement.', lesson:'Personal Branding Class', lesson_slug:'personal-branding', hrs:4, gap:22},
+  {id:'N6', cat:'content', name:'Hook Writing', desc:'First 3 seconds / first 12 words. The pivot of every post.', lesson:'Long-form Writing', lesson_slug:'creative-artistic-skills', hrs:3, gap:18, isNew:true},
+  {id:'N7', cat:'content', name:'Content Repurposing', desc:'One idea → 5 platforms. The compounding move.', lesson:'Content Production', lesson_slug:'creative-artistic-skills', hrs:4, gap:10, isNew:true},
 
   // ACCOUNT MANAGER
-  {id:'M1', cat:'account', name:'Client Onboarding', desc:'First 30 days that prevent churn.', lesson:'Choosing My Client + NEW: Account Mgmt', hrs:3, gap:12, isNew:true},
-  {id:'M2', cat:'account', name:'Status Update Cadence', desc:'Weekly written updates that keep clients calm.', lesson:'NEW: Account Mgmt', hrs:2, gap:8, isNew:true},
-  {id:'M3', cat:'account', name:'Cross-sell Identification', desc:'Spot the next service the client already needs.', lesson:'NEW: Account Mgmt', hrs:3, gap:5, isNew:true},
+  {id:'M1', cat:'account', name:'Client Onboarding', desc:'First 30 days that prevent churn.', lesson:'Choosing My Client + Account Mgmt 101', lesson_slug:'account-management-101', hrs:3, gap:12, isNew:true},
+  {id:'M2', cat:'account', name:'Status Update Cadence', desc:'Weekly written updates that keep clients calm.', lesson:'Account Management 101', lesson_slug:'account-management-101', hrs:2, gap:8, isNew:true},
+  {id:'M3', cat:'account', name:'Cross-sell Identification', desc:'Spot the next service the client already needs.', lesson:'Account Management 101', lesson_slug:'account-management-101', hrs:3, gap:5, isNew:true},
 
   // SDR
-  {id:'D1', cat:'sdr', name:'Cold Outreach Sequences', desc:'Multi-touch sequences that don\'t feel spammy.', lesson:'NEW: SDR Cold Outreach', hrs:5, gap:4, isNew:true},
-  {id:'D2', cat:'sdr', name:'Persuasion Through Story', desc:'Story-frame the offer; reduce sales-resistance.', lesson:'NEW: SDR Cold Outreach (DESIRE corpus)', hrs:4, gap:6, isNew:true},
-  {id:'D3', cat:'sdr', name:'CRM Basics', desc:'HubSpot / Pipedrive / GoHighLevel for SDRs.', lesson:'NEW: CRM Basics for VAs', hrs:4, gap:14, isNew:true},
-  {id:'D4', cat:'sdr', name:'Discovery Question Frameworks', desc:'BANT / SPIN — questions that find the real need.', lesson:'NEW: SDR Cold Outreach', hrs:3, gap:5, isNew:true},
+  {id:'D1', cat:'sdr', name:'Cold Outreach Sequences', desc:'Multi-touch sequences that don\'t feel spammy.', lesson:'Cold Outreach for SDRs', lesson_slug:'cold-outreach-sdrs', hrs:5, gap:4, isNew:true},
+  {id:'D2', cat:'sdr', name:'Persuasion Through Story', desc:'Story-frame the offer; reduce sales-resistance.', lesson:'Cold Outreach for SDRs (DESIRE corpus)', lesson_slug:'cold-outreach-sdrs', hrs:4, gap:6, isNew:true},
+  {id:'D3', cat:'sdr', name:'CRM Basics', desc:'HubSpot / Pipedrive / GoHighLevel for SDRs.', lesson:'CRM Basics for VAs', lesson_slug:'crm-basics', hrs:4, gap:14, isNew:true},
+  {id:'D4', cat:'sdr', name:'Discovery Question Frameworks', desc:'BANT / SPIN — questions that find the real need.', lesson:'Cold Outreach for SDRs', lesson_slug:'cold-outreach-sdrs', hrs:3, gap:5, isNew:true},
 
   // APPLY
-  {id:'J1', cat:'apply', name:'Powerful Resume Writing', desc:'Achievement-focused, not duty-focused.', lesson:'NEW: Resume + Achievement Toolkit', hrs:4, gap:30, isNew:true},
-  {id:'J2', cat:'apply', name:'Portfolio Building', desc:'3 case studies + visuals that hire you.', lesson:'OPPORTUNITY corpus (50 files)', hrs:6, gap:25},
-  {id:'J3', cat:'apply', name:'Interview Preparation', desc:'Common questions + STAR framework + your stories.', lesson:'NEW: Apply Mode', hrs:3, gap:35, isNew:true},
+  {id:'J1', cat:'apply', name:'Powerful Resume Writing', desc:'Achievement-focused, not duty-focused.', lesson:'Resume Builder (tool)', lesson_slug:'resume-builder', hrs:4, gap:30},
+  {id:'J2', cat:'apply', name:'Portfolio Building', desc:'3 case studies + visuals that hire you.', lesson:'Personal Branding + OPPORTUNITY corpus', lesson_slug:'personal-branding', hrs:6, gap:25},
+  {id:'J3', cat:'apply', name:'Interview Preparation', desc:'Common questions + STAR framework + your stories.', lesson:'Interviews (Async + Video)', lesson_slug:'interviews-prep', hrs:3, gap:35, isNew:true},
 ];
+
+/* Resolver: look up current title/url/status from registry by slug.
+   Returns enriched skill object so render code can show live status badges + working links. */
+function enrichSkill(skill){
+  const reg = window.SWAHG_LESSONS;
+  if(!reg || !skill.lesson_slug) return skill;
+  const lesson = reg.lessons[skill.lesson_slug];
+  if(!lesson) return skill;
+  return Object.assign({}, skill, {
+    _lesson_title: lesson.title,
+    _lesson_url: lesson.url || null,
+    _lesson_status: lesson.status,
+    _lesson_why: lesson.why_this_lesson
+  });
+}
 
 // Maps categories to job-count weights (rough mockup math)
 const JOB_BUCKETS = {
@@ -484,14 +543,30 @@ const JOB_BUCKETS = {
 
 // ---- RENDER SKILLS ----
 const checked = new Set();
-SKILLS.forEach(s => {
+SKILLS.forEach(rawSkill => {
+  const s = enrichSkill(rawSkill);
   const container = document.getElementById(`skills-${s.cat}`);
   if (!container) return;
   const div = document.createElement('div');
   div.className = 'skill';
   div.dataset.id = s.id;
   const gapClass = s.gap < 15 ? 'high' : '';
-  const newBadge = s.isNew ? ' · <span style="color:var(--accent-deep);font-weight:600">NEW Tier-2</span>' : '';
+  /* Status badge from registry overrides static isNew flag when present */
+  let statusBadge = '';
+  if(s._lesson_status === 'new'){
+    statusBadge = ' · <span style="color:var(--sage);font-weight:600">Coming soon</span>';
+  } else if(s._lesson_status === 'rewrite'){
+    statusBadge = ' · <span style="color:var(--rose);font-weight:600">Rewriting (Tier 1)</span>';
+  } else if(s._lesson_status === 'built'){
+    statusBadge = ' · <span style="color:var(--accent-deep);font-weight:600">Interactive tool</span>';
+  } else if(s.isNew){
+    statusBadge = ' · <span style="color:var(--accent-deep);font-weight:600">NEW Tier-2</span>';
+  }
+  /* Linked title if the registry resolved a URL */
+  const lessonTitle = s._lesson_title || s.lesson;
+  const lessonLink = (s._lesson_url && s._lesson_url !== '')
+    ? `<a href="${s._lesson_url}" target="${s._lesson_url.startsWith('/') ? '_self' : '_blank'}" rel="noopener" onclick="event.stopPropagation()" style="color:var(--primary);text-decoration:underline">${lessonTitle}</a>`
+    : lessonTitle;
   div.innerHTML = `
     <div class="box">✓</div>
     <div class="info">
@@ -501,7 +576,7 @@ SKILLS.forEach(s => {
         <span>📖 ${s.hrs} hr</span>
         <span class="gap ${gapClass}">⊘ ${s.gap}% have this</span>
       </div>
-      <div class="lesson">📘 ${s.lesson}${newBadge}</div>
+      <div class="lesson">📘 ${lessonLink}${statusBadge}</div>
     </div>
   `;
   div.addEventListener('click', () => toggle(s.id, div));

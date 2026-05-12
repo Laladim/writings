@@ -169,9 +169,40 @@
   }
   .footer a{color:var(--primary)}
   .restart{margin-top:24px;text-align:center}
+  /* ───── Shared SWAHG top nav ───── */
+  .swahg-topnav{position:sticky;top:0;background:rgba(255,255,255,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);z-index:50}
+  .swahg-topnav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .swahg-logo{font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--primary);font-size:22px;letter-spacing:-.01em;text-decoration:none;line-height:1.1}
+  .swahg-logo .sub{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-deep);display:block;margin-top:-2px;font-weight:600;font-family:'Inter',sans-serif}
+  .swahg-nav-links{display:flex;gap:22px;font-size:14px;flex-wrap:wrap;align-items:center}
+  .swahg-nav-links a{color:var(--text-soft);text-decoration:none;transition:color .15s;white-space:nowrap}
+  .swahg-nav-links a:hover{color:var(--primary)}
+  .swahg-nav-links a[aria-current="page"]{color:var(--primary);font-weight:600;border-bottom:2px solid var(--accent);padding-bottom:2px}
+  .swahg-nav-links a.cta{background:var(--primary);color:#fff;padding:8px 16px;border-radius:6px;font-weight:500}
+  .swahg-nav-links a.cta:hover{background:var(--primary-deep);color:#fff}
+  @media (max-width:768px){
+    .swahg-nav-links{display:flex;overflow-x:auto;gap:14px;font-size:13px;-webkit-overflow-scrolling:touch;padding-bottom:4px}
+    .swahg-nav-links::-webkit-scrollbar{display:none}
+    .swahg-nav-links a.cta{flex-shrink:0}
+  }
 </style>
 </head>
 <body>
+
+<nav class="swahg-topnav">
+  <div class="swahg-topnav-inner">
+    <a href="../swahg/index.html" class="swahg-logo">SWAHG<span class="sub">Open University</span></a>
+    <div class="swahg-nav-links">
+      <a href="../swahg/index.html">Home</a>
+      <a href="../swahg-blueprint/index.html">Blueprint</a>
+      <a href="../swahg-start/index.html" aria-current="page">Find My Path</a>
+      <a href="../swahg-curriculum/index.html">My Curriculum</a>
+      <a href="../swahg-resume-builder/index.html">Resume Builder</a>
+      <a href="https://sites.google.com/view/swahg-openuniversity/home" class="cta" target="_blank" rel="noopener">Live SWAHG ↗</a>
+    </div>
+  </div>
+</nav>
+
 <div class="wrap">
 
   <header class="brand">
@@ -357,6 +388,30 @@
     </div>
   </section>
 
+  <section style="padding:40px 0 30px;border-top:1px solid var(--border);margin-top:40px">
+    <div style="text-align:center;margin-bottom:20px">
+      <div style="font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--accent-deep);font-weight:700;margin-bottom:8px">Or try a different door</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--primary);font-weight:600">Three more SWAHG tools, same lessons.</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+      <a href="../swahg-blueprint/index.html" style="background:#fff;border:1.5px solid var(--border);border-left:4px solid #f9d8d8;border-radius:10px;padding:16px 18px;text-decoration:none;color:inherit;transition:all .15s" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.borderLeftColor='#f9d8d8'">
+        <div style="font-size:11px;color:var(--accent-deep);font-weight:700;letter-spacing:.1em;margin-bottom:4px">SEE THE WHOLE JOURNEY</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--primary);font-weight:600;margin-bottom:4px">Open the Blueprint →</div>
+        <div style="font-size:12px;color:var(--text-soft);line-height:1.4">Visual map. 30+ boxes. Click any one.</div>
+      </a>
+      <a href="../swahg-curriculum/index.html" style="background:#fff;border:1.5px solid var(--border);border-left:4px solid #f6c95c;border-radius:10px;padding:16px 18px;text-decoration:none;color:inherit;transition:all .15s" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.borderLeftColor='#f6c95c'">
+        <div style="font-size:11px;color:var(--accent-deep);font-weight:700;letter-spacing:.1em;margin-bottom:4px">FULL STUDY PLAN</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--primary);font-weight:600;margin-bottom:4px">Build my curriculum →</div>
+        <div style="font-size:12px;color:var(--text-soft);line-height:1.4">Ordered queue with finish-by date.</div>
+      </a>
+      <a href="../swahg-resume-builder/index.html" style="background:#fff;border:1.5px solid var(--border);border-left:4px solid #fceea1;border-radius:10px;padding:16px 18px;text-decoration:none;color:inherit;transition:all .15s" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.borderLeftColor='#fceea1'">
+        <div style="font-size:11px;color:var(--accent-deep);font-weight:700;letter-spacing:.1em;margin-bottom:4px">SKILLS + LIVE JOBS</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--primary);font-weight:600;margin-bottom:4px">Open Resume Builder →</div>
+        <div style="font-size:12px;color:var(--text-soft);line-height:1.4">40 skills, real-time job match.</div>
+      </a>
+    </div>
+  </section>
+
   <div class="footer">
     <p>SWAHG Open University · Built with the community, by the community.<br>
     Questions? <a href="https://sites.google.com/view/swahg-openuniversity/contact">Reach out</a> · <a href="https://sites.google.com/view/swahg-openuniversity/home">Back to home</a></p>
@@ -364,6 +419,7 @@
 
 </div>
 
+<script src="../swahg-lessons.js"></script>
 <script>
   // -------- State --------
   const state = {
@@ -377,13 +433,16 @@
   // -------- Routing tables --------
   const SWAHG = 'https://sites.google.com/view/swahg-openuniversity';
   const JOB_SHEET = 'https://docs.google.com/spreadsheets/d/1HqBfHi017TQcN4RPOrajpiWAD55x1yl2ijALg0Lq5LE/edit';
+  /* Registry-backed routing tables.
+     Per-lane lessons are slugs from window.SWAHG_LESSONS plus a lane-contextual `why`
+     (the why-line is tone-specific to the audience, so it overrides the registry's generic why). */
   const ASYNC = {
     title: 'The No Calls VA Track',
     lead: "Because you told me calls aren't your strength, I'm sending you down the path 30% of Filipino freelancers go down — No Calls job roles. There are <strong>185 active jobs right now</strong> that never require you on a live English call. This is real, not a backup plan.",
     lessons: [
-      { url: SWAHG + '/stories/the-day-i-stepped-out-of-my-comfort-zone-liz', title: "Liz's Story — The Day She Stepped Out", why: "Read this first. Liz wasn't fluent in English either. You'll see exactly how she got past that." },
-      { url: SWAHG + '/courses/english-101', title: 'English Communications 101', why: 'Even text-only roles benefit from sharper written English. 30 minutes well spent.' },
-      { url: SWAHG + '/courses/enhancement-training/choosing-my-client', title: 'Choosing My Client', why: 'How to filter out clients who will pressure you into calls.' }
+      { slug: null, url: SWAHG + '/stories/the-day-i-stepped-out-of-my-comfort-zone-liz', title: "Liz's Story — The Day She Stepped Out", why: "Read this first. Liz wasn't fluent in English either. You'll see exactly how she got past that." },
+      { slug: 'english-101', why: 'Even text-only roles benefit from sharper written English. 30 minutes well spent.' },
+      { slug: 'choosing-my-client', why: 'How to filter out clients who will pressure you into calls.' }
     ],
     jobTab: 'No Calls',
     jobUrl: JOB_SHEET + '#gid=378265801',
@@ -395,9 +454,9 @@
       title: 'Your Social Media Manager Starting Path',
       lead: 'Social Media Manager is <strong>18% of all active PH-eligible remote jobs</strong> right now. SWAHG has the deepest content for this lane — 9 lessons in SMM Core Training alone.',
       lessons: [
-        { url: SWAHG + '/courses/smm-core-training/getting-hired-fast', title: 'Getting Hired Fast', why: "Shela's exact framework for landing the first SMM client. Watch this before anything else." },
-        { url: SWAHG + '/courses/smm-core-training/smm-core-strategies', title: 'SMM Core Strategies', why: 'The mindset + brand voice foundation. Long video — take it in 2 sittings.' },
-        { url: SWAHG + '/courses/writing-personal-brand/personal-branding', title: 'Personal Branding Class', why: 'You become the proof. Build your own brand before pitching yours to clients.' }
+        { slug: 'getting-hired-fast', why: "Shela's exact framework for landing the first SMM client. Watch this before anything else." },
+        { slug: 'smm-core-strategies', why: 'The mindset + brand voice foundation. Long video — take it in 2 sittings.' },
+        { slug: 'personal-branding', why: 'You become the proof. Build your own brand before pitching yours to clients.' }
       ],
       jobTab: '📱 Social Media',
       jobUrl: JOB_SHEET + '#gid=1059092353',
@@ -408,9 +467,9 @@
       title: 'Your Customer Support Starting Path',
       lead: "Customer Support is <strong>the #1 single job category — 24% of all listings</strong> (58 jobs right now). SWAHG's dedicated Customer Support module is on the build queue (coming soon). For now, these three lessons are your foundation.",
       lessons: [
-        { url: SWAHG + '/courses/english-101', title: 'English Communications 101', why: 'Written English is the actual job here. Tickets, emails, chats. Sharpen this first.' },
-        { url: SWAHG + '/stories/the-day-i-stepped-out-of-my-comfort-zone-liz', title: "Liz's Story", why: "Confidence-build. Liz wasn't fluent either, and she landed Admin VA + Graphic Designer roles." },
-        { url: SWAHG + '/courses/enhancement-training/choosing-my-client', title: 'Choosing My Client', why: 'Filter for support roles that match your tone (warm, patient).' }
+        { slug: 'english-101', why: 'Written English is the actual job here. Tickets, emails, chats. Sharpen this first.' },
+        { slug: null, url: SWAHG + '/stories/the-day-i-stepped-out-of-my-comfort-zone-liz', title: "Liz's Story", why: "Confidence-build. Liz wasn't fluent either, and she landed Admin VA + Graphic Designer roles." },
+        { slug: 'choosing-my-client', why: 'Filter for support roles that match your tone (warm, patient).' }
       ],
       jobTab: '🎧 Email/Chat Support',
       jobUrl: JOB_SHEET + '#gid=1433172002',
@@ -421,9 +480,9 @@
       title: 'Your Admin VA Starting Path',
       lead: "Admin VA is the original SWAHG specialty — and what Liz, Claudz, and many SWAHG Admins started with. <strong>23 active listings + 30 in No Calls</strong> right now.",
       lessons: [
-        { url: SWAHG + '/courses/fresh-starter/freelancer-or-va', title: 'Freelancer or VA?', why: "Know which one you're going for. The expectations are different." },
-        { url: SWAHG + '/courses/freelancer-essentials/trello-love', title: 'Trello Love', why: "Project management is 80% of the Admin VA job. Master one tool deeply before adding more." },
-        { url: SWAHG + '/courses/career-path-training/specialized-business-skills', title: 'Specialized Business Skills', why: "What separates a paid Admin VA from a free intern: knowing which deliverables clients actually pay for." }
+        { slug: 'freelancer-or-va', why: "Know which one you're going for. The expectations are different." },
+        { slug: 'trello-love', why: "Project management is 80% of the Admin VA job. Master one tool deeply before adding more." },
+        { slug: 'specialized-business-skills', why: "What separates a paid Admin VA from a free intern: knowing which deliverables clients actually pay for." }
       ],
       jobTab: '📋 Admin / VA',
       jobUrl: JOB_SHEET + '#gid=1918648016',
@@ -434,9 +493,9 @@
       title: 'Your Content Creator Starting Path',
       lead: "Content Creator roles are <strong>9% of active listings (21 jobs)</strong> — smaller pool but higher-skill ceiling. Pair this with personal-brand-building.",
       lessons: [
-        { url: SWAHG + '/courses/writing-personal-brand/personal-branding', title: 'Personal Branding Class', why: 'Your content is your portfolio. Build yours BEFORE pitching to clients.' },
-        { url: SWAHG + '/courses/career-path-training/creativeartistic-skills', title: 'Creative / Artistic Skills', why: 'Inventory of what counts as "content creation" — broader than just graphics.' },
-        { url: SWAHG + '/courses/writing-personal-brand', title: 'Writing Personal Brand (Intro)', why: 'Voice + tone fundamentals. The skill that compounds across every Content Creator role.' }
+        { slug: 'personal-branding', why: 'Your content is your portfolio. Build yours BEFORE pitching to clients.' },
+        { slug: 'creative-artistic-skills', why: 'Inventory of what counts as "content creation" — broader than just graphics.' },
+        { slug: null, url: SWAHG + '/courses/writing-personal-brand', title: 'Writing Personal Brand (Intro)', why: 'Voice + tone fundamentals. The skill that compounds across every Content Creator role.' }
       ],
       jobTab: '✍️ Content Creator',
       jobUrl: JOB_SHEET + '#gid=109929442',
@@ -447,9 +506,9 @@
       title: 'Your "Figure It Out" Starting Path',
       lead: "Not sure yet? Perfect — most successful SWAHG members started exactly here. These 3 lessons help you map your existing skills to the right role.",
       lessons: [
-        { url: SWAHG + '/courses/fresh-starter/freelancer-or-va', title: 'Freelancer or VA?', why: 'First decision point: are you specializing or generalizing? Watch this before anything else.' },
-        { url: SWAHG + '/courses/fresh-starter/10-secret-skills', title: '10 Secret Skills', why: 'The skills clients actually pay for. You probably already have 3–5 of them.' },
-        { url: SWAHG + '/courses/fresh-starter/where-to-start', title: 'Where to Start?', why: "Shela's framework for picking your first lane based on your current skills, not your dreams." }
+        { slug: 'freelancer-or-va', why: 'First decision point: are you specializing or generalizing? Watch this before anything else.' },
+        { slug: '10-secret-skills', why: 'The skills clients actually pay for. You probably already have 3–5 of them.' },
+        { slug: 'where-to-start', why: "Shela's framework for picking your first lane based on your current skills, not your dreams." }
       ],
       jobTab: '🏆 Top Picks',
       jobUrl: JOB_SHEET + '#gid=774401264',
@@ -457,6 +516,21 @@
       nextStep: 'Browse the Top Picks tab. Pick 3 listings that excite you. Note what they have in common — that\'s your real interest.'
     }
   };
+
+  /* Resolve a lane lesson via the registry. Lane-specific `why` overrides registry's generic why. */
+  function resolveLaneLesson(l){
+    if(l.slug && window.SWAHG_LESSONS && window.SWAHG_LESSONS.lessons[l.slug]){
+      const reg = window.SWAHG_LESSONS.lessons[l.slug];
+      return {
+        url: reg.url || '#',
+        title: reg.title,
+        status: reg.status,
+        why: l.why || reg.why_this_lesson || ''
+      };
+    }
+    /* Fallback for non-lesson entries (stories, external pages) */
+    return { url: l.url || '#', title: l.title || '(untitled)', status: 'external', why: l.why || '' };
+  }
 
   // -------- Selection logic --------
   document.querySelectorAll('.opts').forEach(box => {
@@ -550,11 +624,18 @@
       </a>`;
     }
 
-    path.lessons.forEach((l, i) => {
-      ll.innerHTML += `<a class="lesson" href="${l.url}" target="_blank">
-        <span class="num">${i + 1}</span><span class="title">${l.title}</span>
+    path.lessons.forEach((laneEntry, i) => {
+      const l = resolveLaneLesson(laneEntry);
+      const statusBadge = (l.status==='new' || l.status==='rewrite')
+        ? ` <em style="color:var(--accent-deep);font-size:11px;font-style:normal;font-weight:600;letter-spacing:.04em;text-transform:uppercase;background:#fdf6ea;padding:1px 6px;border-radius:10px;margin-left:4px">${l.status==='new'?'Coming soon':'Rewriting'}</em>`
+        : '';
+      const linkable = l.url && l.url !== '#';
+      const tag = linkable ? 'a' : 'div';
+      const href = linkable ? ` href="${l.url}" target="_blank"` : '';
+      ll.innerHTML += `<${tag} class="lesson"${href}>
+        <span class="num">${i + 1}</span><span class="title">${l.title}${statusBadge}</span>
         <span class="why">${l.why}</span>
-      </a>`;
+      </${tag}>`;
     });
 
     // Append bonus path if learner-mode AND not already pre-pended
