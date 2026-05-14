@@ -165,10 +165,10 @@
 
   .sub-box{
     background:var(--surface);border:1px solid #c8d5dc;border-radius:6px;
-    padding:11px 14px;font-size:13.5px;color:var(--text);
+    padding:11px 14px 11px 32px;font-size:13.5px;color:var(--text);
     cursor:pointer;transition:all .14s;font-family:inherit;
     text-align:left;font-weight:500;line-height:1.3;
-    display:flex;flex-direction:column;gap:3px;
+    display:flex;flex-direction:column;gap:3px;position:relative;
   }
   .sub-box:hover{
     background:#fff;border-color:var(--primary);transform:translateX(2px);
@@ -176,6 +176,15 @@
   }
   .sub-box .label{font-weight:600}
   .sub-box .hint{font-size:11px;color:var(--text-soft);font-weight:400}
+  .sub-box .box-num{
+    position:absolute;top:10px;left:9px;
+    width:18px;height:18px;border-radius:50%;
+    background:var(--primary);color:#fff;
+    font-size:10px;font-weight:700;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Inter',sans-serif;letter-spacing:0;
+    line-height:1;
+  }
   .sub-box .badge-inline{
     display:inline-block;background:#e6f0ea;color:var(--new);
     padding:1px 7px;border-radius:10px;font-size:9px;font-weight:700;
@@ -381,38 +390,38 @@
       <div class="topband-grid">
         <div class="stage-col" data-stage="prep">
           <div class="stage-label">Preparation</div>
-          <button class="sub-box" data-box="prep-1"><span class="label">Choosing your Computer</span><span class="hint">Best laptop for VAs</span></button>
-          <button class="sub-box" data-box="prep-2"><span class="label">Creating Work Emails <span class="badge-inline rew">Rewriting</span></span><span class="hint">Email Marketing for VAs</span></button>
-          <button class="sub-box" data-box="prep-3"><span class="label">Setting up Online Tools</span><span class="hint">Browser + storage essentials</span></button>
-          <button class="sub-box" data-box="prep-4"><span class="label">Organizing Work Flow</span><span class="hint">Trello + time tracking</span></button>
-          <button class="sub-box" data-box="prep-5"><span class="label">Setting up Work Accessories <span class="badge-inline">New</span></span><span class="hint">Workspace + gear basics</span></button>
+          <button class="sub-box" data-box="prep-1"><span class="box-num">1</span><span class="label">Choosing your Computer</span><span class="hint">Best laptop for VAs</span></button>
+          <button class="sub-box" data-box="prep-2"><span class="box-num">2</span><span class="label">Creating Work Emails <span class="badge-inline rew">Rewriting</span></span><span class="hint">Email Marketing for VAs</span></button>
+          <button class="sub-box" data-box="prep-3"><span class="box-num">3</span><span class="label">Setting up Online Tools</span><span class="hint">Browser + storage essentials</span></button>
+          <button class="sub-box" data-box="prep-4"><span class="box-num">4</span><span class="label">Organizing Work Flow</span><span class="hint">Trello + time tracking</span></button>
+          <button class="sub-box" data-box="prep-5"><span class="box-num">5</span><span class="label">Setting up Work Accessories <span class="badge-inline">New</span></span><span class="hint">Workspace + gear basics</span></button>
         </div>
 
         <div class="stage-col" data-stage="warmup">
           <div class="stage-label">Warming Up</div>
-          <button class="sub-box" data-box="warm-1"><span class="label">Choose Career Path</span><span class="hint">Remote Job · VA · Specialized Skill</span></button>
-          <button class="sub-box" data-box="warm-2"><span class="label">Planning</span><span class="hint">Hours of training, self-assessment</span></button>
-          <button class="sub-box" data-box="warm-3"><span class="label">Basic Foundation</span><span class="hint">Paid · Free · Self</span></button>
-          <button class="sub-box" data-box="warm-4"><span class="label">Support Group</span><span class="hint">Paid mentoring + free groups</span></button>
-          <button class="sub-box" data-box="warm-5"><span class="label">Ongoing Training</span><span class="hint">SMM + personal brand + new modules</span></button>
+          <button class="sub-box" data-box="warm-1"><span class="box-num">6</span><span class="label">Choose Career Path</span><span class="hint">Remote Job · VA · Specialized Skill</span></button>
+          <button class="sub-box" data-box="warm-2"><span class="box-num">7</span><span class="label">Planning</span><span class="hint">Hours of training, self-assessment</span></button>
+          <button class="sub-box" data-box="warm-3"><span class="box-num">8</span><span class="label">Basic Foundation</span><span class="hint">Paid · Free · Self</span></button>
+          <button class="sub-box" data-box="warm-4"><span class="box-num">9</span><span class="label">Support Group</span><span class="hint">Paid mentoring + free groups</span></button>
+          <button class="sub-box" data-box="warm-5"><span class="box-num">10</span><span class="label">Ongoing Training</span><span class="hint">SMM + personal brand + new modules</span></button>
         </div>
 
         <div class="stage-col" data-stage="launch">
           <div class="stage-label">Launch</div>
-          <button class="sub-box" data-box="launch-1"><span class="label">Setting Up Accounts</span><span class="hint">OnlineJobs.ph + Upwork + others</span></button>
-          <button class="sub-box" data-box="launch-2"><span class="label">Creating Powerful Resume <span class="badge-inline built">Built</span></span><span class="hint">Interactive Resume Builder</span></button>
-          <button class="sub-box" data-box="launch-3"><span class="label">Job Hunting</span><span class="hint">Platforms + Find Your Path quiz</span></button>
-          <button class="sub-box" data-box="launch-4"><span class="label">Join Groups and Forums</span><span class="hint">SWAHG community + FB groups</span></button>
-          <button class="sub-box" data-box="launch-5"><span class="label">Creating your Portfolio</span><span class="hint">Personal brand + online presence</span></button>
+          <button class="sub-box" data-box="launch-1"><span class="box-num">11</span><span class="label">Setting Up Accounts</span><span class="hint">OnlineJobs.ph + Upwork + others</span></button>
+          <button class="sub-box" data-box="launch-2"><span class="box-num">12</span><span class="label">Creating Powerful Resume <span class="badge-inline built">Built</span></span><span class="hint">Interactive Resume Builder</span></button>
+          <button class="sub-box" data-box="launch-3"><span class="box-num">13</span><span class="label">Job Hunting</span><span class="hint">Platforms + Find Your Path quiz</span></button>
+          <button class="sub-box" data-box="launch-4"><span class="box-num">14</span><span class="label">Join Groups and Forums</span><span class="hint">SWAHG community + FB groups</span></button>
+          <button class="sub-box" data-box="launch-5"><span class="box-num">15</span><span class="label">Creating your Portfolio</span><span class="hint">Personal brand + online presence</span></button>
         </div>
 
         <div class="stage-col" data-stage="working">
           <div class="stage-label">Working on it!</div>
-          <button class="sub-box" data-box="work-1"><span class="label">Interviews <span class="badge-inline">New</span></span><span class="hint">Async + video interview prep</span></button>
-          <button class="sub-box" data-box="work-2"><span class="label">Internship</span><span class="hint">SWAHG internship pathway</span></button>
-          <button class="sub-box" data-box="work-3"><span class="label">Skill Practice</span><span class="hint">Career Path Training depth</span></button>
-          <button class="sub-box" data-box="work-4"><span class="label">Creating Proposal</span><span class="hint">Jade Kim Proposal Checklist</span></button>
-          <button class="sub-box" data-box="work-5"><span class="label">Bidding</span><span class="hint">Async application discipline</span></button>
+          <button class="sub-box" data-box="work-1"><span class="box-num">16</span><span class="label">Interviews <span class="badge-inline">New</span></span><span class="hint">Async + video interview prep</span></button>
+          <button class="sub-box" data-box="work-2"><span class="box-num">17</span><span class="label">Internship</span><span class="hint">SWAHG internship pathway</span></button>
+          <button class="sub-box" data-box="work-3"><span class="box-num">18</span><span class="label">Skill Practice</span><span class="hint">Career Path Training depth</span></button>
+          <button class="sub-box" data-box="work-4"><span class="box-num">19</span><span class="label">Creating Proposal</span><span class="hint">Jade Kim Proposal Checklist</span></button>
+          <button class="sub-box" data-box="work-5"><span class="box-num">20</span><span class="label">Bidding</span><span class="hint">Async application discipline</span></button>
         </div>
       </div>
     </div>
@@ -427,32 +436,32 @@
       <div class="bottomband-grid">
         <div class="bottom-col" data-stage="stage1">
           <div class="stage-label">Stage 1</div>
-          <button class="sub-box" data-box="s1-1"><span class="label">Onboarding <span class="badge-inline">New</span></span><span class="hint">First 30 days with the client</span></button>
-          <button class="sub-box" data-box="s1-2"><span class="label">Learn Business Tools</span><span class="hint">Trello + tech stack essentials</span></button>
-          <button class="sub-box" data-box="s1-3"><span class="label">Collaboration</span><span class="hint">Community management practice</span></button>
-          <button class="sub-box" data-box="s1-4"><span class="label">Client Demands</span><span class="hint">Choosing my Client + Common Mistakes</span></button>
-          <button class="sub-box" data-box="s1-5"><span class="label">Organization</span><span class="hint">Time tracking + workflow discipline</span></button>
+          <button class="sub-box" data-box="s1-1"><span class="box-num">21</span><span class="label">Onboarding <span class="badge-inline">New</span></span><span class="hint">First 30 days with the client</span></button>
+          <button class="sub-box" data-box="s1-2"><span class="box-num">22</span><span class="label">Learn Business Tools</span><span class="hint">Trello + tech stack essentials</span></button>
+          <button class="sub-box" data-box="s1-3"><span class="box-num">23</span><span class="label">Collaboration</span><span class="hint">Community management practice</span></button>
+          <button class="sub-box" data-box="s1-4"><span class="box-num">24</span><span class="label">Client Demands</span><span class="hint">Choosing my Client + Common Mistakes</span></button>
+          <button class="sub-box" data-box="s1-5"><span class="box-num">25</span><span class="label">Organization</span><span class="hint">Time tracking + workflow discipline</span></button>
         </div>
 
         <div class="bottom-col" data-stage="skill">
           <div class="stage-label">Skill Upgrade</div>
-          <button class="sub-box" data-box="sk-1"><span class="label">New or Upgraded Skill</span><span class="hint">Pick from the rebuild queue</span></button>
-          <button class="sub-box" data-box="sk-2"><span class="label">More Training</span><span class="hint">Live Sessions + new modules</span></button>
-          <button class="sub-box" data-box="sk-3"><span class="label">More Value to Client <span class="badge-inline">New</span></span><span class="hint">Account Management 101</span></button>
-          <button class="sub-box" data-box="sk-4"><span class="label">Career &amp; Personal Growth</span><span class="hint">Career Path Training + Live Sessions</span></button>
+          <button class="sub-box" data-box="sk-1"><span class="box-num">26</span><span class="label">New or Upgraded Skill</span><span class="hint">Pick from the rebuild queue</span></button>
+          <button class="sub-box" data-box="sk-2"><span class="box-num">27</span><span class="label">More Training</span><span class="hint">Live Sessions + new modules</span></button>
+          <button class="sub-box" data-box="sk-3"><span class="box-num">28</span><span class="label">More Value to Client <span class="badge-inline">New</span></span><span class="hint">Account Management 101</span></button>
+          <button class="sub-box" data-box="sk-4"><span class="box-num">29</span><span class="label">Career &amp; Personal Growth</span><span class="hint">Career Path Training + Live Sessions</span></button>
         </div>
 
         <div class="bottom-col" data-stage="higher">
           <div class="stage-label">Higher Level</div>
-          <button class="sub-box" data-box="h-1"><span class="label">More Clients</span><span class="hint">Personal brand + online presence</span></button>
-          <button class="sub-box" data-box="h-2"><span class="label">Multiple Skills</span><span class="hint">Cross-Role Career Path Training</span></button>
-          <button class="sub-box" data-box="h-3"><span class="label">Leadership <span class="badge-inline">New</span></span><span class="hint">Lead a team, mentor newer VAs</span></button>
-          <button class="sub-box" data-box="h-4"><span class="label">Rockstar Portfolio</span><span class="hint">Resume + personal brand v2</span></button>
+          <button class="sub-box" data-box="h-1"><span class="box-num">30</span><span class="label">More Clients</span><span class="hint">Personal brand + online presence</span></button>
+          <button class="sub-box" data-box="h-2"><span class="box-num">31</span><span class="label">Multiple Skills</span><span class="hint">Cross-Role Career Path Training</span></button>
+          <button class="sub-box" data-box="h-3"><span class="box-num">32</span><span class="label">Leadership <span class="badge-inline">New</span></span><span class="hint">Lead a team, mentor newer VAs</span></button>
+          <button class="sub-box" data-box="h-4"><span class="box-num">33</span><span class="label">Rockstar Portfolio</span><span class="hint">Resume + personal brand v2</span></button>
         </div>
 
         <div class="bottom-col" data-stage="business">
           <div class="stage-label">Decision</div>
-          <button class="sub-box" data-box="b-1" style="background:var(--surface);border-style:solid"><span class="label">Building your own Brand or Agency <span class="badge-inline">New</span></span><span class="hint">Tier 4 future module</span></button>
+          <button class="sub-box" data-box="b-1" style="background:var(--surface);border-style:solid"><span class="box-num">34</span><span class="label">Building your own Brand or Agency <span class="badge-inline">New</span></span><span class="hint">Tier 4 future module</span></button>
         </div>
       </div>
     </div>
