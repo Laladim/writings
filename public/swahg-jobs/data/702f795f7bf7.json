@@ -1,6 +1,6 @@
 {
   "id": "702f795f7bf7",
-  "date_added": "2026-05-14",
+  "date_added": "2026-05-15",
   "status": "New",
   "title": "Office Assistant",
   "company": "Coalition Technologies",
@@ -33,5 +33,8 @@
   "what_we_offer": "may vary based on factors such as experience, qualifications, skills test performance, geographic location, and seniority of the position offered. Outside of California, New York, Washington, and Colorado compensation may fall outside the above ranges.",
   "location_work_setup": "Remote; Worldwide",
   "hours_schedule": null,
-  "application_process": "Apply through Remotive using the original posting URL."
+  "application_process": "Apply through Remotive using the original posting URL.",
+  "archetype_labels": "Generalist Admin, Corporate Transitioner, Fresh Starter",
+  "quality_label": "Review carefully",
+  "quality_reasons": "PH-friendly; beginner-fit signals; pay listed; clear posting details"
 }

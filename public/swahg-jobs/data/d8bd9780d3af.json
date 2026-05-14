@@ -20,7 +20,7 @@
   "fit_score": 87,
   "newbie_score": 0,
   "is_newbie_friendly": false,
-  "newbie_friendly": true,
+  "newbie_friendly": false,
   "why_it_fits": "Social Media Manager match. 5 skills: canva, facebook, instagram, tiktok, meta business suite. Possibly PH-OK (US workplace listed). Part-time - matches IC status",
   "why_it_might_not": "US workplace listed - confirm PH eligibility before applying",
   "apply_url": "https://app.higherme.com/jobs/69ef9f1b8beed",
@@ -33,5 +33,8 @@
   "what_we_offer": null,
   "location_work_setup": "Remote; Milford, Massachusetts, United States; US workplace listed",
   "hours_schedule": null,
-  "application_process": "Apply through higherme using the original posting URL."
+  "application_process": "Apply through higherme using the original posting URL.",
+  "archetype_labels": "Creative Specialist, Solo Entrepreneur, Fresh Starter",
+  "quality_label": "Check eligibility",
+  "quality_reasons": "verify PH eligibility; pay listed; freelance-friendly"
 }

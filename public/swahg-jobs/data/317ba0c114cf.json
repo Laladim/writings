@@ -20,7 +20,7 @@
   "fit_score": 90,
   "newbie_score": 0,
   "is_newbie_friendly": false,
-  "newbie_friendly": true,
+  "newbie_friendly": false,
   "why_it_fits": "Admin Assistant match. 6 skills: microsoft office, excel, outlook, word, powerpoint. Possibly PH-OK (US workplace listed)",
   "why_it_might_not": "US workplace listed - confirm PH eligibility before applying",
   "apply_url": "https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=735221b8-80d2-4cda-bf76-5f1b57b53236&jobId=586121",
@@ -33,5 +33,8 @@
   "what_we_offer": null,
   "location_work_setup": "if (!window['wfnCdnPath']) {\n const currentPage = document.location.href;\n const isProduction = currentPage.indexOf('workforcenow.adp.com') > -1 || currentPage.indexOf('wfn-prod-test.adp.com') > -1 || currentPage.indexOf('workforcenow.cloud.adp.com') > -1;\n const cookies = \n let cdn = cookies && cookies[1] ? cookies[1] : 'wfn';\n cdn = cdn.toLowerCase();\n let cdnPath;",
   "hours_schedule": null,
-  "application_process": "Apply through adp using the original posting URL."
+  "application_process": "Apply through adp using the original posting URL.",
+  "archetype_labels": "Generalist Admin, Corporate Transitioner, Fresh Starter",
+  "quality_label": "Check eligibility",
+  "quality_reasons": "verify PH eligibility; pay listed; clear posting details"
 }

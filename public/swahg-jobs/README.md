@@ -18,14 +18,19 @@ The publisher reads `/tmp/rodge-jobs.jsonl`, merges with the canonical Google Sh
 
 ```json
 {
+  "Customer Support": 31,
   "Digital Marketing Specialist": 2,
   "Digital Marketing Manager": 0,
   "Social Media Specialist": 8,
   "Social Media Manager": 24,
-  "Content Specialist": 20,
+  "Content Specialist": 19,
   "Community Manager": 5,
   "SEO": 2,
-  "Virtual Assistant": 24,
-  "Executive Assistant": 8
+  "Virtual Assistant": 23,
+  "Executive Assistant": 8,
+  "Graphic Designer": 0,
+  "Video Editor": 2,
+  "Bookkeeping VA": 1,
+  "E-commerce VA": 0
 }
 ```
