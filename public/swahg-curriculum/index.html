@@ -3,340 +3,187 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Your Personalized SWAHG Curriculum</title>
-<meta name="description" content="Tell us your situation, your goal, and how much time you have. We'll build you a personalized lesson plan from the SWAHG Open University — with why each lesson matters for your path.">
+<title>My Curriculum — SWAHG Open University</title>
+<meta name="description" content="The SWAHG lessons we're currently preparing for you. Filter by archetype to see the path that fits your starting point.">
 <link rel="icon" type="image/png" href="../brand/wbl-logo-primary-light.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --primary:#5a4a7a;
-    --primary-deep:#4a3a6a;
-    --primary-soft:#f3eef7;
-    --accent:#c8985f;
-    --accent-deep:#a88d5e;
-    --bg:#f5f1f0;
-    --surface:#ffffff;
-    --text:#3a3a3a;
-    --text-soft:#6b6565;
-    --border:#e0dbd8;
-    --sage:#5a8a72;
-    --rose:#a0756a;
-    --prep-bg:#f9d8d8;
-    --warmup-bg:#f6a89c;
-    --launch-bg:#f6c95c;
-    --working-bg:#fceea1;
-    --stage1-chip:#c8a0d6;
+    --primary:#5a4a7a;--primary-deep:#4a3a6a;--primary-soft:#f3eef7;
+    --accent:#c8985f;--accent-deep:#a88d5e;
+    --bg:#f5f1f0;--surface:#ffffff;
+    --text:#3a3a3a;--text-soft:#6b6565;--border:#e0dbd8;
+    --sage:#5a8a72;--rose:#a0756a;
+    --prep-bg:#f9d8d8;--warmup-bg:#f6a89c;--launch-bg:#f6c95c;--working-bg:#fceea1;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;scroll-padding-top:70px}
-  body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.6}
-
-  .mockupNotice{background:#fdf4ec;border-bottom:2px solid var(--accent);padding:10px 20px;text-align:center;font-size:13px;color:var(--accent-deep);font-weight:500}
-  .mockupNotice strong{color:var(--primary)}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.55}
 
   .topnav{position:sticky;top:0;background:rgba(255,255,255,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);z-index:50}
-  .topnav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .topnav-inner{max-width:1220px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
   .logo{font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--primary);font-size:22px;letter-spacing:-.01em;text-decoration:none}
   .logo .sub{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-deep);display:block;margin-top:-3px;font-weight:600;font-family:'Inter',sans-serif}
   .nav-links{display:flex;gap:22px;font-size:14px;flex-wrap:wrap;align-items:center}
   .nav-links a{color:var(--text-soft);text-decoration:none;transition:color .15s;white-space:nowrap}
   .nav-links a:hover{color:var(--primary)}
   .nav-links a[aria-current="page"]{color:var(--primary);font-weight:600;border-bottom:2px solid var(--accent);padding-bottom:2px}
-  .nav-links a.cta{background:var(--primary);color:#fff;padding:8px 16px;border-radius:6px;font-weight:500}
   @media (max-width:768px){
     .nav-links{display:flex;overflow-x:auto;gap:14px;font-size:13px;-webkit-overflow-scrolling:touch;padding-bottom:4px}
     .nav-links::-webkit-scrollbar{display:none}
-    .nav-links a.cta{flex-shrink:0}
   }
 
-  section{padding:60px 20px;border-bottom:1px solid var(--border)}
-  .wrap{max-width:1100px;margin:0 auto}
-  .narrow{max-width:760px;margin:0 auto}
-  .section-label{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--accent-deep);font-weight:700;margin-bottom:14px}
-  h1.hero-h{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,5.5vw,52px);line-height:1.08;letter-spacing:-.015em;color:var(--primary);margin-bottom:16px}
-  h2.section-h{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(26px,4vw,36px);line-height:1.15;color:var(--primary);margin-bottom:12px;letter-spacing:-.01em}
-  p.lead{font-size:17px;color:var(--text-soft);margin-bottom:24px;line-height:1.55;max-width:680px}
+  .wrap{max-width:1220px;margin:0 auto;padding:0 24px}
+  .hero{padding:46px 0 34px;border-bottom:1px solid var(--border);background:linear-gradient(180deg,#fdfbfa 0%,var(--bg) 100%)}
+  .eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-deep);font-weight:700;margin-bottom:10px}
+  h1{font-family:'Cormorant Garamond',serif;font-size:44px;line-height:1.05;font-weight:600;color:var(--primary);margin-bottom:12px;letter-spacing:0}
+  .hero p{max-width:720px;color:var(--text-soft);font-size:18px}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px;color:var(--text-soft);font-size:13px}
+  .meta span{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:7px 11px}
 
-  #hero{padding:70px 20px 50px;background:linear-gradient(180deg,#fdfbfa 0%,var(--bg) 100%);text-align:center}
-  .hero-tag{display:inline-block;background:var(--primary-soft);color:var(--primary);padding:6px 14px;border-radius:30px;font-size:12px;font-weight:600;letter-spacing:.05em;margin-bottom:18px}
-  .hero-h em{font-style:normal;color:var(--accent-deep)}
-  #hero p.lead{margin-left:auto;margin-right:auto}
-
-  /* Form */
-  .form-card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:36px 32px;margin:0 auto;max-width:760px}
-  .form-step{margin-bottom:32px}
-  .form-step:last-child{margin-bottom:0}
-  .step-num{font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--accent-deep);font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:6px}
-  .step-q{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--primary);font-weight:600;margin-bottom:14px;line-height:1.25}
-  .step-help{font-size:13px;color:var(--text-soft);margin-bottom:14px}
-
-  .opt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
-  .opt-btn{
-    background:#faf7f5;border:1.5px solid var(--border);border-radius:10px;
-    padding:14px 16px;text-align:left;font-family:inherit;font-size:14px;color:var(--text);
-    cursor:pointer;transition:all .14s;line-height:1.4;
+  /* Archetype strip */
+  .archetype-strip{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin-top:24px}
+  .archetype-card{
+    border:1px solid var(--border);border-radius:8px;background:var(--surface);
+    padding:12px;min-height:118px;cursor:pointer;text-align:left;color:var(--text);
+    font:inherit;transition:background .15s,border-color .15s,transform .15s;
+    display:flex;flex-direction:column;gap:4px;
   }
-  .opt-btn:hover{border-color:var(--primary);background:#fff}
-  .opt-btn.selected{border-color:var(--primary);background:var(--primary-soft);color:var(--primary);font-weight:600}
-  .opt-btn .opt-title{font-weight:600;display:block;margin-bottom:2px}
-  .opt-btn .opt-hint{font-size:12px;color:var(--text-soft);font-weight:400}
-  .opt-btn.selected .opt-hint{color:var(--primary)}
+  .archetype-card:hover,.archetype-card.active{
+    border-color:var(--primary);background:var(--primary-soft);transform:translateY(-1px);
+  }
+  .archetype-card .emoji{font-size:20px;line-height:1}
+  .archetype-card strong{display:block;color:var(--primary);font-size:13px;line-height:1.25}
+  .archetype-card span{display:block;color:var(--text-soft);font-size:12px;line-height:1.35}
+  .archetype-card .share{font-size:10px;color:var(--accent-deep);font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-top:auto}
+  @media (max-width:1020px){.archetype-strip{grid-template-columns:repeat(3,minmax(0,1fr))}}
+  @media (max-width:560px){.archetype-strip{grid-template-columns:1fr 1fr}}
 
-  .chip-grid{display:flex;flex-wrap:wrap;gap:8px}
-  .chip{
-    background:#faf7f5;border:1.5px solid var(--border);border-radius:30px;
-    padding:8px 14px;font-size:13px;font-family:inherit;color:var(--text-soft);
-    cursor:pointer;transition:all .12s;
+  /* List */
+  .listing{padding:28px 0 60px}
+  .toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px;flex-wrap:wrap}
+  .count{color:var(--text-soft);font-size:14px}
+  .count strong{color:var(--primary)}
+  .toolbar .controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  .toolbar select, .toolbar input{
+    border:1px solid var(--border);border-radius:6px;background:#fff;
+    padding:9px 11px;font:inherit;color:var(--text);font-size:14px;
   }
-  .chip:hover{border-color:var(--primary);color:var(--primary)}
-  .chip.selected{background:var(--primary);color:#fff;border-color:var(--primary)}
-
-  .form-action{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-  .btn{
-    border:none;padding:13px 26px;border-radius:8px;font-size:15px;font-weight:500;
-    font-family:inherit;cursor:pointer;text-decoration:none;
-    display:inline-flex;align-items:center;gap:8px;transition:all .14s;
-  }
-  .btn-primary{background:var(--primary);color:#fff}
-  .btn-primary:hover{background:var(--primary-deep)}
-  .btn-primary:disabled{background:#bbb;cursor:not-allowed}
-  .btn-ghost{background:transparent;color:var(--primary);border:1.5px solid var(--primary)}
-  .btn-ghost:hover{background:var(--primary);color:#fff}
-
-  .name-input{
-    background:#faf7f5;border:1.5px solid var(--border);border-radius:10px;
-    padding:13px 16px;font-size:15px;font-family:inherit;color:var(--text);
-    width:100%;max-width:360px;outline:none;transition:all .12s;
-  }
-  .name-input:focus{border-color:var(--primary);background:#fff}
-
-  /* Output */
-  #output{display:none;background:#faf7f5}
-  #output.active{display:block}
-  .summary-bar{
-    background:var(--primary);color:#fff;border-radius:14px;
-    padding:26px 30px;margin-bottom:30px;
-    display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:14px;
-  }
-  @media (max-width:780px){.summary-bar{grid-template-columns:1fr 1fr}}
-  .summary-item{}
-  .summary-item .label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:4px}
-  .summary-item .value{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600}
-
-  .stage-section{margin-bottom:34px}
-  .stage-section h3{
-    font-family:'Cormorant Garamond',serif;font-weight:600;font-size:24px;color:var(--primary);
-    margin-bottom:6px;display:flex;align-items:center;gap:12px;
-  }
-  .stage-chip{
-    display:inline-block;padding:4px 12px;border-radius:6px;font-size:12px;font-weight:600;
-    font-family:'Inter',sans-serif;letter-spacing:.02em;
-  }
-  .stage-chip.prep{background:var(--prep-bg);color:#7c3a3a}
-  .stage-chip.warmup{background:var(--warmup-bg);color:#6e2c20}
-  .stage-chip.launch{background:var(--launch-bg);color:#5a3e0e}
-  .stage-chip.working{background:var(--working-bg);color:#5a4a10}
-  .stage-chip.stage1{background:var(--stage1-chip);color:#3a1f4a}
-  .stage-chip.skill{background:#d4c6e4;color:#3a1f4a}
-  .stage-chip.higher{background:#f0c0d0;color:#7c3a3a}
-  .stage-chip.business{background:#f4b6b6;color:#5a1010}
-  .stage-section p.stage-sub{color:var(--text-soft);font-size:14px;margin-bottom:16px}
-
-  .lesson-row{
-    background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--primary);
-    border-radius:10px;padding:18px 22px;margin-bottom:12px;
-    display:grid;grid-template-columns:1fr auto;gap:14px;align-items:start;
-  }
-  @media (max-width:680px){.lesson-row{grid-template-columns:1fr}}
-  .lesson-row.status-rewrite{border-left-color:var(--rose)}
-  .lesson-row.status-new{border-left-color:var(--sage)}
-  .lesson-row.status-built{border-left-color:var(--accent-deep)}
-
-  .lesson-title-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px}
-  .lesson-title-row .num{
-    background:var(--primary);color:#fff;width:26px;height:26px;border-radius:50%;
-    display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;
-    font-family:'Cormorant Garamond',serif;
-  }
-  .lesson-title-row .name{font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--primary);font-weight:600;line-height:1.25}
-  .lesson-status{
-    display:inline-block;padding:2px 9px;border-radius:14px;font-size:10px;font-weight:700;
-    letter-spacing:.06em;text-transform:uppercase;
-  }
-  .lesson-status.live{background:var(--primary-soft);color:var(--primary)}
-  .lesson-status.rewrite{background:#fdf0ec;color:var(--rose)}
-  .lesson-status.new{background:#e6f0ea;color:var(--sage)}
-  .lesson-status.built{background:#fdf6ea;color:var(--accent-deep)}
-  .lesson-why{color:var(--text);font-size:14px;line-height:1.55;margin-bottom:8px;padding-left:36px}
-  .lesson-meta{font-size:12px;color:var(--text-soft);padding-left:36px;display:flex;gap:14px;flex-wrap:wrap}
-  .lesson-meta span strong{color:var(--primary)}
-  .lesson-cta{display:flex;flex-direction:column;align-items:flex-end;gap:8px;justify-content:center}
-  .lesson-link{
-    background:var(--primary);color:#fff;padding:9px 16px;border-radius:8px;
-    font-size:13px;text-decoration:none;font-weight:500;white-space:nowrap;transition:background .12s;
-  }
-  .lesson-link:hover{background:var(--primary-deep)}
-  .lesson-link.disabled{background:#bbb;cursor:not-allowed;pointer-events:none}
-
-  .output-actions{margin-top:30px;text-align:center;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-
-  .empty-state{
-    background:var(--surface);border:2px dashed var(--border);border-radius:14px;
-    padding:40px 24px;text-align:center;color:var(--text-soft);
+  .toolbar input{min-width:220px}
+  .clear-btn{
+    border:0;background:transparent;color:var(--primary);font:inherit;
+    font-size:13px;cursor:pointer;font-weight:600;text-decoration:underline;
   }
 
-  footer{padding:50px 20px 70px;background:var(--primary);color:#fff;text-align:center}
+  .lesson-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  @media (max-width:1020px){.lesson-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media (max-width:680px){.lesson-grid{grid-template-columns:1fr}}
+
+  .lesson-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:10px;
+    padding:18px 20px;min-height:230px;display:flex;flex-direction:column;gap:10px;
+    text-decoration:none;color:inherit;transition:all .15s;
+    border-top:3px solid var(--primary);
+  }
+  .lesson-card:hover{
+    border-color:var(--primary);transform:translateY(-2px);
+    box-shadow:0 10px 24px rgba(74,58,106,0.08);
+  }
+  .lesson-card.stage-prep{border-top-color:#c97a7a}
+  .lesson-card.stage-warmup{border-top-color:#d68470}
+  .lesson-card.stage-launch{border-top-color:#c89538}
+  .lesson-card.stage-working{border-top-color:#a89150}
+
+  .lesson-card .stage-tag{
+    display:inline-block;padding:3px 10px;border-radius:6px;
+    font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+    font-family:'Inter',sans-serif;align-self:flex-start;
+  }
+  .lesson-card .stage-tag.prep{background:var(--prep-bg);color:#7c3a3a}
+  .lesson-card .stage-tag.warmup{background:var(--warmup-bg);color:#6e2c20}
+  .lesson-card .stage-tag.launch{background:var(--launch-bg);color:#5a3e0e}
+  .lesson-card .stage-tag.working{background:var(--working-bg);color:#5a4a10}
+
+  .lesson-card h3{
+    font-family:'Cormorant Garamond',serif;color:var(--primary);
+    font-size:21px;font-weight:600;line-height:1.2;
+  }
+  .lesson-card .why{color:var(--text-soft);font-size:13.5px;line-height:1.5;flex-grow:1}
+  .lesson-card .meta-row{display:flex;gap:12px;flex-wrap:wrap;font-size:11.5px;color:var(--text-soft);letter-spacing:.02em}
+  .lesson-card .meta-row strong{color:var(--text);font-weight:600}
+  .lesson-card .open-link{
+    color:var(--primary);font-weight:600;font-size:13.5px;
+    margin-top:auto;display:inline-flex;align-items:center;gap:4px;
+  }
+  .lesson-card .open-link .arr{transition:transform .15s}
+  .lesson-card:hover .open-link .arr{transform:translateX(3px)}
+
+  .empty{
+    background:var(--surface);border:2px dashed var(--border);border-radius:12px;
+    padding:50px 24px;text-align:center;color:var(--text-soft);
+  }
+  .empty h2{font-family:'Cormorant Garamond',serif;color:var(--primary);font-size:24px;margin-bottom:8px;font-weight:600}
+
+  footer{padding:50px 20px 70px;background:var(--primary);color:#fff;text-align:center;margin-top:30px}
   footer h3{color:#fff;font-family:'Cormorant Garamond',serif;font-size:26px;margin-bottom:8px;font-weight:600}
   footer p{color:rgba(255,255,255,0.85);max-width:600px;margin:0 auto 22px;font-size:15px}
   footer a.foot-link{color:#fff;text-decoration:underline;margin:0 12px;font-size:14px;display:inline-block;margin-bottom:6px}
   footer .credit{margin-top:24px;font-size:12px;color:rgba(255,255,255,0.55)}
-
-  @media print{
-    .topnav,.mockupNotice,footer,#hero,.form-card,.output-actions,nav,.lesson-cta{display:none !important}
-    #output{display:block !important;background:#fff}
-    .summary-bar{background:none;color:#000;border:1px solid #000}
-    .summary-item .label,.summary-item .value{color:#000}
-    .lesson-row{break-inside:avoid;border:1px solid #ccc;page-break-inside:avoid}
-  }
 </style>
 </head>
 <body>
-
-<div class="mockupNotice">
-  <strong>Personalized Curriculum</strong> · Built from the SWAHG Open University · Free, no email required
-</div>
 
 <nav class="topnav">
   <div class="topnav-inner">
     <a href="../swahg/index.html" class="logo">SWAHG<span class="sub">Open University</span></a>
     <div class="nav-links">
+      <a href="../">← Writings by Lala</a>
       <a href="../swahg/index.html">Home</a>
       <a href="../swahg-blueprint/index.html">Blueprint</a>
       <a href="../swahg-resume-builder/index.html">Resume Builder</a>
       <a href="../swahg-curriculum/index.html" aria-current="page">My Curriculum</a>
-      <a href="https://sites.google.com/view/swahg-openuniversity/home" class="cta" target="_blank" rel="noopener">Live SWAHG ↗</a>
+      <a href="../swahg-jobs/index.html">Job Board</a>
     </div>
   </div>
 </nav>
 
-<section id="hero">
-  <div class="wrap narrow">
-    <span class="hero-tag">Free Personalized Plan</span>
-    <h1 class="hero-h">Your SWAHG curriculum.<br><em>Built around YOUR situation.</em></h1>
-    <p class="lead">Tell us four things — where you are today, what you want, your English comfort, and your weekly time. We'll hand back the exact SWAHG lessons to study, in the order that fits your path. No fluff. No upsells. No email needed.</p>
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Currently Preparing</div>
+    <h1>My Curriculum</h1>
+    <p>These are the SWAHG lessons we're preparing for you right now. Filter by your archetype to see the path that fits your starting point. Foundational lessons show for everyone.</p>
+    <div class="meta">
+      <span id="totalCount">… lessons available</span>
+      <span>Filter by archetype</span>
+      <span>Read in any order</span>
+    </div>
+    <div class="archetype-strip" id="archetypeStrip"></div>
   </div>
 </section>
 
-<section id="form-section">
+<section class="listing">
   <div class="wrap">
-    <div class="form-card">
-
-      <div class="form-step">
-        <div class="step-num">Step 1 of 4</div>
-        <div class="step-q">Where are you today?</div>
-        <div class="opt-grid" id="opt-situation">
-          <button class="opt-btn" data-value="newbie"><span class="opt-title">Just starting</span><span class="opt-hint">Never had a remote client</span></button>
-          <button class="opt-btn" data-value="career-switch"><span class="opt-title">Career switcher</span><span class="opt-hint">Coming from a local or corporate job</span></button>
-          <button class="opt-btn" data-value="one-client"><span class="opt-title">Have 1 client</span><span class="opt-hint">Want to stabilize or grow</span></button>
-          <button class="opt-btn" data-value="upgrading"><span class="opt-title">Already freelancing</span><span class="opt-hint">Want to upgrade or pivot</span></button>
-        </div>
-      </div>
-
-      <div class="form-step">
-        <div class="step-num">Step 2 of 4</div>
-        <div class="step-q">What role do you want?</div>
-        <div class="step-help">Pick the closest. Choose "Not sure" if you'd like us to recommend instead.</div>
-        <div class="opt-grid" id="opt-role">
-          <button class="opt-btn" data-value="unsure"><span class="opt-title">Not sure yet</span><span class="opt-hint">Help me decide</span></button>
-          <button class="opt-btn" data-value="customer-service"><span class="opt-title">Customer Service</span><span class="opt-hint">24% of active jobs · biggest market</span></button>
-          <button class="opt-btn" data-value="smm"><span class="opt-title">Social Media Manager</span><span class="opt-hint">18% of active jobs</span></button>
-          <button class="opt-btn" data-value="account-manager"><span class="opt-title">Account Manager</span><span class="opt-hint">13% · client check-ins, deliverables</span></button>
-          <button class="opt-btn" data-value="sdr"><span class="opt-title">Sales Dev Rep</span><span class="opt-hint">13% · cold outreach, lead qualification</span></button>
-          <button class="opt-btn" data-value="admin"><span class="opt-title">Admin Assistant</span><span class="opt-hint">9% · calendar, inbox, EA work</span></button>
-          <button class="opt-btn" data-value="content"><span class="opt-title">Content Creator</span><span class="opt-hint">9% · carousels, scripts, video</span></button>
-          <button class="opt-btn" data-value="va"><span class="opt-title">General VA</span><span class="opt-hint">2% · mixed support tasks</span></button>
-        </div>
-      </div>
-
-      <div class="form-step">
-        <div class="step-num">Step 3 of 4</div>
-        <div class="step-q">How's your English right now?</div>
-        <div class="step-help">No judgement — this just changes which roles we'll prioritize.</div>
-        <div class="opt-grid" id="opt-english">
-          <button class="opt-btn" data-value="fluent"><span class="opt-title">Fluent</span><span class="opt-hint">Comfortable on live calls</span></button>
-          <button class="opt-btn" data-value="working"><span class="opt-title">Working English</span><span class="opt-hint">Better in writing than speaking</span></button>
-          <button class="opt-btn" data-value="learning"><span class="opt-title">Still learning</span><span class="opt-hint">No Calls roles preferred</span></button>
-        </div>
-      </div>
-
-      <div class="form-step">
-        <div class="step-num">Step 4 of 4</div>
-        <div class="step-q">How many hours per week can you study?</div>
-        <div class="step-help">We'll estimate your finish date based on this.</div>
-        <div class="opt-grid" id="opt-hours">
-          <button class="opt-btn" data-value="5"><span class="opt-title">5 hrs</span><span class="opt-hint">Evenings only, side hustle</span></button>
-          <button class="opt-btn" data-value="10"><span class="opt-title">10 hrs</span><span class="opt-hint">~2 hr/day, light commitment</span></button>
-          <button class="opt-btn" data-value="20"><span class="opt-title">20 hrs</span><span class="opt-hint">Half-time, parental availability</span></button>
-          <button class="opt-btn" data-value="40"><span class="opt-title">40 hrs</span><span class="opt-hint">Full availability</span></button>
-        </div>
-      </div>
-
-      <div class="form-step">
-        <div class="step-num">Optional</div>
-        <div class="step-q">Your name (so we can address the plan)</div>
-        <input type="text" class="name-input" id="nameInput" placeholder="Your first name" maxlength="40">
-      </div>
-
-      <div class="form-action">
-        <button class="btn btn-primary" id="buildBtn" disabled>Build My Curriculum →</button>
-        <button class="btn btn-ghost" id="resetBtn">Reset</button>
+    <div class="toolbar">
+      <div class="count"><strong id="visibleCount">0</strong> <span id="visibleNoun">lessons</span></div>
+      <div class="controls">
+        <input type="text" id="searchInput" placeholder="Search by title or topic">
+        <select id="stageFilter">
+          <option value="">All stages</option>
+          <option value="prep">Preparation</option>
+          <option value="warmup">Warming Up</option>
+          <option value="launch">Launch</option>
+          <option value="working">Working on it!</option>
+        </select>
+        <button class="clear-btn" id="clearBtn">Clear filters</button>
       </div>
     </div>
-  </div>
-</section>
 
-<section id="output">
-  <div class="wrap">
-    <div class="section-label">Your Personalized Plan</div>
-    <h2 class="section-h" id="outputTitle">Here's your SWAHG curriculum.</h2>
-    <p class="lead" id="outputLead"></p>
-
-    <div class="summary-bar" id="summaryBar"></div>
-
-    <div id="lessonStages"></div>
-
-    <div class="output-actions">
-      <button class="btn btn-primary" onclick="window.print()">📄 Print or Save as PDF</button>
-      <a href="../swahg-blueprint/index.html" class="btn btn-ghost">See the Blueprint →</a>
-      <a href="../swahg-resume-builder/index.html" class="btn btn-ghost">Find my archetype</a>
-    </div>
-  </div>
-</section>
-
-<section style="padding:50px 20px;background:#faf7f5;border-bottom:1px solid var(--border)">
-  <div class="wrap">
-    <div style="text-align:center;margin-bottom:24px">
-      <div class="section-label">Or try a different door</div>
-      <h3 style="font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--primary);font-weight:600">Three more SWAHG tools, same lessons.</h3>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:900px;margin:0 auto">
-      <a href="../swahg-blueprint/index.html" style="background:var(--surface);border:1.5px solid var(--border);border-left:4px solid #f9d8d8;border-radius:10px;padding:18px 20px;text-decoration:none;color:inherit;transition:all .15s" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.borderLeftColor='#f9d8d8'">
-        <div style="font-size:11px;color:var(--accent-deep);font-weight:700;letter-spacing:.1em;margin-bottom:4px">SEE THE WHOLE JOURNEY</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--primary);font-weight:600;margin-bottom:4px">Open the Blueprint →</div>
-        <div style="font-size:13px;color:var(--text-soft)">Visual map. 30+ boxes. Click any one to see lessons.</div>
-      </a>
-      <a href="../swahg-resume-builder/index.html" style="background:var(--surface);border:1.5px solid var(--border);border-left:4px solid #f6a89c;border-radius:10px;padding:18px 20px;text-decoration:none;color:inherit;transition:all .15s" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.borderLeftColor='#f6a89c'">
-        <div style="font-size:11px;color:var(--accent-deep);font-weight:700;letter-spacing:.1em;margin-bottom:4px">DON'T KNOW WHERE TO START?</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--primary);font-weight:600;margin-bottom:4px">Find my archetype →</div>
-        <div style="font-size:13px;color:var(--text-soft)">Step 1 of the Resume Builder maps you to one of 6 Filipino-VA archetypes.</div>
-      </a>
-      <a href="../swahg-resume-builder/index.html" style="background:var(--surface);border:1.5px solid var(--border);border-left:4px solid #fceea1;border-radius:10px;padding:18px 20px;text-decoration:none;color:inherit;transition:all .15s" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.borderLeftColor='#fceea1'">
-        <div style="font-size:11px;color:var(--accent-deep);font-weight:700;letter-spacing:.1em;margin-bottom:4px">PLAN SKILLS + SEE JOBS</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--primary);font-weight:600;margin-bottom:4px">Open Resume Builder →</div>
-        <div style="font-size:13px;color:var(--text-soft)">40 skills, live job-match, linked lessons.</div>
-      </a>
+    <div class="lesson-grid" id="lessonGrid"></div>
+    <div class="empty" id="emptyState" style="display:none">
+      <h2>No lessons match.</h2>
+      <p>Try clearing the archetype filter or pick a different stage.</p>
     </div>
   </div>
 </section>
@@ -347,231 +194,191 @@
   <div>
     <a href="../swahg-blueprint/index.html" class="foot-link">The Blueprint</a>
     <a href="../swahg-resume-builder/index.html" class="foot-link">Resume Builder</a>
-    <a href="https://sites.google.com/view/swahg-openuniversity/home" class="foot-link" target="_blank" rel="noopener">Live SWAHG ↗</a>
+    <a href="../swahg-jobs/index.html" class="foot-link">Job Board</a>
     <a href="../" class="foot-link">← Writings by Lala</a>
   </div>
-  <div class="credit">Personalized Curriculum · v1 · May 2026</div>
+  <div class="credit">My Curriculum · v2 · May 2026</div>
 </footer>
 
 <script src="../swahg-lessons.js"></script>
 <script>
-const STATE = { situation:null, role:null, english:null, hours:null, name:"" };
+/* ────────────────────────────────────────────────────────────
+ *  Local lesson pages currently prepared for users.
+ *  Each entry = registry slug → local-page slug.
+ *  Only these show on this page.
+ * ──────────────────────────────────────────────────────────── */
+const PREPARED_LESSONS = {
+  "best-laptop":               "swahg-lesson-choosing-your-computer",
+  "browser-expert-secrets":    "swahg-lesson-browser-expert-secrets",
+  "storage-expert-secrets":    "swahg-lesson-storage-expert-secrets",
+  "email-address-is-gold":     "swahg-lesson-email-address-expert-secrets",
+  "trello-love":               "swahg-lesson-trello-love",
+  "where-to-start":            "swahg-lesson-where-to-start",
+  "freelancer-or-va":          "swahg-lesson-freelancer-or-va",
+  "employee-to-freelancer":    "swahg-lesson-employee-to-freelancer",
+  "10-secret-skills":          "swahg-lesson-10-secret-skills",
+  "online-jobs-account":       "swahg-lesson-online-jobs-account",
+  "freelancing-platforms":     "swahg-lesson-freelancing-platforms",
+  "personal-branding":         "swahg-lesson-personal-branding",
+  "online-presence":           "swahg-lesson-online-presence",
+  "choosing-my-client":        "swahg-lesson-choosing-my-client",
+  "getting-hired-fast":        "swahg-lesson-getting-hired-fast",
+  "common-mistakes":           "swahg-lesson-common-mistakes"
+};
 
-// Wire up option buttons
-function wireGroup(groupId, stateKey){
-  const group = document.getElementById(groupId);
-  group.querySelectorAll(".opt-btn").forEach(btn=>{
+/* Archetype definitions — mirrored from swahg-resume-builder/index.html */
+const ARCHETYPES = {
+  polished:     { emoji:'🌟', name:'The Polished Freelancer',     tag:'Already running clients — agency or remote-job is upgrade.',           share:'25%' },
+  transitioner: { emoji:'💼', name:'The Corporate Transitioner',  tag:'BPO English plus office discipline — never freelanced.',               share:'30%' },
+  creative:     { emoji:'🎨', name:'The Creative Specialist',     tag:'Photoshop and Premiere fluency — but admin tooling thin.',             share:'15%' },
+  solo:         { emoji:'🛒', name:'The Solo Entrepreneur',       tag:'Ran an ecom store, restaurant, or business — pivoting to VA.',         share:'15%' },
+  generalist:   { emoji:'📋', name:'The Generalist Admin',        tag:'Excel-fluent, calendar-disciplined — but no specialty wedge.',         share:'10%' },
+  fresh:        { emoji:'🌱', name:'The Fresh Starter',           tag:'Eager but unprepared — 0–2 tools, weak English self-rating.',          share:'5%'  }
+};
+
+/* Archetype → role mapping (which job roles each archetype typically lands).
+ * A lesson shows for an archetype if any of its ladders_to_roles intersects this set,
+ * OR if the lesson is foundational (empty ladders_to_roles). */
+const ARCHETYPE_ROLES = {
+  polished:     ['account-manager','smm','customer-service','content','sdr'],
+  transitioner: ['admin','account-manager','customer-service','va','sdr'],
+  creative:     ['content','smm'],
+  solo:         ['smm','sdr','account-manager','content'],
+  generalist:   ['admin','va','customer-service'],
+  fresh:        ['va','customer-service','admin']
+};
+
+const STATE = { archetype:null, stage:'', search:'' };
+
+/* Render archetype strip */
+function renderArchetypeStrip(){
+  const strip = document.getElementById("archetypeStrip");
+  strip.innerHTML = Object.entries(ARCHETYPES).map(([k,a])=>`
+    <button class="archetype-card" data-arch="${k}">
+      <span class="emoji">${a.emoji}</span>
+      <strong>${a.name}</strong>
+      <span>${a.tag}</span>
+      <span class="share">${a.share} of VAs</span>
+    </button>
+  `).join("");
+  strip.querySelectorAll(".archetype-card").forEach(btn=>{
     btn.addEventListener("click",()=>{
-      group.querySelectorAll(".opt-btn").forEach(b=>b.classList.remove("selected"));
-      btn.classList.add("selected");
-      STATE[stateKey] = btn.dataset.value;
-      refreshBuildBtn();
-    });
-  });
-}
-wireGroup("opt-situation","situation");
-wireGroup("opt-role","role");
-wireGroup("opt-english","english");
-wireGroup("opt-hours","hours");
-
-document.getElementById("nameInput").addEventListener("input",e=>{
-  STATE.name = e.target.value.trim();
-});
-
-function refreshBuildBtn(){
-  document.getElementById("buildBtn").disabled = !(STATE.situation && STATE.role && STATE.english && STATE.hours);
-}
-
-document.getElementById("resetBtn").addEventListener("click",()=>{
-  Object.keys(STATE).forEach(k=>STATE[k] = (k==="name") ? "" : null);
-  document.querySelectorAll(".opt-btn").forEach(b=>b.classList.remove("selected"));
-  document.getElementById("nameInput").value = "";
-  document.getElementById("output").classList.remove("active");
-  refreshBuildBtn();
-  window.scrollTo({top:0,behavior:"smooth"});
-});
-
-document.getElementById("buildBtn").addEventListener("click", buildCurriculum);
-
-/* ────────────────────────────────────────────────
- *  Engine — selects + orders lessons based on state
- * ──────────────────────────────────────────────── */
-function buildCurriculum(){
-  const reg = window.SWAHG_LESSONS;
-  if(!reg){ alert("Lesson registry not loaded. Try refreshing."); return; }
-
-  // 1. Determine starting stage based on situation
-  const startStages = {
-    "newbie":        ["prep","warmup","launch","working"],
-    "career-switch": ["warmup","launch","working","stage1"],
-    "one-client":    ["stage1","skill","higher"],
-    "upgrading":     ["skill","higher"]
-  };
-  const stagesInOrder = startStages[STATE.situation] || ["prep","warmup","launch","working"];
-
-  // 2. Score lessons
-  const scored = [];
-  Object.entries(reg.lessons).forEach(([slug,l])=>{
-    if(!stagesInOrder.includes(l.stage)) return;
-
-    let score = 100;
-    // Goal role match (if user picked a role)
-    if(STATE.role !== "unsure"){
-      if(l.ladders_to_roles.includes(STATE.role)) score += 50;
-      else if(l.ladders_to_roles.length === 0) score += 0; // foundational lessons stay
-      else score -= 20; // wrong-role lessons demoted
-    }
-
-    // English-comfort weighting
-    if(STATE.english === "learning"){
-      // Prioritize english-101 + no-calls track; deprioritize SDR/sales-call-heavy
-      if(slug === "english-101" || slug === "no-calls-va-track") score += 60;
-      if(slug === "cold-outreach-sdrs") score -= 30;
-      // Customer service is async-friendly
-      if(l.ladders_to_roles.includes("customer-service")) score += 10;
-    } else if(STATE.english === "working"){
-      if(slug === "no-calls-va-track") score += 20;
-    }
-
-    // Tier weighting — Tier 0 (live) wins over queued
-    if(l.tier === 0) score += 15;
-    if(l.status === "new" && !l.url) score -= 5; // not yet published, slight penalty
-
-    // Built tools always relevant
-    if(l.status === "built") score += 25;
-
-    scored.push({ slug, lesson:l, score });
-  });
-
-  // 3. Sort by stage order, then score
-  scored.sort((a,b)=>{
-    const sa = stagesInOrder.indexOf(a.lesson.stage);
-    const sb = stagesInOrder.indexOf(b.lesson.stage);
-    if(sa !== sb) return sa - sb;
-    return b.score - a.score;
-  });
-
-  // 4. Take top N per stage to keep plan focused
-  const TOP_PER_STAGE = { prep:3, warmup:4, launch:4, working:3, stage1:3, skill:3, higher:2, business:1 };
-  const grouped = {};
-  scored.forEach(item=>{
-    const st = item.lesson.stage;
-    if(!grouped[st]) grouped[st] = [];
-    if(grouped[st].length < (TOP_PER_STAGE[st] || 3)) grouped[st].push(item);
-  });
-
-  // 5. Apply prerequisite walk-back — if a recommended lesson has a prereq, ensure the prereq is included earlier
-  Object.values(grouped).flat().forEach(item=>{
-    (item.lesson.prerequisites || []).forEach(prereqSlug=>{
-      const p = reg.lessons[prereqSlug];
-      if(!p) return;
-      const inGroup = grouped[p.stage] && grouped[p.stage].some(g=>g.slug===prereqSlug);
-      if(!inGroup){
-        if(!grouped[p.stage]) grouped[p.stage] = [];
-        grouped[p.stage].unshift({ slug:prereqSlug, lesson:p, score:200 });
+      const arch = btn.dataset.arch;
+      if(STATE.archetype === arch){
+        STATE.archetype = null;
+        btn.classList.remove("active");
+      } else {
+        STATE.archetype = arch;
+        strip.querySelectorAll(".archetype-card").forEach(b=>b.classList.remove("active"));
+        btn.classList.add("active");
       }
+      renderLessons();
     });
   });
-
-  // 6. Total minutes + weeks
-  const totalMinutes = Object.values(grouped).flat().reduce((sum,it)=>sum + (it.lesson.estimated_minutes||0), 0);
-  const totalLessons = Object.values(grouped).flat().length;
-  const hoursPerWeek = parseInt(STATE.hours,10);
-  const weeksToFinish = Math.max(1, Math.ceil((totalMinutes/60) / (hoursPerWeek * 0.7)));
-
-  // 7. Render
-  renderOutput(grouped, stagesInOrder, { totalMinutes, totalLessons, hoursPerWeek, weeksToFinish });
 }
 
-function renderOutput(grouped, stagesInOrder, summary){
+function lessonMatchesArchetype(lesson, archKey){
+  if(!archKey) return true;
+  const roles = ARCHETYPE_ROLES[archKey] || [];
+  // Foundational lessons (no role tags) show for everyone
+  if(!lesson.ladders_to_roles || lesson.ladders_to_roles.length === 0) return true;
+  return lesson.ladders_to_roles.some(r => roles.includes(r));
+}
+
+function lessonMatchesSearch(lesson, q){
+  if(!q) return true;
+  const t = q.toLowerCase();
+  return (lesson.title||"").toLowerCase().includes(t)
+      || (lesson.why_this_lesson||"").toLowerCase().includes(t);
+}
+
+function lessonMatchesStage(lesson, stage){
+  if(!stage) return true;
+  return lesson.stage === stage;
+}
+
+function preparedLessons(){
   const reg = window.SWAHG_LESSONS;
-  const goalRoleName = STATE.role === "unsure" ? "still figuring out" : (reg.roles[STATE.role]?.name || STATE.role);
-  const greeting = STATE.name ? `${STATE.name}, your` : "Your";
-  document.getElementById("outputTitle").textContent = `${greeting} SWAHG curriculum.`;
-  let lead = `Goal: <strong>${goalRoleName}</strong>.`;
-  if(STATE.english === "learning") lead += ` We've weighted toward <strong>No Calls</strong> (async-only) roles — 185 active jobs in the current Job List don't require live English.`;
-  document.getElementById("outputLead").innerHTML = lead;
+  if(!reg) return [];
+  return Object.entries(PREPARED_LESSONS).map(([slug, localSlug])=>{
+    const l = reg.lessons[slug];
+    if(!l) return null;
+    return { ...l, slug, localSlug, localUrl: `../${localSlug}/index.html` };
+  }).filter(Boolean);
+}
 
-  document.getElementById("summaryBar").innerHTML = `
-    <div class="summary-item"><div class="label">Lessons</div><div class="value">${summary.totalLessons}</div></div>
-    <div class="summary-item"><div class="label">Study Time</div><div class="value">${Math.round(summary.totalMinutes/60)} hrs</div></div>
-    <div class="summary-item"><div class="label">At ${summary.hoursPerWeek} hrs/wk</div><div class="value">~${summary.weeksToFinish} weeks</div></div>
-    <div class="summary-item"><div class="label">Finish By</div><div class="value">${finishDate(summary.weeksToFinish)}</div></div>
-  `;
+function renderLessons(){
+  const all = preparedLessons();
+  const filtered = all.filter(l =>
+    lessonMatchesArchetype(l, STATE.archetype) &&
+    lessonMatchesStage(l, STATE.stage) &&
+    lessonMatchesSearch(l, STATE.search)
+  );
 
-  const stagesEl = document.getElementById("lessonStages");
-  stagesEl.innerHTML = "";
-  let stepCounter = 0;
-  let renderedAny = false;
-  stagesInOrder.forEach(stageKey=>{
-    const items = grouped[stageKey];
-    if(!items || !items.length) return;
-    renderedAny = true;
-    const stage = reg.stages[stageKey];
-    const sec = document.createElement("div");
-    sec.className = "stage-section";
-    const stageSub = stageDescription(stageKey);
-    sec.innerHTML = `<h3><span class="stage-chip ${stageKey}">Stage</span> ${stage.name}</h3><p class="stage-sub">${stageSub}</p>`;
-    items.forEach(item=>{
-      stepCounter++;
-      const l = item.lesson;
-      const statusLabel = ({live:"Live", rewrite:"Rewriting", new:"Coming soon", built:"Interactive"})[l.status] || "Live";
-      const linkHtml = l.url
-        ? `<a href="${l.url}" target="${l.url.startsWith("/") ? "_self" : "_blank"}" rel="noopener" class="lesson-link">Open lesson →</a>`
-        : `<span class="lesson-link disabled">In build queue</span>`;
-      const row = document.createElement("div");
-      row.className = `lesson-row status-${l.status}`;
-      row.innerHTML = `
-        <div>
-          <div class="lesson-title-row">
-            <div class="num">${stepCounter}</div>
-            <div class="name">${l.title}</div>
-            <span class="lesson-status ${l.status}">${statusLabel}</span>
-          </div>
-          <div class="lesson-why">${l.why_this_lesson}</div>
-          <div class="lesson-meta">
-            <span><strong>${l.estimated_minutes || "?"} min</strong></span>
-            <span>Format: <strong>${(l.format||"video").replace(/_/g," ")}</strong></span>
-            ${l.tier ? `<span>Tier <strong>${l.tier}</strong></span>` : ""}
-            ${(l.closes_va_gaps||[]).map(g=>{
-              const gap = reg.va_gaps[g];
-              return gap ? `<span>Closes <strong>${gap.name} (${gap.coverage_pct}% coverage)</strong></span>` : "";
-            }).join("")}
-          </div>
-        </div>
-        <div class="lesson-cta">${linkHtml}</div>
-      `;
-      sec.appendChild(row);
-    });
-    stagesEl.appendChild(sec);
-  });
+  // Stage order for sorting
+  const stageOrder = { prep:1, warmup:2, launch:3, working:4 };
+  filtered.sort((a,b)=>(stageOrder[a.stage]||9) - (stageOrder[b.stage]||9));
 
-  if(!renderedAny){
-    stagesEl.innerHTML = `<div class="empty-state">We couldn't find a good match for that combination yet. Try a different role, or <a href="../swahg-resume-builder/index.html">identify your archetype</a> in the Resume Builder.</div>`;
+  const grid = document.getElementById("lessonGrid");
+  const empty = document.getElementById("emptyState");
+  document.getElementById("visibleCount").textContent = filtered.length;
+  document.getElementById("visibleNoun").textContent = filtered.length === 1 ? "lesson" : "lessons";
+
+  if(!filtered.length){
+    grid.innerHTML = "";
+    empty.style.display = "block";
+    return;
   }
+  empty.style.display = "none";
 
-  document.getElementById("output").classList.add("active");
-  setTimeout(()=>document.getElementById("output").scrollIntoView({behavior:"smooth", block:"start"}), 50);
+  const stageLabels = {
+    prep:"Preparation", warmup:"Warming Up", launch:"Launch", working:"Working on it!"
+  };
+
+  grid.innerHTML = filtered.map(l => `
+    <a href="${l.localUrl}" class="lesson-card stage-${l.stage}">
+      <span class="stage-tag ${l.stage}">${stageLabels[l.stage] || l.stage}</span>
+      <h3>${l.title}</h3>
+      <div class="why">${l.why_this_lesson || ""}</div>
+      <div class="meta-row">
+        <span><strong>${l.estimated_minutes || "?"} min</strong></span>
+        <span>${(l.format || "video").replace(/_/g, " ")}</span>
+      </div>
+      <span class="open-link">Open the lesson <span class="arr">→</span></span>
+    </a>
+  `).join("");
 }
 
-function stageDescription(key){
-  return ({
-    prep:    "Get oriented. Decide your direction. Set up the basics.",
-    warmup:  "Build your skill stack and portfolio before applying.",
-    launch:  "Find roles. Apply with confidence. The Async Application stage.",
-    working: "Keep the client. Grow into the role.",
-    stage1:  "First 30 days with a new client — the post-launch loop begins.",
-    skill:   "Stack the next skill. Raise your rate. Expand your role.",
-    higher:  "More clients. Leadership. Build a rockstar portfolio.",
-    business:"The branch for community members who want to build their own brand or agency."
-  })[key] || "";
-}
+/* Wire up controls */
+document.getElementById("searchInput").addEventListener("input", e => {
+  STATE.search = e.target.value.trim();
+  renderLessons();
+});
+document.getElementById("stageFilter").addEventListener("change", e => {
+  STATE.stage = e.target.value;
+  renderLessons();
+});
+document.getElementById("clearBtn").addEventListener("click", () => {
+  STATE.archetype = null;
+  STATE.stage = '';
+  STATE.search = '';
+  document.getElementById("searchInput").value = '';
+  document.getElementById("stageFilter").value = '';
+  document.querySelectorAll(".archetype-card").forEach(b=>b.classList.remove("active"));
+  renderLessons();
+});
 
-function finishDate(weeks){
-  const d = new Date();
-  d.setDate(d.getDate() + weeks*7);
-  return d.toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});
-}
+/* Init */
+window.addEventListener("DOMContentLoaded", () => {
+  if(!window.SWAHG_LESSONS){
+    document.getElementById("lessonGrid").innerHTML = '<div class="empty"><h2>Lesson registry failed to load.</h2><p>Try refreshing the page.</p></div>';
+    return;
+  }
+  const total = preparedLessons().length;
+  document.getElementById("totalCount").textContent = `${total} lessons available`;
+  renderArchetypeStrip();
+  renderLessons();
+});
 </script>
 </body>
 </html>
