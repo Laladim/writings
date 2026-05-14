@@ -1,6 +1,6 @@
 # Voice Protocol for this Repo
 
-**For any future session that touches `src/content/*.md`, read this first — and then read the full skill at `cobalt-skills/writings-by-lala.md` in the Life-Dashboard repo before writing anything.**
+**For any future session that touches `src/content/*.md`, read this first — and then read the full skill at `personal-skills/writings-by-lala/SKILL.md` in the Life-Dashboard repo before writing anything.**
 
 ## The one rule
 
@@ -50,10 +50,10 @@ End with a warm invitation, then `— Lala` on its own line. Never a hard CTA.
 
 ## If you are about to skip any of the above
 
-Stop. Read `cobalt-skills/writings-by-lala.md`. Then continue.
+Stop. Read `personal-skills/writings-by-lala/SKILL.md`. Then continue.
 
 ---
 
-Canonical source of truth: `~/Life-Dashboard/cobalt-skills/writings-by-lala.md` (the Life-Dashboard repo's skill file).
+Canonical source of truth: `~/Life-Dashboard/personal-skills/writings-by-lala/SKILL.md` (the Life-Dashboard repo's skill file).
 
 This VOICE.md is a local anchor so that future sessions opening this repo directly see the rule even if they skip the Life-Dashboard read.

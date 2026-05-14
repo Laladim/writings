@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>SWAHG — Where Should I Start?</title>
-<meta name="description" content="Find your 3-lesson starting path at SWAHG Open University. 5 quick questions, personalized to your goals and current skills.">
+<meta name="description" content="Find your VA archetype and your 3-lesson starting path at SWAHG Open University. 5 quick questions.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -126,6 +126,41 @@
   #result .lead{
     color:var(--text-soft);margin-bottom:20px;font-size:15px;line-height:1.55;
   }
+
+  /* Archetype banner */
+  .archetypeBanner{
+    border:1px solid var(--border);
+    border-top:4px solid var(--archCol, var(--primary));
+    border-radius:14px;
+    padding:22px 22px 20px;
+    margin-bottom:22px;
+    background:linear-gradient(135deg,#fdfbfa,#fff);
+  }
+  .archetypeBanner .archLabel{
+    font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--accent-deep);font-weight:700;margin-bottom:6px;
+  }
+  .archetypeBanner .archEmoji{font-size:38px;margin-bottom:4px;display:block;line-height:1}
+  .archetypeBanner h3{
+    font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--archCol, var(--primary));
+    font-weight:700;margin-bottom:6px;line-height:1.15;
+  }
+  .archetypeBanner .archTag{
+    font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--text);
+    font-size:16px;line-height:1.5;padding-left:12px;border-left:2px solid var(--accent);
+    margin:10px 0 14px;
+  }
+  .archetypeBanner .archStats{
+    display:grid;grid-template-columns:1fr 1fr;gap:8px 14px;
+    background:#f5f1f0;border-radius:8px;padding:12px 14px;font-size:13px;
+  }
+  .archetypeBanner .archStats .k{color:var(--text-soft)}
+  .archetypeBanner .archStats .v{color:var(--text);font-weight:600;text-align:right}
+  .archetypeBanner .archWhy{
+    margin-top:14px;font-size:14px;color:var(--text-soft);line-height:1.6;
+  }
+  .archetypeBanner .archWhy strong{color:var(--archCol, var(--primary));font-weight:600}
+
   .urgentBanner{
     background:#fdf4ec;border:1px solid #e8c8a0;border-radius:8px;
     padding:12px 14px;margin-bottom:18px;font-size:14px;color:var(--accent-deep);
@@ -208,7 +243,7 @@
   <header class="brand">
     <div class="kicker">SWAHG Open University</div>
     <h1>Where Should I Start?</h1>
-    <p class="sub">Five quick questions. We'll match you to your 3-lesson starting path and one current job lane you can apply to.</p>
+    <p class="sub">Five quick questions. We'll name your VA archetype, match you to your 3 starter lessons, and point you to a live job lane you can apply to.</p>
   </header>
 
   <div class="progress" id="progress">
@@ -218,18 +253,121 @@
   <!-- Intro -->
   <section class="panel active" id="intro">
     <h2>Bago tayo magsimula</h2>
-    <p>SWAHG has 58 free lessons. This little quiz finds the right 3 for you, based on where you are <em>today</em>—not where you wish you were.</p>
+    <p>SWAHG has 58 free lessons. This little quiz finds the right 3 for you — based on the kind of VA you already are <em>today</em>, not the one you wish you were. We've named six recurring archetypes from real SWAHG hiring data.</p>
     <ul class="checklist">
       <li>Takes 90 seconds</li>
       <li>You can change answers anytime</li>
-      <li>You get a real job lane, not a generic "good luck"</li>
+      <li>You get a real archetype + job lane, not a generic "good luck"</li>
     </ul>
     <button class="btn btn-primary startBtn" onclick="start()">Let's start →</button>
   </section>
 
-  <!-- Q1 — English on calls -->
+  <!-- Q1 — Background -->
   <section class="panel" id="q1">
     <div class="qnum">Question 1 of 5</div>
+    <div class="qtitle">Where are you coming from right now?</div>
+    <div class="qhint">Pick the one that best matches your current life — honest lang.</div>
+    <div class="opts" data-q="background">
+      <button class="opt" data-val="freelancer">
+        <div class="opt-flex">I'm already freelancing online — at least one paying client.<small>Upwork, OnlineJobs, or direct clients.</small></div>
+        <span class="check">✓</span>
+      </button>
+      <button class="opt" data-val="corporate">
+        <div class="opt-flex">I work in (or just left) an office, BPO, or call center job.<small>Employed full-time, never freelanced before.</small></div>
+        <span class="check">✓</span>
+      </button>
+      <button class="opt" data-val="business">
+        <div class="opt-flex">I used to run my own business — store, ecom, food, salon, etc.<small>Sariling negosyo, looking for stable income now.</small></div>
+        <span class="check">✓</span>
+      </button>
+      <button class="opt" data-val="home">
+        <div class="opt-flex">Stay-at-home parent or in-between jobs right now.<small>Caring for family or studying — looking for flexible work.</small></div>
+        <span class="check">✓</span>
+      </button>
+      <button class="opt" data-val="none">
+        <div class="opt-flex">Brand new — no real work experience yet.<small>Fresh graduate or starting from zero. Honest answer.</small></div>
+        <span class="check">✓</span>
+      </button>
+    </div>
+    <div class="nav">
+      <button class="btn btn-ghost" onclick="goto(0)">← Back</button>
+      <button class="btn btn-primary" id="b1" onclick="goto(2)" disabled>Next →</button>
+    </div>
+  </section>
+
+  <!-- Q2 — Tool fluency (multi) -->
+  <section class="panel" id="q2">
+    <div class="qnum">Question 2 of 5</div>
+    <div class="qtitle">Which of these have you actually used before?</div>
+    <div class="qhint">Tap all that apply. "I clicked around once" doesn't count — real usage lang.</div>
+    <div class="opts multi" data-q="tools">
+      <button class="opt" data-val="office">
+        <div class="opt-flex">MS Office / Google Docs / Sheets / Slides<small>Daily-driver productivity tools.</small></div>
+        <span class="check">✓</span>
+      </button>
+      <button class="opt" data-val="design">
+        <div class="opt-flex">Canva, Photoshop, or any video editor<small>Even basic cover photos and short reels count.</small></div>
+        <span class="check">✓</span>
+      </button>
+      <button class="opt" data-val="pm">
+        <div class="opt-flex">Trello, Asana, Notion, or ClickUp<small>Project management or task boards.</small></div>
+        <span class="check">✓</span>
+      </button>
+      <button class="opt" data-val="social">
+        <div class="opt-flex">Buffer, Hootsuite, Later, or Meta Business Suite<small>Scheduled posts or managed a brand page.</small></div>
+        <span class="check">✓</span>
+      </button>
+      <button class="opt" data-val="biz">
+        <div class="opt-flex">Mailchimp, Hubspot, Shopify, or Quickbooks<small>Email marketing, CRM, ecommerce, or bookkeeping.</small></div>
+        <span class="check">✓</span>
+      </button>
+      <button class="opt" data-val="fresh">
+        <div class="opt-flex">I'm starting completely fresh.<small>Wala pa akong na-try na anumang tool. Honest.</small></div>
+        <span class="check">✓</span>
+      </button>
+    </div>
+    <div class="nav">
+      <button class="btn btn-ghost" onclick="goto(1)">← Back</button>
+      <button class="btn btn-primary" id="b2" onclick="goto(3)" disabled>Next →</button>
+    </div>
+  </section>
+
+  <!-- Q3 — Natural strength -->
+  <section class="panel" id="q3">
+    <div class="qnum">Question 3 of 5</div>
+    <div class="qtitle">Which feels most natural to you?</div>
+    <div class="qhint">Pick the one where friends or coworkers usually ask <em>you</em> for help.</div>
+    <div class="opts" data-q="strength">
+      <button class="opt" data-val="design">
+        <div class="opt-flex">Design &amp; visuals — I notice polish first.<small>Layouts, color, video pacing, "this looks off" eye.</small></div>
+        <span class="check">✓</span>
+      </button>
+      <button class="opt" data-val="organize">
+        <div class="opt-flex">Organization — inbox-zero, calendars, files, lists.<small>People call me "the organized one."</small></div>
+        <span class="check">✓</span>
+      </button>
+      <button class="opt" data-val="talk">
+        <div class="opt-flex">Talking to people — chat, calls, problem-solving.<small>Patient with frustrated customers, calm under pressure.</small></div>
+        <span class="check">✓</span>
+      </button>
+      <button class="opt" data-val="sell">
+        <div class="opt-flex">Selling, pitching, or persuading.<small>I've closed deals, run a store, or convinced people to buy.</small></div>
+        <span class="check">✓</span>
+      </button>
+      <button class="opt" data-val="unsure">
+        <div class="opt-flex">Honestly, I'm still figuring out my strength.<small>That's okay — this quiz will help you spot one.</small></div>
+        <span class="check">✓</span>
+      </button>
+    </div>
+    <div class="nav">
+      <button class="btn btn-ghost" onclick="goto(2)">← Back</button>
+      <button class="btn btn-primary" id="b3" onclick="goto(4)" disabled>Next →</button>
+    </div>
+  </section>
+
+  <!-- Q4 — English on calls -->
+  <section class="panel" id="q4">
+    <div class="qnum">Question 4 of 5</div>
     <div class="qtitle">How confident are you with English on a live call?</div>
     <div class="qhint">Walang tama o mali — honest lang ang sagot.</div>
     <div class="opts" data-q="english">
@@ -247,124 +385,37 @@
       </button>
     </div>
     <div class="nav">
-      <button class="btn btn-ghost" onclick="goto(0)">← Back</button>
-      <button class="btn btn-primary" id="b1" onclick="goto(2)" disabled>Next →</button>
-    </div>
-  </section>
-
-  <!-- Q2 — Time availability -->
-  <section class="panel" id="q2">
-    <div class="qnum">Question 2 of 5</div>
-    <div class="qtitle">How much time can you give to this?</div>
-    <div class="qhint">Realistic, not aspirational.</div>
-    <div class="opts" data-q="time">
-      <button class="opt" data-val="side">
-        <div class="opt-flex">I'm working full-time elsewhere — this is a side hustle for now.<small>Evening + weekend lang ang available ko.</small></div>
-        <span class="check">✓</span>
-      </button>
-      <button class="opt" data-val="partial">
-        <div class="opt-flex">I have 4–6 hours per day for this.<small>Pwede ako mag-focus ng part of the day.</small></div>
-        <span class="check">✓</span>
-      </button>
-      <button class="opt" data-val="full">
-        <div class="opt-flex">Full-time available — this is my main pursuit.<small>All-in ako sa freelancing.</small></div>
-        <span class="check">✓</span>
-      </button>
-    </div>
-    <div class="nav">
-      <button class="btn btn-ghost" onclick="goto(1)">← Back</button>
-      <button class="btn btn-primary" id="b2" onclick="goto(3)" disabled>Next →</button>
-    </div>
-  </section>
-
-  <!-- Q3 — Dream role -->
-  <section class="panel" id="q3">
-    <div class="qnum">Question 3 of 5</div>
-    <div class="qtitle">Which role attracts you most right now?</div>
-    <div class="qhint">If you're not sure, the last option is for you.</div>
-    <div class="opts" data-q="role">
-      <button class="opt" data-val="smm">
-        <div class="opt-flex">Social Media Manager<small>IG, FB, content calendars, scheduling</small></div>
-        <span class="check">✓</span>
-      </button>
-      <button class="opt" data-val="support">
-        <div class="opt-flex">Customer Support<small>Live chat, email tickets, helping customers solve problems</small></div>
-        <span class="check">✓</span>
-      </button>
-      <button class="opt" data-val="admin">
-        <div class="opt-flex">Admin VA / Executive Assistant<small>Calendar, inbox, files, project tracking for one client</small></div>
-        <span class="check">✓</span>
-      </button>
-      <button class="opt" data-val="content">
-        <div class="opt-flex">Content Creator<small>Writing, design, video, building a brand presence</small></div>
-        <span class="check">✓</span>
-      </button>
-      <button class="opt" data-val="unsure">
-        <div class="opt-flex">I'm not sure yet — show me my options.<small>Help me figure out anong fit sa skills ko.</small></div>
-        <span class="check">✓</span>
-      </button>
-    </div>
-    <div class="nav">
-      <button class="btn btn-ghost" onclick="goto(2)">← Back</button>
-      <button class="btn btn-primary" id="b3" onclick="goto(4)" disabled>Next →</button>
-    </div>
-  </section>
-
-  <!-- Q4 — Tool experience (multi) -->
-  <section class="panel" id="q4">
-    <div class="qnum">Question 4 of 5</div>
-    <div class="qtitle">Which of these have you actually used before?</div>
-    <div class="qhint">Tap all that apply. Be honest — "I clicked around once" doesn't count.</div>
-    <div class="opts multi" data-q="tools">
-      <button class="opt" data-val="pm">
-        <div class="opt-flex">Trello, Asana, ClickUp, or Notion<small>Project management or task boards</small></div>
-        <span class="check">✓</span>
-      </button>
-      <button class="opt" data-val="design">
-        <div class="opt-flex">Canva, Photoshop, or video editing tools<small>Even simple cover photos count.</small></div>
-        <span class="check">✓</span>
-      </button>
-      <button class="opt" data-val="meta">
-        <div class="opt-flex">Facebook Business or Instagram Creator tools<small>You've posted, scheduled, or managed for a page.</small></div>
-        <span class="check">✓</span>
-      </button>
-      <button class="opt" data-val="scheduler">
-        <div class="opt-flex">Buffer, Hootsuite, Later, or similar schedulers<small>Bulk-scheduled at least one week of posts.</small></div>
-        <span class="check">✓</span>
-      </button>
-      <button class="opt" data-val="fresh">
-        <div class="opt-flex">I'm starting completely fresh.<small>Wala pa akong na-try na anumang tool. Honest answer.</small></div>
-        <span class="check">✓</span>
-      </button>
-    </div>
-    <div class="nav">
       <button class="btn btn-ghost" onclick="goto(3)">← Back</button>
       <button class="btn btn-primary" id="b4" onclick="goto(5)" disabled>Next →</button>
     </div>
   </section>
 
-  <!-- Q5 — Timing -->
+  <!-- Q5 — Pricing / rate readiness -->
   <section class="panel" id="q5">
     <div class="qnum">Question 5 of 5</div>
-    <div class="qtitle">When do you want to land your first client?</div>
-    <div class="qhint">No judgment. Just shapes your starting path.</div>
-    <div class="opts" data-q="timing">
-      <button class="opt" data-val="urgent">
-        <div class="opt-flex">2 weeks — I need income soon.<small>Apply-mode na ako.</small></div>
+    <div class="qtitle">What's your rate situation?</div>
+    <div class="qhint">Only 3% of VAs in our dataset had a clear answer to this. Honest lang.</div>
+    <div class="opts" data-q="rate">
+      <button class="opt" data-val="known">
+        <div class="opt-flex">I already know my rate — per hour or per project.<small>I've worked with clients and I know what I'm worth.</small></div>
         <span class="check">✓</span>
       </button>
-      <button class="opt" data-val="focused">
-        <div class="opt-flex">1–2 months — I'm focused.<small>Mag-aaral muna ng matino bago mag-apply.</small></div>
+      <button class="opt" data-val="entry">
+        <div class="opt-flex">I'd start at around $5–10/hr and grow from there.<small>Entry rates while I build experience.</small></div>
         <span class="check">✓</span>
       </button>
-      <button class="opt" data-val="learner">
-        <div class="opt-flex">3+ months — I'm here to learn first.<small>Walang rush. I want to do it right.</small></div>
+      <button class="opt" data-val="negotiate">
+        <div class="opt-flex">I'd negotiate based on the scope and the client.<small>It depends — I read the situation first.</small></div>
+        <span class="check">✓</span>
+      </button>
+      <button class="opt" data-val="any">
+        <div class="opt-flex">I'd accept whatever the first client offers.<small>Just want to land that first paid gig.</small></div>
         <span class="check">✓</span>
       </button>
     </div>
     <div class="nav">
       <button class="btn btn-ghost" onclick="goto(4)">← Back</button>
-      <button class="btn btn-primary" id="b5" onclick="finish()" disabled>See my starting path →</button>
+      <button class="btn btn-primary" id="b5" onclick="finish()" disabled>See my archetype →</button>
     </div>
   </section>
 
@@ -372,6 +423,9 @@
   <section class="panel" id="result">
     <h2 id="rTitle">Here's your starting path</h2>
     <p class="lead" id="rLead"></p>
+
+    <!-- Archetype banner injected here -->
+    <div id="archetypeArea"></div>
 
     <div id="urgentArea"></div>
 
@@ -424,18 +478,156 @@
   // -------- State --------
   const state = {
     step: 0,
-    answers: { english: null, time: null, role: null, tools: [], timing: null }
+    answers: { background: null, tools: [], strength: null, english: null, rate: null }
   };
   const panels = ['intro','q1','q2','q3','q4','q5','result'];
   const progressBars = document.getElementById('progress').children;
-  const nextBtns = ['', 'b1','b2','b3','b4','b5'];
+
+  // -------- Archetype definitions --------
+  // Tied to the 6 archetypes surfaced in the Filipino VA assessment data analysis.
+  const ARCHETYPES = {
+    polished: {
+      name: 'The Polished Freelancer',
+      emoji: '🌟',
+      color: '#5a8a72',
+      tag: 'Already running your own client roster — SWAHG is upgrade, not entry.',
+      proceedRate: '~80%',
+      tier: 'Top tier',
+      why: "You already have paying clients, a rate you can defend, and the tool breadth that real freelancers carry. Use SWAHG to specialize and raise your ceiling — not to start over."
+    },
+    corporate: {
+      name: 'The Corporate Transitioner',
+      emoji: '💼',
+      color: '#5a4a7a',
+      tag: 'BPO English plus office discipline — but never freelanced a day.',
+      proceedRate: '~60%',
+      tier: 'Trainable',
+      why: "Your English and structure are stronger than most. The gap is the freelancing world itself: pricing, pitching, choosing clients. That's exactly where SWAHG's first lessons live."
+    },
+    creative: {
+      name: 'The Creative Specialist',
+      emoji: '🎨',
+      color: '#a0756a',
+      tag: 'Design and visual instincts — but admin tooling thin.',
+      proceedRate: '~70%',
+      tier: 'Premium niche',
+      why: "Your eye is your wedge — 56% of hired VAs have design skill versus 31% rejected. Pair your visual fluency with one organization tool (Trello / Notion) and you become hard to replace."
+    },
+    entrepreneur: {
+      name: 'The Solo Entrepreneur',
+      emoji: '🛒',
+      color: '#c8985f',
+      tag: 'You\'ve run your own thing — VA work is the steady income chapter.',
+      proceedRate: '~55%',
+      tier: 'Mixed signal',
+      why: "You can sell, you can pivot, you understand a client's pressure from the inside. Watch for the delegation and boundary lessons — many entrepreneurs lose hires by over-doing instead of scoping clean."
+    },
+    generalist: {
+      name: 'The Generalist Admin',
+      emoji: '📋',
+      color: '#7a6a8f',
+      tag: 'Excel-fluent, calendar-disciplined — but no specialty wedge yet.',
+      proceedRate: '~50%',
+      tier: 'Default profile',
+      why: "You're the safe hire — strong on productivity tools but losing to specialists on depth. SWAHG's job: help you pick one specialty (bookkeeping, inbox-zero, exec assistant) before the next interview."
+    },
+    fresh: {
+      name: 'The Fresh Starter',
+      emoji: '🌱',
+      color: '#a88d5e',
+      tag: 'Eager and early — your edge is teachability, not experience.',
+      proceedRate: '~30%',
+      tier: 'High potential',
+      why: "Less than 5% of the candidate pool starts where you are. The path is real but slower — handbook first, English first, then tools. Do not skip the orientation. Patience compounds here."
+    }
+  };
+
+  // -------- Scoring --------
+  // Each answer adds points to one or more archetypes. Highest score wins.
+  // Tiebreaker: if 'fresh' is in tools, fresh wins.
+  function scoreArchetype(a) {
+    const s = { polished:0, corporate:0, creative:0, entrepreneur:0, generalist:0, fresh:0 };
+
+    // Q1 — background (biggest single signal)
+    const bg = {
+      freelancer: { polished:3 },
+      corporate:  { corporate:3 },
+      business:   { entrepreneur:3 },
+      home:       { entrepreneur:1, fresh:1 },
+      none:       { fresh:3 }
+    }[a.background] || {};
+    for (const k in bg) s[k] += bg[k];
+
+    // Q2 — tools (multi). Each tool contributes to one or more archetypes.
+    const toolMap = {
+      office:   { corporate:1, generalist:2 },
+      design:   { creative:3 },
+      pm:       { polished:2, corporate:1 },
+      social:   { polished:2, creative:1, entrepreneur:1 },
+      biz:      { polished:2, entrepreneur:2 },
+      fresh:    { fresh:3 }
+    };
+    (a.tools || []).forEach(t => {
+      const m = toolMap[t] || {};
+      for (const k in m) s[k] += m[k];
+    });
+
+    // Q3 — strength
+    const strg = {
+      design:   { creative:3 },
+      organize: { generalist:3, corporate:1 },
+      talk:     { corporate:2, polished:1 },
+      sell:     { entrepreneur:3, polished:1 },
+      unsure:   { fresh:2 }
+    }[a.strength] || {};
+    for (const k in strg) s[k] += strg[k];
+
+    // Q4 — english on calls (lighter weight)
+    const eng = {
+      yes:       { polished:1, creative:1 },
+      improving: { corporate:1 },
+      text:      { fresh:1, generalist:1 }
+    }[a.english] || {};
+    for (const k in eng) s[k] += eng[k];
+
+    // Q5 — rate readiness
+    const rate = {
+      known:     { polished:3 },
+      entry:     { corporate:2, generalist:1 },
+      negotiate: { entrepreneur:3, polished:1 },
+      any:       { fresh:2, corporate:1 }
+    }[a.rate] || {};
+    for (const k in rate) s[k] += rate[k];
+
+    // Tiebreaker rules
+    // 1) If user said "fresh" in tools AND no paying-client background, force fresh
+    if ((a.tools || []).includes('fresh') && a.background !== 'freelancer') {
+      s.fresh += 2;
+    }
+    // 2) If background = freelancer AND rate = known, force polished
+    if (a.background === 'freelancer' && a.rate === 'known') {
+      s.polished += 2;
+    }
+
+    // Pick winner
+    let winner = 'generalist', max = -1;
+    for (const k in s) { if (s[k] > max) { max = s[k]; winner = k; } }
+    return { winner, scores: s };
+  }
 
   // -------- Routing tables --------
   const SWAHG = 'https://sites.google.com/view/swahg-openuniversity';
   const JOB_SHEET = 'https://docs.google.com/spreadsheets/d/1HqBfHi017TQcN4RPOrajpiWAD55x1yl2ijALg0Lq5LE/edit';
-  /* Registry-backed routing tables.
-     Per-lane lessons are slugs from window.SWAHG_LESSONS plus a lane-contextual `why`
-     (the why-line is tone-specific to the audience, so it overrides the registry's generic why). */
+
+  /* Strength → role-lane map (preserves the existing lesson + job-lane routing) */
+  const STRENGTH_TO_ROLE = {
+    design:   'content',
+    organize: 'admin',
+    talk:     'support',
+    sell:     'smm',
+    unsure:   'unsure'
+  };
+
   const ASYNC = {
     title: 'The No Calls VA Track',
     lead: "Because you told me calls aren't your strength, I'm sending you down the path 30% of Filipino freelancers go down — No Calls job roles. There are <strong>185 active jobs right now</strong> that never require you on a live English call. This is real, not a backup plan.",
@@ -528,7 +720,6 @@
         why: l.why || reg.why_this_lesson || ''
       };
     }
-    /* Fallback for non-lesson entries (stories, external pages) */
     return { url: l.url || '#', title: l.title || '(untitled)', status: 'external', why: l.why || '' };
   }
 
@@ -559,11 +750,11 @@
 
   function updateNextBtns() {
     const a = state.answers;
-    document.getElementById('b1').disabled = !a.english;
-    document.getElementById('b2').disabled = !a.time;
-    document.getElementById('b3').disabled = !a.role;
-    document.getElementById('b4').disabled = a.tools.length === 0;
-    document.getElementById('b5').disabled = !a.timing;
+    document.getElementById('b1').disabled = !a.background;
+    document.getElementById('b2').disabled = a.tools.length === 0;
+    document.getElementById('b3').disabled = !a.strength;
+    document.getElementById('b4').disabled = !a.english;
+    document.getElementById('b5').disabled = !a.rate;
   }
 
   function start() { goto(1); }
@@ -572,7 +763,6 @@
     document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
     document.getElementById(panels[step]).classList.add('active');
     state.step = step;
-    // Update progress bars (steps 1-5 → bars 0-4)
     Array.from(progressBars).forEach((bar, i) => {
       bar.className = '';
       if (step > 0 && i < step - 1) bar.classList.add('done');
@@ -584,31 +774,55 @@
   function finish() {
     const a = state.answers;
 
-    // Decide path: text-only English overrides role
+    // 1) Score archetype
+    const { winner, scores } = scoreArchetype(a);
+    const arch = ARCHETYPES[winner];
+
+    // 2) Derive role-lane from strength (English text-only overrides → ASYNC)
     let path;
     if (a.english === 'text') {
       path = ASYNC;
     } else {
-      path = ROLE_MAP[a.role] || ROLE_MAP.unsure;
+      const roleKey = STRENGTH_TO_ROLE[a.strength] || 'unsure';
+      path = ROLE_MAP[roleKey];
     }
 
+    // 3) Render archetype banner
+    const toolCount = (a.tools || []).filter(t => t !== 'fresh').length;
+    document.getElementById('archetypeArea').innerHTML = `
+      <div class="archetypeBanner" style="--archCol:${arch.color}">
+        <div class="archLabel">Your VA Archetype</div>
+        <span class="archEmoji">${arch.emoji}</span>
+        <h3>${arch.name}</h3>
+        <div class="archTag">${arch.tag}</div>
+        <div class="archStats">
+          <div class="k">Tier</div><div class="v">${arch.tier}</div>
+          <div class="k">Historical proceed rate</div><div class="v">${arch.proceedRate}</div>
+          <div class="k">Your tool count</div><div class="v">${toolCount} tool${toolCount===1?'':'s'}</div>
+          <div class="k">Background</div><div class="v">${labelBackground(a.background)}</div>
+        </div>
+        <div class="archWhy"><strong>Why this fits:</strong> ${arch.why}</div>
+      </div>
+    `;
+
+    // 4) Render lesson path
     document.getElementById('rTitle').textContent = path.title;
     document.getElementById('rLead').innerHTML = path.lead;
 
-    // Urgent banner if Q5 === urgent
+    // Urgent banners — recalibrated to use rate readiness instead of removed "timing"
     const ua = document.getElementById('urgentArea');
     ua.innerHTML = '';
-    if (a.timing === 'urgent') {
+    if (a.rate === 'any' && a.background !== 'freelancer') {
       ua.innerHTML = `<div class="urgentBanner">
-        <strong>Apply-mode active:</strong> You're in 2-week mode. Watch the first 2 lessons, then commit to applying to <strong>5 jobs this week</strong> from your job tab below. Don't watch every lesson before applying — that's a trap. Apply while you learn.
+        <strong>Pricing trap warning:</strong> Accepting "whatever they offer" is how new VAs land $2/hr ghost work. Watch lesson 1 below before you say yes to anyone — even if you're desperate.
       </div>`;
-    } else if (a.timing === 'learner' && a.time !== 'side') {
+    } else if (a.rate === 'known' && winner === 'polished') {
       ua.innerHTML = `<div class="urgentBanner">
-        <strong>Slow path activated:</strong> You said 3+ months — good. After your 3 lessons, walk through <a href="${SWAHG}/courses/freelancing-Jouney" style="color:var(--primary);text-decoration:underline">the full Freelancing Journey series</a> (6 lessons + 3 bonus tips). Then come back to apply.
+        <strong>Specialist mode:</strong> You already know your rate. Skip the "first client" lessons — use SWAHG to deepen one specialty and raise your ceiling.
       </div>`;
-    } else if (a.time === 'side') {
+    } else if (winner === 'fresh') {
       ua.innerHTML = `<div class="urgentBanner">
-        <strong>Side-hustle pace:</strong> These lessons are finishable in 15–30 min sittings. Do one per evening. No need to marathon — sustainability beats speed.
+        <strong>Patience mode:</strong> The handbook + English foundations are non-skippable for your archetype. Do not rush to apply — three rejections in week one will set you back further than two extra weeks of prep.
       </div>`;
     }
 
@@ -616,11 +830,11 @@
     const ll = document.getElementById('lessonList');
     ll.innerHTML = '';
 
-    // Prepend handbook if fresh
-    if (a.tools.includes('fresh')) {
+    // Prepend handbook if fresh archetype OR "fresh" tool
+    if (winner === 'fresh' || (a.tools || []).includes('fresh')) {
       ll.innerHTML += `<a class="lesson preq" href="${SWAHG}/courses/freelancer-essentials/handbook" target="_blank">
         <span class="num">0</span><span class="title">Open University Guidelines (start here first)</span>
-        <span class="why">You said you're starting fresh — read this orientation before your 3 lessons. 10 minutes.</span>
+        <span class="why">You're starting fresh — read this orientation before your 3 lessons. 10 minutes.</span>
       </a>`;
     }
 
@@ -638,11 +852,11 @@
       </${tag}>`;
     });
 
-    // Append bonus path if learner-mode AND not already pre-pended
-    if (a.timing === 'learner' && !a.tools.includes('fresh')) {
+    // Bonus: Freelancing Journey for the "negotiate" rate or polished archetype
+    if (winner === 'polished' || a.rate === 'negotiate') {
       ll.innerHTML += `<a class="lesson bonus" href="${SWAHG}/courses/freelancing-Jouney" target="_blank">
         <span class="num">+</span><span class="title">Bonus: The Freelancing Journey (6 lessons + 3 bonus tips)</span>
-        <span class="why">After your 3 core lessons — for the patient path.</span>
+        <span class="why">For your level — pricing, scope, and client architecture.</span>
       </a>`;
     }
 
@@ -654,7 +868,6 @@
       <a href="${path.jobUrl}" target="_blank">Open the live job sheet →</a>
     `;
 
-    // Next step
     document.getElementById('nextStep').innerHTML = `
       <div class="label">Your next move</div>
       <p>${path.nextStep}</p>
@@ -663,9 +876,19 @@
     goto(6);
   }
 
+  function labelBackground(bg) {
+    return {
+      freelancer: 'Already freelancing',
+      corporate:  'Office / BPO',
+      business:   'Past business owner',
+      home:       'Stay-at-home / between jobs',
+      none:       'No work experience yet'
+    }[bg] || '—';
+  }
+
   function restart() {
     state.step = 0;
-    state.answers = { english: null, time: null, role: null, tools: [], timing: null };
+    state.answers = { background: null, tools: [], strength: null, english: null, rate: null };
     document.querySelectorAll('.opt.selected').forEach(b => b.classList.remove('selected'));
     updateNextBtns();
     goto(0);

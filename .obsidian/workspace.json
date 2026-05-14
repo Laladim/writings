@@ -1,0 +1,195 @@
+{
+  "main": {
+    "id": "c651291a2c4c91e5",
+    "type": "split",
+    "children": [
+      {
+        "id": "34d93af851759651",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fa688401fe11ae46",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "src/content/stories/suffering-is-our-medicine.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "suffering-is-our-medicine"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "a2809039f6d2ee31",
+    "type": "split",
+    "children": [
+      {
+        "id": "53542cfd2c3af0dc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0dbeadc9e3a3e99b",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "5afa687e027763d1",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "c115895508527eb8",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "5fdc455943efd394",
+    "type": "split",
+    "children": [
+      {
+        "id": "ac44a34d71f1b4d6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "80be23136483ad13",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "src/content/stories/100-months-with-aj.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 100-months-with-aj"
+            }
+          },
+          {
+            "id": "9b67a97bc991b39b",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "src/content/stories/100-months-with-aj.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 100-months-with-aj"
+            }
+          },
+          {
+            "id": "a4bbd29bb30272fe",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "63e412d92f014864",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "4974ef1eea007aef",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "src/content/stories/100-months-with-aj.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 100-months-with-aj"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "fa688401fe11ae46",
+  "lastOpenFiles": [
+    "src/content/stories/10-years-ago-i-was-a-government-scholar.md",
+    "src/content/stories/suffering-is-our-medicine.md",
+    "src/content/stories/five-years-ago.md",
+    "src/content/stories/100-months-with-aj.md",
+    "src/content/reflections/the-fear-of-the-lord.md",
+    "src/content/guides/fake-it-till-you-make-it-no.md"
+  ]
+}
