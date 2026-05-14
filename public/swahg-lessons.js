@@ -648,10 +648,10 @@ window.SWAHG_LESSONS = {
      *  BUILT INTERACTIVE TOOLS
      * ════════════════════════════════════════════════════ */
     "find-your-path-quiz": {
-      title: "Find Your Path Quiz",
+      title: "Find My Archetype (Step 1 of Resume Builder)",
       stage: "warmup",
       status: "built",
-      url: "../swahg-start/",
+      url: "../swahg-resume-builder/",
       closes_va_gaps: [],
       ladders_to_roles: [],
       prerequisites: [],

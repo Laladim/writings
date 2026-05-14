@@ -213,9 +213,8 @@
     <div class="nav-links">
       <a href="../swahg/index.html">Home</a>
       <a href="../swahg-blueprint/index.html">Blueprint</a>
-      <a href="../swahg-start/index.html">Find My Path</a>
-      <a href="../swahg-curriculum/index.html" aria-current="page">My Curriculum</a>
       <a href="../swahg-resume-builder/index.html">Resume Builder</a>
+      <a href="../swahg-curriculum/index.html" aria-current="page">My Curriculum</a>
       <a href="https://sites.google.com/view/swahg-openuniversity/home" class="cta" target="_blank" rel="noopener">Live SWAHG ↗</a>
     </div>
   </div>
@@ -310,7 +309,7 @@
     <div class="output-actions">
       <button class="btn btn-primary" onclick="window.print()">📄 Print or Save as PDF</button>
       <a href="../swahg-blueprint/index.html" class="btn btn-ghost">See the Blueprint →</a>
-      <a href="../swahg-start/index.html" class="btn btn-ghost">Retake quiz</a>
+      <a href="../swahg-resume-builder/index.html" class="btn btn-ghost">Find my archetype</a>
     </div>
   </div>
 </section>
@@ -327,10 +326,10 @@
         <div style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--primary);font-weight:600;margin-bottom:4px">Open the Blueprint →</div>
         <div style="font-size:13px;color:var(--text-soft)">Visual map. 30+ boxes. Click any one to see lessons.</div>
       </a>
-      <a href="../swahg-start/index.html" style="background:var(--surface);border:1.5px solid var(--border);border-left:4px solid #f6a89c;border-radius:10px;padding:18px 20px;text-decoration:none;color:inherit;transition:all .15s" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.borderLeftColor='#f6a89c'">
+      <a href="../swahg-resume-builder/index.html" style="background:var(--surface);border:1.5px solid var(--border);border-left:4px solid #f6a89c;border-radius:10px;padding:18px 20px;text-decoration:none;color:inherit;transition:all .15s" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.borderLeftColor='#f6a89c'">
         <div style="font-size:11px;color:var(--accent-deep);font-weight:700;letter-spacing:.1em;margin-bottom:4px">DON'T KNOW WHERE TO START?</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--primary);font-weight:600;margin-bottom:4px">Take the 5-question quiz →</div>
-        <div style="font-size:13px;color:var(--text-soft)">3 minutes. Get matched to your 3 starter lessons.</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--primary);font-weight:600;margin-bottom:4px">Find my archetype →</div>
+        <div style="font-size:13px;color:var(--text-soft)">Step 1 of the Resume Builder maps you to one of 6 Filipino-VA archetypes.</div>
       </a>
       <a href="../swahg-resume-builder/index.html" style="background:var(--surface);border:1.5px solid var(--border);border-left:4px solid #fceea1;border-radius:10px;padding:18px 20px;text-decoration:none;color:inherit;transition:all .15s" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.borderLeftColor='#fceea1'">
         <div style="font-size:11px;color:var(--accent-deep);font-weight:700;letter-spacing:.1em;margin-bottom:4px">PLAN SKILLS + SEE JOBS</div>
@@ -346,7 +345,6 @@
   <p>SWAHG Open University is free, faith-warm, and built for the Filipino freelancer who hasn't said "I made it" yet. The lessons are the steps. Take the next one today.</p>
   <div>
     <a href="../swahg-blueprint/index.html" class="foot-link">The Blueprint</a>
-    <a href="../swahg-start/index.html" class="foot-link">Find Your Path Quiz</a>
     <a href="../swahg-resume-builder/index.html" class="foot-link">Resume Builder</a>
     <a href="https://sites.google.com/view/swahg-openuniversity/home" class="foot-link" target="_blank" rel="noopener">Live SWAHG ↗</a>
     <a href="../" class="foot-link">← Writings by Lala</a>
@@ -548,7 +546,7 @@ function renderOutput(grouped, stagesInOrder, summary){
   });
 
   if(!renderedAny){
-    stagesEl.innerHTML = `<div class="empty-state">We couldn't find a good match for that combination yet. Try a different role, or <a href="../swahg-start/index.html">take the Find Your Path quiz</a>.</div>`;
+    stagesEl.innerHTML = `<div class="empty-state">We couldn't find a good match for that combination yet. Try a different role, or <a href="../swahg-resume-builder/index.html">identify your archetype</a> in the Resume Builder.</div>`;
   }
 
   document.getElementById("output").classList.add("active");
