@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#4a2f8a">
+<meta name="robots" content="noindex">
+<title>Brand Identity — Writings by Lala</title>
+<meta name="description" content="Brand identity guidelines for Writings by Lala. Logo, palette, typography, voice, and application examples.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="wbl-logo-primary-light.png">
+<style>
+  :root {
+    /* Site tokens (match Base.astro) */
+    --bg: #faf8f4;
+    --paper: #fffdf8;
+    --ink: #1a1623;
+    --ink-soft: #4a4358;
+    --ink-faded: #7a7388;
+    --accent: #5a4a7a;
+    --accent-soft: #8a7aaa;
+    --gold-ui: #a07a3a;
+    --line: #e4ded2;
+
+    /* Logo palette — the mark itself */
+    --logo-purple: #4a2f8a;
+    --logo-purple-deep: #3a2070;
+    --logo-gold: #e0a830;
+    --logo-gold-deep: #b0801a;
+    --logo-cream: #faf2e2;
+    --logo-navy: #1a1530;
+
+    --shadow: 0 1px 2px rgba(30, 20, 40, 0.06), 0 8px 24px rgba(30, 20, 40, 0.05);
+    --shadow-hover: 0 2px 4px rgba(30, 20, 40, 0.08), 0 12px 32px rgba(30, 20, 40, 0.09);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 80px; }
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: clamp(16px, 1rem + 0.2vw, 18px);
+    line-height: 1.65;
+    color: var(--ink);
+    background: var(--bg);
+    overflow-wrap: break-word;
+  }
+  a { color: var(--accent); text-decoration: none; text-underline-offset: 3px; }
+  a:hover { text-decoration: underline; }
+  h1, h2, h3, h4 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; line-height: 1.2; letter-spacing: -0.01em; color: var(--ink); }
+  h1 { font-size: clamp(2.25rem, 1.5rem + 3vw, 4rem); margin: 0 0 0.5rem; }
+  h2 { font-size: clamp(1.75rem, 1.2rem + 1.5vw, 2.5rem); margin: 0 0 0.5rem; }
+  h3 { font-size: clamp(1.1rem, 1rem + 0.5vw, 1.35rem); margin: 0 0 0.5rem; font-family: 'Inter', sans-serif; font-weight: 600; letter-spacing: 0.01em; text-transform: uppercase; color: var(--ink-soft); font-size: 0.85rem; letter-spacing: 0.12em; }
+  p { margin: 0 0 1rem; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 clamp(1rem, 3vw, 2rem); }
+
+  /* ── Nav ── */
+  .site-nav {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(255, 253, 248, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-row {
+    display: flex; align-items: center; justify-content: space-between;
+    min-height: 64px; gap: 1rem;
+    padding-top: env(safe-area-inset-top);
+  }
+  .brand {
+    display: flex; align-items: baseline; gap: 0.5rem;
+    text-decoration: none; color: var(--ink);
+  }
+  .brand:hover { text-decoration: none; }
+  .brand-hand { font-family: 'Caveat', cursive; font-size: 1.8rem; color: var(--accent); line-height: 1; }
+  .brand-sub { font-family: 'Inter', sans-serif; font-size: 0.85rem; color: var(--ink-faded); letter-spacing: 0.02em; }
+  .main-nav { display: flex; gap: clamp(1rem, 3vw, 2rem); font-family: 'Inter', sans-serif; font-size: 0.95rem; }
+  .main-nav a { color: var(--ink-soft); padding: 0.5rem 0; min-height: 44px; display: inline-flex; align-items: center; }
+  .main-nav a[aria-current="page"] { color: var(--accent); font-weight: 600; }
+  @media (max-width: 520px) { .brand-sub { display: none; } }
+
+  /* ── Hero ── */
+  .hero {
+    padding: clamp(3rem, 8vw, 6rem) 0 clamp(2rem, 5vw, 4rem);
+    text-align: center;
+  }
+  .hero-logo {
+    max-width: min(420px, 70vw);
+    margin: 0 auto 2rem;
+    display: block;
+    filter: drop-shadow(0 8px 32px rgba(74, 47, 138, 0.12));
+  }
+  .hero-eyebrow {
+    font-family: 'Inter', sans-serif; font-size: 0.8rem;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink-faded); margin-bottom: 1rem;
+  }
+  .hero h1 { font-style: italic; }
+  .hero-meta {
+    font-family: 'Inter', sans-serif; font-size: 0.9rem;
+    color: var(--ink-faded); margin-top: 1rem;
+    display: inline-flex; gap: 0.5rem; align-items: center;
+  }
+  .hero-meta .dot { color: var(--line); }
+
+  /* ── Section ── */
+  section.brand-section {
+    padding: clamp(3rem, 6vw, 5rem) 0;
+    border-top: 1px solid var(--line);
+  }
+  .section-header { margin-bottom: 2.5rem; max-width: 700px; }
+  .section-header h2 { font-style: italic; }
+  .section-header .lede { color: var(--ink-soft); font-size: 1.05rem; margin-top: 0.5rem; }
+  .eyebrow {
+    font-family: 'Inter', sans-serif; font-size: 0.75rem;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 0.75rem;
+    display: inline-block;
+  }
+
+  /* ── Mark showcase ── */
+  .mark-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem; margin-bottom: 2rem;
+  }
+  .mark-card {
+    background: var(--paper); border: 1px solid var(--line);
+    border-radius: 12px; padding: 2rem; box-shadow: var(--shadow);
+    display: flex; flex-direction: column; align-items: center; gap: 1rem;
+  }
+  .mark-card.dark { background: var(--logo-navy); border-color: var(--logo-navy); }
+  .mark-card.dark .mark-label { color: var(--logo-cream); }
+  .mark-card.dark .mark-meta { color: rgba(250, 242, 226, 0.7); }
+  .mark-card img { max-width: 100%; max-height: 240px; object-fit: contain; }
+  .mark-label {
+    font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 600;
+    color: var(--ink); letter-spacing: 0.02em;
+  }
+  .mark-meta {
+    font-family: 'Inter', sans-serif; font-size: 0.78rem;
+    color: var(--ink-faded); text-align: center;
+  }
+  .mark-construction {
+    background: var(--paper); border: 1px solid var(--line);
+    border-radius: 12px; padding: 1.75rem;
+    margin-top: 1.5rem;
+  }
+  .mark-construction p { margin-bottom: 0.5rem; font-size: 0.95rem; }
+  .mark-construction strong { color: var(--accent); font-weight: 600; }
+
+  /* ── Clearspace ── */
+  .clearspace-figure {
+    background: var(--paper); border: 1px solid var(--line);
+    border-radius: 12px; padding: 2rem;
+    display: grid; grid-template-columns: 1fr; gap: 1.5rem;
+    align-items: center;
+    margin-top: 1.5rem;
+  }
+  @media (min-width: 720px) {
+    .clearspace-figure { grid-template-columns: 1fr 1fr; }
+  }
+  .clearspace-visual {
+    position: relative;
+    background: repeating-linear-gradient(45deg, transparent 0, transparent 8px, rgba(90, 74, 122, 0.05) 8px, rgba(90, 74, 122, 0.05) 16px);
+    padding: 2.5rem;
+    border-radius: 8px;
+    border: 1px dashed var(--accent-soft);
+  }
+  .clearspace-visual img { max-width: 100%; display: block; margin: 0 auto; }
+  .clearspace-notes ul { list-style: none; padding: 0; }
+  .clearspace-notes li {
+    padding: 0.5rem 0; border-bottom: 1px solid var(--line);
+    font-size: 0.95rem; display: flex; justify-content: space-between; gap: 1rem;
+  }
+  .clearspace-notes li:last-child { border-bottom: none; }
+  .clearspace-notes li span { font-family: 'Inter', sans-serif; font-size: 0.85rem; color: var(--ink-faded); font-weight: 500; }
+  .clearspace-notes li strong { color: var(--ink); font-weight: 600; }
+
+  /* ── Palette ── */
+  .palette-group { margin-bottom: 2.5rem; }
+  .palette-group h3 {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;
+    font-weight: 600; text-transform: none; letter-spacing: -0.01em;
+    color: var(--ink); font-style: italic; margin-bottom: 1rem;
+  }
+  .swatches {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+  .swatch {
+    background: var(--paper); border: 1px solid var(--line);
+    border-radius: 12px; overflow: hidden; box-shadow: var(--shadow);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .swatch:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+  .swatch-color { height: 110px; }
+  .swatch-info { padding: 1rem 1.25rem; }
+  .swatch-info .name {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 1.15rem; color: var(--ink); font-weight: 600; margin-bottom: 0.25rem;
+  }
+  .swatch-info .role {
+    font-family: 'Inter', sans-serif; font-size: 0.75rem;
+    color: var(--ink-faded); text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 0.6rem;
+  }
+  .swatch-info dl {
+    font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+    font-size: 0.78rem; color: var(--ink-soft); line-height: 1.6;
+  }
+  .swatch-info dl div { display: flex; justify-content: space-between; gap: 0.5rem; }
+  .swatch-info dt { color: var(--ink-faded); }
+  .swatch-info dd { color: var(--ink); }
+
+  /* ── Typography ── */
+  .type-stack { display: grid; gap: 1.5rem; }
+  .type-row {
+    background: var(--paper); border: 1px solid var(--line);
+    border-radius: 12px; padding: 2rem; box-shadow: var(--shadow);
+  }
+  .type-spec {
+    font-family: 'Inter', sans-serif; font-size: 0.78rem;
+    color: var(--ink-faded); text-transform: uppercase; letter-spacing: 0.12em;
+    margin-bottom: 0.5rem;
+  }
+  .type-name { font-size: 1rem; color: var(--accent); font-weight: 600; }
+  .type-sample.caveat { font-family: 'Caveat', cursive; font-size: 3rem; color: var(--accent); line-height: 1.1; }
+  .type-sample.cormorant { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 2.5rem; font-weight: 500; color: var(--ink); line-height: 1.2; }
+  .type-sample.cormorant-roman { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 500; color: var(--ink); line-height: 1.2; }
+  .type-sample.source { font-family: 'Source Serif 4', Georgia, serif; font-size: 1.1rem; color: var(--ink); line-height: 1.65; }
+  .type-sample.inter { font-family: 'Inter', sans-serif; font-size: 1rem; color: var(--ink); line-height: 1.5; }
+  .type-meta {
+    font-family: 'Inter', sans-serif; font-size: 0.85rem;
+    color: var(--ink-faded); margin-top: 0.75rem;
+  }
+
+  /* ── Voice ── */
+  .voice-card {
+    background: linear-gradient(135deg, var(--logo-purple) 0%, var(--logo-purple-deep) 100%);
+    color: var(--logo-cream); border-radius: 16px;
+    padding: clamp(2rem, 5vw, 3.5rem); box-shadow: var(--shadow);
+  }
+  .voice-card h2 { color: var(--logo-cream); font-style: italic; }
+  .voice-card .lede { color: rgba(250, 242, 226, 0.85); font-size: 1.05rem; }
+  .voice-pillars { margin-top: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+  .voice-pillar h4 {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    color: var(--logo-gold); font-size: 1.25rem; font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .voice-pillar p { color: rgba(250, 242, 226, 0.85); font-size: 0.95rem; }
+  .voice-rules {
+    margin-top: 2rem; padding-top: 1.5rem;
+    border-top: 1px solid rgba(250, 242, 226, 0.2);
+  }
+  .voice-rules h4 {
+    font-family: 'Inter', sans-serif; font-size: 0.85rem;
+    text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--logo-gold); margin-bottom: 1rem; font-weight: 600;
+  }
+  .voice-rules ul { list-style: none; padding: 0; font-family: 'Inter', sans-serif; }
+  .voice-rules li { padding: 0.4rem 0; font-size: 0.95rem; color: rgba(250, 242, 226, 0.92); }
+  .voice-rules li::before { content: "·"; color: var(--logo-gold); margin-right: 0.6rem; font-weight: 700; }
+
+  /* ── Application ── */
+  .mockup-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .mockup-card {
+    background: var(--paper); border: 1px solid var(--line);
+    border-radius: 12px; overflow: hidden; box-shadow: var(--shadow);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .mockup-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+  .mockup-card img { width: 100%; height: 240px; object-fit: cover; display: block; }
+  .mockup-card-info { padding: 1rem 1.25rem; }
+  .mockup-card-info .name {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 1.15rem; color: var(--ink); font-weight: 600; margin-bottom: 0.2rem;
+  }
+  .mockup-card-info .meta {
+    font-family: 'Inter', sans-serif; font-size: 0.78rem;
+    color: var(--ink-faded);
+  }
+
+  /* ── Do / Don't ── */
+  .rules-grid {
+    display: grid; grid-template-columns: 1fr; gap: 1.25rem;
+  }
+  @media (min-width: 720px) {
+    .rules-grid { grid-template-columns: 1fr 1fr; }
+  }
+  .rule-card {
+    background: var(--paper); border: 1px solid var(--line);
+    border-radius: 12px; padding: 1.5rem; box-shadow: var(--shadow);
+  }
+  .rule-card.do { border-left: 4px solid var(--accent); }
+  .rule-card.dont { border-left: 4px solid #c45a5a; }
+  .rule-card .label {
+    font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.15em;
+    margin-bottom: 0.75rem;
+  }
+  .rule-card.do .label { color: var(--accent); }
+  .rule-card.dont .label { color: #c45a5a; }
+  .rule-card ul { list-style: none; padding: 0; }
+  .rule-card li {
+    padding: 0.4rem 0; font-size: 0.95rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .rule-card li:last-child { border-bottom: none; }
+
+  /* ── Downloads ── */
+  .download-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+  .download-card {
+    background: var(--paper); border: 1px solid var(--line);
+    border-radius: 12px; padding: 1.25rem 1.5rem; box-shadow: var(--shadow);
+    transition: transform 0.15s, box-shadow 0.15s;
+    text-decoration: none; color: inherit; display: block;
+  }
+  .download-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); text-decoration: none; }
+  .download-card .filename {
+    font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+    font-size: 0.85rem; color: var(--accent); font-weight: 600;
+    margin-bottom: 0.3rem; word-break: break-all;
+  }
+  .download-card .desc { font-size: 0.85rem; color: var(--ink-soft); }
+  .download-card .badge {
+    display: inline-block; padding: 0.15rem 0.55rem; border-radius: 99px;
+    font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    background: var(--accent); color: var(--logo-cream);
+    margin-left: 0.5rem; vertical-align: middle;
+  }
+  .download-card .badge.pending { background: var(--gold-ui); }
+
+  /* ── Footer ── */
+  .doc-footer {
+    border-top: 1px solid var(--line); margin-top: 4rem;
+    padding: 2rem 0 calc(2rem + env(safe-area-inset-bottom));
+    font-family: 'Inter', sans-serif; font-size: 0.85rem;
+    color: var(--ink-faded); text-align: center;
+  }
+  .doc-footer .footer-row {
+    display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;
+  }
+  .doc-footer .dot { color: var(--ink-faded); }
+</style>
+</head>
+<body>
+  <header class="site-nav">
+    <div class="container nav-row">
+      <a href="/" class="brand">
+        <span class="brand-hand">Writings</span>
+        <span class="brand-sub">by Lala</span>
+      </a>
+      <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/library/">Library</a>
+        <a href="/ministry/">Ministry</a>
+        <a href="/brand/" aria-current="page">Brand</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ── Hero ── -->
+    <section class="hero container">
+      <img src="wbl-logo-primary-light.png" alt="Writings by Lala logo: a stylized L formed by a purple book cover and gold pages" class="hero-logo">
+      <div class="hero-eyebrow">Brand Identity</div>
+      <h1>Writings by Lala</h1>
+      <p class="hero-meta">
+        <span>Version 1</span>
+        <span class="dot">·</span>
+        <span>Last updated 2026-05-14</span>
+      </p>
+    </section>
+
+    <!-- ── The Mark ── -->
+    <section class="brand-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">The Mark</div>
+          <h2>A book opened, two stories held</h2>
+          <p class="lede">The mark is a single book seen from two angles. The standing cover and the lying pages share a corner — a purple cover wrapping into gold pages — with the wordmark integrated on the page face. The page-stack lines that wrap the corner read as one continuous binding: <em>two stories, one spine</em>.</p>
+        </div>
+
+        <div class="mark-grid">
+          <div class="mark-card">
+            <img src="wbl-logo-primary-light.png" alt="Writings by Lala logo on light background">
+            <div class="mark-label">Primary · Light</div>
+            <div class="mark-meta">Use on cream, white, and warm-paper backgrounds</div>
+          </div>
+          <div class="mark-card dark">
+            <img src="wbl-dark-variant.png" alt="Writings by Lala logo on dark background">
+            <div class="mark-label">Primary · Dark</div>
+            <div class="mark-meta">Cream cover + gold pages on deep navy. Use on rich purple, dark navy, or photographic backgrounds.</div>
+          </div>
+        </div>
+
+        <div class="mark-construction">
+          <h3 style="font-family: 'Inter', sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-soft); margin-bottom: 0.75rem;">Construction</h3>
+          <p><strong>Cover (vertical).</strong> The purple book cover stands up — height-dominant — establishing the vertical of the L.</p>
+          <p><strong>Pages (horizontal).</strong> The gold pages lie flat — width-dominant — forming the foot of the L.</p>
+          <p><strong>Wrapping pages.</strong> Three page-stack lines arc from the left edge of the cover, around the bottom-left corner, and along the bottom of the pages — proving they are <em>one</em> book, not two.</p>
+          <p><strong>Wordmark.</strong> <em>writings by lala</em> sits centered on the gold page surface in italic Cormorant Garamond — a quiet voice on the page face rather than a loud line below the mark.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Clearspace ── -->
+    <section class="brand-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">Clearspace &amp; Minimum Size</div>
+          <h2>Let the mark breathe</h2>
+          <p class="lede">Clearspace is measured by <em>x</em> — the height of the gold page band. Maintain at least <em>1x</em> of breathing room on every side. Below the minimum size, switch to the favicon.</p>
+        </div>
+
+        <div class="clearspace-figure">
+          <div class="clearspace-visual">
+            <img src="wbl-logo-primary-light.png" alt="Logo with clearspace zone illustrated by hatched pattern">
+          </div>
+          <div class="clearspace-notes">
+            <ul>
+              <li><strong>Clearspace</strong><span>1× page-band height, all four sides</span></li>
+              <li><strong>Minimum width — print</strong><span>32 mm</span></li>
+              <li><strong>Minimum width — web</strong><span>120 px</span></li>
+              <li><strong>Below 32 px / 12 mm</strong><span>Use favicon variant</span></li>
+              <li><strong>Anchor point</strong><span>Bottom-left inside corner of the L</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Palette ── -->
+    <section class="brand-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">Palette</div>
+          <h2>Royal purple, page gold, warm paper</h2>
+          <p class="lede">The brand runs on two palettes. The <strong>logo palette</strong> is saturated and ceremonial — used for the mark itself and high-impact print moments. The <strong>UI palette</strong> is calmer, warmer, and built for long-form reading on screen.</p>
+        </div>
+
+        <div class="palette-group">
+          <h3>Logo palette</h3>
+          <div class="swatches">
+            <article class="swatch">
+              <div class="swatch-color" style="background:#4a2f8a"></div>
+              <div class="swatch-info">
+                <div class="name">Royal Purple</div>
+                <div class="role">Logo cover · Primary</div>
+                <dl>
+                  <div><dt>HEX</dt><dd>#4a2f8a</dd></div>
+                  <div><dt>RGB</dt><dd>74, 47, 138</dd></div>
+                  <div><dt>CMYK</dt><dd>46 66 0 46</dd></div>
+                </dl>
+              </div>
+            </article>
+            <article class="swatch">
+              <div class="swatch-color" style="background:#3a2070"></div>
+              <div class="swatch-info">
+                <div class="name">Deep Purple</div>
+                <div class="role">Page lines · Wordmark</div>
+                <dl>
+                  <div><dt>HEX</dt><dd>#3a2070</dd></div>
+                  <div><dt>RGB</dt><dd>58, 32, 112</dd></div>
+                  <div><dt>CMYK</dt><dd>48 71 0 56</dd></div>
+                </dl>
+              </div>
+            </article>
+            <article class="swatch">
+              <div class="swatch-color" style="background:#e0a830"></div>
+              <div class="swatch-info">
+                <div class="name">Page Gold</div>
+                <div class="role">Logo pages · Accent</div>
+                <dl>
+                  <div><dt>HEX</dt><dd>#e0a830</dd></div>
+                  <div><dt>RGB</dt><dd>224, 168, 48</dd></div>
+                  <div><dt>CMYK</dt><dd>0 25 79 12</dd></div>
+                </dl>
+              </div>
+            </article>
+            <article class="swatch">
+              <div class="swatch-color" style="background:#b0801a"></div>
+              <div class="swatch-info">
+                <div class="name">Deep Gold</div>
+                <div class="role">Page edge · Borders</div>
+                <dl>
+                  <div><dt>HEX</dt><dd>#b0801a</dd></div>
+                  <div><dt>RGB</dt><dd>176, 128, 26</dd></div>
+                  <div><dt>CMYK</dt><dd>0 27 85 31</dd></div>
+                </dl>
+              </div>
+            </article>
+            <article class="swatch">
+              <div class="swatch-color" style="background:#faf2e2"></div>
+              <div class="swatch-info">
+                <div class="name">Page Cream</div>
+                <div class="role">Dark variant cover</div>
+                <dl>
+                  <div><dt>HEX</dt><dd>#faf2e2</dd></div>
+                  <div><dt>RGB</dt><dd>250, 242, 226</dd></div>
+                  <div><dt>CMYK</dt><dd>0 3 10 2</dd></div>
+                </dl>
+              </div>
+            </article>
+            <article class="swatch">
+              <div class="swatch-color" style="background:#1a1530"></div>
+              <div class="swatch-info">
+                <div class="name">Ink Navy</div>
+                <div class="role">Dark variant background</div>
+                <dl>
+                  <div><dt>HEX</dt><dd>#1a1530</dd></div>
+                  <div><dt>RGB</dt><dd>26, 21, 48</dd></div>
+                  <div><dt>CMYK</dt><dd>46 56 0 81</dd></div>
+                </dl>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="palette-group">
+          <h3>UI palette · website &amp; long-form</h3>
+          <div class="swatches">
+            <article class="swatch">
+              <div class="swatch-color" style="background:#5a4a7a"></div>
+              <div class="swatch-info">
+                <div class="name">Muted Purple</div>
+                <div class="role">Site accent · Links</div>
+                <dl>
+                  <div><dt>HEX</dt><dd>#5a4a7a</dd></div>
+                  <div><dt>RGB</dt><dd>90, 74, 122</dd></div>
+                  <div><dt>CMYK</dt><dd>26 39 0 52</dd></div>
+                </dl>
+              </div>
+            </article>
+            <article class="swatch">
+              <div class="swatch-color" style="background:#a07a3a"></div>
+              <div class="swatch-info">
+                <div class="name">Antique Gold</div>
+                <div class="role">Site gold · Emphasis</div>
+                <dl>
+                  <div><dt>HEX</dt><dd>#a07a3a</dd></div>
+                  <div><dt>RGB</dt><dd>160, 122, 58</dd></div>
+                  <div><dt>CMYK</dt><dd>0 24 64 37</dd></div>
+                </dl>
+              </div>
+            </article>
+            <article class="swatch">
+              <div class="swatch-color" style="background:#faf8f4"></div>
+              <div class="swatch-info">
+                <div class="name">Warm Paper</div>
+                <div class="role">Page background</div>
+                <dl>
+                  <div><dt>HEX</dt><dd>#faf8f4</dd></div>
+                  <div><dt>RGB</dt><dd>250, 248, 244</dd></div>
+                  <div><dt>CMYK</dt><dd>0 1 2 2</dd></div>
+                </dl>
+              </div>
+            </article>
+            <article class="swatch">
+              <div class="swatch-color" style="background:#1a1623"></div>
+              <div class="swatch-info">
+                <div class="name">Body Ink</div>
+                <div class="role">Body text</div>
+                <dl>
+                  <div><dt>HEX</dt><dd>#1a1623</dd></div>
+                  <div><dt>RGB</dt><dd>26, 22, 35</dd></div>
+                  <div><dt>CMYK</dt><dd>26 37 0 86</dd></div>
+                </dl>
+              </div>
+            </article>
+            <article class="swatch">
+              <div class="swatch-color" style="background:#4a4358"></div>
+              <div class="swatch-info">
+                <div class="name">Soft Ink</div>
+                <div class="role">Secondary text</div>
+                <dl>
+                  <div><dt>HEX</dt><dd>#4a4358</dd></div>
+                  <div><dt>RGB</dt><dd>74, 67, 88</dd></div>
+                  <div><dt>CMYK</dt><dd>16 24 0 65</dd></div>
+                </dl>
+              </div>
+            </article>
+            <article class="swatch">
+              <div class="swatch-color" style="background:#e4ded2"></div>
+              <div class="swatch-info">
+                <div class="name">Paper Edge</div>
+                <div class="role">Lines · Borders</div>
+                <dl>
+                  <div><dt>HEX</dt><dd>#e4ded2</dd></div>
+                  <div><dt>RGB</dt><dd>228, 222, 210</dd></div>
+                  <div><dt>CMYK</dt><dd>0 3 8 11</dd></div>
+                </dl>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="mark-construction" style="margin-top: 0.5rem;">
+          <p style="font-size: 0.9rem;"><strong>Print note.</strong> CMYK values above are software approximations. For premium print runs (letterpress invitations, foil-stamped covers, branded packaging), request a Pantone match from your print vendor using the HEX reference. Royal Purple is closest to <em>PMS 2685 C</em>; Page Gold is closest to <em>PMS 7563 C</em>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Typography ── -->
+    <section class="brand-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">Typography</div>
+          <h2>Four voices on the page</h2>
+          <p class="lede">Four typefaces, each with a job. The handwritten wordmark says <em>this is personal</em>. The serif italics say <em>this is literary</em>. The body serif carries long-form reading. The sans handles UI and metadata.</p>
+        </div>
+
+        <div class="type-stack">
+          <article class="type-row">
+            <div class="type-spec">Display wordmark · <span class="type-name">Caveat</span></div>
+            <div class="type-sample caveat">Writings</div>
+            <p class="type-meta">Used only for the “Writings” word in the site header. Hand-written warmth. Never as body text. Weight: 500–600.</p>
+          </article>
+
+          <article class="type-row">
+            <div class="type-spec">Logo wordmark + headings · <span class="type-name">Cormorant Garamond</span> (italic)</div>
+            <div class="type-sample cormorant">writings by lala</div>
+            <div class="type-sample cormorant-roman" style="font-style: normal; margin-top: 0.5rem;">A library for the long haul</div>
+            <p class="type-meta">Italic 600 for the logo wordmark and section headers. Roman 500 for h1/h2 on inner pages. High-contrast literary serif. Pairs with Source Serif 4.</p>
+          </article>
+
+          <article class="type-row">
+            <div class="type-spec">Body · <span class="type-name">Source Serif 4</span></div>
+            <div class="type-sample source">She wrote because the page asked her to — not because anyone was watching. The page is patient. It waits while you find the right word, the right beat, the right turn. And when you have circled the thought enough times, it lets you set it down.</div>
+            <p class="type-meta">Optical-sized serif optimized for long-form reading. Body text 16–18 px / 1.65 line-height. Pairs with Cormorant headings for editorial calm.</p>
+          </article>
+
+          <article class="type-row">
+            <div class="type-spec">UI &amp; metadata · <span class="type-name">Inter</span></div>
+            <div class="type-sample inter">Library · Ministry · About — clean, unobtrusive, high-readability for navigation and labels.</div>
+            <p class="type-meta">Sans-serif for navigation, captions, eyebrow labels, and metadata. Weight 400–600. Letter-spacing +0.02em for uppercase labels.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Voice ── -->
+    <section class="brand-section">
+      <div class="container">
+        <div class="voice-card">
+          <div class="eyebrow" style="color: var(--logo-gold);">Voice &amp; Tone</div>
+          <h2>Warm authority. Quiet faith. No corporate.</h2>
+          <p class="lede">Writings by Lala is a personal-brand publication. Every post follows a 7-beat structure: <em>vulnerability → scene → inner critic → empathy pivot → lesson via story → faith anchor → warm invitation</em>. The voice is the woman who has been there — not the expert who has read about it.</p>
+
+          <div class="voice-pillars">
+            <div class="voice-pillar">
+              <h4>Specific, not abstract</h4>
+              <p>Open with a raw sentence — a body, a time, a place. Never a thesis or a question to the reader.</p>
+            </div>
+            <div class="voice-pillar">
+              <h4>Quoted, not summarized</h4>
+              <p>When the inner critic speaks, quote her sentences. Don’t describe what she said — let her say it.</p>
+            </div>
+            <div class="voice-pillar">
+              <h4>Invited, not sold</h4>
+              <p>End with a today-sized action the reader can take. Never “subscribe now,” never “join my community.” A warm invitation, quietly placed.</p>
+            </div>
+            <div class="voice-pillar">
+              <h4>Faith as anchor</h4>
+              <p>Scripture and signature phrases are applied to the lesson, not cited as decoration. Three anchors: <em>identity as royalty</em>, <em>embracing hardship</em>, <em>work as worship</em>.</p>
+            </div>
+          </div>
+
+          <div class="voice-rules">
+            <h4>Mechanical rules (auto pre-check)</h4>
+            <ul>
+              <li>No em-dashes in prose. Use commas, periods, semicolons, or colons. The signature “— Lala” is the only exception.</li>
+              <li>English only. Tagalog and Taglish must be translated.</li>
+              <li>No corporate language: <em>leverage, utilize, synergize, circle back, deep-dive, move the needle</em>.</li>
+              <li>No hard CTAs: <em>subscribe now, sign up, don’t miss out, click below, tag a friend</em>.</li>
+              <li>Frontmatter date is real and current.</li>
+            </ul>
+          </div>
+
+          <p style="margin-top: 1.5rem; font-size: 0.9rem; color: rgba(250, 242, 226, 0.7);">Full voice doctrine: <a href="https://github.com/Laladim/Life-Dashboard/blob/master/personal-skills/writings-by-lala/personas/writings-by-lala-critic.md" style="color: var(--logo-gold); text-decoration: underline;">writings-by-lala-critic.md</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Application ── -->
+    <section class="brand-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">Application</div>
+          <h2>The mark in the world</h2>
+          <p class="lede">Six application studies showing the mark in its natural habitats — paper, leather, ceramic, fabric, screen. The mark adapts to surface, the surface does not adapt to the mark.</p>
+        </div>
+
+        <div class="mockup-grid">
+          <div class="mockup-card">
+            <img src="wbl-mockup-1-journal.png" alt="Logo embossed on a leather journal cover">
+            <div class="mockup-card-info">
+              <div class="name">Leather journal</div>
+              <div class="meta">Foil-stamped on cordovan leather. Use foil for the gold; deboss the purple.</div>
+            </div>
+          </div>
+          <div class="mockup-card">
+            <img src="wbl-mockup-2-businesscard.png" alt="Logo on a business card">
+            <div class="mockup-card-info">
+              <div class="name">Business card</div>
+              <div class="meta">Cream stock, letterpress. Mark in corner; details set in Inter.</div>
+            </div>
+          </div>
+          <div class="mockup-card">
+            <img src="wbl-mockup-3-mug.png" alt="Logo on a ceramic mug">
+            <div class="mockup-card-info">
+              <div class="name">Ceramic mug</div>
+              <div class="meta">Single-color decal (deep purple) on cream glaze.</div>
+            </div>
+          </div>
+          <div class="mockup-card">
+            <img src="wbl-mockup-4-tote.png" alt="Logo on a canvas tote bag">
+            <div class="mockup-card-info">
+              <div class="name">Canvas tote</div>
+              <div class="meta">Screen-printed on natural cotton. Two-color spot.</div>
+            </div>
+          </div>
+          <div class="mockup-card">
+            <img src="wbl-mockup-5-letterhead.png" alt="Logo on letterhead stationery">
+            <div class="mockup-card-info">
+              <div class="name">Letterhead</div>
+              <div class="meta">Top-left anchor; address in Inter; signature line in Cormorant italic.</div>
+            </div>
+          </div>
+          <div class="mockup-card">
+            <img src="wbl-mockup-6-browser.png" alt="Logo in a browser context">
+            <div class="mockup-card-info">
+              <div class="name">Site header</div>
+              <div class="meta">Favicon at 32 px; full mark suppressed in nav (handwritten “Writings” substitutes).</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Do / Don't ── -->
+    <section class="brand-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">Rules</div>
+          <h2>What protects the mark</h2>
+        </div>
+
+        <div class="rules-grid">
+          <article class="rule-card do">
+            <div class="label">Do</div>
+            <ul>
+              <li>Place on warm cream, ivory, or natural paper backgrounds for the primary variant.</li>
+              <li>Reserve the dark variant for deep navy, rich purple, or photographic dark surfaces.</li>
+              <li>Keep at least 1× page-band of clearspace on every side.</li>
+              <li>Use the favicon variant below 32 px width.</li>
+              <li>Print with Pantone match for foil-stamped or letterpress runs.</li>
+              <li>Pair with Cormorant italic headings and Source Serif 4 body.</li>
+            </ul>
+          </article>
+          <article class="rule-card dont">
+            <div class="label">Don’t</div>
+            <ul>
+              <li>Don’t recolor the cover or pages outside the documented palette.</li>
+              <li>Don’t stretch, skew, or rotate the mark. The L is the L.</li>
+              <li>Don’t add drop shadows, glows, gradients, or 3D bevels beyond the existing rendering.</li>
+              <li>Don’t place the mark on busy photographic backgrounds without a cream or navy plate behind it.</li>
+              <li>Don’t pair with neon, saturated brights, or corporate blue palettes.</li>
+              <li>Don’t separate the wordmark from the mark — they ship together.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Downloads ── -->
+    <section class="brand-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">Asset library</div>
+          <h2>Files for the kit</h2>
+          <p class="lede">All approved assets live in this folder. Right-click any tile to save the file.</p>
+        </div>
+
+        <div class="palette-group">
+          <h3>Logo masters</h3>
+          <div class="download-grid">
+            <a class="download-card" href="wbl-logo-primary-light.png" download>
+              <div class="filename">wbl-logo-primary-light.png<span class="badge">Master</span></div>
+              <div class="desc">Primary logo, light background. 1024×1024 PNG, 296 KB. Use for everything until SVG is finalized.</div>
+            </a>
+            <a class="download-card" href="wbl-dark-variant.png" download>
+              <div class="filename">wbl-dark-variant.png<span class="badge">Master</span></div>
+              <div class="desc">Dark-background variant. Cream cover + gold pages on deep navy. 1024×1024 PNG, 299 KB.</div>
+            </a>
+            <a class="download-card" href="wbl-logo-light.svg" download>
+              <div class="filename">wbl-logo-light.svg<span class="badge">Ready</span></div>
+              <div class="desc">Vector version, light background. Auto-traced from the approved PNG via vtracer (poster preset, spline mode). 148 KB.</div>
+            </a>
+            <a class="download-card" href="wbl-logo-dark-vector.svg" download>
+              <div class="filename">wbl-logo-dark-vector.svg<span class="badge">Ready</span></div>
+              <div class="desc">Vector version, dark background. Auto-traced via vtracer. 773 KB.</div>
+            </a>
+          </div>
+        </div>
+
+        <div class="palette-group">
+          <h3>Application studies</h3>
+          <div class="download-grid">
+            <a class="download-card" href="wbl-mockup-1-journal.png" download>
+              <div class="filename">wbl-mockup-1-journal.png</div>
+              <div class="desc">Leather journal application study. 1024×1024 PNG.</div>
+            </a>
+            <a class="download-card" href="wbl-mockup-2-businesscard.png" download>
+              <div class="filename">wbl-mockup-2-businesscard.png</div>
+              <div class="desc">Business card application study.</div>
+            </a>
+            <a class="download-card" href="wbl-mockup-3-mug.png" download>
+              <div class="filename">wbl-mockup-3-mug.png</div>
+              <div class="desc">Ceramic mug application study.</div>
+            </a>
+            <a class="download-card" href="wbl-mockup-4-tote.png" download>
+              <div class="filename">wbl-mockup-4-tote.png</div>
+              <div class="desc">Canvas tote application study.</div>
+            </a>
+            <a class="download-card" href="wbl-mockup-5-letterhead.png" download>
+              <div class="filename">wbl-mockup-5-letterhead.png</div>
+              <div class="desc">Letterhead application study.</div>
+            </a>
+            <a class="download-card" href="wbl-mockup-6-browser.png" download>
+              <div class="filename">wbl-mockup-6-browser.png</div>
+              <div class="desc">Browser / site header application study.</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="doc-footer">
+    <div class="container footer-row">
+      <span>© <script>document.write(new Date().getFullYear())</script> Lala</span>
+      <span class="dot">·</span>
+      <span>Brand Identity v1</span>
+      <span class="dot">·</span>
+      <span>For the glory of God.</span>
+    </div>
+  </footer>
+</body>
+</html>
