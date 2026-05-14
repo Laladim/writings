@@ -24,7 +24,7 @@ The publisher reads `/tmp/rodge-jobs.jsonl`, merges with the canonical Google Sh
   "Social Media Manager": 24,
   "Content Specialist": 20,
   "Community Manager": 5,
-  "SEO": 1,
+  "SEO": 2,
   "Virtual Assistant": 24,
   "Executive Assistant": 8
 }

@@ -18,6 +18,8 @@
   "skill_match_count": 5,
   "hard_knockouts": "",
   "fit_score": 89,
+  "newbie_score": 0,
+  "is_newbie_friendly": false,
   "newbie_friendly": true,
   "why_it_fits": "Admin Assistant match. 5 skills: google workspace, microsoft office, excel, outlook, word. Possibly PH-OK (Multi-country incl US). Part-time - matches IC status",
   "why_it_might_not": "Salary not disclosed",

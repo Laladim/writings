@@ -18,6 +18,8 @@
   "skill_match_count": 2,
   "hard_knockouts": "",
   "fit_score": 73,
+  "newbie_score": 35,
+  "is_newbie_friendly": false,
   "newbie_friendly": true,
   "why_it_fits": "Content Creator match. 2 skills: linkedin, youtube. PH-eligible (Worldwide)",
   "why_it_might_not": "Salary not disclosed",

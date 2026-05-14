@@ -18,6 +18,8 @@
   "skill_match_count": 3,
   "hard_knockouts": "",
   "fit_score": 50,
+  "newbie_score": 60,
+  "is_newbie_friendly": true,
   "newbie_friendly": true,
   "why_it_fits": "3 skills: google sheets, excel, word. PH-eligible (Worldwide)",
   "why_it_might_not": "",

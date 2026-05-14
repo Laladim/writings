@@ -18,6 +18,8 @@
   "skill_match_count": 6,
   "hard_knockouts": "",
   "fit_score": 92,
+  "newbie_score": 0,
+  "is_newbie_friendly": false,
   "newbie_friendly": true,
   "why_it_fits": "Virtual Assistant match. 6 skills: google workspace, crm, excel, inbound, customer service. Possibly PH-OK (Multi-country incl US)",
   "why_it_might_not": "Salary not disclosed",

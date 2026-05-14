@@ -18,6 +18,8 @@
   "skill_match_count": 5,
   "hard_knockouts": "",
   "fit_score": 85,
+  "newbie_score": 0,
+  "is_newbie_friendly": false,
   "newbie_friendly": true,
   "why_it_fits": "Social Media Manager match. 5 skills: linkedin, instagram, youtube, saas, social media. Possibly PH-OK (US workplace listed)",
   "why_it_might_not": "US workplace listed - confirm PH eligibility before applying",

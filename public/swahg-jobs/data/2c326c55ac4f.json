@@ -18,6 +18,8 @@
   "skill_match_count": 4,
   "hard_knockouts": "",
   "fit_score": 53,
+  "newbie_score": 40,
+  "is_newbie_friendly": false,
   "newbie_friendly": true,
   "why_it_fits": "4 skills: youtube, crm, excel, saas. PH-eligible (Worldwide)",
   "why_it_might_not": "Salary not disclosed",

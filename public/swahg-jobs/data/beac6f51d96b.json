@@ -18,6 +18,8 @@
   "skill_match_count": 4,
   "hard_knockouts": "",
   "fit_score": 85,
+  "newbie_score": 0,
+  "is_newbie_friendly": false,
   "newbie_friendly": true,
   "why_it_fits": "Admin Assistant match. 4 skills: microsoft office, outlook, inbound, social media. PH-eligible (Worldwide (text))",
   "why_it_might_not": "Senior level - may want more years",

@@ -18,6 +18,8 @@
   "skill_match_count": 0,
   "hard_knockouts": "",
   "fit_score": 55,
+  "newbie_score": 0,
+  "is_newbie_friendly": false,
   "newbie_friendly": true,
   "why_it_fits": "Content Creator match. Possibly PH-OK (US workplace listed)",
   "why_it_might_not": "US workplace listed - confirm PH eligibility before applying. Salary not disclosed",

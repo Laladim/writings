@@ -18,6 +18,8 @@
   "skill_match_count": 4,
   "hard_knockouts": "",
   "fit_score": 83,
+  "newbie_score": 45,
+  "is_newbie_friendly": false,
   "newbie_friendly": true,
   "why_it_fits": "Content Creator match. 4 skills: google sheets, excel, word, lead generation. PH-eligible (Worldwide). Contract - matches IC status",
   "why_it_might_not": "",

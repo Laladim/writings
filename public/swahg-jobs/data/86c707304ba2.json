@@ -18,6 +18,8 @@
   "skill_match_count": 9,
   "hard_knockouts": "",
   "fit_score": 92,
+  "newbie_score": 0,
+  "is_newbie_friendly": false,
   "newbie_friendly": true,
   "why_it_fits": "Content Creator match. 9 skills: linkedin, instagram, tiktok, youtube, excel. Possibly PH-OK (Multi-country incl US)",
   "why_it_might_not": "Salary not disclosed",

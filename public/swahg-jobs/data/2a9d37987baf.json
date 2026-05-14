@@ -18,6 +18,8 @@
   "skill_match_count": 5,
   "hard_knockouts": "",
   "fit_score": 87,
+  "newbie_score": 0,
+  "is_newbie_friendly": false,
   "newbie_friendly": true,
   "why_it_fits": "Social Media Manager match. 5 skills: linkedin, hootsuite, buffer, sprout social, social media. Possibly PH-OK (Multi-country incl US)",
   "why_it_might_not": "Salary not disclosed",

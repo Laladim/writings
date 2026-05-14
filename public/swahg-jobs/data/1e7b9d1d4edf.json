@@ -18,6 +18,8 @@
   "skill_match_count": 5,
   "hard_knockouts": "",
   "fit_score": 58,
+  "newbie_score": 50,
+  "is_newbie_friendly": false,
   "newbie_friendly": true,
   "why_it_fits": "5 skills: facebook, instagram, tiktok, youtube, word. PH-eligible (Worldwide). Contract - matches IC status",
   "why_it_might_not": "Salary not disclosed",

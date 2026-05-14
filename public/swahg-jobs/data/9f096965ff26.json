@@ -18,6 +18,8 @@
   "skill_match_count": 10,
   "hard_knockouts": "",
   "fit_score": 98,
+  "newbie_score": 0,
+  "is_newbie_friendly": false,
   "newbie_friendly": true,
   "why_it_fits": "Social Media Manager match. 10 skills: instagram, twitter, tiktok, youtube, excel. PH-eligible (Worldwide (text))",
   "why_it_might_not": "",
