@@ -121,11 +121,17 @@ const { title, description = 'Writings by Lala — a content library for the lon
       }
       .brand-hand { font-size: 1.8rem; color: var(--accent); line-height: 1; }
       .brand-sub { font-size: 0.85rem; color: var(--ink-faded); letter-spacing: 0.02em; }
-      .main-nav { display: flex; gap: clamp(1rem, 3vw, 2rem); font-size: 0.95rem; }
+      .main-nav { display: flex; gap: clamp(1rem, 3vw, 2rem); font-size: 0.95rem; flex-wrap: wrap; }
       .main-nav a { color: var(--ink-soft); padding: 0.5rem 0; min-height: 44px; display: inline-flex; align-items: center; }
       .main-nav a:hover { color: var(--accent); text-decoration: none; }
       @media (max-width: 520px) {
         .brand-sub { display: none; }
+      }
+      @media (max-width: 720px) {
+        .nav-row { flex-wrap: wrap; min-height: 0; gap: 0.5rem; padding-top: calc(0.5rem + env(safe-area-inset-top)); padding-bottom: 0.25rem; }
+        .brand-hand { font-size: 1.5rem; }
+        .main-nav { width: 100%; justify-content: space-between; gap: 0.5rem; font-size: 0.9rem; }
+        .main-nav a { padding: 0.25rem 0; min-height: 36px; }
       }
 
       .site-footer {
