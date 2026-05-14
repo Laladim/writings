@@ -4,6 +4,7 @@ type: "story"
 topics: ["workstation-setup", "freelancing", "health"]
 date: 2022-10-08
 description: "I work at three in the morning sometimes. The desk lamp makes a small circle on my keyboard. AJ is sleeping. This is the story of how the kitchen table became this chair."
+image: "https://res.cloudinary.com/dimapmlre/image/upload/v1778779740/state-heroes/writings-v1-from-the-kitchen-table.jpg"
 ---
 
 I work at three in the morning sometimes.
