@@ -204,7 +204,7 @@
     "why_it_might_not": "",
     "archetype_labels": "Creative Specialist, Solo Entrepreneur, Polished Freelancer",
     "quality_label": "Good match",
-    "quality_reasons": "likely PH-friendly; pay listed; freelance-friendly; clear posting details"
+    "quality_reasons": "likely PH-friendly; pay listed; freelance-friendly"
   },
   {
     "id": "e4f0e85b1a8e",
@@ -365,7 +365,7 @@
     "why_it_might_not": "",
     "archetype_labels": "Generalist Admin, Corporate Transitioner, Fresh Starter",
     "quality_label": "Good match",
-    "quality_reasons": "likely PH-friendly; pay listed; clear posting details"
+    "quality_reasons": "likely PH-friendly; pay listed"
   },
   {
     "id": "38a869f02fd3",
@@ -457,7 +457,7 @@
     "why_it_might_not": "",
     "archetype_labels": "Creative Specialist, Solo Entrepreneur, Fresh Starter",
     "quality_label": "Good match",
-    "quality_reasons": "likely PH-friendly; pay listed; clear posting details"
+    "quality_reasons": "likely PH-friendly; pay listed"
   },
   {
     "id": "50cea1d89883",
@@ -1216,7 +1216,7 @@
     "why_it_might_not": "US workplace listed - confirm PH eligibility before applying",
     "archetype_labels": "Generalist Admin, Corporate Transitioner, Fresh Starter",
     "quality_label": "Check eligibility",
-    "quality_reasons": "verify PH eligibility; pay listed; clear posting details"
+    "quality_reasons": "verify PH eligibility; pay listed"
   },
   {
     "id": "ddb572c8aa71",
@@ -1308,7 +1308,7 @@
     "why_it_might_not": "Senior level - may want more years. Salary not disclosed",
     "archetype_labels": "Generalist Admin, Corporate Transitioner, Fresh Starter",
     "quality_label": "Good match",
-    "quality_reasons": "likely PH-friendly; clear posting details"
+    "quality_reasons": "likely PH-friendly"
   },
   {
     "id": "844d21f30bfa",
@@ -1446,7 +1446,7 @@
     "why_it_might_not": "",
     "archetype_labels": "Generalist Admin, Corporate Transitioner, Fresh Starter",
     "quality_label": "Good match",
-    "quality_reasons": "likely PH-friendly; pay listed; clear posting details"
+    "quality_reasons": "likely PH-friendly; pay listed"
   },
   {
     "id": "51618592b604",
@@ -1469,7 +1469,7 @@
     "why_it_might_not": "",
     "archetype_labels": "Generalist Admin, Corporate Transitioner, Fresh Starter",
     "quality_label": "Good match",
-    "quality_reasons": "likely PH-friendly; pay listed; clear posting details"
+    "quality_reasons": "likely PH-friendly; pay listed"
   },
   {
     "id": "d8bd9780d3af",
@@ -1515,7 +1515,7 @@
     "why_it_might_not": "Salary not disclosed",
     "archetype_labels": "Generalist Admin, Corporate Transitioner, Fresh Starter",
     "quality_label": "Good match",
-    "quality_reasons": "likely PH-friendly; clear posting details"
+    "quality_reasons": "likely PH-friendly"
   },
   {
     "id": "94ad414f9cdb",
@@ -1561,7 +1561,7 @@
     "why_it_might_not": "",
     "archetype_labels": "Generalist Admin, Corporate Transitioner, Fresh Starter",
     "quality_label": "Good match",
-    "quality_reasons": "likely PH-friendly; pay listed; clear posting details"
+    "quality_reasons": "likely PH-friendly; pay listed"
   },
   {
     "id": "a11efd83606a",
@@ -1630,7 +1630,7 @@
     "why_it_might_not": "Wants 6+ yrs experience",
     "archetype_labels": "Generalist Admin, Corporate Transitioner, Fresh Starter",
     "quality_label": "Good match",
-    "quality_reasons": "likely PH-friendly; pay listed; clear posting details"
+    "quality_reasons": "likely PH-friendly; pay listed"
   },
   {
     "id": "749fafcafe39",
@@ -1837,7 +1837,7 @@
     "why_it_might_not": "Senior level - may want more years",
     "archetype_labels": "Generalist Admin, Corporate Transitioner, Fresh Starter",
     "quality_label": "Good match",
-    "quality_reasons": "PH-friendly; pay listed; clear posting details"
+    "quality_reasons": "PH-friendly; pay listed"
   },
   {
     "id": "2a9cd2e9c0fc",
@@ -1860,7 +1860,7 @@
     "why_it_might_not": "US workplace listed - confirm PH eligibility before applying. Salary not disclosed",
     "archetype_labels": "Generalist Admin, Corporate Transitioner, Fresh Starter",
     "quality_label": "Check eligibility",
-    "quality_reasons": "verify PH eligibility; clear posting details"
+    "quality_reasons": "verify PH eligibility"
   },
   {
     "id": "f575ff58fafc",

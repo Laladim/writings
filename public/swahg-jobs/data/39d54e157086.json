@@ -26,7 +26,7 @@
   "apply_url": "https://recruiting.paylocity.com/Recruiting/Jobs/Details/2007805",
   "ats_platform": "paylocity",
   "industry": "Beverages, Consumer Goods",
-  "about_the_company": "window.dataLayer = [{\"recruiting_module_number\":null,\"global_environment\":\"PRODPROD\",\"product_type\":\"Talent\",\"product_type_detail\":\"Recruiting\",\"platform\":\"web\",\"version\":\"26.4.2.484\"}]; \r\n // \r\n (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\r\n new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\r\n j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\r\n 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\r\n })(window,document,'script','dataLayer','GTM-NXMFCP7');\r\n // \r\n // \r\n (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\r\n new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\r\n j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\r\n 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\r\n })(window,document,'script','dataLayer','GTM-NCS49ZS');\r\n //",
+  "about_the_company": null,
   "position_overview": "We're sorry, that job does not exist or is not currently active.",
   "key_responsibilities": null,
   "qualifications": null,

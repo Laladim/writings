@@ -27,14 +27,14 @@
   "ats_platform": "adp",
   "industry": "Legal Services",
   "about_the_company": null,
-  "position_overview": "#wfn_body {\n background-attachment: fixed;\n background-size: cover;\n background-color: var(--content-bg-color);\n font-family: var(--font-family-base);\n font-size: var(--font-size-base);\n height: auto;\n min-height: 100%;\n width: 100%;\n padding: 0;\n cursor: default;\n }\n #recPageLoadWaitingIndicator {\n display: flex;\n z-index: 1000;\n justify-content: center;\n align-items: center;\n left: 0;\n top: 0;\n position: absolute;\n height: 100%;\n width: 100%;\n padding-top: 50px;\n color: #1a8099;\n }",
+  "position_overview": null,
   "key_responsibilities": null,
   "qualifications": null,
   "what_we_offer": null,
-  "location_work_setup": "if (!window['wfnCdnPath']) {\n const currentPage = document.location.href;\n const isProduction = currentPage.indexOf('workforcenow.adp.com') > -1 || currentPage.indexOf('wfn-prod-test.adp.com') > -1 || currentPage.indexOf('workforcenow.cloud.adp.com') > -1;\n const cookies = \n let cdn = cookies && cookies[1] ? cookies[1] : 'wfn';\n cdn = cdn.toLowerCase();\n let cdnPath;",
+  "location_work_setup": "Remote; Hattiesburg or Ridgeland or Dallas or Miami or O'Fallon or O'Fallon or Chicago or Wilmington or New Orleans; US workplace listed",
   "hours_schedule": null,
   "application_process": "Apply through adp using the original posting URL.",
   "archetype_labels": "Generalist Admin, Corporate Transitioner, Fresh Starter",
   "quality_label": "Check eligibility",
-  "quality_reasons": "verify PH eligibility; pay listed; clear posting details"
+  "quality_reasons": "verify PH eligibility; pay listed"
 }
