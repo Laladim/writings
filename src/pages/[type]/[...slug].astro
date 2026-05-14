@@ -70,7 +70,7 @@ const sameTopicAuto = all
           {entry.data.topics.map((t) => {
             const topic = topicBySlug(t);
             return topic ? (
-              <a href={`${base}/topics/${topic.slug}/`} class="topic-tag">{topic.name}</a>
+              <a href={`/topics/${topic.slug}/`} class="topic-tag">{topic.name}</a>
             ) : null;
           })}
         </div>

@@ -46,7 +46,7 @@ for (const e of entries) {
         <h2>Browse by topic</h2>
         <div class="chip-row nav-font">
           {TOPICS.filter((t) => (topicCounts.get(t.slug) ?? 0) > 0).map((t) => (
-            <a href={`${base}/topics/${t.slug}/`} class="chip">
+            <a href={`/topics/${t.slug}/`} class="chip">
               {t.name} <span class="chip-count">{topicCounts.get(t.slug)}</span>
             </a>
           ))}
@@ -56,12 +56,12 @@ for (const e of entries) {
         <h2>Browse by type</h2>
         <div class="chip-row nav-font">
           {TYPES.map((t) => (
-            <a href={`${base}/library/?type=${t.slug}`} class="chip">{t.label}</a>
+            <a href={`/library/?type=${t.slug}`} class="chip">{t.label}</a>
           ))}
         </div>
       </div>
       <div class="browse-row see-all-row">
-        <a href={`${base}/library/`} class="see-all nav-font">See all →</a>
+        <a href="/library/" class="see-all nav-font">See all →</a>
       </div>
     </div>
   </section>

@@ -15,7 +15,7 @@ const entries = allEntries.filter((e) => e.data.topics.includes(topic!));
 const base = import.meta.env.BASE_URL;
 
 if (!topicObj) {
-  return Astro.redirect(`${base}/`);
+  return Astro.redirect('/');
 }
 
 const relatedTopics = new Map<string, number>();
@@ -58,7 +58,7 @@ const related = Array.from(relatedTopics.entries())
       <h2>Related topics</h2>
       <div class="chip-row nav-font">
         {related.map((t) => (
-          <a href={`${base}/topics/${t!.slug}/`} class="chip">{t!.name}</a>
+          <a href={`/topics/${t!.slug}/`} class="chip">{t!.name}</a>
         ))}
       </div>
     </section>
