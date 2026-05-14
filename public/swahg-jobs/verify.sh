@@ -28,7 +28,11 @@ assert ratio >= 0.80, f"only {with_3}/{len(details)} details have at least 3 str
 html = (ROOT / "index.html").read_text()
 assert "SWAHG · Jobs" in html, "index.html missing title string"
 for label in ROLE_LABELS:
-    assert label in html, f"index.html missing role label {label}"
+    count = sum(1 for job in jobs if job.get("role_lala_category") == label)
+    if count:
+        assert label in html, f"index.html missing role label {label}"
+    else:
+        assert f">{label}</button>" not in html, f"index.html shows empty role filter {label}"
 
 creds = Credentials.from_service_account_file(str(Path.home() / ".config/gcloud/claude-sheets-key.json"), scopes=["https://www.googleapis.com/auth/spreadsheets"])
 sh = gspread.authorize(creds).open_by_key(SHEET_ID)
