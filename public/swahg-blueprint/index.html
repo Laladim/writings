@@ -526,7 +526,7 @@
   <div>
     <a href="../swahg-resume-builder/index.html" class="foot-link">Resume Builder</a>
     <a href="../swahg-curriculum/index.html" class="foot-link">My Curriculum</a>
-    <a href="https://sites.google.com/view/swahg-openuniversity/home" class="foot-link" target="_blank" rel="noopener">Live SWAHG ↗</a>
+    <a href="../swahg/index.html" class="foot-link">SWAHG Home</a>
     <a href="../" class="foot-link">← Writings by Lala</a>
   </div>
   <div class="credit">Bonafide Filipino Freelancer Simplified Blueprint · Rebuild v2 · May 2026</div>
@@ -546,173 +546,21 @@
     <div class="modal-meta" id="modalMeta"></div>
     <div class="modal-body" id="modalBody"></div>
     <div class="modal-foot">
-      <a href="#" id="modalLink" class="btn btn-primary" target="_blank" rel="noopener">Open lesson on SWAHG ↗</a>
+      <a href="#" id="modalLink" class="btn btn-primary">Open lesson</a>
       <button class="btn btn-ghost" id="modalDismiss">Close</button>
     </div>
   </div>
 </div>
 
 <script>
-/* Legacy inline BOXES kept for reference only — Blueprint now reads from window.SWAHG_LESSONS.
-   To update a lesson URL/status, edit /writings/public/swahg-lessons.js — NOT this file. */
-const _LEGACY_BOXES = {
-  // PREPARATION
-  "prep-1":{stage:"Preparation",stagePill:"prep",title:"Choosing your Computer",status:"live",
-    desc:"The setup decision that gates everything else. Mac vs Windows, RAM, what's enough for client work without breaking the bank.",
-    lessons:["Best Laptop (Freelancer Essentials)"],
-    url:"https://sites.google.com/view/swahg-openuniversity/courses/freelancer-essentials/best-laptop"},
-  "prep-2":{stage:"Preparation",stagePill:"prep",title:"Creating Work Emails",status:"rewrite",
-    desc:"The current lesson is about email setup; the rewrite is about email AS a marketing skill. Closes the 4% community gap in email marketing. Tier 1 in the rebuild queue. ABILITY corpus has 4 sequence files to fold in.",
-    lessons:["Email Address Expert Secrets (current)","Email Marketing for VAs (Tier 1 rewrite)"],
-    url:"https://sites.google.com/view/swahg-openuniversity/courses/freelancer-essentials/email-address-is-gold"},
-  "prep-3":{stage:"Preparation",stagePill:"prep",title:"Setting up Online Tools",status:"live",
-    desc:"Browser configuration + storage discipline. The two utilities that quietly save hours every week if set up right at the start.",
-    lessons:["Browser Expert Secrets","Storage Expert Secrets"],
-    url:"https://sites.google.com/view/swahg-openuniversity/courses/freelancer-essentials/browser-expert-secrets"},
-  "prep-4":{stage:"Preparation",stagePill:"prep",title:"Organizing Work Flow",status:"live",
-    desc:"Trello as the project-management baseline. Pair with Time Tracking Discipline (new build) for the full workflow stack.",
-    lessons:["Trello Love","Time Tracking Discipline (new — Rank 3)"],
-    url:"https://sites.google.com/view/swahg-openuniversity/courses/freelancer-essentials/trello-love"},
-  "prep-5":{stage:"Preparation",stagePill:"prep",title:"Setting up Work Accessories",status:"new",
-    desc:"Headset, lighting, desk setup, internet backup. Practical workspace lesson — currently a gap. Quick build target. Pair with English 101 for the No Calls track entry.",
-    lessons:["(New build queued)"],
-    url:""},
-
-  // WARMING UP
-  "warm-1":{stage:"Warming Up",stagePill:"warmup",title:"Choose Career Path",status:"live",
-    desc:"The decision that anchors the rest of the path: Remote Job, VA, or Specialized Skill. The lessons here run the diagnostic and help name the choice out loud.",
-    lessons:["Where to Start?","Freelancer or VA?","Employee to Freelancer","Find Your Path Quiz"],
-    url:"https://sites.google.com/view/swahg-openuniversity/courses/fresh-starter/freelancer-or-va"},
-  "warm-2":{stage:"Warming Up",stagePill:"warmup",title:"Planning",status:"live",
-    desc:"Hours of training to commit per week + self-assessment of where your current skills sit. The Freelancing Journey introduction is the existing anchor; pair with 10 Secret Skills for the audit.",
-    lessons:["Freelancing Journey · Introduction","10 Secret Skills"],
-    url:"https://sites.google.com/view/swahg-openuniversity/courses/freelancing-journey/introduction"},
-  "warm-3":{stage:"Warming Up",stagePill:"warmup",title:"Basic Foundation",status:"live",
-    desc:"Three routes — Paid (the SWAHG paid blueprint course), Free (the Open University you're reading), or Self (the deeper corpus). The Career Path Training is where the free foundation lives.",
-    lessons:["Specialized Business Skills","Creative + Artistic Skills","Technical Skills"],
-    url:"https://sites.google.com/view/swahg-openuniversity/courses/career-path-training/"},
-  "warm-4":{stage:"Warming Up",stagePill:"warmup",title:"Support Group",status:"live",
-    desc:"Paid mentoring (Shela's coaching, earned via Freelancing Journey activities) + free community groups (SWAHG FB group + Monday meetings).",
-    lessons:["Freelancing Journey activities → free 1-on-1","SWAHG community groups"],
-    url:"https://sites.google.com/view/swahg-openuniversity/home"},
-  "warm-5":{stage:"Warming Up",stagePill:"warmup",title:"Ongoing Training",status:"live",
-    desc:"This box is open-ended on purpose. SMM Core Training is the existing deep lane; Personal Branding adds the voice work; the new-build modules will expand the menu.",
-    lessons:["SMM Core Strategies","Personal Branding","NEW: Customer Support, Account Mgmt, SDR, CRM, Video Editing"],
-    url:"https://sites.google.com/view/swahg-openuniversity/courses/smm-core-training/smm-core-strategies"},
-
-  // LAUNCH
-  "launch-1":{stage:"Launch",stagePill:"launch",title:"Setting Up Accounts",status:"live",
-    desc:"The platform accounts where your applications live. OnlineJobs.ph for PH-native, Upwork for international, niche boards for specific roles.",
-    lessons:["OnlineJobs.ph Account","Freelancing Platforms"],
-    url:"https://sites.google.com/view/swahg-openuniversity/courses/fresh-starter/online-jobs-account"},
-  "launch-2":{stage:"Launch",stagePill:"launch",title:"Creating Powerful Resume",status:"built",
-    desc:"The Resume Builder is already shipped — interactive, 40 skills, live job-match against active Job List listings as you check boxes, letterpress preview. Fold the OPPORTUNITY corpus resume templates in as the deep reference.",
-    lessons:["Resume Builder (BUILT)","OPPORTUNITY corpus: 50 resume + achievement files"],
-    url:"../swahg-resume-builder/"},
-  "launch-3":{stage:"Launch",stagePill:"launch",title:"Job Hunting",status:"live",
-    desc:"Where to actually look + how to filter. The Find Your Path quiz routes by situation; Freelancing Platforms gives the tour.",
-    lessons:["Find Your Path Quiz (BUILT)","Freelancing Platforms"],
-    url:"../swahg-start/"},
-  "launch-4":{stage:"Launch",stagePill:"launch",title:"Join Groups and Forums",status:"live",
-    desc:"SWAHG's own community is the first stop. FB groups, Slack-style channels, and the Monday meetings. The live-sessions doc names which groups are highest signal.",
-    lessons:["SWAHG Community Hub","Live Sessions notes"],
-    url:"../community/"},
-  "launch-5":{stage:"Launch",stagePill:"launch",title:"Creating your Portfolio",status:"live",
-    desc:"Two existing lessons cover this: Personal Branding (the voice) + Online Presence (the audit). Pair them to build a portfolio that survives a 30-second skim.",
-    lessons:["Personal Branding","Online Presence"],
-    url:"https://sites.google.com/view/swahg-openuniversity/courses/writing-personal-brand/personal-branding"},
-
-  // WORKING ON IT
-  "work-1":{stage:"Working on it!",stagePill:"working",title:"Interviews",status:"new",
-    desc:"Currently a gap. Async (text-only) interview prep is critical for the No Calls track audience. Video-interview prep for the rest. New build queued.",
-    lessons:["(New build queued)"],
-    url:""},
-  "work-2":{stage:"Working on it!",stagePill:"working",title:"Internship",status:"live",
-    desc:"The SWAHG internship pathway — earn experience inside the community before applying externally. Application surface, not a lesson.",
-    lessons:["SWAHG Internship application"],
-    url:"https://sites.google.com/view/swahg-openuniversity/internship"},
-  "work-3":{stage:"Working on it!",stagePill:"working",title:"Skill Practice",status:"live",
-    desc:"The Career Path Training is where practice depth lives — Specialized Business, Creative/Artistic, Technical. The Practice checkpoint is the upgrade lever for every lesson in this column.",
-    lessons:["Career Path Training (3 tracks)","Assignment surface"],
-    url:"https://sites.google.com/view/swahg-openuniversity/courses/career-path-training/"},
-  "work-4":{stage:"Working on it!",stagePill:"working",title:"Creating Proposal",status:"live",
-    desc:"DESIRE corpus has the Jade Kim Proposal Checklist (ABILITY) which is the gold-standard reference. Surface it as a Stage 4 lesson with current job-listing examples.",
-    lessons:["Jade Kim Proposal Checklist (ABILITY corpus)","Common Mistakes"],
-    url:"https://sites.google.com/view/swahg-openuniversity/courses/additional/common-mistakes"},
-  "work-5":{stage:"Working on it!",stagePill:"working",title:"Bidding",status:"live",
-    desc:"The discipline of async application — response time, sample work, follow-up cadence. Getting Hired Fast covers SMM-specific tactics that generalize.",
-    lessons:["Getting Hired Fast (SMM)","Freelancing Platforms","Common Mistakes"],
-    url:"https://sites.google.com/view/swahg-openuniversity/courses/smm-core-training/getting-hired-fast"},
-
-  // STAGE 1 (post-launch loop entry)
-  "s1-1":{stage:"Stage 1 · Working",stagePill:"stage1",title:"Onboarding",status:"new",
-    desc:"First 30 days with a new client. Currently a gap — most community members improvise this and burn relationships. New build, high-leverage.",
-    lessons:["(New build queued)"],
-    url:""},
-  "s1-2":{stage:"Stage 1 · Working",stagePill:"stage1",title:"Learn Business Tools",status:"live",
-    desc:"Trello + the tech stack essentials, but in the context of a real client's workflow. The lesson upgrades shift the framing from 'tour' to 'mirror what the client uses.'",
-    lessons:["Trello Love","Tech Stack Essentials (3 lessons)"],
-    url:"https://sites.google.com/view/swahg-openuniversity/courses/freelancer-essentials/trello-love"},
-  "s1-3":{stage:"Stage 1 · Working",stagePill:"stage1",title:"Collaboration",status:"live",
-    desc:"How to work with a team you'll never meet in person. The ABILITY corpus has Community Management material that fits here.",
-    lessons:["Community Management (ABILITY corpus)","Live Sessions notes"],
-    url:""},
-  "s1-4":{stage:"Stage 1 · Working",stagePill:"stage1",title:"Client Demands",status:"live",
-    desc:"Choosing My Client (before) + Common Mistakes (during) cover the bookends. The middle — saying no to scope creep — is a gap.",
-    lessons:["Choosing My Client","Common Mistakes"],
-    url:"https://sites.google.com/view/swahg-openuniversity/courses/enhancement-training/choosing-my-client"},
-  "s1-5":{stage:"Stage 1 · Working",stagePill:"stage1",title:"Organization",status:"live",
-    desc:"Trello for project view + Time Tracking Discipline (new) for hours view. 98% of community lacks time-tracking — biggest single upgrade lever.",
-    lessons:["Trello Love","Time Tracking Discipline (new — Rank 3)"],
-    url:"https://sites.google.com/view/swahg-openuniversity/courses/freelancer-essentials/trello-love"},
-
-  // SKILL UPGRADE
-  "sk-1":{stage:"Skill Upgrade",stagePill:"skill",title:"New or Upgraded Skill",status:"live",
-    desc:"Pick the next skill from the rebuild queue: Customer Support (Rank 1), Time Tracking (Rank 3), No Calls VA Track (Rank 4), Account Mgmt (Rank 5), Cold Outreach for SDRs (Rank 6).",
-    lessons:["See Rebuild Plan: top 10 queue"],
-    url:""},
-  "sk-2":{stage:"Skill Upgrade",stagePill:"skill",title:"More Training",status:"live",
-    desc:"The Live Sessions doc (531KB, 10 sessions) is the deepest training corpus. Convert specific sessions into public lessons as the queue clears.",
-    lessons:["Live Sessions doc","New module queue"],
-    url:""},
-  "sk-3":{stage:"Skill Upgrade",stagePill:"skill",title:"More Value to Client",status:"new",
-    desc:"Account Management 101 (new build, Rank 5) is the bridge between 'got hired' and 'kept the client.' Folds in Jade Kim Proposal Checklist from the deeper corpus.",
-    lessons:["Account Management 101 (new — Rank 5)"],
-    url:""},
-  "sk-4":{stage:"Skill Upgrade",stagePill:"skill",title:"Career & Personal Growth",status:"live",
-    desc:"Career Path Training as the structured path + Live Sessions as the unstructured insight. The growth dimension that isn't just adding tools.",
-    lessons:["Career Path Training","Live Sessions doc"],
-    url:"https://sites.google.com/view/swahg-openuniversity/courses/career-path-training/"},
-
-  // HIGHER LEVEL
-  "h-1":{stage:"Higher Level",stagePill:"higher",title:"More Clients",status:"live",
-    desc:"Once one client is steady, the personal-brand + online-presence pair is what attracts the next two without you actively applying.",
-    lessons:["Personal Branding","Online Presence"],
-    url:"https://sites.google.com/view/swahg-openuniversity/courses/writing-personal-brand/personal-branding"},
-  "h-2":{stage:"Higher Level",stagePill:"higher",title:"Multiple Skills",status:"live",
-    desc:"Cross-skill = combining two of the Career Path Training tracks. A Specialized Business + Creative VA bills more than either alone. Examples lane is sparse — flag.",
-    lessons:["Career Path Training · Specialized","Career Path Training · Creative","Career Path Training · Technical"],
-    url:"https://sites.google.com/view/swahg-openuniversity/courses/career-path-training/"},
-  "h-3":{stage:"Higher Level",stagePill:"higher",title:"Leadership",status:"new",
-    desc:"Leading a team, mentoring newer SWAHG VAs, running a Monday meeting. Currently a gap. The Live Sessions doc has Shela's own leadership register to draw from.",
-    lessons:["(New build queued)"],
-    url:""},
-  "h-4":{stage:"Higher Level",stagePill:"higher",title:"Rockstar Portfolio",status:"live",
-    desc:"Resume Builder v2 + Personal Branding v2 + the case-study format the community is missing. The Stories page on SWAHG is healthy — adapt that storytelling muscle.",
-    lessons:["Resume Builder (BUILT)","Personal Branding","Stories page (reference)"],
-    url:"../swahg-resume-builder/"},
-
-  // BUSINESS BRANCH
-  "b-1":{stage:"Business Branch",stagePill:"business",title:"Building your own Brand or Agency",status:"new",
-    desc:"Tier 4 future module — for community members who want to stop trading hours and build something of their own. ABILITY corpus has FB Group Plan + Market Research foundations. Not in v1 rebuild queue; flag for Year 2.",
-    lessons:["FB Group Plan (ABILITY corpus)","Market Research Process (ABILITY corpus)"],
-    url:""}
-};
-
 const STAGE_PILL_BG = {prep:"var(--prep-bg)",warmup:"var(--warmup-bg)",launch:"var(--launch-bg)",working:"var(--working-bg)",stage1:"var(--stage1-chip)",skill:"#d4c6e4",higher:"var(--higher-band)",business:"#f4b6b6"};
 const STAGE_PILL_INK = {prep:"var(--prep-ink)",warmup:"var(--warmup-ink)",launch:"var(--launch-ink)",working:"var(--working-ink)",stage1:"#3a1f4a",skill:"#3a1f4a",higher:"#7c3a3a",business:"#5a1010"};
 const STATUS_LABEL = {live:"Live", rewrite:"Rewriting (Tier 1)", new:"New build queued", built:"Built (interactive tool)", external:"External resource"};
 const STATUS_COLOR = {live:"var(--primary)", rewrite:"var(--rose)", new:"var(--new)", built:"var(--accent-deep)", external:"var(--text-soft)"};
+
+function isLocalUrl(url){
+  return url && !/^https?:\/\//i.test(url);
+}
 
 function lessonStatusBadge(lesson){
   const label = STATUS_LABEL[lesson.status] || "Live";
@@ -760,7 +608,7 @@ function openModal(boxKey){
       const tier = l.tier ? `Tier ${l.tier}` : "";
       const metaLine = [mins, tier, l.format].filter(Boolean).join(" · ");
       const urlBtn = l.url
-        ? `<a href="${l.url}" target="${l.url.startsWith("/") ? "_self" : "_blank"}" rel="noopener" style="color:var(--primary);font-size:13px;text-decoration:underline">Open →</a>`
+        ? `<a href="${l.url}" target="${isLocalUrl(l.url) ? "_self" : "_blank"}" rel="noopener" style="color:var(--primary);font-size:13px;text-decoration:underline">Open →</a>`
         : `<span style="color:var(--text-soft);font-size:13px;font-style:italic">Not yet published</span>`;
       html += `
         <div style="background:#faf7f5;border:1px solid var(--border);border-radius:8px;padding:12px 14px">
@@ -787,7 +635,9 @@ function openModal(boxKey){
   if(primaryLesson && primaryLesson.url){
     link.href = primaryLesson.url;
     link.style.display = "inline-flex";
-    link.textContent = primaryLesson.url.startsWith("/") ? "Open the primary tool ↗" : "Open primary lesson on SWAHG ↗";
+    link.target = isLocalUrl(primaryLesson.url) ? "_self" : "_blank";
+    link.rel = isLocalUrl(primaryLesson.url) ? "" : "noopener";
+    link.textContent = isLocalUrl(primaryLesson.url) ? "Open primary lesson" : "Open external resource";
   } else {
     link.style.display = "none";
   }
