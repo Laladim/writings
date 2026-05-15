@@ -20,6 +20,14 @@ const staticPaths = [
 
 const swahgLessonPaths = readdirSync(join(process.cwd(), 'public'))
   .filter((name) => name.startsWith('swahg-lesson-'))
+  .filter((name) =>
+    readdirSync(join(process.cwd(), 'public'), { withFileTypes: true })
+      .some((entry) => entry.isDirectory() && entry.name === name)
+  )
+  .filter((name) =>
+    readdirSync(join(process.cwd(), 'public', name), { withFileTypes: true })
+      .some((entry) => entry.isFile() && entry.name === 'index.html')
+  )
   .sort()
   .map((name) => `/${name}/`);
 
