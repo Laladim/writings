@@ -41,6 +41,82 @@
   }
   .app { max-width: 880px; margin: 0 auto; padding: 24px 18px 80px; }
 
+  /* Site navigation */
+  .topnav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  .topnav-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .logo {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    color: var(--purple);
+    font-size: 22px;
+    line-height: 1.05;
+    letter-spacing: 0;
+    text-decoration: none;
+  }
+  .logo .sub {
+    font-family: 'Inter', system-ui, sans-serif;
+    display: block;
+    margin-top: 1px;
+    color: var(--gold-deep);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 22px;
+    font-size: 14px;
+  }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color .15s;
+  }
+  .nav-links a:hover { color: var(--purple); }
+  .nav-links a[aria-current="page"] {
+    color: var(--purple);
+    font-weight: 600;
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 2px;
+  }
+  @media (max-width: 768px) {
+    .topnav-inner {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 10px;
+      padding: 12px 18px;
+    }
+    .nav-links {
+      width: 100%;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      gap: 14px;
+      font-size: 13px;
+      padding-bottom: 4px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .nav-links::-webkit-scrollbar { display: none; }
+  }
+
   /* Header / progress */
   header.top {
     display: flex; align-items: center; justify-content: space-between; gap: 12px;
@@ -569,22 +645,22 @@
   }
   footer em { color: var(--purple); font-style: normal; font-weight: 600; }
 </style>
-<style>
-  .wbl-backlink {
-    position: fixed; top: 14px; left: 14px; z-index: 100;
-    background: rgba(255,255,255,0.92); border: 1px solid var(--border, #e0dbd8);
-    padding: 6px 12px; border-radius: 999px;
-    font: 500 12px/1 'Inter', system-ui, sans-serif;
-    color: var(--purple, #5a4a7a); text-decoration: none;
-    backdrop-filter: blur(6px); transition: all .15s;
-  }
-  .wbl-backlink:hover { background: var(--purple, #5a4a7a); color: #fff; }
-  @media (max-width: 720px) { .wbl-backlink { font-size: 11px; padding: 5px 10px; } }
-</style>
 </head>
 <body>
 
-<a href="../" class="wbl-backlink">← Writings by Lala</a>
+<nav class="topnav">
+  <div class="topnav-inner">
+    <a href="../swahg/index.html" class="logo">SWAHG<span class="sub">Open University</span></a>
+    <div class="nav-links">
+      <a href="../">Writings by Lala</a>
+      <a href="../swahg/index.html">Home</a>
+      <a href="../swahg-blueprint/index.html">Blueprint</a>
+      <a href="../swahg-resume-builder/index.html" aria-current="page">Resume Builder</a>
+      <a href="../swahg-curriculum/index.html">My Curriculum</a>
+      <a href="../swahg-jobs/index.html">Job Board</a>
+    </div>
+  </div>
+</nav>
 
 <div class="app">
 
