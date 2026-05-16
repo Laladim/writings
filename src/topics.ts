@@ -12,6 +12,7 @@ export const TOPICS: Topic[] = [
   { slug: 'content-strategy', name: 'Content Strategy & SEO', description: 'Planning, structure, Hub & Constellation, keyword strategy.', group: 'professional' },
   { slug: 'data-architecture', name: 'Data Architecture', description: 'Organizing information into queryable, useful systems.', group: 'professional' },
   { slug: 'freelancing', name: 'Freelancing & Remote Work', description: 'Building a career from home, earning, growing.', group: 'professional' },
+  { slug: 'swahg-stories', name: 'SWAHG Stories', description: 'Real words from SWAHG women about community, work, courage, and change.', group: 'professional' },
   { slug: 'newsletter-craft', name: 'Newsletter Craft', description: 'Lessons from 307+ editions of Beyond Banks.', group: 'professional' },
   { slug: 'b2b-saas', name: 'B2B SaaS Marketing', description: 'Marketing to technical buyers in fintech.', group: 'professional' },
   { slug: 'faith-theology', name: 'Faith & Theology', description: 'Walking with God through work, suffering, everyday life.', group: 'life' },
