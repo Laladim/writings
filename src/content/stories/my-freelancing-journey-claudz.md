@@ -2,7 +2,7 @@
 title: "My Freelancing Journey"
 type: "story"
 topics: ["swahg-stories", "community", "filipino-professionals"]
-date: 2026-05-15
+date: 2019-08-24
 description: "Claudz shares how she found her way home to the SWAHG community and kept growing as a freelancer."
 image: "/swahg-stories/my-freelancing-journey-claudz.jpg"
 ---

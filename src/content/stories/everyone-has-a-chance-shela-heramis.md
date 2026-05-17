@@ -2,7 +2,7 @@
 title: "Everyone Has A Chance"
 type: "story"
 topics: ["swahg-stories", "freelancing", "health"]
-date: 2026-05-13
+date: 2017-03-28
 description: "Lala remembers the beginning of working from home, illness, provision, and learning to feel alive again."
 image: "/swahg-stories/everyone-has-a-chance-shela-heramis.jpg"
 ---

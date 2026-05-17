@@ -2,7 +2,7 @@
 title: "God Will Always Have Better Plans For You"
 type: "story"
 topics: ["swahg-stories", "community", "faith-theology"]
-date: 2026-05-14
+date: 2019-08-03
 description: "Jean Cinence on rebuilding her foundation, finding support, and getting hired after joining SWAHG."
 image: "/swahg-stories/god-will-always-have-better-plans-for-you-jean-cinence.jpg"
 ---
