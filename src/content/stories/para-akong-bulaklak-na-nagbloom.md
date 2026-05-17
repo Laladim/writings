@@ -4,7 +4,7 @@ type: "story"
 topics: ["swahg-stories", "community", "filipino-professionals"]
 date: 2026-05-17
 description: "A SWAHG community note of thanks for Lala and the admins, shared as written."
-image: "/swahg-stories/para-akong-bulaklak-na-nagbloom.jpg"
+image: "/swahg-stories/para-akong-bulaklak-na-nagbloom.webp"
 ---
 
 Thank you La 😘 Di mo alam kung paano mo binago ang buhay ko, namin ❤️

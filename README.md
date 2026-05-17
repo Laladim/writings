@@ -22,6 +22,17 @@ npm run preview
 Types: `note` · `story` · `guide` · `reflection` · `tool`.
 Topics live in `src/topics.ts` (15 options).
 
+## Image uploads
+
+Before publishing new local images in `public/`, run:
+
+```bash
+npm run images:optimize
+npm run images:audit
+```
+
+Use the generated `.webp` asset in content frontmatter and HTML. The audit fails when a raster image is larger than 250 KB, which keeps the site fast as new images are added.
+
 ## Architecture
 
 See plan: `cobalt-skills/shela-personal-website.md` in the Life-Dashboard repo.

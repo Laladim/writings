@@ -4,6 +4,7 @@ import { getCollection, render, type CollectionEntry } from 'astro:content';
 import { TYPES } from '../../topics';
 import { topicBySlug } from '../../topics';
 import { getAllEntries, entryUrl, entryTypeToCollection } from '../../lib/content';
+import { optimizedImageUrl } from '../../lib/images';
 
 type AnyEntry =
   | CollectionEntry<'guides'>
@@ -37,6 +38,7 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 const base = import.meta.env.BASE_URL;
+const heroImage = entry.data.image ? optimizedImageUrl(entry.data.image, 1400) : undefined;
 
 const weekdayStr = entry.data.date.toLocaleDateString('en-US', { weekday: 'long' });
 const dateStr = entry.data.date.toLocaleDateString('en-US', {
@@ -78,7 +80,7 @@ const sameTopicAuto = all
     </header>
 
     {entry.data.image && (
-      <img src={entry.data.image} alt="" class="hero-image" />
+      <img src={heroImage} alt="" class="hero-image" width="1400" decoding="async" />
     )}
 
     <div class="prose">

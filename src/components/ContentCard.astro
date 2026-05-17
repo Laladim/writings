@@ -1,4 +1,6 @@
 ---
+import { optimizedImageUrl } from '../lib/images';
+
 export interface Props {
   href: string;
   title: string;
@@ -8,13 +10,14 @@ export interface Props {
   image?: string;
 }
 const { href, title, date, type, topics, image } = Astro.props;
+const optimizedImage = image ? optimizedImageUrl(image, 900) : undefined;
 const weekday = date.toLocaleDateString('en-US', { weekday: 'short' });
 const dateStr = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 ---
 <a class="entry" href={href} data-type={type.toLowerCase()} data-topics={topics.join(',')}>
   {image ? (
     <div class="thumb">
-      <img src={image} alt="" loading="lazy" />
+      <img src={optimizedImage} alt="" loading="lazy" width="900" height="506" decoding="async" />
     </div>
   ) : (
     <div class="thumb thumb-text" aria-hidden="true">

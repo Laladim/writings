@@ -4,7 +4,7 @@ type: "story"
 topics: ["swahg-stories", "community", "filipino-professionals"]
 date: 2018-06-23
 description: "Liz Galacio on finding courage, meeting Lala, and stepping out of her comfort zone through SWAHG."
-image: "/swahg-stories/the-day-i-stepped-out-of-my-comfort-zone-liz.jpg"
+image: "/swahg-stories/the-day-i-stepped-out-of-my-comfort-zone-liz.webp"
 ---
 
 by Liz Galacio
