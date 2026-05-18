@@ -853,6 +853,20 @@ window.SWAHG_LESSONS = {
       estimated_minutes: 15,
       tier: 0,
       format: "interactive_tool"
+    },
+    "example-portfolio-zero-work-experience": {
+      title: "Example Portfolio | Zero Work Experience",
+      stage: "launch",
+      status: "live",
+      url: "../swahg-lesson-google-sites-portfolio/fresh-starter-sample-portfolio.html",
+      closes_va_gaps: [],
+      ladders_to_roles: ["admin","va","customer-service","content"],
+      prerequisites: ["google-sites-portfolio"],
+      next_lessons: ["resume-builder"],
+      why_this_lesson: "Sample Google Sites-style portfolio for Fresh Starters who need to show honest proof before they have paid client experience.",
+      estimated_minutes: 8,
+      tier: 0,
+      format: "example"
     }
   },
 
@@ -878,7 +892,7 @@ window.SWAHG_LESSONS = {
 
     /* TOP ROW — Launch */
     "launch-1":{ pdf_label: "Setting Up Accounts",        stage: "launch",  lessons: ["online-jobs-account","freelancing-platforms"] },
-    "launch-2":{ pdf_label: "Creating Powerful Resume",   stage: "launch",  lessons: ["resume-builder","freelancing-journey-lesson-3"] },
+    "launch-2":{ pdf_label: "Creating Powerful Resume",   stage: "launch",  lessons: ["resume-builder","freelancing-journey-lesson-3","example-portfolio-zero-work-experience"] },
     "launch-3":{ pdf_label: "Job Hunting",                stage: "launch",  lessons: ["find-your-path-quiz","freelancing-platforms","freelancing-journey-lesson-4"] },
     "launch-4":{ pdf_label: "Join Groups and Forums",     stage: "launch",  lessons: ["freelancing-journey-series"] },
     "launch-5":{ pdf_label: "Creating your Portfolio",    stage: "launch",  lessons: ["personal-branding","online-presence"] },
