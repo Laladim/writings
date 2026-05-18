@@ -205,7 +205,7 @@ window.SWAHG_LESSONS = {
       closes_va_gaps: [],
       ladders_to_roles: [],
       prerequisites: [],
-      next_lessons: ["freelancing-journey-intro"],
+      next_lessons: ["freelancing-journey-series"],
       why_this_lesson: "If you're still employed, this is the practical transition guide — test waters first.",
       estimated_minutes: 12,
       tier: 0,
@@ -255,20 +255,6 @@ window.SWAHG_LESSONS = {
     },
 
     /* ====== Freelancing Journey (long-form anchor) ====== */
-    "freelancing-journey-intro": {
-      title: "Freelancing Journey · Introduction",
-      stage: "warmup",
-      status: "live",
-      url: "../swahg-lesson-freelancing-journey-introduction/",
-      closes_va_gaps: [],
-      ladders_to_roles: [],
-      prerequisites: [],
-      next_lessons: ["freelancing-journey-series"],
-      why_this_lesson: "Sets up the 6-lesson Fast Track. Complete the activities to earn a 1-on-1 coaching with Shela.",
-      estimated_minutes: 8,
-      tier: 0,
-      format: "video"
-    },
     "freelancing-journey-series": {
       title: "Freelancing Journey · Lessons 1-6",
       stage: "working",
@@ -276,7 +262,7 @@ window.SWAHG_LESSONS = {
       url: "../swahg-lesson-freelancing-journey-lesson-1/",
       closes_va_gaps: [],
       ladders_to_roles: ["customer-service","smm","admin","va"],
-      prerequisites: ["freelancing-journey-intro"],
+      prerequisites: [],
       next_lessons: ["common-mistakes"],
       why_this_lesson: "The depth of the SWAHG canon. 6 lessons + activities. Currently titled 'Lesson 1-6' (needs re-titling per gap matrix Rank 10).",
       estimated_minutes: 90,
@@ -858,7 +844,7 @@ window.SWAHG_LESSONS = {
 
     /* TOP ROW — Warming Up */
     "warm-1": { pdf_label: "Choose Career Path",          stage: "warmup",  lessons: ["where-to-start","freelancer-or-va","employee-to-freelancer","find-your-path-quiz"] },
-    "warm-2": { pdf_label: "Planning",                    stage: "warmup",  lessons: ["freelancing-journey-intro","10-secret-skills"] },
+    "warm-2": { pdf_label: "Planning",                    stage: "warmup",  lessons: ["10-secret-skills"] },
     "warm-3": { pdf_label: "Basic Foundation",            stage: "warmup",  lessons: ["career-path-training","specialized-business-skills","creative-artistic-skills","technical-skills","english-101","open-university-guidelines"] },
     "warm-4": { pdf_label: "Support Group",               stage: "warmup",  lessons: ["freelancing-journey-series","freelancing-journey-lesson-2","freelancing-journey-lesson-3","freelancing-journey-lesson-4","freelancing-journey-lesson-5","freelancing-journey-lesson-6"] },
     "warm-5": { pdf_label: "Ongoing Training",            stage: "warmup",  lessons: ["smm-core-strategies","smm-handbook","instagram-strategy","fb-chatbot-training","fb-mobile-management","pinterest-marketing","youtube-best-practices","personal-branding","customer-support-foundations","account-management-101","cold-outreach-sdrs","crm-basics","video-editing-content-vas"] },
