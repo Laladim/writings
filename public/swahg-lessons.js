@@ -261,7 +261,7 @@ window.SWAHG_LESSONS = {
       closes_va_gaps: [],
       ladders_to_roles: ["customer-service","smm","admin","va"],
       prerequisites: ["english-101"],
-      next_lessons: ["smm-core-strategies","freelancing-journey-series"],
+      next_lessons: ["smm-core-strategies","groups-and-forums"],
       why_this_lesson: "Support Group box anchor. Helps learners understand why community matters and how to connect with SWAHG for accountability, feedback, job leads, and encouragement.",
       estimated_minutes: 12,
       tier: 0,
@@ -282,6 +282,20 @@ window.SWAHG_LESSONS = {
       estimated_minutes: 90,
       tier: 0,
       format: "video_series"
+    },
+    "groups-and-forums": {
+      title: "How to Use Groups and Forums Without Spamming",
+      stage: "launch",
+      status: "live",
+      url: "../swahg-lesson-groups-and-forums/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["customer-service","smm","admin","va","account-manager","content","sdr"],
+      prerequisites: ["support-group"],
+      next_lessons: ["job-board","freelancing-platforms"],
+      why_this_lesson: "Practical guide to using Reddit, Facebook business owner groups, and VA communities for client language research, trust building, and safer networking.",
+      estimated_minutes: 18,
+      tier: 0,
+      format: "guide"
     },
 
     /* ====== Career Path Training ====== */
@@ -936,7 +950,7 @@ window.SWAHG_LESSONS = {
     "launch-1":{ pdf_label: "Setting Up Accounts",        stage: "launch",  lessons: ["online-jobs-account","freelancing-platforms"] },
     "launch-2":{ pdf_label: "Creating Powerful Resume",   stage: "launch",  lessons: ["resume-builder","example-portfolio-zero-work-experience","example-portfolio-bpo-to-virtual-assistant"] },
     "launch-3":{ pdf_label: "Job Hunting",                stage: "launch",  lessons: ["find-your-path-quiz","freelancing-platforms","job-board"] },
-    "launch-4":{ pdf_label: "Join Groups and Forums",     stage: "launch",  lessons: ["freelancing-journey-series"] },
+    "launch-4":{ pdf_label: "Join Groups and Forums",     stage: "launch",  lessons: ["groups-and-forums"] },
     "launch-5":{ pdf_label: "Creating your Portfolio",    stage: "launch",  lessons: ["personal-branding","online-presence"] },
 
     /* TOP ROW — Working on it! */
