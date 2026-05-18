@@ -867,6 +867,20 @@ window.SWAHG_LESSONS = {
       estimated_minutes: 8,
       tier: 0,
       format: "example"
+    },
+    "example-portfolio-bpo-to-virtual-assistant": {
+      title: "Example Portfolio | BPO to Virtual Assistant",
+      stage: "launch",
+      status: "live",
+      url: "../swahg-lesson-bpo-to-va-portfolio/corporate-transitioner-sample-portfolio.html",
+      closes_va_gaps: [],
+      ladders_to_roles: ["admin","va","customer-service"],
+      prerequisites: ["bpo-to-va-portfolio"],
+      next_lessons: ["resume-builder"],
+      why_this_lesson: "Sample Google Sites-style portfolio for BPO professionals transitioning into Virtual Assistant work.",
+      estimated_minutes: 8,
+      tier: 0,
+      format: "example"
     }
   },
 
@@ -892,7 +906,7 @@ window.SWAHG_LESSONS = {
 
     /* TOP ROW — Launch */
     "launch-1":{ pdf_label: "Setting Up Accounts",        stage: "launch",  lessons: ["online-jobs-account","freelancing-platforms"] },
-    "launch-2":{ pdf_label: "Creating Powerful Resume",   stage: "launch",  lessons: ["resume-builder","example-portfolio-zero-work-experience"] },
+    "launch-2":{ pdf_label: "Creating Powerful Resume",   stage: "launch",  lessons: ["resume-builder","example-portfolio-zero-work-experience","example-portfolio-bpo-to-virtual-assistant"] },
     "launch-3":{ pdf_label: "Job Hunting",                stage: "launch",  lessons: ["find-your-path-quiz","freelancing-platforms","freelancing-journey-lesson-4"] },
     "launch-4":{ pdf_label: "Join Groups and Forums",     stage: "launch",  lessons: ["freelancing-journey-series"] },
     "launch-5":{ pdf_label: "Creating your Portfolio",    stage: "launch",  lessons: ["personal-branding","online-presence"] },
