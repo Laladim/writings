@@ -23,7 +23,7 @@
 window.SWAHG_LESSONS = {
   meta: {
     version: "1.0",
-    last_updated: "2026-05-18",
+    last_updated: "2026-05-19",
     blueprint_pdf_source: "Bonafide Filipino Freelancer Simplified Blueprint",
     data_sources: {
       va_assessments: { date: "2026-03-18", candidates: 641 },
@@ -640,6 +640,20 @@ window.SWAHG_LESSONS = {
       tier: 2,
       format: "article"
     },
+    "bpo-to-va-portfolio": {
+      title: "BPO to VA Portfolio",
+      stage: "working",
+      status: "live",
+      url: "../swahg-lesson-bpo-to-va-portfolio/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["customer-service","admin","va","account-manager"],
+      prerequisites: ["career-path-training"],
+      next_lessons: ["google-sites-portfolio","personal-branding","resume-builder"],
+      why_this_lesson: "Skill Practice lesson for BPO, support, and back-office transitioners turning ticket-handling experience into VA-facing admin portfolio samples.",
+      estimated_minutes: 45,
+      tier: 2,
+      format: "article"
+    },
     "onboarding-first-30-days": {
       title: "Onboarding: First 30 Days",
       stage: "stage1",
@@ -872,7 +886,7 @@ window.SWAHG_LESSONS = {
     /* TOP ROW — Working on it! */
     "work-1":  { pdf_label: "Interviews",                 stage: "working", lessons: ["interviews-prep","freelancing-journey-lesson-5"] },
     "work-2":  { pdf_label: "Internship",                 stage: "working", lessons: ["internship-options"] },
-    "work-3":  { pdf_label: "Skill Practice",             stage: "working", lessons: ["google-sites-portfolio"] },
+    "work-3":  { pdf_label: "Skill Practice",             stage: "working", lessons: ["google-sites-portfolio","bpo-to-va-portfolio"] },
     "work-4":  { pdf_label: "Creating Proposal",          stage: "working", lessons: ["common-mistakes","freelancing-journey-lesson-4"] },
     "work-5":  { pdf_label: "Bidding",                    stage: "working", lessons: ["getting-hired-fast","freelancing-platforms","common-mistakes"] },
 
