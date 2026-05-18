@@ -279,7 +279,7 @@ window.SWAHG_LESSONS = {
       closes_va_gaps: [],
       ladders_to_roles: ["admin","content","va"],
       prerequisites: ["10-secret-skills"],
-      next_lessons: ["specialized-business-skills","creative-artistic-skills","technical-skills"],
+      next_lessons: ["specialized-business-skills","creative-artistic-skills"],
       why_this_lesson: "Three-track menu: Specialized Business, Creative/Artistic, Technical. Pick one to build depth.",
       estimated_minutes: 8,
       tier: 0,
@@ -313,21 +313,6 @@ window.SWAHG_LESSONS = {
       tier: 0,
       format: "video"
     },
-    "technical-skills": {
-      title: "Technical Skills",
-      stage: "warmup",
-      status: "live",
-      url: "../swahg-lesson-technical-skills/",
-      closes_va_gaps: [],
-      ladders_to_roles: ["va","admin"],
-      prerequisites: ["career-path-training"],
-      next_lessons: [],
-      why_this_lesson: "Technical track depth — light dev, WordPress, tool admin. Smaller market but higher rates.",
-      estimated_minutes: 22,
-      tier: 0,
-      format: "video"
-    },
-
     /* ====== SMM Core Training ====== */
     "smm-core-strategies": {
       title: "SMM Core Strategies",
@@ -859,7 +844,7 @@ window.SWAHG_LESSONS = {
     /* TOP ROW — Warming Up */
     "warm-1": { pdf_label: "Choose Career Path",          stage: "warmup",  lessons: ["where-to-start","freelancer-or-va","employee-to-freelancer","find-your-path-quiz"] },
     "warm-2": { pdf_label: "Planning",                    stage: "warmup",  lessons: ["10-secret-skills"] },
-    "warm-3": { pdf_label: "Basic Foundation",            stage: "warmup",  lessons: ["career-path-training","specialized-business-skills","creative-artistic-skills","technical-skills","english-101","open-university-guidelines"] },
+    "warm-3": { pdf_label: "Basic Foundation",            stage: "warmup",  lessons: ["career-path-training","specialized-business-skills","creative-artistic-skills","english-101","open-university-guidelines"] },
     "warm-4": { pdf_label: "Support Group",               stage: "warmup",  lessons: ["freelancing-journey-series","freelancing-journey-lesson-2","freelancing-journey-lesson-3","freelancing-journey-lesson-4","freelancing-journey-lesson-5","freelancing-journey-lesson-6"] },
     "warm-5": { pdf_label: "Ongoing Training",            stage: "warmup",  lessons: ["smm-core-strategies","smm-handbook","instagram-strategy","fb-chatbot-training","fb-mobile-management","pinterest-marketing","youtube-best-practices","personal-branding","customer-support-foundations","account-management-101","cold-outreach-sdrs","crm-basics","video-editing-content-vas"] },
 
@@ -873,7 +858,7 @@ window.SWAHG_LESSONS = {
     /* TOP ROW — Working on it! */
     "work-1":  { pdf_label: "Interviews",                 stage: "working", lessons: ["interviews-prep","freelancing-journey-lesson-5"] },
     "work-2":  { pdf_label: "Internship",                 stage: "working", lessons: ["internship-options"] },
-    "work-3":  { pdf_label: "Skill Practice",             stage: "working", lessons: ["career-path-training","specialized-business-skills","creative-artistic-skills","technical-skills"] },
+    "work-3":  { pdf_label: "Skill Practice",             stage: "working", lessons: ["career-path-training","specialized-business-skills","creative-artistic-skills"] },
     "work-4":  { pdf_label: "Creating Proposal",          stage: "working", lessons: ["common-mistakes","freelancing-journey-lesson-4"] },
     "work-5":  { pdf_label: "Bidding",                    stage: "working", lessons: ["getting-hired-fast","freelancing-platforms","common-mistakes"] },
 
@@ -892,7 +877,7 @@ window.SWAHG_LESSONS = {
 
     /* BOTTOM ROW — Higher Level */
     "h-1":     { pdf_label: "More Clients",               stage: "higher",  lessons: ["personal-branding","online-presence"] },
-    "h-2":     { pdf_label: "Multiple Skills",            stage: "higher",  lessons: ["specialized-business-skills","creative-artistic-skills","technical-skills"] },
+    "h-2":     { pdf_label: "Multiple Skills",            stage: "higher",  lessons: ["specialized-business-skills","creative-artistic-skills"] },
     "h-3":     { pdf_label: "Leadership",                 stage: "higher",  lessons: ["leadership-mentorship"] },
     "h-4":     { pdf_label: "Rockstar Portfolio",         stage: "higher",  lessons: ["resume-builder","personal-branding"] },
 
