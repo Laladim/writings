@@ -627,7 +627,7 @@ window.SWAHG_LESSONS = {
       format: "article"
     },
     "google-sites-portfolio": {
-      title: "Google Sites Portfolio",
+      title: "Google Sites Portfolio | Zero Work Experience",
       stage: "working",
       status: "live",
       url: "../swahg-lesson-google-sites-portfolio/",
