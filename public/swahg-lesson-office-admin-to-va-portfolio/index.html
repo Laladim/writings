@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Office Admin to VA Portfolio · SWAHG Open University · Skill Practice</title>
+<meta content="A complete SWAHG Skill Practice guide for office admin and event coordination transitioners building Virtual Assistant portfolio proof with Google Workspace." name="description"/>
+<link href="../brand/favicon.png" rel="icon" type="image/png"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="../swahg-lesson-shared.css" rel="stylesheet"/>
+<style>
+  .guide-original{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:34px 38px;
+    box-shadow:0 2px 18px rgba(74,58,106,.06);
+  }
+  .guide-original p,
+  .guide-original li,
+  .guide-original td{
+    font-family:'Inter',system-ui,-apple-system,sans-serif !important;
+    font-size:16px !important;
+    line-height:1.68 !important;
+    color:var(--text) !important;
+    -webkit-text-stroke:0 transparent !important;
+  }
+  .guide-original p{margin:0 0 15px !important}
+  .guide-original p.p1{
+    font-family:'Cormorant Garamond',serif !important;
+    font-size:30px !important;
+    line-height:1.18 !important;
+    color:var(--primary) !important;
+    margin:44px 0 14px !important;
+    padding-left:16px;
+    border-left:4px solid var(--accent);
+  }
+  .guide-original p.p1:first-child{
+    font-family:'Cormorant Garamond',serif !important;
+    font-size:38px !important;
+    line-height:1.1 !important;
+    color:var(--primary-deep) !important;
+    margin:0 0 22px !important;
+    padding-left:0;
+    border-left:0;
+  }
+  .guide-original p.p2{
+    font-size:19px !important;
+    color:var(--primary-deep) !important;
+    font-weight:700 !important;
+    margin:30px 0 10px !important;
+  }
+  .guide-original p.p3:first-of-type{font-size:18px !important;color:var(--primary-deep) !important}
+  .guide-original p.p4{min-height:0 !important;margin:8px 0 !important}
+  .guide-original a{color:var(--primary) !important;text-decoration:underline;text-underline-offset:2px}
+  .guide-original ol,.guide-original ul{margin:0 0 18px 24px}
+  .guide-original li{margin-bottom:8px !important}
+  .guide-original table{
+    width:100%;
+    border-collapse:collapse;
+    margin:20px 0 28px;
+    display:block;
+    overflow-x:auto;
+    background:#faf7f5;
+    border:1px solid var(--border);
+    border-radius:8px;
+  }
+  .guide-original tbody{display:table;width:100%}
+  .guide-original td{
+    border-top:1px solid var(--border);
+    padding:12px 14px !important;
+    vertical-align:top;
+    min-width:120px;
+  }
+  .guide-original tr:first-child td{
+    border-top:0;
+    background:var(--primary);
+    color:#fdfbfa !important;
+    font-weight:700;
+  }
+  .guide-original br{line-height:1.8}
+  .lesson-toc{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:24px 28px;
+    margin:0 0 28px;
+    box-shadow:0 2px 18px rgba(74,58,106,.05);
+  }
+  .lesson-toc h2{
+    border-left:0;
+    padding-left:0;
+    margin:0 0 14px;
+    font-size:28px;
+  }
+  .lesson-toc ol{margin:0 0 0 22px}
+  .lesson-toc li{break-inside:avoid;margin:0 0 8px;padding-right:8px}
+  .lesson-toc .toc-list{column-count:2;column-gap:34px}
+  .lesson-toc .toc-sub{margin-left:18px;font-size:14px;color:var(--text-soft)}
+  .lesson-toc a{
+    color:var(--primary);
+    text-decoration:none;
+    border-bottom:1px solid rgba(90,74,122,.28);
+  }
+  .lesson-toc a:hover{color:var(--accent-deep);border-bottom-color:var(--accent-deep)}
+  .activity-sample-output{
+    background:linear-gradient(135deg,#fffdf9 0%,#f7f1e9 100%);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:26px 30px;
+    margin:0 0 28px;
+    box-shadow:0 2px 18px rgba(74,58,106,.06);
+  }
+  .activity-sample-output .callout-label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--accent-deep);
+    margin:0 0 10px;
+  }
+  .activity-sample-output h2{
+    border-left:0;
+    padding-left:0;
+    margin:0 0 10px;
+    color:var(--primary-deep);
+    font-size:30px;
+  }
+  .activity-sample-output p{
+    max-width:860px;
+    margin:0 0 18px;
+    font-size:16px;
+    line-height:1.68;
+    color:var(--text);
+  }
+  .activity-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .activity-actions a{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:44px;
+    padding:0 18px;
+    border-radius:8px;
+    font-weight:700;
+    text-decoration:none;
+  }
+  .activity-actions .primary-action{
+    background:var(--primary);
+    border:1px solid var(--primary);
+    color:#fdfbfa;
+  }
+  .activity-actions .secondary-action{
+    background:#fdfbfa;
+    border:1px solid var(--border);
+    color:var(--primary);
+  }
+  .back-to-top{
+    margin:26px 0 8px !important;
+    font-family:'JetBrains Mono',monospace !important;
+    font-size:12px !important;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+  }
+  .back-to-top a{
+    color:var(--accent-deep) !important;
+    text-decoration:none;
+    border-bottom:1px solid rgba(168,141,94,.35);
+  }
+  .back-to-top a:hover{color:var(--primary) !important;border-bottom-color:var(--primary)}
+  @media (max-width:760px){.lesson-toc .toc-list{column-count:1}}
+  @media (max-width:640px){
+    .guide-original{padding:24px 20px}
+    .guide-original p.p1:first-child{font-size:32px !important}
+    .guide-original p.p1{font-size:25px !important}
+    .activity-sample-output{padding:24px 20px}
+    .activity-actions a{width:100%}
+  }
+</style>
+</head>
+<body>
+<nav class="topnav">
+<div class="topnav-inner">
+<a class="logo" href="../swahg/index.html">SWAHG<span class="sub">Open University</span></a>
+<div class="nav-links">
+<a href="../swahg/index.html">Home</a>
+<a href="../swahg-blueprint/index.html">Blueprint</a>
+<a href="../swahg-resume-builder/index.html">Resume Builder</a>
+<a href="../swahg-curriculum/index.html">My Curriculum</a>
+<a href="../swahg-jobs/index.html">Job Board</a>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="lesson-head" id="top">
+<div class="breadcrumb">
+<a href="../swahg/index.html">SWAHG</a> · <a href="../swahg-blueprint/index.html">Blueprint</a> · Working on it! · <strong>Skill Practice</strong>
+</div>
+<div class="kicker">Working on it! · Box 18 · Skill Practice</div>
+<h1>Office Admin to VA Portfolio</h1>
+<p class="subtitle">Build Google Workspace samples that prove your office admin and event coordination skills are remote-ready.</p>
+<div class="meta-row"><span><strong>Length:</strong> Full guide</span><span><strong>For:</strong> Office admin, event coordination, operations, and corporate transitioners</span><span><strong>Updated:</strong> 2026-05-19</span><span><strong>Practice output:</strong> Google Workspace VA portfolio samples</span></div>
+</header>
+<nav aria-label="Table of contents" class="lesson-toc" id="lesson-toc"><h2>Table of contents</h2><ol class="toc-list"><li><a href="#you-are-not-starting-from-zero">You are not starting from zero</a></li><li><a href="#what-va-clients-actually-need-proof-of">What VA clients actually need proof of</a></li><li><a href="#the-office-admin-to-va-translation-formula">The office-admin-to-VA translation formula</a></li><li><a href="#why-event-coordination-is-a-va-advantage">Why event coordination is a VA advantage</a></li><li><a href="#google-workspace-tools-that-matter-for-admin-va-work">Google Workspace tools that matter for admin VA work</a></li><li class="toc-sub"><a href="#google-calendar">Google Calendar</a></li><li class="toc-sub"><a href="#google-drive">Google Drive</a></li><li class="toc-sub"><a href="#google-docs">Google Docs</a></li><li class="toc-sub"><a href="#google-sheets">Google Sheets</a></li><li class="toc-sub"><a href="#google-forms">Google Forms</a></li><li class="toc-sub"><a href="#gmail">Gmail</a></li><li class="toc-sub"><a href="#google-meet">Google Meet</a></li><li class="toc-sub"><a href="#gemini">Gemini</a></li><li><a href="#the-7-google-workspace-portfolio-samples-to-build">The 7 Google Workspace portfolio samples to build</a></li><li class="toc-sub"><a href="#sample-1-client-calendar-management-system">Sample 1: Client calendar management system</a></li><li class="toc-sub"><a href="#sample-2-meeting-agenda-and-action-notes-template">Sample 2: Meeting agenda and action notes template</a></li><li class="toc-sub"><a href="#sample-3-project-or-event-tracker-in-google-sheets">Sample 3: Project or event tracker in Google Sheets</a></li><li class="toc-sub"><a href="#sample-4-google-drive-document-organization-system">Sample 4: Google Drive document organization system</a></li><li class="toc-sub"><a href="#sample-5-email-response-and-follow-up-template-library">Sample 5: Email response and follow-up template library</a></li><li class="toc-sub"><a href="#sample-6-client-intake-or-event-request-form">Sample 6: Client intake or event request form</a></li><li class="toc-sub"><a href="#sample-7-admin-sop-or-workflow-guide">Sample 7: Admin SOP or workflow guide</a></li><li><a href="#how-to-use-gemini-responsibly-while-building-the-portfolio">How to use Gemini responsibly while building the portfolio</a></li><li><a href="#how-to-present-the-portfolio">How to present the portfolio</a></li><li class="toc-sub"><a href="#sharing-settings">Sharing settings</a></li><li><a href="#resume-vs-portfolio-the-difference-transitioners-need-to-understand">Resume vs portfolio: the difference transitioners need to understand</a></li><li><a href="#microsoft-office-vs-google-workspace-how-to-explain-the-switch">Microsoft Office vs Google Workspace: how to explain the switch</a></li><li><a href="#mock-samples-vs-fake-client-work">Mock samples vs fake client work</a></li><li><a href="#quality-checklist-for-every-sample">Quality checklist for every sample</a></li><li><a href="#faq">FAQ</a></li><li class="toc-sub"><a href="#what-does-building-a-va-portfolio-from-office-admin-experience-mean">What does “building a VA portfolio from office admin experience” mean?</a></li><li class="toc-sub"><a href="#can-i-build-a-va-portfolio-without-real-clients">Can I build a VA portfolio without real clients?</a></li><li class="toc-sub"><a href="#how-many-portfolio-pieces-do-i-need-as-a-new-va">How many portfolio pieces do I need as a new VA?</a></li><li class="toc-sub"><a href="#do-i-need-google-workspace-certification-before-building-a-portfolio">Do I need Google Workspace certification before building a portfolio?</a></li><li class="toc-sub"><a href="#can-i-use-templates">Can I use templates?</a></li><li class="toc-sub"><a href="#what-tools-besides-google-workspace-should-vas-know">What tools besides Google Workspace should VAs know?</a></li><li class="toc-sub"><a href="#how-do-i-explain-that-my-experience-was-office-based-not-remote">How do I explain that my experience was office-based, not remote?</a></li><li class="toc-sub"><a href="#do-vas-need-industry-specific-knowledge">Do VAs need industry-specific knowledge?</a></li><li class="toc-sub"><a href="#what-should-i-avoid-putting-in-my-va-portfolio">What should I avoid putting in my VA portfolio?</a></li><li class="toc-sub"><a href="#what-is-the-best-first-sample-to-build">What is the best first sample to build?</a></li><li><a href="#a-14-day-build-plan">A 14-day build plan</a></li><li class="toc-sub"><a href="#day-1-audit-your-old-responsibilities">Day 1: Audit your old responsibilities</a></li><li class="toc-sub"><a href="#day-2-review-10-to-20-va-job-posts">Day 2: Review 10 to 20 VA job posts</a></li><li class="toc-sub"><a href="#day-3-build-your-portfolio-drive-folder">Day 3: Build your portfolio Drive folder</a></li><li class="toc-sub"><a href="#day-4-build-the-calendar-sample">Day 4: Build the calendar sample</a></li><li class="toc-sub"><a href="#day-5-build-the-meeting-notes-template">Day 5: Build the meeting notes template</a></li><li class="toc-sub"><a href="#days-6-and-7-build-the-project-or-event-tracker">Days 6 and 7: Build the project or event tracker</a></li><li class="toc-sub"><a href="#day-8-build-the-drive-system">Day 8: Build the Drive system</a></li><li class="toc-sub"><a href="#day-9-build-the-email-template-library">Day 9: Build the email template library</a></li><li class="toc-sub"><a href="#day-10-build-the-intake-form">Day 10: Build the intake form</a></li><li class="toc-sub"><a href="#day-11-build-the-sop">Day 11: Build the SOP</a></li><li class="toc-sub"><a href="#day-12-add-screenshots-and-labels">Day 12: Add screenshots and labels</a></li><li class="toc-sub"><a href="#day-13-write-the-portfolio-index">Day 13: Write the portfolio index</a></li><li class="toc-sub"><a href="#day-14-practice-explaining-your-portfolio">Day 14: Practice explaining your portfolio</a></li><li><a href="#final-position">Final position</a></li></ol></nav><article class="guide-original" id="complete-guide"><p class="p1"><span class="s1"><b>From Office Admin to VA Portfolio: Building Google Workspace Samples That Prove Your Skills</b></span></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p2" id="you-are-not-starting-from-zero"><span class="s1"><b>You are not starting from zero</b></span></p><p class="p3"><span class="s1">You may think you are starting from zero because you have never held the title “Virtual Assistant.”</span></p><p class="p3"><span class="s1">But if you have scheduled meetings, prepared reports, coordinated events, organized folders, updated trackers, answered inquiries, followed up with people, or kept office work moving, you already have raw material.</span></p><p class="p3"><span class="s1">Your next step is not to erase your work history.</span></p><p class="p3"><span class="s1">Your next step is to translate it.</span></p><p class="p3"><span class="s1">A corporate office, school office, BPO floor, HR department, reception desk, events team, or operations unit may not look like a remote client setup. You may have used Microsoft Office, Outlook, Excel, paper files, internal systems, shared drives, or company-specific tools instead of Google Workspace. You may not have screenshots you can legally show. You may not have freelance clients yet.</span></p><p class="p3"><span class="s1">That does not mean your work does not count.</span></p><p class="p3"><span class="s1">It means your experience needs to be packaged differently.</span></p><p class="p3"><span class="s1">A resume tells a client what you did. A VA portfolio shows how you work. That distinction matters. A resume line like “coordinated meetings” may be too vague for a remote client. A Google Calendar sample with scheduling rules, invite copy, follow-up blocks, and a short process note gives the client something they can inspect.</span></p><p class="p3"><span class="s1">The strongest VA portfolio for a corporate transitioner is not a decorative gallery. It is a proof folder. It should show how you organize information, protect access, manage time, document decisions, track deadlines, respond professionally, and build repeatable systems.</span></p><p class="p3"><span class="s1">That is why office admin and event coordination are not weak backgrounds for VA work. They are often directly relevant.</span></p><p class="p3"><span class="s1">O*NET describes secretaries and administrative assistants as workers who perform routine administrative functions such as drafting correspondence, scheduling appointments, organizing paper and electronic files, and providing information to callers. The same O*NET page lists tasks such as maintaining databases, managing filing systems, coordinating information flow through email, scheduling appointments, maintaining calendars, composing meeting notes and reports, completing forms, arranging travel or conference reservations, contributing to projects, and coordinating meetings or special events. (<a href="https://www.onetonline.org/link/summary/43-6014.00"><span class="s2">O*NET OnLine</span></a>)</span></p><p class="p3"><span class="s1">BLS describes secretaries and administrative assistants as workers who arrange files, prepare documents, schedule appointments, support staff, maintain databases and filing systems, prepare memos or reports, edit documents, use spreadsheet and database software, and use videoconferencing tools. BLS also notes that some administrative assistants work from home as virtual assistants. (<span class="s2">Bureau of Labor Statistics</span>)</span></p><p class="p3"><span class="s1">Event coordination also transfers cleanly. O*NET describes meeting, convention, and event planners as workers who coordinate staff, convention personnel, or clients to arrange group meetings, events, or conventions. (<a href="https://www.onetonline.org/link/summary/13-1121.00"><span class="s2">O*NET OnLine</span></a>) BLS says event planners arrange meeting locations, transportation, service providers, registration, audiovisual needs, costs, and other event details, while managing multiple deadlines and stakeholders. (<span class="s2">Bureau of Labor Statistics</span>)</span></p><p class="p3"><span class="s1">So the issue is not whether your old work counts.</span></p><p class="p3"><span class="s1">The issue is whether a remote client can see the business skill inside it.</span></p><p class="p3"><span class="s1">“Helped with company events” is too general.</span></p><p class="p3"><span class="s1">“Tracked event deadlines, vendor updates, attendee information, approval dates, and post-event follow-ups” is stronger.</span></p><p class="p3"><span class="s1">“Handled office documents” is too broad.</span></p><p class="p3"><span class="s1">“Maintained a document system with folders, naming rules, retrieval logic, and access boundaries” is stronger.</span></p><p class="p3"><span class="s1">“Assisted managers” is too vague.</span></p><p class="p3"><span class="s1">“Protected schedules, prepared meeting materials, documented decisions, and followed up on action items” is stronger.</span></p><p class="p3"><span class="s1">That is the portfolio shift.</span></p><p class="p3"><span class="s1">You are taking work you already carried, naming the business skill inside it, and rebuilding the proof inside tools remote clients recognize.</span></p><p class="p3"><span class="s1">For an admin-to-VA transitioner, Google Workspace is a practical place to build that proof because Google Workspace includes tools such as Gmail, Drive, Meet, Calendar, Docs, Sheets, Slides, Forms, Sites, and related apps. Google also describes Workspace as cloud-based, real-time collaboration software used across devices. (<a href="https://workspace.google.com/intl/en_ph/"><span class="s2">Google Workspace</span></a>)</span></p><p class="p3"><span class="s1">But this article is not asking you to master every Google tool at once.</span></p><p class="p3"><span class="s1">It will focus on the tools most connected to admin VA work: Gmail, Calendar, Drive, Docs, Sheets, Forms, Meet, and Gemini-assisted workflows. Google’s Learning Center organizes help by product, including Calendar, Docs, Drive, Gemini, Gmail, Meet, Sheets, Slides, and other Workspace tools, which makes it a useful study companion while building samples. (<a href="https://support.google.com/a/users/?hl=en"><span class="s2">Google Help</span></a>)</span></p><p class="p3"><span class="s1">The principle is simple:</span></p><p class="p3"><span class="s1">Do not invent experience. Convert responsibilities into samples.</span></p><p class="p3"><span class="s1">A mock sample is not dishonest when it is clearly labeled. An anonymized workflow is not fake when you remove confidential information and rebuild only the structure. A personal operations sample can still prove task tracking, documentation, and follow-through.</span></p><p class="p3"><span class="s1">What you should never do is use former employer data, private emails, internal reports, staff lists, client names, vendor contracts, HR files, calendar screenshots, or confidential templates.</span></p><p class="p3"><span class="s1">You do not need to pretend you were already a VA.</span></p><p class="p3"><span class="s1">You need to show that your admin experience is remote-transferable.</span></p><p class="p4"><span class="s1"></span><br/></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p2" id="what-va-clients-actually-need-proof-of"><span class="s1"><b>What VA clients actually need proof of</b></span></p><p class="p3"><span class="s1">Clients do not hire a VA because she says, “I am organized.”</span></p><p class="p3"><span class="s1">They hire her because they believe she can keep their work from becoming messy.</span></p><p class="p3"><span class="s1">That belief usually comes from proof: examples, systems, screenshots, templates, trackers, and clear explanations.</span></p><p class="p3"><span class="s1">Current public VA guidance and job listings commonly point toward the same practical task families: calendar management, email management, data entry, spreadsheet tracking, Google Workspace, Microsoft Office, online research, CRM support, and project management tools. Remote.co lists VA-related skills and tools such as calendar and schedule management, data entry and spreadsheet tracking, email management and inbox organization, Google Workspace, Microsoft Office, online research, and project management tools such as Trello, Asana, and ClickUp. (<span class="s2">Remote.co</span>)</span></p><p class="p3"><span class="s1">Current public listings show the same direction, though they should be treated as market signals rather than a formal statistical study. Indeed Philippines search results show examples of VA roles mentioning Google Workspace, Google Sheets, Docs, Calendar, inboxes, calendars, scheduling, Google Sheets, routine replies, appointment reminders, and general admin support. (<span class="s2">Indeed</span>) Upwork’s public VA job results also show current listings involving file management, Google Docs, scheduling, communications, administrative support, documents, spreadsheets, task tracking, and SOP/process documentation. (<span class="s2">Upwork</span>)</span></p><p class="p3"><span class="s1">That does not mean every VA role requires the same tool stack. It does mean your portfolio should prove business workflows, not vague personality traits.</span></p><p class="p3"><span class="s1">A client usually wants to know:</span></p><p class="p3"><span class="s1">Can you manage time without creating confusion?</span></p><p class="p3"><span class="s1">Can you organize files so the right person can find the right document?</span></p><p class="p3"><span class="s1">Can you write a clear update?</span></p><p class="p3"><span class="s1">Can you track open tasks without being reminded every hour?</span></p><p class="p3"><span class="s1">Can you document decisions?</span></p><p class="p3"><span class="s1">Can you follow instructions and improve a process?</span></p><p class="p3"><span class="s1">Can you use cloud-based tools responsibly?</span></p><p class="p3"><span class="s1">Can you protect confidential information?</span></p><p class="p3"><span class="s1">Can you communicate when something is blocked?</span></p><p class="p3"><span class="s1">These are not abstract traits. They can be shown through samples.</span></p><p class="p3"><span class="s1">A calendar system proves scheduling judgment.</span></p><p class="p3"><span class="s1">A meeting notes template proves documentation discipline.</span></p><p class="p3"><span class="s1">A Google Sheets tracker proves task visibility.</span></p><p class="p3"><span class="s1">A Drive folder map proves file organization.</span></p><p class="p3"><span class="s1">An email template library proves tone and follow-up thinking.</span></p><p class="p3"><span class="s1">An intake form proves information-gathering logic.</span></p><p class="p3"><span class="s1">An SOP proves repeatability.</span></p><p class="p3"><span class="s1">That is why a VA portfolio should not only show finished documents. It should show the process behind them.</span></p><p class="p3"><span class="s1">A weak sample says: “Here is a Google Sheet I made.”</span></p><p class="p3"><span class="s1">A strong sample says: “This Google Sheet tracks a fictional online workshop for a business coach. It includes task owner, due date, status, priority, dependency, blocker, next action, and post-event follow-up. I would update this daily during the two weeks before the workshop and use the summary tab for client updates.”</span></p><p class="p3"><span class="s1">The second version is stronger because it shows judgment. It tells the client what the tracker is for, how it would be used, and what business problem it solves.</span></p><p class="p3"><span class="s1">This fits the broader shift toward visible skills evidence. NACE defines career readiness as a foundation for demonstrating core competencies that prepare people for workplace success, including communication, critical thinking, teamwork, professionalism, and technology. (<a href="https://www.naceweb.org/career-readiness/competencies/career-readiness-defined/"><span class="s2">NACE</span></a>) LinkedIn’s Future of Recruiting 2025 report says skills-based hiring is gaining steam as employers try to fill skills gaps and focus more on what candidates can do rather than only degrees or job history. (<span class="s2">LinkedIn Business Solutions</span>)</span></p><p class="p3"><span class="s1">Your portfolio will not guarantee interviews. It should not be framed that way.</span></p><p class="p3"><span class="s1">But it can make your transferable skills easier to inspect.</span></p><p class="p3"><span class="s1">That is the goal.</span></p><p class="p4"><span class="s1"></span><br/></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p2" id="the-office-admin-to-va-translation-formula"><span class="s1"><b>The office-admin-to-VA translation formula</b></span></p><p class="p3"><span class="s1">Use this three-step formula for every portfolio piece:</span></p><p class="p3"><span class="s1"><b>1. Name the old responsibility.</b><br/>
+Example: “I scheduled meetings and coordinated room bookings.”</span></p><p class="p3"><span class="s1"><b>2. Name the business action inside it.</b><br/>
+Example: “I protected calendars, resolved availability conflicts, prepared meeting details, and reduced confusion.”</span></p><p class="p3"><span class="s1"><b>3. Build a Google Workspace sample that proves it.</b><br/>
+Example: “I created a Google Calendar sample for a fictional consultant, including scheduling rules, appointment blocks, meeting invite copy, focus time, and follow-up blocks.”</span></p><p class="p3"><span class="s1">This formula keeps you honest. It also keeps you specific.</span></p><p class="p3"><span class="s1">You are not saying, “I managed remote executive calendars for international clients,” if you did not. You are saying, “In my office admin role, I coordinated schedules and meeting logistics. I created this Google Calendar sample to show how I would apply that experience to a remote client calendar.”</span></p><p class="p3"><span class="s1">That sentence is credible.</span></p><p class="p3"><span class="s1">The most common mistake transitioners make is shrinking their experience because they did not hold the VA title.</span></p><p class="p3"><span class="s1">Instead of saying, “I was just an office admin,” use skill language.</span></p><p class="p3"><span class="s1">Office-based wording: “Prepared meeting minutes.”<br/>
+VA portfolio wording: “Built a meeting documentation workflow with decisions, action items, owners, deadlines, and follow-up notes.”</span></p><p class="p3"><span class="s1">Office-based wording: “Helped with events.”<br/>
+VA portfolio wording: “Built an event tracker that monitors tasks, vendors, registrations, deadlines, blockers, and post-event follow-ups.”</span></p><p class="p3"><span class="s1">Office-based wording: “Organized department files.”<br/>
+VA portfolio wording: “Designed a Drive folder structure with naming rules, archive logic, and permission notes.”</span></p><p class="p3"><span class="s1">Office-based wording: “Answered emails.”<br/>
+VA portfolio wording: “Created an email response library with scheduling, rescheduling, document request, vendor follow-up, and escalation templates.”</span></p><p class="p3"><span class="s1">Office-based wording: “Updated reports.”<br/>
+VA portfolio wording: “Created a weekly status report template with completed tasks, pending items, blockers, next actions, and client decisions needed.”</span></p><p class="p3"><span class="s1">Here is a wider map:</span></p><table cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="td1" valign="middle">
+<p class="p5"><span class="s1"><b>Previous office or event task</b></span></p>
+</td>
+<td class="td2" valign="middle">
+<p class="p5"><span class="s1"><b>Business action inside it</b></span></p>
+</td>
+<td class="td3" valign="middle">
+<p class="p5"><span class="s1"><b>VA portfolio sample</b></span></p>
+</td>
+<td class="td4" valign="middle">
+<p class="p5"><span class="s1"><b>Google tool</b></span></p>
+</td>
+</tr>
+<tr>
+<td class="td1" valign="middle">
+<p class="p6"><span class="s1">Scheduled meetings</span></p>
+</td>
+<td class="td2" valign="middle">
+<p class="p6"><span class="s1">Managed availability, avoided conflicts, prepared invite details</span></p>
+</td>
+<td class="td3" valign="middle">
+<p class="p6"><span class="s1">Client calendar system</span></p>
+</td>
+<td class="td4" valign="middle">
+<p class="p6"><span class="s1">Calendar</span></p>
+</td>
+</tr>
+<tr>
+<td class="td1" valign="middle">
+<p class="p6"><span class="s1">Prepared meeting minutes</span></p>
+</td>
+<td class="td2" valign="middle">
+<p class="p6"><span class="s1">Captured decisions, actions, owners, dates</span></p>
+</td>
+<td class="td3" valign="middle">
+<p class="p6"><span class="s1">Meeting agenda and action notes template</span></p>
+</td>
+<td class="td4" valign="middle">
+<p class="p6"><span class="s1">Docs</span></p>
+</td>
+</tr>
+<tr>
+<td class="td1" valign="middle">
+<p class="p6"><span class="s1">Organized department files</span></p>
+</td>
+<td class="td2" valign="middle">
+<p class="p6"><span class="s1">Created retrieval logic and access order</span></p>
+</td>
+<td class="td3" valign="middle">
+<p class="p6"><span class="s1">Client Drive folder system</span></p>
+</td>
+<td class="td4" valign="middle">
+<p class="p6"><span class="s1">Drive</span></p>
+</td>
+</tr>
+<tr>
+<td class="td1" valign="middle">
+<p class="p6"><span class="s1">Updated reports</span></p>
+</td>
+<td class="td2" valign="middle">
+<p class="p6"><span class="s1">Turned raw updates into readable summaries</span></p>
+</td>
+<td class="td3" valign="middle">
+<p class="p6"><span class="s1">Weekly client status report</span></p>
+</td>
+<td class="td4" valign="middle">
+<p class="p6"><span class="s1">Docs</span></p>
+</td>
+</tr>
+<tr>
+<td class="td1" valign="middle">
+<p class="p6"><span class="s1">Tracked office requests</span></p>
+</td>
+<td class="td2" valign="middle">
+<p class="p6"><span class="s1">Monitored tasks and follow-ups</span></p>
+</td>
+<td class="td3" valign="middle">
+<p class="p6"><span class="s1">Admin request tracker</span></p>
+</td>
+<td class="td4" valign="middle">
+<p class="p6"><span class="s1">Sheets</span></p>
+</td>
+</tr>
+<tr>
+<td class="td1" valign="middle">
+<p class="p6"><span class="s1">Coordinated vendors</span></p>
+</td>
+<td class="td2" valign="middle">
+<p class="p6"><span class="s1">Managed deadlines, communication, and dependencies</span></p>
+</td>
+<td class="td3" valign="middle">
+<p class="p6"><span class="s1">Vendor/event tracker</span></p>
+</td>
+<td class="td4" valign="middle">
+<p class="p6"><span class="s1">Sheets</span></p>
+</td>
+</tr>
+<tr>
+<td class="td1" valign="middle">
+<p class="p6"><span class="s1">Sent follow-up emails</span></p>
+</td>
+<td class="td2" valign="middle">
+<p class="p6"><span class="s1">Maintained communication flow</span></p>
+</td>
+<td class="td3" valign="middle">
+<p class="p6"><span class="s1">Email template library</span></p>
+</td>
+<td class="td4" valign="middle">
+<p class="p6"><span class="s1">Gmail and Docs</span></p>
+</td>
+</tr>
+<tr>
+<td class="td1" valign="middle">
+<p class="p6"><span class="s1">Collected registration details</span></p>
+</td>
+<td class="td2" valign="middle">
+<p class="p6"><span class="s1">Gathered clean information</span></p>
+</td>
+<td class="td3" valign="middle">
+<p class="p6"><span class="s1">Intake or event request form</span></p>
+</td>
+<td class="td4" valign="middle">
+<p class="p6"><span class="s1">Forms and Sheets</span></p>
+</td>
+</tr>
+<tr>
+<td class="td1" valign="middle">
+<p class="p6"><span class="s1">Joined or hosted meetings</span></p>
+</td>
+<td class="td2" valign="middle">
+<p class="p6"><span class="s1">Prepared agendas and follow-up summaries</span></p>
+</td>
+<td class="td3" valign="middle">
+<p class="p6"><span class="s1">Meeting setup workflow</span></p>
+</td>
+<td class="td4" valign="middle">
+<p class="p6"><span class="s1">Meet, Calendar, Docs</span></p>
+</td>
+</tr>
+<tr>
+<td class="td1" valign="middle">
+<p class="p6"><span class="s1">Followed office procedures</span></p>
+</td>
+<td class="td2" valign="middle">
+<p class="p6"><span class="s1">Worked from repeatable instructions</span></p>
+</td>
+<td class="td3" valign="middle">
+<p class="p6"><span class="s1">SOP document</span></p>
+</td>
+<td class="td4" valign="middle">
+<p class="p6"><span class="s1">Docs</span></p>
+</td>
+</tr>
+<tr>
+<td class="td1" valign="middle">
+<p class="p6"><span class="s1">Handled confidential records</span></p>
+</td>
+<td class="td2" valign="middle">
+<p class="p6"><span class="s1">Respected access boundaries</span></p>
+</td>
+<td class="td3" valign="middle">
+<p class="p6"><span class="s1">Permission and privacy note</span></p>
+</td>
+<td class="td4" valign="middle">
+<p class="p6"><span class="s1">Drive and Docs</span></p>
+</td>
+</tr>
+</tbody>
+</table><p class="p3"><span class="s1">This table is not only for the article reader. It can also become part of the portfolio.</span></p><p class="p3"><span class="s1">A transitioner can include a one-page “Transferable Skill Map” in her Drive portfolio. That page can say:</span></p><p class="p3"><span class="s1">“My background is in office administration and event coordination. In those roles, I handled scheduling, documentation, follow-ups, records, and event logistics. This portfolio shows how I translate that experience into remote-ready VA deliverables using Google Workspace.”</span></p><p class="p3"><span class="s1">That statement does not hide the transition.</span></p><p class="p3"><span class="s1">It explains it.</span></p><p class="p4"><span class="s1"></span><br/></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p2" id="why-event-coordination-is-a-va-advantage"><span class="s1"><b>Why event coordination is a VA advantage</b></span></p><p class="p3"><span class="s1">Event coordination should not be treated as a side note.</span></p><p class="p3"><span class="s1">For many admin-to-VA transitioners, it is one of the strongest signals in the background.</span></p><p class="p3"><span class="s1">Event work usually contains the exact pressures clients want help with: changing deadlines, unclear ownership, missing documents, late approvals, multiple stakeholders, attendee questions, vendor follow-ups, and last-minute changes.</span></p><p class="p3"><span class="s1">A person who has coordinated events has often practiced:</span></p><p class="p3"><span class="s1">Time management.</span></p><p class="p3"><span class="s1">Stakeholder communication.</span></p><p class="p3"><span class="s1">Checklist management.</span></p><p class="p3"><span class="s1">Document preparation.</span></p><p class="p3"><span class="s1">Vendor follow-up.</span></p><p class="p3"><span class="s1">Registration tracking.</span></p><p class="p3"><span class="s1">Budget awareness.</span></p><p class="p3"><span class="s1">Deadline monitoring.</span></p><p class="p3"><span class="s1">Meeting coordination.</span></p><p class="p3"><span class="s1">Post-event reporting.</span></p><p class="p3"><span class="s1">Escalation.</span></p><p class="p3"><span class="s1">This maps well to VA niches such as webinar assistant, online event assistant, podcast guest coordinator, coaching program assistant, community assistant, operations assistant, and project coordinator.</span></p><p class="p3"><span class="s1">BLS describes event planners as coordinating details such as scope, time, location, cost, bids from venues and service providers, transportation, food, bills, registrations, audiovisual equipment, suppliers, and schedules. It also notes that event planning work can be fast-paced and deadline-heavy. (<span class="s2">Bureau of Labor Statistics</span>)</span></p><p class="p3"><span class="s1">That is why an event tracker can be one of the strongest portfolio pieces.</span></p><p class="p3"><span class="s1">A fictional online workshop is enough.</span></p><p class="p3"><span class="s1">You do not need a real client. You can create a mock scenario:</span></p><p class="p3"><span class="s1"><b>Scenario:</b> A business coach is preparing a 90-minute online workshop.<br/>
+<b>Need:</b> The coach needs tasks, deadlines, vendors, registrations, presentation files, reminders, and follow-up emails organized in one place.<br/>
+<b>Deliverable:</b> A Google Sheets event tracker with tabs for overview, tasks, vendors, registrations, assets, budget estimate, and post-event follow-up.<br/>
+<b>Label:</b> Sample project based on a fictional business scenario.</span></p><p class="p3"><span class="s1">This type of sample does not pretend to be paid client work. It proves a workflow.</span></p><p class="p3"><span class="s1">And for VA hiring, workflow proof is more useful than generic enthusiasm.</span></p><p class="p4"><span class="s1"></span><br/></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p2" id="google-workspace-tools-that-matter-for-admin-va-work"><span class="s1"><b>Google Workspace tools that matter for admin VA work</b></span></p><p class="p3"><span class="s1">Google Workspace includes many tools, but a transitioner does not need to build a sample for every app at once. The better approach is to build depth in the tools most connected to admin VA tasks.</span></p><p class="p3"><span class="s1">Google Workspace’s own product page lists Gmail, Drive, Meet, Calendar, Chat, Docs, Sheets, Slides, Forms, Sites, Tasks, Gemini, Keep, and other tools. It describes Workspace as including cloud-based collaboration and business productivity tools. (<a href="https://workspace.google.com/intl/en_ph/"><span class="s2">Google Workspace</span></a>)</span></p><p class="p3"><span class="s1">For an office admin or event coordinator moving into VA work, start with these:</span></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="google-calendar"><span class="s1"><b>Google Calendar</b></span></p><p class="p3"><span class="s1">Google Calendar is the tool to use for scheduling proof.</span></p><p class="p3"><span class="s1">A good calendar sample can show:</span></p><p class="p3"><span class="s1">Client call blocks.</span></p><p class="p3"><span class="s1">Admin blocks.</span></p><p class="p3"><span class="s1">Focus time.</span></p><p class="p3"><span class="s1">Follow-up blocks.</span></p><p class="p3"><span class="s1">Internal meeting blocks.</span></p><p class="p3"><span class="s1">Reminder rules.</span></p><p class="p3"><span class="s1">Appointment scheduling.</span></p><p class="p3"><span class="s1">Color categories.</span></p><p class="p3"><span class="s1">Invite notes.</span></p><p class="p3"><span class="s1">Meeting prep time.</span></p><p class="p3"><span class="s1">Reschedule rules.</span></p><p class="p3"><span class="s1">Google Calendar appointment scheduling lets users create booking pages, customize appointment availability, share a booking link, and have booked appointments appear on the calendar. Google also notes features such as buffer time, custom questions, maximum bookings per day, automated reminders on some plans, and conflict checks across calendars on some plans. (<a href="https://workspace.google.com/intl/en_ph/resources/appointment-scheduling/"><span class="s2">Google Workspace</span></a>)</span></p><p class="p3"><span class="s1">For a VA portfolio, the point is not to show a crowded calendar. The point is to show scheduling logic.</span></p><p class="p3"><span class="s1">A client wants to know that you understand availability, context switching, deadlines, preparation time, and follow-up time.</span></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="google-drive"><span class="s1"><b>Google Drive</b></span></p><p class="p3"><span class="s1">Google Drive is the tool to use for file organization proof.</span></p><p class="p3"><span class="s1">A Drive sample should show:</span></p><p class="p3"><span class="s1">Folder structure.</span></p><p class="p3"><span class="s1">Subfolders.</span></p><p class="p3"><span class="s1">Naming conventions.</span></p><p class="p3"><span class="s1">Archive rules.</span></p><p class="p3"><span class="s1">Template storage.</span></p><p class="p3"><span class="s1">Permission notes.</span></p><p class="p3"><span class="s1">File retrieval logic.</span></p><p class="p3"><span class="s1">Google’s Drive Help recommends using folders and subfolders, keeping names short and meaningful, adding dates or numbers, color-coding folders, adding descriptions, and starring important files. (<a href="https://support.google.com/drive/answer/2375091?hl=en"><span class="s2">Google Help</span></a>) Google Drive sharing controls let users choose who can access a file and assign roles such as Viewer, Commenter, or Editor; Google also warns that “anyone with the link” access broadens availability. (<a href="https://support.google.com/drive/answer/2494822?hl=en"><span class="s2">Google Help</span></a>)</span></p><p class="p3"><span class="s1">For a VA portfolio, Drive proof is not only about neat folders. It is about access discipline.</span></p><p class="p3"><span class="s1">A client wants to know that you will not accidentally send an editable file to the wrong person.</span></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="google-docs"><span class="s1"><b>Google Docs</b></span></p><p class="p3"><span class="s1">Google Docs is the tool to use for meeting notes, SOPs, reports, templates, and polished written communication.</span></p><p class="p3"><span class="s1">Google describes Docs as an online collaborative document editor. Docs supports comments, task assignment, access control, version history, meeting notes from Calendar events, custom reusable content blocks, and collaboration from different devices. (<a href="https://workspace.google.com/products/docs/"><span class="s2">Google Workspace</span></a>)</span></p><p class="p3"><span class="s1">For a VA portfolio, Docs is useful for:</span></p><p class="p3"><span class="s1">Meeting agenda templates.</span></p><p class="p3"><span class="s1">Meeting minutes.</span></p><p class="p3"><span class="s1">Weekly status reports.</span></p><p class="p3"><span class="s1">SOPs.</span></p><p class="p3"><span class="s1">Email template libraries.</span></p><p class="p3"><span class="s1">Folder maps.</span></p><p class="p3"><span class="s1">Client update notes.</span></p><p class="p3"><span class="s1">A strong Docs sample should show headings, clean spacing, readable structure, action items, owners, due dates, and a clear next step.</span></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="google-sheets"><span class="s1"><b>Google Sheets</b></span></p><p class="p3"><span class="s1">Google Sheets is the tool to use for tracking proof.</span></p><p class="p3"><span class="s1">Google describes Sheets as an online spreadsheet tool for real-time collaboration, with AI support for formatting, analysis, and spreadsheet work. (<a href="https://workspace.google.com/products/sheets/"><span class="s2">Google Workspace</span></a>) Google’s Sheets Help explains conditional formatting rules, which can format cells, rows, or columns when they meet conditions; this is useful for status tracking, overdue items, priorities, and risks. (<a href="https://support.google.com/docs/answer/78413?hl=en"><span class="s2">Google Help</span></a>)</span></p><p class="p3"><span class="s1">A VA Sheets sample should show tracking, not just data entry.</span></p><p class="p3"><span class="s1">Use columns such as:</span></p><p class="p3"><span class="s1">Task.</span></p><p class="p3"><span class="s1">Owner.</span></p><p class="p3"><span class="s1">Due date.</span></p><p class="p3"><span class="s1">Status.</span></p><p class="p3"><span class="s1">Priority.</span></p><p class="p3"><span class="s1">Dependency.</span></p><p class="p3"><span class="s1">Next action.</span></p><p class="p3"><span class="s1">Blocker.</span></p><p class="p3"><span class="s1">Notes.</span></p><p class="p3"><span class="s1">Last updated.</span></p><p class="p3"><span class="s1">You can also add dropdowns, checkboxes, filters, conditional formatting, and a summary section.</span></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="google-forms"><span class="s1"><b>Google Forms</b></span></p><p class="p3"><span class="s1">Google Forms is the tool to use for intake, request collection, event registration, feedback, and structured information gathering.</span></p><p class="p3"><span class="s1">Google describes Forms as a tool for creating forms and surveys to gather data and insights. (<a href="https://workspace.google.com/products/forms/"><span class="s2">Google Workspace</span></a>) Google’s Forms learning material explains that users can add questions, choose question types, add response options, and make questions required. (<a href="https://support.google.com/a/users/answer/9303071?hl=en"><span class="s2">Google Help</span></a>)</span></p><p class="p3"><span class="s1">For a VA portfolio, Forms can prove that you know how to collect the right information before work begins.</span></p><p class="p3"><span class="s1">A client intake form can ask:</span></p><p class="p3"><span class="s1">Name.</span></p><p class="p3"><span class="s1">Business type.</span></p><p class="p3"><span class="s1">Service needed.</span></p><p class="p3"><span class="s1">Deadline.</span></p><p class="p3"><span class="s1">Preferred communication channel.</span></p><p class="p3"><span class="s1">Files needed.</span></p><p class="p3"><span class="s1">Urgency.</span></p><p class="p3"><span class="s1">Current problem.</span></p><p class="p3"><span class="s1">Decision-maker.</span></p><p class="p3"><span class="s1">Notes.</span></p><p class="p3"><span class="s1">The connected response Sheet can then become the proof that you know how to turn form submissions into organized follow-up.</span></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="gmail"><span class="s1"><b>Gmail</b></span></p><p class="p3"><span class="s1">You do not need to show a real inbox.</span></p><p class="p3"><span class="s1">In fact, you should not show a real inbox if it contains private information.</span></p><p class="p3"><span class="s1">Instead, you can create:</span></p><p class="p3"><span class="s1">Email response templates.</span></p><p class="p3"><span class="s1">Follow-up templates.</span></p><p class="p3"><span class="s1">Labeling logic.</span></p><p class="p3"><span class="s1">Escalation rules.</span></p><p class="p3"><span class="s1">A mock inbox workflow.</span></p><p class="p3"><span class="s1">Time Etc’s email management VA service page lists inbox organization and filtering, email response handling, follow-up coordination, contact list maintenance, sorting emails, flagging priorities, archiving old messages, drafting replies, managing templates, scheduling follow-ups, creating folder systems, implementing filters, and tracking important threads as email-support tasks. (<span class="s2">Time etc Virtual Assistant Service</span>)</span></p><p class="p3"><span class="s1">For a VA portfolio, email proof should show tone and judgment.</span></p><p class="p3"><span class="s1">A client wants to know whether you can reply politely, ask for missing details, follow up without sounding rude, and escalate when needed.</span></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="google-meet"><span class="s1"><b>Google Meet</b></span></p><p class="p3"><span class="s1">Google Meet proof does not require live call recordings.</span></p><p class="p3"><span class="s1">You can show the workflow around a meeting:</span></p><p class="p3"><span class="s1">Calendar invite copy.</span></p><p class="p3"><span class="s1">Agenda.</span></p><p class="p3"><span class="s1">Prep checklist.</span></p><p class="p3"><span class="s1">File checklist.</span></p><p class="p3"><span class="s1">Note-taking template.</span></p><p class="p3"><span class="s1">Post-meeting action summary.</span></p><p class="p3"><span class="s1">Follow-up email.</span></p><p class="p3"><span class="s1">A VA who can prepare and close the loop around a meeting is more useful than a VA who simply joins the call.</span></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="gemini"><span class="s1"><b>Gemini</b></span></p><p class="p3"><span class="s1">Gemini can help draft, summarize, structure, and brainstorm. It should not be framed as a replacement for the VA’s judgment.</span></p><p class="p3"><span class="s1">Google’s Workspace with Gemini documentation says Workspace plans can include Gemini in Gmail, Docs, Meet, and more; it also describes Gemini in the side panel of Gmail, Docs, Sheets, Slides, Drive, and Chat, “Help me write” in Gmail and Docs, and “Take notes for me” in Meet. (<a href="https://knowledge.workspace.google.com/admin/gemini/google-workspace-with-gemini"><span class="s2">Google Workspace Help</span></a>) Google’s Gemini in Sheets documentation says Gemini can help create tables, create formulas, generate analysis and insights, build charts and graphs, apply conditional formatting, create pivot tables, add dropdowns or checkboxes, sort and filter, and perform other spreadsheet actions. (<a href="https://support.google.com/docs/answer/14218565?hl=en"><span class="s2">Google Help</span></a>)</span></p><p class="p3"><span class="s1">Google’s privacy documentation for Gemini in Workspace states that Workspace content remains the user’s content, that Workspace data is not used to train or improve the underlying Gemini or other generative AI models outside Workspace without permission, and that Gemini in Gmail, Calendar, Chat, Docs, Drive, Sheets, Slides, Meet, and Vids uses Workspace content to provide responses but does not use that content to train or improve models. (<a href="https://support.google.com/docs/answer/14615114?hl=en"><span class="s2">Google Help</span></a>)</span></p><p class="p3"><span class="s1">Still, portfolio practice should use fictional or sanitized information.</span></p><p class="p3"><span class="s1">Do not paste former employer emails, client records, HR files, internal documents, vendor contracts, budgets, passwords, staff lists, or confidential reports into any AI tool.</span></p><p class="p3"><span class="s1">Your rule should be:</span></p><p class="p3"><span class="s1">Gemini may assist the draft. You own the final.</span></p><p class="p4"><span class="s1"></span><br/></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p2" id="the-7-google-workspace-portfolio-samples-to-build"><span class="s1"><b>The 7 Google Workspace portfolio samples to build</b></span></p><p class="p3"><span class="s1">These seven samples are a strong starter set for an office admin or event coordinator moving into admin VA work.</span></p><p class="p3"><span class="s1">They are not the only possible samples. A social media VA, bookkeeping VA, executive assistant, or real estate VA may need different proof. But for a corporate transitioner, these samples cover the most useful admin categories: calendar control, meeting documentation, project tracking, file discipline, inbox thinking, intake design, and repeatable workflows.</span></p><p class="p3"><span class="s1">Each sample should include:</span></p><p class="p3"><span class="s1">What old task it came from.</span></p><p class="p3"><span class="s1">What VA skill it proves.</span></p><p class="p3"><span class="s1">What Google tool to use.</span></p><p class="p3"><span class="s1">What the finished sample should contain.</span></p><p class="p3"><span class="s1">What screenshot or link to show.</span></p><p class="p3"><span class="s1">What not to exaggerate.</span></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="sample-1-client-calendar-management-system"><span class="s1"><b>Sample 1: Client calendar management system</b></span></p><p class="p3"><span class="s1"><b>Old task it comes from:</b> scheduling meetings, booking rooms, coordinating staff availability, preparing meeting details, adjusting appointments.</span></p><p class="p3"><span class="s1"><b>VA skill it proves:</b> calendar control, time blocking, meeting preparation, follow-up discipline, conflict prevention.</span></p><p class="p3"><span class="s1"><b>Google tool:</b> Google Calendar.</span></p><p class="p3"><span class="s1"><b>Business problem:</b> “My schedule is messy, and I miss preparation or follow-up time.”</span></p><p class="p3"><span class="s1"><b>Mock scenario:</b> A fictional consultant runs client strategy calls, discovery calls, admin work, internal planning, and follow-up tasks. She needs a weekly calendar system that protects client time and prevents back-to-back overload.</span></p><p class="p3"><span class="s1">Build a sample weekly calendar with:</span></p><p class="p3"><span class="s1">Client call blocks.</span></p><p class="p3"><span class="s1">Discovery call availability.</span></p><p class="p3"><span class="s1">Admin time.</span></p><p class="p3"><span class="s1">Focus time.</span></p><p class="p3"><span class="s1">Lunch or break blocks.</span></p><p class="p3"><span class="s1">Follow-up blocks after client calls.</span></p><p class="p3"><span class="s1">Weekly planning block.</span></p><p class="p3"><span class="s1">Buffer time between meetings.</span></p><p class="p3"><span class="s1">Color categories.</span></p><p class="p3"><span class="s1">Reminder rules.</span></p><p class="p3"><span class="s1">A sample appointment schedule or booking page.</span></p><p class="p3"><span class="s1">A meeting invite template.</span></p><p class="p3"><span class="s1">Scheduling rules.</span></p><p class="p3"><span class="s1">Your portfolio note can say:</span></p><p class="p3"><span class="s1">“This sample shows how I would manage a remote client’s weekly calendar. The calendar includes client calls, focus blocks, admin blocks, follow-up time, and scheduling rules to prevent overbooking. It is based on my previous experience coordinating meetings and availability in an office setting.”</span></p><p class="p3"><span class="s1">The scheduling rules are the most important part.</span></p><p class="p3"><span class="s1">Add a short Google Docs note beside the screenshot:</span></p><p class="p3"><span class="s1"><b>Scheduling rules</b><b></b></span></p><p class="p3"><span class="s1">Client calls are accepted Tuesday to Thursday, 10:00 a.m. to 3:00 p.m.</span></p><p class="p3"><span class="s1">No more than three client calls per day.</span></p><p class="p3"><span class="s1">Each client call has a 15-minute prep block before and a 20-minute follow-up block after.</span></p><p class="p3"><span class="s1">Monday morning is reserved for weekly planning.</span></p><p class="p3"><span class="s1">Friday afternoon is reserved for admin cleanup and next-week preparation.</span></p><p class="p3"><span class="s1">Urgent reschedules are flagged and sent to the client for approval.</span></p><p class="p3"><span class="s1">No meeting is confirmed until agenda, attendees, and meeting link are complete.</span></p><p class="p3"><span class="s1">This is what shows judgment.</span></p><p class="p3"><span class="s1">A crowded calendar does not prove much. A calendar with decision rules does.</span></p><p class="p3"><span class="s1"><b>What to screenshot or link</b><b></b></span></p><p class="p3"><span class="s1">Weekly calendar view.</span></p><p class="p3"><span class="s1">Appointment schedule or booking page.</span></p><p class="p3"><span class="s1">Sample invite details.</span></p><p class="p3"><span class="s1">Scheduling rules document.</span></p><p class="p3"><span class="s1"><b>What not to exaggerate</b><b></b></span></p><p class="p3"><span class="s1">Do not say you managed executive calendars for remote clients if you did not.</span></p><p class="p3"><span class="s1">Say:</span></p><p class="p3"><span class="s1">“In my office-based role, I coordinated internal schedules and meeting logistics. I created this Google Calendar sample to show how I would apply those same scheduling habits in a remote client setting.”</span></p><p class="p4"><span class="s1"></span><br/></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="sample-2-meeting-agenda-and-action-notes-template"><span class="s1"><b>Sample 2: Meeting agenda and action notes template</b></span></p><p class="p3"><span class="s1"><b>Old task it comes from:</b> preparing agendas, taking minutes, circulating notes, documenting decisions, following up after meetings.</span></p><p class="p3"><span class="s1"><b>VA skill it proves:</b> documentation, clarity, accountability, written communication, follow-through.</span></p><p class="p3"><span class="s1"><b>Google tool:</b> Google Docs.</span></p><p class="p3"><span class="s1"><b>Business problem:</b> “My meetings happen, but decisions and next steps get lost.”</span></p><p class="p3"><span class="s1"><b>Mock scenario:</b> A small business owner holds a weekly operations meeting and needs a clean way to capture agenda items, decisions, action items, owners, due dates, and follow-ups.</span></p><p class="p3"><span class="s1">Create a Google Docs template with these sections:</span></p><p class="p3"><span class="s1">Meeting title.</span></p><p class="p3"><span class="s1">Date and time.</span></p><p class="p3"><span class="s1">Meeting objective.</span></p><p class="p3"><span class="s1">Attendees.</span></p><p class="p3"><span class="s1">Pre-work or documents to review.</span></p><p class="p3"><span class="s1">Agenda.</span></p><p class="p3"><span class="s1">Discussion notes.</span></p><p class="p3"><span class="s1">Decisions made.</span></p><p class="p3"><span class="s1">Action items.</span></p><p class="p3"><span class="s1">Owner.</span></p><p class="p3"><span class="s1">Due date.</span></p><p class="p3"><span class="s1">Status.</span></p><p class="p3"><span class="s1">Risks or blockers.</span></p><p class="p3"><span class="s1">Next meeting date.</span></p><p class="p3"><span class="s1">Follow-up email draft.</span></p><p class="p3"><span class="s1">Use headings. Use a table for action items. Keep it readable.</span></p><p class="p3"><span class="s1">A strong action item table might include:</span></p><table cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="td5" valign="middle">
+<p class="p5"><span class="s1"><b>Action item</b></span></p>
+</td>
+<td class="td6" valign="middle">
+<p class="p5"><span class="s1"><b>Owner</b></span></p>
+</td>
+<td class="td7" valign="middle">
+<p class="p8"><span class="s1"><b>Due date</b></span></p>
+</td>
+<td class="td8" valign="middle">
+<p class="p5"><span class="s1"><b>Priority</b></span></p>
+</td>
+<td class="td9" valign="middle">
+<p class="p5"><span class="s1"><b>Status</b></span></p>
+</td>
+<td class="td10" valign="middle">
+<p class="p5"><span class="s1"><b>Notes</b></span></p>
+</td>
+</tr>
+<tr>
+<td class="td5" valign="middle">
+<p class="p6"><span class="s1">Finalize workshop slides</span></p>
+</td>
+<td class="td6" valign="middle">
+<p class="p6"><span class="s1">Client</span></p>
+</td>
+<td class="td7" valign="middle">
+<p class="p8"><span class="s1">May 22</span></p>
+</td>
+<td class="td8" valign="middle">
+<p class="p6"><span class="s1">High</span></p>
+</td>
+<td class="td9" valign="middle">
+<p class="p6"><span class="s1">In progress</span></p>
+</td>
+<td class="td10" valign="middle">
+<p class="p6"><span class="s1">VA to check file link</span></p>
+</td>
+</tr>
+<tr>
+<td class="td5" valign="middle">
+<p class="p6"><span class="s1">Send reminder email</span></p>
+</td>
+<td class="td6" valign="middle">
+<p class="p6"><span class="s1">VA</span></p>
+</td>
+<td class="td7" valign="middle">
+<p class="p8"><span class="s1">May 23</span></p>
+</td>
+<td class="td8" valign="middle">
+<p class="p6"><span class="s1">High</span></p>
+</td>
+<td class="td9" valign="middle">
+<p class="p6"><span class="s1">Not started</span></p>
+</td>
+<td class="td10" valign="middle">
+<p class="p6"><span class="s1">Use approved template</span></p>
+</td>
+</tr>
+<tr>
+<td class="td5" valign="middle">
+<p class="p6"><span class="s1">Confirm speaker bio</span></p>
+</td>
+<td class="td6" valign="middle">
+<p class="p6"><span class="s1">Speaker</span></p>
+</td>
+<td class="td7" valign="middle">
+<p class="p8"><span class="s1">May 24</span></p>
+</td>
+<td class="td8" valign="middle">
+<p class="p6"><span class="s1">Medium</span></p>
+</td>
+<td class="td9" valign="middle">
+<p class="p6"><span class="s1">Waiting</span></p>
+</td>
+<td class="td10" valign="middle">
+<p class="p6"><span class="s1">Follow up if no reply</span></p>
+</td>
+</tr>
+</tbody>
+</table><p class="p3"><span class="s1">Your portfolio note can say:</span></p><p class="p3"><span class="s1">“This meeting notes template converts discussions into decisions and trackable follow-ups. It is inspired by my previous experience preparing meeting notes and circulating action items.”</span></p><p class="p3"><span class="s1">Google Docs supports collaboration features such as comments, task assignment, access control, version history, and meeting notes from Calendar events. (<a href="https://workspace.google.com/products/docs/"><span class="s2">Google Workspace</span></a>) That makes Docs a practical tool for showing meeting documentation and follow-up systems.</span></p><p class="p3"><span class="s1"><b>What to screenshot or link</b><b></b></span></p><p class="p3"><span class="s1">The full meeting agenda template.</span></p><p class="p3"><span class="s1">The action item table.</span></p><p class="p3"><span class="s1">A sample completed version with fictional meeting details.</span></p><p class="p3"><span class="s1">The follow-up email draft.</span></p><p class="p3"><span class="s1"><b>What not to exaggerate</b><b></b></span></p><p class="p3"><span class="s1">Do not include actual company minutes or screenshots from past meetings.</span></p><p class="p3"><span class="s1">Rebuild the structure with fictional details.</span></p><p class="p4"><span class="s1"></span><br/></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="sample-3-project-or-event-tracker-in-google-sheets"><span class="s1"><b>Sample 3: Project or event tracker in Google Sheets</b></span></p><p class="p3"><span class="s1"><b>Old task it comes from:</b> tracking event deadlines, vendor updates, staff tasks, supplies, approvals, registrations, or reports.</span></p><p class="p3"><span class="s1"><b>VA skill it proves:</b> project coordination, deadline management, status visibility, spreadsheet organization.</span></p><p class="p3"><span class="s1"><b>Google tool:</b> Google Sheets.</span></p><p class="p3"><span class="s1"><b>Business problem:</b> “My projects are scattered, and I cannot see what is late, blocked, or waiting.”</span></p><p class="p3"><span class="s1"><b>Mock scenario:</b> A fictional business coach is hosting a 90-minute online workshop. The coach needs one tracker for tasks, vendors, registration, assets, budget estimate, and post-event follow-up.</span></p><p class="p3"><span class="s1">Create a Google Sheets workbook with these tabs:</span></p><p class="p3"><span class="s1">Overview.</span></p><p class="p3"><span class="s1">Task tracker.</span></p><p class="p3"><span class="s1">Vendor or partner list.</span></p><p class="p3"><span class="s1">Registration tracker.</span></p><p class="p3"><span class="s1">Asset checklist.</span></p><p class="p3"><span class="s1">Budget estimate.</span></p><p class="p3"><span class="s1">Post-event follow-up.</span></p><p class="p3"><span class="s1">The main task tracker should include:</span></p><p class="p3"><span class="s1">Task.</span></p><p class="p3"><span class="s1">Category.</span></p><p class="p3"><span class="s1">Owner.</span></p><p class="p3"><span class="s1">Due date.</span></p><p class="p3"><span class="s1">Status.</span></p><p class="p3"><span class="s1">Priority.</span></p><p class="p3"><span class="s1">Dependency.</span></p><p class="p3"><span class="s1">Blocker.</span></p><p class="p3"><span class="s1">Next action.</span></p><p class="p3"><span class="s1">Last updated.</span></p><p class="p3"><span class="s1">Notes.</span></p><p class="p3"><span class="s1">Use dropdowns for status:</span></p><p class="p3"><span class="s1">Not started.</span></p><p class="p3"><span class="s1">In progress.</span></p><p class="p3"><span class="s1">Waiting.</span></p><p class="p3"><span class="s1">Blocked.</span></p><p class="p3"><span class="s1">Done.</span></p><p class="p3"><span class="s1">Use priority labels:</span></p><p class="p3"><span class="s1">High.</span></p><p class="p3"><span class="s1">Medium.</span></p><p class="p3"><span class="s1">Low.</span></p><p class="p3"><span class="s1">Use conditional formatting to highlight overdue tasks or blocked items. Google Sheets conditional formatting can change cell, row, or column formatting when defined conditions are met. (<a href="https://support.google.com/docs/answer/78413?hl=en"><span class="s2">Google Help</span></a>)</span></p><p class="p3"><span class="s1">Add a dashboard section:</span></p><p class="p3"><span class="s1">Total tasks.</span></p><p class="p3"><span class="s1">Tasks done.</span></p><p class="p3"><span class="s1">Tasks blocked.</span></p><p class="p3"><span class="s1">Tasks overdue.</span></p><p class="p3"><span class="s1">High-priority tasks.</span></p><p class="p3"><span class="s1">Next three deadlines.</span></p><p class="p3"><span class="s1">This sample is especially strong for event coordinators because it translates event work into remote project coordination.</span></p><p class="p3"><span class="s1">Your portfolio note can say:</span></p><p class="p3"><span class="s1">“This tracker demonstrates event project coordination for a fictional online workshop. It shows how I would monitor tasks, owners, due dates, dependencies, blockers, registration updates, and post-event follow-ups. The structure is inspired by previous event coordination work but uses fictional data.”</span></p><p class="p3"><span class="s1">Gemini can be used carefully here. You could ask Gemini to suggest tracker columns, then customize them. Google’s Gemini in Sheets documentation says Gemini can help create tables, formulas, analysis, charts, dropdowns, filters, pivot tables, and formatting actions. (<a href="https://support.google.com/docs/answer/14218565?hl=en"><span class="s2">Google Help</span></a>)</span></p><p class="p3"><span class="s1">But do not leave the output generic.</span></p><p class="p3"><span class="s1">Your value is in customizing the tracker to the scenario.</span></p><p class="p3"><span class="s1"><b>What to screenshot or link</b><b></b></span></p><p class="p3"><span class="s1">Overview dashboard.</span></p><p class="p3"><span class="s1">Task tracker tab.</span></p><p class="p3"><span class="s1">Status dropdowns.</span></p><p class="p3"><span class="s1">Conditional formatting.</span></p><p class="p3"><span class="s1">Post-event follow-up tab.</span></p><p class="p3"><span class="s1"><b>What not to exaggerate</b><b></b></span></p><p class="p3"><span class="s1">Do not say this was built for a real client unless it was.</span></p><p class="p3"><span class="s1">Label it clearly:</span></p><p class="p3"><span class="s1">“Sample project based on a fictional business scenario.”</span></p><p class="p4"><span class="s1"></span><br/></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="sample-4-google-drive-document-organization-system"><span class="s1"><b>Sample 4: Google Drive document organization system</b></span></p><p class="p3"><span class="s1"><b>Old task it comes from:</b> organizing files, maintaining records, retrieving documents, managing department folders, following filing procedures.</span></p><p class="p3"><span class="s1"><b>VA skill it proves:</b> file discipline, retrieval logic, access awareness, confidentiality habits.</span></p><p class="p3"><span class="s1"><b>Google tool:</b> Google Drive and Google Docs.</span></p><p class="p3"><span class="s1"><b>Business problem:</b> “My files are hard to find, and I do not know who should access what.”</span></p><p class="p3"><span class="s1"><b>Mock scenario:</b> A fictional consultant needs a Drive structure for client operations, meetings, reports, events, templates, and archives.</span></p><p class="p3"><span class="s1">Create a main folder:</span></p><p class="p3"><span class="s1"><b>VA Portfolio Sample - Client Drive System</b><b></b></span></p><p class="p3"><span class="s1">Inside it, create folders such as:</span></p><p class="p3"><span class="s1">00 Admin.</span></p><p class="p3"><span class="s1">01 Meetings.</span></p><p class="p3"><span class="s1">02 Reports.</span></p><p class="p3"><span class="s1">03 Client Files.</span></p><p class="p3"><span class="s1">04 Events.</span></p><p class="p3"><span class="s1">05 Templates.</span></p><p class="p3"><span class="s1">06 Forms and Intake.</span></p><p class="p3"><span class="s1">07 SOPs.</span></p><p class="p3"><span class="s1">99 Archive.</span></p><p class="p3"><span class="s1">Then create a Google Docs folder map explaining:</span></p><p class="p3"><span class="s1">What each folder contains.</span></p><p class="p3"><span class="s1">Naming conventions.</span></p><p class="p3"><span class="s1">Archive rules.</span></p><p class="p3"><span class="s1">Permission rules.</span></p><p class="p3"><span class="s1">File owner rules.</span></p><p class="p3"><span class="s1">Example naming convention:</span></p><p class="p9"><span class="s1">YYYY-MM-DD_ClientName_DocumentType_Status</span></p><p class="p3"><span class="s1">Examples:</span></p><p class="p9"><span class="s1">2026-05-18_AcmeCo_MeetingNotes_Final</span></p><p class="p9"><span class="s1">2026-05-20_AcmeCo_WorkshopTracker_Draft</span></p><p class="p9"><span class="s1">2026-05-21_AcmeCo_ClientUpdate_Sent</span></p><p class="p3"><span class="s1">Your permission note can say:</span></p><p class="p3"><span class="s1">Viewer: for people who only need to read.</span></p><p class="p3"><span class="s1">Commenter: for people who need to give feedback.</span></p><p class="p3"><span class="s1">Editor: for people who need to revise.</span></p><p class="p3"><span class="s1">Restricted: for private admin or sensitive files.</span></p><p class="p3"><span class="s1">Google Drive Help supports this logic: it recommends naming conventions, meaningful file names, folders and subfolders, color coding, descriptions, and starred files; Google’s sharing help explains Viewer, Commenter, and Editor roles. (<a href="https://support.google.com/drive/answer/2375091?hl=en"><span class="s2">Google Help</span></a>)</span></p><p class="p3"><span class="s1">Your portfolio note can say:</span></p><p class="p3"><span class="s1">“This sample shows how I would organize a client’s Google Drive so files are easier to find, share, and archive. It includes folder logic, naming rules, and permission notes. It is inspired by office file organization experience, rebuilt with fictional files.”</span></p><p class="p3"><span class="s1"><b>What to screenshot or link</b><b></b></span></p><p class="p3"><span class="s1">Main folder view.</span></p><p class="p3"><span class="s1">Subfolder structure.</span></p><p class="p3"><span class="s1">Folder map document.</span></p><p class="p3"><span class="s1">Naming convention section.</span></p><p class="p3"><span class="s1">Permission note.</span></p><p class="p3"><span class="s1"><b>What not to exaggerate</b><b></b></span></p><p class="p3"><span class="s1">Do not include former employer files or real screenshots.</span></p><p class="p3"><span class="s1">Also, do not share folders with edit access unless you want the recipient to edit. Use view-only access for portfolio review.</span></p><p class="p4"><span class="s1"></span><br/></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="sample-5-email-response-and-follow-up-template-library"><span class="s1"><b>Sample 5: Email response and follow-up template library</b></span></p><p class="p3"><span class="s1"><b>Old task it comes from:</b> answering inquiries, routing messages, sending reminders, following up with staff or vendors, sending confirmations.</span></p><p class="p3"><span class="s1"><b>VA skill it proves:</b> written communication, tone control, inbox thinking, follow-up discipline, escalation judgment.</span></p><p class="p3"><span class="s1"><b>Google tool:</b> Gmail and Google Docs.</span></p><p class="p3"><span class="s1"><b>Business problem:</b> “I lose time writing the same replies and miss follow-ups.”</span></p><p class="p3"><span class="s1"><b>Mock scenario:</b> A fictional service provider needs reusable email templates for scheduling, rescheduling, client updates, missing documents, vendor follow-up, event confirmation, and escalation.</span></p><p class="p3"><span class="s1">You do not need to show a real inbox.</span></p><p class="p3"><span class="s1">Create a Google Docs email template library with sections like:</span></p><p class="p3"><span class="s1">Scheduling request.</span></p><p class="p3"><span class="s1">Meeting confirmation.</span></p><p class="p3"><span class="s1">Reschedule request.</span></p><p class="p3"><span class="s1">Document request.</span></p><p class="p3"><span class="s1">First follow-up.</span></p><p class="p3"><span class="s1">Second follow-up.</span></p><p class="p3"><span class="s1">Vendor follow-up.</span></p><p class="p3"><span class="s1">Client update.</span></p><p class="p3"><span class="s1">Delay notice.</span></p><p class="p3"><span class="s1">Escalation to client.</span></p><p class="p3"><span class="s1">Event confirmation.</span></p><p class="p3"><span class="s1">Post-meeting summary.</span></p><p class="p3"><span class="s1">Each template should include:</span></p><p class="p3"><span class="s1">Use case.</span></p><p class="p3"><span class="s1">Tone note.</span></p><p class="p3"><span class="s1">Template text.</span></p><p class="p3"><span class="s1">When to send.</span></p><p class="p3"><span class="s1">When to escalate.</span></p><p class="p3"><span class="s1">Required details before sending.</span></p><p class="p3"><span class="s1">Example:</span></p><p class="p3"><span class="s1"><b>Template: Missing document follow-up</b><b></b></span></p><p class="p3"><span class="s1"><b>Use case:</b> Client has not sent the requested file needed to complete a task.</span></p><p class="p3"><span class="s1"><b>Tone:</b> Polite, direct, non-accusatory.</span></p><p class="p3"><span class="s1"><b>Template:</b><b></b></span></p><p class="p3"><span class="s1">Hi [Name],</span></p><p class="p3"><span class="s1">I’m following up on the [document/file] needed for [task/project]. Once I receive it, I can proceed with [next step].</span></p><p class="p3"><span class="s1">Could you send it by [date/time]? If there is a delay, I can adjust the tracker and update the next action.</span></p><p class="p3"><span class="s1">Thank you,<br/>
+[Name]</span></p><p class="p3"><span class="s1"><b>Escalation rule:</b> If there is no reply after two follow-ups, flag the task as “Waiting” and notify the client that the deadline may move.</span></p><p class="p3"><span class="s1">This shows more than writing. It shows decision-making.</span></p><p class="p3"><span class="s1">Time Etc’s email management VA service page lists inbox organization, filtering, response handling, follow-up coordination, template management, scheduling follow-ups, communication tracking, and monitoring pending items as VA email-support tasks. (<span class="s2">Time etc Virtual Assistant Service</span>)</span></p><p class="p3"><span class="s1">Your portfolio note can say:</span></p><p class="p3"><span class="s1">“This template library demonstrates how I would handle common admin email scenarios without using a real inbox. It shows tone, follow-up timing, and escalation rules.”</span></p><p class="p3"><span class="s1"><b>What to screenshot or link</b><b></b></span></p><p class="p3"><span class="s1">Template index.</span></p><p class="p3"><span class="s1">Two to three polished templates.</span></p><p class="p3"><span class="s1">Escalation rules.</span></p><p class="p3"><span class="s1">Mock inbox workflow diagram.</span></p><p class="p3"><span class="s1"><b>What not to exaggerate</b><b></b></span></p><p class="p3"><span class="s1">Do not show private emails.</span></p><p class="p3"><span class="s1">Do not claim you managed a real client inbox if your sample is fictional.</span></p><p class="p4"><span class="s1"></span><br/></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="sample-6-client-intake-or-event-request-form"><span class="s1"><b>Sample 6: Client intake or event request form</b></span></p><p class="p3"><span class="s1"><b>Old task it comes from:</b> collecting event details, receiving requests from departments, asking staff for missing information, gathering registration details.</span></p><p class="p3"><span class="s1"><b>VA skill it proves:</b> information gathering, form design, clean handoff, structured intake.</span></p><p class="p3"><span class="s1"><b>Google tool:</b> Google Forms and Google Sheets.</span></p><p class="p3"><span class="s1"><b>Business problem:</b> “Requests arrive incomplete, and I waste time asking for missing details.”</span></p><p class="p3"><span class="s1"><b>Mock scenario:</b> A small business owner wants to request admin support, meeting support, or event support through one clean intake form.</span></p><p class="p3"><span class="s1">Create a Google Form with fields such as:</span></p><p class="p3"><span class="s1">Name.</span></p><p class="p3"><span class="s1">Email.</span></p><p class="p3"><span class="s1">Business or department.</span></p><p class="p3"><span class="s1">Type of request.</span></p><p class="p3"><span class="s1">Deadline.</span></p><p class="p3"><span class="s1">Priority.</span></p><p class="p3"><span class="s1">Preferred communication channel.</span></p><p class="p3"><span class="s1">Files or links needed.</span></p><p class="p3"><span class="s1">Detailed instructions.</span></p><p class="p3"><span class="s1">Decision-maker.</span></p><p class="p3"><span class="s1">Approval needed?</span></p><p class="p3"><span class="s1">Meeting date, if applicable.</span></p><p class="p3"><span class="s1">Event date, if applicable.</span></p><p class="p3"><span class="s1">Notes.</span></p><p class="p3"><span class="s1">Then connect the responses to a Google Sheet.</span></p><p class="p3"><span class="s1">The response Sheet should include:</span></p><p class="p3"><span class="s1">Submission date.</span></p><p class="p3"><span class="s1">Requester.</span></p><p class="p3"><span class="s1">Request type.</span></p><p class="p3"><span class="s1">Deadline.</span></p><p class="p3"><span class="s1">Priority.</span></p><p class="p3"><span class="s1">Status.</span></p><p class="p3"><span class="s1">Assigned owner.</span></p><p class="p3"><span class="s1">Next action.</span></p><p class="p3"><span class="s1">Notes.</span></p><p class="p3"><span class="s1">Your portfolio note can say:</span></p><p class="p3"><span class="s1">“This intake form demonstrates how I would collect complete information before starting admin work. It reduces back-and-forth by asking for the deadline, request type, files, priority, and approval needs upfront.”</span></p><p class="p3"><span class="s1">Google Forms is designed for creating forms and surveys to gather data and insights, and Google’s Forms help explains how to add questions, choose question types, add responses, and make questions required. (<a href="https://workspace.google.com/products/forms/"><span class="s2">Google Workspace</span></a>)</span></p><p class="p3"><span class="s1"><b>What to screenshot or link</b><b></b></span></p><p class="p3"><span class="s1">Form preview.</span></p><p class="p3"><span class="s1">Question list.</span></p><p class="p3"><span class="s1">Connected response Sheet.</span></p><p class="p3"><span class="s1">Sample submitted response.</span></p><p class="p3"><span class="s1">Follow-up workflow.</span></p><p class="p3"><span class="s1"><b>What not to exaggerate</b><b></b></span></p><p class="p3"><span class="s1">Do not collect real personal data for a portfolio sample.</span></p><p class="p3"><span class="s1">Use fictional responses.</span></p><p class="p4"><span class="s1"></span><br/></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="sample-7-admin-sop-or-workflow-guide"><span class="s1"><b>Sample 7: Admin SOP or workflow guide</b></span></p><p class="p3"><span class="s1"><b>Old task it comes from:</b> following office procedures, preparing recurring reports, processing requests, coordinating meetings, organizing documents.</span></p><p class="p3"><span class="s1"><b>VA skill it proves:</b> reliability, process thinking, repeatability, quality control, independent work.</span></p><p class="p3"><span class="s1"><b>Google tool:</b> Google Docs.</span></p><p class="p3"><span class="s1"><b>Business problem:</b> “I need admin tasks done consistently without explaining everything every time.”</span></p><p class="p3"><span class="s1"><b>Mock scenario:</b> A fictional client needs a repeatable workflow for scheduling a client meeting.</span></p><p class="p3"><span class="s1">Create an SOP titled:</span></p><p class="p3"><span class="s1"><b>SOP: Preparing, Scheduling, and Closing a Client Meeting</b><b></b></span></p><p class="p3"><span class="s1">Include:</span></p><p class="p3"><span class="s1">Purpose.</span></p><p class="p3"><span class="s1">When to use this SOP.</span></p><p class="p3"><span class="s1">Tools needed.</span></p><p class="p3"><span class="s1">Inputs required.</span></p><p class="p3"><span class="s1">Step-by-step process.</span></p><p class="p3"><span class="s1">Quality checklist.</span></p><p class="p3"><span class="s1">Escalation rules.</span></p><p class="p3"><span class="s1">Output.</span></p><p class="p3"><span class="s1">Follow-up timeline.</span></p><p class="p3"><span class="s1">Sample SOP structure:</span></p><p class="p3"><span class="s1"><b>Purpose</b><br/>
+To prepare, schedule, document, and close client meetings with clear agenda items and follow-up actions.</span></p><p class="p3"><span class="s1"><b>Inputs needed</b><br/>
+Client name, meeting purpose, attendees, preferred time, files needed, meeting link, agenda items.</span></p><p class="p3"><span class="s1"><b>Steps</b><b></b></span></p><ol class="ol1">
+<li class="li3"><span class="s1">Confirm meeting objective.</span></li>
+<li class="li3"><span class="s1">Check calendar availability.</span></li>
+<li class="li3"><span class="s1">Create calendar invite.</span></li>
+<li class="li3"><span class="s1">Add meeting link.</span></li>
+<li class="li3"><span class="s1">Attach or link relevant files.</span></li>
+<li class="li3"><span class="s1">Prepare agenda in Google Docs.</span></li>
+<li class="li3"><span class="s1">Send confirmation email.</span></li>
+<li class="li3"><span class="s1">Add prep block before the meeting.</span></li>
+<li class="li3"><span class="s1">Take notes during the meeting.</span></li>
+<li class="li3"><span class="s1">Record decisions and action items.</span></li>
+<li class="li3"><span class="s1">Send post-meeting summary.</span></li>
+<li class="li3"><span class="s1">Update tracker.</span></li>
+<li class="li3"><span class="s1">File notes in Drive.</span></li>
+<li class="li3"><span class="s1">Schedule follow-up if needed.</span></li>
+</ol><p class="p3"><span class="s1"><b>Quality checklist</b><b></b></span></p><p class="p3"><span class="s1">Invite has correct date, time, timezone, and link.</span></p><p class="p3"><span class="s1">Agenda is attached or linked.</span></p><p class="p3"><span class="s1">Attendees are correct.</span></p><p class="p3"><span class="s1">Files are accessible.</span></p><p class="p3"><span class="s1">Action items have owners and due dates.</span></p><p class="p3"><span class="s1">Follow-up email is sent within 24 hours.</span></p><p class="p3"><span class="s1">Meeting notes are filed in the correct Drive folder.</span></p><p class="p3"><span class="s1">Tracker is updated.</span></p><p class="p3"><span class="s1"><b>Escalation rule</b><b></b></span></p><p class="p3"><span class="s1">If the agenda, files, or attendee list is incomplete, mark the meeting as “Needs Client Confirmation” and ask for missing details before confirming.</span></p><p class="p3"><span class="s1">Your portfolio note can say:</span></p><p class="p3"><span class="s1">“This SOP shows how I turn a recurring admin task into a repeatable workflow. It demonstrates reliability and quality control, not just tool use.”</span></p><p class="p3"><span class="s1">This sample is powerful because many clients do not only want tasks done. They want fewer repeated explanations.</span></p><p class="p3"><span class="s1">An SOP shows that you can work from a system.</span></p><p class="p3"><span class="s1"><b>What to screenshot or link</b><b></b></span></p><p class="p3"><span class="s1">SOP document.</span></p><p class="p3"><span class="s1">Quality checklist.</span></p><p class="p3"><span class="s1">Escalation rules.</span></p><p class="p3"><span class="s1">Example completed workflow.</span></p><p class="p3"><span class="s1"><b>What not to exaggerate</b><b></b></span></p><p class="p3"><span class="s1">Do not copy an employer’s internal SOP.</span></p><p class="p3"><span class="s1">Rebuild the structure from scratch.</span></p><p class="p4"><span class="s1"></span><br/></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p2" id="how-to-use-gemini-responsibly-while-building-the-portfolio"><span class="s1"><b>How to use Gemini responsibly while building the portfolio</b></span></p><p class="p3"><span class="s1">Gemini can help you build faster.</span></p><p class="p3"><span class="s1">It can suggest tracker columns, draft email templates, outline SOPs, summarize rough notes, brainstorm calendar categories, and create first-pass structures.</span></p><p class="p3"><span class="s1">But the portfolio should never imply that Gemini replaces your judgment.</span></p><p class="p3"><span class="s1">Google describes Workspace with Gemini as offering AI assistance in Gmail, Docs, Sheets, Slides, Drive, Chat, and Meet-related workflows. Its documentation says Gemini can help write in Gmail and Docs, take notes in Meet, assist in side panels, and help organize projects or events in Sheets. (<a href="https://knowledge.workspace.google.com/admin/gemini/google-workspace-with-gemini"><span class="s2">Google Workspace Help</span></a>) Google’s prompt guide describes itself as a practical guide for foundational prompting skills, organized by job role and use case. (<a href="https://workspace.google.com/learning/content/gemini-prompt-guide"><span class="s2">Google Workspace</span></a>)</span></p><p class="p3"><span class="s1">That supports a practical framing:</span></p><p class="p3"><span class="s1">Gemini is a portfolio assistant, not a shortcut around skill.</span></p><p class="p3"><span class="s1">Use it for:</span></p><p class="p3"><span class="s1">Drafting.</span></p><p class="p3"><span class="s1">Structuring.</span></p><p class="p3"><span class="s1">Brainstorming.</span></p><p class="p3"><span class="s1">Summarizing.</span></p><p class="p3"><span class="s1">Generating options.</span></p><p class="p3"><span class="s1">Spotting gaps.</span></p><p class="p3"><span class="s1">Creating first versions.</span></p><p class="p3"><span class="s1">Do not use it for:</span></p><p class="p3"><span class="s1">Inventing client experience.</span></p><p class="p3"><span class="s1">Handling confidential former-employer data.</span></p><p class="p3"><span class="s1">Making claims you cannot verify.</span></p><p class="p3"><span class="s1">Replacing your review.</span></p><p class="p3"><span class="s1">Sending unedited work.</span></p><p class="p3"><span class="s1">The best way to show Gemini use in a VA portfolio is to include a short process note.</span></p><p class="p3"><span class="s1">Example:</span></p><p class="p3"><span class="s1">“Gemini-assisted step: I used Gemini to brainstorm possible columns for the event tracker. I then customized the tracker to include owner, due date, dependency, blocker, priority, and post-event follow-up based on the business scenario.”</span></p><p class="p3"><span class="s1">That sentence is stronger than hiding the AI use.</span></p><p class="p3"><span class="s1">It shows you know how to use AI with judgment.</span></p><p class="p3"><span class="s1">Here are safe Gemini prompt examples:</span></p><table cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="td11" valign="middle">
+<p class="p5"><span class="s1"><b>Portfolio task</b></span></p>
+</td>
+<td class="td12" valign="middle">
+<p class="p5"><span class="s1"><b>Prompt idea</b></span></p>
+</td>
+<td class="td13" valign="middle">
+<p class="p5"><span class="s1"><b>What you still need to do</b></span></p>
+</td>
+</tr>
+<tr>
+<td class="td11" valign="middle">
+<p class="p6"><span class="s1">Calendar sample</span></p>
+</td>
+<td class="td12" valign="middle">
+<p class="p6"><span class="s1">“Create scheduling rules for a consultant who accepts client calls Tuesday to Thursday and needs admin time every afternoon.”</span></p>
+</td>
+<td class="td13" valign="middle">
+<p class="p6"><span class="s1">Adjust the rules to the actual scenario</span></p>
+</td>
+</tr>
+<tr>
+<td class="td11" valign="middle">
+<p class="p6"><span class="s1">Meeting notes</span></p>
+</td>
+<td class="td12" valign="middle">
+<p class="p6"><span class="s1">“Turn these fictional rough meeting notes into action items with owner, due date, and next step.”</span></p>
+</td>
+<td class="td13" valign="middle">
+<p class="p6"><span class="s1">Check accuracy and rewrite for clarity</span></p>
+</td>
+</tr>
+<tr>
+<td class="td11" valign="middle">
+<p class="p6"><span class="s1">Sheets tracker</span></p>
+</td>
+<td class="td12" valign="middle">
+<p class="p6"><span class="s1">“Suggest columns for a Google Sheets tracker for a small online workshop.”</span></p>
+</td>
+<td class="td13" valign="middle">
+<p class="p6"><span class="s1">Remove generic columns and add business-specific fields</span></p>
+</td>
+</tr>
+<tr>
+<td class="td11" valign="middle">
+<p class="p6"><span class="s1">Email templates</span></p>
+</td>
+<td class="td12" valign="middle">
+<p class="p6"><span class="s1">“Draft three polite follow-up emails for a client who has not sent requested documents.”</span></p>
+</td>
+<td class="td13" valign="middle">
+<p class="p6"><span class="s1">Edit tone and add escalation rules</span></p>
+</td>
+</tr>
+<tr>
+<td class="td11" valign="middle">
+<p class="p6"><span class="s1">SOP</span></p>
+</td>
+<td class="td12" valign="middle">
+<p class="p6"><span class="s1">“Draft a checklist for preparing a client meeting, including calendar invite, agenda, files, and follow-up.”</span></p>
+</td>
+<td class="td13" valign="middle">
+<p class="p6"><span class="s1">Add quality control and client-specific logic</span></p>
+</td>
+</tr>
+</tbody>
+</table><p class="p3"><span class="s1">Use fictional or sanitized information.</span></p><p class="p3"><span class="s1">Do not paste:</span></p><p class="p3"><span class="s1">Former employer records.</span></p><p class="p3"><span class="s1">Real emails.</span></p><p class="p3"><span class="s1">Internal reports.</span></p><p class="p3"><span class="s1">Vendor contracts.</span></p><p class="p3"><span class="s1">Client names.</span></p><p class="p3"><span class="s1">Staff lists.</span></p><p class="p3"><span class="s1">HR files.</span></p><p class="p3"><span class="s1">Payroll details.</span></p><p class="p3"><span class="s1">Passwords.</span></p><p class="p3"><span class="s1">Private meeting notes.</span></p><p class="p3"><span class="s1">Confidential files.</span></p><p class="p3"><span class="s1">Even where Google provides Workspace privacy commitments for Gemini, portfolio builders should still avoid using confidential data because confidentiality is part of the VA skill being proven. Google says Workspace data is not used to train or improve underlying generative AI models outside Workspace without permission, but that does not give you permission to reuse former employer or client information. (<a href="https://support.google.com/docs/answer/14615114?hl=en"><span class="s2">Google Help</span></a>)</span></p><p class="p3"><span class="s1">Your privacy rule should be simple:</span></p><p class="p3"><span class="s1">If you would not show it in a public portfolio, do not use it in an AI prompt.</span></p><p class="p4"><span class="s1"></span><br/></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p2" id="how-to-present-the-portfolio"><span class="s1"><b>How to present the portfolio</b></span></p><p class="p3"><span class="s1">A strong admin VA portfolio can be simple.</span></p><p class="p3"><span class="s1">It does not need a complex website at the beginning.</span></p><p class="p3"><span class="s1">Start with a Google Drive folder.</span></p><p class="p3"><span class="s1">Create a main folder:</span></p><p class="p3"><span class="s1"><b>VA Portfolio - Your Name</b><b></b></span></p><p class="p3"><span class="s1">Inside it, create:</span></p><p class="p3"><span class="s1">00 Portfolio Index.</span></p><p class="p3"><span class="s1">01 Calendar Management Sample.</span></p><p class="p3"><span class="s1">02 Meeting Agenda and Notes Sample.</span></p><p class="p3"><span class="s1">03 Project or Event Tracker Sample.</span></p><p class="p3"><span class="s1">04 Drive Organization Sample.</span></p><p class="p3"><span class="s1">05 Email Template Library.</span></p><p class="p3"><span class="s1">06 Client Intake Form Sample.</span></p><p class="p3"><span class="s1">07 Admin SOP Workflow Sample.</span></p><p class="p3"><span class="s1">Screenshots.</span></p><p class="p3"><span class="s1">Archive.</span></p><p class="p3"><span class="s1">The Portfolio Index should be a Google Doc with a table:</span></p><table cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="td14" valign="middle">
+<p class="p5"><span class="s1"><b>Sample</b></span></p>
+</td>
+<td class="td15" valign="middle">
+<p class="p5"><span class="s1"><b>Skill shown</b></span></p>
+</td>
+<td class="td16" valign="middle">
+<p class="p5"><span class="s1"><b>Tool</b></span></p>
+</td>
+<td class="td17" valign="middle">
+<p class="p5"><span class="s1"><b>Link</b></span></p>
+</td>
+<td class="td18" valign="middle">
+<p class="p5"><span class="s1"><b>Label</b></span></p>
+</td>
+</tr>
+<tr>
+<td class="td14" valign="middle">
+<p class="p6"><span class="s1">Calendar Management Sample</span></p>
+</td>
+<td class="td15" valign="middle">
+<p class="p6"><span class="s1">Scheduling, time blocking, meeting flow</span></p>
+</td>
+<td class="td16" valign="middle">
+<p class="p6"><span class="s1">Calendar</span></p>
+</td>
+<td class="td17" valign="middle">
+<p class="p6"><span class="s1">View link</span></p>
+</td>
+<td class="td18" valign="middle">
+<p class="p6"><span class="s1">Fictional scenario</span></p>
+</td>
+</tr>
+<tr>
+<td class="td14" valign="middle">
+<p class="p6"><span class="s1">Meeting Notes Template</span></p>
+</td>
+<td class="td15" valign="middle">
+<p class="p6"><span class="s1">Documentation, action items, follow-up</span></p>
+</td>
+<td class="td16" valign="middle">
+<p class="p6"><span class="s1">Docs</span></p>
+</td>
+<td class="td17" valign="middle">
+<p class="p6"><span class="s1">View link</span></p>
+</td>
+<td class="td18" valign="middle">
+<p class="p6"><span class="s1">Mock sample</span></p>
+</td>
+</tr>
+<tr>
+<td class="td14" valign="middle">
+<p class="p6"><span class="s1">Event Tracker</span></p>
+</td>
+<td class="td15" valign="middle">
+<p class="p6"><span class="s1">Project coordination, deadlines, blockers</span></p>
+</td>
+<td class="td16" valign="middle">
+<p class="p6"><span class="s1">Sheets</span></p>
+</td>
+<td class="td17" valign="middle">
+<p class="p6"><span class="s1">View link</span></p>
+</td>
+<td class="td18" valign="middle">
+<p class="p6"><span class="s1">Fictional scenario</span></p>
+</td>
+</tr>
+<tr>
+<td class="td14" valign="middle">
+<p class="p6"><span class="s1">Drive System</span></p>
+</td>
+<td class="td15" valign="middle">
+<p class="p6"><span class="s1">File organization, permissions</span></p>
+</td>
+<td class="td16" valign="middle">
+<p class="p6"><span class="s1">Drive</span></p>
+</td>
+<td class="td17" valign="middle">
+<p class="p6"><span class="s1">View link</span></p>
+</td>
+<td class="td18" valign="middle">
+<p class="p6"><span class="s1">Sample structure</span></p>
+</td>
+</tr>
+<tr>
+<td class="td14" valign="middle">
+<p class="p6"><span class="s1">Email Template Library</span></p>
+</td>
+<td class="td15" valign="middle">
+<p class="p6"><span class="s1">Communication, follow-up, escalation</span></p>
+</td>
+<td class="td16" valign="middle">
+<p class="p6"><span class="s1">Docs/Gmail</span></p>
+</td>
+<td class="td17" valign="middle">
+<p class="p6"><span class="s1">View link</span></p>
+</td>
+<td class="td18" valign="middle">
+<p class="p6"><span class="s1">Mock templates</span></p>
+</td>
+</tr>
+<tr>
+<td class="td14" valign="middle">
+<p class="p6"><span class="s1">Intake Form</span></p>
+</td>
+<td class="td15" valign="middle">
+<p class="p6"><span class="s1">Information gathering, request routing</span></p>
+</td>
+<td class="td16" valign="middle">
+<p class="p6"><span class="s1">Forms/Sheets</span></p>
+</td>
+<td class="td17" valign="middle">
+<p class="p6"><span class="s1">View link</span></p>
+</td>
+<td class="td18" valign="middle">
+<p class="p6"><span class="s1">Fictional scenario</span></p>
+</td>
+</tr>
+<tr>
+<td class="td14" valign="middle">
+<p class="p6"><span class="s1">SOP Workflow</span></p>
+</td>
+<td class="td15" valign="middle">
+<p class="p6"><span class="s1">Repeatable process, quality control</span></p>
+</td>
+<td class="td16" valign="middle">
+<p class="p6"><span class="s1">Docs</span></p>
+</td>
+<td class="td17" valign="middle">
+<p class="p6"><span class="s1">View link</span></p>
+</td>
+<td class="td18" valign="middle">
+<p class="p6"><span class="s1">Practice sample</span></p>
+</td>
+</tr>
+</tbody>
+</table><p class="p3"><span class="s1">Under the table, add a short intro:</span></p><p class="p3"><span class="s1">“My background is in office administration and event coordination. In those roles, I handled scheduling, documentation, follow-ups, records, and event logistics. This portfolio shows how I translate that experience into remote-ready VA deliverables using Google Workspace. Samples are fictional or anonymized and do not contain former employer or client information.”</span></p><p class="p3"><span class="s1">This solves several problems at once.</span></p><p class="p3"><span class="s1">It explains your background.</span></p><p class="p3"><span class="s1">It shows your transition.</span></p><p class="p3"><span class="s1">It labels the samples ethically.</span></p><p class="p3"><span class="s1">It protects confidentiality.</span></p><p class="p3"><span class="s1">It gives the client a clean inspection path.</span></p><p class="p3"><span class="s1">Each sample should include a mini case-study note:</span></p><p class="p3"><span class="s1"><b>Scenario:</b> What business situation is this sample for?<br/>
+<b>Old task translated:</b> What office or event task does it connect to?<br/>
+<b>VA skill shown:</b> What remote admin skill does it prove?<br/>
+<b>Tool used:</b> Which Google tool did you use?<br/>
+<b>What this sample includes:</b> List the deliverables.<br/>
+<b>How I would use this for a client:</b> Explain the workflow.<br/>
+<b>Label:</b> Mock, fictional, anonymized, or personal operations sample.</span></p><p class="p3"><span class="s1">Example:</span></p><p class="p3"><span class="s1"><b>Sample: Event Tracker</b><b></b></span></p><p class="p3"><span class="s1"><b>Scenario:</b> Fictional business coach preparing a 90-minute online workshop.<br/>
+<b>Old task translated:</b> Event deadline tracking and vendor coordination.<br/>
+<b>VA skill shown:</b> Project tracking, deadline management, blocker visibility.<br/>
+<b>Tool used:</b> Google Sheets.<br/>
+<b>Includes:</b> Overview dashboard, task tracker, vendor list, registration tracker, post-event follow-up tab.<br/>
+<b>How I would use it:</b> I would update the tracker daily during event preparation, flag blocked tasks, and send a weekly client summary.<br/>
+<b>Label:</b> Sample project based on a fictional business scenario.</span></p><p class="p3"><span class="s1">Do not make clients guess what they are looking at.</span></p><p class="p3"><span class="s1">Name the proof.</span></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="sharing-settings"><span class="s1"><b>Sharing settings</b></span></p><p class="p3"><span class="s1">Before sending your portfolio, check every link.</span></p><p class="p3"><span class="s1">Google Drive lets users restrict files or make them available to people with access, and it lets users choose Viewer, Commenter, or Editor access. (<a href="https://support.google.com/drive/answer/2494822?hl=en"><span class="s2">Google Help</span></a>)</span></p><p class="p3"><span class="s1">For portfolio review, use Viewer access unless you intentionally want someone to comment.</span></p><p class="p3"><span class="s1">Check:</span></p><p class="p3"><span class="s1">Can the recipient open the link?</span></p><p class="p3"><span class="s1">Is the file view-only?</span></p><p class="p3"><span class="s1">Did you remove private information?</span></p><p class="p3"><span class="s1">Does your name or email appear as file owner?</span></p><p class="p3"><span class="s1">Are all links working?</span></p><p class="p3"><span class="s1">Are forms set up safely?</span></p><p class="p3"><span class="s1">Are screenshots readable?</span></p><p class="p3"><span class="s1">Are samples clearly labeled?</span></p><p class="p3"><span class="s1">Do not send a client an editable portfolio folder unless there is a specific reason.</span></p><p class="p4"><span class="s1"></span><br/></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p2" id="resume-vs-portfolio-the-difference-transitioners-need-to-understand"><span class="s1"><b>Resume vs portfolio: the difference transitioners need to understand</b></span></p><p class="p3"><span class="s1">A resume says what you did.</span></p><p class="p3"><span class="s1">A portfolio shows how you would work.</span></p><p class="p3"><span class="s1">Both matter. But they solve different problems.</span></p><table cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="td19" valign="middle">
+<p class="p5"><span class="s1"><b>Resume line</b></span></p>
+</td>
+<td class="td20" valign="middle">
+<p class="p5"><span class="s1"><b>Portfolio proof</b></span></p>
+</td>
+</tr>
+<tr>
+<td class="td19" valign="middle">
+<p class="p6"><span class="s1">“Coordinated meetings and calendars”</span></p>
+</td>
+<td class="td20" valign="middle">
+<p class="p6"><span class="s1">Google Calendar sample with scheduling rules, time blocks, invite notes, and follow-up blocks</span></p>
+</td>
+</tr>
+<tr>
+<td class="td19" valign="middle">
+<p class="p6"><span class="s1">“Prepared reports”</span></p>
+</td>
+<td class="td20" valign="middle">
+<p class="p6"><span class="s1">Google Docs weekly status report template</span></p>
+</td>
+</tr>
+<tr>
+<td class="td19" valign="middle">
+<p class="p6"><span class="s1">“Tracked event deliverables”</span></p>
+</td>
+<td class="td20" valign="middle">
+<p class="p6"><span class="s1">Google Sheets event tracker with owner, due date, status, priority, and blocker columns</span></p>
+</td>
+</tr>
+<tr>
+<td class="td19" valign="middle">
+<p class="p6"><span class="s1">“Maintained files”</span></p>
+</td>
+<td class="td20" valign="middle">
+<p class="p6"><span class="s1">Google Drive folder map with naming conventions and permission notes</span></p>
+</td>
+</tr>
+<tr>
+<td class="td19" valign="middle">
+<p class="p6"><span class="s1">“Answered inquiries”</span></p>
+</td>
+<td class="td20" valign="middle">
+<p class="p6"><span class="s1">Email template library with tone notes and escalation rules</span></p>
+</td>
+</tr>
+<tr>
+<td class="td19" valign="middle">
+<p class="p6"><span class="s1">“Collected event details”</span></p>
+</td>
+<td class="td20" valign="middle">
+<p class="p6"><span class="s1">Google Forms intake form connected to a response Sheet</span></p>
+</td>
+</tr>
+<tr>
+<td class="td19" valign="middle">
+<p class="p6"><span class="s1">“Followed procedures”</span></p>
+</td>
+<td class="td20" valign="middle">
+<p class="p6"><span class="s1">SOP document with checklist and quality control steps</span></p>
+</td>
+</tr>
+</tbody>
+</table><p class="p3"><span class="s1">The resume is useful for context.</span></p><p class="p3"><span class="s1">The portfolio is useful for inspection.</span></p><p class="p3"><span class="s1">A client might not know what “administrative support” looked like inside your old company. But if they can open your tracker, your agenda template, your Drive map, and your SOP, they can see how you think.</span></p><p class="p3"><span class="s1">That is the goal of this portfolio.</span></p><p class="p3"><span class="s1">Not decoration.</span></p><p class="p3"><span class="s1">Inspection.</span></p><p class="p4"><span class="s1"></span><br/></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p2" id="microsoft-office-vs-google-workspace-how-to-explain-the-switch"><span class="s1"><b>Microsoft Office vs Google Workspace: how to explain the switch</b></span></p><p class="p3"><span class="s1">Many transitioners worry because they used Microsoft Office, Outlook, Excel, or internal systems instead of Google Workspace.</span></p><p class="p3"><span class="s1">That is normal.</span></p><p class="p3"><span class="s1">Do not claim Microsoft and Google tools are exactly the same. They are not.</span></p><p class="p3"><span class="s1">But many underlying work habits transfer:</span></p><p class="p3"><span class="s1">Scheduling.</span></p><p class="p3"><span class="s1">File organization.</span></p><p class="p3"><span class="s1">Spreadsheet tracking.</span></p><p class="p3"><span class="s1">Document formatting.</span></p><p class="p3"><span class="s1">Meeting notes.</span></p><p class="p3"><span class="s1">Email writing.</span></p><p class="p3"><span class="s1">Reporting.</span></p><p class="p3"><span class="s1">Data entry.</span></p><p class="p3"><span class="s1">Follow-up.</span></p><p class="p3"><span class="s1">Confidentiality.</span></p><p class="p3"><span class="s1">What needs practice is the Google version of the workflow.</span></p><p class="p3"><span class="s1">Google Sheets, for example, is an online spreadsheet tool with collaboration and AI-supported spreadsheet features. (<a href="https://workspace.google.com/products/sheets/"><span class="s2">Google Workspace</span></a>) Google Docs supports co-editing, comments, sharing controls, and revision history. (<a href="https://workspace.google.com/products/docs/"><span class="s2">Google Workspace</span></a>) Google Drive uses folder structures, sharing settings, and access roles. (<a href="https://support.google.com/drive/answer/2375091?hl=en"><span class="s2">Google Help</span></a>)</span></p><p class="p3"><span class="s1">Use this transition statement:</span></p><p class="p3"><span class="s1">“I previously used Microsoft Office and company systems for reports, trackers, scheduling, and documentation. I am now rebuilding those workflows in Google Workspace and have included samples in this portfolio to show how I would apply those same admin habits in remote client work.”</span></p><p class="p3"><span class="s1">That is honest.</span></p><p class="p3"><span class="s1">It does not hide the gap.</span></p><p class="p3"><span class="s1">It closes the gap with samples.</span></p><p class="p4"><span class="s1"></span><br/></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p2" id="mock-samples-vs-fake-client-work"><span class="s1"><b>Mock samples vs fake client work</b></span></p><p class="p3"><span class="s1">Mock samples are acceptable.</span></p><p class="p3"><span class="s1">Fake client work is not.</span></p><p class="p3"><span class="s1">The difference is labeling.</span></p><p class="p3"><span class="s1">A mock sample says:</span></p><p class="p3"><span class="s1">“Sample project based on a fictional business scenario.”</span></p><p class="p3"><span class="s1">“Practice sample created to demonstrate Google Sheets project tracking.”</span></p><p class="p3"><span class="s1">“Anonymized workflow inspired by previous admin experience.”</span></p><p class="p3"><span class="s1">“Personal operations sample demonstrating task tracking and documentation.”</span></p><p class="p3"><span class="s1">Fake client work says or implies:</span></p><p class="p3"><span class="s1">“This was created for a real client,” when it was not.</span></p><p class="p3"><span class="s1">“This is from my previous employer,” when you have no permission to show it.</span></p><p class="p3"><span class="s1">“I managed this client’s inbox,” when it is a fictional inbox.</span></p><p class="p3"><span class="s1">Your portfolio can use three ethical sample methods:</span></p><table cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="td21" valign="middle">
+<p class="p5"><span class="s1"><b>Method</b></span></p>
+</td>
+<td class="td22" valign="middle">
+<p class="p5"><span class="s1"><b>How to do it</b></span></p>
+</td>
+<td class="td23" valign="middle">
+<p class="p5"><span class="s1"><b>Label</b></span></p>
+</td>
+</tr>
+<tr>
+<td class="td21" valign="middle">
+<p class="p6"><span class="s1">Mock business scenario</span></p>
+</td>
+<td class="td22" valign="middle">
+<p class="p6"><span class="s1">Create a fictional coach, consultant, real estate agent, small event team, or online business</span></p>
+</td>
+<td class="td23" valign="middle">
+<p class="p6"><span class="s1">“Sample project based on a fictional business scenario”</span></p>
+</td>
+</tr>
+<tr>
+<td class="td21" valign="middle">
+<p class="p6"><span class="s1">Rebuilt past workflow</span></p>
+</td>
+<td class="td22" valign="middle">
+<p class="p6"><span class="s1">Recreate the structure of a past workflow without names, private data, files, screenshots, or confidential details</span></p>
+</td>
+<td class="td23" valign="middle">
+<p class="p6"><span class="s1">“Anonymized workflow inspired by previous admin experience”</span></p>
+</td>
+</tr>
+<tr>
+<td class="td21" valign="middle">
+<p class="p6"><span class="s1">Personal operations sample</span></p>
+</td>
+<td class="td22" valign="middle">
+<p class="p6"><span class="s1">Use your own job search, study plan, or household schedule as the project</span></p>
+</td>
+<td class="td23" valign="middle">
+<p class="p6"><span class="s1">“Personal operations sample demonstrating task tracking and documentation”</span></p>
+</td>
+</tr>
+</tbody>
+</table><p class="p3"><span class="s1">Do not use:</span></p><p class="p3"><span class="s1">Former employer names.</span></p><p class="p3"><span class="s1">Company logos.</span></p><p class="p3"><span class="s1">Real internal reports.</span></p><p class="p3"><span class="s1">Old calendar screenshots.</span></p><p class="p3"><span class="s1">Private emails.</span></p><p class="p3"><span class="s1">Vendor lists.</span></p><p class="p3"><span class="s1">Client records.</span></p><p class="p3"><span class="s1">Staff directories.</span></p><p class="p3"><span class="s1">HR files.</span></p><p class="p3"><span class="s1">Payroll records.</span></p><p class="p3"><span class="s1">Contracts.</span></p><p class="p3"><span class="s1">Internal templates.</span></p><p class="p3"><span class="s1">Screenshots from company systems.</span></p><p class="p3"><span class="s1">Rebuild the structure with fictional data.</span></p><p class="p3"><span class="s1">That is enough.</span></p><p class="p4"><span class="s1"></span><br/></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p2" id="quality-checklist-for-every-sample"><span class="s1"><b>Quality checklist for every sample</b></span></p><p class="p3"><span class="s1">Before adding a sample to your portfolio, check whether it answers these questions:</span></p><p class="p3"><span class="s1">What business problem does this solve?</span></p><p class="p3"><span class="s1">What past experience does this connect to?</span></p><p class="p3"><span class="s1">What tool did I use?</span></p><p class="p3"><span class="s1">What would the client see?</span></p><p class="p3"><span class="s1">What would I update daily, weekly, or after a meeting?</span></p><p class="p3"><span class="s1">What is the follow-up process?</span></p><p class="p3"><span class="s1">What decisions would I escalate?</span></p><p class="p3"><span class="s1">What part was assisted by Gemini, if any?</span></p><p class="p3"><span class="s1">What part did I review or customize myself?</span></p><p class="p3"><span class="s1">Is the sample clearly labeled as mock, anonymized, personal, or real?</span></p><p class="p3"><span class="s1">Are all links and permissions correct?</span></p><p class="p3"><span class="s1">Is there any confidential information?</span></p><p class="p3"><span class="s1">Is the sample specific enough to show judgment?</span></p><p class="p3"><span class="s1">A sample fails if it is only a file.</span></p><p class="p3"><span class="s1">A sample works if it shows a business situation, a workflow, and a clear outcome.</span></p><p class="p4"><span class="s1"></span><br/></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p2" id="faq"><span class="s1"><b>FAQ</b></span></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="what-does-building-a-va-portfolio-from-office-admin-experience-mean"><span class="s1"><b>What does “building a VA portfolio from office admin experience” mean?</b></span></p><p class="p3"><span class="s1">It means creating sample work that shows the same skills you used in office admin or event coordination, but rebuilt inside remote-friendly tools such as Google Calendar, Drive, Docs, Sheets, Forms, Gmail, and Meet.</span></p><p class="p3"><span class="s1">A VA portfolio is not just a gallery. For admin VA work, it is a proof folder. It should show how you organize files, manage calendars, document meetings, track tasks, collect information, write follow-ups, and build repeatable processes.</span></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="can-i-build-a-va-portfolio-without-real-clients"><span class="s1"><b>Can I build a VA portfolio without real clients?</b></span></p><p class="p3"><span class="s1">Yes.</span></p><p class="p3"><span class="s1">Use mock business scenarios, anonymized workflow structures, or personal operations samples.</span></p><p class="p3"><span class="s1">The key is labeling.</span></p><p class="p3"><span class="s1">Do not pretend mock work is paid client work. Do not use confidential former-employer information. Do not use real private emails, files, screenshots, or staff data.</span></p><p class="p3"><span class="s1">A properly labeled sample can still show skill.</span></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="how-many-portfolio-pieces-do-i-need-as-a-new-va"><span class="s1"><b>How many portfolio pieces do I need as a new VA?</b></span></p><p class="p3"><span class="s1">Five to seven is enough for a starter admin VA portfolio if each sample proves a different skill.</span></p><p class="p3"><span class="s1">More samples are not automatically better.</span></p><p class="p3"><span class="s1">A good starter set is:</span></p><p class="p3"><span class="s1">Calendar management system.</span></p><p class="p3"><span class="s1">Meeting agenda and notes template.</span></p><p class="p3"><span class="s1">Project or event tracker.</span></p><p class="p3"><span class="s1">Drive folder organization system.</span></p><p class="p3"><span class="s1">Email template library.</span></p><p class="p3"><span class="s1">Client intake form.</span></p><p class="p3"><span class="s1">Admin SOP or workflow guide.</span></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="do-i-need-google-workspace-certification-before-building-a-portfolio"><span class="s1"><b>Do I need Google Workspace certification before building a portfolio?</b></span></p><p class="p3"><span class="s1">Not necessarily.</span></p><p class="p3"><span class="s1">Certification can support your learning and confidence, but a certificate says you studied. A sample shows how you work.</span></p><p class="p3"><span class="s1">Google’s Learning Center provides product-specific guidance for tools such as Calendar, Docs, Drive, Gemini, Gmail, Meet, Sheets, and Slides. (<a href="https://support.google.com/a/users/?hl=en"><span class="s2">Google Help</span></a>) A practical early move is to study the tool while building one sample at a time.</span></p><p class="p3"><span class="s1">Do not frame certification as useless.</span></p><p class="p3"><span class="s1">Do not frame it as mandatory for every VA.</span></p><p class="p3"><span class="s1">Use it as support, not a substitute for proof.</span></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="can-i-use-templates"><span class="s1"><b>Can I use templates?</b></span></p><p class="p3"><span class="s1">Yes, but customize them.</span></p><p class="p3"><span class="s1">A copied template proves exposure. A customized workflow proves thinking.</span></p><p class="p3"><span class="s1">Add:</span></p><p class="p3"><span class="s1">A fictional business scenario.</span></p><p class="p3"><span class="s1">Specific rules.</span></p><p class="p3"><span class="s1">Status labels.</span></p><p class="p3"><span class="s1">Folder logic.</span></p><p class="p3"><span class="s1">Owner fields.</span></p><p class="p3"><span class="s1">Due dates.</span></p><p class="p3"><span class="s1">Escalation rules.</span></p><p class="p3"><span class="s1">Follow-up steps.</span></p><p class="p3"><span class="s1">A process note.</span></p><p class="p3"><span class="s1">The more specific the sample, the more useful it becomes.</span></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="what-tools-besides-google-workspace-should-vas-know"><span class="s1"><b>What tools besides Google Workspace should VAs know?</b></span></p><p class="p3"><span class="s1">It depends on the role.</span></p><p class="p3"><span class="s1">Common adjacent tools include Canva, Slack, Zoom, Trello, Asana, ClickUp, Calendly, CRMs, and bookkeeping tools. Remote.co lists tools and categories such as Google Workspace, Microsoft Office, CRM software, project management tools, bookkeeping tools, online research, email management, and calendar management as VA-related skills. (<span class="s2">Remote.co</span>)</span></p><p class="p3"><span class="s1">For this portfolio, keep the focus on Google Workspace first.</span></p><p class="p3"><span class="s1">Depth in a few relevant workflows is stronger than shallow claims across every platform.</span></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="how-do-i-explain-that-my-experience-was-office-based-not-remote"><span class="s1"><b>How do I explain that my experience was office-based, not remote?</b></span></p><p class="p3"><span class="s1">Use a direct transition statement:</span></p><p class="p3"><span class="s1">“My previous work was office-based, but the responsibilities were remote-transferable: scheduling, documentation, file organization, follow-up, and project coordination. I built this Google Workspace portfolio to show how I would perform those same functions in a remote client setting.”</span></p><p class="p3"><span class="s1">This is credible because it does not pretend you were already doing the exact same role remotely.</span></p><p class="p3"><span class="s1">It shows the bridge.</span></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="do-vas-need-industry-specific-knowledge"><span class="s1"><b>Do VAs need industry-specific knowledge?</b></span></p><p class="p3"><span class="s1">Sometimes.</span></p><p class="p3"><span class="s1">A general admin VA can start with broad samples: calendar, meeting notes, tracker, Drive system, email templates, intake form, and SOP.</span></p><p class="p3"><span class="s1">A specialized VA should tailor samples.</span></p><p class="p3"><span class="s1">For example, event coordination experience could support niches such as webinar assistant, online event coordinator, speaker coordinator, podcast guest coordinator, coaching program assistant, community assistant, operations assistant, or project coordinator.</span></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="what-should-i-avoid-putting-in-my-va-portfolio"><span class="s1"><b>What should I avoid putting in my VA portfolio?</b></span></p><p class="p3"><span class="s1">Avoid anything confidential or misleading.</span></p><p class="p3"><span class="s1">Do not include:</span></p><p class="p3"><span class="s1">Old employer files.</span></p><p class="p3"><span class="s1">Real internal reports.</span></p><p class="p3"><span class="s1">Private calendar screenshots.</span></p><p class="p3"><span class="s1">Private client records.</span></p><p class="p3"><span class="s1">Vendor contracts.</span></p><p class="p3"><span class="s1">Staff contact lists.</span></p><p class="p3"><span class="s1">Company templates.</span></p><p class="p3"><span class="s1">Real email screenshots.</span></p><p class="p3"><span class="s1">HR or payroll records.</span></p><p class="p3"><span class="s1">Passwords.</span></p><p class="p3"><span class="s1">Unlabeled mock work.</span></p><p class="p3"><span class="s1">Unsupported claims.</span></p><p class="p3"><span class="s1">Also avoid unsupported numerical claims such as “87% of VA jobs require Google Workspace” or “VA portfolios get 3x more interviews” unless you have the original verified source. The brief specifically warns against publishing unverified figures and recommends cautious language about public listings and VA guidance frequently mentioning Google Workspace, scheduling, email management, spreadsheets, and file organization.</span></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="what-is-the-best-first-sample-to-build"><span class="s1"><b>What is the best first sample to build?</b></span></p><p class="p3"><span class="s1">Start with the sample closest to your past work.</span></p><p class="p3"><span class="s1">If you handled meetings, build the meeting agenda and action notes template.</span></p><p class="p3"><span class="s1">If you coordinated schedules, build the calendar system.</span></p><p class="p3"><span class="s1">If you handled events, build the project or event tracker.</span></p><p class="p3"><span class="s1">If you managed files, build the Drive organization system.</span></p><p class="p3"><span class="s1">Do not start with the tool you find most impressive.</span></p><p class="p3"><span class="s1">Start with the workflow you can explain best.</span></p><p class="p4"><span class="s1"></span><br/></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p2" id="a-14-day-build-plan"><span class="s1"><b>A 14-day build plan</b></span></p><p class="p3"><span class="s1">This plan does not mean you become fully job-ready in 14 days.</span></p><p class="p3"><span class="s1">It gives you a practical way to create a first proof set.</span></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="day-1-audit-your-old-responsibilities"><span class="s1"><b>Day 1: Audit your old responsibilities</b></span></p><p class="p3"><span class="s1">Write down 20 tasks you handled in previous roles.</span></p><p class="p3"><span class="s1">Examples:</span></p><p class="p3"><span class="s1">Scheduled meetings.</span></p><p class="p3"><span class="s1">Prepared reports.</span></p><p class="p3"><span class="s1">Updated trackers.</span></p><p class="p3"><span class="s1">Organized files.</span></p><p class="p3"><span class="s1">Answered inquiries.</span></p><p class="p3"><span class="s1">Coordinated events.</span></p><p class="p3"><span class="s1">Followed up with vendors.</span></p><p class="p3"><span class="s1">Prepared agendas.</span></p><p class="p3"><span class="s1">Took meeting notes.</span></p><p class="p3"><span class="s1">Collected forms.</span></p><p class="p3"><span class="s1">Then translate each task into a VA skill.</span></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="day-2-review-10-to-20-va-job-posts"><span class="s1"><b>Day 2: Review 10 to 20 VA job posts</b></span></p><p class="p3"><span class="s1">Look for repeated words.</span></p><p class="p3"><span class="s1">Highlight:</span></p><p class="p3"><span class="s1">Calendar.</span></p><p class="p3"><span class="s1">Email.</span></p><p class="p3"><span class="s1">Google Workspace.</span></p><p class="p3"><span class="s1">Google Sheets.</span></p><p class="p3"><span class="s1">Google Docs.</span></p><p class="p3"><span class="s1">Drive.</span></p><p class="p3"><span class="s1">Scheduling.</span></p><p class="p3"><span class="s1">Data entry.</span></p><p class="p3"><span class="s1">Research.</span></p><p class="p3"><span class="s1">Project management.</span></p><p class="p3"><span class="s1">File management.</span></p><p class="p3"><span class="s1">Communication.</span></p><p class="p3"><span class="s1">Use the patterns to choose your samples. Treat public job listings as directional evidence, not a statistical survey.</span></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="day-3-build-your-portfolio-drive-folder"><span class="s1"><b>Day 3: Build your portfolio Drive folder</b></span></p><p class="p3"><span class="s1">Create:</span></p><p class="p3"><span class="s1">VA Portfolio - Your Name.</span></p><p class="p3"><span class="s1">00 Portfolio Index.</span></p><p class="p3"><span class="s1">01 Calendar Management Sample.</span></p><p class="p3"><span class="s1">02 Meeting Notes Sample.</span></p><p class="p3"><span class="s1">03 Event Tracker Sample.</span></p><p class="p3"><span class="s1">04 Drive Organization Sample.</span></p><p class="p3"><span class="s1">05 Email Template Library.</span></p><p class="p3"><span class="s1">06 Intake Form Sample.</span></p><p class="p3"><span class="s1">07 SOP Workflow Sample.</span></p><p class="p3"><span class="s1">Screenshots.</span></p><p class="p3"><span class="s1">Archive.</span></p><p class="p3"><span class="s1">Set up the structure first.</span></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="day-4-build-the-calendar-sample"><span class="s1"><b>Day 4: Build the calendar sample</b></span></p><p class="p3"><span class="s1">Create a fictional client.</span></p><p class="p3"><span class="s1">Build a weekly schedule.</span></p><p class="p3"><span class="s1">Add client calls, admin blocks, focus time, prep time, follow-up blocks, and scheduling rules.</span></p><p class="p3"><span class="s1">Write a short process note.</span></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="day-5-build-the-meeting-notes-template"><span class="s1"><b>Day 5: Build the meeting notes template</b></span></p><p class="p3"><span class="s1">Create a Google Docs agenda and notes template.</span></p><p class="p3"><span class="s1">Include decisions, action items, owners, due dates, and follow-up.</span></p><p class="p3"><span class="s1">Create one completed fictional example.</span></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="days-6-and-7-build-the-project-or-event-tracker"><span class="s1"><b>Days 6 and 7: Build the project or event tracker</b></span></p><p class="p3"><span class="s1">Create a Google Sheets tracker.</span></p><p class="p3"><span class="s1">Add tabs for overview, tasks, vendors, registration, assets, budget estimate, and follow-up.</span></p><p class="p3"><span class="s1">Add dropdowns, status labels, due dates, owners, and blockers.</span></p><p class="p3"><span class="s1">Add conditional formatting.</span></p><p class="p3"><span class="s1">Write a process note explaining how you would update it.</span></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="day-8-build-the-drive-system"><span class="s1"><b>Day 8: Build the Drive system</b></span></p><p class="p3"><span class="s1">Create the sample folder structure.</span></p><p class="p3"><span class="s1">Add a folder map.</span></p><p class="p3"><span class="s1">Write naming conventions.</span></p><p class="p3"><span class="s1">Add permission notes.</span></p><p class="p3"><span class="s1">Create fictional sample file names.</span></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="day-9-build-the-email-template-library"><span class="s1"><b>Day 9: Build the email template library</b></span></p><p class="p3"><span class="s1">Create templates for scheduling, rescheduling, document requests, vendor follow-up, client update, delay notice, and escalation.</span></p><p class="p3"><span class="s1">Add tone notes and escalation rules.</span></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="day-10-build-the-intake-form"><span class="s1"><b>Day 10: Build the intake form</b></span></p><p class="p3"><span class="s1">Create a Google Form for client requests or event requests.</span></p><p class="p3"><span class="s1">Connect responses to a Google Sheet.</span></p><p class="p3"><span class="s1">Add sample fictional responses.</span></p><p class="p3"><span class="s1">Write the follow-up process.</span></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="day-11-build-the-sop"><span class="s1"><b>Day 11: Build the SOP</b></span></p><p class="p3"><span class="s1">Choose one recurring admin workflow.</span></p><p class="p3"><span class="s1">Write the steps.</span></p><p class="p3"><span class="s1">Add inputs, outputs, checklist, and escalation rules.</span></p><p class="p3"><span class="s1">Keep it clear enough that someone else could follow it.</span></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="day-12-add-screenshots-and-labels"><span class="s1"><b>Day 12: Add screenshots and labels</b></span></p><p class="p3"><span class="s1">For each sample, add:</span></p><p class="p3"><span class="s1">Screenshot.</span></p><p class="p3"><span class="s1">View-only link.</span></p><p class="p3"><span class="s1">Mock/anonymized/personal label.</span></p><p class="p3"><span class="s1">Short explanation.</span></p><p class="p3"><span class="s1">Remove any private data.</span></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="day-13-write-the-portfolio-index"><span class="s1"><b>Day 13: Write the portfolio index</b></span></p><p class="p3"><span class="s1">Create the one-page index.</span></p><p class="p3"><span class="s1">Add your transition statement.</span></p><p class="p3"><span class="s1">Add the table of samples.</span></p><p class="p3"><span class="s1">Check every link.</span></p><p class="p3"><span class="s1">Set view-only permissions.</span></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p7" id="day-14-practice-explaining-your-portfolio"><span class="s1"><b>Day 14: Practice explaining your portfolio</b></span></p><p class="p3"><span class="s1">Prepare a short explanation:</span></p><p class="p3"><span class="s1">“My background is in office administration and event coordination. I built this portfolio to show how I translate that experience into remote admin support. The samples include calendar management, meeting documentation, project tracking, Drive organization, email templates, client intake, and SOP workflows. They are fictional or anonymized and designed to show my process, not pretend to be client work.”</span></p><p class="p3"><span class="s1">Practice saying it plainly.</span></p><p class="p3"><span class="s1">Do not apologize for transitioning.</span></p><p class="p3"><span class="s1">Explain the bridge.</span></p><p class="p4"><span class="s1"></span><br/></p><p class="back-to-top"><a href="#top">Back to Top</a></p><p class="p2" id="final-position"><span class="s1"><b>Final position</b></span></p><p class="p3"><span class="s1">Your past office admin and event coordination experience is not wasted.</span></p><p class="p3"><span class="s1">It is raw material.</span></p><p class="p3"><span class="s1">But raw material needs packaging.</span></p><p class="p3"><span class="s1">A remote client may not understand your old company systems, your internal forms, your department procedures, or your event files. They need to see how your skills would operate in a remote workflow.</span></p><p class="p3"><span class="s1">That is what a Google Workspace portfolio can do.</span></p><p class="p3"><span class="s1">A calendar system shows time judgment.</span></p><p class="p3"><span class="s1">A meeting template shows documentation discipline.</span></p><p class="p3"><span class="s1">A tracker shows project visibility.</span></p><p class="p3"><span class="s1">A Drive system shows file discipline.</span></p><p class="p3"><span class="s1">An email library shows tone and follow-up thinking.</span></p><p class="p3"><span class="s1">An intake form shows information-gathering logic.</span></p><p class="p3"><span class="s1">An SOP shows repeatability.</span></p><p class="p3"><span class="s1">Gemini can help you draft and structure parts of the work, but your judgment, accuracy, confidentiality, and follow-through remain the proof.</span></p><p class="p3"><span class="s1">You are not starting from zero.</span></p><p class="p3"><span class="s1">You are translating what you already know into visible work samples a remote client can inspect.</span></p><p class="back-to-top"><a href="#top">Back to Top</a></p></article>
+<section id="community">
+<h2>Community + next step</h2>
+<div class="next-row">
+<a href="../swahg-blueprint/index.html">
+<div class="arrow-label">Zoom out</div>
+<div class="arrow-title">See the full Blueprint</div>
+<div class="arrow-hint">Return to Box 18 · Skill Practice</div>
+</a>
+<a href="../swahg-lesson-google-sites-portfolio/index.html">
+<div class="arrow-label">Related lesson</div>
+<div class="arrow-title">Google Sites Portfolio | Zero Work Experience</div>
+<div class="arrow-hint">Build the portfolio shell after choosing samples</div>
+</a>
+<a href="../swahg-lesson-personal-branding/index.html">
+<div class="arrow-label">Related lesson</div>
+<div class="arrow-title">Personal Branding</div>
+<div class="arrow-hint">Shape the voice before you apply</div>
+</a>
+<a href="../swahg-resume-builder/index.html">
+<div class="arrow-label">Build</div>
+<div class="arrow-title">Resume Builder</div>
+<div class="arrow-hint">Match your skills to active role categories</div>
+</a>
+</div>
+</section>
+<section class="signoff">
+<p>Kapit lang tayo SWAHG Team.</p>
+<p class="name">- Lala</p>
+</section>
+</div>
+<footer>
+<div>
+<a href="../swahg/index.html">SWAHG Home</a>
+<a href="../swahg-blueprint/index.html">Blueprint</a>
+<a href="../swahg-resume-builder/index.html">Resume Builder</a>
+<a href="../swahg-curriculum/index.html">Curriculum</a>
+</div>
+<div class="credit">Skill Practice · Office Admin to VA Portfolio · Complete guide · May 19, 2026 · Writings by Lala</div>
+</footer>
+</body>
+</html>

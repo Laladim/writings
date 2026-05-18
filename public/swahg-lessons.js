@@ -654,6 +654,20 @@ window.SWAHG_LESSONS = {
       tier: 2,
       format: "article"
     },
+    "office-admin-to-va-portfolio": {
+      title: "Office Admin to VA Portfolio",
+      stage: "working",
+      status: "live",
+      url: "../swahg-lesson-office-admin-to-va-portfolio/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["admin","va","account-manager","customer-service"],
+      prerequisites: ["career-path-training"],
+      next_lessons: ["google-sites-portfolio","personal-branding","resume-builder"],
+      why_this_lesson: "Skill Practice lesson for office admin, event coordination, operations, and corporate transitioners building Google Workspace portfolio proof.",
+      estimated_minutes: 45,
+      tier: 2,
+      format: "article"
+    },
     "onboarding-first-30-days": {
       title: "Onboarding: First 30 Days",
       stage: "stage1",
@@ -914,7 +928,7 @@ window.SWAHG_LESSONS = {
     /* TOP ROW — Working on it! */
     "work-1":  { pdf_label: "Interviews",                 stage: "working", lessons: ["interviews-prep","freelancing-journey-lesson-5"] },
     "work-2":  { pdf_label: "Internship",                 stage: "working", lessons: ["internship-options"] },
-    "work-3":  { pdf_label: "Skill Practice",             stage: "working", lessons: ["google-sites-portfolio","bpo-to-va-portfolio"] },
+    "work-3":  { pdf_label: "Skill Practice",             stage: "working", lessons: ["google-sites-portfolio","bpo-to-va-portfolio","office-admin-to-va-portfolio"] },
     "work-4":  { pdf_label: "Creating Proposal",          stage: "working", lessons: ["common-mistakes","freelancing-journey-lesson-4"] },
     "work-5":  { pdf_label: "Bidding",                    stage: "working", lessons: ["getting-hired-fast","freelancing-platforms","common-mistakes"] },
 
