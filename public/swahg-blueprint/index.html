@@ -402,8 +402,8 @@
           <button class="sub-box" data-box="warm-1"><span class="box-num">6</span><span class="label">Choose Career Path</span><span class="hint">Remote Job · VA · Specialized Skill</span></button>
           <button class="sub-box" data-box="warm-2"><span class="box-num">7</span><span class="label">Planning</span><span class="hint">Hours of training, self-assessment</span></button>
           <button class="sub-box" data-box="warm-3"><span class="box-num">8</span><span class="label">Basic Foundation</span><span class="hint">Paid · Free · Self</span></button>
-          <button class="sub-box" data-box="warm-4"><span class="box-num">9</span><span class="label">Support Group</span><span class="hint">Paid mentoring + free groups</span></button>
-          <button class="sub-box" data-box="warm-5"><span class="box-num">10</span><span class="label">Ongoing Training</span><span class="hint">SMM + personal brand + new modules</span></button>
+          <button class="sub-box" data-box="warm-4"><span class="box-num">9</span><span class="label">Support Group</span><span class="hint">Community, feedback, accountability</span></button>
+          <button class="sub-box" data-box="warm-5"><span class="box-num">10</span><span class="label">Ongoing Training</span><span class="hint">Coming Soon</span></button>
         </div>
 
         <div class="stage-col" data-stage="launch">
@@ -589,7 +589,9 @@ function openModal(boxKey){
   const queuedCount = resolvedLessons.filter(l => l.status === "new" || l.status === "rewrite").length;
   const liveCount = resolvedLessons.filter(l => l.status === "live" || l.status === "built").length;
   let metaText;
-  if(resolvedLessons.length === 0){
+  if(resolvedLessons.length === 0 && box.coming_soon){
+    metaText = `<strong style="color:var(--new)">${box.coming_soon}</strong>`;
+  } else if(resolvedLessons.length === 0){
     metaText = `<strong style="color:var(--new)">No lesson yet — community resource only</strong>`;
   } else if(liveCount === resolvedLessons.length){
     metaText = `<strong style="color:var(--primary)">${liveCount} lesson${liveCount>1?"s":""} live</strong>`;
@@ -626,6 +628,8 @@ function openModal(boxKey){
       `;
     });
     html += `</div>`;
+  } else if(box.coming_soon) {
+    html += `<p style="color:var(--text-soft);font-style:italic">${box.coming_soon}</p>`;
   } else {
     html += `<p style="color:var(--text-soft);font-style:italic">This box represents a community resource or activity, not a lesson — it sits inside the Blueprint as a structural marker.</p>`;
   }

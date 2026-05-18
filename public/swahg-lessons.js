@@ -253,6 +253,20 @@ window.SWAHG_LESSONS = {
       tier: 0,
       format: "video"
     },
+    "support-group": {
+      title: "The Value of a Support Group",
+      stage: "warmup",
+      status: "live",
+      url: "../swahg-lesson-support-group/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["customer-service","smm","admin","va"],
+      prerequisites: ["english-101"],
+      next_lessons: ["smm-core-strategies","freelancing-journey-series"],
+      why_this_lesson: "Support Group box anchor. Helps learners understand why community matters and how to connect with SWAHG for accountability, feedback, job leads, and encouragement.",
+      estimated_minutes: 12,
+      tier: 0,
+      format: "guide"
+    },
 
     /* ====== Freelancing Journey (long-form anchor) ====== */
     "freelancing-journey-series": {
@@ -831,8 +845,8 @@ window.SWAHG_LESSONS = {
     "warm-1": { pdf_label: "Choose Career Path",          stage: "warmup",  lessons: ["where-to-start","freelancer-or-va","employee-to-freelancer","find-your-path-quiz"] },
     "warm-2": { pdf_label: "Planning",                    stage: "warmup",  lessons: ["10-secret-skills"] },
     "warm-3": { pdf_label: "Basic Foundation",            stage: "warmup",  lessons: ["career-path-training","specialized-business-skills","creative-artistic-skills","english-101"] },
-    "warm-4": { pdf_label: "Support Group",               stage: "warmup",  lessons: ["freelancing-journey-series","freelancing-journey-lesson-2","freelancing-journey-lesson-3","freelancing-journey-lesson-4","freelancing-journey-lesson-5","freelancing-journey-lesson-6"] },
-    "warm-5": { pdf_label: "Ongoing Training",            stage: "warmup",  lessons: ["smm-core-strategies","smm-handbook","instagram-strategy","fb-chatbot-training","fb-mobile-management","pinterest-marketing","youtube-best-practices","personal-branding","customer-support-foundations","account-management-101","cold-outreach-sdrs","crm-basics","video-editing-content-vas"] },
+    "warm-4": { pdf_label: "Support Group",               stage: "warmup",  lessons: ["support-group"] },
+    "warm-5": { pdf_label: "Ongoing Training",            stage: "warmup",  lessons: [], coming_soon: "Coming Soon" },
 
     /* TOP ROW — Launch */
     "launch-1":{ pdf_label: "Setting Up Accounts",        stage: "launch",  lessons: ["online-jobs-account","freelancing-platforms"] },
