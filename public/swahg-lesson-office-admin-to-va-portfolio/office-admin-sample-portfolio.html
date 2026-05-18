@@ -1,0 +1,674 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tin Ramos Office Admin to VA Portfolio Reference</title>
+  <style>
+    :root {
+      --ink: #27232f;
+      --muted: #675f73;
+      --line: #ddd4c9;
+      --paper: #fbf8f3;
+      --canvas: #fffdf9;
+      --soft: #f0e8df;
+      --purple: #5a4a7a;
+      --purple-dark: #3f335f;
+      --gold: #b68a4a;
+      --green: #4f735d;
+      --shadow: 0 22px 70px rgba(39, 35, 47, .15);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 14% 8%, rgba(182, 138, 74, .16), transparent 30rem),
+        linear-gradient(135deg, #f7f1e9 0%, #fbf8f3 48%, #ebe3d9 100%);
+      color: var(--ink);
+      line-height: 1.55;
+    }
+
+    a {
+      color: var(--purple-dark);
+      text-underline-offset: .18em;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 20px;
+      align-items: center;
+      padding: 14px 28px;
+      background: rgba(251, 248, 243, .93);
+      border-bottom: 1px solid rgba(221, 212, 201, .9);
+      backdrop-filter: blur(16px);
+    }
+
+    .brandmark {
+      display: inline-grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      background: var(--purple);
+      color: #fbf8f3;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .topbar h1 {
+      margin: 0;
+      font-size: clamp(1rem, 1.8vw, 1.35rem);
+      letter-spacing: 0;
+    }
+
+    .topbar p {
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .top-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+
+    .doc-link,
+    .lesson-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 16px;
+      border-radius: 7px;
+      font-weight: 750;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .doc-link {
+      border: 1px solid var(--purple);
+      background: var(--purple);
+      color: #fbf8f3;
+    }
+
+    .lesson-link {
+      border: 1px solid var(--line);
+      background: #fffdf9;
+      color: var(--purple-dark);
+    }
+
+    .shell {
+      width: min(1440px, calc(100% - 32px));
+      margin: 32px auto 56px;
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr) 286px;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .side,
+    .builder {
+      position: sticky;
+      top: 86px;
+      background: rgba(255, 253, 249, .88);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .side h2,
+    .builder h2 {
+      margin: 0;
+      padding: 18px 18px 12px;
+      font-size: .78rem;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: .16em;
+    }
+
+    .side nav {
+      display: grid;
+      padding: 0 10px 14px;
+    }
+
+    .side a {
+      display: grid;
+      grid-template-columns: 26px 1fr;
+      gap: 10px;
+      align-items: center;
+      padding: 11px 10px;
+      border-radius: 8px;
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 650;
+      font-size: .94rem;
+    }
+
+    .side a:hover,
+    .side a:focus {
+      background: var(--soft);
+      outline: none;
+    }
+
+    .side span {
+      display: inline-grid;
+      place-items: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      background: var(--purple);
+      color: #fbf8f3;
+      font-size: .78rem;
+      font-weight: 800;
+    }
+
+    .site {
+      background: var(--canvas);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .site-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 13px 18px;
+      border-bottom: 1px solid var(--line);
+      background: #f8f4ee;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .site-toolbar strong {
+      color: var(--ink);
+    }
+
+    .fake-actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      white-space: nowrap;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--line);
+    }
+
+    .dot:nth-child(2) {
+      background: var(--gold);
+    }
+
+    .dot:nth-child(3) {
+      background: var(--green);
+    }
+
+    .hero {
+      min-height: 380px;
+      display: grid;
+      align-items: end;
+      padding: clamp(42px, 8vw, 92px);
+      background:
+        linear-gradient(120deg, rgba(42, 38, 49, .84), rgba(90, 74, 122, .54)),
+        linear-gradient(135deg, #3f335f, #4b5563 52%, #6f664c);
+      color: #fbf8f3;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: #dcc291;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: .78rem;
+      font-weight: 800;
+    }
+
+    .hero h2 {
+      max-width: 940px;
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.4rem, 8vw, 5.6rem);
+      line-height: .96;
+      letter-spacing: 0;
+      font-weight: 500;
+    }
+
+    .hero p:last-child {
+      max-width: 740px;
+      margin: 22px 0 0;
+      font-size: clamp(1rem, 2vw, 1.24rem);
+      color: #f4ede2;
+    }
+
+    .section {
+      padding: clamp(34px, 6vw, 76px);
+      border-top: 1px solid var(--line);
+    }
+
+    .section:first-of-type {
+      border-top: 0;
+    }
+
+    .section h3 {
+      margin: 0 0 18px;
+      color: var(--purple-dark);
+      font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .section p {
+      max-width: 74ch;
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .translation {
+      display: grid;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .translation-row,
+    .skill-row,
+    .sample,
+    .focus-note {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #f8f4ee;
+    }
+
+    .translation-row {
+      display: grid;
+      grid-template-columns: minmax(180px, .7fr) minmax(0, 1fr);
+      gap: 18px;
+      padding: 18px;
+    }
+
+    .translation-row strong,
+    .skill-row strong {
+      color: var(--ink);
+    }
+
+    .translation-row p,
+    .skill-row p,
+    .sample p,
+    .focus-note p {
+      margin-bottom: 0;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .skill-row {
+      padding: 18px;
+    }
+
+    .samples {
+      display: grid;
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .sample {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(220px, .65fr);
+      gap: 22px;
+      padding: 22px;
+      align-items: start;
+    }
+
+    .sample h4 {
+      margin: 0 0 8px;
+      font-size: 1.35rem;
+      letter-spacing: 0;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: #ece2d6;
+      color: var(--purple-dark);
+      font-size: .78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .open-sample {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 14px;
+      border-radius: 7px;
+      border: 1px solid var(--green);
+      color: var(--green);
+      font-weight: 800;
+      text-decoration: none;
+      text-align: center;
+      width: 100%;
+    }
+
+    .open-sample:hover,
+    .open-sample:focus {
+      background: #e7efe8;
+      outline: none;
+    }
+
+    .focus-note {
+      margin-top: 24px;
+      padding: 22px;
+      background: #f4ecdf;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .contact-grid p {
+      min-height: 74px;
+      margin: 0;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #f8f4ee;
+    }
+
+    .contact-grid span {
+      display: block;
+      color: var(--gold);
+      font-size: .78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    .builder {
+      padding-bottom: 12px;
+    }
+
+    .builder ol {
+      margin: 0;
+      padding: 0 20px 18px 38px;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .builder li {
+      margin: 0 0 10px;
+      padding-left: 2px;
+    }
+
+    .notice {
+      margin: 0 14px 14px;
+      padding: 14px;
+      border-radius: 9px;
+      background: #efe7f5;
+      color: var(--purple-dark);
+      font-size: .92rem;
+      font-weight: 650;
+    }
+
+    .footer {
+      width: min(1440px, calc(100% - 32px));
+      margin: 0 auto 42px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    @media (max-width: 1080px) {
+      .shell {
+        grid-template-columns: 1fr;
+      }
+
+      .side,
+      .builder {
+        position: static;
+      }
+
+      .side nav {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+
+      .side a {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .topbar {
+        grid-template-columns: auto 1fr;
+      }
+
+      .top-actions {
+        grid-column: 1 / -1;
+        justify-content: stretch;
+      }
+
+      .doc-link,
+      .lesson-link {
+        width: 100%;
+      }
+
+      .side nav,
+      .skills,
+      .sample,
+      .contact-grid,
+      .translation-row {
+        grid-template-columns: 1fr;
+      }
+
+      .section,
+      .hero {
+        padding: 32px 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brandmark">S</div>
+    <div>
+      <h1>Tin Ramos Office Admin to VA Portfolio Reference</h1>
+      <p>Brand Persona 5: Kristine "Tin" Ramos, The Generalist Admin</p>
+    </div>
+    <div class="top-actions">
+      <a class="lesson-link" href="index.html">Back to Lesson</a>
+      <a class="doc-link" href="https://docs.google.com/document/d/1hK2JS4vfzalL99NDN5yKoowpx-0lwwSJbFLgdMnuos0/edit?usp=sharing">Open Step by Step Guide</a>
+    </div>
+  </header>
+
+  <div class="shell">
+    <aside class="side" aria-label="Portfolio sections">
+      <h2>Page Sections</h2>
+      <nav>
+        <a href="#summary"><span>1</span>Admin-to-VA Summary</a>
+        <a href="#skills"><span>2</span>Transferable Skills</a>
+        <a href="#samples"><span>3</span>Sample Activities</a>
+        <a href="#trust"><span>4</span>Trust Notes</a>
+        <a href="#contact"><span>5</span>Contact</a>
+      </nav>
+    </aside>
+
+    <main class="site">
+      <div class="site-toolbar" aria-label="Google Sites style toolbar">
+        <strong>Kristine Ramos</strong>
+        <span>Google Sites style reference page</span>
+        <div class="fake-actions" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+      </div>
+
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Office Admin to VA Portfolio</p>
+          <h2>Kristine Ramos Admin VA Portfolio</h2>
+          <p>Office admin and event coordination experience translated into visible Google Workspace samples for remote VA support.</p>
+        </div>
+      </section>
+
+      <section class="section" id="summary">
+        <h3>Admin-to-VA Summary</h3>
+        <p>My background is in office administration and event coordination. I built this portfolio to show how I translate scheduling, documentation, file organization, follow-up, and project tracking into remote VA support.</p>
+        <p>This sample portfolio uses fictional details and recreated workflows so the work is inspectable without exposing private employer information.</p>
+        <div class="translation">
+          <div class="translation-row"><strong>Scheduled meetings</strong><p>Becomes a client calendar system with prep time, follow-up blocks, invite copy, and scheduling rules.</p></div>
+          <div class="translation-row"><strong>Prepared meeting notes</strong><p>Becomes an agenda and action notes template with decisions, owners, due dates, and follow-up email copy.</p></div>
+          <div class="translation-row"><strong>Coordinated events</strong><p>Becomes a project or event tracker for tasks, vendors, registrations, assets, blockers, and post-event follow-up.</p></div>
+          <div class="translation-row"><strong>Organized office files</strong><p>Becomes a Drive folder system with naming rules, archive logic, and access boundaries.</p></div>
+        </div>
+      </section>
+
+      <section class="section" id="skills">
+        <h3>Transferable Skills</h3>
+        <p>The portfolio is organized around practical VA behaviors: managing time, documenting decisions, tracking work, organizing files, writing follow-ups, collecting complete requests, and building repeatable workflows.</p>
+        <div class="skills">
+          <div class="skill-row"><strong>Calendar control</strong><p>Protects preparation time, follow-up time, meeting details, and client availability.</p></div>
+          <div class="skill-row"><strong>Meeting documentation</strong><p>Turns discussions into decisions, action items, owners, due dates, and status notes.</p></div>
+          <div class="skill-row"><strong>Project tracking</strong><p>Keeps tasks, dependencies, blockers, deadlines, and next actions visible.</p></div>
+          <div class="skill-row"><strong>Drive organization</strong><p>Uses folders, naming rules, archive logic, and access notes so files stay findable.</p></div>
+          <div class="skill-row"><strong>Email follow-up</strong><p>Uses reusable templates and escalation rules for professional communication.</p></div>
+          <div class="skill-row"><strong>Process discipline</strong><p>Documents recurring admin workflows so the work can be repeated clearly.</p></div>
+        </div>
+      </section>
+
+      <section class="section" id="samples">
+        <h3>Sample Activities</h3>
+        <p>These seven samples are the activity outputs an office admin or event coordinator can study before building her own Google Sites portfolio.</p>
+        <div class="samples">
+          <article class="sample">
+            <div>
+              <span class="tag">Google Docs</span>
+              <h4>Client Calendar Management System</h4>
+              <p>A scheduling system with call blocks, prep blocks, follow-up blocks, invite copy, and clear scheduling rules.</p>
+            </div>
+            <a class="open-sample" href="https://docs.google.com/document/d/1tyvBlhVN4wguwGGjA6-hSHY9U8pShXf2lQRnok-aBPM/edit?usp=sharing">Open Doc Sample</a>
+          </article>
+
+          <article class="sample">
+            <div>
+              <span class="tag">Google Docs</span>
+              <h4>Meeting Agenda and Action Notes Template</h4>
+              <p>A meeting template that captures objectives, agenda items, decisions, action owners, due dates, status, and follow-up copy.</p>
+            </div>
+            <a class="open-sample" href="https://docs.google.com/document/d/1-k6y_vFB56LNsJmDoOLV4B_diM8uwZhEq2RMhaE0qFQ/edit?usp=sharing">Open Doc Sample</a>
+          </article>
+
+          <article class="sample">
+            <div>
+              <span class="tag">Google Sheets</span>
+              <h4>Project or Event Tracker</h4>
+              <p>A fictional workshop tracker with tasks, owners, due dates, status, priority, dependencies, blockers, and next actions.</p>
+            </div>
+            <a class="open-sample" href="https://docs.google.com/spreadsheets/d/1AYcwGAD4w2el1VhGqRHNBn7WhGBfPTRpHKFr_itgZeE/edit?usp=sharing">Open Sheet Sample</a>
+          </article>
+
+          <article class="sample">
+            <div>
+              <span class="tag">Google Docs</span>
+              <h4>Google Drive Document Organization System</h4>
+              <p>A folder map with naming conventions, archive rules, access levels, and confidentiality logic.</p>
+            </div>
+            <a class="open-sample" href="https://docs.google.com/document/d/1jCwg3PSk4l74kJG4UIeKbqOrRearYJS91tPKAAGOXgo/edit?usp=sharing">Open Doc Sample</a>
+          </article>
+
+          <article class="sample">
+            <div>
+              <span class="tag">Google Docs</span>
+              <h4>Email Response and Follow-Up Template Library</h4>
+              <p>A template library for scheduling, rescheduling, document requests, vendor follow-up, client updates, delays, and escalation.</p>
+            </div>
+            <a class="open-sample" href="https://docs.google.com/document/d/1PI7khGk5hmtiSIiNQdarwvqRgmErWDcd9qHSmIccpdI/edit?usp=sharing">Open Doc Sample</a>
+          </article>
+
+          <article class="sample">
+            <div>
+              <span class="tag">Google Sheets</span>
+              <h4>Client Intake or Event Request Tracker</h4>
+              <p>A request tracker that shows how a VA can collect deadlines, priority, files needed, approval needs, status, and next action.</p>
+            </div>
+            <a class="open-sample" href="https://docs.google.com/spreadsheets/d/1RDed_1cdXF-W3Zz8mVLNlwWPauVJsmaSx0Y5Zk1GcS0/edit?usp=sharing">Open Sheet Sample</a>
+          </article>
+
+          <article class="sample">
+            <div>
+              <span class="tag">Google Docs</span>
+              <h4>Admin SOP Workflow Guide</h4>
+              <p>A repeatable workflow for preparing, scheduling, documenting, and closing a client meeting.</p>
+            </div>
+            <a class="open-sample" href="https://docs.google.com/document/d/19IBBGgGRwe9b_ObgSD3-gzWAlOPQhxrBUYkRsPgnzNs/edit?usp=sharing">Open Doc Sample</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="trust">
+        <h3>Trust Notes</h3>
+        <p>All samples shown here are recreated practice samples using fictional details. They do not contain former employer files, private emails, staff data, vendor contracts, HR files, or confidential templates.</p>
+        <div class="focus-note">
+          <p><strong>AI assistance note:</strong> Gemini can help organize wording and check clarity. The examples, structure, and final review should stay with the learner.</p>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <h3>Contact</h3>
+        <p>This section gives the portfolio viewer enough information to understand Tin’s target role and contact her for admin VA support opportunities.</p>
+        <div class="contact-grid">
+          <p><span>Name</span>Kristine "Tin" Ramos</p>
+          <p><span>Target Role</span>Administrative Virtual Assistant</p>
+          <p><span>Availability</span>Part-time or full-time remote admin support</p>
+          <p><span>Email</span>tin.ramos@example.com</p>
+        </div>
+      </section>
+    </main>
+
+    <aside class="builder" aria-label="Build notes">
+      <h2>Build Notes</h2>
+      <p class="notice">This page models honest proof from office admin and event coordination experience. It does not claim paid VA client work.</p>
+      <ol>
+        <li>Start with the admin-to-VA bridge.</li>
+        <li>Translate old tasks into VA behaviors.</li>
+        <li>Link seven sample activities.</li>
+        <li>State the confidentiality boundary.</li>
+        <li>Publish only after every sample opens.</li>
+      </ol>
+    </aside>
+  </div>
+
+  <footer class="footer">
+    Source lesson: SWAHG Office Admin to VA Portfolio. Persona source: Brand Persona 5, The Generalist Admin, Kristine "Tin" Ramos. Generated May 19, 2026.
+  </footer>
+</body>
+</html>
