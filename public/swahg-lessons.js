@@ -668,20 +668,6 @@ window.SWAHG_LESSONS = {
       tier: 0,
       format: "handbook"
     },
-    "open-university-guidelines": {
-      title: "Open University Guidelines",
-      stage: "warmup",
-      status: "live",
-      url: "../swahg-lesson-handbook/",
-      closes_va_gaps: [],
-      ladders_to_roles: [],
-      prerequisites: [],
-      next_lessons: ["where-to-start"],
-      why_this_lesson: "Orientation for how to use SWAHG Open University before choosing a lesson path.",
-      estimated_minutes: 10,
-      tier: 0,
-      format: "handbook"
-    },
     "freelancing-journey-lesson-2": {
       title: "Discover Your Professional Skills",
       stage: "working",
@@ -844,7 +830,7 @@ window.SWAHG_LESSONS = {
     /* TOP ROW — Warming Up */
     "warm-1": { pdf_label: "Choose Career Path",          stage: "warmup",  lessons: ["where-to-start","freelancer-or-va","employee-to-freelancer","find-your-path-quiz"] },
     "warm-2": { pdf_label: "Planning",                    stage: "warmup",  lessons: ["10-secret-skills"] },
-    "warm-3": { pdf_label: "Basic Foundation",            stage: "warmup",  lessons: ["career-path-training","specialized-business-skills","creative-artistic-skills","english-101","open-university-guidelines"] },
+    "warm-3": { pdf_label: "Basic Foundation",            stage: "warmup",  lessons: ["career-path-training","specialized-business-skills","creative-artistic-skills","english-101"] },
     "warm-4": { pdf_label: "Support Group",               stage: "warmup",  lessons: ["freelancing-journey-series","freelancing-journey-lesson-2","freelancing-journey-lesson-3","freelancing-journey-lesson-4","freelancing-journey-lesson-5","freelancing-journey-lesson-6"] },
     "warm-5": { pdf_label: "Ongoing Training",            stage: "warmup",  lessons: ["smm-core-strategies","smm-handbook","instagram-strategy","fb-chatbot-training","fb-mobile-management","pinterest-marketing","youtube-best-practices","personal-branding","customer-support-foundations","account-management-101","cold-outreach-sdrs","crm-basics","video-editing-content-vas"] },
 
@@ -852,7 +838,7 @@ window.SWAHG_LESSONS = {
     "launch-1":{ pdf_label: "Setting Up Accounts",        stage: "launch",  lessons: ["online-jobs-account","freelancing-platforms"] },
     "launch-2":{ pdf_label: "Creating Powerful Resume",   stage: "launch",  lessons: ["resume-builder","freelancing-journey-lesson-3"] },
     "launch-3":{ pdf_label: "Job Hunting",                stage: "launch",  lessons: ["find-your-path-quiz","freelancing-platforms","freelancing-journey-lesson-4"] },
-    "launch-4":{ pdf_label: "Join Groups and Forums",     stage: "launch",  lessons: ["open-university-guidelines","freelancing-journey-series"] },
+    "launch-4":{ pdf_label: "Join Groups and Forums",     stage: "launch",  lessons: ["freelancing-journey-series"] },
     "launch-5":{ pdf_label: "Creating your Portfolio",    stage: "launch",  lessons: ["personal-branding","online-presence"] },
 
     /* TOP ROW — Working on it! */
