@@ -868,6 +868,20 @@ window.SWAHG_LESSONS = {
       tier: 0,
       format: "interactive_tool"
     },
+    "job-board": {
+      title: "Job Board",
+      stage: "launch",
+      status: "built",
+      url: "../swahg-jobs/index.html",
+      closes_va_gaps: [],
+      ladders_to_roles: ["customer-service","smm","admin","va","account-manager","content","sdr"],
+      prerequisites: ["find-your-path-quiz","freelancing-platforms"],
+      next_lessons: ["resume-builder","interviews-prep"],
+      why_this_lesson: "Live SWAHG job board for PH-friendly remote roles learners can review after setting up their application basics.",
+      estimated_minutes: 10,
+      tier: 0,
+      format: "job_board"
+    },
     "example-portfolio-zero-work-experience": {
       title: "Example Portfolio | Zero Work Experience",
       stage: "launch",
@@ -921,7 +935,7 @@ window.SWAHG_LESSONS = {
     /* TOP ROW — Launch */
     "launch-1":{ pdf_label: "Setting Up Accounts",        stage: "launch",  lessons: ["online-jobs-account","freelancing-platforms"] },
     "launch-2":{ pdf_label: "Creating Powerful Resume",   stage: "launch",  lessons: ["resume-builder","example-portfolio-zero-work-experience","example-portfolio-bpo-to-virtual-assistant"] },
-    "launch-3":{ pdf_label: "Job Hunting",                stage: "launch",  lessons: ["find-your-path-quiz","freelancing-platforms"] },
+    "launch-3":{ pdf_label: "Job Hunting",                stage: "launch",  lessons: ["find-your-path-quiz","freelancing-platforms","job-board"] },
     "launch-4":{ pdf_label: "Join Groups and Forums",     stage: "launch",  lessons: ["freelancing-journey-series"] },
     "launch-5":{ pdf_label: "Creating your Portfolio",    stage: "launch",  lessons: ["personal-branding","online-presence"] },
 
