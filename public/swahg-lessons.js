@@ -613,6 +613,20 @@ window.SWAHG_LESSONS = {
       tier: 2,
       format: "article"
     },
+    "internship-options": {
+      title: "Internship Options and Self-Learning Paths",
+      stage: "working",
+      status: "live",
+      url: "../swahg-lesson-internship-options/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["customer-service","smm","admin","va","account-manager","content","sdr"],
+      prerequisites: ["career-path-training"],
+      next_lessons: ["freelancing-platforms","resume-builder"],
+      why_this_lesson: "Replaces the old Internship box lesson stack with one clear menu of external internship, apprenticeship, simulation, and self-learning paths. No SWAHG work submission required.",
+      estimated_minutes: 20,
+      tier: 2,
+      format: "article"
+    },
     "onboarding-first-30-days": {
       title: "Onboarding: First 30 Days",
       stage: "stage1",
@@ -858,7 +872,7 @@ window.SWAHG_LESSONS = {
 
     /* TOP ROW — Working on it! */
     "work-1":  { pdf_label: "Interviews",                 stage: "working", lessons: ["interviews-prep","freelancing-journey-lesson-5"] },
-    "work-2":  { pdf_label: "Internship",                 stage: "working", lessons: ["freelancing-journey-series","freelancing-journey-lesson-5","onboarding-first-30-days"] },
+    "work-2":  { pdf_label: "Internship",                 stage: "working", lessons: ["internship-options"] },
     "work-3":  { pdf_label: "Skill Practice",             stage: "working", lessons: ["career-path-training","specialized-business-skills","creative-artistic-skills","technical-skills"] },
     "work-4":  { pdf_label: "Creating Proposal",          stage: "working", lessons: ["common-mistakes","freelancing-journey-lesson-4"] },
     "work-5":  { pdf_label: "Bidding",                    stage: "working", lessons: ["getting-hired-fast","freelancing-platforms","common-mistakes"] },
