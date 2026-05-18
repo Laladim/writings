@@ -147,7 +147,7 @@ window.SWAHG_LESSONS = {
       closes_va_gaps: ["pm-tools"],
       ladders_to_roles: ["account-manager","admin","va","content","smm"],
       prerequisites: [],
-      next_lessons: ["time-tracking-discipline"],
+      next_lessons: [],
       why_this_lesson: "Trello is the entry-level PM tool. 77% of community lacks PM-tool fluency — this opens the door.",
       estimated_minutes: 14,
       tier: 0,
@@ -523,21 +523,6 @@ window.SWAHG_LESSONS = {
     /* ════════════════════════════════════════════════════
      *  NEW BUILDS — Tier 1 / 2 / 3 modules from the queue
      * ════════════════════════════════════════════════════ */
-    "time-tracking-discipline": {
-      title: "Time Tracking Discipline",
-      stage: "stage1",
-      status: "live",
-      url: "../swahg-lesson-time-tracking-discipline/",
-      closes_va_gaps: ["time-tracking"],
-      ladders_to_roles: ["customer-service","smm","admin","va","account-manager","content","sdr"],
-      prerequisites: ["trello-love"],
-      next_lessons: [],
-      why_this_lesson: "98% of community lacks this. Single-lesson, high-completion target. Tools: Toggl, Clockify, Hubstaff.",
-      estimated_minutes: 20,
-      tier: 2,
-      format: "article",
-      build_queue_rank: 3
-    },
     "customer-support-foundations": {
       title: "Customer Support Foundations",
       stage: "stage1",
@@ -790,7 +775,7 @@ window.SWAHG_LESSONS = {
       closes_va_gaps: ["pm-tools"],
       ladders_to_roles: ["customer-service","smm","admin","va","account-manager","content"],
       prerequisites: ["storage-expert-secrets"],
-      next_lessons: ["time-tracking-discipline"],
+      next_lessons: [],
       why_this_lesson: "Bonus lesson for keeping client folders, filenames, and handoffs organized.",
       estimated_minutes: 15,
       tier: 0,
@@ -868,7 +853,7 @@ window.SWAHG_LESSONS = {
     "prep-1": { pdf_label: "Choosing your Computer",      stage: "prep",    lessons: ["best-laptop"] },
     "prep-2": { pdf_label: "Creating Work Emails",        stage: "prep",    lessons: ["email-address-is-gold","email-marketing-for-vas"] },
     "prep-3": { pdf_label: "Setting up Online Tools",     stage: "prep",    lessons: ["browser-expert-secrets","storage-expert-secrets"] },
-    "prep-4": { pdf_label: "Organizing Work Flow",        stage: "prep",    lessons: ["trello-love","time-tracking-discipline"] },
+    "prep-4": { pdf_label: "Organizing Work Flow",        stage: "prep",    lessons: ["trello-love"] },
     "prep-5": { pdf_label: "Setting up Work Accessories", stage: "prep",    lessons: ["work-accessories"] },
 
     /* TOP ROW — Warming Up */
@@ -897,10 +882,10 @@ window.SWAHG_LESSONS = {
     "s1-2":    { pdf_label: "Learn Business Tools",       stage: "stage1",  lessons: ["trello-love","browser-expert-secrets","storage-expert-secrets","pm-tool-fluency","organize-work-files"] },
     "s1-3":    { pdf_label: "Collaboration",              stage: "stage1",  lessons: ["account-management-101","pm-tool-fluency","onboarding-first-30-days"] },
     "s1-4":    { pdf_label: "Client Demands",             stage: "stage1",  lessons: ["choosing-my-client","common-mistakes"] },
-    "s1-5":    { pdf_label: "Organization",               stage: "stage1",  lessons: ["trello-love","time-tracking-discipline","organize-work-files"] },
+    "s1-5":    { pdf_label: "Organization",               stage: "stage1",  lessons: ["trello-love","organize-work-files"] },
 
     /* BOTTOM ROW — Skill Upgrade */
-    "sk-1":    { pdf_label: "New or Upgraded Skill",      stage: "skill",   lessons: ["customer-support-foundations","time-tracking-discipline","account-management-101","cold-outreach-sdrs","crm-basics","video-editing-content-vas","pm-tool-fluency","article-curation-training","ecommerce-classes"] },
+    "sk-1":    { pdf_label: "New or Upgraded Skill",      stage: "skill",   lessons: ["customer-support-foundations","account-management-101","cold-outreach-sdrs","crm-basics","video-editing-content-vas","pm-tool-fluency","article-curation-training","ecommerce-classes"] },
     "sk-2":    { pdf_label: "More Training",              stage: "skill",   lessons: ["smm-handbook","fb-chatbot-training","fb-mobile-management","pinterest-marketing","youtube-best-practices","article-curation-training","ecommerce-classes"] },
     "sk-3":    { pdf_label: "More Value to Client",       stage: "skill",   lessons: ["account-management-101"] },
     "sk-4":    { pdf_label: "Career & Personal Growth",   stage: "skill",   lessons: ["career-path-training"] },
