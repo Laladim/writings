@@ -212,7 +212,7 @@ window.SWAHG_LESSONS = {
       format: "video"
     },
     "10-secret-skills": {
-      title: "10 Secret Skills",
+      title: "10 Useful Skills",
       stage: "warmup",
       status: "live",
       url: "../swahg-lesson-10-secret-skills/",
@@ -220,8 +220,8 @@ window.SWAHG_LESSONS = {
       ladders_to_roles: ["customer-service","smm","admin","va"],
       prerequisites: [],
       next_lessons: ["career-path-training"],
-      why_this_lesson: "Baseline skills self-audit. Run it before picking which Warming Up track to commit to.",
-      estimated_minutes: 10,
+      why_this_lesson: "Practical proof-building lesson for beginner freelancers: briefs, updates, files, boards, research, AI verification, reporting, customer replies, tailored applications, and handoffs.",
+      estimated_minutes: 25,
       tier: 0,
       format: "video"
     },
