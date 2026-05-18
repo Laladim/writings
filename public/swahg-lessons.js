@@ -872,7 +872,7 @@ window.SWAHG_LESSONS = {
     /* TOP ROW — Working on it! */
     "work-1":  { pdf_label: "Interviews",                 stage: "working", lessons: ["interviews-prep","freelancing-journey-lesson-5"] },
     "work-2":  { pdf_label: "Internship",                 stage: "working", lessons: ["internship-options"] },
-    "work-3":  { pdf_label: "Skill Practice",             stage: "working", lessons: ["google-sites-portfolio","career-path-training","specialized-business-skills","creative-artistic-skills"] },
+    "work-3":  { pdf_label: "Skill Practice",             stage: "working", lessons: ["google-sites-portfolio"] },
     "work-4":  { pdf_label: "Creating Proposal",          stage: "working", lessons: ["common-mistakes","freelancing-journey-lesson-4"] },
     "work-5":  { pdf_label: "Bidding",                    stage: "working", lessons: ["getting-hired-fast","freelancing-platforms","common-mistakes"] },
 
