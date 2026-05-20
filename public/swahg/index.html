@@ -175,6 +175,27 @@
   .flow-step:last-child::after{display:none}
   @media (max-width:900px){.flow-step::after{display:none}}
 
+  /* STORIES */
+  #stories{background:var(--bg);padding:70px 20px}
+  .stories-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:28px}
+  .stories-head p.lead{margin:0;max-width:620px}
+  .stories-link{color:var(--primary);font-weight:600;text-decoration:none;border-bottom:1px solid var(--primary);white-space:nowrap}
+  .stories-link:hover{color:var(--primary-deep);border-bottom-color:var(--primary-deep)}
+  .stories-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .story-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:14px;
+    overflow:hidden;color:inherit;text-decoration:none;display:flex;flex-direction:column;
+    min-height:100%;transition:transform .15s,border-color .15s,box-shadow .15s;
+  }
+  .story-card:hover{transform:translateY(-3px);border-color:var(--primary);box-shadow:0 14px 30px rgba(74,58,106,.1)}
+  .story-card img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--primary-soft);display:block}
+  .story-card .story-body{padding:18px 18px 20px}
+  .story-card .story-meta{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-deep);font-weight:700;margin-bottom:8px}
+  .story-card h3{font-size:22px;line-height:1.15;margin-bottom:8px}
+  .story-card p{font-size:14px;color:var(--text-soft);margin:0;line-height:1.5}
+  @media (max-width:900px){.stories-grid{grid-template-columns:1fr 1fr}.stories-head{align-items:start;flex-direction:column}}
+  @media (max-width:560px){.stories-grid{grid-template-columns:1fr}}
+
   /* STORY TEASER */
   #story{background:var(--primary);color:#fff;padding:70px 20px;text-align:center}
   #story h2{color:#fff;margin-bottom:18px}
@@ -215,6 +236,8 @@
       <a href="../">← Writings by Lala</a>
       <a href="../swahg/index.html" aria-current="page">Home</a>
       <a href="../swahg-blueprint/index.html">Blueprint</a>
+      <a href="../swahg-events/index.html">Events</a>
+      <a href="#stories">Stories</a>
       <a href="../swahg-resume-builder/index.html">Resume Builder</a>
       <a href="../swahg-curriculum/index.html">My Curriculum</a>
       <a href="../swahg-jobs/index.html">Job Board</a>
@@ -313,6 +336,70 @@
   </div>
 </section>
 
+<section id="stories">
+  <div class="wrap">
+    <div class="stories-head">
+      <div>
+        <div class="section-label">SWAHG Stories</div>
+        <h2 class="section-h">Real women, real obedience, real work from home journeys.</h2>
+        <p class="lead">These stories belong here with the SWAHG tools because they show what the lessons are for: courage, provision, community, and steady growth.</p>
+      </div>
+      <a class="stories-link" href="../topics/swahg-stories/">View all stories</a>
+    </div>
+
+    <div class="stories-grid">
+      <a class="story-card" href="../story/para-akong-bulaklak-na-nagbloom/">
+        <img src="../swahg-stories/para-akong-bulaklak-na-nagbloom.webp" alt="">
+        <div class="story-body">
+          <div class="story-meta">Community story</div>
+          <h3>Para Akong Bulaklak Na Nagbloom</h3>
+          <p>A note of thanks for Lala and the SWAHG admins, shared as written.</p>
+        </div>
+      </a>
+      <a class="story-card" href="../story/god-will-always-have-better-plans-for-you-jean-cinence/">
+        <img src="../swahg-stories/god-will-always-have-better-plans-for-you-jean-cinence.webp" alt="">
+        <div class="story-body">
+          <div class="story-meta">Member story</div>
+          <h3>God Will Always Have Better Plans For You</h3>
+          <p>Jean Cinence on rebuilding her foundation, finding support, and getting hired.</p>
+        </div>
+      </a>
+      <a class="story-card" href="../story/the-day-i-stepped-out-of-my-comfort-zone-liz/">
+        <img src="../swahg-stories/the-day-i-stepped-out-of-my-comfort-zone-liz.webp" alt="">
+        <div class="story-body">
+          <div class="story-meta">Core admin story</div>
+          <h3>The Day I Stepped Out of My Comfort Zone</h3>
+          <p>Liz Galacio on courage, meeting Lala, and choosing growth through SWAHG.</p>
+        </div>
+      </a>
+      <a class="story-card" href="../story/my-freelancing-journey-claudz/">
+        <img src="../swahg-stories/my-freelancing-journey-claudz.webp" alt="">
+        <div class="story-body">
+          <div class="story-meta">Core admin story</div>
+          <h3>My Freelancing Journey</h3>
+          <p>Claudz shares how she found her way home to the SWAHG community.</p>
+        </div>
+      </a>
+      <a class="story-card" href="../story/everyone-has-a-chance-shela-heramis/">
+        <img src="../swahg-stories/everyone-has-a-chance-shela-heramis.webp" alt="">
+        <div class="story-body">
+          <div class="story-meta">Founder story</div>
+          <h3>Everyone Has A Chance</h3>
+          <p>Lala remembers illness, provision, working from home, and feeling alive again.</p>
+        </div>
+      </a>
+      <a class="story-card" href="../story/we-all-have-a-race-to-run-shela-heramis/">
+        <img src="../swahg-stories/we-all-have-a-race-to-run-shela-heramis.webp" alt="">
+        <div class="story-body">
+          <div class="story-meta">Founder story</div>
+          <h3>We All Have A Race To Run</h3>
+          <p>Lala on obedience, healing, and continuing the race with the Lord.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <section id="flow">
   <div class="wrap">
     <div class="section-label" style="text-align:center">The Typical Journey</div>
@@ -364,6 +451,7 @@
     <div class="final-doors">
       <a href="../swahg-blueprint/index.html" class="final-door">📍 The Blueprint</a>
       <a href="bff-blueprint-printable-guide.pdf" class="final-door">Printable BFF Guide</a>
+      <a href="#stories" class="final-door">SWAHG Stories</a>
       <a href="../swahg-resume-builder/index.html" class="final-door">📝 Resume Builder</a>
       <a href="../swahg-jobs/index.html" class="final-door">Job Board</a>
       <a href="../swahg-curriculum/index.html" class="final-door">📋 My Curriculum</a>
