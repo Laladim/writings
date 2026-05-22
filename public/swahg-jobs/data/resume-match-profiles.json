@@ -1,0 +1,1608 @@
+{
+  "profile_version": "1.0",
+  "generated_at": "2026-05-22T21:22:15",
+  "job_count": 40,
+  "jobs": [
+    {
+      "profile_version": "1.0",
+      "job_id": "faff864b0522",
+      "title": "Customer Support Representative",
+      "company": "ClinicSense",
+      "source": "WeWorkRemotely",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://weworkremotely.com/remote-jobs/clinicsense-customer-support-representative-4",
+      "apply_url": "https://weworkremotely.com/remote-jobs/clinicsense-customer-support-representative-4",
+      "posted_at": "2026-05-04",
+      "discovered_at": "2026-05-22",
+      "role_family": "Customer Support",
+      "archetype_primary": "Corporate Transitioner",
+      "archetype_secondary": "Corporate Transitioner, Fresh Starter, Generalist Admin",
+      "resume_keywords": "Customer Support, google sheets, zendesk, intercom, customer support, saas, admin, WeWorkRemotely",
+      "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with google sheets, zendesk, intercom.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "google sheets; zendesk; intercom; customer support; saas; admin",
+      "quality_label": "Good match",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Corporate Transitioner",
+          "Fresh Starter",
+          "Generalist Admin"
+        ],
+        "primary_archetype": "Corporate Transitioner",
+        "resume_keywords": "Customer Support, google sheets, zendesk, intercom, customer support, saas, admin, WeWorkRemotely",
+        "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with google sheets, zendesk, intercom.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "084faa90885e",
+      "title": "Customer Support Engineer",
+      "company": "Vcluster Labs",
+      "source": "WeWorkRemotely",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://weworkremotely.com/remote-jobs/vcluster-labs-customer-support-engineer",
+      "apply_url": "https://weworkremotely.com/remote-jobs/vcluster-labs-customer-support-engineer",
+      "posted_at": "2026-04-30",
+      "discovered_at": "2026-05-22",
+      "role_family": "Customer Support",
+      "archetype_primary": "Corporate Transitioner",
+      "archetype_secondary": "Corporate Transitioner, Fresh Starter, Generalist Admin",
+      "resume_keywords": "Customer Support, linkedin, salesforce, excel, zoom, slack, admin, WeWorkRemotely",
+      "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with linkedin, salesforce, excel.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "linkedin; salesforce; excel; zoom; slack; admin",
+      "quality_label": "Good match",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Corporate Transitioner",
+          "Fresh Starter",
+          "Generalist Admin"
+        ],
+        "primary_archetype": "Corporate Transitioner",
+        "resume_keywords": "Customer Support, linkedin, salesforce, excel, zoom, slack, admin, WeWorkRemotely",
+        "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with linkedin, salesforce, excel.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "05a47a76e7a3",
+      "title": "Customer Support Specialist",
+      "company": "Heritage Civil Works",
+      "source": "WeWorkRemotely",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://weworkremotely.com/remote-jobs/heritage-civil-works-customer-support-specialist",
+      "apply_url": "https://weworkremotely.com/remote-jobs/heritage-civil-works-customer-support-specialist",
+      "posted_at": "2026-04-29",
+      "discovered_at": "2026-05-22",
+      "role_family": "Customer Support",
+      "archetype_primary": "Corporate Transitioner",
+      "archetype_secondary": "Corporate Transitioner, Fresh Starter, Generalist Admin",
+      "resume_keywords": "Customer Support, crm, hubspot, salesforce, zendesk, excel, zoom, WeWorkRemotely",
+      "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with crm, hubspot, salesforce.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "crm; hubspot; salesforce; zendesk; excel; zoom; slack; customer support",
+      "quality_label": "Good match",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Corporate Transitioner",
+          "Fresh Starter",
+          "Generalist Admin"
+        ],
+        "primary_archetype": "Corporate Transitioner",
+        "resume_keywords": "Customer Support, crm, hubspot, salesforce, zendesk, excel, zoom, WeWorkRemotely",
+        "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with crm, hubspot, salesforce.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "10984e0794c5",
+      "title": "Customer Onboarding & Support Specialist (Remote, South Africa)",
+      "company": "Gymflow",
+      "source": "WeWorkRemotely",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://weworkremotely.com/remote-jobs/gymflow-customer-onboarding-support-specialist-remote-south-africa",
+      "apply_url": "https://weworkremotely.com/remote-jobs/gymflow-customer-onboarding-support-specialist-remote-south-africa",
+      "posted_at": "2026-04-28",
+      "discovered_at": "2026-05-22",
+      "role_family": "Customer Support",
+      "archetype_primary": "Corporate Transitioner",
+      "archetype_secondary": "Corporate Transitioner, Fresh Starter, Generalist Admin",
+      "resume_keywords": "Customer Support, crm, intercom, excel, slack, customer support, saas, WeWorkRemotely",
+      "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with crm, intercom, excel.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "crm; intercom; excel; slack; customer support; saas",
+      "quality_label": "Good match",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Corporate Transitioner",
+          "Fresh Starter",
+          "Generalist Admin"
+        ],
+        "primary_archetype": "Corporate Transitioner",
+        "resume_keywords": "Customer Support, crm, intercom, excel, slack, customer support, saas, WeWorkRemotely",
+        "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with crm, intercom, excel.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "aa32c2048e80",
+      "title": "Office Assistant",
+      "company": "Coalition Technologies",
+      "source": "Remotive",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://remotive.com/remote-jobs/marketing/office-assistant-1680495",
+      "apply_url": "https://remotive.com/remote-jobs/marketing/office-assistant-1680495",
+      "posted_at": "2026-05-11",
+      "discovered_at": "2026-05-22",
+      "role_family": "Virtual Assistant",
+      "archetype_primary": "Generalist Admin",
+      "archetype_secondary": "Generalist Admin, Corporate Transitioner, Fresh Starter",
+      "resume_keywords": "Virtual Assistant, google sheets, excel, word, data entry, Remotive",
+      "resume_angle": "Position your resume around virtual assistant reliability, written remote work, and proof with google sheets, excel, word.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "google sheets; excel; word; data entry",
+      "quality_label": "Good match",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Generalist Admin",
+          "Corporate Transitioner",
+          "Fresh Starter"
+        ],
+        "primary_archetype": "Generalist Admin",
+        "resume_keywords": "Virtual Assistant, google sheets, excel, word, data entry, Remotive",
+        "resume_angle": "Position your resume around virtual assistant reliability, written remote work, and proof with google sheets, excel, word.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "32548be3fc2d",
+      "title": "IT Support Technician",
+      "company": "Avalere Health",
+      "source": "RemoteOK",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://remoteOK.com/remote-jobs/remote-it-support-technician-avalere-health-1131591",
+      "apply_url": "https://remoteOK.com/remote-jobs/remote-it-support-technician-avalere-health-1131591",
+      "posted_at": "2026-05-14",
+      "discovered_at": "2026-05-22",
+      "role_family": "Customer Support",
+      "archetype_primary": "Corporate Transitioner",
+      "archetype_secondary": "Corporate Transitioner, Fresh Starter, Generalist Admin",
+      "resume_keywords": "Customer Support, excel, word, customer service, admin, RemoteOK",
+      "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with excel, word, customer service.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "excel; word; customer service; admin",
+      "quality_label": "Good match",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Corporate Transitioner",
+          "Fresh Starter",
+          "Generalist Admin"
+        ],
+        "primary_archetype": "Corporate Transitioner",
+        "resume_keywords": "Customer Support, excel, word, customer service, admin, RemoteOK",
+        "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with excel, word, customer service.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "f8953452a7a2",
+      "title": "Copywriter",
+      "company": "Coalition Technologies",
+      "source": "Remotive",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://remotive.com/remote-jobs/writing/copywriter-1749306",
+      "apply_url": "https://remotive.com/remote-jobs/writing/copywriter-1749306",
+      "posted_at": "2026-05-02",
+      "discovered_at": "2026-05-22",
+      "role_family": "SEO",
+      "archetype_primary": "Corporate Transitioner",
+      "archetype_secondary": "Corporate Transitioner, Fresh Starter, Generalist Admin",
+      "resume_keywords": "SEO, google sheets, excel, word, data entry, Remotive",
+      "resume_angle": "Position your resume around seo reliability, written remote work, and proof with google sheets, excel, word.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "google sheets; excel; word; data entry",
+      "quality_label": "Good match",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Corporate Transitioner",
+          "Fresh Starter",
+          "Generalist Admin"
+        ],
+        "primary_archetype": "Corporate Transitioner",
+        "resume_keywords": "SEO, google sheets, excel, word, data entry, Remotive",
+        "resume_angle": "Position your resume around seo reliability, written remote work, and proof with google sheets, excel, word.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "a7f5ba5bffc8",
+      "title": "Customer Support Representative",
+      "company": "Lumivero",
+      "source": "WeWorkRemotely",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://weworkremotely.com/remote-jobs/lumivero-customer-support-representative",
+      "apply_url": "https://weworkremotely.com/remote-jobs/lumivero-customer-support-representative",
+      "posted_at": "2026-04-30",
+      "discovered_at": "2026-05-22",
+      "role_family": "Customer Support",
+      "archetype_primary": "Corporate Transitioner",
+      "archetype_secondary": "Corporate Transitioner, Fresh Starter, Generalist Admin",
+      "resume_keywords": "Customer Support, crm, salesforce, excel, customer support, WeWorkRemotely",
+      "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with crm, salesforce, excel.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "crm; salesforce; excel; customer support",
+      "quality_label": "Good match",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Corporate Transitioner",
+          "Fresh Starter",
+          "Generalist Admin"
+        ],
+        "primary_archetype": "Corporate Transitioner",
+        "resume_keywords": "Customer Support, crm, salesforce, excel, customer support, WeWorkRemotely",
+        "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with crm, salesforce, excel.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "8adbbe9c4160",
+      "title": "Customer Support Representative",
+      "company": "Boom Entertainment",
+      "source": "RemoteOK",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://remoteOK.com/remote-jobs/remote-customer-support-representative-boom-entertainment-1131530",
+      "apply_url": "https://remoteOK.com/remote-jobs/remote-customer-support-representative-boom-entertainment-1131530",
+      "posted_at": "2026-05-09",
+      "discovered_at": "2026-05-22",
+      "role_family": "Customer Support",
+      "archetype_primary": "Corporate Transitioner",
+      "archetype_secondary": "Corporate Transitioner, Fresh Starter, Generalist Admin",
+      "resume_keywords": "Customer Support, zendesk, intercom, excel, word, customer support, RemoteOK",
+      "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with zendesk, intercom, excel.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Likely",
+      "tools": "zendesk; intercom; excel; word; customer support",
+      "quality_label": "Good match",
+      "quality_reasons": "likely PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Corporate Transitioner",
+          "Fresh Starter",
+          "Generalist Admin"
+        ],
+        "primary_archetype": "Corporate Transitioner",
+        "resume_keywords": "Customer Support, zendesk, intercom, excel, word, customer support, RemoteOK",
+        "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with zendesk, intercom, excel.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "591715830117",
+      "title": "Remote Nuanced AI Data Training",
+      "company": "Stealth AI Startup",
+      "source": "WeWorkRemotely",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://weworkremotely.com/remote-jobs/stealth-ai-startup-remote-nuanced-ai-data-training",
+      "apply_url": "https://weworkremotely.com/remote-jobs/stealth-ai-startup-remote-nuanced-ai-data-training",
+      "posted_at": "2026-05-14",
+      "discovered_at": "2026-05-22",
+      "role_family": "Customer Support",
+      "archetype_primary": "Corporate Transitioner",
+      "archetype_secondary": "Corporate Transitioner, Fresh Starter, Generalist Admin",
+      "resume_keywords": "Customer Support, linkedin, excel, customer support, WeWorkRemotely",
+      "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with linkedin, excel, customer support.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "linkedin; excel; customer support",
+      "quality_label": "Good match",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Corporate Transitioner",
+          "Fresh Starter",
+          "Generalist Admin"
+        ],
+        "primary_archetype": "Corporate Transitioner",
+        "resume_keywords": "Customer Support, linkedin, excel, customer support, WeWorkRemotely",
+        "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with linkedin, excel, customer support.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "453ffc2cf4e3",
+      "title": "Customer Success Agent",
+      "company": "Breezy HR",
+      "source": "WeWorkRemotely",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://weworkremotely.com/remote-jobs/breezy-hr-customer-success-agent-5",
+      "apply_url": "https://weworkremotely.com/remote-jobs/breezy-hr-customer-success-agent-5",
+      "posted_at": "2026-05-12",
+      "discovered_at": "2026-05-22",
+      "role_family": "Customer Support",
+      "archetype_primary": "Corporate Transitioner",
+      "archetype_secondary": "Corporate Transitioner, Fresh Starter, Generalist Admin",
+      "resume_keywords": "Customer Support, intercom, customer service, saas, WeWorkRemotely",
+      "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with intercom, customer service, saas.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "intercom; customer service; saas",
+      "quality_label": "Good match",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Corporate Transitioner",
+          "Fresh Starter",
+          "Generalist Admin"
+        ],
+        "primary_archetype": "Corporate Transitioner",
+        "resume_keywords": "Customer Support, intercom, customer service, saas, WeWorkRemotely",
+        "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with intercom, customer service, saas.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "df9150bca32e",
+      "title": "Customer support",
+      "company": "Inyad",
+      "source": "WeWorkRemotely",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://weworkremotely.com/remote-jobs/inyad-customer-support",
+      "apply_url": "https://weworkremotely.com/remote-jobs/inyad-customer-support",
+      "posted_at": "2026-04-29",
+      "discovered_at": "2026-05-22",
+      "role_family": "Customer Support",
+      "archetype_primary": "Corporate Transitioner",
+      "archetype_secondary": "Corporate Transitioner, Fresh Starter, Generalist Admin",
+      "resume_keywords": "Customer Support, facebook, customer support, social media, WeWorkRemotely",
+      "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with facebook, customer support, social media.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "facebook; customer support; social media",
+      "quality_label": "Good match",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Corporate Transitioner",
+          "Fresh Starter",
+          "Generalist Admin"
+        ],
+        "primary_archetype": "Corporate Transitioner",
+        "resume_keywords": "Customer Support, facebook, customer support, social media, WeWorkRemotely",
+        "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with facebook, customer support, social media.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "f7df1c3c6965",
+      "title": "Customer Support Specialist",
+      "company": "Brenmar Associates",
+      "source": "WeWorkRemotely",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://weworkremotely.com/remote-jobs/brenmar-associates-customer-support-specialist",
+      "apply_url": "https://weworkremotely.com/remote-jobs/brenmar-associates-customer-support-specialist",
+      "posted_at": "2026-04-29",
+      "discovered_at": "2026-05-22",
+      "role_family": "Customer Support",
+      "archetype_primary": "Corporate Transitioner",
+      "archetype_secondary": "Corporate Transitioner, Fresh Starter, Generalist Admin",
+      "resume_keywords": "Customer Support, excel, customer service, customer support, WeWorkRemotely",
+      "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with excel, customer service, customer support.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "excel; customer service; customer support",
+      "quality_label": "Good match",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Corporate Transitioner",
+          "Fresh Starter",
+          "Generalist Admin"
+        ],
+        "primary_archetype": "Corporate Transitioner",
+        "resume_keywords": "Customer Support, excel, customer service, customer support, WeWorkRemotely",
+        "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with excel, customer service, customer support.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "ee6a39e093d6",
+      "title": "Product Marketing Specialist | Maps Platform (Remote in Europe)",
+      "company": "MapTiler",
+      "source": "WeWorkRemotely",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://weworkremotely.com/remote-jobs/maptiler-product-marketing-specialist-maps-platform-remote-in-europe",
+      "apply_url": "https://weworkremotely.com/remote-jobs/maptiler-product-marketing-specialist-maps-platform-remote-in-europe",
+      "posted_at": "2026-04-29",
+      "discovered_at": "2026-05-22",
+      "role_family": "Content Specialist",
+      "archetype_primary": "Creative Specialist",
+      "archetype_secondary": "Creative Specialist, Solo Entrepreneur, Polished Freelancer",
+      "resume_keywords": "Content Specialist, crm, excel, saas, WeWorkRemotely",
+      "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with crm, excel, saas.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "crm; excel; saas",
+      "quality_label": "Good match",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Creative Specialist",
+          "Solo Entrepreneur",
+          "Polished Freelancer"
+        ],
+        "primary_archetype": "Creative Specialist",
+        "resume_keywords": "Content Specialist, crm, excel, saas, WeWorkRemotely",
+        "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with crm, excel, saas.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "f79182a6bb17",
+      "title": "Marketing Copywriter",
+      "company": "BIS Safety Software",
+      "source": "RemoteOK",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://remoteOK.com/remote-jobs/remote-marketing-copywriter-bis-safety-software-1131528",
+      "apply_url": "https://remoteOK.com/remote-jobs/remote-marketing-copywriter-bis-safety-software-1131528",
+      "posted_at": "2026-05-09",
+      "discovered_at": "2026-05-22",
+      "role_family": "SEO",
+      "archetype_primary": "Corporate Transitioner",
+      "archetype_secondary": "Corporate Transitioner, Fresh Starter, Generalist Admin",
+      "resume_keywords": "SEO, excel, word, saas, copywriting, RemoteOK",
+      "resume_angle": "Position your resume around seo reliability, written remote work, and proof with excel, word, saas.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Likely",
+      "tools": "excel; word; saas; copywriting",
+      "quality_label": "Good match",
+      "quality_reasons": "likely PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Corporate Transitioner",
+          "Fresh Starter",
+          "Generalist Admin"
+        ],
+        "primary_archetype": "Corporate Transitioner",
+        "resume_keywords": "SEO, excel, word, saas, copywriting, RemoteOK",
+        "resume_angle": "Position your resume around seo reliability, written remote work, and proof with excel, word, saas.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "0b8994f154dc",
+      "title": "Customer Success Associate",
+      "company": "Homecare Pro",
+      "source": "WeWorkRemotely",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://weworkremotely.com/remote-jobs/homecare-pro-customer-success-associate",
+      "apply_url": "https://weworkremotely.com/remote-jobs/homecare-pro-customer-success-associate",
+      "posted_at": "2026-04-23",
+      "discovered_at": "2026-05-22",
+      "role_family": "Customer Support",
+      "archetype_primary": "Corporate Transitioner",
+      "archetype_secondary": "Corporate Transitioner, Fresh Starter, Generalist Admin",
+      "resume_keywords": "Customer Support, excel, saas, community management, admin, WeWorkRemotely",
+      "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with excel, saas, community management.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Likely",
+      "tools": "excel; saas; community management; admin",
+      "quality_label": "Good match",
+      "quality_reasons": "likely PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Corporate Transitioner",
+          "Fresh Starter",
+          "Generalist Admin"
+        ],
+        "primary_archetype": "Corporate Transitioner",
+        "resume_keywords": "Customer Support, excel, saas, community management, admin, WeWorkRemotely",
+        "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with excel, saas, community management.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "4277e6a4c743",
+      "title": "DevRel - Content Creator",
+      "company": "SuperPlane",
+      "source": "WeWorkRemotely",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://weworkremotely.com/remote-jobs/superplane-devrel-content-creator",
+      "apply_url": "https://weworkremotely.com/remote-jobs/superplane-devrel-content-creator",
+      "posted_at": "2026-05-14",
+      "discovered_at": "2026-05-22",
+      "role_family": "Content Specialist",
+      "archetype_primary": "Creative Specialist",
+      "archetype_secondary": "Creative Specialist, Solo Entrepreneur, Polished Freelancer",
+      "resume_keywords": "Content Specialist, slack, social media, WeWorkRemotely",
+      "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with slack, social media.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "slack; social media",
+      "quality_label": "Review carefully",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Creative Specialist",
+          "Solo Entrepreneur",
+          "Polished Freelancer"
+        ],
+        "primary_archetype": "Creative Specialist",
+        "resume_keywords": "Content Specialist, slack, social media, WeWorkRemotely",
+        "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with slack, social media.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "16cb9191f9d4",
+      "title": "Senior Sales Engineer",
+      "company": "Glia",
+      "source": "RemoteOK",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://remoteOK.com/remote-jobs/remote-senior-sales-engineer-glia-1131576",
+      "apply_url": "https://remoteOK.com/remote-jobs/remote-senior-sales-engineer-glia-1131576",
+      "posted_at": "2026-05-13",
+      "discovered_at": "2026-05-22",
+      "role_family": "Customer Support",
+      "archetype_primary": "Corporate Transitioner",
+      "archetype_secondary": "Corporate Transitioner, Fresh Starter, Generalist Admin",
+      "resume_keywords": "Customer Support, excel, word, customer service, saas, RemoteOK",
+      "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with excel, word, customer service.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Likely",
+      "tools": "excel; word; customer service; saas",
+      "quality_label": "Review carefully",
+      "quality_reasons": "likely PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Corporate Transitioner",
+          "Fresh Starter",
+          "Generalist Admin"
+        ],
+        "primary_archetype": "Corporate Transitioner",
+        "resume_keywords": "Customer Support, excel, word, customer service, saas, RemoteOK",
+        "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with excel, word, customer service.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "c0e43bf4b9c6",
+      "title": "Marketing Generalist; FT or PT",
+      "company": "Plugin Genie",
+      "source": "WeWorkRemotely",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://weworkremotely.com/remote-jobs/plugin-genie-marketing-generalist-ft-or-pt",
+      "apply_url": "https://weworkremotely.com/remote-jobs/plugin-genie-marketing-generalist-ft-or-pt",
+      "posted_at": "2026-05-05",
+      "discovered_at": "2026-05-22",
+      "role_family": "SEO",
+      "archetype_primary": "Corporate Transitioner",
+      "archetype_secondary": "Corporate Transitioner, Fresh Starter, Generalist Admin",
+      "resume_keywords": "SEO, excel, saas, WeWorkRemotely",
+      "resume_angle": "Position your resume around seo reliability, written remote work, and proof with excel, saas.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "excel; saas",
+      "quality_label": "Review carefully",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Corporate Transitioner",
+          "Fresh Starter",
+          "Generalist Admin"
+        ],
+        "primary_archetype": "Corporate Transitioner",
+        "resume_keywords": "SEO, excel, saas, WeWorkRemotely",
+        "resume_angle": "Position your resume around seo reliability, written remote work, and proof with excel, saas.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "373a339a7c48",
+      "title": "Video Content Strategist / Storyboards",
+      "company": "Spiralyze",
+      "source": "WeWorkRemotely",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://weworkremotely.com/remote-jobs/spiralyze-video-content-strategist-storyboards",
+      "apply_url": "https://weworkremotely.com/remote-jobs/spiralyze-video-content-strategist-storyboards",
+      "posted_at": "2026-04-30",
+      "discovered_at": "2026-05-22",
+      "role_family": "Content Specialist",
+      "archetype_primary": "Creative Specialist",
+      "archetype_secondary": "Creative Specialist, Solo Entrepreneur, Polished Freelancer",
+      "resume_keywords": "Content Specialist, linkedin, youtube, WeWorkRemotely",
+      "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with linkedin, youtube.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "linkedin; youtube",
+      "quality_label": "Review carefully",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Creative Specialist",
+          "Solo Entrepreneur",
+          "Polished Freelancer"
+        ],
+        "primary_archetype": "Creative Specialist",
+        "resume_keywords": "Content Specialist, linkedin, youtube, WeWorkRemotely",
+        "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with linkedin, youtube.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "4f6b632f1a6f",
+      "title": "Brand Writer",
+      "company": "Remote",
+      "source": "Jobicy",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://jobicy.com/jobs/144343-brand-writer",
+      "apply_url": "https://jobicy.com/jobs/144343-brand-writer",
+      "posted_at": "2026-05-20",
+      "discovered_at": "2026-05-22",
+      "role_family": "Content Specialist",
+      "archetype_primary": "Creative Specialist",
+      "archetype_secondary": "Creative Specialist, Solo Entrepreneur, Polished Freelancer",
+      "resume_keywords": "Content Specialist, linkedin, saas, content creation, Jobicy",
+      "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with linkedin, saas, content creation.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Likely",
+      "tools": "linkedin; saas; content creation",
+      "quality_label": "Review carefully",
+      "quality_reasons": "likely PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Creative Specialist",
+          "Solo Entrepreneur",
+          "Polished Freelancer"
+        ],
+        "primary_archetype": "Creative Specialist",
+        "resume_keywords": "Content Specialist, linkedin, saas, content creation, Jobicy",
+        "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with linkedin, saas, content creation.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "9558312e9266",
+      "title": "WFH Customer Support Associate (Training Provided)",
+      "company": "Lisa Russel",
+      "source": "WeWorkRemotely",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://weworkremotely.com/remote-jobs/lisa-russel-wfh-customer-support-associate-training-provided",
+      "apply_url": "https://weworkremotely.com/remote-jobs/lisa-russel-wfh-customer-support-associate-training-provided",
+      "posted_at": "2026-05-16",
+      "discovered_at": "2026-05-22",
+      "role_family": "Customer Support",
+      "archetype_primary": "Corporate Transitioner",
+      "archetype_secondary": "Corporate Transitioner, Fresh Starter, Generalist Admin",
+      "resume_keywords": "Customer Support, excel, WeWorkRemotely",
+      "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with excel.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "excel",
+      "quality_label": "Review carefully",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Corporate Transitioner",
+          "Fresh Starter",
+          "Generalist Admin"
+        ],
+        "primary_archetype": "Corporate Transitioner",
+        "resume_keywords": "Customer Support, excel, WeWorkRemotely",
+        "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with excel.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "891e8bcd2ff0",
+      "title": "Creative Lead, Paid Social",
+      "company": "King Edward First",
+      "source": "WeWorkRemotely",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://weworkremotely.com/remote-jobs/king-edward-first-creative-lead-paid-social",
+      "apply_url": "https://weworkremotely.com/remote-jobs/king-edward-first-creative-lead-paid-social",
+      "posted_at": "2026-05-13",
+      "discovered_at": "2026-05-22",
+      "role_family": "Content Specialist",
+      "archetype_primary": "Creative Specialist",
+      "archetype_secondary": "Creative Specialist, Solo Entrepreneur, Polished Freelancer",
+      "resume_keywords": "Content Specialist, tiktok, social media, WeWorkRemotely",
+      "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with tiktok, social media.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "tiktok; social media",
+      "quality_label": "Review carefully",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Creative Specialist",
+          "Solo Entrepreneur",
+          "Polished Freelancer"
+        ],
+        "primary_archetype": "Creative Specialist",
+        "resume_keywords": "Content Specialist, tiktok, social media, WeWorkRemotely",
+        "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with tiktok, social media.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "ed2e6c2fa5f1",
+      "title": "Senior AI Video Artist",
+      "company": "EverAI",
+      "source": "Remotive",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://remotive.com/remote-jobs/marketing/senior-ai-video-artist-2089994",
+      "apply_url": "https://remotive.com/remote-jobs/marketing/senior-ai-video-artist-2089994",
+      "posted_at": "2026-04-24",
+      "discovered_at": "2026-05-22",
+      "role_family": "Content Specialist",
+      "archetype_primary": "Creative Specialist",
+      "archetype_secondary": "Creative Specialist, Solo Entrepreneur, Polished Freelancer",
+      "resume_keywords": "Content Specialist, tiktok, excel, Remotive",
+      "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with tiktok, excel.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "tiktok; excel",
+      "quality_label": "Review carefully",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Creative Specialist",
+          "Solo Entrepreneur",
+          "Polished Freelancer"
+        ],
+        "primary_archetype": "Creative Specialist",
+        "resume_keywords": "Content Specialist, tiktok, excel, Remotive",
+        "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with tiktok, excel.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "a7f1e34a3b14",
+      "title": "Technical Support Specialist",
+      "company": "Riva International, Inc.",
+      "source": "RemoteOK",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://remoteOK.com/remote-jobs/remote-technical-support-specialist-riva-international-inc-1131603",
+      "apply_url": "https://remoteOK.com/remote-jobs/remote-technical-support-specialist-riva-international-inc-1131603",
+      "posted_at": "2026-05-15",
+      "discovered_at": "2026-05-22",
+      "role_family": "Customer Support",
+      "archetype_primary": "Corporate Transitioner",
+      "archetype_secondary": "Corporate Transitioner, Fresh Starter, Generalist Admin",
+      "resume_keywords": "Customer Support, word, RemoteOK",
+      "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with word.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "word",
+      "quality_label": "Review carefully",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Corporate Transitioner",
+          "Fresh Starter",
+          "Generalist Admin"
+        ],
+        "primary_archetype": "Corporate Transitioner",
+        "resume_keywords": "Customer Support, word, RemoteOK",
+        "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with word.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "2b8dff318a8e",
+      "title": "Client Success Advisor",
+      "company": "SiteCare",
+      "source": "WeWorkRemotely",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://weworkremotely.com/remote-jobs/sitecare-client-success-advisor",
+      "apply_url": "https://weworkremotely.com/remote-jobs/sitecare-client-success-advisor",
+      "posted_at": "2026-05-15",
+      "discovered_at": "2026-05-22",
+      "role_family": "SEO",
+      "archetype_primary": "Corporate Transitioner",
+      "archetype_secondary": "Corporate Transitioner, Fresh Starter, Generalist Admin",
+      "resume_keywords": "SEO, word, WeWorkRemotely",
+      "resume_angle": "Position your resume around seo reliability, written remote work, and proof with word.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "word",
+      "quality_label": "Review carefully",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Corporate Transitioner",
+          "Fresh Starter",
+          "Generalist Admin"
+        ],
+        "primary_archetype": "Corporate Transitioner",
+        "resume_keywords": "SEO, word, WeWorkRemotely",
+        "resume_angle": "Position your resume around seo reliability, written remote work, and proof with word.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "a87339541a82",
+      "title": "Technical Customer Support (English + Spanish and/or Portuguese) UTC-4 / UTC-5",
+      "company": "Crisp",
+      "source": "WeWorkRemotely",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://weworkremotely.com/remote-jobs/crisp-technical-customer-support-english-spanish-and-or-portuguese-utc-4-utc-5",
+      "apply_url": "https://weworkremotely.com/remote-jobs/crisp-technical-customer-support-english-spanish-and-or-portuguese-utc-4-utc-5",
+      "posted_at": "2026-05-06",
+      "discovered_at": "2026-05-22",
+      "role_family": "Customer Support",
+      "archetype_primary": "Corporate Transitioner",
+      "archetype_secondary": "Corporate Transitioner, Fresh Starter, Generalist Admin",
+      "resume_keywords": "Customer Support, customer support, WeWorkRemotely",
+      "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with customer support.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "customer support",
+      "quality_label": "Review carefully",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Corporate Transitioner",
+          "Fresh Starter",
+          "Generalist Admin"
+        ],
+        "primary_archetype": "Corporate Transitioner",
+        "resume_keywords": "Customer Support, customer support, WeWorkRemotely",
+        "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with customer support.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "396dbd4e9edf",
+      "title": "Freelance Writer",
+      "company": "IAPWE",
+      "source": "Remotive",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://remotive.com/remote-jobs/writing/freelance-writer-1185979",
+      "apply_url": "https://remotive.com/remote-jobs/writing/freelance-writer-1185979",
+      "posted_at": "2026-05-04",
+      "discovered_at": "2026-05-22",
+      "role_family": "Content Specialist",
+      "archetype_primary": "Creative Specialist",
+      "archetype_secondary": "Creative Specialist, Solo Entrepreneur, Polished Freelancer",
+      "resume_keywords": "Content Specialist, word, Remotive",
+      "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with word.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "word",
+      "quality_label": "Review carefully",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Creative Specialist",
+          "Solo Entrepreneur",
+          "Polished Freelancer"
+        ],
+        "primary_archetype": "Creative Specialist",
+        "resume_keywords": "Content Specialist, word, Remotive",
+        "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with word.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "4c3b41f0ce2b",
+      "title": "Generalist; FT or PT; MS Power Automate",
+      "company": "Plugin Genie",
+      "source": "WeWorkRemotely",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://weworkremotely.com/remote-jobs/plugin-genie-generalist-ft-or-pt-ms-power-automate",
+      "apply_url": "https://weworkremotely.com/remote-jobs/plugin-genie-generalist-ft-or-pt-ms-power-automate",
+      "posted_at": "2026-04-29",
+      "discovered_at": "2026-05-22",
+      "role_family": "SEO",
+      "archetype_primary": "Corporate Transitioner",
+      "archetype_secondary": "Corporate Transitioner, Fresh Starter, Generalist Admin",
+      "resume_keywords": "SEO, excel, WeWorkRemotely",
+      "resume_angle": "Position your resume around seo reliability, written remote work, and proof with excel.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "excel",
+      "quality_label": "Review carefully",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Corporate Transitioner",
+          "Fresh Starter",
+          "Generalist Admin"
+        ],
+        "primary_archetype": "Corporate Transitioner",
+        "resume_keywords": "SEO, excel, WeWorkRemotely",
+        "resume_angle": "Position your resume around seo reliability, written remote work, and proof with excel.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "3ac5c931e4ce",
+      "title": "ASO Specialist",
+      "company": "Fortis Games",
+      "source": "Jobicy",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://jobicy.com/jobs/144341-aso-specialist",
+      "apply_url": "https://jobicy.com/jobs/144341-aso-specialist",
+      "posted_at": "2026-05-20",
+      "discovered_at": "2026-05-22",
+      "role_family": "Content Specialist",
+      "archetype_primary": "Creative Specialist",
+      "archetype_secondary": "Creative Specialist, Solo Entrepreneur, Polished Freelancer",
+      "resume_keywords": "Content Specialist, excel, word, Jobicy",
+      "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with excel, word.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Likely",
+      "tools": "excel; word",
+      "quality_label": "Review carefully",
+      "quality_reasons": "likely PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Creative Specialist",
+          "Solo Entrepreneur",
+          "Polished Freelancer"
+        ],
+        "primary_archetype": "Creative Specialist",
+        "resume_keywords": "Content Specialist, excel, word, Jobicy",
+        "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with excel, word.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "08c9962f806e",
+      "title": "Amazon Delivery Coordinator",
+      "company": "Vinculum Services",
+      "source": "WeWorkRemotely",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://weworkremotely.com/remote-jobs/vinculum-services-amazon-delivery-coordinator",
+      "apply_url": "https://weworkremotely.com/remote-jobs/vinculum-services-amazon-delivery-coordinator",
+      "posted_at": "2026-05-12",
+      "discovered_at": "2026-05-22",
+      "role_family": "Content Specialist",
+      "archetype_primary": "Creative Specialist",
+      "archetype_secondary": "Creative Specialist, Solo Entrepreneur, Polished Freelancer, Fresh Starter",
+      "resume_keywords": "Content Specialist, WeWorkRemotely",
+      "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with relevant tools.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "",
+      "quality_label": "Review carefully",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Creative Specialist",
+          "Solo Entrepreneur",
+          "Polished Freelancer",
+          "Fresh Starter"
+        ],
+        "primary_archetype": "Creative Specialist",
+        "resume_keywords": "Content Specialist, WeWorkRemotely",
+        "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with relevant tools.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "78821821b2a7",
+      "title": "Virtual Customer Support Associate  Entry Level",
+      "company": "Lisa Russel",
+      "source": "WeWorkRemotely",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://weworkremotely.com/remote-jobs/lisa-russel-virtual-customer-support-associate-entry-level",
+      "apply_url": "https://weworkremotely.com/remote-jobs/lisa-russel-virtual-customer-support-associate-entry-level",
+      "posted_at": "2026-04-22",
+      "discovered_at": "2026-05-22",
+      "role_family": "Customer Support",
+      "archetype_primary": "Corporate Transitioner",
+      "archetype_secondary": "Corporate Transitioner, Fresh Starter, Generalist Admin",
+      "resume_keywords": "Customer Support, WeWorkRemotely",
+      "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with relevant tools.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "",
+      "quality_label": "Review carefully",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Corporate Transitioner",
+          "Fresh Starter",
+          "Generalist Admin"
+        ],
+        "primary_archetype": "Corporate Transitioner",
+        "resume_keywords": "Customer Support, WeWorkRemotely",
+        "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with relevant tools.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "e80d8ca32e5c",
+      "title": "Mid/Senior AI Cinematic Video Editor (Full Remote - Worldwide)",
+      "company": "EverAI",
+      "source": "Remotive",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://remotive.com/remote-jobs/artificial-intelligence/mid-senior-ai-cinematic-video-editor-full-remote-worldwide-2090887",
+      "apply_url": "https://remotive.com/remote-jobs/artificial-intelligence/mid-senior-ai-cinematic-video-editor-full-remote-worldwide-2090887",
+      "posted_at": "2026-05-19",
+      "discovered_at": "2026-05-22",
+      "role_family": "Content Specialist",
+      "archetype_primary": "Creative Specialist",
+      "archetype_secondary": "Creative Specialist, Solo Entrepreneur, Polished Freelancer",
+      "resume_keywords": "Content Specialist, excel, Remotive",
+      "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with excel.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "excel",
+      "quality_label": "Review carefully",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Creative Specialist",
+          "Solo Entrepreneur",
+          "Polished Freelancer"
+        ],
+        "primary_archetype": "Creative Specialist",
+        "resume_keywords": "Content Specialist, excel, Remotive",
+        "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with excel.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "e74901b2b9f0",
+      "title": "Senior Paid Media Strategist (Remote)",
+      "company": "Clients Blackbox, Inc.",
+      "source": "WeWorkRemotely",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://weworkremotely.com/remote-jobs/clients-blackbox-inc-senior-paid-media-strategist-remote",
+      "apply_url": "https://weworkremotely.com/remote-jobs/clients-blackbox-inc-senior-paid-media-strategist-remote",
+      "posted_at": "2026-05-04",
+      "discovered_at": "2026-05-22",
+      "role_family": "Content Specialist",
+      "archetype_primary": "Creative Specialist",
+      "archetype_secondary": "Creative Specialist, Solo Entrepreneur, Polished Freelancer",
+      "resume_keywords": "Content Specialist, copywriting, WeWorkRemotely",
+      "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with copywriting.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "copywriting",
+      "quality_label": "Review carefully",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Creative Specialist",
+          "Solo Entrepreneur",
+          "Polished Freelancer"
+        ],
+        "primary_archetype": "Creative Specialist",
+        "resume_keywords": "Content Specialist, copywriting, WeWorkRemotely",
+        "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with copywriting.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "1f4a136d8267",
+      "title": "CPC Processor Customer Support - Bilingual",
+      "company": "Datavant",
+      "source": "WeWorkRemotely",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://weworkremotely.com/remote-jobs/datavant-cpc-processor-customer-support-bilingual",
+      "apply_url": "https://weworkremotely.com/remote-jobs/datavant-cpc-processor-customer-support-bilingual",
+      "posted_at": "2026-05-01",
+      "discovered_at": "2026-05-22",
+      "role_family": "Customer Support",
+      "archetype_primary": "Corporate Transitioner",
+      "archetype_secondary": "Corporate Transitioner, Fresh Starter, Generalist Admin",
+      "resume_keywords": "Customer Support, WeWorkRemotely",
+      "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with relevant tools.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "",
+      "quality_label": "Review carefully",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Corporate Transitioner",
+          "Fresh Starter",
+          "Generalist Admin"
+        ],
+        "primary_archetype": "Corporate Transitioner",
+        "resume_keywords": "Customer Support, WeWorkRemotely",
+        "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with relevant tools.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "5f6dde75d5d7",
+      "title": "Customer Support Specialist",
+      "company": "Datatrans Ag",
+      "source": "WeWorkRemotely",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://weworkremotely.com/remote-jobs/datatrans-ag-customer-support-specialist",
+      "apply_url": "https://weworkremotely.com/remote-jobs/datatrans-ag-customer-support-specialist",
+      "posted_at": "2026-04-29",
+      "discovered_at": "2026-05-22",
+      "role_family": "Customer Support",
+      "archetype_primary": "Corporate Transitioner",
+      "archetype_secondary": "Corporate Transitioner, Fresh Starter, Generalist Admin",
+      "resume_keywords": "Customer Support, WeWorkRemotely",
+      "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with relevant tools.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "",
+      "quality_label": "Review carefully",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Corporate Transitioner",
+          "Fresh Starter",
+          "Generalist Admin"
+        ],
+        "primary_archetype": "Corporate Transitioner",
+        "resume_keywords": "Customer Support, WeWorkRemotely",
+        "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with relevant tools.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "b3887d66dc49",
+      "title": "Motion Designer (Contractor)",
+      "company": "Fortis Games",
+      "source": "Jobicy",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://jobicy.com/jobs/144330-motion-designer-contractor",
+      "apply_url": "https://jobicy.com/jobs/144330-motion-designer-contractor",
+      "posted_at": "2026-05-20",
+      "discovered_at": "2026-05-22",
+      "role_family": "Content Specialist",
+      "archetype_primary": "Creative Specialist",
+      "archetype_secondary": "Creative Specialist, Solo Entrepreneur, Polished Freelancer",
+      "resume_keywords": "Content Specialist, excel, Jobicy",
+      "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with excel.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Likely",
+      "tools": "excel",
+      "quality_label": "Review carefully",
+      "quality_reasons": "likely PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Creative Specialist",
+          "Solo Entrepreneur",
+          "Polished Freelancer"
+        ],
+        "primary_archetype": "Creative Specialist",
+        "resume_keywords": "Content Specialist, excel, Jobicy",
+        "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with excel.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "85256438b1db",
+      "title": "1090 Video Editor",
+      "company": "GoFasti",
+      "source": "RemoteOK",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://remoteOK.com/remote-jobs/remote-1090-video-editor-gofasti-1131599",
+      "apply_url": "https://remoteOK.com/remote-jobs/remote-1090-video-editor-gofasti-1131599",
+      "posted_at": "2026-05-15",
+      "discovered_at": "2026-05-22",
+      "role_family": "Content Specialist",
+      "archetype_primary": "Creative Specialist",
+      "archetype_secondary": "Creative Specialist, Solo Entrepreneur, Polished Freelancer",
+      "resume_keywords": "Content Specialist, word, RemoteOK",
+      "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with word.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Likely",
+      "tools": "word",
+      "quality_label": "Review carefully",
+      "quality_reasons": "likely PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Creative Specialist",
+          "Solo Entrepreneur",
+          "Polished Freelancer"
+        ],
+        "primary_archetype": "Creative Specialist",
+        "resume_keywords": "Content Specialist, word, RemoteOK",
+        "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with word.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "94bf2db88ed1",
+      "title": "Application Support Engineer",
+      "company": "Cresta",
+      "source": "RemoteOK",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://remoteOK.com/remote-jobs/remote-application-support-engineer-cresta-1131596",
+      "apply_url": "https://remoteOK.com/remote-jobs/remote-application-support-engineer-cresta-1131596",
+      "posted_at": "2026-05-14",
+      "discovered_at": "2026-05-22",
+      "role_family": "Customer Support",
+      "archetype_primary": "Corporate Transitioner",
+      "archetype_secondary": "Corporate Transitioner, Fresh Starter, Generalist Admin",
+      "resume_keywords": "Customer Support, word, RemoteOK",
+      "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with word.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Likely",
+      "tools": "word",
+      "quality_label": "Review carefully",
+      "quality_reasons": "likely PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Corporate Transitioner",
+          "Fresh Starter",
+          "Generalist Admin"
+        ],
+        "primary_archetype": "Corporate Transitioner",
+        "resume_keywords": "Customer Support, word, RemoteOK",
+        "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with word.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "40bf1f0b1582",
+      "title": "Senior Medical Editor",
+      "company": "Omnicom Health",
+      "source": "RemoteOK",
+      "source_mode": "automated",
+      "tier": "Tier 1",
+      "source_url": "https://remoteOK.com/remote-jobs/remote-senior-medical-editor-omnicom-health-1131571",
+      "apply_url": "https://remoteOK.com/remote-jobs/remote-senior-medical-editor-omnicom-health-1131571",
+      "posted_at": "2026-05-13",
+      "discovered_at": "2026-05-22",
+      "role_family": "Content Specialist",
+      "archetype_primary": "Creative Specialist",
+      "archetype_secondary": "Creative Specialist, Solo Entrepreneur, Polished Freelancer",
+      "resume_keywords": "Content Specialist, word, RemoteOK",
+      "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with word.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Likely",
+      "tools": "word",
+      "quality_label": "Review carefully",
+      "quality_reasons": "likely PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Creative Specialist",
+          "Solo Entrepreneur",
+          "Polished Freelancer"
+        ],
+        "primary_archetype": "Creative Specialist",
+        "resume_keywords": "Content Specialist, word, RemoteOK",
+        "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with word.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-05-22T21:22:15",
+  "sources": [
+    {
+      "source": "RemoteOK",
+      "status": "ok",
+      "fetched_count": 99,
+      "accepted_count": 8,
+      "last_error": ""
+    },
+    {
+      "source": "Remotive",
+      "status": "ok",
+      "fetched_count": 19,
+      "accepted_count": 5,
+      "last_error": ""
+    },
+    {
+      "source": "Himalayas",
+      "status": "ok",
+      "fetched_count": 60,
+      "accepted_count": 0,
+      "last_error": ""
+    },
+    {
+      "source": "WeWorkRemotely",
+      "status": "ok",
+      "fetched_count": 83,
+      "accepted_count": 24,
+      "last_error": ""
+    },
+    {
+      "source": "Jobicy",
+      "status": "ok",
+      "fetched_count": 100,
+      "accepted_count": 3,
+      "last_error": ""
+    },
+    {
+      "source": "NoDesk",
+      "status": "error",
+      "fetched_count": 0,
+      "accepted_count": 0,
+      "last_error": "https://nodesk.co/remote-jobs/rss/: HTTP Error 404: Not Found"
+    }
+  ]
+}
