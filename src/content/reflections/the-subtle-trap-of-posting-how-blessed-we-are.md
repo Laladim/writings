@@ -4,6 +4,7 @@ type: "reflection"
 topics: ["faith-theology", "learning-in-public"]
 date: 2024-03-18
 description: "Sometimes we post blessed because we are grateful. Sometimes we post blessed because gratitude sounds more spiritual than look at me. And sometimes silence becomes another way to orbit ourselves."
+image: "/state-heroes/writings-v2-the-subtle-trap-of-posting-how-blessed-we-are.webp"
 ---
 
 I have typed "God is so good" and then stared at the caption too long.
