@@ -8,6 +8,10 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "obsidian:export": "python3 scripts/obsidian_pages.py export",
+    "obsidian:sync": "python3 scripts/obsidian_pages.py sync",
+    "obsidian:verify": "python3 scripts/obsidian_pages.py verify",
+    "obsidian:publish": "python3 scripts/obsidian_pages.py publish",
     "images:optimize": "node scripts/optimize-images.mjs",
     "images:audit": "node scripts/audit-images.mjs",
     "preview": "astro preview",

@@ -1,0 +1,174 @@
+<!-- WBL_OBSIDIAN_SYNC
+kind: source-copy
+sourcePath: src/pages/index.astro
+url: 
+WBL_OBSIDIAN_SYNC_END -->
+# src/pages/index.astro
+
+This is an Astro source file. Edit text carefully and keep the Astro syntax intact.
+
+```astro
+---
+import Base from '../layouts/Base.astro';
+import ContentCard from '../components/ContentCard.astro';
+import { getAllEntries, entryUrl } from '../lib/content';
+import { TOPICS, TYPES } from '../topics';
+
+const allEntries = await getAllEntries();
+const entries = allEntries.filter((entry) => !entry.data.topics.includes('swahg-stories'));
+const base = import.meta.env.BASE_URL;
+
+const topicCounts = new Map<string, number>();
+for (const e of entries) {
+  for (const t of e.data.topics) {
+    topicCounts.set(t, (topicCounts.get(t) ?? 0) + 1);
+  }
+}
+---
+<Base title="Writings — Lala">
+  <section class="hero">
+    <p class="hand kicker">writings</p>
+    <h1>Notes from a life in progress.</h1>
+    <p class="subtitle">
+      Lover of Christ. The wife who eats a lot. The friend who cries all the time.
+      Loves to write. Oh how she loves the sky and AI.
+    </p>
+  </section>
+
+  <section class="gallery-wrap">
+    <div class="gallery">
+      {entries.map((entry) => (
+        <ContentCard
+          href={entryUrl(entry, base)}
+          title={entry.data.title}
+          date={entry.data.date}
+          type={entry.data.type}
+          topics={entry.data.topics}
+          image={entry.data.image}
+        />
+      ))}
+      {entries.length === 0 && <p class="empty">The first entry is on its way.</p>}
+    </div>
+  </section>
+
+  <section class="browse-wrap">
+    <div class="browse">
+      <div class="browse-row">
+        <h2>Browse by topic</h2>
+        <div class="chip-row nav-font">
+          {TOPICS.filter((t) => (topicCounts.get(t.slug) ?? 0) > 0).map((t) => (
+            <a href={`/topics/${t.slug}/`} class="chip">
+              {t.name} <span class="chip-count">{topicCounts.get(t.slug)}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+      <div class="browse-row">
+        <h2>Browse by type</h2>
+        <div class="chip-row nav-font">
+          {TYPES.map((t) => (
+            <a href={`/library/?type=${t.slug}`} class="chip">{t.label}</a>
+          ))}
+        </div>
+      </div>
+      <div class="browse-row see-all-row">
+        <a href="/library/" class="see-all nav-font">See all →</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: clamp(3.5rem, 10vh, 6rem) clamp(1rem, 3vw, 2rem) 3rem;
+    text-align: center;
+  }
+  .kicker { font-size: 1.4rem; color: var(--accent-soft); margin: 0; }
+  .subtitle {
+    color: var(--ink-soft);
+    font-size: clamp(1rem, 1rem + 0.2vw, 1.1rem);
+    line-height: 1.65;
+    margin-top: 1rem;
+  }
+
+  .gallery-wrap {
+    padding: clamp(2rem, 5vh, 4rem) clamp(1rem, 3vw, 2rem) clamp(3rem, 8vh, 6rem);
+  }
+  .gallery {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: clamp(3rem, 7vh, 5.5rem) clamp(1rem, 2vw, 2rem);
+  }
+  @media (max-width: 820px) {
+    .gallery { gap: 3.5rem 1rem; }
+  }
+
+  .empty { grid-column: 1 / -1; color: var(--ink-faded); font-style: italic; text-align: center; }
+
+  .browse-wrap {
+    border-top: 1px solid var(--line);
+    padding: clamp(2.5rem, 5vh, 4rem) clamp(1rem, 3vw, 2rem);
+  }
+  .browse {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .browse-row h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--ink-faded);
+    font-weight: 500;
+    margin: 0 0 0.8rem;
+  }
+  .chip-row { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+  .chip {
+    padding: 0.5rem 0.95rem;
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    border: 1px solid var(--line);
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 0.82rem;
+    letter-spacing: 0.02em;
+    transition: all 0.15s;
+  }
+  .chip:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+  .chip-count { color: var(--ink-faded); font-size: 0.75rem; }
+
+  .see-all-row { text-align: right; margin-top: 0.5rem; }
+  .see-all {
+    color: var(--accent);
+    font-size: 0.85rem;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .see-all:hover { text-decoration: underline; }
+</style>
+
+<style is:global>
+  /* Grid positions live outside Astro scoping because ContentCard
+     renders its own scoped wrapper. These rules target the gallery's
+     direct children regardless of which component emitted them. */
+  .gallery > *:nth-child(6n+1) { grid-column: 3 / span 5; }
+  .gallery > *:nth-child(6n+2) { grid-column: 8 / span 5; }
+  .gallery > *:nth-child(6n+3) { grid-column: 1 / span 4; }
+  .gallery > *:nth-child(6n+4) { grid-column: 5 / span 6; }
+  .gallery > *:nth-child(6n+5) { grid-column: 4 / span 6; }
+  .gallery > *:nth-child(6n+0) { grid-column: 2 / span 5; }
+  @media (max-width: 820px) {
+    .gallery > * { grid-column: 1 / -1 !important; }
+  }
+</style>
+```

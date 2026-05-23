@@ -1,0 +1,143 @@
+<!-- WBL_OBSIDIAN_SYNC
+kind: source-copy
+sourcePath: src/pages/topics/[topic].astro
+url: 
+WBL_OBSIDIAN_SYNC_END -->
+# src/pages/topics/[topic].astro
+
+This is an Astro source file. Edit text carefully and keep the Astro syntax intact.
+
+```astro
+---
+import Base from '../../layouts/Base.astro';
+import ContentCard from '../../components/ContentCard.astro';
+import { getAllEntries, entryUrl } from '../../lib/content';
+import { TOPICS, topicBySlug } from '../../topics';
+
+export async function getStaticPaths() {
+  return TOPICS.map((t) => ({ params: { topic: t.slug } }));
+}
+
+const { topic } = Astro.params;
+const topicObj = topicBySlug(topic!);
+const allEntries = await getAllEntries();
+const entries = allEntries.filter((e) => e.data.topics.includes(topic!));
+const base = import.meta.env.BASE_URL;
+
+if (!topicObj) {
+  return Astro.redirect('/');
+}
+
+const relatedTopics = new Map<string, number>();
+for (const e of entries) {
+  for (const t of e.data.topics) {
+    if (t !== topic) relatedTopics.set(t, (relatedTopics.get(t) ?? 0) + 1);
+  }
+}
+const related = Array.from(relatedTopics.entries())
+  .sort((a, b) => b[1] - a[1])
+  .slice(0, 5)
+  .map(([slug]) => topicBySlug(slug))
+  .filter(Boolean);
+---
+<Base title={`${topicObj!.name} — Writings`} description={topicObj!.description}>
+  <section class="topic-head">
+    <p class="hand kicker">topic</p>
+    <h1>{topicObj!.name}</h1>
+    <p class="subtitle">{topicObj!.description}</p>
+  </section>
+
+  <section class="gallery-wrap">
+    <div class="gallery">
+      {entries.map((entry) => (
+        <ContentCard
+          href={entryUrl(entry, base)}
+          title={entry.data.title}
+          date={entry.data.date}
+          type={entry.data.type}
+          topics={entry.data.topics}
+          image={entry.data.image}
+        />
+      ))}
+      {entries.length === 0 && <p class="empty">No entries on this topic yet.</p>}
+    </div>
+  </section>
+
+  {related.length > 0 && (
+    <section class="related-wrap">
+      <h2>Related topics</h2>
+      <div class="chip-row nav-font">
+        {related.map((t) => (
+          <a href={`/topics/${t!.slug}/`} class="chip">{t!.name}</a>
+        ))}
+      </div>
+    </section>
+  )}
+</Base>
+
+<style>
+  .topic-head {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+    padding: clamp(3rem, 8vh, 5rem) clamp(1rem, 3vw, 2rem) 1.5rem;
+  }
+  .kicker { font-size: 1.3rem; color: var(--accent-soft); margin: 0; }
+  .subtitle { color: var(--ink-soft); }
+
+  .gallery-wrap { padding: clamp(2rem, 5vh, 4rem) clamp(1rem, 3vw, 2rem) clamp(3rem, 8vh, 6rem); }
+  .gallery {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: clamp(3rem, 7vh, 5.5rem) clamp(1rem, 2vw, 2rem);
+  }
+  @media (max-width: 820px) {
+    .gallery { gap: 3.5rem 1rem; }
+  }
+
+  .related-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem clamp(1rem, 3vw, 2rem) 3rem;
+    border-top: 1px solid var(--line);
+  }
+  .related-wrap h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--ink-faded);
+    font-weight: 500;
+    margin: 2rem 0 0.8rem;
+  }
+  .chip-row { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+  .chip {
+    padding: 0.5rem 0.95rem;
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    background: transparent;
+    border: 1px solid var(--line);
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 0.82rem;
+  }
+  .chip:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+  .empty { grid-column: 1 / -1; color: var(--ink-faded); font-style: italic; text-align: center; }
+</style>
+
+<style is:global>
+  .gallery > *:nth-child(6n+1) { grid-column: 3 / span 5; }
+  .gallery > *:nth-child(6n+2) { grid-column: 8 / span 5; }
+  .gallery > *:nth-child(6n+3) { grid-column: 1 / span 4; }
+  .gallery > *:nth-child(6n+4) { grid-column: 5 / span 6; }
+  .gallery > *:nth-child(6n+5) { grid-column: 4 / span 6; }
+  .gallery > *:nth-child(6n+0) { grid-column: 2 / span 5; }
+  @media (max-width: 820px) {
+    .gallery > * { grid-column: 1 / -1 !important; }
+  }
+</style>
+```

@@ -1,0 +1,115 @@
+<!-- WBL_OBSIDIAN_SYNC
+kind: source-copy
+sourcePath: src/components/ContentCard.astro
+url: 
+WBL_OBSIDIAN_SYNC_END -->
+# src/components/ContentCard.astro
+
+This is an Astro source file. Edit text carefully and keep the Astro syntax intact.
+
+```astro
+---
+import { optimizedImageUrl } from '../lib/images';
+
+export interface Props {
+  href: string;
+  title: string;
+  date: Date;
+  type: string;
+  topics: string[];
+  image?: string;
+}
+const { href, title, date, type, topics, image } = Astro.props;
+const optimizedImage = image ? optimizedImageUrl(image, 900) : undefined;
+const weekday = date.toLocaleDateString('en-US', { weekday: 'short' });
+const dateStr = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+---
+<a class="entry" href={href} data-type={type.toLowerCase()} data-topics={topics.join(',')}>
+  {image ? (
+    <div class="thumb">
+      <img src={optimizedImage} alt="" loading="lazy" width="900" height="506" decoding="async" />
+    </div>
+  ) : (
+    <div class="thumb thumb-text" aria-hidden="true">
+      <span class="hand-mark">{title.slice(0, 1)}</span>
+    </div>
+  )}
+  <div class="meta nav-font">
+    <span class="cap-type">{type}</span>
+    <span class="cap-sep">·</span>
+    <span class="cap-weekday">{weekday}</span>
+    <span class="cap-sep">·</span>
+    <span class="cap-date">{dateStr}</span>
+  </div>
+  <h3 class="title">{title}</h3>
+</a>
+<style>
+  .entry {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.25s ease;
+  }
+  .entry:hover, .entry:focus-visible { opacity: 0.82; text-decoration: none; }
+
+  .thumb {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #e8dfd0;
+    border-radius: 1px;
+  }
+  .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .thumb-text {
+    background: repeating-linear-gradient(
+      180deg,
+      #f4ede0 0,
+      #f4ede0 30px,
+      #e8dfd0 30px,
+      #e8dfd0 31px
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hand-mark {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(4rem, 8vw, 7rem);
+    color: rgba(90, 74, 122, 0.5);
+    transform: rotate(-4deg);
+    line-height: 1;
+  }
+
+  .meta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faded);
+    margin: 1rem 0 0.35rem;
+    flex-wrap: wrap;
+  }
+  .cap-type { color: var(--accent); font-weight: 500; }
+  .cap-weekday { font-family: 'Caveat', cursive; font-size: 0.95rem; text-transform: none; letter-spacing: 0; color: var(--accent-soft); line-height: 1; }
+  .cap-sep { color: var(--line); }
+
+  .title {
+    text-align: center;
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: clamp(0.95rem, 0.9rem + 0.2vw, 1.05rem);
+    line-height: 1.35;
+    color: var(--ink);
+    margin: 0;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+</style>
+```

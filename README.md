@@ -22,6 +22,35 @@ npm run preview
 Types: `note` · `story` · `guide` · `reflection` · `tool`.
 Topics live in `src/topics.ts` (15 options).
 
+## Editing in Obsidian
+
+Open this repo as an Obsidian vault. The organized editing folder is
+`Website Pages/`.
+
+```bash
+npm run obsidian:export
+```
+
+That creates one Obsidian-editable file for each published Markdown entry,
+draft Markdown entry, and standalone `public/**/index.html` page. Edit the
+files inside `Website Pages/`, then sync edits back into the real website
+source:
+
+```bash
+npm run obsidian:sync
+npm run obsidian:verify
+```
+
+To publish synced edits to the live site:
+
+```bash
+npm run obsidian:publish
+```
+
+That command syncs Obsidian files, verifies the build, commits only the
+Obsidian workflow files and tracked website source files, then pushes to
+`main`. GitHub Pages rebuilds the site after the push.
+
 ## Image uploads
 
 Before publishing new local images in `public/`, run:
