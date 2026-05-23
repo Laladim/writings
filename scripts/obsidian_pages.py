@@ -483,6 +483,9 @@ def publish(message: str) -> None:
         return
 
     subprocess.run(["git", "commit", "-m", message], cwd=ROOT, check=True)
+    subprocess.run(["git", "fetch", "origin"], cwd=ROOT, check=True)
+    subprocess.run(["git", "rebase", "origin/main"], cwd=ROOT, check=True)
+    verify()
     subprocess.run(["git", "push", "origin", "HEAD:main"], cwd=ROOT, check=True)
     print("Published Obsidian edits to origin/main.")
 
