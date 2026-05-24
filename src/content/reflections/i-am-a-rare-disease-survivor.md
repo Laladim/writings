@@ -87,7 +87,7 @@ The beauty of this vast universe shows that human beings are nothing but dust.
 A helpless creature apart from God.
 
 That is not meant to crush us.
-It is meant to bring us home.
+It is meant to correct the posture of our hearts.
 
 We are small.
 God is not.
