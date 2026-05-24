@@ -7,92 +7,52 @@ description: "You wanted to learn so you could earn. You wanted to earn so you c
 image: "https://res.cloudinary.com/dimapmlre/image/upload/v1778784432/state-heroes/writings-v1-what-swahg-team-actually-is.jpg"
 ---
 
-The reason you feel overwhelmed and lost is because you do not have strong goals in life.
+I want to be honest with you. The reason you feel overwhelmed and lost is not because you are lazy. It is because your work has no center.
 
-I am not saying you do not have dreams.
+You have dreams. Most of us do. What we often do not have is a plan that points those dreams somewhere real.
 
-What I am saying is, you are not targeting your strong goals.
+"I am doing so much, so why do I still feel lost?"
 
-Many of us have dreams. Many of us do not have any action plan to get to those dreams.
+I know that feeling.
 
-You wanted to learn because you wanted to earn. You wanted to earn because you wanted a stable career as a freelancer. You wanted to become a freelancer because you wanted a lifestyle that you love.
+You wanted to learn because you wanted to earn. You wanted to earn because you wanted a stable career as a freelancer. You wanted to become a freelancer because you wanted a lifestyle you love. And you want that lifestyle because, deep down, you want to be whole. Emotionally. Intellectually. Physically. Financially. In your career. In your relationships. Spiritually.
 
-You want a lifestyle that you love so you can become someone successful in all dimensions.
+That is a lot to carry without a center.
 
-Emotionally.
+So I want to ask you the questions I had to ask myself. Where are you right now? What do you want one month from now? A year from now? Ten years from now? Which dimension of your life matters most to you in this season?
 
-Intellectually.
+I will never know your answer. But I know this. You are not behind because you are not working hard enough. You are behind because the work has nothing holding it together.
 
-Physically.
+I chose freelancing over a corporate career because I knew the totality of who I am. I knew my physical body's capacity. I knew the skills I had and the areas where I was weak. I knew the kind of people and clients I wanted to work with. I knew the kind of life I wanted to live.
 
-Financially.
+So instead of collecting more advice from outside, sit with the voice inside you. Map out your plan. It does not have to be perfect. Nobody plans a life perfectly. The point is not perfection. The point is focus.
 
-In your career.
+If that feels too big, here is the simple exercise I do every morning. I ask myself, what is the most important thing I want to do today? My answer is APTAT.
 
-In your relationships.
+A. Admit that I am a sinner who needs God's grace and forgiveness.
 
-Spiritually.
+P. Pray that the Lord will enable me to love Him and the people around me the best I can today.
 
-To become successful, you need to understand the totality of who you are as a person.
+T. Trust God that He does not make mistakes, so I should go on with my life and not worry.
 
-Where are you right now?
+A. Act on the right things I should do, and never waste my time on the things I should not do, because it is my desire to honor God.
 
-What do you want to happen one month from now?
+T. Thank God for everything I have for the day. The sunlight. Waking up and seeing mama cooking. My family. My work. My lifestyle. The little and big blessings from the Lord.
 
-A year from now?
+Then I prioritize. Whether it is for myself, for my family, for my clients, or for the SWAHG community.
 
-Ten years from now?
-
-Prioritize the things that really matter to you.
-
-I will never know which dimension of success matters to you the most. But I want you to realize this. You are not behind because you are not working hard enough. You are behind because the work has no center.
-
-The reason I chose freelancing over a corporate career is because I knew the totality of who I am.
-
-I knew my physical body's capacity.
-
-I knew the best skills I had and the areas where I was not good.
-
-I knew the kind of people and clients I wanted to work with.
-
-I knew the kind of life I wanted to live.
-
-Instead of looking for answers, instead of hearing other people's advice, listen to the voice inside you and understand who you really are.
-
-Map out your plan for your life.
-
-It does not have to be perfect. Nobody can plan their life perfectly.
-
-The point of understanding who you are and the next best step is to give you the focus you need.
-
-If you find that difficult, here is a simple exercise I do every day.
-
-What is the most important thing I want to do today?
-
-My answer is APTAT.
-
-A — Admit that I am a sinner who needs God's grace and forgiveness.
-
-P — Pray that the Lord will enable me to love Him and the people around me the best I can today.
-
-T — Trust God that He does not make mistakes, so I should go on with my life and not worry.
-
-A — Act on the right things I should do, and never waste my time on the things I should not do, because it is my desire to honor God.
-
-T — Thank God in everything I have for the day. The sunlight, waking up and seeing mama cooking, my family, my work, my lifestyle, and all the little or big blessings from the Lord.
-
-Then I prioritize. Whether it is for myself, for my family, for the clients, or for the SWAHG community.
-
-Do I always succeed every day? Am I always super focused every day?
+Do I always succeed? Am I always focused?
 
 No.
 
-But whenever I get sidetracked, I have the strongest foundation built in my life. That is God's steadfast love.
+But when I get sidetracked, I have the strongest foundation already built into my day. That foundation is God's steadfast love. He is the center my work was missing. He is the One who holds the dimensions together, because I cannot.
 
-The bottom line of this long writing is this.
+This is why I believe overwhelm is a spiritual problem before it is a productivity problem. When God is the center, the goals stop competing. Work becomes worship. Rest becomes trust. The plan can be imperfect because the Planner is not.
 
-You lost your focus because you are not looking at the bigger picture of who you really want to become.
+So here is the bottom line of this long writing. You lost your focus because you are not looking at the bigger picture of who you really want to become, and Whose you already are.
 
-Once you know it, take one step at a time.
+Once you know it, take one step at a time. Start with APTAT tomorrow morning. See what shifts.
 
-— Lala
+For the glory of God.
+
+\- Lala

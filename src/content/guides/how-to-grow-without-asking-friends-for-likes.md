@@ -7,48 +7,52 @@ description: "Why don't my friends like my page? Why am I not getting sales even
 image: "https://res.cloudinary.com/dimapmlre/image/upload/v1778784475/state-heroes/writings-v1-how-to-grow-without-asking-friends-for-likes.jpg"
 ---
 
-"Why don't my friends like and follow my page?"
+I remember refreshing my page and counting how many friends had clicked like. I remember feeling small when the number stayed the same. I remember the quiet sting of thinking, "they know me, why won't they support me?"
 
-"Why are people not buying from my page? It feels like I have no friends."
+If you have ever felt that, I want to sit with you for a moment before I give you anything practical.
 
-"How is it that out of all my friends, only a few liked and followed my page?"
+Maybe you are a mom running a Facebook page so you can stay home with your child and still earn. Maybe your page is just a place to show your sample work. You post, you wait, you check, and nothing moves. Your personal life starts to feel heavy because the people closest to you are quiet. You start wondering what kind of friends they are.
 
-I was exactly like this when I was starting out.
+I have been there. And I have to be honest with you. That question is the wrong question.
 
-Maybe you are a mom managing a Facebook page so you can stay with your child while earning from home.
+"Why don't my friends like my page?" sounds reasonable, but it is actually a question about validation, not about the work. It puts your peace in the hands of people who never signed up to be your customers. It turns friendship into a marketing channel, and it slowly grows resentment in a heart that was supposed to be serving.
 
-Or maybe you are like many others out there managing a page just to show your sample work.
+Here is the shift that took me years to learn.
 
-And it is really making you feel disappointed because despite all of the work, nothing seems to be happening on your page. You may feel like your personal life is suffering because you are not getting support from friends and family. It does not have to be that way.
+Your page is not a popularity contest among the people who already know your name. Your page is a small act of service to a specific person who does not know you yet, but who needs what you can offer.
 
-The voice in your head says, "they should be supporting me. They are my friends. What kind of friends are these?"
+So instead of counting friends, ask these:
 
-I have been there. Stop asking that question. It is the wrong question.
+Who am I really talking to on this page?
 
-Whether it is about people liking your page or buying your products, ask the right ones.
+What does that person actually need?
 
-"Who am I really talking to on this page?"
+Can I give what they need?
 
-"What does that person actually need?"
+When you answer those honestly, the whole posture changes. You stop performing for the timeline. You start working for one real person on the other side of the screen.
 
-"Can I give what they need?"
-
-It is important to know who you are and the reason why you want a page.
-
-Know who your potential customer is. Know where they are. Understand their problem. Ask yourself if you can solve it. Then build a real relationship with them. You have to post something visually pleasing that also adds value. And you have to do it with consistency.
-
-Two things to remember as you build:
+Two things will keep you grounded as you build:
 
 1. Know what to offer.
 
 2. Know what benefit they will get from it.
 
-It took me years to get where I am now. The good thing for you is that you do not need to start from scratch. We have a free SMM Handbook that walks you through how to grow your social media presence and expand the reach of your business. What you need to do is put your goal into action.
+That is it. Know who your potential customer is. Know where they are. Understand the problem they carry. Ask yourself if you can solve it. Then build a real relationship with them. Post something that is visually pleasing and that actually adds value. And do it with consistency, even on the days nobody claps.
 
-You don't dig the well when you're thirsty.
+I will not pretend this is fast. It took me years to get to where I am now. The good news is you do not have to start from scratch. We have a free SMM Handbook that walks you through how to grow your social media presence and expand the reach of your business. You can use it. What I cannot do for you is put your goal into motion. That part is yours.
 
-The faster you put your goal into action, the faster you will reach it.
+There is an old line I keep close: you don't dig the well when you're thirsty. You dig it before. You dig it quietly. You dig it on the days you do not feel like it. Then when the dry season comes, water is already there.
 
-Tomorrow, before you check your friends list one more time, ask the right question instead. "Who am I really for?" And start there.
+Now the faith part, because I cannot separate this from how I work.
 
-— Lala
+Scripture teaches us to serve, not to chase applause. When my work becomes a way to prove myself to my friends, I am asking people to give me what only God can give: worth, identity, a sense that I am seen. They were never built to carry that. Neither were yours. When I let God settle that part of me, I can finally see my audience as people to serve instead of crowds to win. Resentment loses its grip. The work becomes worship in a small, ordinary way.
+
+So tomorrow, before you scroll your friends list one more time and count who showed up, try a different question.
+
+Who am I really for?
+
+Start there. Be patient with yourself. Be faithful in the quiet. Trust that one honest post for the right person is worth more than a hundred polite likes from people who were never your audience to begin with.
+
+For the glory of God.
+
+\- Lala

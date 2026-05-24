@@ -9,74 +9,36 @@ image: "https://res.cloudinary.com/dimapmlre/image/upload/v1778784225/state-hero
 
 Thank you for your prayers.
 
-It is true that our faith can move mountains.
+My neurologist told me the cavernoma did not grow. It is stable. I do not need surgery. She gave me medicine to better control the severe headaches the bleed has been causing.
 
-My neurologist said my cavernoma did not grow in size. It is stable. I do not need surgery.
+I sat with that news for a while before I could even type a thank you. There is a kind of relief that does not arrive loud. It arrives quiet, almost shy, because you know it is borrowed. The bleed could come back. A seizure could still happen one day. I do not know. But today, I have no pain. Today is enough.
 
-I was given medicine to better control the severe headaches caused by the bleeding.
+Sorrowful things are spoken for the sake of joy. I am learning what that means in my own body.
 
-Sorrowful things are spoken for the sake of joy.
+What I am most thankful for is not just the scan result. It is the people I have been on this journey with. When I shared my story, I did not expect so many of you to write back about your own mountains. I read every comment. I responded to all of them. Somewhere in the middle of sadness and pain, a deep joy showed up, and it was sitting with you.
 
-What I am most thankful for is the people I have been on this journey with.
+Maybe some of you are still in pain as you read this. Maybe you are waiting patiently for a miracle. Maybe you tasted a little relief and the pain came back and you do not know how to talk about it anymore. I know that feeling. I want you to know I am not writing this from a finished place. I am writing from the same road.
 
-Faith really does move mountains.
+Pain is part of life. So is love. So is happiness. So is joy. So is sickness and death. We do not get to keep only the parts we like.
 
-Who would have thought that because I shared my journey with you, many of you would be powerfully moved to face your own mountains. I read everything you shared in the comments. I responded to all of them.
+One sentence I keep repeating to myself is this: "Lala, you are just a dot in space."
 
-In the middle of sadness and pain, there is a deep joy.
+It is true that faith can move mountains. I have seen it. But I have to keep telling myself the second half of that truth. We are meant to move the mountains the Lord wants moved. The mountains we pray about will only be moved if the Lord wills for them to be moved.
 
-Maybe some of you are still in pain. I thank God I have no pain today.
+The Lord is big. I am small.
 
-Maybe some of you are patiently waiting for a miracle.
+I am not the center of space. I did not place the stars. I do not make the sun rise. He does.
 
-Maybe some of you tasted a little relief and the pain came back.
+Yes, we dig the soil. We plant. We water. But it is the Lord who makes the plant grow. How a seed cracks open and reaches up and bears fruit, only He can do that. Not me. Not the doctor. Not the medicine. Not even the prayers in isolation. He is the one who makes things live.
 
-Pain is part of life. Just like love. Just like happiness. Just like joy. Just like death and sickness.
+So we do the best we can. We pray hard. We take the medicine. We show up for the people we love. And then we hand the outcome back to Him, because it was always His to begin with.
 
-One of the most treasured lessons I keep on repeating to myself is this.
+I do not know when my cavernoma will bleed again. I do not know if one day it will steal something from me I am not ready to lose. What I do know is this: He gave me a defect in my brain so I would see the beauty of life more. All my sufferings have become doorsteps to see and feel more of God, and to feel the true purpose of my small life.
 
-"Lala, you are just a dot in space."
+We are eternal creatures meant to see the wonder of an eternal God, no matter how small or helpless we feel on a given Tuesday. We are meant for something greater than getting through.
 
-Yes, we can do wonderful things.
+If you prayed for me, thank you. If you are still in your own waiting, I am praying for you tonight. Tell me where you are. I will read it.
 
-We can love people so much.
+For the glory of God.
 
-We can feel love and be loved.
-
-We can move mountains through our faith.
-
-But we must not forget that we are meant to move the mountains the Lord wants moved.
-
-At the end of the day, the mountains we pray to be moved will only be moved if the Lord wills for them to be moved.
-
-The Lord is big. You are small.
-
-You are not the center of space.
-
-You are not the one who placed the stars in the sky.
-
-You are not the one who makes the sun rise.
-
-The Lord is.
-
-Yes, you dig the soil. You plant. You water. But it is the Lord who makes the plants grow.
-
-How a plant emerges from the seed and grows and bears fruit, only the Lord can do that. Not you.
-
-We do the best we can.
-
-We pray hard for things.
-
-But everything still comes from the Lord.
-
-I do not know when my cavernoma will bleed again. I do not know if one day it will cause a seizure. I do not know.
-
-He gave me a defect in my brain so I would see the beauty of life more.
-
-The truth is, all my sufferings are doorsteps to see and feel more of God, and to feel the true wonder and purpose of my life.
-
-We are all eternal creatures meant to see the wonder of an eternal God no matter how small or helpless we feel sometimes.
-
-We are meant for something great.
-
-— Lala
+\- Lala
