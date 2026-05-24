@@ -36,11 +36,18 @@ I know what it is like to wonder if your weakness is too much for God.
 
 It is not.
 
-But these sicknesses do not define me.
-They are part of my story.
-They are not my Savior.
+These sicknesses are real.
+The pain is real.
+The weight of them is real.
+And I will not pretend they are small.
 
-Christ is.
+But they are not my Savior.
+They do not get the final word over me.
+They do not name me.
+
+Christ does.
+
+He holds my story, and even these hard parts He uses for His purposes.
 
 That is the only sentence that holds me together on the hard days.
 
