@@ -4,7 +4,7 @@ type: "reflection"
 topics: ["health", "faith-theology", "marriage-family"]
 date: 2026-05-25
 description: "After my hematologist consultation, I spent an ordinary day with my siblings and nieces. Scrabble, videoke, food, tidying up at 11pm, and the ache of knowing every moment together is treasure."
-image: "https://res.cloudinary.com/dimapmlre/image/upload/v1779726847/state-heroes/writings-v1-every-moment-we-are-together-is-treasure.jpg"
+image: "https://res.cloudinary.com/dimapmlre/image/upload/v1779729398/state-heroes/writings-v3-every-moment-we-are-together-is-treasure.jpg"
 ---
 
 After my consultation with my hematologist today, I felt another chapter is about to come.
