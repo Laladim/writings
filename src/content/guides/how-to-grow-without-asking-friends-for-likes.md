@@ -39,8 +39,6 @@ Two things will keep you grounded as you build:
 
 That is it. Know who your potential customer is. Know where they are. Understand the problem they carry. Ask yourself if you can solve it. Then build a real relationship with them. Post something that is visually pleasing and that actually adds value. And do it with consistency, even on the days nobody claps.
 
-I will not pretend this is fast. It took me years to get to where I am now. The good news is you do not have to start from scratch. We have a free SMM Handbook that walks you through how to grow your social media presence and expand the reach of your business. You can use it. What I cannot do for you is put your goal into motion. That part is yours.
-
 There is an old line I keep close: you don't dig the well when you're thirsty. You dig it before. You dig it quietly. You dig it on the days you do not feel like it. Then when the dry season comes, water is already there.
 
 Now the faith part, because I cannot separate this from how I work.
