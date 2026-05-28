@@ -1177,1322 +1177,1790 @@ Lesson 02
 <!-- wbl-text:0405 -->
 The Word of God Increases When His People Serve in Their Right Place
 
-<!-- wbl-text:0412 -->
+<!-- wbl-text:0408 -->
+Lesson 03
+
+<!-- wbl-text:0411 -->
+The God Who Knows Our Hearts
+
+<!-- wbl-text:0419 -->
 "Mercy Changed Us, So We Live Differently with Outsiders"
 
-<!-- wbl-text:0413 -->
+<!-- wbl-text:0420 -->
 This Lesson
 
-<!-- wbl-text:0414 -->
+<!-- wbl-text:0421 -->
 Lesson Top
 
-<!-- wbl-text:0417 -->
+<!-- wbl-text:0424 -->
 Before We Start
 
-<!-- wbl-text:0454 -->
+<!-- wbl-text:0461 -->
 Closing Prayer
 
-<!-- wbl-text:0456 -->
+<!-- wbl-text:0463 -->
 Feedback Records
 
-<!-- wbl-text:0457 -->
+<!-- wbl-text:0464 -->
 log after each Sunday
-
-<!-- wbl-text:0465 -->
-"God's Mercy Changed Us, So We Live Differently with Outsiders"
-
-<!-- wbl-text:0466 -->
-Read-aloud script for Lala. Internalize, then set down. Deliver in your own voice. Pause where marked.
-
-<!-- wbl-text:0467 -->
-A Word on Order
-
-<!-- wbl-text:0468 -->
-The teaching order matters. We
-
-<!-- wbl-text:0469 -->
-READ
 
 <!-- wbl-text:0472 -->
-UNPACK
+"God's Mercy Changed Us, So We Live Differently with Outsiders"
 
-<!-- wbl-text:0476 -->
-Paul's logic, not his sentence order, carries the lesson.
-
-<!-- wbl-text:0477 -->
-Before We Start
-
-<!-- wbl-text:0479 -->
-Children, let me ask you a quick question.
-
-<!-- wbl-text:0480 -->
-Who often tells you what to do?
-
-<!-- wbl-text:0481 -->
-Think about it for a second. On a normal day, from when you wake up to when you go to bed, how many people tell you what to do? Your mom and dad tell you to brush your teeth. Your teacher tells you when to sit down. The guard at the mall tells you where to line up. Sometimes even your younger sibling tells you what to do, isn't it?
-
-<!-- wbl-text:0482 -->
-Now here's a harder question. Do you LIKE being told what to do? Are you feeling happy to do what they say you must do?
-
-<!-- wbl-text:0483 -->
-I don't think any of us really do. Something inside us rises up and says, "You can't tell me what to do. You're not my boss."
-
-<!-- wbl-text:0484 -->
-Here is what we are going to find out today. Paul wrote a letter that tells people who love Jesus that we should be GENTLE and COURTEOUS and READY TO HELP, even toward people who aren't nice, even toward people who don't love Jesus. That sounds hard. Maybe impossible. So he tells us WHY. He tells us what God did to us on the inside that makes it possible. It's the most beautiful thing in the Bible. Let's find it.
-
-<!-- wbl-text:0485 -->
-[PAUSE. Small show of hands: "Ready to meet some new friends from the Bible?"]
-
-<!-- wbl-text:0490 -->
-Before we read, let me tell you about the people.
-
-<!-- wbl-text:0491 -->
-Meet Paul.
-
-<!-- wbl-text:0492 -->
-Paul is the man who wrote this letter. Here is something wild about Paul. Before he knew Jesus, Paul actually HATED Christians. He put them in jail. He agreed when they got killed. He thought he was doing God a favor. Then one day he was walking on a road to a city called Damascus, and the risen Jesus appeared to him in a bright light and said, "Paul, why are you hurting my people?" In that moment, Paul's whole life changed. He went from hunting Christians to becoming the bravest missionary in the Bible. He traveled across the Roman Empire, starting churches and writing long letters to help people follow Christ. Many of those letters are in our New Testament. Titus is one of them.
-
-<!-- wbl-text:0493 -->
-Meet Titus.
-
-<!-- wbl-text:0496 -->
-Meet Crete.
-
-<!-- wbl-text:0497 -->
-Crete is an island. You can google it on a map later. It is in the Mediterranean Sea, south of Greece. The people who lived in Crete had a pretty bad reputation. Paul even quotes one of their own writers in chapter 1, who wrote, "Cretans are always liars, evil beasts, lazy gluttons." Rough place. Into that rough place, Paul planted a church. Then he left Titus in charge. This letter is Paul helping Titus figure out how those new Christians should LIVE in that rough place, around rough people.
-
-<!-- wbl-text:0498 -->
-Okay. Open your Bibles to Titus chapter 3. We are going to read verses 1 through 8. I will read, you follow along with your finger. Listen for four things:
-
-<!-- wbl-text:0501 -->
-What Paul says we USED to be like (v.3).
-
-<!-- wbl-text:0504 -->
-What Paul wants Titus to keep reminding people about (v.8).
-
-<!-- wbl-text:0509 -->
-"Remind them to be submissive to rulers and authorities, to be obedient, to be ready for every good work, to speak evil of no one, to avoid quarreling, to be gentle, and to show perfect courtesy toward all people. For we ourselves were once foolish, disobedient, led astray, slaves to various passions and pleasures, passing our days in malice and envy, hated by others and hating one another. But when the goodness and loving kindness of God our Savior appeared, he saved us, not because of works done by us in righteousness, but according to his own mercy, by the washing of regeneration and renewal of the Holy Spirit, whom he poured out on us richly through Jesus Christ our Savior, so that being justified by his grace we might become heirs according to the hope of eternal life. The saying is trustworthy, and I want you to insist on these things, so that those who have believed in God may be careful to devote themselves to good works. These things are excellent and profitable for people."
-
-<!-- wbl-text:0510 -->
-[PAUSE. "One quick question before we go deeper. Did you notice the word FOR at the start of verse 3? That little word is doing a huge job. It's the hinge between what Christians DO and WHY we can do it. Keep that in mind."]
-
-<!-- wbl-text:0521 -->
-Paul says: "For we ourselves were ONCE foolish, disobedient, led astray, slaves to various passions and pleasures, passing our days in malice and envy, hated by others and hating one another."
-
-<!-- wbl-text:0522 -->
-Notice something important. Paul does not say "YOU were all these things." He says "WE were." He puts himself in the mirror first. Every human being, apart from Jesus, is like this on the inside.
-
-<!-- wbl-text:0523 -->
-Let me define the hard words.
-
-<!-- wbl-text:0524 -->
-Foolish
-
-<!-- wbl-text:0525 -->
-means not wise. Believing silly things. Chasing things that don't last.
-
-<!-- wbl-text:0526 -->
-Led astray
-
-<!-- wbl-text:0527 -->
-means following the wrong crowd, walking away from what is true.
-
-<!-- wbl-text:0528 -->
-Slaves to passions
-
-<!-- wbl-text:0529 -->
-means your feelings were your boss. Whatever you felt like doing, you did.
-
-<!-- wbl-text:0530 -->
-Malice
-
-<!-- wbl-text:0531 -->
-means wanting BAD things to happen to someone else.
-
-<!-- wbl-text:0532 -->
-Envy
-
-<!-- wbl-text:0533 -->
-means being angry that someone else has what you want.
-
-<!-- wbl-text:0534 -->
-[PAUSE. Look around the room. Soft voice.] "I want you to be honest for a moment. Have you felt ANY of these this week? Envy when your friend got a new phone? Malice when your sister messed up your things? Led astray when the group at school convinced you to do something you knew was wrong? Just notice it. Don't say it out loud. But notice that Paul is not making this up. This is us."
-
-<!-- wbl-text:0535 -->
-That is the mirror. Now we turn the page.
-
-<!-- wbl-text:0540 -->
-Verse 4 begins with the most beautiful word in the Bible. BUT.
-
-<!-- wbl-text:0541 -->
-"BUT when the goodness and loving kindness of God our Savior appeared, he saved us..."
-
-<!-- wbl-text:0542 -->
-Everything changes on that word BUT. Let's unpack it.
-
-<!-- wbl-text:0545 -->
-Now verse 5 is the key verse of the whole lesson. Listen very carefully.
-
-<!-- wbl-text:0546 -->
-"He saved us, NOT because of works done by us in righteousness..."
-
-<!-- wbl-text:0549 -->
-"...but according to his own MERCY, by the washing of REGENERATION and renewal of the Holy Spirit."
-
-<!-- wbl-text:0550 -->
-Three big words here. Let me define them.
-
-<!-- wbl-text:0551 -->
-Mercy
-
-<!-- wbl-text:0552 -->
-means not getting the punishment we deserved. Imagine your mom told you not to play with her vase, but you did not follow her, you played with it while she was not looking, then, you broke your mom's favorite vase, and you expected her to be angry, but instead she said, "I forgive you. Let's have ice cream." That is a tiny picture of mercy. God had every right to punish us for being foolish and disobedient. Instead, he saved us. That is mercy.
-
-<!-- wbl-text:0553 -->
-Regeneration
-
-<!-- wbl-text:0559 -->
-That is a picture of what God does inside a person when he saves them.
-
-<!-- wbl-text:0564 -->
-That is what Paul is describing in verse 3. Foolish. Disobedient. Slaves to our feelings. That is what a spiritually dead heart looks like from the outside.
-
-<!-- wbl-text:0565 -->
-So how does a spiritually dead person become alive? How does regeneration actually happen?
-
-<!-- wbl-text:0576 -->
-Jesus once told a man named Nicodemus, late at night, "You must be born again." Nicodemus was a religious teacher who came to Jesus in secret because he wanted to know the truth. Jesus did not tell him, "Try harder. Clean up a little." Jesus told him, "You need totally new life, and only I can give it." That is regeneration. That is what verse 5 is talking about.
-
-<!-- wbl-text:0577 -->
-And here is the beautiful next thing. The moment God gives a person this new life, he also sends Someone to live INSIDE that person. Read with me into verse 6: "...whom he poured out on us richly through Jesus Christ our Savior..."
-
-<!-- wbl-text:0578 -->
-Who is the "whom"? The
-
-<!-- wbl-text:0579 -->
-Holy Spirit
-
-<!-- wbl-text:0582 -->
-Notice HOW the Spirit comes to us. Verse 6 says God poured him out RICHLY through Jesus Christ our Savior. Not a drop. Not a measured teaspoon. A FLOOD. God is generous with his Spirit. If you belong to Jesus, you are not alone. You have God himself living inside you, helping you live this new life.
-
-<!-- wbl-text:0583 -->
-And verse 7 finishes the thought: "so that being JUSTIFIED by his GRACE we might become HEIRS according to the hope of eternal life."
-
-<!-- wbl-text:0584 -->
-Three more words.
-
-<!-- wbl-text:0585 -->
-Justified
-
-<!-- wbl-text:0586 -->
-means God the Judge bangs his gavel in the courtroom of heaven and says, "Not guilty. Case dismissed." Why? Because Jesus already paid for the crime. People who are born again do not stand before God hoping for a tie. We stand justified.
-
-<!-- wbl-text:0587 -->
-Grace
-
-<!-- wbl-text:0588 -->
-means a gift you did not earn and cannot repay.
-
-<!-- wbl-text:0589 -->
-Heir
-
-<!-- wbl-text:0591 -->
-[PAUSE. Slow breath. Look at them.] "Just sit with that for a second. We were foolish. We were envious. We did not deserve anything. BUT the goodness and loving kindness of God appeared. He saved us by mercy. He made us new. He poured out his Spirit. And he made us heirs. That is the gospel. That is the middle of this lesson."
-
-<!-- wbl-text:0612 -->
-And God did exactly what Titus 3:5 says. He washed me. He made me NEW. He poured out his Holy Spirit in my heart. He made me an HEIR.
-
-<!-- wbl-text:0613 -->
-Now let me tell you something else. I am STILL sick. My body still hurts. Sometimes I cannot stand for days because of pain in my back. Sometimes I have bleeding in my brain. The pain has not gone away.
-
-<!-- wbl-text:0614 -->
-But I am not afraid anymore. I am not ashamed of who I am. I do not think God made a mistake. Because when I look at my life now, I see this: God was holding on to me the whole time, even when I didn't know it.
-
-<!-- wbl-text:0615 -->
-[Lock your forearms together and show them.]
-
-<!-- wbl-text:0616 -->
-Like arms locked together. Even when I was about to fall, God was holding on. He was saying, "I will not let go."
-
-<!-- wbl-text:0621 -->
-Listen for it, children. He is calling. Don't miss it.
-
-<!-- wbl-text:0626 -->
-Now go back up to verses 1 and 2. NOW it makes sense.
-
-<!-- wbl-text:0627 -->
-Paul says: "Remind them to be submissive to rulers and authorities, to be obedient, to be ready for every good work, to speak evil of no one, to avoid quarreling, to be gentle, and to show perfect courtesy toward all people."
-
-<!-- wbl-text:0630 -->
-Let me define the words quickly.
-
-<!-- wbl-text:0631 -->
-Submissive
-
-<!-- wbl-text:0632 -->
-means putting yourself UNDER someone's authority, even if they don't believe in Jesus.
-
-<!-- wbl-text:0633 -->
-Obedient
-
-<!-- wbl-text:0634 -->
-means actually doing what they ask.
-
-<!-- wbl-text:0635 -->
-Ready for every good work
-
-<!-- wbl-text:0638 -->
-Speak evil of no one
-
-<!-- wbl-text:0641 -->
-Avoid quarreling
-
-<!-- wbl-text:0642 -->
-means don't pick fights with words.
-
-<!-- wbl-text:0643 -->
-Gentle
-
-<!-- wbl-text:0644 -->
-means soft, not rough.
-
-<!-- wbl-text:0645 -->
-Courtesy
-
-<!-- wbl-text:0646 -->
-means polite, respectful.
-
-<!-- wbl-text:0654 -->
-Verse 8 ties it all together. "The saying is trustworthy, and I want you to insist on these things, so that those who have believed in God may be careful to devote themselves to good works."
-
-<!-- wbl-text:0660 -->
-[PAUSE. "Any questions about what we just walked through? Anything that didn't make sense?"]
-
-<!-- wbl-text:0665 -->
-Let's be honest for a minute.
-
-<!-- wbl-text:0666 -->
-Paul makes two big claims in these verses. Let's test them.
-
-<!-- wbl-text:0667 -->
-Claim 1:
-
-<!-- wbl-text:0668 -->
-We were all once foolish and envious before God saved us. Is that true? Have you felt ANY of those things in yourself this week? [Give 10 seconds of quiet.] Yeah. Paul's not exaggerating. He is telling the truth about the human heart.
-
-<!-- wbl-text:0669 -->
-Claim 2:
-
-<!-- wbl-text:0670 -->
-God saves people by MERCY, not by works. Is that true? Here is the test. If salvation were earned by being good, then the BEST kid would have the BEST salvation. But Scripture says we all fall short, and that Jesus paid for ALL of it on the cross. That is why the gospel is good news. Good news is only good news if there was something we needed saving from. There was. There is. And he did.
-
-<!-- wbl-text:0671 -->
-One more question. Is it actually possible to treat outsiders the way Paul says? Be gentle to rude people? Show courtesy to a guard who shouted at you? Help someone who doesn't believe in Jesus? On our own, no. But the Spirit was poured out on us richly (verse 6). That means we are not trying to obey on our own steam. God gave us power to live this way.
-
-<!-- wbl-text:0672 -->
-This passage is true. It matches what we see in our own hearts. It matches the gospel Jesus preached. And it points us to a life we could never live on our own.
-
-<!-- wbl-text:0677 -->
-Close your eyes for ten seconds and listen to verse 5 one more time.
-
-<!-- wbl-text:0678 -->
-"He saved us, not because of works done by us in righteousness, but according to his own mercy, by the washing of regeneration and renewal of the Holy Spirit."
-
-<!-- wbl-text:0679 -->
-How does that make you feel?
-
-<!-- wbl-text:0680 -->
-Relieved?
-
-<!-- wbl-text:0681 -->
-Maybe. Because you don't have to perform your way to heaven.
-
-<!-- wbl-text:0682 -->
-Grateful?
-
-<!-- wbl-text:0683 -->
-Maybe. Because God did what you could not do.
-
-<!-- wbl-text:0684 -->
-Loved?
-
-<!-- wbl-text:0685 -->
-I hope so. Because a God of mercy is a God who loves sinners like us.
-
-<!-- wbl-text:0686 -->
-Now here is something many grown-up Christians miss, and I don't want you to miss it. Gratitude is good. Thanking God for what he has already done is right. But gratitude ALONE is not enough to power the Christian life. If the only reason you obey God is to pay him back for saving you, you will burn out. You cannot pay God back. He saved you by mercy, remember? Not by works.
-
-<!-- wbl-text:0687 -->
-So let me ask you: what makes a person ABLE to actually do what verses 1 and 2 say this week? Be gentle with a rude classmate? Help a grumpy guard? Speak well of the kid nobody sits with?
-
-<!-- wbl-text:0688 -->
-The answer is not only looking BACK with thanks for what God did. It is also looking FORWARD with TRUST in what God has PROMISED to do.
-
-<!-- wbl-text:0689 -->
-Listen carefully. The same God who saved you yesterday is the same God who has made promises about tomorrow. Look at verse 7 again. Paul ends the gospel with this beautiful word: "heirs according to the HOPE of eternal life." Hope. In the Bible, hope is not a wish. It is not crossing your fingers. Hope is a PROMISE FROM GOD that you can count on.
-
-<!-- wbl-text:0693 -->
-So here is the secret of the life God gives to people with regenerated hearts:
-
-<!-- wbl-text:0694 -->
-We look
-
-<!-- wbl-text:0695 -->
-BACKWARD
-
-<!-- wbl-text:0698 -->
-gratitude
-
-<!-- wbl-text:0699 -->
-.
-
-<!-- wbl-text:0700 -->
-AND we look
-
-<!-- wbl-text:0701 -->
-FORWARD
-
-<!-- wbl-text:0704 -->
-faith
-
-<!-- wbl-text:0705 -->
-.
-
-<!-- wbl-text:0706 -->
-Gratitude looks back. Faith looks forward. Both together make the Christian life go.
-
-<!-- wbl-text:0712 -->
-[PAUSE. Let one beat of silence go by before moving on.]
-
-<!-- wbl-text:0719 -->
-Who are the outsiders in your week?
-
-<!-- wbl-text:0720 -->
-A classmate who is mean or who makes fun of people who love Jesus
-
-<!-- wbl-text:0721 -->
-The guard at the mall or at school who barks orders
-
-<!-- wbl-text:0722 -->
-A driver who cut you off
-
-<!-- wbl-text:0723 -->
-A teacher who is grumpy
-
-<!-- wbl-text:0724 -->
-A helper at home you take for granted
-
-<!-- wbl-text:0725 -->
-The new kid nobody sits with
-
-<!-- wbl-text:0726 -->
-A neighbor who never smiles
-
-<!-- wbl-text:0727 -->
-A cranky relative
-
-<!-- wbl-text:0728 -->
-A kid who has a different religion than you
-
-<!-- wbl-text:0732 -->
-Pair-Up Activity
-
-<!-- wbl-text:0733 -->
-I'm going to pair you up. Each pair gets one of Paul's seven commands. You have 3 minutes. Come up with ONE real example of what that command looks like, toward a REAL outsider in your life, this week.
-
-<!-- wbl-text:0734 -->
-Here are the seven commands again. Pick or I'll assign:
-
-<!-- wbl-text:0735 -->
-Submissive to rulers and authorities (teachers, guards, government)
-
-<!-- wbl-text:0736 -->
-Obedient (real obedience, even when you disagree)
-
-<!-- wbl-text:0737 -->
-Ready for every good work (helping without being asked)
-
-<!-- wbl-text:0738 -->
-Speak evil of no one (no trash talk, especially about people who don't yet believe in Jesus)
-
-<!-- wbl-text:0739 -->
-Avoid quarreling (walk away from dumb fights)
-
-<!-- wbl-text:0740 -->
-Be gentle (soft, not rough)
-
-<!-- wbl-text:0741 -->
-Show perfect courtesy toward all people (the guard, the driver, the cafeteria worker, the new kid)
-
-<!-- wbl-text:0742 -->
-[PAUSE. 3 minutes. Walk around. Listen in. Help them get specific.]
-
-<!-- wbl-text:0743 -->
-[Each pair shares one example.]
-
-<!-- wbl-text:0744 -->
-Notice something amazing. None of these are about being religious. Paul doesn't say people who love Jesus should sing louder songs or pray longer prayers in public. He says people who have been born again should be GENTLE. COURTEOUS. READY TO HELP. Because that is what adorns the gospel in a world full of outsiders.
-
-<!-- wbl-text:0745 -->
-And the gospel motive is always the same. You don't do this to earn Jesus' love. You do it because Jesus already loves you, by mercy, through Jesus Christ our Savior.
-
-<!-- wbl-text:0750 -->
-Grab your index cards and markers. We are going to write one sentence that holds this whole lesson together.
-
-<!-- wbl-text:0751 -->
-Ready? Here it is:
-
-<!-- wbl-text:0754 -->
-"He saved us, not because of works done by us in righteousness, but according to his own mercy."
-
-<!-- wbl-text:0755 -->
-Write it on your card. In YOUR handwriting.
-
-<!-- wbl-text:0756 -->
-Now on three, everyone say it with me.
-
-<!-- wbl-text:0757 -->
-One, two, three:
-
-<!-- wbl-text:0758 -->
-"He saved us, not because of works done by us in righteousness, but according to his own mercy."
-
-<!-- wbl-text:0759 -->
-[Say it 3 times: loud, medium, whisper.]
-
-<!-- wbl-text:0760 -->
-Put this card somewhere you'll see it every day this week. Your mirror. Your desk. Inside your school notebook. When a classmate is mean to you, read it. When you don't want to be kind to the guard, read it. When you feel proud of how good you've been, read it. This sentence will come back and find you when you need it.
-
-<!-- wbl-text:0761 -->
-Closing Prayer
-
-<!-- wbl-text:0763 -->
-Let's pray.
-
-<!-- wbl-text:0764 -->
-"Father, thank you that you are good and loving and kind. Thank you that you appeared to us in Jesus our Savior. We confess that we were once foolish, and disobedient, and envious. We could not save ourselves. BUT you had mercy on us. You washed us. You made us new. You poured out your Spirit on us richly. You made us heirs.
-
-<!-- wbl-text:0765 -->
-This week, help us to live as people who remember what you did. Help us to be gentle with the people who are hard to love. Help us to be courteous to the guard and the helper and the new kid and the classmate who doesn't know you. Not because they earned it. But because you gave us mercy we didn't earn.
-
-<!-- wbl-text:0766 -->
-And when our hearts forget, bring us back to Titus 3:5. In Jesus' name, Amen."
-
-<!-- wbl-text:0767 -->
-Grace be with you all.
-
-<!-- wbl-text:0771 -->
-The focus Lala chose:
-
-<!-- wbl-text:0781 -->
-Why "outsiders" is the right framing:
-
-<!-- wbl-text:0797 -->
-Mirror v.3 (4)
-
-<!-- wbl-text:0811 -->
-Summary v.8 (1)
-
-<!-- wbl-text:0826 -->
-Cut priorities if running long:
-
-<!-- wbl-text:0827 -->
-Move 3 entirely (saves 2 min)
-
-<!-- wbl-text:0828 -->
-Trim Move 4 to 1 min (just re-read v.5 with a 10-sec silence)
-
-<!-- wbl-text:0829 -->
-Move 5 shortened to 1 example per pair, not a round of sharing (saves 3 min)
-
-<!-- wbl-text:0832 -->
-The gospel summary + testimony are now a non-negotiable core together. Your testimony IS the gospel in the first person for them; it lands where abstract theology alone cannot reach. If you must walk out at the 50-min mark, end on Titus 3:5 after you've explained the gospel and testified. That is the lesson succeeding.
-
-<!-- wbl-text:0841 -->
-Teaching order vs. text order (important):
-
-<!-- wbl-text:0852 -->
-Characters to introduce fresh:
-
-<!-- wbl-text:0853 -->
-Paul + Titus in Move 1. Lazarus + Nicodemus in Move 2 (when teaching regeneration). Plus the place: Crete in Move 1.
-
-<!-- wbl-text:0854 -->
-Big-word glossary (keep open during teaching):
-
-<!-- wbl-text:0855 -->
-apostle, submissive, obedient, quarreling, gentle, courtesy, foolish, led astray, slaves to passions, malice, envy, goodness, loving kindness, Savior, appeared, mercy, regeneration, born again, regenerated heart, Christian (= person who has been born again), Holy Spirit, poured out richly, justified, grace, heir, eternal life, adorn (from Titus 2:10), devote, trustworthy.
-
-<!-- wbl-text:0856 -->
-Word swaps for clarity:
-
-<!-- wbl-text:0857 -->
-Throughout this script, the word "Christian" has been replaced (except where defined in Move 2) with clearer phrases like "people who love Jesus" / "people who have been born again" / "people with regenerated hearts." Reason: 10-to-12 year olds can hear "Christian" as "person who goes to church" rather than "person whose heart God has made alive." We teach them what Scripture actually means by the word.
-
-<!-- wbl-text:0858 -->
-The THREE theological moves that MUST land:
-
-<!-- wbl-text:0859 -->
-The FOR hinge.
-
-<!-- wbl-text:0863 -->
-The Gospel + How Regeneration Happens.
-
-<!-- wbl-text:0864 -->
-Kids hear the gospel stated plainly (God is holy, we sinned, Jesus lived / died / rose, we believe and turn) and understand that regeneration is what HAPPENS when we believe. This is new ground for a 10-to-12 year old in their spiritual vocabulary.
-
-<!-- wbl-text:0865 -->
-Gratitude + Faith in Future Grace (Move 4).
-
-<!-- wbl-text:0868 -->
-Future Grace
-
-<!-- wbl-text:0890 -->
-Date Taught
-
-<!-- wbl-text:0891 -->
-YYYY-MM-DD
-
-<!-- wbl-text:0892 -->
-Children Present
-
-<!-- wbl-text:0893 -->
-Names or count. Note any first-time visitors.
-
-<!-- wbl-text:0894 -->
-What Landed
-
-<!-- wbl-text:0895 -->
-Which moves or phrases woke them up? Which moment did the room go quiet? Where did eyes light up?
-
-<!-- wbl-text:0896 -->
-What Didn't Land
-
-<!-- wbl-text:0897 -->
-Where did they drift? Which definition missed? Which cue felt flat? Be honest with yourself.
-
-<!-- wbl-text:0898 -->
-Questions They Asked
-
-<!-- wbl-text:0899 -->
-Exact words if you can remember. The questions are gold for next time.
-
-<!-- wbl-text:0900 -->
-Adjustments for Next Teaching
-
-<!-- wbl-text:0901 -->
-Cut what? Add what? Reorder what? Shorten Move 1 by two minutes?
-
-<!-- wbl-text:0904 -->
-What the children asked prayer for. What you prayed over them. Any promptings from the Spirit to follow up on.
-
-<!-- wbl-text:0905 -->
-A Sentence on My Own Heart
-
-<!-- wbl-text:0906 -->
-Did I teach from delight or duty? What did the Lord show me while teaching? Where do I need his mercy this week?
-
-<!-- wbl-text:0911 -->
-"The Word of God Increases When His People Serve in Their Right Place"
-
-<!-- wbl-text:0912 -->
-This Lesson
-
-<!-- wbl-text:0913 -->
-Lesson Top
-
-<!-- wbl-text:0916 -->
-Before We Start
-
-<!-- wbl-text:0954 -->
-Closing Prayer
-
-<!-- wbl-text:0956 -->
-Materials
-
-<!-- wbl-text:0959 -->
-Feedback Records
-
-<!-- wbl-text:0960 -->
-log after each Sunday
-
-<!-- wbl-text:0968 -->
-"The Word of God Increases When His People Serve in Their Right Place"
-
-<!-- wbl-text:0969 -->
+<!-- wbl-text:0473 -->
 Read-aloud script for Lala. Internalize, then set down. Deliver in your own voice. Pause where marked.
 
-<!-- wbl-text:0970 -->
+<!-- wbl-text:0474 -->
 A Word on Order
 
-<!-- wbl-text:0971 -->
+<!-- wbl-text:0475 -->
 The teaching order matters. We
 
-<!-- wbl-text:0972 -->
+<!-- wbl-text:0476 -->
 READ
 
-<!-- wbl-text:0975 -->
+<!-- wbl-text:0479 -->
 UNPACK
 
-<!-- wbl-text:0980 -->
-The whole story is built to land on verse 7. Verse 7 is the prize.
+<!-- wbl-text:0483 -->
+Paul's logic, not his sentence order, carries the lesson.
 
-<!-- wbl-text:0981 -->
+<!-- wbl-text:0484 -->
 Before We Start
 
-<!-- wbl-text:0983 -->
+<!-- wbl-text:0486 -->
 Children, let me ask you a quick question.
 
-<!-- wbl-text:0984 -->
-Imagine a sari-sari store. The owner does everything alone. She is selling, she is cooking, she is cleaning, she is delivering. She is even chasing the kids who try to steal pandesal. By the end of the week, what happens to her store?
+<!-- wbl-text:0487 -->
+Who often tells you what to do?
 
-<!-- wbl-text:0985 -->
-She gets tired. She closes early. The food runs out. The customers in the back of the line never get fed. The store is supposed to serve the neighborhood, but it only serves the people in front.
+<!-- wbl-text:0488 -->
+Think about it for a second. On a normal day, from when you wake up to when you go to bed, how many people tell you what to do? Your mom and dad tell you to brush your teeth. Your teacher tells you when to sit down. The guard at the mall tells you where to line up. Sometimes even your younger sibling tells you what to do, isn't it?
 
-<!-- wbl-text:0986 -->
-Now what changes if she finally trusts ONE good helper to handle the cooking? She has time to actually serve customers. The store does MORE, not less. Everyone gets fed.
+<!-- wbl-text:0489 -->
+Now here's a harder question. Do you LIKE being told what to do? Are you feeling happy to do what they say you must do?
 
-<!-- wbl-text:0987 -->
-Today we are going to read a story from the very early church, only a few months after Jesus rose from the dead. The church had a sari-sari store problem. The apostles were trying to do everything. People were getting missed. Listen to how they fixed it. Because the way they fixed it is the reason Luke wrote verse 7. The whole story is built to land on verse 7. Listen for verse 7.
+<!-- wbl-text:0490 -->
+I don't think any of us really do. Something inside us rises up and says, "You can't tell me what to do. You're not my boss."
 
-<!-- wbl-text:0988 -->
+<!-- wbl-text:0491 -->
+Here is what we are going to find out today. Paul wrote a letter that tells people who love Jesus that we should be GENTLE and COURTEOUS and READY TO HELP, even toward people who aren't nice, even toward people who don't love Jesus. That sounds hard. Maybe impossible. So he tells us WHY. He tells us what God did to us on the inside that makes it possible. It's the most beautiful thing in the Bible. Let's find it.
+
+<!-- wbl-text:0492 -->
 [PAUSE. Small show of hands: "Ready to meet some new friends from the Bible?"]
 
-<!-- wbl-text:0993 -->
-Before we read, let me tell you who is in this story.
+<!-- wbl-text:0497 -->
+Before we read, let me tell you about the people.
 
-<!-- wbl-text:0994 -->
-Meet Luke.
+<!-- wbl-text:0498 -->
+Meet Paul.
 
-<!-- wbl-text:0997 -->
-Meet the early church in Jerusalem.
+<!-- wbl-text:0499 -->
+Paul is the man who wrote this letter. Here is something wild about Paul. Before he knew Jesus, Paul actually HATED Christians. He put them in jail. He agreed when they got killed. He thought he was doing God a favor. Then one day he was walking on a road to a city called Damascus, and the risen Jesus appeared to him in a bright light and said, "Paul, why are you hurting my people?" In that moment, Paul's whole life changed. He went from hunting Christians to becoming the bravest missionary in the Bible. He traveled across the Roman Empire, starting churches and writing long letters to help people follow Christ. Many of those letters are in our New Testament. Titus is one of them.
 
-<!-- wbl-text:1001 -->
-Meet two groups of Christians inside the church.
+<!-- wbl-text:0500 -->
+Meet Titus.
 
-<!-- wbl-text:1002 -->
-One group is the
+<!-- wbl-text:0503 -->
+Meet Crete.
 
-<!-- wbl-text:1003 -->
-Hellenists
+<!-- wbl-text:0504 -->
+Crete is an island. You can google it on a map later. It is in the Mediterranean Sea, south of Greece. The people who lived in Crete had a pretty bad reputation. Paul even quotes one of their own writers in chapter 1, who wrote, "Cretans are always liars, evil beasts, lazy gluttons." Rough place. Into that rough place, Paul planted a church. Then he left Titus in charge. This letter is Paul helping Titus figure out how those new Christians should LIVE in that rough place, around rough people.
 
-<!-- wbl-text:1006 -->
-Hebrews
+<!-- wbl-text:0505 -->
+Okay. Open your Bibles to Titus chapter 3. We are going to read verses 1 through 8. I will read, you follow along with your finger. Listen for four things:
 
-<!-- wbl-text:1007 -->
-. The Hebrews were Jewish Christians who grew up in Israel speaking Aramaic, the local language. Same Jesus. Same gospel. Same church. Different language. Different culture. A bit like if your IBCM church had a Tagalog group and a Korean group inside the same building.
+<!-- wbl-text:0508 -->
+What Paul says we USED to be like (v.3).
 
-<!-- wbl-text:1008 -->
-Now in any group of human beings, what happens when you mix two cultures? Sometimes one group feels left out. That is what happens here. Listen for it.
+<!-- wbl-text:0511 -->
+What Paul wants Titus to keep reminding people about (v.8).
 
-<!-- wbl-text:1009 -->
-Open your Bibles to Acts chapter 6. We are going to read verses 1 through 7. I will read, you follow along with your finger. Listen for FOUR things:
+<!-- wbl-text:0516 -->
+"Remind them to be submissive to rulers and authorities, to be obedient, to be ready for every good work, to speak evil of no one, to avoid quarreling, to be gentle, and to show perfect courtesy toward all people. For we ourselves were once foolish, disobedient, led astray, slaves to various passions and pleasures, passing our days in malice and envy, hated by others and hating one another. But when the goodness and loving kindness of God our Savior appeared, he saved us, not because of works done by us in righteousness, but according to his own mercy, by the washing of regeneration and renewal of the Holy Spirit, whom he poured out on us richly through Jesus Christ our Savior, so that being justified by his grace we might become heirs according to the hope of eternal life. The saying is trustworthy, and I want you to insist on these things, so that those who have believed in God may be careful to devote themselves to good works. These things are excellent and profitable for people."
 
-<!-- wbl-text:1010 -->
-The PROBLEM in the church (v.1).
+<!-- wbl-text:0517 -->
+[PAUSE. "One quick question before we go deeper. Did you notice the word FOR at the start of verse 3? That little word is doing a huge job. It's the hinge between what Christians DO and WHY we can do it. Keep that in mind."]
 
-<!-- wbl-text:1015 -->
-The HARVEST God gave at the end (v.7). This is the climax. Listen for what happens to the WORD OF GOD.
+<!-- wbl-text:0528 -->
+Paul says: "For we ourselves were ONCE foolish, disobedient, led astray, slaves to various passions and pleasures, passing our days in malice and envy, hated by others and hating one another."
 
-<!-- wbl-text:1020 -->
-"Now in these days when the disciples were increasing in number, a complaint by the Hellenists arose against the Hebrews because their widows were being neglected in the daily distribution. And the twelve summoned the full number of the disciples and said, 'It is not right that we should give up preaching the word of God to serve tables. Therefore, brothers, pick out from among you seven men of good repute, full of the Spirit and of wisdom, whom we will appoint to this duty. But we will devote ourselves to prayer and to the ministry of the word.' And what they said pleased the whole gathering, and they chose Stephen, a man full of faith and of the Holy Spirit, and Philip, and Prochorus, and Nicanor, and Timon, and Parmenas, and Nicolaus, a proselyte of Antioch. These they set before the apostles, and they prayed and laid their hands on them. And the word of God continued to increase, and the number of the disciples multiplied greatly in Jerusalem, and a great many of the priests became obedient to the faith."
+<!-- wbl-text:0529 -->
+Notice something important. Paul does not say "YOU were all these things." He says "WE were." He puts himself in the mirror first. Every human being, apart from Jesus, is like this on the inside.
 
-<!-- wbl-text:1029 -->
-Luke wrote these verses in a certain order, and that order is good. But I want to walk through them in FOUR parts so you can see how the story works. The PROBLEM, the WISDOM, the GRACE, and the HARVEST.
+<!-- wbl-text:0530 -->
+Let me define the hard words.
 
-<!-- wbl-text:1034 -->
-Verse 1 says: "Now in these days when the disciples were increasing in number, a complaint by the Hellenists arose against the Hebrews because their widows were being neglected in the daily distribution."
+<!-- wbl-text:0531 -->
+Foolish
 
-<!-- wbl-text:1035 -->
-Notice the words "increasing in number." The church was GROWING. That is good. But growth is messy. When the church was small, everybody knew everybody. The apostles could see every widow, every family, every need. As soon as the church grew bigger, somebody got missed. And that somebody was the Hellenist widows. The Greek-speaking widows. The minority. Probably the quietest voices in the room.
+<!-- wbl-text:0532 -->
+means not wise. Believing silly things. Chasing things that don't last.
 
-<!-- wbl-text:1036 -->
-Now here is something important. The Hebrews were not bad people. They were not trying to neglect anybody. They were busy. The apostles were not lazy. They were stretched thin. But the result was still the same. Widows were going hungry.
+<!-- wbl-text:0533 -->
+Led astray
 
-<!-- wbl-text:1042 -->
-"It is not right that we should give up preaching the word of God to serve tables."
+<!-- wbl-text:0534 -->
+means following the wrong crowd, walking away from what is true.
 
-<!-- wbl-text:1043 -->
-Wait. The apostles said NO to waiting tables? Was that selfish?
+<!-- wbl-text:0535 -->
+Slaves to passions
 
-<!-- wbl-text:1044 -->
-No. Listen carefully. The apostles did not say feeding widows is unimportant. They said feeding widows is so important that it must be done by the right people, in the right way, by men full of the Spirit. But it cannot be done by US, the apostles, because if we abandon prayer and the ministry of the word, the WHOLE church will collapse. The Word of God is the engine of the whole thing. If we get pulled off the Word, the church loses its life.
+<!-- wbl-text:0536 -->
+means your feelings were your boss. Whatever you felt like doing, you did.
 
-<!-- wbl-text:1045 -->
-Sometimes the most loving thing a leader can do is refuse a good job that is not their job. The apostles knew their place. Their place was prayer and the Word. The widows needed feeding. Both were good. Both were needed. But not both for the same people.
+<!-- wbl-text:0537 -->
+Malice
 
-<!-- wbl-text:1050 -->
-Verse 3: "Therefore, brothers, pick out from among you seven men of good repute, full of the Spirit and of wisdom, whom we will appoint to this duty."
+<!-- wbl-text:0538 -->
+means wanting BAD things to happen to someone else.
 
-<!-- wbl-text:1051 -->
-Three things the seven men had to be. Let me show you each one.
+<!-- wbl-text:0539 -->
+Envy
 
-<!-- wbl-text:1052 -->
-Of good repute.
+<!-- wbl-text:0540 -->
+means being angry that someone else has what you want.
 
-<!-- wbl-text:1053 -->
-Repute means reputation. Good repute means people speak well of you because of how you live. Not famous. Not loud. Not popular. Just trusted. The kind of person who is the same in private as in public. The kind of kid the teacher trusts to lock the classroom. The kind of person whose word you can count on.
+<!-- wbl-text:0541 -->
+[PAUSE. Look around the room. Soft voice.] "I want you to be honest for a moment. Have you felt ANY of these this week? Envy when your friend got a new phone? Malice when your sister messed up your things? Led astray when the group at school convinced you to do something you knew was wrong? Just notice it. Don't say it out loud. But notice that Paul is not making this up. This is us."
 
-<!-- wbl-text:1054 -->
-Full of the Spirit.
+<!-- wbl-text:0542 -->
+That is the mirror. Now we turn the page.
 
-<!-- wbl-text:1055 -->
-Full of the Holy Spirit. Born again. The Spirit poured out on them, like Titus 3 talked about. Their HEART belongs to Jesus, not just their reputation.
+<!-- wbl-text:0547 -->
+Verse 4 begins with the most beautiful word in the Bible. BUT.
 
-<!-- wbl-text:1056 -->
-Full of wisdom.
+<!-- wbl-text:0548 -->
+"BUT when the goodness and loving kindness of God our Savior appeared, he saved us..."
 
-<!-- wbl-text:1057 -->
-Wisdom means knowing what to do in real life when the rules don't tell you. Wisdom is what makes a teacher know when to be strict and when to be soft. Wisdom is what makes a parent know when to talk and when to listen. Wisdom is the Bible's word for skill in living.
+<!-- wbl-text:0549 -->
+Everything changes on that word BUT. Let's unpack it.
 
-<!-- wbl-text:1061 -->
-[Wait. Let them try answers. The right answer is below.]
+<!-- wbl-text:0552 -->
+Now verse 5 is the key verse of the whole lesson. Listen very carefully.
 
-<!-- wbl-text:1062 -->
-Here is why, children. Because in the church of Jesus, there is NO SMALL JOB. Every service in the church, from preaching the gospel to washing the dishes, is a witness to Jesus. The widow who finally gets her food sees Jesus through the kindness of the man who hands her the bowl. The cook in the church kitchen is a missionary at the stove. There is no menial work in the body of Christ. That is why even table-service requires Spirit-filled, well-reputed people.
+<!-- wbl-text:0553 -->
+"He saved us, NOT because of works done by us in righteousness..."
 
-<!-- wbl-text:1063 -->
-Now verse 4. The apostles say: "But we will devote ourselves to prayer and to the ministry of the word."
+<!-- wbl-text:0556 -->
+"...but according to his own MERCY, by the washing of REGENERATION and renewal of the Holy Spirit."
 
-<!-- wbl-text:1064 -->
-That word DEVOTE is strong. It means I will give my whole self to this. I will not be pulled off it. I will not let other things take its place. The apostles devote themselves to TWO things: prayer, and the ministry of the word. Talking to God, and bringing God's word to people. Up and down. Down and up. That is the heartbeat of every faithful church leader, then and now. The pastors and elders at IBCM today answer to this same Acts 6:4 standard.
+<!-- wbl-text:0557 -->
+Three big words here. Let me define them.
 
-<!-- wbl-text:1069 -->
-Verse 5: "And what they said pleased the whole gathering, and they chose Stephen, a man full of faith and of the Holy Spirit, and Philip, and Prochorus, and Nicanor, and Timon, and Parmenas, and Nicolaus, a proselyte of Antioch."
+<!-- wbl-text:0558 -->
+Mercy
 
-<!-- wbl-text:1070 -->
-Read those seven names again with me. Slowly.
+<!-- wbl-text:0559 -->
+means not getting the punishment we deserved. Imagine your mom told you not to play with her vase, but you did not follow her, you played with it while she was not looking, then, you broke your mom's favorite vase, and you expected her to be angry, but instead she said, "I forgive you. Let's have ice cream." That is a tiny picture of mercy. God had every right to punish us for being foolish and disobedient. Instead, he saved us. That is mercy.
 
-<!-- wbl-text:1071 -->
-Stephen. Philip. Prochorus. Nicanor. Timon. Parmenas. Nicolaus.
+<!-- wbl-text:0560 -->
+Regeneration
 
-<!-- wbl-text:1074 -->
-Now think about this. The complaint came from the Hellenists, the Greek-speakers. The minority. Their widows were being missed. And what did the church do? They chose seven men with Greek names. They lifted up the very people who had complained. They put the wounded in charge of the wound.
+<!-- wbl-text:0566 -->
+That is a picture of what God does inside a person when he saves them.
 
-<!-- wbl-text:1075 -->
-That, children, is GRACE in church politics. The Hebrew majority did not say to the Hellenists, "Stop complaining. We are doing the best we can." They did not silence them. They did not push them down. They said, "Here. Take leadership. You see the problem better than we do. Lead the fix." That is what Jesus does in his church. He lifts up the wounded. He does not shame them quiet.
+<!-- wbl-text:0571 -->
+That is what Paul is describing in verse 3. Foolish. Disobedient. Slaves to our feelings. That is what a spiritually dead heart looks like from the outside.
 
-<!-- wbl-text:1076 -->
-Verse 6 says: "These they set before the apostles, and they prayed and laid their hands on them."
+<!-- wbl-text:0572 -->
+So how does a spiritually dead person become alive? How does regeneration actually happen?
 
-<!-- wbl-text:1077 -->
-Praying. Laying on of hands. This is the church taking the seven men seriously. Setting them apart. Asking God to bless their work. Blessing them publicly so the whole church knew who they were and what they were doing.
+<!-- wbl-text:0583 -->
+Jesus once told a man named Nicodemus, late at night, "You must be born again." Nicodemus was a religious teacher who came to Jesus in secret because he wanted to know the truth. Jesus did not tell him, "Try harder. Clean up a little." Jesus told him, "You need totally new life, and only I can give it." That is regeneration. That is what verse 5 is talking about.
 
-<!-- wbl-text:1081 -->
-Verse 7. The whole story has been building to this. Listen carefully.
+<!-- wbl-text:0584 -->
+And here is the beautiful next thing. The moment God gives a person this new life, he also sends Someone to live INSIDE that person. Read with me into verse 6: "...whom he poured out on us richly through Jesus Christ our Savior..."
 
-<!-- wbl-text:1084 -->
-"And the word of God continued to increase, and the number of the disciples multiplied greatly in Jerusalem, and a great many of the priests became obedient to the faith."
+<!-- wbl-text:0585 -->
+Who is the "whom"? The
 
-<!-- wbl-text:1085 -->
-Three things happened. Watch them stack up.
+<!-- wbl-text:0586 -->
+Holy Spirit
 
-<!-- wbl-text:1086 -->
-One. The word of God continued to INCREASE.
+<!-- wbl-text:0589 -->
+Notice HOW the Spirit comes to us. Verse 6 says God poured him out RICHLY through Jesus Christ our Savior. Not a drop. Not a measured teaspoon. A FLOOD. God is generous with his Spirit. If you belong to Jesus, you are not alone. You have God himself living inside you, helping you live this new life.
 
-<!-- wbl-text:1087 -->
-Now I want you to look at that sentence in your Bible. WHO is the subject of the sentence? Who is doing the increasing?
+<!-- wbl-text:0590 -->
+And verse 7 finishes the thought: "so that being JUSTIFIED by his GRACE we might become HEIRS according to the hope of eternal life."
 
-<!-- wbl-text:1088 -->
-[Wait. Let them search.]
+<!-- wbl-text:0591 -->
+Three more words.
 
-<!-- wbl-text:1089 -->
-The Word of God itself. Not the apostles. Not the seven men. The WORD. Luke does not write, "and the apostles increased the Word." He writes, "the WORD OF GOD continued to increase." The Word does the increasing. The Word is the subject. The Word is alive.
+<!-- wbl-text:0592 -->
+Justified
 
-<!-- wbl-text:1090 -->
-Children, I want you to feel this. The Bible is not just sentences on a page. The Bible is the living voice of God. When the Word is preached and read and obeyed, the Word does what God sends it to do. There is a verse in Isaiah 55 that says God's word "shall not return to me empty, but it shall accomplish that which I purpose, and shall succeed in the thing for which I sent it." The Word always works. We don't make it work. We just clear the runway. And the Word flies.
+<!-- wbl-text:0593 -->
+means God the Judge bangs his gavel in the courtroom of heaven and says, "Not guilty. Case dismissed." Why? Because Jesus already paid for the crime. People who are born again do not stand before God hoping for a tie. We stand justified.
 
-<!-- wbl-text:1091 -->
-Two. The number of disciples multiplied GREATLY.
+<!-- wbl-text:0594 -->
+Grace
 
-<!-- wbl-text:1092 -->
-Not just grew. Multiplied. Not by addition. By multiplication. The church was already huge in chapter 6 verse 1. Now Luke says it MULTIPLIED. From thousands to maybe tens of thousands. From a Jerusalem problem to a Jerusalem revival.
+<!-- wbl-text:0595 -->
+means a gift you did not earn and cannot repay.
 
-<!-- wbl-text:1093 -->
-Three. And a great many of the PRIESTS became obedient to the faith.
+<!-- wbl-text:0596 -->
+Heir
 
-<!-- wbl-text:1094 -->
-Stop on this one. Who are the priests? The priests were the religious leaders of the temple. Remember chapters 4 and 5? In Acts chapter 4, the priests had ARRESTED Peter and John for preaching about Jesus. In chapter 5, they arrested the apostles AGAIN and beat them. The priests were the enemies of the church. The priests were the very men who had handed Jesus over to be crucified just a few months before.
+<!-- wbl-text:0598 -->
+[PAUSE. Slow breath. Look at them.] "Just sit with that for a second. We were foolish. We were envious. We did not deserve anything. BUT the goodness and loving kindness of God appeared. He saved us by mercy. He made us new. He poured out his Spirit. And he made us heirs. That is the gospel. That is the middle of this lesson."
 
-<!-- wbl-text:1095 -->
-And now? "A GREAT MANY of the priests became obedient to the faith."
+<!-- wbl-text:0619 -->
+And God did exactly what Titus 3:5 says. He washed me. He made me NEW. He poured out his Holy Spirit in my heart. He made me an HEIR.
 
-<!-- wbl-text:1096 -->
-The men who killed Jesus were coming to faith in Jesus.
+<!-- wbl-text:0620 -->
+Now let me tell you something else. I am STILL sick. My body still hurts. Sometimes I cannot stand for days because of pain in my back. Sometimes I have bleeding in my brain. The pain has not gone away.
 
-<!-- wbl-text:1097 -->
-How? How did the priests, the hardest hearts in Jerusalem, end up bowing the knee to the Christ they had crucified?
+<!-- wbl-text:0621 -->
+But I am not afraid anymore. I am not ashamed of who I am. I do not think God made a mistake. Because when I look at my life now, I see this: God was holding on to me the whole time, even when I didn't know it.
 
-<!-- wbl-text:1098 -->
-The answer is right there in the verse. The Word of God increased. The Word, set free by faithful order in the church, broke through the hardest hearts in the city.
+<!-- wbl-text:0622 -->
+[Lock your forearms together and show them.]
 
-<!-- wbl-text:1101 -->
-[PAUSE. Slow breath. Look at them.] "Sit with that for a second. The same Word that converted the priests in Acts 6:7 is the Word we are reading right now. It is alive. It is at work. It is the most valuable thing in this room."
+<!-- wbl-text:0623 -->
+Like arms locked together. Even when I was about to fall, God was holding on. He was saying, "I will not let go."
 
-<!-- wbl-text:1105 -->
-Optional 2-minute personal moment. Pick one of these prompts and tell the children a real story from your own life:
+<!-- wbl-text:0628 -->
+Listen for it, children. He is calling. Don't miss it.
 
-<!-- wbl-text:1112 -->
-Speak from memory, not paper. Lock arms at the right beat. Tears are okay. End with something like: "...and that is why this story in Acts 6 is not just history. The Word of God is still increasing. He is still using small obediences to grow big stories. He may be doing it in you right now."
+<!-- wbl-text:0633 -->
+Now go back up to verses 1 and 2. NOW it makes sense.
 
-<!-- wbl-text:1117 -->
+<!-- wbl-text:0634 -->
+Paul says: "Remind them to be submissive to rulers and authorities, to be obedient, to be ready for every good work, to speak evil of no one, to avoid quarreling, to be gentle, and to show perfect courtesy toward all people."
+
+<!-- wbl-text:0637 -->
+Let me define the words quickly.
+
+<!-- wbl-text:0638 -->
+Submissive
+
+<!-- wbl-text:0639 -->
+means putting yourself UNDER someone's authority, even if they don't believe in Jesus.
+
+<!-- wbl-text:0640 -->
+Obedient
+
+<!-- wbl-text:0641 -->
+means actually doing what they ask.
+
+<!-- wbl-text:0642 -->
+Ready for every good work
+
+<!-- wbl-text:0645 -->
+Speak evil of no one
+
+<!-- wbl-text:0648 -->
+Avoid quarreling
+
+<!-- wbl-text:0649 -->
+means don't pick fights with words.
+
+<!-- wbl-text:0650 -->
+Gentle
+
+<!-- wbl-text:0651 -->
+means soft, not rough.
+
+<!-- wbl-text:0652 -->
+Courtesy
+
+<!-- wbl-text:0653 -->
+means polite, respectful.
+
+<!-- wbl-text:0661 -->
+Verse 8 ties it all together. "The saying is trustworthy, and I want you to insist on these things, so that those who have believed in God may be careful to devote themselves to good works."
+
+<!-- wbl-text:0667 -->
+[PAUSE. "Any questions about what we just walked through? Anything that didn't make sense?"]
+
+<!-- wbl-text:0672 -->
 Let's be honest for a minute.
 
-<!-- wbl-text:1118 -->
-Luke makes three big claims in verse 7. Let's test them.
+<!-- wbl-text:0673 -->
+Paul makes two big claims in these verses. Let's test them.
 
-<!-- wbl-text:1119 -->
+<!-- wbl-text:0674 -->
 Claim 1:
 
-<!-- wbl-text:1123 -->
+<!-- wbl-text:0675 -->
+We were all once foolish and envious before God saved us. Is that true? Have you felt ANY of those things in yourself this week? [Give 10 seconds of quiet.] Yeah. Paul's not exaggerating. He is telling the truth about the human heart.
+
+<!-- wbl-text:0676 -->
 Claim 2:
 
-<!-- wbl-text:1124 -->
-The Word converts even the hardest hearts. Is that true? Look at your own life. If you love Jesus today, who first heard about Jesus in your family? Who carried the Word into your home? Somebody, somewhere, was hard-hearted toward Jesus until the Word reached them. The Word converted the priests of Jerusalem who killed Jesus. The Word converted the apostle Paul who was hunting Christians to put them in jail. The Word converts the hardest hearts. There is no one too far gone for the Word.
+<!-- wbl-text:0677 -->
+God saves people by MERCY, not by works. Is that true? Here is the test. If salvation were earned by being good, then the BEST kid would have the BEST salvation. But Scripture says we all fall short, and that Jesus paid for ALL of it on the cross. That is why the gospel is good news. Good news is only good news if there was something we needed saving from. There was. There is. And he did.
 
-<!-- wbl-text:1125 -->
-Claim 3:
+<!-- wbl-text:0678 -->
+One more question. Is it actually possible to treat outsiders the way Paul says? Be gentle to rude people? Show courtesy to a guard who shouted at you? Help someone who doesn't believe in Jesus? On our own, no. But the Spirit was poured out on us richly (verse 6). That means we are not trying to obey on our own steam. God gave us power to live this way.
 
-<!-- wbl-text:1126 -->
-The Word grows when God's people serve in their right place. Is that true? Yes. Imagine the apostles had given up and started waiting tables themselves. The whole church would have lost prayer and the ministry of the word. The Word would have slowed. There would be no Acts 7. No Stephen sermon. No Acts 8. No Philip with the Ethiopian. No Acts 9. No Saul on the road to Damascus. We probably would not be sitting in this room today. The Word grew through the apostles staying on the Word and the seven men staying on the tables. Each in their right place.
+<!-- wbl-text:0679 -->
+This passage is true. It matches what we see in our own hearts. It matches the gospel Jesus preached. And it points us to a life we could never live on our own.
 
-<!-- wbl-text:1127 -->
-This passage is true. The Word is alive. The Word converts. The Word grows when God's people serve in their right place.
+<!-- wbl-text:0684 -->
+Close your eyes for ten seconds and listen to verse 5 one more time.
 
-<!-- wbl-text:1132 -->
-Two things this passage should make us feel.
+<!-- wbl-text:0685 -->
+"He saved us, not because of works done by us in righteousness, but according to his own mercy, by the washing of regeneration and renewal of the Holy Spirit."
 
-<!-- wbl-text:1133 -->
-First, the WORTH of the Word of God.
+<!-- wbl-text:0686 -->
+How does that make you feel?
 
-<!-- wbl-text:1134 -->
-If the apostles thought the ministry of the Word was so precious that it could not be left even for hungry widows, then the Word must be more valuable than we usually feel. Let me ask you something. How many minutes did you read the Bible this past week? How many minutes did you spend on TikTok or YouTube or video games? Be honest with yourself. Now think: which one increases the kingdom of God in your heart? Not which one is fun. Which one is worth more.
+<!-- wbl-text:0687 -->
+Relieved?
 
-<!-- wbl-text:1135 -->
-The Word of God is more valuable than the table. More valuable than the food. More valuable than the building. More valuable than the schedule. The men of good repute were chosen so the Word would not be crowded out. That tells us what the Word is worth.
+<!-- wbl-text:0688 -->
+Maybe. Because you don't have to perform your way to heaven.
 
-<!-- wbl-text:1136 -->
-The deepest believer is not the busiest believer. The deepest believer is the one most SATISFIED with God speaking to them through his Word.
+<!-- wbl-text:0689 -->
+Grateful?
 
-<!-- wbl-text:1137 -->
-Second, the UNHURRIED GOD.
+<!-- wbl-text:0690 -->
+Maybe. Because God did what you could not do.
 
-<!-- wbl-text:1138 -->
-Look at the story again. The widows were neglected. The church was about to split. The Word was about to slow. And what did God do? Did he panic? Did he abandon his church? Did he strike the apostles for being slow? No. He gave them, through the Spirit, the wisdom to organize themselves so that his Word could keep running. Then he made the Word increase anyway.
+<!-- wbl-text:0691 -->
+Loved?
 
-<!-- wbl-text:1142 -->
+<!-- wbl-text:0692 -->
+I hope so. Because a God of mercy is a God who loves sinners like us.
+
+<!-- wbl-text:0693 -->
+Now here is something many grown-up Christians miss, and I don't want you to miss it. Gratitude is good. Thanking God for what he has already done is right. But gratitude ALONE is not enough to power the Christian life. If the only reason you obey God is to pay him back for saving you, you will burn out. You cannot pay God back. He saved you by mercy, remember? Not by works.
+
+<!-- wbl-text:0694 -->
+So let me ask you: what makes a person ABLE to actually do what verses 1 and 2 say this week? Be gentle with a rude classmate? Help a grumpy guard? Speak well of the kid nobody sits with?
+
+<!-- wbl-text:0695 -->
+The answer is not only looking BACK with thanks for what God did. It is also looking FORWARD with TRUST in what God has PROMISED to do.
+
+<!-- wbl-text:0696 -->
+Listen carefully. The same God who saved you yesterday is the same God who has made promises about tomorrow. Look at verse 7 again. Paul ends the gospel with this beautiful word: "heirs according to the HOPE of eternal life." Hope. In the Bible, hope is not a wish. It is not crossing your fingers. Hope is a PROMISE FROM GOD that you can count on.
+
+<!-- wbl-text:0700 -->
+So here is the secret of the life God gives to people with regenerated hearts:
+
+<!-- wbl-text:0701 -->
+We look
+
+<!-- wbl-text:0702 -->
+BACKWARD
+
+<!-- wbl-text:0705 -->
+gratitude
+
+<!-- wbl-text:0706 -->
+.
+
+<!-- wbl-text:0707 -->
+AND we look
+
+<!-- wbl-text:0708 -->
+FORWARD
+
+<!-- wbl-text:0711 -->
+faith
+
+<!-- wbl-text:0712 -->
+.
+
+<!-- wbl-text:0713 -->
+Gratitude looks back. Faith looks forward. Both together make the Christian life go.
+
+<!-- wbl-text:0719 -->
 [PAUSE. Let one beat of silence go by before moving on.]
 
-<!-- wbl-text:1147 -->
-Here is where it gets concrete.
+<!-- wbl-text:0726 -->
+Who are the outsiders in your week?
 
-<!-- wbl-text:1150 -->
-Your life is a small story inside that biggest story. And here is the beautiful pattern in Acts 6. Look at the seven men in verse 5. Two of those names show up again later in Acts.
+<!-- wbl-text:0727 -->
+A classmate who is mean or who makes fun of people who love Jesus
 
-<!-- wbl-text:1151 -->
-Stephen
+<!-- wbl-text:0728 -->
+The guard at the mall or at school who barks orders
 
-<!-- wbl-text:1152 -->
-, in chapter 7, becomes the first Christian to die for Jesus. He looks up to heaven, sees the glory of God, and says, "Lord Jesus, receive my spirit." His face shines like the face of an angel.
+<!-- wbl-text:0729 -->
+A driver who cut you off
 
-<!-- wbl-text:1153 -->
-Philip
+<!-- wbl-text:0730 -->
+A teacher who is grumpy
 
-<!-- wbl-text:1154 -->
-, in chapter 8, runs alongside an Ethiopian official's chariot, explains the book of Isaiah, and baptizes him. The Ethiopian carries the gospel home to Africa.
+<!-- wbl-text:0731 -->
+A helper at home you take for granted
 
-<!-- wbl-text:1155 -->
-Both of those big-story moments started where? Verse 5. Waiting tables. Serving widows. The small story was the seedbed of the big story.
+<!-- wbl-text:0732 -->
+The new kid nobody sits with
 
-<!-- wbl-text:1156 -->
-That is your pattern too. Right now your right place may feel small. Your right place this week is being a kid who honors his parents, treats classmates well, learns the Word, helps without being asked. Nobody famous will see it. Maybe nobody will notice. But God is writing the small story into a bigger story. He is the author. We just write the small lines.
+<!-- wbl-text:0733 -->
+A neighbor who never smiles
 
-<!-- wbl-text:1157 -->
-Small-Story Card
+<!-- wbl-text:0734 -->
+A cranky relative
 
-<!-- wbl-text:1158 -->
-I'm going to give each of you a card. On the front, write your name and one SMALL-STORY ACT OF OBEDIENCE for this week. One thing nobody will probably see. Something a kid your age can really do by Tuesday.
+<!-- wbl-text:0735 -->
+A kid who has a different religion than you
 
-<!-- wbl-text:1159 -->
-Examples to get you started:
+<!-- wbl-text:0739 -->
+Pair-Up Activity
 
-<!-- wbl-text:1160 -->
-Say thank you to the helper at home, by name, every morning this week.
+<!-- wbl-text:0740 -->
+I'm going to pair you up. Each pair gets one of Paul's seven commands. You have 3 minutes. Come up with ONE real example of what that command looks like, toward a REAL outsider in your life, this week.
 
-<!-- wbl-text:1161 -->
-Sit with the kid nobody sits with at lunch on Monday.
+<!-- wbl-text:0741 -->
+Here are the seven commands again. Pick or I'll assign:
 
-<!-- wbl-text:1162 -->
-Memorize Acts 6:7 by Friday. The Word increases when it lives in hearts.
+<!-- wbl-text:0742 -->
+Submissive to rulers and authorities (teachers, guards, government)
 
-<!-- wbl-text:1163 -->
-Help one sibling without being asked.
+<!-- wbl-text:0743 -->
+Obedient (real obedience, even when you disagree)
 
-<!-- wbl-text:1164 -->
-Say good morning to the guard at school every day this week.
+<!-- wbl-text:0744 -->
+Ready for every good work (helping without being asked)
 
-<!-- wbl-text:1165 -->
-Speak well of one classmate behind their back when others are trash-talking.
+<!-- wbl-text:0745 -->
+Speak evil of no one (no trash talk, especially about people who don't yet believe in Jesus)
 
-<!-- wbl-text:1166 -->
-Pray for one pastor or Christian leader you know, every night this week.
+<!-- wbl-text:0746 -->
+Avoid quarreling (walk away from dumb fights)
 
-<!-- wbl-text:1167 -->
-On the back of the card, leave a blank space. The back is for the BIG STORY. That part is God's job. He writes that one.
+<!-- wbl-text:0747 -->
+Be gentle (soft, not rough)
 
-<!-- wbl-text:1168 -->
+<!-- wbl-text:0748 -->
+Show perfect courtesy toward all people (the guard, the driver, the cafeteria worker, the new kid)
+
+<!-- wbl-text:0749 -->
 [PAUSE. 3 minutes. Walk around. Listen in. Help them get specific.]
 
-<!-- wbl-text:1173 -->
-Out loud, who serves at IBCM that nobody usually notices? I'll write them on the board.
+<!-- wbl-text:0750 -->
+[Each pair shares one example.]
 
-<!-- wbl-text:1174 -->
-[They will name: cleaners, cooks, children's workers, sound team, deacons, security guard, the parents who set up chairs, the drivers who bring families. Write them all.]
+<!-- wbl-text:0751 -->
+Notice something amazing. None of these are about being religious. Paul doesn't say people who love Jesus should sing louder songs or pray longer prayers in public. He says people who have been born again should be GENTLE. COURTEOUS. READY TO HELP. Because that is what adorns the gospel in a world full of outsiders.
 
-<!-- wbl-text:1175 -->
-Pick one this week. Find them. Look them in the eye. Say thank you for serving God in your right place. Tell them Acts 6 is about them. The Word of God is increasing in IBCM because of people like you.
+<!-- wbl-text:0752 -->
+And the gospel motive is always the same. You don't do this to earn Jesus' love. You do it because Jesus already loves you, by mercy, through Jesus Christ our Savior.
 
-<!-- wbl-text:1176 -->
-You don't do this to earn Jesus' love. You do it because the Word of God has set you free, and you want to serve in your right place too. Your small story inside his big story.
-
-<!-- wbl-text:1181 -->
+<!-- wbl-text:0757 -->
 Grab your index cards and markers. We are going to write one sentence that holds this whole lesson together.
 
-<!-- wbl-text:1182 -->
+<!-- wbl-text:0758 -->
 Ready? Here it is:
 
-<!-- wbl-text:1185 -->
-"And the word of God continued to increase, and the number of the disciples multiplied greatly in Jerusalem."
+<!-- wbl-text:0761 -->
+"He saved us, not because of works done by us in righteousness, but according to his own mercy."
 
-<!-- wbl-text:1186 -->
+<!-- wbl-text:0762 -->
 Write it on your card. In YOUR handwriting.
 
-<!-- wbl-text:1187 -->
+<!-- wbl-text:0763 -->
 Now on three, everyone say it with me.
 
-<!-- wbl-text:1188 -->
+<!-- wbl-text:0764 -->
 One, two, three:
 
-<!-- wbl-text:1189 -->
-"And the word of God continued to increase, and the number of the disciples multiplied greatly in Jerusalem."
+<!-- wbl-text:0765 -->
+"He saved us, not because of works done by us in righteousness, but according to his own mercy."
 
-<!-- wbl-text:1190 -->
+<!-- wbl-text:0766 -->
 [Say it 3 times: loud, medium, whisper.]
 
-<!-- wbl-text:1191 -->
-Put this card somewhere you'll see it every day this week. Your mirror. Your desk. Inside your school notebook. When you feel small this week, read it. When the day at school feels meaningless, read it. When you wonder if your small story matters, read it. The Word of God is alive. It is still increasing. And every faithful kid who serves in their right place is part of that increase.
+<!-- wbl-text:0767 -->
+Put this card somewhere you'll see it every day this week. Your mirror. Your desk. Inside your school notebook. When a classmate is mean to you, read it. When you don't want to be kind to the guard, read it. When you feel proud of how good you've been, read it. This sentence will come back and find you when you need it.
 
-<!-- wbl-text:1192 -->
+<!-- wbl-text:0768 -->
 Closing Prayer
 
-<!-- wbl-text:1194 -->
+<!-- wbl-text:0770 -->
 Let's pray.
 
-<!-- wbl-text:1195 -->
-"Father, your Word is alive. You are building your church. The gates of hell will not prevail against it. We thank you that you are not anxious about us. You are calm. You are sovereign. You are at work.
+<!-- wbl-text:0771 -->
+"Father, thank you that you are good and loving and kind. Thank you that you appeared to us in Jesus our Savior. We confess that we were once foolish, and disobedient, and envious. We could not save ourselves. BUT you had mercy on us. You washed us. You made us new. You poured out your Spirit on us richly. You made us heirs.
 
-<!-- wbl-text:1196 -->
-We confess that we grumble like the Hellenists. We want the visible jobs, not the hidden ones. We let your Word become small in our hearts. We forget how valuable your Word is. Forgive us.
+<!-- wbl-text:0772 -->
+This week, help us to live as people who remember what you did. Help us to be gentle with the people who are hard to love. Help us to be courteous to the guard and the helper and the new kid and the classmate who doesn't know you. Not because they earned it. But because you gave us mercy we didn't earn.
 
-<!-- wbl-text:1197 -->
-Thank you for the seven men of good repute. Thank you that you converted even the priests who killed your Son. Thank you that the Word continues to increase in IBCM, in Manila, in our families, in our school.
+<!-- wbl-text:0773 -->
+And when our hearts forget, bring us back to Titus 3:5. In Jesus' name, Amen."
 
-<!-- wbl-text:1198 -->
-Make us children of good repute this week. Help us to serve in our right place. Help us to honor the hidden servants we have never thanked. Make your Word increase in us. In Jesus' name, Amen."
+<!-- wbl-text:0774 -->
+Grace be with you all.
 
-<!-- wbl-text:1199 -->
-The Word of God continues to increase. So do you.
-
-<!-- wbl-text:1203 -->
+<!-- wbl-text:0778 -->
 The focus Lala chose:
 
-<!-- wbl-text:1204 -->
-Verse 7 as the climax of the whole story. Everything before verse 7 (the complaint, the apostles' rule, the seven names, the laying on of hands) is the runway. Verse 7 is the takeoff. The lesson succeeds when the children walk out understanding that the WORD is the subject of verse 7 (the Word increases; we don't increase the Word) and that they have a place in that increase.
+<!-- wbl-text:0788 -->
+Why "outsiders" is the right framing:
 
-<!-- wbl-text:1205 -->
-Why the "small story / big story" framing matters:
+<!-- wbl-text:0804 -->
+Mirror v.3 (4)
 
-<!-- wbl-text:1208 -->
-Timing (60 min hard stop):
+<!-- wbl-text:0818 -->
+Summary v.8 (1)
 
-<!-- wbl-text:1240 -->
+<!-- wbl-text:0833 -->
 Cut priorities if running long:
 
-<!-- wbl-text:1247 -->
-Move 5 shortened: 2 min for the small-story card, 5 min for the hidden-servants honor roll.
+<!-- wbl-text:0834 -->
+Move 3 entirely (saves 2 min)
 
-<!-- wbl-text:1248 -->
-Never cut Part D in Move 2 or the carry-sentence card in Move 6.
+<!-- wbl-text:0835 -->
+Trim Move 4 to 1 min (just re-read v.5 with a 10-sec silence)
 
-<!-- wbl-text:1249 -->
-Verse 7 is the prize. The card is the takeaway. If you must walk out at the 50-min mark, end on Acts 6:7 in their handwriting.
+<!-- wbl-text:0836 -->
+Move 5 shortened to 1 example per pair, not a round of sharing (saves 3 min)
 
-<!-- wbl-text:1250 -->
-Companion materials
+<!-- wbl-text:0839 -->
+The gospel summary + testimony are now a non-negotiable core together. Your testimony IS the gospel in the first person for them; it lands where abstract theology alone cannot reach. If you must walk out at the 50-min mark, end on Titus 3:5 after you've explained the gospel and testified. That is the lesson succeeding.
 
-<!-- wbl-text:1251 -->
-(for Saturday-night prep, see the full Truth78 packet in Life-Dashboard):
+<!-- wbl-text:0848 -->
+Teaching order vs. text order (important):
 
-<!-- wbl-text:1252 -->
-personal-skills/ibc-sunday-school/lessons/acts-6-the-word-increases/lesson-1/00-piper-opinion.md
+<!-- wbl-text:0859 -->
+Characters to introduce fresh:
 
-<!-- wbl-text:1254 -->
-1-teacher-lesson.md
+<!-- wbl-text:0860 -->
+Paul + Titus in Move 1. Lazarus + Nicodemus in Move 2 (when teaching regeneration). Plus the place: Crete in Move 1.
 
-<!-- wbl-text:1256 -->
-1-parent-page.md
+<!-- wbl-text:0861 -->
+Big-word glossary (keep open during teaching):
 
-<!-- wbl-text:1258 -->
-1-student-notebook.md
+<!-- wbl-text:0862 -->
+apostle, submissive, obedient, quarreling, gentle, courtesy, foolish, led astray, slaves to passions, malice, envy, goodness, loving kindness, Savior, appeared, mercy, regeneration, born again, regenerated heart, Christian (= person who has been born again), Holy Spirit, poured out richly, justified, grace, heir, eternal life, adorn (from Titus 2:10), devote, trustworthy.
 
-<!-- wbl-text:1260 -->
-1-visuals-spec.md
+<!-- wbl-text:0863 -->
+Word swaps for clarity:
 
-<!-- wbl-text:1262 -->
-mvp-teacher-lesson.md
+<!-- wbl-text:0864 -->
+Throughout this script, the word "Christian" has been replaced (except where defined in Move 2) with clearer phrases like "people who love Jesus" / "people who have been born again" / "people with regenerated hearts." Reason: 10-to-12 year olds can hear "Christian" as "person who goes to church" rather than "person whose heart God has made alive." We teach them what Scripture actually means by the word.
 
-<!-- wbl-text:1263 -->
-+
-
-<!-- wbl-text:1264 -->
-mvp-student-notebook.md
-
-<!-- wbl-text:1266 -->
+<!-- wbl-text:0865 -->
 The THREE theological moves that MUST land:
 
-<!-- wbl-text:1267 -->
-The WORD is the subject of verse 7.
+<!-- wbl-text:0866 -->
+The FOR hinge.
 
-<!-- wbl-text:1268 -->
-The Word increases; we don't increase the Word. The Word is alive (Hebrews 4:12). The Word does what God sends it to do (Isaiah 55:11). Make the kids see, in the actual text, that "the word of God" is the grammatical subject of "continued to increase." Point to it. Have them read it aloud once with their finger underlining the subject.
+<!-- wbl-text:0870 -->
+The Gospel + How Regeneration Happens.
 
-<!-- wbl-text:1269 -->
-There is no menial work in the church.
+<!-- wbl-text:0871 -->
+Kids hear the gospel stated plainly (God is holy, we sinned, Jesus lived / died / rose, we believe and turn) and understand that regeneration is what HAPPENS when we believe. This is new ground for a 10-to-12 year old in their spiritual vocabulary.
 
-<!-- wbl-text:1270 -->
-Even waiting tables required men of good repute, full of the Spirit and of wisdom (v.3). The cleaner, the cook, the children's worker, the deacon at IBCM are all serving Jesus, and their work makes the Word free to increase. The Hidden-Servants Honor Roll in Move 5 is the practical landing of this point.
+<!-- wbl-text:0872 -->
+Gratitude + Faith in Future Grace (Move 4).
 
-<!-- wbl-text:1271 -->
-Small story serves big story serves the BIGGEST story.
-
-<!-- wbl-text:1276 -->
-Big-word glossary:
-
-<!-- wbl-text:1277 -->
-Hellenists, Hebrews, complaint, neglected, distribution, apostles, summoned, devote, ministry of the word, repute, full of the Spirit, wisdom, proselyte (Gentile convert), laid hands on, increase (= grew + spread), multiplied, priests, obedient to the faith.
-
-<!-- wbl-text:1286 -->
-Date Taught
-
-<!-- wbl-text:1287 -->
-YYYY-MM-DD
-
-<!-- wbl-text:1288 -->
-Children Present
-
-<!-- wbl-text:1289 -->
-Names or count. Note any first-time visitors.
-
-<!-- wbl-text:1290 -->
-What Landed
-
-<!-- wbl-text:1293 -->
-What Didn't Land
-
-<!-- wbl-text:1294 -->
-Where did they drift? Did the Hellenist / Hebrew distinction confuse them? Did Move 3 IS IT TRUE feel skippable?
-
-<!-- wbl-text:1295 -->
-Questions They Asked
-
-<!-- wbl-text:1296 -->
-Exact words if you can remember. Especially any kid asking why the Word increased even though the church was a mess.
-
-<!-- wbl-text:1297 -->
-Hidden Servants They Named
-
-<!-- wbl-text:1298 -->
-List the names from the whiteboard honor roll. Did any of the kids actually thank one of those servants this week? Ask next Sunday.
-
-<!-- wbl-text:1299 -->
-Small Stories They Wrote
-
-<!-- wbl-text:1300 -->
-What did each kid write on their card as their small-story act of obedience? Keep this list. The pattern over weeks is precious.
-
-<!-- wbl-text:1301 -->
-Adjustments for Next Teaching
-
-<!-- wbl-text:1302 -->
-Cut what? Add what? Reorder what? Did the 20-minute Move 2 hold them?
-
-<!-- wbl-text:1305 -->
-What the children asked prayer for. What you prayed over them. Any promptings from the Spirit to follow up on.
-
-<!-- wbl-text:1306 -->
-A Sentence on My Own Heart
-
-<!-- wbl-text:1307 -->
-Did I teach from delight or duty? Did I trust the Word to do its own work, or did I try to do its work for it?
-
-<!-- wbl-text:1308 -->
-All Materials
-
-<!-- wbl-text:1309 -->
-Materials
-
-<!-- wbl-text:1315 -->
-Comic
-
-<!-- wbl-text:1316 -->
-The Word of God Increases
-
-<!-- wbl-text:1323 -->
-Slideshow
-
-<!-- wbl-text:1326 -->
-One panel at a time, full screen. Designed for the IBCM projector and for Sunday-morning class. Tap, click, swipe, or press space / arrow keys to advance. Press F for fullscreen.
-
-<!-- wbl-text:1330 -->
-Puzzle
-
-<!-- wbl-text:1331 -->
-Put the Story in Order
-
-<!-- wbl-text:1338 -->
-Comic
-
-<!-- wbl-text:1339 -->
-The Bigger Story
-
-<!-- wbl-text:1349 -->
-Slideshow
-
-<!-- wbl-text:1357 -->
-About
-
-<!-- wbl-text:1358 -->
-About this Site
-
-<!-- wbl-text:1359 -->
-The ongoing record of Lala's Sunday School teaching at International Baptist Church of Manila.
-
-<!-- wbl-text:1360 -->
-Who this is for
-
-<!-- wbl-text:1363 -->
-How it is organized
-
-<!-- wbl-text:1364 -->
-There are four areas.
-
-<!-- wbl-text:1365 -->
-Guides
-
-<!-- wbl-text:1368 -->
-Lessons
-
-<!-- wbl-text:1369 -->
-holds each lesson she has written, paired with a dated feedback log so she can see what landed, what didn't, and how to adjust.
-
-<!-- wbl-text:1370 -->
-About
-
-<!-- wbl-text:1371 -->
-is this page.
-
-<!-- wbl-text:1372 -->
-Resources
-
-<!-- wbl-text:1373 -->
-holds the books, archives, and tools she leans on.
-
-<!-- wbl-text:1374 -->
-What it is built on
-
-<!-- wbl-text:1378 -->
-How it grows
-
-<!-- wbl-text:1379 -->
-Guides will be added as Lala writes them (How to Prepare a Lesson, How to Read the Bible with Children, How to Lead a Prayer). Lessons will be added as she prepares them. Feedback entries will be added after every Sunday she teaches. The resources list will grow as she reads.
-
-<!-- wbl-text:1380 -->
-"You have one life. That's all. You were made for God. Don't waste it."
-
-<!-- wbl-text:1382 -->
-Resources
-
-<!-- wbl-text:1383 -->
-Teaching Resources
-
-<!-- wbl-text:1384 -->
-Books, archives, and tools Lala leans on. Added to as she reads and teaches.
-
-<!-- wbl-text:1387 -->
-Desiring God
-
-<!-- wbl-text:1388 -->
-John Piper's full sermon and article archive.
-
-<!-- wbl-text:1389 -->
-desiringgod.org
-
-<!-- wbl-text:1390 -->
-John Piper NotebookLM
-
-<!-- wbl-text:1391 -->
-Private NotebookLM corpus of Piper's books for cross-referenced study on any text.
-
-<!-- wbl-text:1392 -->
-Core books
-
-<!-- wbl-text:1394 -->
+<!-- wbl-text:0875 -->
 Future Grace
 
-<!-- wbl-text:1395 -->
-(Crossway, 2012)
+<!-- wbl-text:0897 -->
+Date Taught
 
-<!-- wbl-text:1396 -->
-The framework for obedience powered by trusting God's promises about tomorrow, not just gratitude for yesterday. Read before teaching any command-from-the-gospel text.
+<!-- wbl-text:0898 -->
+YYYY-MM-DD
+
+<!-- wbl-text:0899 -->
+Children Present
+
+<!-- wbl-text:0900 -->
+Names or count. Note any first-time visitors.
+
+<!-- wbl-text:0901 -->
+What Landed
+
+<!-- wbl-text:0902 -->
+Which moves or phrases woke them up? Which moment did the room go quiet? Where did eyes light up?
+
+<!-- wbl-text:0903 -->
+What Didn't Land
+
+<!-- wbl-text:0904 -->
+Where did they drift? Which definition missed? Which cue felt flat? Be honest with yourself.
+
+<!-- wbl-text:0905 -->
+Questions They Asked
+
+<!-- wbl-text:0906 -->
+Exact words if you can remember. The questions are gold for next time.
+
+<!-- wbl-text:0907 -->
+Adjustments for Next Teaching
+
+<!-- wbl-text:0908 -->
+Cut what? Add what? Reorder what? Shorten Move 1 by two minutes?
+
+<!-- wbl-text:0911 -->
+What the children asked prayer for. What you prayed over them. Any promptings from the Spirit to follow up on.
+
+<!-- wbl-text:0912 -->
+A Sentence on My Own Heart
+
+<!-- wbl-text:0913 -->
+Did I teach from delight or duty? What did the Lord show me while teaching? Where do I need his mercy this week?
+
+<!-- wbl-text:0918 -->
+"The Word of God Increases When His People Serve in Their Right Place"
+
+<!-- wbl-text:0919 -->
+This Lesson
+
+<!-- wbl-text:0920 -->
+Lesson Top
+
+<!-- wbl-text:0923 -->
+Before We Start
+
+<!-- wbl-text:0961 -->
+Closing Prayer
+
+<!-- wbl-text:0963 -->
+Materials
+
+<!-- wbl-text:0966 -->
+Feedback Records
+
+<!-- wbl-text:0967 -->
+log after each Sunday
+
+<!-- wbl-text:0975 -->
+"The Word of God Increases When His People Serve in Their Right Place"
+
+<!-- wbl-text:0976 -->
+Read-aloud script for Lala. Internalize, then set down. Deliver in your own voice. Pause where marked.
+
+<!-- wbl-text:0977 -->
+A Word on Order
+
+<!-- wbl-text:0978 -->
+The teaching order matters. We
+
+<!-- wbl-text:0979 -->
+READ
+
+<!-- wbl-text:0982 -->
+UNPACK
+
+<!-- wbl-text:0987 -->
+The whole story is built to land on verse 7. Verse 7 is the prize.
+
+<!-- wbl-text:0988 -->
+Before We Start
+
+<!-- wbl-text:0990 -->
+Children, let me ask you a quick question.
+
+<!-- wbl-text:0991 -->
+Imagine a sari-sari store. The owner does everything alone. She is selling, she is cooking, she is cleaning, she is delivering. She is even chasing the kids who try to steal pandesal. By the end of the week, what happens to her store?
+
+<!-- wbl-text:0992 -->
+She gets tired. She closes early. The food runs out. The customers in the back of the line never get fed. The store is supposed to serve the neighborhood, but it only serves the people in front.
+
+<!-- wbl-text:0993 -->
+Now what changes if she finally trusts ONE good helper to handle the cooking? She has time to actually serve customers. The store does MORE, not less. Everyone gets fed.
+
+<!-- wbl-text:0994 -->
+Today we are going to read a story from the very early church, only a few months after Jesus rose from the dead. The church had a sari-sari store problem. The apostles were trying to do everything. People were getting missed. Listen to how they fixed it. Because the way they fixed it is the reason Luke wrote verse 7. The whole story is built to land on verse 7. Listen for verse 7.
+
+<!-- wbl-text:0995 -->
+[PAUSE. Small show of hands: "Ready to meet some new friends from the Bible?"]
+
+<!-- wbl-text:1000 -->
+Before we read, let me tell you who is in this story.
+
+<!-- wbl-text:1001 -->
+Meet Luke.
+
+<!-- wbl-text:1004 -->
+Meet the early church in Jerusalem.
+
+<!-- wbl-text:1008 -->
+Meet two groups of Christians inside the church.
+
+<!-- wbl-text:1009 -->
+One group is the
+
+<!-- wbl-text:1010 -->
+Hellenists
+
+<!-- wbl-text:1013 -->
+Hebrews
+
+<!-- wbl-text:1014 -->
+. The Hebrews were Jewish Christians who grew up in Israel speaking Aramaic, the local language. Same Jesus. Same gospel. Same church. Different language. Different culture. A bit like if your IBCM church had a Tagalog group and a Korean group inside the same building.
+
+<!-- wbl-text:1015 -->
+Now in any group of human beings, what happens when you mix two cultures? Sometimes one group feels left out. That is what happens here. Listen for it.
+
+<!-- wbl-text:1016 -->
+Open your Bibles to Acts chapter 6. We are going to read verses 1 through 7. I will read, you follow along with your finger. Listen for FOUR things:
+
+<!-- wbl-text:1017 -->
+The PROBLEM in the church (v.1).
+
+<!-- wbl-text:1022 -->
+The HARVEST God gave at the end (v.7). This is the climax. Listen for what happens to the WORD OF GOD.
+
+<!-- wbl-text:1027 -->
+"Now in these days when the disciples were increasing in number, a complaint by the Hellenists arose against the Hebrews because their widows were being neglected in the daily distribution. And the twelve summoned the full number of the disciples and said, 'It is not right that we should give up preaching the word of God to serve tables. Therefore, brothers, pick out from among you seven men of good repute, full of the Spirit and of wisdom, whom we will appoint to this duty. But we will devote ourselves to prayer and to the ministry of the word.' And what they said pleased the whole gathering, and they chose Stephen, a man full of faith and of the Holy Spirit, and Philip, and Prochorus, and Nicanor, and Timon, and Parmenas, and Nicolaus, a proselyte of Antioch. These they set before the apostles, and they prayed and laid their hands on them. And the word of God continued to increase, and the number of the disciples multiplied greatly in Jerusalem, and a great many of the priests became obedient to the faith."
+
+<!-- wbl-text:1036 -->
+Luke wrote these verses in a certain order, and that order is good. But I want to walk through them in FOUR parts so you can see how the story works. The PROBLEM, the WISDOM, the GRACE, and the HARVEST.
+
+<!-- wbl-text:1041 -->
+Verse 1 says: "Now in these days when the disciples were increasing in number, a complaint by the Hellenists arose against the Hebrews because their widows were being neglected in the daily distribution."
+
+<!-- wbl-text:1042 -->
+Notice the words "increasing in number." The church was GROWING. That is good. But growth is messy. When the church was small, everybody knew everybody. The apostles could see every widow, every family, every need. As soon as the church grew bigger, somebody got missed. And that somebody was the Hellenist widows. The Greek-speaking widows. The minority. Probably the quietest voices in the room.
+
+<!-- wbl-text:1043 -->
+Now here is something important. The Hebrews were not bad people. They were not trying to neglect anybody. They were busy. The apostles were not lazy. They were stretched thin. But the result was still the same. Widows were going hungry.
+
+<!-- wbl-text:1049 -->
+"It is not right that we should give up preaching the word of God to serve tables."
+
+<!-- wbl-text:1050 -->
+Wait. The apostles said NO to waiting tables? Was that selfish?
+
+<!-- wbl-text:1051 -->
+No. Listen carefully. The apostles did not say feeding widows is unimportant. They said feeding widows is so important that it must be done by the right people, in the right way, by men full of the Spirit. But it cannot be done by US, the apostles, because if we abandon prayer and the ministry of the word, the WHOLE church will collapse. The Word of God is the engine of the whole thing. If we get pulled off the Word, the church loses its life.
+
+<!-- wbl-text:1052 -->
+Sometimes the most loving thing a leader can do is refuse a good job that is not their job. The apostles knew their place. Their place was prayer and the Word. The widows needed feeding. Both were good. Both were needed. But not both for the same people.
+
+<!-- wbl-text:1057 -->
+Verse 3: "Therefore, brothers, pick out from among you seven men of good repute, full of the Spirit and of wisdom, whom we will appoint to this duty."
+
+<!-- wbl-text:1058 -->
+Three things the seven men had to be. Let me show you each one.
+
+<!-- wbl-text:1059 -->
+Of good repute.
+
+<!-- wbl-text:1060 -->
+Repute means reputation. Good repute means people speak well of you because of how you live. Not famous. Not loud. Not popular. Just trusted. The kind of person who is the same in private as in public. The kind of kid the teacher trusts to lock the classroom. The kind of person whose word you can count on.
+
+<!-- wbl-text:1061 -->
+Full of the Spirit.
+
+<!-- wbl-text:1062 -->
+Full of the Holy Spirit. Born again. The Spirit poured out on them, like Titus 3 talked about. Their HEART belongs to Jesus, not just their reputation.
+
+<!-- wbl-text:1063 -->
+Full of wisdom.
+
+<!-- wbl-text:1064 -->
+Wisdom means knowing what to do in real life when the rules don't tell you. Wisdom is what makes a teacher know when to be strict and when to be soft. Wisdom is what makes a parent know when to talk and when to listen. Wisdom is the Bible's word for skill in living.
+
+<!-- wbl-text:1068 -->
+[Wait. Let them try answers. The right answer is below.]
+
+<!-- wbl-text:1069 -->
+Here is why, children. Because in the church of Jesus, there is NO SMALL JOB. Every service in the church, from preaching the gospel to washing the dishes, is a witness to Jesus. The widow who finally gets her food sees Jesus through the kindness of the man who hands her the bowl. The cook in the church kitchen is a missionary at the stove. There is no menial work in the body of Christ. That is why even table-service requires Spirit-filled, well-reputed people.
+
+<!-- wbl-text:1070 -->
+Now verse 4. The apostles say: "But we will devote ourselves to prayer and to the ministry of the word."
+
+<!-- wbl-text:1071 -->
+That word DEVOTE is strong. It means I will give my whole self to this. I will not be pulled off it. I will not let other things take its place. The apostles devote themselves to TWO things: prayer, and the ministry of the word. Talking to God, and bringing God's word to people. Up and down. Down and up. That is the heartbeat of every faithful church leader, then and now. The pastors and elders at IBCM today answer to this same Acts 6:4 standard.
+
+<!-- wbl-text:1076 -->
+Verse 5: "And what they said pleased the whole gathering, and they chose Stephen, a man full of faith and of the Holy Spirit, and Philip, and Prochorus, and Nicanor, and Timon, and Parmenas, and Nicolaus, a proselyte of Antioch."
+
+<!-- wbl-text:1077 -->
+Read those seven names again with me. Slowly.
+
+<!-- wbl-text:1078 -->
+Stephen. Philip. Prochorus. Nicanor. Timon. Parmenas. Nicolaus.
+
+<!-- wbl-text:1081 -->
+Now think about this. The complaint came from the Hellenists, the Greek-speakers. The minority. Their widows were being missed. And what did the church do? They chose seven men with Greek names. They lifted up the very people who had complained. They put the wounded in charge of the wound.
+
+<!-- wbl-text:1082 -->
+That, children, is GRACE in church politics. The Hebrew majority did not say to the Hellenists, "Stop complaining. We are doing the best we can." They did not silence them. They did not push them down. They said, "Here. Take leadership. You see the problem better than we do. Lead the fix." That is what Jesus does in his church. He lifts up the wounded. He does not shame them quiet.
+
+<!-- wbl-text:1083 -->
+Verse 6 says: "These they set before the apostles, and they prayed and laid their hands on them."
+
+<!-- wbl-text:1084 -->
+Praying. Laying on of hands. This is the church taking the seven men seriously. Setting them apart. Asking God to bless their work. Blessing them publicly so the whole church knew who they were and what they were doing.
+
+<!-- wbl-text:1088 -->
+Verse 7. The whole story has been building to this. Listen carefully.
+
+<!-- wbl-text:1091 -->
+"And the word of God continued to increase, and the number of the disciples multiplied greatly in Jerusalem, and a great many of the priests became obedient to the faith."
+
+<!-- wbl-text:1092 -->
+Three things happened. Watch them stack up.
+
+<!-- wbl-text:1093 -->
+One. The word of God continued to INCREASE.
+
+<!-- wbl-text:1094 -->
+Now I want you to look at that sentence in your Bible. WHO is the subject of the sentence? Who is doing the increasing?
+
+<!-- wbl-text:1095 -->
+[Wait. Let them search.]
+
+<!-- wbl-text:1096 -->
+The Word of God itself. Not the apostles. Not the seven men. The WORD. Luke does not write, "and the apostles increased the Word." He writes, "the WORD OF GOD continued to increase." The Word does the increasing. The Word is the subject. The Word is alive.
+
+<!-- wbl-text:1097 -->
+Children, I want you to feel this. The Bible is not just sentences on a page. The Bible is the living voice of God. When the Word is preached and read and obeyed, the Word does what God sends it to do. There is a verse in Isaiah 55 that says God's word "shall not return to me empty, but it shall accomplish that which I purpose, and shall succeed in the thing for which I sent it." The Word always works. We don't make it work. We just clear the runway. And the Word flies.
+
+<!-- wbl-text:1098 -->
+Two. The number of disciples multiplied GREATLY.
+
+<!-- wbl-text:1099 -->
+Not just grew. Multiplied. Not by addition. By multiplication. The church was already huge in chapter 6 verse 1. Now Luke says it MULTIPLIED. From thousands to maybe tens of thousands. From a Jerusalem problem to a Jerusalem revival.
+
+<!-- wbl-text:1100 -->
+Three. And a great many of the PRIESTS became obedient to the faith.
+
+<!-- wbl-text:1101 -->
+Stop on this one. Who are the priests? The priests were the religious leaders of the temple. Remember chapters 4 and 5? In Acts chapter 4, the priests had ARRESTED Peter and John for preaching about Jesus. In chapter 5, they arrested the apostles AGAIN and beat them. The priests were the enemies of the church. The priests were the very men who had handed Jesus over to be crucified just a few months before.
+
+<!-- wbl-text:1102 -->
+And now? "A GREAT MANY of the priests became obedient to the faith."
+
+<!-- wbl-text:1103 -->
+The men who killed Jesus were coming to faith in Jesus.
+
+<!-- wbl-text:1104 -->
+How? How did the priests, the hardest hearts in Jerusalem, end up bowing the knee to the Christ they had crucified?
+
+<!-- wbl-text:1105 -->
+The answer is right there in the verse. The Word of God increased. The Word, set free by faithful order in the church, broke through the hardest hearts in the city.
+
+<!-- wbl-text:1108 -->
+[PAUSE. Slow breath. Look at them.] "Sit with that for a second. The same Word that converted the priests in Acts 6:7 is the Word we are reading right now. It is alive. It is at work. It is the most valuable thing in this room."
+
+<!-- wbl-text:1112 -->
+Optional 2-minute personal moment. Pick one of these prompts and tell the children a real story from your own life:
+
+<!-- wbl-text:1119 -->
+Speak from memory, not paper. Lock arms at the right beat. Tears are okay. End with something like: "...and that is why this story in Acts 6 is not just history. The Word of God is still increasing. He is still using small obediences to grow big stories. He may be doing it in you right now."
+
+<!-- wbl-text:1124 -->
+Let's be honest for a minute.
+
+<!-- wbl-text:1125 -->
+Luke makes three big claims in verse 7. Let's test them.
+
+<!-- wbl-text:1126 -->
+Claim 1:
+
+<!-- wbl-text:1130 -->
+Claim 2:
+
+<!-- wbl-text:1131 -->
+The Word converts even the hardest hearts. Is that true? Look at your own life. If you love Jesus today, who first heard about Jesus in your family? Who carried the Word into your home? Somebody, somewhere, was hard-hearted toward Jesus until the Word reached them. The Word converted the priests of Jerusalem who killed Jesus. The Word converted the apostle Paul who was hunting Christians to put them in jail. The Word converts the hardest hearts. There is no one too far gone for the Word.
+
+<!-- wbl-text:1132 -->
+Claim 3:
+
+<!-- wbl-text:1133 -->
+The Word grows when God's people serve in their right place. Is that true? Yes. Imagine the apostles had given up and started waiting tables themselves. The whole church would have lost prayer and the ministry of the word. The Word would have slowed. There would be no Acts 7. No Stephen sermon. No Acts 8. No Philip with the Ethiopian. No Acts 9. No Saul on the road to Damascus. We probably would not be sitting in this room today. The Word grew through the apostles staying on the Word and the seven men staying on the tables. Each in their right place.
+
+<!-- wbl-text:1134 -->
+This passage is true. The Word is alive. The Word converts. The Word grows when God's people serve in their right place.
+
+<!-- wbl-text:1139 -->
+Two things this passage should make us feel.
+
+<!-- wbl-text:1140 -->
+First, the WORTH of the Word of God.
+
+<!-- wbl-text:1141 -->
+If the apostles thought the ministry of the Word was so precious that it could not be left even for hungry widows, then the Word must be more valuable than we usually feel. Let me ask you something. How many minutes did you read the Bible this past week? How many minutes did you spend on TikTok or YouTube or video games? Be honest with yourself. Now think: which one increases the kingdom of God in your heart? Not which one is fun. Which one is worth more.
+
+<!-- wbl-text:1142 -->
+The Word of God is more valuable than the table. More valuable than the food. More valuable than the building. More valuable than the schedule. The men of good repute were chosen so the Word would not be crowded out. That tells us what the Word is worth.
+
+<!-- wbl-text:1143 -->
+The deepest believer is not the busiest believer. The deepest believer is the one most SATISFIED with God speaking to them through his Word.
+
+<!-- wbl-text:1144 -->
+Second, the UNHURRIED GOD.
+
+<!-- wbl-text:1145 -->
+Look at the story again. The widows were neglected. The church was about to split. The Word was about to slow. And what did God do? Did he panic? Did he abandon his church? Did he strike the apostles for being slow? No. He gave them, through the Spirit, the wisdom to organize themselves so that his Word could keep running. Then he made the Word increase anyway.
+
+<!-- wbl-text:1149 -->
+[PAUSE. Let one beat of silence go by before moving on.]
+
+<!-- wbl-text:1154 -->
+Here is where it gets concrete.
+
+<!-- wbl-text:1157 -->
+Your life is a small story inside that biggest story. And here is the beautiful pattern in Acts 6. Look at the seven men in verse 5. Two of those names show up again later in Acts.
+
+<!-- wbl-text:1158 -->
+Stephen
+
+<!-- wbl-text:1159 -->
+, in chapter 7, becomes the first Christian to die for Jesus. He looks up to heaven, sees the glory of God, and says, "Lord Jesus, receive my spirit." His face shines like the face of an angel.
+
+<!-- wbl-text:1160 -->
+Philip
+
+<!-- wbl-text:1161 -->
+, in chapter 8, runs alongside an Ethiopian official's chariot, explains the book of Isaiah, and baptizes him. The Ethiopian carries the gospel home to Africa.
+
+<!-- wbl-text:1162 -->
+Both of those big-story moments started where? Verse 5. Waiting tables. Serving widows. The small story was the seedbed of the big story.
+
+<!-- wbl-text:1163 -->
+That is your pattern too. Right now your right place may feel small. Your right place this week is being a kid who honors his parents, treats classmates well, learns the Word, helps without being asked. Nobody famous will see it. Maybe nobody will notice. But God is writing the small story into a bigger story. He is the author. We just write the small lines.
+
+<!-- wbl-text:1164 -->
+Small-Story Card
+
+<!-- wbl-text:1165 -->
+I'm going to give each of you a card. On the front, write your name and one SMALL-STORY ACT OF OBEDIENCE for this week. One thing nobody will probably see. Something a kid your age can really do by Tuesday.
+
+<!-- wbl-text:1166 -->
+Examples to get you started:
+
+<!-- wbl-text:1167 -->
+Say thank you to the helper at home, by name, every morning this week.
+
+<!-- wbl-text:1168 -->
+Sit with the kid nobody sits with at lunch on Monday.
+
+<!-- wbl-text:1169 -->
+Memorize Acts 6:7 by Friday. The Word increases when it lives in hearts.
+
+<!-- wbl-text:1170 -->
+Help one sibling without being asked.
+
+<!-- wbl-text:1171 -->
+Say good morning to the guard at school every day this week.
+
+<!-- wbl-text:1172 -->
+Speak well of one classmate behind their back when others are trash-talking.
+
+<!-- wbl-text:1173 -->
+Pray for one pastor or Christian leader you know, every night this week.
+
+<!-- wbl-text:1174 -->
+On the back of the card, leave a blank space. The back is for the BIG STORY. That part is God's job. He writes that one.
+
+<!-- wbl-text:1175 -->
+[PAUSE. 3 minutes. Walk around. Listen in. Help them get specific.]
+
+<!-- wbl-text:1180 -->
+Out loud, who serves at IBCM that nobody usually notices? I'll write them on the board.
+
+<!-- wbl-text:1181 -->
+[They will name: cleaners, cooks, children's workers, sound team, deacons, security guard, the parents who set up chairs, the drivers who bring families. Write them all.]
+
+<!-- wbl-text:1182 -->
+Pick one this week. Find them. Look them in the eye. Say thank you for serving God in your right place. Tell them Acts 6 is about them. The Word of God is increasing in IBCM because of people like you.
+
+<!-- wbl-text:1183 -->
+You don't do this to earn Jesus' love. You do it because the Word of God has set you free, and you want to serve in your right place too. Your small story inside his big story.
+
+<!-- wbl-text:1188 -->
+Grab your index cards and markers. We are going to write one sentence that holds this whole lesson together.
+
+<!-- wbl-text:1189 -->
+Ready? Here it is:
+
+<!-- wbl-text:1192 -->
+"And the word of God continued to increase, and the number of the disciples multiplied greatly in Jerusalem."
+
+<!-- wbl-text:1193 -->
+Write it on your card. In YOUR handwriting.
+
+<!-- wbl-text:1194 -->
+Now on three, everyone say it with me.
+
+<!-- wbl-text:1195 -->
+One, two, three:
+
+<!-- wbl-text:1196 -->
+"And the word of God continued to increase, and the number of the disciples multiplied greatly in Jerusalem."
+
+<!-- wbl-text:1197 -->
+[Say it 3 times: loud, medium, whisper.]
+
+<!-- wbl-text:1198 -->
+Put this card somewhere you'll see it every day this week. Your mirror. Your desk. Inside your school notebook. When you feel small this week, read it. When the day at school feels meaningless, read it. When you wonder if your small story matters, read it. The Word of God is alive. It is still increasing. And every faithful kid who serves in their right place is part of that increase.
+
+<!-- wbl-text:1199 -->
+Closing Prayer
+
+<!-- wbl-text:1201 -->
+Let's pray.
+
+<!-- wbl-text:1202 -->
+"Father, your Word is alive. You are building your church. The gates of hell will not prevail against it. We thank you that you are not anxious about us. You are calm. You are sovereign. You are at work.
+
+<!-- wbl-text:1203 -->
+We confess that we grumble like the Hellenists. We want the visible jobs, not the hidden ones. We let your Word become small in our hearts. We forget how valuable your Word is. Forgive us.
+
+<!-- wbl-text:1204 -->
+Thank you for the seven men of good repute. Thank you that you converted even the priests who killed your Son. Thank you that the Word continues to increase in IBCM, in Manila, in our families, in our school.
+
+<!-- wbl-text:1205 -->
+Make us children of good repute this week. Help us to serve in our right place. Help us to honor the hidden servants we have never thanked. Make your Word increase in us. In Jesus' name, Amen."
+
+<!-- wbl-text:1206 -->
+The Word of God continues to increase. So do you.
+
+<!-- wbl-text:1210 -->
+The focus Lala chose:
+
+<!-- wbl-text:1211 -->
+Verse 7 as the climax of the whole story. Everything before verse 7 (the complaint, the apostles' rule, the seven names, the laying on of hands) is the runway. Verse 7 is the takeoff. The lesson succeeds when the children walk out understanding that the WORD is the subject of verse 7 (the Word increases; we don't increase the Word) and that they have a place in that increase.
+
+<!-- wbl-text:1212 -->
+Why the "small story / big story" framing matters:
+
+<!-- wbl-text:1215 -->
+Timing (60 min hard stop):
+
+<!-- wbl-text:1247 -->
+Cut priorities if running long:
+
+<!-- wbl-text:1254 -->
+Move 5 shortened: 2 min for the small-story card, 5 min for the hidden-servants honor roll.
+
+<!-- wbl-text:1255 -->
+Never cut Part D in Move 2 or the carry-sentence card in Move 6.
+
+<!-- wbl-text:1256 -->
+Verse 7 is the prize. The card is the takeaway. If you must walk out at the 50-min mark, end on Acts 6:7 in their handwriting.
+
+<!-- wbl-text:1257 -->
+Companion materials
+
+<!-- wbl-text:1258 -->
+(for Saturday-night prep, see the full Truth78 packet in Life-Dashboard):
+
+<!-- wbl-text:1259 -->
+personal-skills/ibc-sunday-school/lessons/acts-6-the-word-increases/lesson-1/00-piper-opinion.md
+
+<!-- wbl-text:1261 -->
+1-teacher-lesson.md
+
+<!-- wbl-text:1263 -->
+1-parent-page.md
+
+<!-- wbl-text:1265 -->
+1-student-notebook.md
+
+<!-- wbl-text:1267 -->
+1-visuals-spec.md
+
+<!-- wbl-text:1269 -->
+mvp-teacher-lesson.md
+
+<!-- wbl-text:1270 -->
++
+
+<!-- wbl-text:1271 -->
+mvp-student-notebook.md
+
+<!-- wbl-text:1273 -->
+The THREE theological moves that MUST land:
+
+<!-- wbl-text:1274 -->
+The WORD is the subject of verse 7.
+
+<!-- wbl-text:1275 -->
+The Word increases; we don't increase the Word. The Word is alive (Hebrews 4:12). The Word does what God sends it to do (Isaiah 55:11). Make the kids see, in the actual text, that "the word of God" is the grammatical subject of "continued to increase." Point to it. Have them read it aloud once with their finger underlining the subject.
+
+<!-- wbl-text:1276 -->
+There is no menial work in the church.
+
+<!-- wbl-text:1277 -->
+Even waiting tables required men of good repute, full of the Spirit and of wisdom (v.3). The cleaner, the cook, the children's worker, the deacon at IBCM are all serving Jesus, and their work makes the Word free to increase. The Hidden-Servants Honor Roll in Move 5 is the practical landing of this point.
+
+<!-- wbl-text:1278 -->
+Small story serves big story serves the BIGGEST story.
+
+<!-- wbl-text:1283 -->
+Big-word glossary:
+
+<!-- wbl-text:1284 -->
+Hellenists, Hebrews, complaint, neglected, distribution, apostles, summoned, devote, ministry of the word, repute, full of the Spirit, wisdom, proselyte (Gentile convert), laid hands on, increase (= grew + spread), multiplied, priests, obedient to the faith.
+
+<!-- wbl-text:1293 -->
+Date Taught
+
+<!-- wbl-text:1294 -->
+YYYY-MM-DD
+
+<!-- wbl-text:1295 -->
+Children Present
+
+<!-- wbl-text:1296 -->
+Names or count. Note any first-time visitors.
+
+<!-- wbl-text:1297 -->
+What Landed
+
+<!-- wbl-text:1300 -->
+What Didn't Land
+
+<!-- wbl-text:1301 -->
+Where did they drift? Did the Hellenist / Hebrew distinction confuse them? Did Move 3 IS IT TRUE feel skippable?
+
+<!-- wbl-text:1302 -->
+Questions They Asked
+
+<!-- wbl-text:1303 -->
+Exact words if you can remember. Especially any kid asking why the Word increased even though the church was a mess.
+
+<!-- wbl-text:1304 -->
+Hidden Servants They Named
+
+<!-- wbl-text:1305 -->
+List the names from the whiteboard honor roll. Did any of the kids actually thank one of those servants this week? Ask next Sunday.
+
+<!-- wbl-text:1306 -->
+Small Stories They Wrote
+
+<!-- wbl-text:1307 -->
+What did each kid write on their card as their small-story act of obedience? Keep this list. The pattern over weeks is precious.
+
+<!-- wbl-text:1308 -->
+Adjustments for Next Teaching
+
+<!-- wbl-text:1309 -->
+Cut what? Add what? Reorder what? Did the 20-minute Move 2 hold them?
+
+<!-- wbl-text:1312 -->
+What the children asked prayer for. What you prayed over them. Any promptings from the Spirit to follow up on.
+
+<!-- wbl-text:1313 -->
+A Sentence on My Own Heart
+
+<!-- wbl-text:1314 -->
+Did I teach from delight or duty? Did I trust the Word to do its own work, or did I try to do its work for it?
+
+<!-- wbl-text:1319 -->
+"The God Who Knows Our Hearts"
+
+<!-- wbl-text:1320 -->
+This Lesson
+
+<!-- wbl-text:1321 -->
+Lesson Top
+
+<!-- wbl-text:1324 -->
+What To Bring
+
+<!-- wbl-text:1325 -->
+cards, mirror, board
+
+<!-- wbl-text:1326 -->
+Teaching Plan
+
+<!-- wbl-text:1327 -->
+60 min
+
+<!-- wbl-text:1328 -->
+Hook + Prayer
+
+<!-- wbl-text:1331 -->
+Read the Text
+
+<!-- wbl-text:1334 -->
+The Mirror
+
+<!-- wbl-text:1337 -->
+The Miracle
+
+<!-- wbl-text:1341 -->
+The New Life
+
+<!-- wbl-text:1344 -->
+The Sentence
+
+<!-- wbl-text:1347 -->
+Materials
+
+<!-- wbl-text:1348 -->
+comic links
+
+<!-- wbl-text:1349 -->
+Self-Check
+
+<!-- wbl-text:1350 -->
+before teaching
+
+<!-- wbl-text:1356 -->
+The God Who Knows Our Hearts
+
+<!-- wbl-text:1361 -->
+Carry-home sentence
+
+<!-- wbl-text:1362 -->
+God sees my heart, Jesus saves my heart, and his kingdom is worth pressing into.
+
+<!-- wbl-text:1365 -->
+"You are those who justify yourselves before men, but God knows your hearts."
+
+<!-- wbl-text:1366 -->
+One-hour aim:
+
+<!-- wbl-text:1367 -->
+The children should see that Jesus exposes the dangerous habit of looking righteous before people while loving the wrong treasure inside. God knows the heart. The good news is not that we can polish ourselves into his kingdom. The good news is that King Jesus fulfills God's Word, saves sinners, gives new hearts, and calls us to press into his kingdom with urgent joy.
+
+<!-- wbl-text:1368 -->
+Teacher Note
+
+<!-- wbl-text:1373 -->
+What To Bring
+
+<!-- wbl-text:1376 -->
+8 pencils or pens.
+
+<!-- wbl-text:1377 -->
+8 index cards.
+
+<!-- wbl-text:1378 -->
+4 colored markers.
+
+<!-- wbl-text:1379 -->
+One small hand mirror.
+
+<!-- wbl-text:1380 -->
+Two paper labels: "People can see" and "God can see".
+
+<!-- wbl-text:1381 -->
+One folded card with two sides: outside says "I look good"; inside says "What do I love most?"
+
+<!-- wbl-text:1382 -->
+Whiteboard or large sheet of paper.
+
+<!-- wbl-text:1383 -->
+Optional: the comic materials linked below, if you want a shareable class handoff after the lesson.
+
+<!-- wbl-text:1384 -->
+Teaching Plan
+
+<!-- wbl-text:1385 -->
+Time
+
+<!-- wbl-text:1386 -->
+Segment
+
+<!-- wbl-text:1387 -->
+Aim
+
+<!-- wbl-text:1388 -->
+0:00 to 0:05
+
+<!-- wbl-text:1389 -->
+Hook
+
+<!-- wbl-text:1390 -->
+Feel the difference between outside image and inside treasure.
+
+<!-- wbl-text:1391 -->
+0:05 to 0:07
+
+<!-- wbl-text:1392 -->
+Prayer
+
+<!-- wbl-text:1393 -->
+Ask God to open our eyes.
+
+<!-- wbl-text:1394 -->
+0:07 to 0:14
+
+<!-- wbl-text:1397 -->
+Hear the warning, kingdom good news, and unbreakable Word.
 
 <!-- wbl-text:1398 -->
-Don't Waste Your Life
+0:14 to 0:24
 
 <!-- wbl-text:1399 -->
-(Crossway, 2003)
+Mirror
 
 <!-- wbl-text:1400 -->
-Steward the hour. The closing quote of Guide 1 comes from this book.
+See our self-justifying hearts.
+
+<!-- wbl-text:1401 -->
+0:24 to 0:42
 
 <!-- wbl-text:1402 -->
-Six Habits of Lifelong Learning
+Miracle
 
 <!-- wbl-text:1403 -->
-The formation framework behind the Ability pillar of the Royal Triangle.
+See Jesus as the King who knows, fulfills, saves, and gives new hearts.
 
 <!-- wbl-text:1404 -->
-Future additions
+0:42 to 0:52
+
+<!-- wbl-text:1405 -->
+New Life
+
+<!-- wbl-text:1406 -->
+Practice honest heart-checking before God.
+
+<!-- wbl-text:1407 -->
+0:52 to 0:57
+
+<!-- wbl-text:1408 -->
+Sentence
 
 <!-- wbl-text:1409 -->
-Study tools
+Write and repeat the carry-home sentence.
 
 <!-- wbl-text:1410 -->
-Bible Hub
+0:57 to 1:00
 
 <!-- wbl-text:1411 -->
-Cross-references, original language tools, commentaries.
+Prayer
 
 <!-- wbl-text:1412 -->
-biblehub.com
+ACTS closing prayer.
 
 <!-- wbl-text:1413 -->
-Westminster Shorter Catechism
+Hook + Prayer
 
-<!-- wbl-text:1414 -->
-Framework for doctrinal clarity when explaining hard words to children.
+<!-- wbl-text:1416 -->
+Hold up the folded card. Let the children see only the outside:
 
-<!-- wbl-text:1415 -->
-opc.org/sc.html
+<!-- wbl-text:1417 -->
+I look good.
 
 <!-- wbl-text:1418 -->
+Ask: "If you only see the outside of this card, what do you know?"
+
+<!-- wbl-text:1419 -->
+Open the card and show the inside:
+
+<!-- wbl-text:1420 -->
+What do I love most?
+
+<!-- wbl-text:1421 -->
+Say: "People can see some things about us. They can see our clothes, our grades, our manners, our church attendance, our Bible in our hand, and our words. But people cannot see what we love most. God can."
+
+<!-- wbl-text:1422 -->
+Hold up the mirror.
+
+<!-- wbl-text:1423 -->
+"A mirror shows your face. It does not show your heart. Today Jesus speaks to religious people who looked good to others, but he saw what they loved inside."
+
+<!-- wbl-text:1424 -->
+"Father, open our eyes. Show us what you see. Help us not hide from Jesus. Help us see the good news of your kingdom. Amen."
+
+<!-- wbl-text:1425 -->
+Read the Text
+
+<!-- wbl-text:1428 -->
+Assign four readers:
+
+<!-- wbl-text:1429 -->
+Narrator: Luke 16:14.
+
+<!-- wbl-text:1430 -->
+Jesus Reader 1: Luke 16:15.
+
+<!-- wbl-text:1431 -->
+Jesus Reader 2: Luke 16:16.
+
+<!-- wbl-text:1432 -->
+Jesus Reader 3: Luke 16:17.
+
+<!-- wbl-text:1433 -->
+Before reading, say: "Listen for three things: hearts, kingdom, and Law."
+
+<!-- wbl-text:1436 -->
+"The Pharisees, who were lovers of money, heard all these things, and they ridiculed him. And he said to them, You are those who justify yourselves before men, but God knows your hearts. For what is exalted among men is an abomination in the sight of God. The Law and the Prophets were until John; since then the good news of the kingdom of God is preached, and everyone forces his way into it. But it is easier for heaven and earth to pass away than for one dot of the Law to become void."
+
+<!-- wbl-text:1437 -->
+Ask: "What did the Pharisees love? What did they do when they heard Jesus? What does God know? What is preached now? How much of God's Law can fail?"
+
+<!-- wbl-text:1438 -->
+The Mirror
+
+<!-- wbl-text:1441 -->
+Say: "This passage is a mirror because it shows us something ugly that can live in a religious heart."
+
+<!-- wbl-text:1442 -->
+Write on the board:
+
+<!-- wbl-text:1443 -->
+justify yourselves before men
+
+<!-- wbl-text:1444 -->
+.
+
+<!-- wbl-text:1445 -->
+"To justify yourself means to make yourself look right. The Pharisees wanted to look right before people. They had a religious image. But verse 14 tells us what they loved: money. And when Jesus said, 'You cannot serve God and money,' they laughed at him."
+
+<!-- wbl-text:1446 -->
+Ask: "Why would someone laugh at Jesus when he tells the truth?"
+
+<!-- wbl-text:1447 -->
+"Sometimes people laugh because they are confused. But sometimes people laugh because Jesus touched the thing they do not want to give up."
+
+<!-- wbl-text:1448 -->
+If I love being praised, I may laugh when Jesus says humility is beautiful.
+
+<!-- wbl-text:1449 -->
+If I love having the best things, I may laugh when Jesus says treasure in heaven is better.
+
+<!-- wbl-text:1450 -->
+If I love looking spiritual, I may laugh when Jesus says God knows my heart.
+
+<!-- wbl-text:1451 -->
+"The mirror is not only for Pharisees long ago. It is for us. I can use church words and still love praise more than Jesus. I can obey when adults are watching and still hide selfishness inside. I can look clean to people and still need mercy from God."
+
+<!-- wbl-text:1452 -->
+Do not leave them here
+
+<!-- wbl-text:1453 -->
+This is not meant to make us hide from God. It is meant to make us stop hiding. The God who sees the heart is the only one who can save the heart.
+
+<!-- wbl-text:1454 -->
+The Miracle
+
+<!-- wbl-text:1458 -->
+"If we stop at the mirror, we only feel guilty. Jesus did not come only to expose hearts. He came to save hearts."
+
+<!-- wbl-text:1459 -->
+Miracle 1: Jesus knows the heart.
+
+<!-- wbl-text:1460 -->
+"Jesus knew what the Pharisees loved. He knew they loved money. He knew they loved being honored. He knew their religion could impress people, but it could not impress God."
+
+<!-- wbl-text:1461 -->
+"It is bad news if we want to keep sin. It is good news if we want to be saved. A doctor who sees the sickness can treat the sickness. A Savior who sees the heart can save the heart."
+
+<!-- wbl-text:1462 -->
+Miracle 2: Jesus brings the kingdom as good news.
+
+<!-- wbl-text:1463 -->
+"The Law and the Prophets is a way of talking about the Old Testament Scriptures. They were not wrong. They were pointing forward. John the Baptist came and pointed to Jesus. He said, 'Behold, the Lamb of God, who takes away the sin of the world.'"
+
+<!-- wbl-text:1464 -->
+Write on the board:
+
+<!-- wbl-text:1468 -->
+.
+
+<!-- wbl-text:1469 -->
+"The kingdom of God is not a castle with stone walls. It is God's saving rule through Jesus the King. Jesus says the good news of this kingdom is being preached."
+
+<!-- wbl-text:1470 -->
+"Jesus the King came. He lived the perfect life we have not lived. He loved God with all his heart, all the time. He never loved money more than God. He never loved applause more than God. He never used religion to hide sin. Then he died on the cross for sinners with false, proud, greedy, praise-hungry hearts. He rose again. He forgives. He gives new hearts. He brings people into his kingdom by grace."
+
+<!-- wbl-text:1471 -->
+Miracle 3: The kingdom is worth pressing into.
+
+<!-- wbl-text:1472 -->
+"Verse 16 says everyone forces his way into it. That phrase can sound confusing. It does not mean we punch our way into God's kingdom. It does not mean strong people earn salvation. The Bible is clear: salvation is by grace."
+
+<!-- wbl-text:1473 -->
+Key distinction
+
+<!-- wbl-text:1474 -->
+Pressing in is not earning.
+
+<!-- wbl-text:1475 -->
+Pressing in is urgent gospel response.
+
+<!-- wbl-text:1476 -->
+"When the good news of Jesus is preached, people do not treat it like a boring announcement. They press in. They run to the King. They push past pride. They push past love of money. They push past fear of what friends think. They come to Jesus because he is worth everything."
+
+<!-- wbl-text:1477 -->
+Miracle 4: Jesus fulfills and upholds every dot of God's Word.
+
+<!-- wbl-text:1478 -->
+"Jesus is not saying the Old Testament does not matter anymore. He is saying God's Word is more solid than the sky over our heads. Not one dot fails."
+
+<!-- wbl-text:1479 -->
+Ask: "Who is the only person who ever kept God's Law perfectly?"
+
+<!-- wbl-text:1480 -->
+"Jesus did not break God's Word. Jesus fulfilled it. Every command showed his righteousness. Every promise found its yes in him. Every sacrifice pointed to his cross. Every warning showed why we need mercy. Every dot matters because God speaks truth."
+
+<!-- wbl-text:1481 -->
+God sees the heart. That exposes us. Jesus fulfills the Law. That saves us. The kingdom is preached. That invites us. The Word cannot fail. That gives us a solid place to stand.
+
+<!-- wbl-text:1482 -->
+The New Life
+
+<!-- wbl-text:1485 -->
+"If Jesus saves the heart, then the new life is not pretending harder. The new life is walking honestly before God."
+
+<!-- wbl-text:1486 -->
+Three practices
+
+<!-- wbl-text:1487 -->
+Stop pretending.
+
+<!-- wbl-text:1488 -->
+When you sin, do not only fix your face. Stop and say, "God, you know my heart."
+
+<!-- wbl-text:1489 -->
+Tell Jesus the truth.
+
+<!-- wbl-text:1490 -->
+Tell him what you loved more than him. Praise? Winning? Being right? Comfort? A screen? A friend group?
+
+<!-- wbl-text:1491 -->
+Press into the kingdom.
+
+<!-- wbl-text:1492 -->
+This week, read Luke 16:15 once each morning. Ask God, "What do you see in my heart?" Then ask, "Jesus, help me love you more than being praised."
+
+<!-- wbl-text:1493 -->
+Pair the children for two minutes. Each pair answers: "What is one thing kids do to look good before people?" and "What would it look like to be honest with God instead?"
+
+<!-- wbl-text:1494 -->
+"You do not do this to earn God's love. You do it because Jesus is better than hiding."
+
+<!-- wbl-text:1495 -->
+The Sentence
+
+<!-- wbl-text:1498 -->
+Give each child an index card. Have them write:
+
+<!-- wbl-text:1501 -->
+God sees my heart.
+
+<!-- wbl-text:1502 -->
+Jesus saves my heart.
+
+<!-- wbl-text:1503 -->
+His kingdom is worth pressing into.
+
+<!-- wbl-text:1504 -->
+Say it together five times: normal voice, strong voice, whisper, eyes closed, then one child leads and the class repeats.
+
+<!-- wbl-text:1505 -->
+"When you are tempted to look good while hiding sin, remember this sentence. God sees. Jesus saves. His kingdom is worth it."
+
+<!-- wbl-text:1506 -->
+Materials
+
+<!-- wbl-text:1507 -->
+The Kingdom in the Woods comic is included here so it can be shared from the ministry materials hub. Use the PDF for the cleanest parent or classroom share.
+
+<!-- wbl-text:1508 -->
+Comic
+
+<!-- wbl-text:1509 -->
+The Kingdom in the Woods
+
+<!-- wbl-text:1510 -->
+Corrected consistent v2 comic page with PDF, PNG, and preview. Built from the May 28 Sunday School comic materials.
+
+<!-- wbl-text:1514 -->
+PDF
+
+<!-- wbl-text:1515 -->
+Shareable PDF
+
+<!-- wbl-text:1516 -->
+Direct link to the printable and shareable comic PDF.
+
+<!-- wbl-text:1519 -->
+Final Self-Check
+
+<!-- wbl-text:1524 -->
+The Mirror names self-justification, praise-seeking, and hidden loves.
+
+<!-- wbl-text:1525 -->
+The Miracle gets the biggest slice: Jesus knows the heart, brings the kingdom, fulfills the Law, saves sinners, and gives new hearts.
+
+<!-- wbl-text:1526 -->
+The New Life is concrete by Tuesday: stop, tell, press.
+
+<!-- wbl-text:1527 -->
+Verse 16 is handled carefully: pressing in is urgent gospel response, not earning salvation.
+
+<!-- wbl-text:1528 -->
+Verse 17 is handled carefully: Jesus fulfills and upholds God's Word.
+
+<!-- wbl-text:1529 -->
+The lesson avoids Pascal's Wager and moralism.
+
+<!-- wbl-text:1530 -->
+At least three engagement techniques are present: object card, cast reading, underline/count, pair discussion, memory card.
+
+<!-- wbl-text:1531 -->
+All Materials
+
+<!-- wbl-text:1532 -->
+Materials
+
+<!-- wbl-text:1538 -->
+Comic
+
+<!-- wbl-text:1539 -->
+The Word of God Increases
+
+<!-- wbl-text:1546 -->
+Slideshow
+
+<!-- wbl-text:1549 -->
+One panel at a time, full screen. Designed for the IBCM projector and for Sunday-morning class. Tap, click, swipe, or press space / arrow keys to advance. Press F for fullscreen.
+
+<!-- wbl-text:1553 -->
+Puzzle
+
+<!-- wbl-text:1554 -->
+Put the Story in Order
+
+<!-- wbl-text:1561 -->
+Comic
+
+<!-- wbl-text:1562 -->
+The Bigger Story
+
+<!-- wbl-text:1572 -->
+Slideshow
+
+<!-- wbl-text:1583 -->
+Comic
+
+<!-- wbl-text:1584 -->
+The Kingdom in the Woods
+
+<!-- wbl-text:1585 -->
+Corrected consistent v2 comic page with the PDF, full PNG, and continuity reference included for easy sharing.
+
+<!-- wbl-text:1589 -->
+PDF
+
+<!-- wbl-text:1592 -->
+Direct PDF link for parents, printing, and class handoff.
+
+<!-- wbl-text:1595 -->
+About
+
+<!-- wbl-text:1596 -->
+About this Site
+
+<!-- wbl-text:1597 -->
+The ongoing record of Lala's Sunday School teaching at International Baptist Church of Manila.
+
+<!-- wbl-text:1598 -->
+Who this is for
+
+<!-- wbl-text:1601 -->
+How it is organized
+
+<!-- wbl-text:1602 -->
+There are four areas.
+
+<!-- wbl-text:1603 -->
+Guides
+
+<!-- wbl-text:1606 -->
+Lessons
+
+<!-- wbl-text:1607 -->
+holds each lesson she has written, paired with a dated feedback log so she can see what landed, what didn't, and how to adjust.
+
+<!-- wbl-text:1608 -->
+About
+
+<!-- wbl-text:1609 -->
+is this page.
+
+<!-- wbl-text:1610 -->
+Resources
+
+<!-- wbl-text:1611 -->
+holds the books, archives, and tools she leans on.
+
+<!-- wbl-text:1612 -->
+What it is built on
+
+<!-- wbl-text:1616 -->
+How it grows
+
+<!-- wbl-text:1617 -->
+Guides will be added as Lala writes them (How to Prepare a Lesson, How to Read the Bible with Children, How to Lead a Prayer). Lessons will be added as she prepares them. Feedback entries will be added after every Sunday she teaches. The resources list will grow as she reads.
+
+<!-- wbl-text:1618 -->
+"You have one life. That's all. You were made for God. Don't waste it."
+
+<!-- wbl-text:1620 -->
+Resources
+
+<!-- wbl-text:1621 -->
+Teaching Resources
+
+<!-- wbl-text:1622 -->
+Books, archives, and tools Lala leans on. Added to as she reads and teaches.
+
+<!-- wbl-text:1625 -->
+Desiring God
+
+<!-- wbl-text:1626 -->
+John Piper's full sermon and article archive.
+
+<!-- wbl-text:1627 -->
+desiringgod.org
+
+<!-- wbl-text:1628 -->
+John Piper NotebookLM
+
+<!-- wbl-text:1629 -->
+Private NotebookLM corpus of Piper's books for cross-referenced study on any text.
+
+<!-- wbl-text:1630 -->
+Core books
+
+<!-- wbl-text:1632 -->
+Future Grace
+
+<!-- wbl-text:1633 -->
+(Crossway, 2012)
+
+<!-- wbl-text:1634 -->
+The framework for obedience powered by trusting God's promises about tomorrow, not just gratitude for yesterday. Read before teaching any command-from-the-gospel text.
+
+<!-- wbl-text:1636 -->
+Don't Waste Your Life
+
+<!-- wbl-text:1637 -->
+(Crossway, 2003)
+
+<!-- wbl-text:1638 -->
+Steward the hour. The closing quote of Guide 1 comes from this book.
+
+<!-- wbl-text:1640 -->
+Six Habits of Lifelong Learning
+
+<!-- wbl-text:1641 -->
+The formation framework behind the Ability pillar of the Royal Triangle.
+
+<!-- wbl-text:1642 -->
+Future additions
+
+<!-- wbl-text:1647 -->
+Study tools
+
+<!-- wbl-text:1648 -->
+Bible Hub
+
+<!-- wbl-text:1649 -->
+Cross-references, original language tools, commentaries.
+
+<!-- wbl-text:1650 -->
+biblehub.com
+
+<!-- wbl-text:1651 -->
+Westminster Shorter Catechism
+
+<!-- wbl-text:1652 -->
+Framework for doctrinal clarity when explaining hard words to children.
+
+<!-- wbl-text:1653 -->
+opc.org/sc.html
+
+<!-- wbl-text:1656 -->
 Built on the Royal Triangle Method, John Piper's Six Habits of Lifelong Learning, and the Desiring God teaching archive.
