@@ -2753,7 +2753,7 @@ Comic
 The Kingdom in the Woods
 
 <!-- wbl-text:1510 -->
-Corrected consistent v2 comic page with PDF, PNG, and preview. Built from the May 28 Sunday School comic materials.
+Corrected consistent v2 comic page built from individual panel image files, with captions underneath each panel.
 
 <!-- wbl-text:1514 -->
 PDF
@@ -2828,7 +2828,7 @@ Comic
 The Kingdom in the Woods
 
 <!-- wbl-text:1585 -->
-Corrected consistent v2 comic page with the PDF, full PNG, and continuity reference included for easy sharing.
+Corrected consistent v2 comic page built from individual panel image files, with captions underneath each panel.
 
 <!-- wbl-text:1589 -->
 PDF
