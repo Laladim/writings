@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-05-29T01:28:38",
+  "generated_at": "2026-05-30T00:19:07",
   "sources": [
     {
       "source": "RemoteOK",
       "status": "ok",
       "fetched_count": 100,
-      "accepted_count": 16,
+      "accepted_count": 17,
       "last_error": ""
     },
     {
       "source": "Remotive",
       "status": "ok",
-      "fetched_count": 17,
+      "fetched_count": 20,
       "accepted_count": 2,
       "last_error": ""
     },
@@ -25,15 +25,15 @@
     {
       "source": "WeWorkRemotely",
       "status": "ok",
-      "fetched_count": 89,
-      "accepted_count": 18,
+      "fetched_count": 75,
+      "accepted_count": 14,
       "last_error": ""
     },
     {
       "source": "Jobicy",
       "status": "ok",
       "fetched_count": 100,
-      "accepted_count": 2,
+      "accepted_count": 5,
       "last_error": ""
     },
     {
