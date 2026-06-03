@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-06-02T01:38:36",
+  "generated_at": "2026-06-03T01:49:15",
   "sources": [
     {
       "source": "RemoteOK",
       "status": "ok",
       "fetched_count": 94,
-      "accepted_count": 15,
+      "accepted_count": 16,
       "last_error": ""
     },
     {
@@ -19,14 +19,14 @@
       "source": "Himalayas",
       "status": "ok",
       "fetched_count": 60,
-      "accepted_count": 2,
+      "accepted_count": 3,
       "last_error": ""
     },
     {
       "source": "WeWorkRemotely",
       "status": "ok",
-      "fetched_count": 74,
-      "accepted_count": 13,
+      "fetched_count": 76,
+      "accepted_count": 11,
       "last_error": ""
     },
     {
