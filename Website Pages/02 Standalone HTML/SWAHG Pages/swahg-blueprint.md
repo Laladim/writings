@@ -471,7 +471,7 @@ DON'T KNOW WHERE TO START?
 Find my archetype →
 
 <!-- wbl-text:0157 -->
-Step 1 of the Resume Builder maps you to one of 6 Filipino-VA archetypes.
+Take the quick finder, then choose lessons, jobs, or resume building.
 
 <!-- wbl-text:0158 -->
 NEED A REAL PLAN?

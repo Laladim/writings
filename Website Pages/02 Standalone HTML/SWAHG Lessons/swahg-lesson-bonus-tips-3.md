@@ -404,13 +404,13 @@ My Curriculum
 90-day learning plan
 
 <!-- wbl-text:0131 -->
-Build →
+Start →
 
 <!-- wbl-text:0132 -->
-Resume Builder
+Archetype Finder
 
 <!-- wbl-text:0133 -->
-Find your archetype
+Find your path first
 
 <!-- wbl-text:0134 -->
 Hold steady, SWAHG Team. We keep going together.

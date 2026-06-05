@@ -869,13 +869,13 @@ SWAHG Internship
 Earn client experience inside the community
 
 <!-- wbl-text:0286 -->
-Build →
+Start →
 
 <!-- wbl-text:0287 -->
-Resume Builder
+Archetype Finder
 
 <!-- wbl-text:0288 -->
-Find your archetype · auto-fill your resume
+Find your path first
 
 <!-- wbl-text:0289 -->
 Job ladder. Which roles this can help you enter.

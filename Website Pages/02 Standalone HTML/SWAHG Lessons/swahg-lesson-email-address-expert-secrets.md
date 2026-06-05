@@ -809,13 +809,13 @@ See the full Blueprint
 All 30+ boxes · the growth loop
 
 <!-- wbl-text:0266 -->
-Build →
+Start →
 
 <!-- wbl-text:0267 -->
-Resume Builder
+Archetype Finder
 
 <!-- wbl-text:0268 -->
-Find your archetype · auto-fill your resume
+Find your path first
 
 <!-- wbl-text:0269 -->
 Job ladder. Which roles this can help you enter.

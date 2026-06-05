@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Find Your SWAHG Archetype</title>
+<meta name="description" content="A lightweight SWAHG archetype finder for Filipino remote-work beginners, career shifters, and freelancers.">
+<link rel="icon" type="image/png" href="../brand/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --purple: #5a4a7a;
+    --purple-deep: #4a3a6a;
+    --gold: #c8985f;
+    --gold-deep: #a88d5e;
+    --bg: #f5f1f0;
+    --card: #ffffff;
+    --text: #3a3a3a;
+    --muted: #6b6565;
+    --border: #e0dbd8;
+    --sand: #ede7e3;
+    --green: #5a8a72;
+    --red: #c45a5a;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, .logo {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: var(--purple);
+    letter-spacing: 0;
+  }
+  .topnav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  .topnav-inner {
+    max-width: 1180px;
+    min-width: 0;
+    width: 100%;
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .logo {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.05;
+    text-decoration: none;
+  }
+  .logo .sub {
+    display: block;
+    margin-top: 1px;
+    color: var(--gold-deep);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 22px;
+    font-size: 14px;
+    min-width: 0;
+  }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .nav-links a:hover { color: var(--purple); }
+  .nav-links a[aria-current="page"] {
+    color: var(--purple);
+    font-weight: 600;
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 2px;
+  }
+  .app { max-width: 920px; width: 100%; margin: 0 auto; padding: 30px 18px 80px; }
+  .hero {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--purple);
+    border-radius: 12px;
+    padding: 30px 28px;
+    margin-bottom: 18px;
+  }
+  .eyebrow {
+    color: var(--gold-deep);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .18em;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+  h1 { font-size: clamp(28px, 5vw, 42px); line-height: 1.08; margin: 0 0 12px; overflow-wrap: anywhere; }
+  p.lede { color: var(--muted); font-size: 16px; margin: 0; max-width: 68ch; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px;
+    box-shadow: 0 1px 3px rgba(74,58,106,0.05);
+  }
+  .question { margin-bottom: 22px; }
+  .q-text { font-weight: 700; margin-bottom: 8px; }
+  .hint { color: var(--muted); font-size: 12px; margin-top: -2px; margin-bottom: 8px; }
+  .opt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .opt {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 11px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #fdfcfb;
+    cursor: pointer;
+    font-size: 13.5px;
+    transition: border-color .15s, background .15s;
+  }
+  .opt:hover { border-color: var(--purple); background: #faf7f5; }
+  .opt input { margin: 2px 0 0; accent-color: var(--purple); }
+  .opt.selected { border-color: var(--purple); background: #f0ecf5; }
+  .result {
+    display: none;
+    margin-top: 18px;
+    background: linear-gradient(135deg, #f0ecf5, #f7eede);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px;
+  }
+  .result.show { display: block; }
+  .result-name {
+    color: var(--purple-deep);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 2px 0 8px;
+  }
+  .result-tag { color: var(--text); font-style: italic; margin-bottom: 10px; }
+  .result-detail { color: var(--muted); font-size: 13px; }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+  }
+  .btn {
+    border: 1px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 10px 18px;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .btn-primary { background: var(--purple); color: #fdfcfb; }
+  .btn-primary:hover { background: var(--purple-deep); }
+  .btn-secondary { background: transparent; border-color: var(--border); color: var(--purple); }
+  .btn-secondary:hover { border-color: var(--purple); }
+  .note {
+    background: var(--sand);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 13px;
+    margin-top: 16px;
+    padding: 12px 14px;
+  }
+  footer {
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 11.5px;
+    margin-top: 30px;
+    padding-top: 16px;
+    text-align: center;
+  }
+  @media (max-width: 768px) {
+    .topnav-inner { align-items: flex-start; flex-direction: column; gap: 10px; padding: 12px 18px; }
+    .nav-links { width: 100%; max-width: 100%; overflow-x: auto; flex-wrap: nowrap; gap: 14px; font-size: 13px; padding-bottom: 4px; -webkit-overflow-scrolling: touch; }
+    .nav-links::-webkit-scrollbar { display: none; }
+  }
+  @media (max-width: 620px) {
+    .hero, .card { width: 354px; max-width: calc(100vw - 36px); padding: 22px 18px; }
+    h1 { font-size: 24px; line-height: 1.14; }
+    .opt-grid { grid-template-columns: 1fr; }
+    .actions .btn { width: 100%; }
+  }
+</style>
+</head>
+<body>
+<nav class="topnav">
+  <div class="topnav-inner">
+    <a href="../swahg/index.html" class="logo">SWAHG<span class="sub">Open University</span></a>
+    <div class="nav-links">
+      <a href="../">Writings by Lala</a>
+      <a href="../swahg/index.html">Home</a>
+      <a href="../swahg-blueprint/index.html">Blueprint</a>
+      <a href="../swahg-archetype/index.html" aria-current="page">Archetype Finder</a>
+      <a href="../swahg-resume-builder/index.html">Resume Builder</a>
+      <a href="../swahg-curriculum/index.html">My Curriculum</a>
+      <a href="../swahg-jobs/index.html">Job Board</a>
+    </div>
+  </div>
+</nav>
+
+<main class="app">
+  <section class="hero">
+    <div class="eyebrow">Start here if you feel unsure</div>
+    <h1>Find your SWAHG archetype</h1>
+    <p class="lede">This is the quick version. It helps you name your current path before you choose lessons, jobs, or a resume strategy. The detailed tool inventory belongs inside the Resume Builder.</p>
+  </section>
+
+  <section class="card" aria-label="SWAHG archetype finder">
+    <form id="finderForm">
+      <div class="question">
+        <div class="q-text">1. What is your closest work background?</div>
+        <div class="opt-grid">
+          <label class="opt"><input type="radio" name="q1" value="freelance"><span>Online or freelance work</span></label>
+          <label class="opt"><input type="radio" name="q1" value="corporate"><span>Corporate office work</span></label>
+          <label class="opt"><input type="radio" name="q1" value="bpo"><span>BPO or call center work</span></label>
+          <label class="opt"><input type="radio" name="q1" value="business"><span>I owned or ran a business</span></label>
+          <label class="opt"><input type="radio" name="q1" value="creative"><span>Creative, media, or content work</span></label>
+          <label class="opt"><input type="radio" name="q1" value="school"><span>School, training, or no formal work yet</span></label>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="q-text">2. How many remote-work tools have you actually used for real work?</div>
+        <div class="hint">Examples: Google Sheets, Slack, Canva, Trello, HubSpot, Zendesk, Shopify, CapCut.</div>
+        <div class="opt-grid">
+          <label class="opt"><input type="radio" name="tools" value="low"><span>0 to 2 tools</span></label>
+          <label class="opt"><input type="radio" name="tools" value="mid"><span>3 to 4 tools</span></label>
+          <label class="opt"><input type="radio" name="tools" value="strong"><span>5 to 7 tools</span></label>
+          <label class="opt"><input type="radio" name="tools" value="deep"><span>8 or more tools</span></label>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="q-text">3. Do you have a clear creative skill?</div>
+        <div class="hint">Think design, video, social media content, photography, writing, editing, or brand work.</div>
+        <div class="opt-grid">
+          <label class="opt"><input type="radio" name="creative" value="none"><span>No, not really</span></label>
+          <label class="opt"><input type="radio" name="creative" value="learning"><span>I am learning one</span></label>
+          <label class="opt"><input type="radio" name="creative" value="used"><span>Yes, I have used it in real projects</span></label>
+          <label class="opt"><input type="radio" name="creative" value="paid"><span>Yes, I have been paid for it</span></label>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="q-text">4. What shift works for you?</div>
+        <div class="opt-grid">
+          <label class="opt"><input type="radio" name="q4" value="day"><span>Day shift only</span></label>
+          <label class="opt"><input type="radio" name="q4" value="night"><span>Night shift is okay</span></label>
+          <label class="opt"><input type="radio" name="q4" value="flexible"><span>Flexible or any</span></label>
+          <label class="opt"><input type="radio" name="q4" value="parttime"><span>Part-time only</span></label>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="q-text">5. How would you rate your English?</div>
+        <div class="opt-grid">
+          <label class="opt"><input type="radio" name="q5" value="1"><span>1, struggling</span></label>
+          <label class="opt"><input type="radio" name="q5" value="2"><span>2, basic</span></label>
+          <label class="opt"><input type="radio" name="q5" value="3"><span>3, conversational</span></label>
+          <label class="opt"><input type="radio" name="q5" value="4"><span>4, professional</span></label>
+          <label class="opt"><input type="radio" name="q5" value="5"><span>5, fluent or near-native</span></label>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="q-text">6. How much work experience do you have?</div>
+        <div class="opt-grid">
+          <label class="opt"><input type="radio" name="experience" value="none"><span>0 years</span></label>
+          <label class="opt"><input type="radio" name="experience" value="early"><span>1 to 2 years</span></label>
+          <label class="opt"><input type="radio" name="experience" value="steady"><span>3 to 5 years</span></label>
+          <label class="opt"><input type="radio" name="experience" value="senior"><span>6 or more years</span></label>
+        </div>
+      </div>
+    </form>
+
+    <div class="result" id="resultPanel" aria-live="polite"></div>
+
+    <div class="note">
+      Use this page when you only need direction. Use the Resume Builder when you are ready to list tools, tailor a target role, write bullets, and export a resume.
+    </div>
+  </section>
+
+  <footer>
+    SWAHG Open University · Archetype Finder
+  </footer>
+</main>
+
+<script>
+const STORAGE_KEY = 'resume-builder-v1';
+
+const ARCHETYPES = {
+  polished:     { name: 'The Polished Freelancer', tag: 'You already have real client or remote-work evidence. Your next step is packaging, positioning, and higher-fit roles.', share: '25%', proceed: '80%' },
+  transitioner: { name: 'The Corporate Transitioner', tag: 'You bring office, BPO, or corporate discipline. Your next step is translating that experience into remote-work language.', share: '30%', proceed: '60%' },
+  creative:     { name: 'The Creative Specialist', tag: 'You have a visible skill in content, design, video, or social. Your next step is building proof and adding admin structure.', share: '15%', proceed: '70%' },
+  solo:         { name: 'The Solo Entrepreneur', tag: 'You have operated something yourself. Your next step is turning business instincts into a clear service path.', share: '15%', proceed: '55%' },
+  generalist:   { name: 'The Generalist Admin', tag: 'You have useful admin ability, but need one sharper wedge so clients remember what to hire you for.', share: '10%', proceed: '50%' },
+  fresh:        { name: 'The Fresh Starter', tag: 'You are early. Your next step is not pretending to be experienced, but building small proof through lessons and projects.', share: '5%', proceed: '30%' }
+};
+
+function values() {
+  return Object.fromEntries([...new FormData(document.getElementById('finderForm')).entries()]);
+}
+
+function complete(q) {
+  return ['q1','tools','creative','q4','q5','experience'].every(k => q[k]);
+}
+
+function score(q) {
+  const v = { polished:0, transitioner:0, creative:0, solo:0, generalist:0, fresh:0 };
+  switch (q.q1) {
+    case 'freelance': v.polished += 3; break;
+    case 'corporate': v.transitioner += 3; break;
+    case 'bpo': v.transitioner += 3; break;
+    case 'business': v.solo += 3; break;
+    case 'creative': v.creative += 3; break;
+    case 'school': v.fresh += 3; break;
+  }
+  switch (q.tools) {
+    case 'low': v.fresh += 3; break;
+    case 'mid': v.generalist += 2; v.solo += 1; break;
+    case 'strong': v.transitioner += 2; v.generalist += 1; break;
+    case 'deep': v.polished += 3; v.creative += 1; break;
+  }
+  switch (q.creative) {
+    case 'learning': v.creative += 1; v.fresh += 1; break;
+    case 'used': v.creative += 3; break;
+    case 'paid': v.creative += 3; v.polished += 2; break;
+  }
+  switch (q.q4) {
+    case 'day': v.solo += 2; v.polished += 1; break;
+    case 'night': v.transitioner += 2; break;
+    case 'flexible': v.polished += 2; v.generalist += 1; break;
+    case 'parttime': v.solo += 2; v.fresh += 1; break;
+  }
+  switch (q.q5) {
+    case '1':
+    case '2': v.fresh += 3; break;
+    case '3': v.generalist += 1; v.solo += 1; break;
+    case '4': v.transitioner += 2; v.generalist += 1; break;
+    case '5': v.polished += 3; v.creative += 2; break;
+  }
+  switch (q.experience) {
+    case 'none': v.fresh += 3; break;
+    case 'early': v.generalist += 2; v.transitioner += 1; break;
+    case 'steady': v.transitioner += 2; v.polished += 1; break;
+    case 'senior': v.polished += 3; v.transitioner += 1; break;
+  }
+  return Object.keys(v).sort((a,b) => v[b] - v[a])[0];
+}
+
+function resumeQuizPatch(q) {
+  const remote = q.q1 === 'freelance' || q.q1 === 'business'
+    ? (q.experience === 'senior' ? '6+' : q.experience === 'steady' ? '3-5' : q.experience === 'early' ? '1-2' : '0')
+    : '0';
+  const corporate = q.q1 === 'corporate' || q.q1 === 'bpo'
+    ? (q.experience === 'senior' ? '6+' : q.experience === 'steady' ? '3-5' : q.experience === 'early' ? '1-2' : '0')
+    : '0';
+  return { q1: q.q1, q4: q.q4, q5: q.q5, q6_remote: remote, q6_corporate: corporate };
+}
+
+function saveForBuilder(key, q) {
+  let state = {};
+  try { state = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch(e) { state = {}; }
+  state.step = 1;
+  state.archetype = key;
+  state.archetypeOverride = key;
+  state.quiz = Object.assign({}, state.quiz || {}, resumeQuizPatch(q));
+  state.finderResult = { archetype: key, savedAt: new Date().toISOString() };
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+}
+
+function render() {
+  document.querySelectorAll('.opt').forEach(label => {
+    const input = label.querySelector('input');
+    label.classList.toggle('selected', input.checked);
+  });
+  const q = values();
+  const panel = document.getElementById('resultPanel');
+  if (!complete(q)) {
+    panel.className = 'result';
+    panel.innerHTML = '';
+    return;
+  }
+  const key = score(q);
+  const a = ARCHETYPES[key];
+  saveForBuilder(key, q);
+  panel.className = 'result show';
+  panel.innerHTML = `
+    <div class="eyebrow">Your current path</div>
+    <div class="result-name">${a.name}</div>
+    <div class="result-tag">${a.tag}</div>
+    <div class="result-detail">Share of pool: ${a.share}. Proceed-to-interview signal: ${a.proceed}. This is a starting point, not a life sentence.</div>
+    <div class="actions">
+      <a class="btn btn-primary" href="../swahg-resume-builder/index.html">Build a resume with this archetype</a>
+      <a class="btn btn-secondary" href="../swahg-curriculum/index.html">See lessons for this path</a>
+      <a class="btn btn-secondary" href="../swahg-jobs/index.html">Browse matching jobs</a>
+    </div>
+  `;
+}
+
+document.getElementById('finderForm').addEventListener('change', render);
+render();
+</script>
+</body>
+</html>

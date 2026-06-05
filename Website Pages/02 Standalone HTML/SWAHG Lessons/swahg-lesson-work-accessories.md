@@ -674,13 +674,13 @@ See the full Blueprint
 Where Work Accessories fits
 
 <!-- wbl-text:0221 -->
-Build →
+Start →
 
 <!-- wbl-text:0222 -->
-Resume Builder
+Archetype Finder
 
 <!-- wbl-text:0223 -->
-Find your archetype · auto-fill your resume
+Find your path first
 
 <!-- wbl-text:0224 -->
 Hold steady, SWAHG Team. We keep going together.

@@ -47,7 +47,7 @@ Job Board
 Not sure where to start?
 
 <!-- wbl-text:0012 -->
-Identify your archetype in Step 1 →
+Identify your archetype →
 
 <!-- wbl-text:0013 -->
 Free · Filipino-built · Always
@@ -131,7 +131,7 @@ Door 2 · Find My Archetype
 "I don't know where to start."
 
 <!-- wbl-text:0040 -->
-Step 1 of the Resume Builder identifies your archetype across 6 Filipino-VA paths. From there you'll see the lesson curriculum mapped to your archetype — keep building the resume or branch off to watch the lessons first. Built for moms with no time and shaky confidence.
+A quick finder identifies your current path across 6 Filipino-VA archetypes. From there you can choose lessons, browse jobs, or move into the Resume Builder when you are ready to package your background.
 
 <!-- wbl-text:0041 -->
 Identify my archetype
@@ -296,7 +296,7 @@ Step 1
 Find your archetype
 
 <!-- wbl-text:0095 -->
-The Resume Builder's Step 1 identifies your path across 6 Filipino-VA archetypes.
+The quick finder identifies your path across 6 Filipino-VA archetypes.
 
 <!-- wbl-text:0096 -->
 Identify archetype →

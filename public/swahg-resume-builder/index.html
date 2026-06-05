@@ -655,6 +655,7 @@
       <a href="../">Writings by Lala</a>
       <a href="../swahg/index.html">Home</a>
       <a href="../swahg-blueprint/index.html">Blueprint</a>
+      <a href="../swahg-archetype/index.html">Archetype Finder</a>
       <a href="../swahg-resume-builder/index.html" aria-current="page">Resume Builder</a>
       <a href="../swahg-curriculum/index.html">My Curriculum</a>
       <a href="../swahg-jobs/index.html">Job Board</a>
@@ -693,12 +694,12 @@ const TOTAL_STEPS = 7;
 const STORAGE_KEY = 'resume-builder-v1';
 
 const ARCHETYPES = {
-  polished:     { emoji: '🌟', name: 'The Polished Freelancer',     tag: 'Already running a client roster — agency or remote-job is upgrade, not entry.', share: '25%', proceed: '80%' },
-  transitioner: { emoji: '💼', name: 'The Corporate Transitioner',  tag: 'BPO English plus office discipline — but never freelanced a day.',           share: '30%', proceed: '60%' },
-  creative:     { emoji: '🎨', name: 'The Creative Specialist',     tag: 'Photoshop and Premiere fluency — but admin tooling thin.',                  share: '15%', proceed: '70%' },
-  solo:         { emoji: '🛒', name: 'The Solo Entrepreneur',       tag: 'Ran an ecom store, restaurant, or business — pivoting to VA.',              share: '15%', proceed: '55%' },
-  generalist:   { emoji: '📋', name: 'The Generalist Admin',        tag: 'Excel-fluent, calendar-disciplined — but no specialty wedge.',              share: '10%', proceed: '50%' },
-  fresh:        { emoji: '🌱', name: 'The Fresh Starter',           tag: 'Eager but unprepared — 0–2 tools, weak English self-rating.',                share: '5%',  proceed: '30%' }
+  polished:     { emoji: '🌟', name: 'The Polished Freelancer',     tag: 'Already running a client roster. Agency or remote-job is upgrade, not entry.', share: '25%', proceed: '80%' },
+  transitioner: { emoji: '💼', name: 'The Corporate Transitioner',  tag: 'BPO English plus office discipline, but never freelanced a day.',           share: '30%', proceed: '60%' },
+  creative:     { emoji: '🎨', name: 'The Creative Specialist',     tag: 'Photoshop and Premiere fluency, but admin tooling thin.',                  share: '15%', proceed: '70%' },
+  solo:         { emoji: '🛒', name: 'The Solo Entrepreneur',       tag: 'Ran an ecom store, restaurant, or business, now pivoting to VA.',              share: '15%', proceed: '55%' },
+  generalist:   { emoji: '📋', name: 'The Generalist Admin',        tag: 'Excel-fluent and calendar-disciplined, but no specialty wedge.',              share: '10%', proceed: '50%' },
+  fresh:        { emoji: '🌱', name: 'The Fresh Starter',           tag: 'Eager but unprepared, 0 to 2 tools, weak English self-rating.',                share: '5%',  proceed: '30%' }
 };
 
 const TOOL_CATEGORIES = [
@@ -1892,40 +1893,37 @@ function renderStepbar() {
   sb.innerHTML = h;
 }
 
-/* ---------- STEP 1: Archetype Quiz ---------- */
+/* ---------- STEP 1: Resume setup ---------- */
 function renderStep1() {
   const q = state.quiz;
-  const opt = (name, val, lbl) => `
-    <label class="opt ${q[name]===val?'selected':''}">
-      <input type="radio" name="${name}" value="${val}" ${q[name]===val?'checked':''}>
-      <span>${lbl}</span>
-    </label>`;
-
-  const result = state.archetype ? ARCHETYPES[state.archetype] : null;
+  const selectedArch = currentArchetype();
+  const result = ARCHETYPES[selectedArch];
+  const finderSaved = state.finderResult && state.finderResult.archetype;
 
   return `
     <div class="card">
       <div class="eyebrow">Step 1 of 7</div>
-      <h1>Find your archetype</h1>
-      <p class="lede">6 quick questions. We'll match you to one of 6 archetypes based on a study of 641 Filipino VA candidates. Each archetype gets a custom resume path.</p>
+      <h1>Resume setup</h1>
+      <p class="lede">Choose the path this resume should follow, then list the tools that are strong enough to belong in your skills section. If you only need direction first, use the lightweight Archetype Finder.</p>
 
       <div class="quiz-q">
-        <div class="q-text">1. What's your work background?</div>
-        <div class="opt-grid">
-          ${opt('q1','freelance','Online / freelance work')}
-          ${opt('q1','corporate','Corporate office')}
-          ${opt('q1','bpo','BPO / call center')}
-          ${opt('q1','business','I owned / ran a business')}
-          ${opt('q1','creative','Creative / media / journalism')}
-          ${opt('q1','school','Just finishing school')}
-          ${opt('q1','none','None of the above')}
+        <div class="q-text">1. Which archetype should this resume use?</div>
+        <p class="help-mini">This controls the role templates, soft-skill suggestions, section order, and resume audit. You can change it later.</p>
+        <div class="arch-result">
+          <div class="arch-name">${result.name}</div>
+          <div class="arch-tagline">${result.tag}</div>
+          <div class="arch-detail">Share of pool: ${result.share} · Proceed-to-interview rate: ${result.proceed}</div>
+          ${finderSaved ? '<div class="note good" style="margin-top:12px;">Imported from the Archetype Finder. You can keep it or choose a different resume path below.</div>' : '<div class="note" style="margin-top:12px;">Not sure yet? <a href="../swahg-archetype/index.html">Open the Archetype Finder</a>, then come back here to build the resume.</div>'}
+          <select id="archOverride" aria-label="Resume archetype">
+            ${Object.keys(ARCHETYPES).map(k => `<option value="${k}" ${selectedArch===k?'selected':''}>${ARCHETYPES[k].name}</option>`).join('')}
+          </select>
         </div>
       </div>
 
       <div class="quiz-q">
-        <div class="q-text">2. For every tool, rate your real experience. <strong>Used at work</strong> is the strongest signal — it's what hiring managers count.</div>
+        <div class="q-text">2. Rate the tools you can defend on a resume.</div>
         <div style="font-size:11.5px;color:var(--muted);margin-bottom:8px;line-height:1.55;">
-          ⭐ = gap category (high-leverage if you've actually used them at work). Levels:<br>
+          Gap categories are high-leverage when you have real experience. Levels:<br>
           <strong>Basic</strong> = heard of it, never used at work · <strong>Confident</strong> = explored on my own · <strong>Expert</strong> = used at work
         </div>
         ${ QUICK_TOOLS_GROUPED.map(g => {
@@ -1945,10 +1943,10 @@ function renderStep1() {
                 <div class="q2-row">
                   <div class="tool-name">${t}</div>
                   <select data-q2-tool="${esc(t)}" data-q2-cat="${esc(g.key)}" data-level="${lvl}" ${isNone?'disabled':''}>
-                    <option value=""           ${!lvl?'selected':''}>— None / Never heard</option>
-                    <option value="basic"      ${lvl==='basic'?'selected':''}>Basic — heard of it</option>
-                    <option value="confident"  ${lvl==='confident'?'selected':''}>Confident — self-taught</option>
-                    <option value="expert"     ${lvl==='expert'?'selected':''}>Expert — used at work</option>
+                    <option value=""           ${!lvl?'selected':''}>None / Never heard</option>
+                    <option value="basic"      ${lvl==='basic'?'selected':''}>Basic, heard of it</option>
+                    <option value="confident"  ${lvl==='confident'?'selected':''}>Confident, self-taught</option>
+                    <option value="expert"     ${lvl==='expert'?'selected':''}>Expert, used at work</option>
                   </select>
                 </div>`;
               }).join('') }
@@ -1964,7 +1962,7 @@ function renderStep1() {
                 <span class="lbl-other">+ Other:</span>
                 <input type="text" class="q2-other-input"
                        data-q2-other="${esc(g.key)}"
-                       placeholder="Tools we didn't list (comma-separated; assumed Expert — used at work)"
+                       placeholder="Tools we didn't list (comma-separated; assumed Expert, used at work)"
                        value="${esc((q.q2_other||{})[g.key]||'')}"
                        ${isNone?'disabled':''}>
               </div>
@@ -1989,7 +1987,8 @@ function renderStep1() {
       </div>
 
       <div class="quiz-q">
-        <div class="q-text">3. Rate any photo / video / social-media tools you've actually used. <em>Confident</em> or <em>Expert</em> in any tool unlocks the Creative-Specialist lift (+76 to +81% hire rate). Default is <em>None</em> — leave it for tools you don't know.</div>
+        <div class="q-text">3. Add creative tools only if they strengthen the resume.</div>
+        <p class="help-mini">Use this for design, photo, video, and social-media tools that support the role you are targeting.</p>
         ${ CREATIVE_TOOLS_BY_GROUP.map(g => {
           const groupKey = g.group.replace(/[^a-z]/gi,'').toLowerCase();
           const hits = g.tools.filter(t => ['confident','expert'].includes((q.q3_creative||{})[t])).length;
@@ -2009,7 +2008,7 @@ function renderStep1() {
                   <div class="cs-row">
                     <div class="cs-tool">${t}</div>
                     <select data-q3-tool="${esc(t)}" ${isGroupNone?'disabled':''}>
-                      <option value="" ${!(q.q3_creative||{})[t]?'selected':''}>— None</option>
+                      <option value="" ${!(q.q3_creative||{})[t]?'selected':''}>None</option>
                       <option value="basic" ${(q.q3_creative||{})[t]==='basic'?'selected':''}>Basic</option>
                       <option value="confident" ${(q.q3_creative||{})[t]==='confident'?'selected':''}>Confident</option>
                       <option value="expert" ${(q.q3_creative||{})[t]==='expert'?'selected':''}>Expert</option>
@@ -2021,80 +2020,21 @@ function renderStep1() {
           `;
         }).join('') }
         <div class="q3-other-row">
-          <label>Other creative tools we didn't list (one per line: <code>Tool Name — Confident</code>)</label>
-          <textarea data-q3-other placeholder="Affinity Photo — Confident&#10;ManyChat — Expert&#10;Davinci Fusion — Basic">${esc(q.q3_other||'')}</textarea>
+          <label>Other creative tools we didn't list (one per line: <code>Tool Name - Confident</code>)</label>
+          <textarea data-q3-other placeholder="Affinity Photo - Confident&#10;ManyChat - Expert&#10;Davinci Fusion - Basic">${esc(q.q3_other||'')}</textarea>
         </div>
       </div>
-
-      <div class="quiz-q">
-        <div class="q-text">4. What shift works for you?</div>
-        <div class="opt-grid">
-          ${opt('q4','day','Day shift only')}
-          ${opt('q4','night','Night shift OK')}
-          ${opt('q4','flexible','Flexible / any')}
-          ${opt('q4','parttime','Part-time only')}
-        </div>
-      </div>
-
-      <div class="quiz-q">
-        <div class="q-text">5. How would you rate your English (1 = struggling, 5 = fluent)?</div>
-        <div class="opt-grid">
-          ${opt('q5','1','1 — struggling')}
-          ${opt('q5','2','2 — basic')}
-          ${opt('q5','3','3 — conversational')}
-          ${opt('q5','4','4 — professional')}
-          ${opt('q5','5','5 — fluent / near-native')}
-        </div>
-      </div>
-
-      <div class="quiz-q">
-        <div class="q-text">6a. Years of <strong>remote / freelance / online</strong> work?</div>
-        <div style="font-size:11.5px;color:var(--muted);margin-bottom:6px;">Upwork, OnlineJobs.ph, direct clients, agency VA work, self-employed online business.</div>
-        <div class="opt-grid">
-          ${opt('q6_remote','0','0 years')}
-          ${opt('q6_remote','1-2','1–2 years')}
-          ${opt('q6_remote','3-5','3–5 years')}
-          ${opt('q6_remote','6+','6+ years')}
-        </div>
-      </div>
-
-      <div class="quiz-q">
-        <div class="q-text">6b. Years of <strong>corporate / office / BPO</strong> work?</div>
-        <div style="font-size:11.5px;color:var(--muted);margin-bottom:6px;">On-site office, call center, BPO, in-house — even if hybrid.</div>
-        <div class="opt-grid">
-          ${opt('q6_corporate','0','0 years')}
-          ${opt('q6_corporate','1-2','1–2 years')}
-          ${opt('q6_corporate','3-5','3–5 years')}
-          ${opt('q6_corporate','6+','6+ years')}
-        </div>
-      </div>
-
-      ${ result ? `
-        <div class="arch-result">
-          <div class="arch-emoji">${result.emoji}</div>
-          <div class="arch-name">${result.name}</div>
-          <div class="arch-tagline">${result.tag}</div>
-          <div class="arch-detail">Share of pool: ${result.share} · Proceed-to-interview rate: ${result.proceed}</div>
-          <div style="margin-top:10px; font-size:13px;">
-            <label class="lbl" style="display:inline; font-size:11px;">Override archetype:</label>
-            <select id="archOverride">
-              <option value="">— keep —</option>
-              ${Object.keys(ARCHETYPES).map(k => `<option value="${k}" ${state.archetypeOverride===k?'selected':''}>${ARCHETYPES[k].emoji} ${ARCHETYPES[k].name}</option>`).join('')}
-            </select>
-          </div>
-        </div>
-      ` : '<div class="note">Answer the 6 questions above to see your archetype.</div>' }
 
       <div class="nav-row">
-        <span></span>
-        <button class="btn btn-primary" onclick="step1Next()" ${state.archetype?'':'disabled'}>Continue →</button>
+        <a class="btn btn-secondary" href="../swahg-archetype/index.html">Open Archetype Finder</a>
+        <button class="btn btn-primary" onclick="step1Next()">Continue →</button>
       </div>
     </div>
   `;
 }
 
 function step1Next() {
-  if (!state.archetype) return;
+  state.archetype = currentArchetype();
   go(2);
 }
 

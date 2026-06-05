@@ -764,13 +764,13 @@ See the full Blueprint
 Where PM Tool Fluency fits
 
 <!-- wbl-text:0251 -->
-Build →
+Start →
 
 <!-- wbl-text:0252 -->
-Resume Builder
+Archetype Finder
 
 <!-- wbl-text:0253 -->
-Find your archetype · auto-fill your resume
+Find your path first
 
 <!-- wbl-text:0254 -->
 Hold steady, SWAHG Team. We keep going together.

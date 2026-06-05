@@ -386,13 +386,13 @@ See the full Blueprint
 All 30+ boxes
 
 <!-- wbl-text:0125 -->
-Build →
+Start →
 
 <!-- wbl-text:0126 -->
-Resume Builder
+Archetype Finder
 
 <!-- wbl-text:0127 -->
-Find your archetype
+Find your path first
 
 <!-- wbl-text:0128 -->
 Hold steady, SWAHG Team. We keep going together.

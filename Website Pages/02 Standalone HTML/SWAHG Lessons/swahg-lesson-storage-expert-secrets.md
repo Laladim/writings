@@ -701,13 +701,13 @@ See the full Blueprint
 All 30+ boxes · the growth loop
 
 <!-- wbl-text:0230 -->
-Build →
+Start →
 
 <!-- wbl-text:0231 -->
-Resume Builder
+Archetype Finder
 
 <!-- wbl-text:0232 -->
-Find your archetype · auto-fill your resume
+Find your path first
 
 <!-- wbl-text:0233 -->
 Hold steady, SWAHG Team. We keep going together.
