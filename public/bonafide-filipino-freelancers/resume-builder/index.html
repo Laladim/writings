@@ -1893,7 +1893,7 @@ const SUMMARY_TEMPLATES = {
 function emptyState() {
   return {
     step: 1,
-    startMode: 'job',
+    startMode: 'template',
     archetype: null,
     archetypeOverride: null,
     quiz: { q1:'', q2_levels:{}, q2_none:{}, q2_other:{}, q3_creative:{}, q3_none:{}, q3_other:'', q4:'', q5:'', q6_remote:'', q6_corporate:'' },
@@ -1938,7 +1938,8 @@ function loadState() {
       const merged = Object.assign(base, loaded);
       merged.quiz = Object.assign(base.quiz, loaded.quiz || {});
       merged.target = Object.assign(base.target, loaded.target || {});
-      if (!merged.startMode) merged.startMode = merged.target.selectedJobId ? 'job' : 'archetype';
+      if (!merged.startMode) merged.startMode = merged.target.selectedJobId ? 'job' : 'template';
+      if (merged.startMode === 'archetype') merged.startMode = 'template';
       return merged;
     }
   } catch(e) { console.warn('localStorage load failed', e); }
@@ -2288,40 +2289,74 @@ function renderStepbar() {
 }
 
 function renderStarterWorkbench() {
-  const mode = state.startMode || 'job';
+  const mode = state.startMode || 'template';
   const selectedJob = selectedJobSummary();
   const jobs = [...jobBoardJobs].sort((a,b) => {
     const fit = Number(b.fit_score || 0) - Number(a.fit_score || 0);
     return fit || String(b.posted || '').localeCompare(String(a.posted || ''));
   });
   const arch = ARCHETYPES[currentArchetype()];
+  const templateArch = currentArchetype();
+  const recommendedTemplates = JOB_TEMPLATES.filter(t => t.archetypeHint.includes(templateArch));
+  const otherTemplates = JOB_TEMPLATES.filter(t => !t.archetypeHint.includes(templateArch));
+  const orderedTemplates = [...recommendedTemplates, ...otherTemplates];
   const audit = auditResume();
   const topFixes = audit.fixes.slice(0, 3);
   return `
     <div class="starter-shell">
       <section class="starter-panel sticky">
         <div class="starter-kicker">Resume lead magnet</div>
-        <h1>Pick one job. Get a starter resume.</h1>
-        <p class="lede">This is the narrow win: match one target role, create an editable draft, then improve the weak proof sections.</p>
+        <h1>Pick a starter role. Get a resume draft.</h1>
+        <p class="lede">Start with an archetype-matched role template. Use the Job Board only when there is a real target job to chase.</p>
 
         <div class="starter-tabs" role="tablist" aria-label="Starting point">
+          <button class="starter-tab ${mode==='template'?'active':''}" type="button" onclick="setStartMode('template')">
+            <span>Starter roles</span>
+            Archetype templates
+          </button>
           <button class="starter-tab ${mode==='job'?'active':''}" type="button" onclick="setStartMode('job')">
             <span>Target job</span>
-            Best default
+            Use Job Board
           </button>
           <button class="starter-tab ${mode==='resume'?'active':''}" type="button" onclick="setStartMode('resume')">
             <span>Old resume</span>
             Use facts already written
           </button>
-          <button class="starter-tab ${mode==='archetype'?'active':''}" type="button" onclick="setStartMode('archetype')">
-            <span>Archetype</span>
-            Direction first
-          </button>
         </div>
+
+        <label class="field">
+          <span class="lbl">Resume path</span>
+          <span class="hint">This filters the starter roles. The full Archetype Finder stays separate.</span>
+          <select id="archOverride" aria-label="Resume path">
+            ${Object.keys(ARCHETYPES).map(k => `<option value="${k}" ${currentArchetype()===k?'selected':''}>${ARCHETYPES[k].name}</option>`).join('')}
+          </select>
+        </label>
+
+        ${mode === 'template' ? `
+          <div class="note good">
+            <strong>${recommendedTemplates.length} recommended starter roles for ${esc(arch.name)}.</strong><br>
+            Pick one to generate a draft. Later, replace the template details with a real target job if needed.
+          </div>
+          <div class="templates-grid" style="grid-template-columns:1fr;margin-bottom:14px;">
+            ${orderedTemplates.slice(0, 8).map(t => {
+              const isRecommended = t.archetypeHint.includes(templateArch);
+              return `
+                <div class="template-card ${state.target.templateKey===t.key?'selected':''}" onclick="pickTemplate('${esc(t.key)}')">
+                  ${isRecommended ? '<span class="pill green" style="position:absolute;top:8px;right:8px;font-size:9px;padding:1px 7px;">Recommended</span>' : ''}
+                  <div class="tpl-title">${esc(t.title)}</div>
+                  <div class="tpl-meta"><span class="pay">${esc(t.payShort)}</span></div>
+                  <div class="tpl-meta">${esc(t.scheduleShort)}</div>
+                  <div class="tpl-tools">${esc(t.toolsShort)}</div>
+                  <div class="tpl-pick">${state.target.templateKey===t.key?'Selected':'Use starter role'}</div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+        ` : ''}
 
         ${mode === 'job' ? `
           <label class="field">
-            <span class="lbl">Choose from the BFF Job Board</span>
+            <span class="lbl">Choose a real target job from the BFF Job Board</span>
             <span class="hint">${jobBoardJobs.length ? `${jobBoardJobs.length} current jobs loaded.` : 'Loading current jobs.'}</span>
             <select id="liveJobSelect">
               <option value="">Choose a current job</option>
@@ -2342,12 +2377,6 @@ function renderStarterWorkbench() {
             <span class="hint">This stays as a fact bank. The draft below is still editable.</span>
             <textarea id="existingResumeInput" rows="7" placeholder="Paste current resume text here">${esc(state.existingResume || '')}</textarea>
           </label>
-        ` : ''}
-
-        ${mode === 'archetype' ? `
-          <div class="note">
-            Use this only when there is no target job yet. The full Archetype Finder stays separate so this builder can stay focused.
-          </div>
         ` : ''}
 
         <label class="field">
@@ -2392,13 +2421,6 @@ function renderStarterWorkbench() {
             </select>
           </label>
         </div>
-
-        <label class="field">
-          <span class="lbl">Resume path</span>
-          <select id="archOverride" aria-label="Resume path">
-            ${Object.keys(ARCHETYPES).map(k => `<option value="${k}" ${currentArchetype()===k?'selected':''}>${ARCHETYPES[k].name}</option>`).join('')}
-          </select>
-        </label>
 
         <details>
           <summary style="cursor:pointer;color:var(--purple);font-weight:700;font-size:13px;">Optional: add tools for the skills section</summary>
@@ -2864,7 +2886,7 @@ function toggleTemplates() {
 function pickTemplate(key) {
   const t = JOB_TEMPLATES.find(x => x.key === key);
   if (!t) return;
-  state.startMode = 'job';
+  state.startMode = 'template';
   state.target.templateKey = key;
   state.target.selectedJobId = '';
   state.target.selectedJobUrl = '';
