@@ -453,13 +453,10 @@ The other path: stop trading hours for a paycheck and build your own brand or ag
 Business →  Brand or Agency
 
 <!-- wbl-text:0150 -->
-↻
 
 <!-- wbl-text:0151 -->
-The post-launch loop is the whole point.
 
 <!-- wbl-text:0152 -->
-The original Blueprint hid the loop at the bottom of the PDF. In the rebuild it's wired in: every Higher Level box ladders back to Skill Upgrade, and the Decision diamond is where Freelancer-path and Business-path split. Most community members iterate the loop two or three times before deciding which branch.
 
 <!-- wbl-text:0153 -->
 Not sure what's next?
