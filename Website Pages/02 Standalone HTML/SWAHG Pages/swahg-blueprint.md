@@ -14,10 +14,8 @@ Edit the text below each marker. Keep the markers in place.
 Bonafide Filipino Freelancer — Simplified Blueprint
 
 <!-- wbl-text:0001 -->
-Ang mapa ng buong journey.
 
 <!-- wbl-text:0002 -->
-· 30+ box, 4 stage, 1 loop · Pindutin ang isa para makita ang lesson
 
 <!-- wbl-text:0003 -->
 SWAHG

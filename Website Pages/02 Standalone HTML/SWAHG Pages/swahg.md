@@ -83,10 +83,10 @@ Lessons
 Coming soon
 
 <!-- wbl-text:0024 -->
-26
+Live
 
 <!-- wbl-text:0025 -->
-Current jobs
+Job board
 
 <!-- wbl-text:0026 -->
 ₱0
@@ -203,7 +203,7 @@ No "and then sell them a $497 course" energy. SWAHG was free in 2019, free today
 Built for Filipino learners.
 
 <!-- wbl-text:0064 -->
-Written for Filipino context, in clear English. Faith-warm, not faith-required. PH job market specifically: 26 current listings from the last 30 days. No US-centric "401k" advice.
+Written for Filipino context, in clear English. Faith-warm, not faith-required. PH job market specifically, with listings that change as the job board refreshes. No US-centric "401k" advice.
 
 <!-- wbl-text:0065 -->
 ⏱️
