@@ -62,9 +62,6 @@ at the beginning to
 <!-- wbl-text:0017 -->
 on the other end — and the loop that takes you around again.
 
-<!-- wbl-text:0018 -->
-The original PDF was a poster. This version is a map. Click any box to see which SWAHG lessons cover it — what's live today, what's being rewritten, and what's queued to build.
-
 <!-- wbl-text:0019 -->
 YOU
 
