@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Refresh the public SWAHG job board from no-secret remote job feeds."""
+"""Refresh the public BFF job board from no-secret remote job feeds."""
 
 from __future__ import annotations
 
@@ -21,7 +21,7 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
-BOARD = ROOT / "public" / "swahg-jobs"
+BOARD = ROOT / "public" / "bonafide-filipino-freelancers" / "jobs"
 DATA = BOARD / "data"
 MAX_POSTED_AGE_DAYS = 30
 MAX_JOBS = 40
@@ -744,7 +744,7 @@ def write_outputs(details: list[dict[str, Any]], health_rows: list[dict[str, Any
     for detail in details:
         (staging / f"{detail['id']}.json").write_text(json.dumps(detail, ensure_ascii=False, indent=2) + "\n")
     (staging / "jobs.json").write_text(json.dumps(summaries, ensure_ascii=False, indent=2) + "\n")
-    (staging / "accepted-job.schema.json").write_text(json.dumps(schema("SWAHG Accepted Job Detail", DETAIL_KEYS), indent=2) + "\n")
+    (staging / "accepted-job.schema.json").write_text(json.dumps(schema("BFF Accepted Job Detail", DETAIL_KEYS), indent=2) + "\n")
     resume = {
         "profile_version": "1.0",
         "generated_at": datetime.now().isoformat(timespec="seconds"),
@@ -752,7 +752,7 @@ def write_outputs(details: list[dict[str, Any]], health_rows: list[dict[str, Any
         "jobs": [resume_record(detail) for detail in details],
     }
     (staging / "resume-match-profiles.json").write_text(json.dumps(resume, ensure_ascii=False, indent=2) + "\n")
-    (staging / "resume-match-profiles.schema.json").write_text(json.dumps(schema("SWAHG Resume Match Profiles Export", RESUME_KEYS), indent=2) + "\n")
+    (staging / "resume-match-profiles.schema.json").write_text(json.dumps(schema("BFF Resume Match Profiles Export", RESUME_KEYS), indent=2) + "\n")
     run_id = datetime.now().strftime("%Y%m%dT%H%M%S")
     manifest = {
         "manifest_version": "1.0",
@@ -767,13 +767,13 @@ def write_outputs(details: list[dict[str, Any]], health_rows: list[dict[str, Any
         "refresh_mode": "github-actions-no-secret",
     }
     (staging / "run-manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n")
-    (staging / "run-manifest.schema.json").write_text(json.dumps(schema("SWAHG Job Board Run Manifest", list(manifest.keys())), indent=2) + "\n")
+    (staging / "run-manifest.schema.json").write_text(json.dumps(schema("BFF Job Board Run Manifest", list(manifest.keys())), indent=2) + "\n")
     source_health = {
         "generated_at": datetime.now().isoformat(timespec="seconds"),
         "sources": health_rows,
     }
     (staging / "source-health.json").write_text(json.dumps(source_health, ensure_ascii=False, indent=2) + "\n")
-    (staging / "source-health.schema.json").write_text(json.dumps(schema("SWAHG Source Health Export", ["generated_at", "sources"]), indent=2) + "\n")
+    (staging / "source-health.schema.json").write_text(json.dumps(schema("BFF Source Health Export", ["generated_at", "sources"]), indent=2) + "\n")
     previous = BOARD / "data.previous"
     if previous.exists():
         shutil.rmtree(previous)
@@ -859,7 +859,7 @@ def refresh() -> None:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Refresh or verify the SWAHG static job board.")
+    parser = argparse.ArgumentParser(description="Refresh or verify the BFF static job board.")
     parser.add_argument("--verify", action="store_true", help="Verify the current generated board and exit.")
     args = parser.parse_args()
     if args.verify:

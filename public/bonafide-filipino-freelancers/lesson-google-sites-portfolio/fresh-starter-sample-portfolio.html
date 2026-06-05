@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Joyce Villanueva Fresh Starter Portfolio Reference</title>
+  <style>
+    :root {
+      --ink: #27232f;
+      --muted: #665f72;
+      --line: #ddd4c9;
+      --paper: #fbf8f3;
+      --canvas: #fffdf9;
+      --soft: #f0e8df;
+      --purple: #5a4a7a;
+      --purple-dark: #3f335f;
+      --gold: #b68a4a;
+      --green: #4f735d;
+      --blue: #3f6f8f;
+      --shadow: 0 22px 70px rgba(39, 35, 47, .16);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(182, 138, 74, .18), transparent 28rem),
+        linear-gradient(135deg, #f7f1e9 0%, #fbf8f3 52%, #eee6dc 100%);
+      color: var(--ink);
+      line-height: 1.55;
+    }
+
+    a {
+      color: var(--purple-dark);
+      text-underline-offset: .18em;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 20px;
+      align-items: center;
+      padding: 14px 28px;
+      background: rgba(251, 248, 243, .92);
+      border-bottom: 1px solid rgba(221, 212, 201, .9);
+      backdrop-filter: blur(16px);
+    }
+
+    .brandmark {
+      display: inline-grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      background: var(--purple);
+      color: #fbf8f3;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .topbar h1 {
+      margin: 0;
+      font-size: clamp(1rem, 1.8vw, 1.35rem);
+      letter-spacing: 0;
+    }
+
+    .topbar p {
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .doc-link,
+    .lesson-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 16px;
+      border: 1px solid var(--purple);
+      border-radius: 7px;
+      background: var(--purple);
+      color: #fbf8f3;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .lesson-link {
+      border-color: var(--line);
+      background: #fffdf9;
+      color: var(--purple-dark);
+    }
+
+    .top-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+
+    .shell {
+      width: min(1440px, calc(100% - 32px));
+      margin: 32px auto 56px;
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr) 270px;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .side,
+    .builder {
+      position: sticky;
+      top: 86px;
+      background: rgba(255, 253, 249, .86);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .side h2,
+    .builder h2 {
+      margin: 0;
+      padding: 18px 18px 12px;
+      font-size: .78rem;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: .16em;
+    }
+
+    .side nav {
+      display: grid;
+      padding: 0 10px 14px;
+    }
+
+    .side a {
+      display: grid;
+      grid-template-columns: 26px 1fr;
+      gap: 10px;
+      align-items: center;
+      padding: 11px 10px;
+      border-radius: 8px;
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 650;
+      font-size: .94rem;
+    }
+
+    .side a:hover,
+    .side a:focus {
+      background: var(--soft);
+      outline: none;
+    }
+
+    .side span {
+      display: inline-grid;
+      place-items: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      background: var(--purple);
+      color: #fbf8f3;
+      font-size: .78rem;
+      font-weight: 800;
+    }
+
+    .site {
+      background: var(--canvas);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .site-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 13px 18px;
+      border-bottom: 1px solid var(--line);
+      background: #f8f4ee;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .site-toolbar strong {
+      color: var(--ink);
+    }
+
+    .fake-actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      white-space: nowrap;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--line);
+    }
+
+    .dot:nth-child(2) {
+      background: var(--gold);
+    }
+
+    .dot:nth-child(3) {
+      background: var(--green);
+    }
+
+    .hero {
+      min-height: 360px;
+      display: grid;
+      align-items: end;
+      padding: clamp(42px, 8vw, 92px);
+      background:
+        linear-gradient(120deg, rgba(42, 38, 49, .82), rgba(90, 74, 122, .52)),
+        linear-gradient(135deg, #4f5963, #26323b 48%, #7f8c8d);
+      color: #fbf8f3;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: #dcc291;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: .78rem;
+      font-weight: 800;
+    }
+
+    .hero h2 {
+      max-width: 900px;
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.4rem, 8vw, 5.8rem);
+      line-height: .94;
+      letter-spacing: 0;
+      font-weight: 500;
+    }
+
+    .hero p:last-child {
+      max-width: 710px;
+      margin: 22px 0 0;
+      font-size: clamp(1rem, 2vw, 1.24rem);
+      color: #f4ede2;
+    }
+
+    .section {
+      padding: clamp(34px, 6vw, 76px);
+      border-top: 1px solid var(--line);
+    }
+
+    .section:first-of-type {
+      border-top: 0;
+    }
+
+    .section h3 {
+      margin: 0 0 18px;
+      color: var(--purple-dark);
+      font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .section p {
+      max-width: 74ch;
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .journey {
+      display: grid;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .journey-row,
+    .skill-row,
+    .sample,
+    .focus-note {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #f8f4ee;
+    }
+
+    .journey-row {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 18px;
+      padding: 18px;
+    }
+
+    .journey-row strong,
+    .skill-row strong {
+      color: var(--ink);
+    }
+
+    .journey-row p,
+    .skill-row p,
+    .sample p,
+    .focus-note p {
+      margin-bottom: 0;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .skill-row {
+      padding: 18px;
+    }
+
+    .samples {
+      display: grid;
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .sample {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(220px, .6fr);
+      gap: 22px;
+      padding: 22px;
+      align-items: start;
+    }
+
+    .sample h4 {
+      margin: 0 0 8px;
+      font-size: 1.35rem;
+      letter-spacing: 0;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: #ece2d6;
+      color: var(--purple-dark);
+      font-size: .78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .open-sample {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 14px;
+      border-radius: 7px;
+      border: 1px solid var(--green);
+      color: var(--green);
+      font-weight: 800;
+      text-decoration: none;
+      text-align: center;
+      width: 100%;
+    }
+
+    .open-sample:hover,
+    .open-sample:focus {
+      background: #e7efe8;
+      outline: none;
+    }
+
+    .focus-note {
+      margin-top: 24px;
+      padding: 22px;
+      background: #f4ecdf;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .contact-grid p {
+      min-height: 74px;
+      margin: 0;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #f8f4ee;
+    }
+
+    .contact-grid span {
+      display: block;
+      color: var(--gold);
+      font-size: .78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    .builder {
+      padding-bottom: 12px;
+    }
+
+    .builder ol {
+      margin: 0;
+      padding: 0 20px 18px 38px;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .builder li {
+      margin: 0 0 10px;
+      padding-left: 2px;
+    }
+
+    .notice {
+      margin: 0 14px 14px;
+      padding: 14px;
+      border-radius: 9px;
+      background: #efe7f5;
+      color: var(--purple-dark);
+      font-size: .92rem;
+      font-weight: 650;
+    }
+
+    .footer {
+      width: min(1440px, calc(100% - 32px));
+      margin: 0 auto 42px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    @media (max-width: 1080px) {
+      .shell {
+        grid-template-columns: 1fr;
+      }
+
+      .side,
+      .builder {
+        position: static;
+      }
+
+      .side nav {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+
+      .side a {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .topbar {
+        grid-template-columns: auto 1fr;
+      }
+
+      .top-actions {
+        grid-column: 1 / -1;
+        justify-content: stretch;
+      }
+
+      .doc-link,
+      .lesson-link {
+        width: 100%;
+      }
+
+      .side nav,
+      .skills,
+      .sample,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .journey-row {
+        grid-template-columns: 1fr;
+      }
+
+      .section,
+      .hero {
+        padding: 32px 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brandmark">S</div>
+    <div>
+      <h1>Fresh Starter Google Sites Portfolio Reference</h1>
+      <p>Brand Persona 6: Joy "Joyce" Villanueva</p>
+    </div>
+    <div class="top-actions">
+      <a class="lesson-link" href="index.html">Back to Lesson</a>
+      <a class="doc-link" href="https://docs.google.com/document/d/1cioEkpaHP958JHY1KoA5CYPfu6M-7q44-nf47MFbk7I/edit?usp=sharing">Open Step by Step Guide</a>
+    </div>
+  </header>
+
+  <div class="shell">
+    <aside class="side" aria-label="Portfolio sections">
+      <h2>Page Sections</h2>
+      <nav>
+        <a href="#learning"><span>1</span>Learning Journey</a>
+        <a href="#skills"><span>2</span>Skills in Action</a>
+        <a href="#samples"><span>3</span>Sample Work</a>
+        <a href="#focus"><span>4</span>Current Focus</a>
+        <a href="#contact"><span>5</span>Contact</a>
+      </nav>
+    </aside>
+
+    <main class="site">
+      <div class="site-toolbar" aria-label="Google Sites style toolbar">
+        <strong>Joyce Villanueva</strong>
+        <span>Google Sites style reference page</span>
+        <div class="fake-actions" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+      </div>
+
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Fresh Starter Portfolio</p>
+          <h2>Joyce Villanueva Fresh Starter Portfolio</h2>
+          <p>Entry-level remote support learner building honest proof through Google Docs, Sheets, Slides, and Sites.</p>
+        </div>
+      </section>
+
+      <section class="section" id="learning">
+        <h3>Learning Journey</h3>
+        <p>I am at the beginning of my remote-work journey, so I am focusing on small, complete samples that show how I think and work. My current practice areas are process documentation, data tracking, and learning-based presentation design.</p>
+        <div class="journey">
+          <div class="journey-row">
+            <strong>Day 1</strong>
+            <p><strong>Process documentation:</strong> Weekly Meal Planning Process Document. I practiced breaking a repeated task into clear steps.</p>
+          </div>
+          <div class="journey-row">
+            <strong>Day 1</strong>
+            <p><strong>Spreadsheet tracking:</strong> Personal Budget Tracker. I practiced categories, formulas, totals, notes, and status checks.</p>
+          </div>
+          <div class="journey-row">
+            <strong>Day 2</strong>
+            <p><strong>Presentation structure:</strong> Learning Notes Slide Deck. I practiced turning notes into teachable slides.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="skills">
+        <h3>Skills in Action</h3>
+        <p>This section translates small practice projects into beginner-friendly remote-work proof.</p>
+        <div class="skills">
+          <div class="skill-row"><p><strong>Process documentation:</strong> clear inputs, constraints, checklist items, and quality checks.</p></div>
+          <div class="skill-row"><p><strong>Spreadsheet organization:</strong> categories, planned amounts, actual amounts, formulas, and notes.</p></div>
+          <div class="skill-row"><p><strong>Presentation organization:</strong> short sections, clean sequence, and clear next steps.</p></div>
+          <div class="skill-row"><p><strong>Written communication:</strong> each sample explains purpose, process, proof, and next improvement.</p></div>
+        </div>
+      </section>
+
+      <section class="section" id="samples">
+        <h3>Sample Work</h3>
+        <p>These are self-directed practice samples. They are not paid client work.</p>
+        <div class="samples">
+          <article class="sample">
+            <div>
+              <span class="tag">Google Docs</span>
+              <h4>Weekly Meal Planning Process Document</h4>
+              <p><strong>Purpose:</strong> Turn a repeated household planning task into a clear step-by-step process.</p>
+              <p><strong>Demonstrates:</strong> process thinking, documentation, task sequencing, checklist creation, and quality control.</p>
+              <p><strong>Reflection:</strong> This helped me practice writing instructions another person could follow without extra explanation.</p>
+            </div>
+            <a class="open-sample" href="https://docs.google.com/document/d/13-DYp5TbpD7FPwySizhy9OuKhLuh64JnbjCfTD8m4QI/edit?usp=sharing">Open Doc Sample</a>
+          </article>
+
+          <article class="sample">
+            <div>
+              <span class="tag">Google Sheets</span>
+              <h4>Personal Budget Tracker</h4>
+              <p><strong>Purpose:</strong> Organize a simple monthly budget with planned amounts, actual amounts, differences, notes, and status checks.</p>
+              <p><strong>Demonstrates:</strong> spreadsheet organization, basic formulas, category tracking, and practical judgment.</p>
+              <p><strong>Reflection:</strong> This helped me practice making a tracker that is simple enough to maintain and clear enough to inspect.</p>
+            </div>
+            <a class="open-sample" href="https://docs.google.com/spreadsheets/d/10PViXJr-XA9YDzHw1wGEvxhoOWRDH56AXTySXCKo3zY/edit?usp=sharing">Open Sheet Sample</a>
+          </article>
+
+          <article class="sample">
+            <div>
+              <span class="tag">Google Slides</span>
+              <h4>Learning Notes Slide Deck</h4>
+              <p><strong>Purpose:</strong> Turn learning notes into a short presentation someone else can understand.</p>
+              <p><strong>Demonstrates:</strong> presentation structure, summary writing, sequencing, and communication.</p>
+              <p><strong>Reflection:</strong> This helped me practice turning notes into a useful teaching format.</p>
+            </div>
+            <a class="open-sample" href="https://docs.google.com/presentation/d/1yfKcsl1j988mT5DuLnEIup-obgc-vcMw5-BwD3KSj4U/edit?usp=sharing">Open Slides Sample</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="focus">
+        <h3>Current Focus</h3>
+        <p>My current focus is building beginner-level proof in documentation, data organization, and presentation support. I am preparing for entry-level remote support tasks that involve organizing information, following instructions, creating simple documents, maintaining trackers, and communicating clearly.</p>
+        <div class="focus-note">
+          <p><strong>Honesty note:</strong> I am not presenting these samples as paid client work. They are self-directed practice outputs created to show my current skills and learning process.</p>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <h3>Contact</h3>
+        <p>This reference keeps contact information simple, beginner-safe, and professional.</p>
+        <div class="contact-grid">
+          <p><span>Name</span>Joy "Joyce" Villanueva</p>
+          <p><span>Time zone</span>Philippines, UTC+8</p>
+          <p><span>Open to</span>Entry-level remote support practice, volunteer projects, internships, apprenticeships, and beginner-friendly admin tasks.</p>
+          <p><span>Email</span>joyce.villanueva.sample@gmail.com</p>
+        </div>
+      </section>
+    </main>
+
+    <aside class="builder" aria-label="Build instructions summary">
+      <h2>Build Notes</h2>
+      <p class="notice">Use this HTML as the visual reference, then follow the Google Doc for exact clicks in Google Sites.</p>
+      <ol>
+        <li>Open Google Sites and choose Blank site.</li>
+        <li>Add the title and short intro.</li>
+        <li>Create the five lesson sections.</li>
+        <li>Link or embed the three sample files.</li>
+        <li>Preview desktop and mobile.</li>
+        <li>Publish only after every sample opens.</li>
+      </ol>
+    </aside>
+  </div>
+
+  <footer class="footer">
+    Source lesson: BFF Google Sites Portfolio. Persona source: Brand Persona 6, The Fresh Starter, Joy "Joyce" Villanueva. Generated May 18, 2026.
+  </footer>
+</body>
+</html>

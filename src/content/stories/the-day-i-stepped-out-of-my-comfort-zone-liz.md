@@ -1,10 +1,10 @@
 ---
 title: "The Day I Stepped Out of My Comfort Zone"
 type: "story"
-topics: ["swahg-stories", "community", "filipino-professionals"]
+topics: ["bff-stories", "community", "filipino-professionals"]
 date: 2018-06-23
 description: "Liz Galacio on finding courage, meeting Lala, and stepping out of her comfort zone through SWAHG."
-image: "/swahg-stories/the-day-i-stepped-out-of-my-comfort-zone-liz.webp"
+image: "/bonafide-filipino-freelancers/stories/the-day-i-stepped-out-of-my-comfort-zone-liz.webp"
 ---
 
 by Liz Galacio

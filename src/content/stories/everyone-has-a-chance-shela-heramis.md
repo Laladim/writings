@@ -1,10 +1,10 @@
 ---
 title: "Everyone Has A Chance"
 type: "story"
-topics: ["swahg-stories", "freelancing", "health"]
+topics: ["bff-stories", "freelancing", "health"]
 date: 2017-03-28
 description: "Lala remembers the beginning of working from home, illness, provision, and learning to feel alive again."
-image: "/swahg-stories/everyone-has-a-chance-shela-heramis.webp"
+image: "/bonafide-filipino-freelancers/stories/everyone-has-a-chance-shela-heramis.webp"
 ---
 
 By: Shela "Lala" Heramis

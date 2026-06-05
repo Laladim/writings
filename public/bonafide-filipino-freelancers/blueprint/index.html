@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Bonafide Filipino Freelancer — Simplified Blueprint</title>
+<meta name="description" content="The BFF Open University Bonafide Filipino Freelancer Simplified Blueprint, rebuilt as an interactive map. Every box opens a lesson preview. The growth loop is no longer hidden.">
+<link rel="icon" type="image/png" href="../../brand/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#5a4a7a;
+    --primary-deep:#4a3a6a;
+    --primary-soft:#f3eef7;
+    --accent:#c8985f;
+    --accent-deep:#a88d5e;
+    --bg:#f5f1f0;
+    --surface:#ffffff;
+    --text:#3a3a3a;
+    --text-soft:#6b6565;
+    --border:#e0dbd8;
+    --lavender:#7a6a8f;
+    --rose:#a0756a;
+    --sage:#5a8a72;
+    --new:#5a8a72;
+
+    /* Stage colors mirror the PDF stage-label boxes */
+    --prep-bg:#f9d8d8;          /* pink */
+    --prep-ink:#7c3a3a;
+    --warmup-bg:#f6a89c;         /* coral */
+    --warmup-ink:#6e2c20;
+    --launch-bg:#f6c95c;         /* yellow */
+    --launch-ink:#5a3e0e;
+    --working-bg:#fceea1;        /* light yellow */
+    --working-ink:#5a4a10;
+    --topband-bg:#dfecf5;        /* light blue container */
+    --stage1-band:#fdf2c5;       /* light yellow container */
+    --stage1-chip:#c8a0d6;       /* purple label */
+    --skill-band:#a98fc0;        /* purple container */
+    --higher-band:#f0c0d0;       /* pink container */
+    --business-band:#e07a7a;     /* red container */
+    --decision-bg:#7fb8b0;       /* teal */
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:70px}
+  body{
+    background:var(--bg);color:var(--text);
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    font-size:16px;line-height:1.6;
+  }
+
+  .topnav{
+    position:sticky;top:0;background:rgba(255,255,255,0.96);
+    backdrop-filter:blur(8px);border-bottom:1px solid var(--border);z-index:50;
+  }
+  .topnav-inner{
+    max-width:1280px;margin:0 auto;padding:14px 24px;
+    display:flex;align-items:center;justify-content:space-between;gap:24px;
+  }
+  .logo{
+    font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--primary);
+    font-size:22px;letter-spacing:-.01em;text-decoration:none;
+  }
+  .logo .sub{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-deep);display:block;margin-top:-3px;font-weight:600;font-family:'Inter',sans-serif}
+  .nav-links{display:flex;gap:22px;font-size:14px;flex-wrap:wrap;align-items:center}
+  .nav-links a{color:var(--text-soft);text-decoration:none;transition:color .15s;white-space:nowrap}
+  .nav-links a:hover{color:var(--primary)}
+  .nav-links a[aria-current="page"]{color:var(--primary);font-weight:600;border-bottom:2px solid var(--accent);padding-bottom:2px}
+  .nav-links a.cta{background:var(--primary);color:#fff;padding:8px 16px;border-radius:6px;font-weight:500}
+  .nav-links a.cta:hover{background:var(--primary-deep);color:#fff}
+  @media (max-width:768px){
+    .nav-links{display:flex;overflow-x:auto;gap:14px;font-size:13px;-webkit-overflow-scrolling:touch;padding-bottom:4px}
+    .nav-links::-webkit-scrollbar{display:none}
+    .nav-links a.cta{flex-shrink:0}
+  }
+
+  section{padding:50px 20px;border-bottom:1px solid var(--border)}
+  .wrap{max-width:1280px;margin:0 auto}
+  .narrow{max-width:780px;margin:0 auto}
+  .section-label{
+    font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--accent-deep);
+    font-weight:700;margin-bottom:14px;
+  }
+  h1.hero-h{
+    font-family:'Cormorant Garamond',serif;font-weight:600;
+    font-size:clamp(32px,5.5vw,52px);line-height:1.08;letter-spacing:-.015em;color:var(--primary);
+    margin-bottom:16px;text-transform:uppercase;
+  }
+  h2.section-h{
+    font-family:'Cormorant Garamond',serif;font-weight:600;
+    font-size:clamp(26px,4vw,36px);line-height:1.15;color:var(--primary);
+    margin-bottom:12px;letter-spacing:-.01em;
+  }
+  p.lead{font-size:17px;color:var(--text-soft);margin-bottom:24px;line-height:1.55;max-width:720px}
+
+  /* Hero */
+  #hero{padding:70px 20px 50px;background:linear-gradient(180deg,#fdfbfa 0%,var(--bg) 100%);text-align:center}
+  #hero .wrap{max-width:900px}
+  .hero-tag{
+    display:inline-block;background:var(--primary-soft);color:var(--primary);padding:6px 14px;
+    border-radius:30px;font-size:12px;font-weight:600;letter-spacing:.05em;margin-bottom:18px;
+  }
+  .hero-h em{font-style:normal;color:var(--accent-deep)}
+  .hero-sub{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--text-soft);font-style:italic;margin-bottom:24px}
+
+  /* The big map */
+  #map{padding:30px 20px 70px;background:#faf7f5}
+
+  /* YOU entry */
+  .you-row{display:flex;justify-content:flex-start;align-items:center;margin-bottom:14px;padding-left:8px}
+  .you-pill{
+    display:inline-block;background:var(--surface);border:2px solid var(--text);
+    padding:10px 22px;border-radius:30px;font-weight:700;color:var(--text);
+    font-family:'Cormorant Garamond',serif;font-size:18px;letter-spacing:.05em;
+    box-shadow:0 2px 0 var(--text);
+  }
+  .you-arrow{
+    display:inline-block;margin-left:10px;font-size:24px;color:var(--text);
+    transform:rotate(90deg) translateX(2px);transform-origin:center;
+  }
+
+  /* Top band — linear path */
+  .topband{
+    background:var(--topband-bg);
+    border:1.5px solid #b9d3e3;border-radius:18px;
+    padding:24px 22px;
+    margin-bottom:30px;
+    position:relative;
+  }
+  .topband-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
+  }
+  @media (max-width:980px){.topband-grid{grid-template-columns:1fr 1fr}}
+  @media (max-width:560px){.topband-grid{grid-template-columns:1fr}}
+
+  .stage-col{display:flex;flex-direction:column;gap:10px;position:relative}
+  .stage-label{
+    display:inline-block;font-weight:700;color:var(--prep-ink);
+    padding:10px 18px;border-radius:8px;font-size:18px;
+    margin-bottom:8px;letter-spacing:.01em;
+    font-family:'Inter',sans-serif;
+    align-self:flex-start;
+  }
+  .stage-col[data-stage="prep"] .stage-label{background:var(--prep-bg);color:var(--prep-ink)}
+  .stage-col[data-stage="warmup"] .stage-label{background:var(--warmup-bg);color:var(--warmup-ink)}
+  .stage-col[data-stage="launch"] .stage-label{background:var(--launch-bg);color:var(--launch-ink)}
+  .stage-col[data-stage="working"] .stage-label{background:var(--working-bg);color:var(--working-ink)}
+
+  .stage-col::after{
+    content:"→";position:absolute;top:18px;right:-16px;
+    font-size:24px;color:var(--text);font-weight:700;z-index:2;
+  }
+  .stage-col:last-child::after{display:none}
+  @media (max-width:980px){
+    .stage-col::after{display:none}
+  }
+
+  .sub-box{
+    background:var(--surface);border:1px solid #c8d5dc;border-radius:6px;
+    padding:11px 14px 11px 32px;font-size:13.5px;color:var(--text);
+    cursor:pointer;transition:all .14s;font-family:inherit;
+    text-align:left;font-weight:500;line-height:1.3;
+    display:flex;flex-direction:column;gap:3px;position:relative;
+  }
+  .sub-box:hover{
+    background:#fff;border-color:var(--primary);transform:translateX(2px);
+    box-shadow:0 4px 12px rgba(74,58,106,0.08);
+  }
+  .sub-box .label{font-weight:600}
+  .sub-box .hint{font-size:11px;color:var(--text-soft);font-weight:400}
+  .sub-box .box-num{
+    position:absolute;top:10px;left:9px;
+    width:18px;height:18px;border-radius:50%;
+    background:var(--primary);color:#fff;
+    font-size:10px;font-weight:700;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Inter',sans-serif;letter-spacing:0;
+    line-height:1;
+  }
+  .sub-box .badge-inline{
+    display:inline-block;background:#e6f0ea;color:var(--new);
+    padding:1px 7px;border-radius:10px;font-size:9px;font-weight:700;
+    letter-spacing:.04em;text-transform:uppercase;margin-left:4px;vertical-align:middle;
+  }
+  .sub-box .badge-inline.rew{background:#fdf0ec;color:var(--rose)}
+  .sub-box .badge-inline.built{background:#fdf6ea;color:var(--accent-deep)}
+
+  /* Down arrow from top band to bottom band */
+  .between-arrow{
+    display:flex;justify-content:flex-end;margin:-10px 30px 14px 0;
+    position:relative;
+  }
+  .between-arrow .label{
+    background:var(--surface);border:1.5px dashed var(--accent);
+    padding:6px 14px;border-radius:30px;font-size:11px;color:var(--accent-deep);
+    font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  }
+  .between-arrow::after{
+    content:"";display:block;width:2px;height:30px;background:var(--text);
+    margin-left:14px;align-self:flex-end;
+  }
+  .down-svg{margin:-6px 0 6px;display:block}
+
+  /* Bottom band — growth loop */
+  .bottomband{
+    background:linear-gradient(90deg,
+      var(--stage1-band) 0%, var(--stage1-band) 26%,
+      var(--skill-band) 26%, var(--skill-band) 52%,
+      var(--higher-band) 52%, var(--higher-band) 78%,
+      var(--business-band) 78%, var(--business-band) 100%);
+    border:1.5px solid var(--border);border-radius:18px;
+    padding:24px 22px;position:relative;
+  }
+  @media (max-width:980px){
+    .bottomband{background:var(--stage1-band)}
+  }
+
+  .bottomband-grid{
+    display:grid;grid-template-columns:1fr 1fr 1fr 0.9fr;gap:18px;align-items:flex-start;
+  }
+  @media (max-width:980px){.bottomband-grid{grid-template-columns:1fr 1fr;gap:14px}}
+  @media (max-width:560px){.bottomband-grid{grid-template-columns:1fr}}
+
+  .bottom-col{display:flex;flex-direction:column;gap:10px;position:relative;padding:6px 4px}
+  .bottom-col[data-stage="stage1"] .stage-label{background:var(--stage1-chip);color:#3a1f4a}
+  .bottom-col[data-stage="skill"] .stage-label{background:#fff;color:#3a1f4a;border:1.5px solid #3a1f4a}
+  .bottom-col[data-stage="higher"] .stage-label{background:#fff;color:#7c3a3a;border:1.5px solid #7c3a3a}
+  .bottom-col[data-stage="business"] .stage-label{background:#fff;color:#5a1010;border:1.5px solid #5a1010}
+
+  .bottom-col::after{
+    content:"→";position:absolute;top:18px;right:-16px;
+    font-size:24px;color:var(--text);font-weight:700;z-index:2;
+  }
+  .bottom-col:last-child::after{display:none}
+  @media (max-width:980px){
+    .bottom-col::after{display:none}
+  }
+
+  /* Decision + business branch */
+  .decision-row{
+    margin-top:30px;display:grid;grid-template-columns:1fr auto 1fr;gap:24px;
+    align-items:center;
+  }
+  @media (max-width:780px){.decision-row{grid-template-columns:1fr}}
+
+  .decision-diamond{
+    background:var(--decision-bg);color:#fff;
+    width:160px;height:160px;
+    transform:rotate(45deg);
+    display:flex;align-items:center;justify-content:center;
+    margin:0 auto;cursor:pointer;
+    box-shadow:0 6px 18px rgba(127,184,176,0.3);
+    transition:all .15s;
+  }
+  .decision-diamond:hover{transform:rotate(45deg) scale(1.04)}
+  .decision-diamond .diamond-inner{
+    transform:rotate(-45deg);text-align:center;font-weight:700;
+    font-family:'Cormorant Garamond',serif;font-size:20px;line-height:1.15;
+    padding:0 12px;
+  }
+
+  .branch-callout{
+    background:var(--surface);border:1.5px solid var(--border);border-radius:14px;
+    padding:20px 22px;text-align:left;
+  }
+  .branch-callout.freelancer{border-left:4px solid var(--sage)}
+  .branch-callout.business{border-left:4px solid var(--business-band)}
+  .branch-callout h4{
+    font-family:'Cormorant Garamond',serif;color:var(--primary);font-size:20px;margin-bottom:6px;font-weight:600;
+  }
+  .branch-callout p{font-size:14px;color:var(--text-soft);margin-bottom:10px;line-height:1.5}
+  .branch-callout .branch-arrow{font-size:11px;color:var(--accent-deep);font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+
+  /* Modal */
+  .modal-backdrop{
+    position:fixed;inset:0;background:rgba(58,58,58,0.55);z-index:100;
+    display:none;align-items:center;justify-content:center;padding:20px;
+    backdrop-filter:blur(3px);
+  }
+  .modal-backdrop.open{display:flex}
+  .modal{
+    background:var(--surface);border-radius:14px;max-width:580px;width:100%;
+    max-height:85vh;overflow-y:auto;
+    box-shadow:0 24px 60px rgba(58,58,58,0.25);
+    animation:modalIn .22s ease-out;
+  }
+  @keyframes modalIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  .modal-head{
+    padding:26px 30px 16px;border-bottom:1px solid var(--border);
+    display:flex;justify-content:space-between;align-items:flex-start;gap:18px;
+  }
+  .modal-head h3{font-family:'Cormorant Garamond',serif;font-weight:600;color:var(--primary);font-size:24px;line-height:1.2;margin:0}
+  .modal-stage-pill{
+    display:inline-block;padding:3px 10px;border-radius:20px;font-size:10px;
+    font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;
+  }
+  .modal-close{
+    background:none;border:none;font-size:28px;color:var(--text-soft);cursor:pointer;
+    line-height:1;padding:0;font-family:inherit;
+  }
+  .modal-close:hover{color:var(--primary)}
+  .modal-meta{
+    padding:12px 30px;background:#faf7f5;border-bottom:1px solid var(--border);
+    font-size:12px;color:var(--text-soft);
+  }
+  .modal-meta strong{color:var(--primary)}
+  .modal-body{padding:22px 30px;color:var(--text);font-size:15px;line-height:1.6}
+  .modal-body p{margin-bottom:12px}
+  .modal-body p:last-child{margin-bottom:0}
+  .modal-body .lessons-list{margin-top:8px;padding-left:18px}
+  .modal-body .lessons-list li{margin-bottom:6px}
+  .modal-foot{
+    padding:16px 30px 24px;border-top:1px solid var(--border);
+    display:flex;gap:10px;flex-wrap:wrap;
+  }
+  .btn{
+    border:none;padding:11px 20px;border-radius:8px;font-size:14px;font-weight:500;
+    font-family:inherit;cursor:pointer;text-decoration:none;
+    display:inline-flex;align-items:center;gap:6px;transition:all .14s;
+  }
+  .btn-primary{background:var(--primary);color:#fff}
+  .btn-primary:hover{background:var(--primary-deep)}
+  .btn-ghost{background:transparent;color:var(--primary);border:1.5px solid var(--primary)}
+  .btn-ghost:hover{background:var(--primary);color:#fff}
+
+  footer{padding:50px 20px 70px;background:var(--primary);color:#fff;text-align:center}
+  footer h3{color:#fff;font-family:'Cormorant Garamond',serif;font-size:26px;margin-bottom:8px;font-weight:600}
+  footer p{color:rgba(255,255,255,0.85);max-width:600px;margin:0 auto 22px;font-size:15px}
+  footer a.foot-link{color:#fff;text-decoration:underline;margin:0 12px;font-size:14px;display:inline-block;margin-bottom:6px}
+  footer .credit{margin-top:24px;font-size:12px;color:rgba(255,255,255,0.55)}
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="topnav-inner">
+    <a href="../index.html" class="logo">BFF<span class="sub">Open University</span></a>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../blueprint/index.html" aria-current="page">Blueprint</a>
+      <a href="../archetype/index.html">Archetype Finder</a>
+      <a href="../resume-builder/index.html">Resume Builder</a>
+      <a href="../curriculum/index.html">My Curriculum</a>
+      <a href="../jobs/index.html">Job Board</a>
+    </div>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="wrap">
+    <span class="hero-tag">The Blueprint · Interactive</span>
+    <h1 class="hero-h">Bonafide Filipino Freelancer<br>Simplified Blueprint</h1>
+    <p class="hero-sub">From <em>"YOU"</em> at the beginning to <em>"Rockstar Portfolio"</em> on the other end — and the loop that takes you around again.</p>
+  </div>
+</section>
+
+<section id="map">
+  <div class="wrap">
+
+    <div class="you-row">
+      <div class="you-pill">YOU</div>
+      <span class="you-arrow">→</span>
+    </div>
+
+    <!-- TOP BAND — linear path -->
+    <div class="topband">
+      <div class="topband-grid">
+        <div class="stage-col" data-stage="prep">
+          <div class="stage-label">Preparation</div>
+          <button class="sub-box" data-box="prep-1"><span class="box-num">1</span><span class="label">Choosing your Computer</span><span class="hint">Best laptop for VAs</span></button>
+          <button class="sub-box" data-box="prep-2"><span class="box-num">2</span><span class="label">Creating Work Emails <span class="badge-inline rew">Rewriting</span></span><span class="hint">Email Marketing for VAs</span></button>
+          <button class="sub-box" data-box="prep-3"><span class="box-num">3</span><span class="label">Setting up Online Tools</span><span class="hint">Browser + storage essentials</span></button>
+          <button class="sub-box" data-box="prep-4"><span class="box-num">4</span><span class="label">Organizing Work Flow</span><span class="hint">Trello + time tracking</span></button>
+          <button class="sub-box" data-box="prep-5"><span class="box-num">5</span><span class="label">Setting up Work Accessories <span class="badge-inline">New</span></span><span class="hint">Workspace + gear basics</span></button>
+        </div>
+
+        <div class="stage-col" data-stage="warmup">
+          <div class="stage-label">Warming Up</div>
+          <button class="sub-box" data-box="warm-1"><span class="box-num">6</span><span class="label">Choose Career Path</span><span class="hint">Remote Job · VA · Specialized Skill</span></button>
+          <button class="sub-box" data-box="warm-2"><span class="box-num">7</span><span class="label">Planning</span><span class="hint">Hours of training, self-assessment</span></button>
+          <button class="sub-box" data-box="warm-3"><span class="box-num">8</span><span class="label">Basic Foundation</span><span class="hint">Paid · Free · Self</span></button>
+          <button class="sub-box" data-box="warm-4"><span class="box-num">9</span><span class="label">Support Group</span><span class="hint">Community, feedback, accountability</span></button>
+          <button class="sub-box" data-box="warm-5"><span class="box-num">10</span><span class="label">Ongoing Training</span><span class="hint">Coming Soon</span></button>
+        </div>
+
+        <div class="stage-col" data-stage="launch">
+          <div class="stage-label">Launch</div>
+          <button class="sub-box" data-box="launch-1"><span class="box-num">11</span><span class="label">Setting Up Accounts</span><span class="hint">OnlineJobs.ph + Upwork + others</span></button>
+          <button class="sub-box" data-box="launch-2"><span class="box-num">12</span><span class="label">Creating Powerful Resume <span class="badge-inline built">Built</span></span><span class="hint">Interactive Resume Builder</span></button>
+          <button class="sub-box" data-box="launch-3"><span class="box-num">13</span><span class="label">Job Hunting</span><span class="hint">Platforms + Job Board</span></button>
+          <button class="sub-box" data-box="launch-4"><span class="box-num">14</span><span class="label">Join Groups and Forums</span><span class="hint">BFF community + FB groups</span></button>
+          <button class="sub-box" data-box="launch-5"><span class="box-num">15</span><span class="label">Creating your Portfolio</span><span class="hint">Personal brand + online presence</span></button>
+        </div>
+
+        <div class="stage-col" data-stage="working">
+          <div class="stage-label">Working on it!</div>
+          <button class="sub-box" data-box="work-1"><span class="box-num">16</span><span class="label">Interviews <span class="badge-inline">New</span></span><span class="hint">Async + video interview prep</span></button>
+          <button class="sub-box" data-box="work-2"><span class="box-num">17</span><span class="label">Internship</span><span class="hint">BFF internship pathway</span></button>
+          <button class="sub-box" data-box="work-3"><span class="box-num">18</span><span class="label">Skill Practice</span><span class="hint">Google Sites Portfolio</span></button>
+          <button class="sub-box" data-box="work-4"><span class="box-num">19</span><span class="label">Creating Proposal</span><span class="hint">Jade Kim Proposal Checklist</span></button>
+          <button class="sub-box" data-box="work-5"><span class="box-num">20</span><span class="label">Bidding</span><span class="hint">Async application discipline</span></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ARROW DOWN: Working → Stage 1 -->
+    <div class="between-arrow">
+      <div class="label">↓ After landing, the growth loop begins</div>
+    </div>
+
+    <!-- BOTTOM BAND — growth loop -->
+    <div class="bottomband">
+      <div class="bottomband-grid">
+        <div class="bottom-col" data-stage="stage1">
+          <div class="stage-label">Stage 1</div>
+          <button class="sub-box" data-box="s1-1"><span class="box-num">21</span><span class="label">Onboarding <span class="badge-inline">New</span></span><span class="hint">First 30 days with the client</span></button>
+          <button class="sub-box" data-box="s1-2"><span class="box-num">22</span><span class="label">Learn Business Tools</span><span class="hint">Trello + tech stack essentials</span></button>
+          <button class="sub-box" data-box="s1-3"><span class="box-num">23</span><span class="label">Collaboration</span><span class="hint">Community management practice</span></button>
+          <button class="sub-box" data-box="s1-4"><span class="box-num">24</span><span class="label">Client Demands</span><span class="hint">Choosing my Client + Common Mistakes</span></button>
+          <button class="sub-box" data-box="s1-5"><span class="box-num">25</span><span class="label">Organization</span><span class="hint">Time tracking + workflow discipline</span></button>
+        </div>
+
+        <div class="bottom-col" data-stage="skill">
+          <div class="stage-label">Skill Upgrade</div>
+          <button class="sub-box" data-box="sk-1"><span class="box-num">26</span><span class="label">New or Upgraded Skill</span><span class="hint">Pick from the rebuild queue</span></button>
+          <button class="sub-box" data-box="sk-2"><span class="box-num">27</span><span class="label">More Training</span><span class="hint">Live Sessions + new modules</span></button>
+          <button class="sub-box" data-box="sk-3"><span class="box-num">28</span><span class="label">More Value to Client <span class="badge-inline">New</span></span><span class="hint">Account Management 101</span></button>
+          <button class="sub-box" data-box="sk-4"><span class="box-num">29</span><span class="label">Career &amp; Personal Growth</span><span class="hint">Career Path Training + Live Sessions</span></button>
+        </div>
+
+        <div class="bottom-col" data-stage="higher">
+          <div class="stage-label">Higher Level</div>
+          <button class="sub-box" data-box="h-1"><span class="box-num">30</span><span class="label">More Clients</span><span class="hint">Personal brand + online presence</span></button>
+          <button class="sub-box" data-box="h-2"><span class="box-num">31</span><span class="label">Multiple Skills</span><span class="hint">Cross-Role Career Path Training</span></button>
+          <button class="sub-box" data-box="h-3"><span class="box-num">32</span><span class="label">Leadership <span class="badge-inline">New</span></span><span class="hint">Lead a team, mentor newer VAs</span></button>
+          <button class="sub-box" data-box="h-4"><span class="box-num">33</span><span class="label">Rockstar Portfolio</span><span class="hint">Resume + personal brand v2</span></button>
+        </div>
+
+        <div class="bottom-col" data-stage="business">
+          <div class="stage-label">Decision</div>
+          <button class="sub-box" data-box="b-1" style="background:var(--surface);border-style:solid"><span class="box-num">34</span><span class="label">Building your own Brand or Agency <span class="badge-inline">New</span></span><span class="hint">Tier 4 future module</span></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Decision diamond + branches -->
+    <div class="decision-row">
+      <div class="branch-callout freelancer">
+        <h4>↻ Loop back: Freelancer</h4>
+        <p>After Higher Level, most community members loop back to Skill Upgrade — stack another skill, raise rates, expand into a new Role Category. Two or three loops is the typical BFF ladder.</p>
+        <span class="branch-arrow">Freelancer →  back to Skill Upgrade</span>
+      </div>
+      <div class="decision-diamond">
+        <div class="diamond-inner">Freelancer<br>or<br>Business?</div>
+      </div>
+      <div class="branch-callout business">
+        <h4>→ Branch: Business</h4>
+        <p>The other path: stop trading hours for a paycheck and build your own brand or agency. Tier 4 module — currently queued; the deeper corpus has FB Group Plan + Market Research foundations to fold in.</p>
+        <span class="branch-arrow">Business →  Brand or Agency</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section style="padding:50px 20px;background:#faf7f5;border-bottom:1px solid var(--border)">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:24px">
+      <div class="section-label">Not sure what's next?</div>
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--primary);font-weight:600">Try a different door.</h3>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:900px;margin:0 auto">
+      <a href="../archetype/index.html" style="background:var(--surface);border:1.5px solid var(--border);border-left:4px solid var(--warmup-bg);border-radius:10px;padding:18px 20px;text-decoration:none;color:inherit;transition:all .15s" onmouseover="this.style.borderColor='var(--primary)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.borderLeftColor='var(--warmup-bg)';this.style.transform='translateY(0)'">
+        <div style="font-size:11px;color:var(--accent-deep);font-weight:700;letter-spacing:.1em;margin-bottom:4px">DON'T KNOW WHERE TO START?</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--primary);font-weight:600;margin-bottom:4px">Find my archetype →</div>
+        <div style="font-size:13px;color:var(--text-soft)">Take the quick finder, then choose lessons, jobs, or resume building.</div>
+      </a>
+      <a href="../curriculum/index.html" style="background:var(--surface);border:1.5px solid var(--border);border-left:4px solid var(--launch-bg);border-radius:10px;padding:18px 20px;text-decoration:none;color:inherit;transition:all .15s" onmouseover="this.style.borderColor='var(--primary)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.borderLeftColor='var(--launch-bg)';this.style.transform='translateY(0)'">
+        <div style="font-size:11px;color:var(--accent-deep);font-weight:700;letter-spacing:.1em;margin-bottom:4px">NEED A REAL PLAN?</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--primary);font-weight:600;margin-bottom:4px">Build my curriculum →</div>
+        <div style="font-size:13px;color:var(--text-soft)">Get an ordered lesson plan with a finish-by date.</div>
+      </a>
+      <a href="../resume-builder/index.html" style="background:var(--surface);border:1.5px solid var(--border);border-left:4px solid var(--working-bg);border-radius:10px;padding:18px 20px;text-decoration:none;color:inherit;transition:all .15s" onmouseover="this.style.borderColor='var(--primary)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.borderLeftColor='var(--working-bg)';this.style.transform='translateY(0)'">
+        <div style="font-size:11px;color:var(--accent-deep);font-weight:700;letter-spacing:.1em;margin-bottom:4px">READY TO PLAN SKILLS?</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--primary);font-weight:600;margin-bottom:4px">Open Resume Builder →</div>
+        <div style="font-size:13px;color:var(--text-soft)">40 skills, live job-match, linked lessons.</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <h3>This is the map. The lessons are the steps.</h3>
+  <p>BFF Open University is free, faith-warm, and built for the Filipino freelancer who hasn't said "I made it" yet. Pick a box. Open a lesson. Take one step today.</p>
+  <div>
+    <a href="../archetype/index.html" class="foot-link">Archetype Finder</a>
+    <a href="../resume-builder/index.html" class="foot-link">Resume Builder</a>
+    <a href="../curriculum/index.html" class="foot-link">My Curriculum</a>
+    <a href="../bff-blueprint-printable-guide.pdf" class="foot-link">Printable BFF Guide</a>
+    <a href="../index.html" class="foot-link">BFF Home</a>
+    <a href="../" class="foot-link">← Writings by Lala</a>
+  </div>
+  <div class="credit">Bonafide Filipino Freelancer Simplified Blueprint · Rebuild v2 · May 2026</div>
+</footer>
+
+<script src="../lessons.js"></script>
+
+<div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal">
+    <div class="modal-head">
+      <div>
+        <div class="modal-stage-pill" id="modalStagePill">Preparation</div>
+        <h3 id="modalTitle">Box title</h3>
+      </div>
+      <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+    </div>
+    <div class="modal-meta" id="modalMeta"></div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-foot">
+      <a href="#" id="modalLink" class="btn btn-primary">Open lesson</a>
+      <button class="btn btn-ghost" id="modalDismiss">Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const STAGE_PILL_BG = {prep:"var(--prep-bg)",warmup:"var(--warmup-bg)",launch:"var(--launch-bg)",working:"var(--working-bg)",stage1:"var(--stage1-chip)",skill:"#d4c6e4",higher:"var(--higher-band)",business:"#f4b6b6"};
+const STAGE_PILL_INK = {prep:"var(--prep-ink)",warmup:"var(--warmup-ink)",launch:"var(--launch-ink)",working:"var(--working-ink)",stage1:"#3a1f4a",skill:"#3a1f4a",higher:"#7c3a3a",business:"#5a1010"};
+const STATUS_LABEL = {live:"Live", rewrite:"Rewriting (Tier 1)", new:"New build queued", built:"Built (interactive tool)", external:"External resource"};
+const STATUS_COLOR = {live:"var(--primary)", rewrite:"var(--rose)", new:"var(--new)", built:"var(--accent-deep)", external:"var(--text-soft)"};
+
+function isLocalUrl(url){
+  return url && !/^https?:\/\//i.test(url);
+}
+
+function lessonStatusBadge(lesson){
+  const label = STATUS_LABEL[lesson.status] || "Live";
+  const color = STATUS_COLOR[lesson.status] || "var(--primary)";
+  return `<span class="badge-inline" style="background:#f3eef7;color:${color}">${label}</span>`;
+}
+
+function openModal(boxKey){
+  if(!window.SWAHG_LESSONS){
+    console.error("lessons.js not loaded");
+    return;
+  }
+  const reg = window.SWAHG_LESSONS;
+  const box = reg.blueprint_boxes[boxKey];
+  if(!box) return;
+
+  document.getElementById("modalTitle").textContent = box.pdf_label;
+  const stageName = reg.stages[box.stage] ? reg.stages[box.stage].name : box.stage;
+  const pill = document.getElementById("modalStagePill");
+  pill.textContent = stageName;
+  pill.style.background = STAGE_PILL_BG[box.stage] || "var(--primary-soft)";
+  pill.style.color = STAGE_PILL_INK[box.stage] || "var(--primary)";
+
+  const resolvedLessons = (box.lessons || []).map(slug => ({ slug, ...reg.lessons[slug] })).filter(l => l.title);
+  const queuedCount = resolvedLessons.filter(l => l.status === "new" || l.status === "rewrite").length;
+  const liveCount = resolvedLessons.filter(l => l.status === "live" || l.status === "built").length;
+  let metaText;
+  if(resolvedLessons.length === 0 && box.coming_soon){
+    metaText = `<strong style="color:var(--new)">${box.coming_soon}</strong>`;
+  } else if(resolvedLessons.length === 0){
+    metaText = `<strong style="color:var(--new)">No lesson yet — community resource only</strong>`;
+  } else if(liveCount === resolvedLessons.length){
+    metaText = `<strong style="color:var(--primary)">${liveCount} lesson${liveCount>1?"s":""} live</strong>`;
+  } else if(liveCount > 0){
+    metaText = `<strong style="color:var(--primary)">${liveCount} live</strong> · <strong style="color:var(--new)">${queuedCount} queued/rewriting</strong>`;
+  } else {
+    metaText = `<strong style="color:var(--new)">${queuedCount} new build${queuedCount>1?"s":""} queued</strong>`;
+  }
+  document.getElementById("modalMeta").innerHTML = metaText;
+
+  let html = "";
+  if(resolvedLessons.length){
+    html += `<p>BFF lessons that cover <strong>${box.pdf_label}</strong>:</p>`;
+    html += `<div style="margin-top:14px;display:flex;flex-direction:column;gap:10px">`;
+    resolvedLessons.forEach(l => {
+      const mins = l.estimated_minutes ? `${l.estimated_minutes} min` : "";
+      const tier = l.tier ? `Tier ${l.tier}` : "";
+      const metaLine = [mins, tier, l.format].filter(Boolean).join(" · ");
+      const urlBtn = l.url
+        ? `<a href="${l.url}" target="${isLocalUrl(l.url) ? "_self" : "_blank"}" rel="noopener" style="color:var(--primary);font-size:13px;text-decoration:underline">Open →</a>`
+        : `<span style="color:var(--text-soft);font-size:13px;font-style:italic">Not yet published</span>`;
+      html += `
+        <div style="background:#faf7f5;border:1px solid var(--border);border-radius:8px;padding:12px 14px">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:4px">
+            <div style="font-weight:600;color:var(--primary);font-size:15px;line-height:1.3">${l.title}</div>
+            ${lessonStatusBadge(l)}
+          </div>
+          <div style="color:var(--text-soft);font-size:13px;line-height:1.45;margin-bottom:8px">${l.why_this_lesson || ""}</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--text-soft);letter-spacing:.04em">
+            <span>${metaLine}</span>
+            ${urlBtn}
+          </div>
+        </div>
+      `;
+    });
+    html += `</div>`;
+  } else if(box.coming_soon) {
+    html += `<p style="color:var(--text-soft);font-style:italic">${box.coming_soon}</p>`;
+  } else {
+    html += `<p style="color:var(--text-soft);font-style:italic">This box represents a community resource or activity, not a lesson — it sits inside the Blueprint as a structural marker.</p>`;
+  }
+  document.getElementById("modalBody").innerHTML = html;
+
+  const primaryLesson = resolvedLessons.find(l => l.url) || resolvedLessons[0];
+  const link = document.getElementById("modalLink");
+  if(primaryLesson && primaryLesson.url){
+    link.href = primaryLesson.url;
+    link.style.display = "inline-flex";
+    link.target = isLocalUrl(primaryLesson.url) ? "_self" : "_blank";
+    link.rel = isLocalUrl(primaryLesson.url) ? "" : "noopener";
+    link.textContent = isLocalUrl(primaryLesson.url) ? "Open primary lesson" : "Open external resource";
+  } else {
+    link.style.display = "none";
+  }
+  document.getElementById("modalBackdrop").classList.add("open");
+}
+
+function closeModal(){ document.getElementById("modalBackdrop").classList.remove("open"); }
+
+document.querySelectorAll(".sub-box").forEach(btn=>{
+  btn.addEventListener("click",()=>openModal(btn.dataset.box));
+});
+document.getElementById("modalBackdrop").addEventListener("click",e=>{
+  if(e.target.id==="modalBackdrop") closeModal();
+});
+document.getElementById("modalClose").addEventListener("click",closeModal);
+document.getElementById("modalDismiss").addEventListener("click",closeModal);
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape") closeModal();
+});
+
+const diamond = document.querySelector(".decision-diamond");
+if(diamond){
+  diamond.addEventListener("click",()=>{
+    document.getElementById("modalStagePill").textContent = "Decision Point";
+    document.getElementById("modalStagePill").style.background = "var(--decision-bg)";
+    document.getElementById("modalStagePill").style.color = "#fff";
+    document.getElementById("modalTitle").textContent = "Freelancer or Business?";
+    document.getElementById("modalMeta").innerHTML = `<strong style="color:var(--primary)">The fork in the path</strong>`;
+    document.getElementById("modalBody").innerHTML = `
+      <p>After Higher Level, the Blueprint forks. There's no wrong answer — but there are two genuinely different paths.</p>
+      <p><strong>↻ Freelancer (most common):</strong> Loop back to Skill Upgrade. Stack another skill, raise rates, expand into a new Role Category. Two or three loops is typical.</p>
+      <p><strong>→ Business (the bigger swing):</strong> Stop trading hours for a paycheck. Build your own brand or agency. BFF has unbuilt foundations in the deeper corpus (FB Group Plan, Market Research Process) — Year 2 module.</p>
+      <p>Most BFF members iterate the Freelancer loop two or three times before deciding which branch fits them.</p>
+    `;
+    document.getElementById("modalLink").style.display = "none";
+    document.getElementById("modalBackdrop").classList.add("open");
+  });
+}
+</script>
+</body>
+</html>

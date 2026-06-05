@@ -5,7 +5,7 @@ import { getAllEntries, entryUrl } from '../lib/content';
 import { TOPICS, TYPES } from '../topics';
 
 const allEntries = await getAllEntries();
-const entries = allEntries.filter((entry) => !entry.data.topics.includes('swahg-stories'));
+const entries = allEntries.filter((entry) => !entry.data.topics.includes('bff-stories'));
 const base = import.meta.env.BASE_URL;
 
 const topicCounts = new Map<string, number>();

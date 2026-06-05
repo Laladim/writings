@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BFF Source Health Export",
+  "type": "object",
+  "required": [
+    "generated_at",
+    "sources"
+  ],
+  "additionalProperties": true
+}

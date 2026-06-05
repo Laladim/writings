@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BFF Resume Match Profiles Export",
+  "type": "object",
+  "required": [
+    "profile_version",
+    "job_id",
+    "title",
+    "company",
+    "source",
+    "source_mode",
+    "tier",
+    "source_url",
+    "apply_url",
+    "posted_at",
+    "discovered_at",
+    "role_family",
+    "archetype_primary",
+    "archetype_secondary",
+    "resume_keywords",
+    "resume_angle",
+    "missing_skill_suggestions",
+    "match_confidence",
+    "risk_flags",
+    "ph_eligibility",
+    "tools",
+    "quality_label",
+    "quality_reasons",
+    "resume_match_profile"
+  ],
+  "additionalProperties": true
+}

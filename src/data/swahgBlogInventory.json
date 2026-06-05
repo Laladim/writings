@@ -1,0 +1,3102 @@
+{
+  "metadata": {
+    "title": "WBL BFF Blog Content Database",
+    "source": "BFF Open University Inventory",
+    "sheetId": "1u-R_VoDOseCXQzrRay9nRmkbSJRB4Z4POZcqm5Ydo58",
+    "generatedAt": "2026-05-17T12:11:17+00:00",
+    "itemCount": 100,
+    "categories": [
+      {
+        "slug": "freelancing-foundations",
+        "label": "Freelancing Foundations",
+        "count": 25
+      },
+      {
+        "slug": "skill-paths-and-tools",
+        "label": "Skill Paths and Tools",
+        "count": 7
+      },
+      {
+        "slug": "social-media-and-marketing",
+        "label": "Social Media and Marketing",
+        "count": 23
+      },
+      {
+        "slug": "personal-brand-and-content",
+        "label": "Personal Brand and Content",
+        "count": 2
+      },
+      {
+        "slug": "bff-stories",
+        "label": "BFF Stories",
+        "count": 7
+      },
+      {
+        "slug": "program-and-community",
+        "label": "Program and Community",
+        "count": 8
+      },
+      {
+        "slug": "published-wbl-library",
+        "label": "Published WBL Library",
+        "count": 28
+      }
+    ],
+    "topics": [
+      {
+        "slug": "ai-content-systems",
+        "label": "AI Content Systems",
+        "count": 1
+      },
+      {
+        "slug": "b2b-saas",
+        "label": "B2B SaaS Marketing",
+        "count": 1
+      },
+      {
+        "slug": "beginner-freelancing",
+        "label": "Beginner freelancing",
+        "count": 33
+      },
+      {
+        "slug": "career-paths",
+        "label": "Career paths",
+        "count": 6
+      },
+      {
+        "slug": "client-acquisition",
+        "label": "Client acquisition",
+        "count": 39
+      },
+      {
+        "slug": "communication",
+        "label": "Communication",
+        "count": 16
+      },
+      {
+        "slug": "community",
+        "label": "Community Building",
+        "count": 4
+      },
+      {
+        "slug": "community-and-leadership",
+        "label": "Community and leadership",
+        "count": 2
+      },
+      {
+        "slug": "content-creation",
+        "label": "Content creation",
+        "count": 20
+      },
+      {
+        "slug": "content-strategy",
+        "label": "Content Strategy and SEO",
+        "count": 4
+      },
+      {
+        "slug": "faith-theology",
+        "label": "Faith and Theology",
+        "count": 18
+      },
+      {
+        "slug": "filipino-professionals",
+        "label": "Filipino Professionals",
+        "count": 4
+      },
+      {
+        "slug": "freelancing",
+        "label": "Freelancing and Remote Work",
+        "count": 12
+      },
+      {
+        "slug": "health",
+        "label": "Health and Chronic Illness",
+        "count": 11
+      },
+      {
+        "slug": "learning-in-public",
+        "label": "Learning in Public",
+        "count": 6
+      },
+      {
+        "slug": "marriage-family",
+        "label": "Marriage and Family",
+        "count": 5
+      },
+      {
+        "slug": "mindset-and-faith",
+        "label": "Mindset and faith",
+        "count": 5
+      },
+      {
+        "slug": "portfolio-and-brand",
+        "label": "Portfolio and brand",
+        "count": 26
+      },
+      {
+        "slug": "program-design",
+        "label": "Program design",
+        "count": 5
+      },
+      {
+        "slug": "social-media",
+        "label": "Social media",
+        "count": 30
+      },
+      {
+        "slug": "bff-stories",
+        "label": "BFF Stories",
+        "count": 1
+      },
+      {
+        "slug": "tools-and-systems",
+        "label": "Tools and systems",
+        "count": 9
+      },
+      {
+        "slug": "workstation-setup",
+        "label": "My Workstation and Tools",
+        "count": 2
+      }
+    ],
+    "statuses": [
+      {
+        "slug": "pending",
+        "label": "Not yet published",
+        "count": 62
+      },
+      {
+        "slug": "draft-started",
+        "label": "Draft started",
+        "count": 3
+      },
+      {
+        "slug": "published",
+        "label": "Published",
+        "count": 35
+      }
+    ]
+  },
+  "items": [
+    {
+      "id": "30",
+      "sourceTitle": "10 Secret Skills",
+      "sourceCategory": "Courses / Fresh Starter",
+      "sourceSection": "courses/fresh-starter",
+      "sourceSlug": "10-secret-skills",
+      "wordCount": 26,
+      "imageCount": 1,
+      "blogCategory": "Freelancing Foundations",
+      "topics": [
+        "beginner-freelancing"
+      ],
+      "topicLabels": [
+        "Beginner freelancing"
+      ],
+      "draftTitle": "What beginners can learn from 10 Secret Skills",
+      "angle": "Use 10 Secret Skills as a source note for a practical WBL blog post aimed at beginners building a freelance life from home.",
+      "excerpt": "## 10 Secret Skills ## EVERY SUCCESSFUL BONAFIDE FILIPINO FREELANCER Here are the 10 Important Skills that will help you achieve success in the Freelancing Industry.",
+      "publication": {
+        "status": "published",
+        "statusLabel": "Published",
+        "path": "src/content/guides/what-beginners-can-learn-from-10-secret-skills.md",
+        "title": "What beginners can learn from 10 Secret Skills",
+        "slug": "what-beginners-can-learn-from-10-secret-skills"
+      }
+    },
+    {
+      "id": "20",
+      "sourceTitle": "Article Curation Training",
+      "sourceCategory": "Courses / Freelancing Journey",
+      "sourceSection": "courses/freelancing-journey",
+      "sourceSlug": "bonus-tips-2",
+      "wordCount": 4,
+      "imageCount": 2,
+      "blogCategory": "Freelancing Foundations",
+      "topics": [
+        "beginner-freelancing",
+        "content-creation"
+      ],
+      "topicLabels": [
+        "Beginner freelancing",
+        "Content creation"
+      ],
+      "draftTitle": "What beginners can learn from Article Curation Training",
+      "angle": "Use Article Curation Training as a source note for a practical WBL blog post aimed at beginners building a freelance life from home.",
+      "excerpt": "## Article Curation Training",
+      "publication": {
+        "status": "draft-started",
+        "statusLabel": "Draft started",
+        "path": "src/content/drafts/bonafide-filipino-freelancers/what-beginners-can-learn-from-article-curation-training.md",
+        "title": "What beginners can learn from Article Curation Training",
+        "slug": "what-beginners-can-learn-from-article-curation-training"
+      }
+    },
+    {
+      "id": "12",
+      "sourceTitle": "Browser Expert Secrets",
+      "sourceCategory": "Courses / Freelancer Essentials",
+      "sourceSection": "courses/freelancer-essentials",
+      "sourceSlug": "browser-expert-secrets",
+      "wordCount": 64,
+      "imageCount": 1,
+      "blogCategory": "Freelancing Foundations",
+      "topics": [
+        "beginner-freelancing",
+        "tools-and-systems"
+      ],
+      "topicLabels": [
+        "Beginner freelancing",
+        "Tools and systems"
+      ],
+      "draftTitle": "The beginner freelancer guide to Browser Expert Secrets",
+      "angle": "Use this as a setup checklist that helps a new freelancer remove friction before paid work begins.",
+      "excerpt": "## Browser Expert Secrets ## Google Chrome for the WIN! Don't be messy. It doesn't matter if you have a great computer if you are not organized, your productivity will still be compromised. You will never go wrong if you will master the use of Google Chrome...",
+      "publication": {
+        "status": "published",
+        "statusLabel": "Published",
+        "path": "src/content/guides/the-beginner-freelancer-guide-to-browser-expert-secrets.md",
+        "title": "The beginner freelancer guide to Browser Expert Secrets",
+        "slug": "the-beginner-freelancer-guide-to-browser-expert-secrets"
+      }
+    },
+    {
+      "id": "21",
+      "sourceTitle": "E-commerce Classes",
+      "sourceCategory": "Courses / Freelancing Journey",
+      "sourceSection": "courses/freelancing-journey",
+      "sourceSlug": "bonus-tips-3",
+      "wordCount": 111,
+      "imageCount": 4,
+      "blogCategory": "Freelancing Foundations",
+      "topics": [
+        "beginner-freelancing"
+      ],
+      "topicLabels": [
+        "Beginner freelancing"
+      ],
+      "draftTitle": "What beginners can learn from E-commerce Classes",
+      "angle": "Use E-commerce Classes as a source note for a practical WBL blog post aimed at beginners building a freelance life from home.",
+      "excerpt": "## E-commerce Classes ## FULL AMAZON TRAINING SERIES FOR FREE - Subscribe to their email list and watch the free training on Amazon Selling ## THE ULTIMATE GUIDE TO SELLING ON AMAZON - Register a FREE account on Skillshare (No credit required for this lesson)...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "13",
+      "sourceTitle": "Email Address Expert Secrets",
+      "sourceCategory": "Courses / Freelancer Essentials",
+      "sourceSection": "courses/freelancer-essentials",
+      "sourceSlug": "email-address-is-gold",
+      "wordCount": 68,
+      "imageCount": 1,
+      "blogCategory": "Freelancing Foundations",
+      "topics": [
+        "beginner-freelancing",
+        "communication"
+      ],
+      "topicLabels": [
+        "Beginner freelancing",
+        "Communication"
+      ],
+      "draftTitle": "Why Email Address Expert Secrets matters before your first client call",
+      "angle": "Use this topic to explain the communication habits that make remote work feel safer for clients and freelancers.",
+      "excerpt": "## Email Address Expert Secrets ## If you get this right, you will love it so much! Before going into different websites, you should think about first about your email address. Many freelancers are not thinking about the importance of organising their email...",
+      "publication": {
+        "status": "draft-started",
+        "statusLabel": "Draft started",
+        "path": "src/content/drafts/bonafide-filipino-freelancers/why-email-address-expert-secrets-matters-before-your-first-client-call.md",
+        "title": "Why Email Address Expert Secrets matters before your first client call",
+        "slug": "why-email-address-expert-secrets-matters-before-your-first-client-call"
+      }
+    },
+    {
+      "id": "31",
+      "sourceTitle": "Employee to Freelancer",
+      "sourceCategory": "Courses / Fresh Starter",
+      "sourceSection": "courses/fresh-starter",
+      "sourceSlug": "employee-to-freelancer",
+      "wordCount": 61,
+      "imageCount": 1,
+      "blogCategory": "Freelancing Foundations",
+      "topics": [
+        "beginner-freelancing"
+      ],
+      "topicLabels": [
+        "Beginner freelancing"
+      ],
+      "draftTitle": "What beginners can learn from Employee to Freelancer",
+      "angle": "Use Employee to Freelancer as a source note for a practical WBL blog post aimed at beginners building a freelance life from home.",
+      "excerpt": "## Employee to Freelancer ## How to transition from Employee to Freelancer? Although we are Freelancers and it is the best job in our own opinions, we do not recommend you to jump straight away. Shela's case is different. Your situation is different...",
+      "publication": {
+        "status": "draft-started",
+        "statusLabel": "Draft started",
+        "path": "src/content/drafts/bonafide-filipino-freelancers/what-beginners-can-learn-from-employee-to-freelancer.md",
+        "title": "What beginners can learn from Employee to Freelancer",
+        "slug": "what-beginners-can-learn-from-employee-to-freelancer"
+      }
+    },
+    {
+      "id": "16",
+      "sourceTitle": "Freelancer Essentials",
+      "sourceCategory": "Courses / Freelancer Essentials",
+      "sourceSection": "courses/freelancer-essentials",
+      "sourceSlug": "index",
+      "wordCount": 986,
+      "imageCount": 2,
+      "blogCategory": "Freelancing Foundations",
+      "topics": [
+        "beginner-freelancing",
+        "client-acquisition",
+        "portfolio-and-brand",
+        "communication"
+      ],
+      "topicLabels": [
+        "Beginner freelancing",
+        "Client acquisition",
+        "Portfolio and brand",
+        "Communication"
+      ],
+      "draftTitle": "How to use Freelancer Essentials to find better freelance opportunities",
+      "angle": "Frame the post around practical steps a beginner can take before applying, pitching, or interviewing.",
+      "excerpt": "## Freelancer Essentials ## 20 Must Haves for Freelancers \"Accept & work happily with what you have.\" Regardless of what gadgets or devices you are using, what's most important is that you are content and happy with what you have. But if you have the money...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "32",
+      "sourceTitle": "Freelancer or VA?",
+      "sourceCategory": "Courses / Fresh Starter",
+      "sourceSection": "courses/fresh-starter",
+      "sourceSlug": "freelancer-or-va",
+      "wordCount": 51,
+      "imageCount": 1,
+      "blogCategory": "Freelancing Foundations",
+      "topics": [
+        "beginner-freelancing",
+        "client-acquisition",
+        "career-paths"
+      ],
+      "topicLabels": [
+        "Beginner freelancing",
+        "Client acquisition",
+        "Career paths"
+      ],
+      "draftTitle": "How to use Freelancer or Virtual Assistant? to find better freelance opportunities",
+      "angle": "Frame the post around practical steps a beginner can take before applying, pitching, or interviewing.",
+      "excerpt": "## Freelancer or VA? ## WHO YOU WANT TO BECOME? One of the goals of this Open University is to help those people who are just starting and those who already have a client and wanting have clear understanding of their career path. Please watch the video below...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "22",
+      "sourceTitle": "Freelancing Journey",
+      "sourceCategory": "Courses / Freelancing Journey",
+      "sourceSection": "courses/freelancing-journey",
+      "sourceSlug": "index",
+      "wordCount": 137,
+      "imageCount": 1,
+      "blogCategory": "Freelancing Foundations",
+      "topics": [
+        "beginner-freelancing",
+        "client-acquisition",
+        "portfolio-and-brand",
+        "communication"
+      ],
+      "topicLabels": [
+        "Beginner freelancing",
+        "Client acquisition",
+        "Portfolio and brand",
+        "Communication"
+      ],
+      "draftTitle": "How to use Freelancing Journey to find better freelance opportunities",
+      "angle": "Frame the post around practical steps a beginner can take before applying, pitching, or interviewing.",
+      "excerpt": "## Freelancing Journey Freelancing Journey has 6 lessons for you to get your first client. ## Get Started: ## INTRODUCTION TO FREELANCING & HOW YOU CAN GET A CLIENT ## Lesson 1: ## HOW TO BECOME A VIRTUAL PROFESSIONAL ## Lesson 2: ## HOW TO DISCOVER THE...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "14",
+      "sourceTitle": "Freelancing Platforms",
+      "sourceCategory": "Courses / Freelancer Essentials",
+      "sourceSection": "courses/freelancer-essentials",
+      "sourceSlug": "freelancing-platforms",
+      "wordCount": 180,
+      "imageCount": 1,
+      "blogCategory": "Freelancing Foundations",
+      "topics": [
+        "beginner-freelancing",
+        "client-acquisition",
+        "communication"
+      ],
+      "topicLabels": [
+        "Beginner freelancing",
+        "Client acquisition",
+        "Communication"
+      ],
+      "draftTitle": "How to use Freelancing Platforms to find better freelance opportunities",
+      "angle": "Frame the post around practical steps a beginner can take before applying, pitching, or interviewing.",
+      "excerpt": "## Freelancing Platforms ## This list of Freelancing Platforms is very helpful. However, this can also overwhelm you so be strategic. The Bonafide Filipino Freelancer Blueprint is a compilation of resources, tips and guides how to properly plan for your...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "33",
+      "sourceTitle": "Fresh Starter",
+      "sourceCategory": "Courses / Fresh Starter",
+      "sourceSection": "courses/fresh-starter",
+      "sourceSlug": "index",
+      "wordCount": 101,
+      "imageCount": 1,
+      "blogCategory": "Freelancing Foundations",
+      "topics": [
+        "beginner-freelancing",
+        "social-media",
+        "content-creation"
+      ],
+      "topicLabels": [
+        "Beginner freelancing",
+        "Social media",
+        "Content creation"
+      ],
+      "draftTitle": "What new freelancers should understand about Fresh Starter",
+      "angle": "Translate the lesson into a beginner-friendly explanation of what clients actually need from social media help.",
+      "excerpt": "## Fresh Starter ## SETTING UP YOUR CAREER These are the basic training you need to watch to help you properly setup your Freelancing Work Lifestyle. Please watch all these training material before you start hunting for online jobs. ## Is this a Scam? We've...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "23",
+      "sourceTitle": "Introduction",
+      "sourceCategory": "Courses / Freelancing Journey",
+      "sourceSection": "courses/freelancing-journey",
+      "sourceSlug": "introduction",
+      "wordCount": 43,
+      "imageCount": 2,
+      "blogCategory": "Freelancing Foundations",
+      "topics": [
+        "beginner-freelancing",
+        "client-acquisition"
+      ],
+      "topicLabels": [
+        "Beginner freelancing",
+        "Client acquisition"
+      ],
+      "draftTitle": "How to use Introduction to find better freelance opportunities",
+      "angle": "Frame the post around practical steps a beginner can take before applying, pitching, or interviewing.",
+      "excerpt": "## Introduction ## INTRODUCTION TO FREELANCING & HOW YOU CAN GET A CLIENT 1. Watch the video below. 2. Think about the number of challenges you are currently experiencing and think about how you will overcome these problems to become a successful freelancer.",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "24",
+      "sourceTitle": "Lesson 1",
+      "sourceCategory": "Courses / Freelancing Journey",
+      "sourceSection": "courses/freelancing-journey",
+      "sourceSlug": "lesson-1",
+      "wordCount": 69,
+      "imageCount": 2,
+      "blogCategory": "Freelancing Foundations",
+      "topics": [
+        "beginner-freelancing"
+      ],
+      "topicLabels": [
+        "Beginner freelancing"
+      ],
+      "draftTitle": "What beginners can learn from Lesson 1",
+      "angle": "Use Lesson 1 as a source note for a practical WBL blog post aimed at beginners building a freelance life from home.",
+      "excerpt": "## Lesson 1 ## HOW TO BECOME A VIRTUAL PROFESSIONAL 1. Watch the video below. 2. Create a Google Document answer the Question: Why do you want to work at home? What are your challenges to become successful freelancer? 3. Share the document to \"Anyone with the...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "25",
+      "sourceTitle": "Lesson 2",
+      "sourceCategory": "Courses / Freelancing Journey",
+      "sourceSection": "courses/freelancing-journey",
+      "sourceSlug": "lesson-2",
+      "wordCount": 94,
+      "imageCount": 2,
+      "blogCategory": "Freelancing Foundations",
+      "topics": [
+        "beginner-freelancing",
+        "client-acquisition",
+        "portfolio-and-brand",
+        "career-paths"
+      ],
+      "topicLabels": [
+        "Beginner freelancing",
+        "Client acquisition",
+        "Portfolio and brand",
+        "Career paths"
+      ],
+      "draftTitle": "How to use Lesson 2 to find better freelance opportunities",
+      "angle": "Frame the post around practical steps a beginner can take before applying, pitching, or interviewing.",
+      "excerpt": "## Lesson 2 ## HOW TO DISCOVER THE PROFESSIONAL SKILLS YOU CAN OFFER TO THE CLIENTS TO START WORKING AT HOME 1. Watch the video below. 2. Take the 16 Personality Test then read the career path section on your profile. 3. Access the document below, download it...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "26",
+      "sourceTitle": "Lesson 3",
+      "sourceCategory": "Courses / Freelancing Journey",
+      "sourceSection": "courses/freelancing-journey",
+      "sourceSlug": "lesson-3",
+      "wordCount": 60,
+      "imageCount": 2,
+      "blogCategory": "Freelancing Foundations",
+      "topics": [
+        "beginner-freelancing",
+        "client-acquisition",
+        "portfolio-and-brand"
+      ],
+      "topicLabels": [
+        "Beginner freelancing",
+        "Client acquisition",
+        "Portfolio and brand"
+      ],
+      "draftTitle": "How to use Lesson 3 to find better freelance opportunities",
+      "angle": "Frame the post around practical steps a beginner can take before applying, pitching, or interviewing.",
+      "excerpt": "## Lesson 3 ## HOW TO CREATE A RESUME THAT STANDS OUT 1. Watch the video below. 2. Create an account in CANVA.COM 3. Create your resume and create a shareable link for your resume that you can easily give to your potential clients. 4. Submit it via the...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "27",
+      "sourceTitle": "Lesson 4",
+      "sourceCategory": "Courses / Freelancing Journey",
+      "sourceSection": "courses/freelancing-journey",
+      "sourceSlug": "lesson-4",
+      "wordCount": 64,
+      "imageCount": 1,
+      "blogCategory": "Freelancing Foundations",
+      "topics": [
+        "beginner-freelancing"
+      ],
+      "topicLabels": [
+        "Beginner freelancing"
+      ],
+      "draftTitle": "What beginners can learn from Lesson 4",
+      "angle": "Use Lesson 4 as a source note for a practical WBL blog post aimed at beginners building a freelance life from home.",
+      "excerpt": "## Lesson 4 ## HOW TO IMPROVE A CRAPPY COVER LETTER 1. Watch the video below. 2. Find a Job Advert and craft a cover letter suitable for that Job advert 3. Create your Cover Letter on Google Document . 4. Share the link and submit it via the ASSIGNMENT...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "28",
+      "sourceTitle": "Lesson 5",
+      "sourceCategory": "Courses / Freelancing Journey",
+      "sourceSection": "courses/freelancing-journey",
+      "sourceSlug": "lesson-5",
+      "wordCount": 83,
+      "imageCount": 2,
+      "blogCategory": "Freelancing Foundations",
+      "topics": [
+        "beginner-freelancing",
+        "client-acquisition",
+        "communication"
+      ],
+      "topicLabels": [
+        "Beginner freelancing",
+        "Client acquisition",
+        "Communication"
+      ],
+      "draftTitle": "How to use Lesson 5 to find better freelance opportunities",
+      "angle": "Frame the post around practical steps a beginner can take before applying, pitching, or interviewing.",
+      "excerpt": "## Lesson 5 ## HOW TO PREPARE FOR JOB INTERVIEWS 1. Watch the video below. 2. Draft your own answer to the question \"Tell me about yourself.\" 3. Practice saying it in front of the camera and record yourself. 4. Upload it on Google Drive and share the video to...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "29",
+      "sourceTitle": "Lesson 6",
+      "sourceCategory": "Courses / Freelancing Journey",
+      "sourceSection": "courses/freelancing-journey",
+      "sourceSlug": "lesson-6",
+      "wordCount": 104,
+      "imageCount": 1,
+      "blogCategory": "Freelancing Foundations",
+      "topics": [
+        "beginner-freelancing"
+      ],
+      "topicLabels": [
+        "Beginner freelancing"
+      ],
+      "draftTitle": "What beginners can learn from Lesson 6",
+      "angle": "Use Lesson 6 as a source note for a practical WBL blog post aimed at beginners building a freelance life from home.",
+      "excerpt": "## Lesson 6 ## HOW TO BUILD MASSIVE CONFIDENCE 1. Watch the video below. 2. Answer the question \"If you will rate the levels of your confidence (Surface, Lifestyle & Core), what will be the score if 10 being the highest?\" 3. Create your answer on a Google...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "34",
+      "sourceTitle": "Online Jobs Account",
+      "sourceCategory": "Courses / Fresh Starter",
+      "sourceSection": "courses/fresh-starter",
+      "sourceSlug": "online-jobs-account",
+      "wordCount": 54,
+      "imageCount": 1,
+      "blogCategory": "Freelancing Foundations",
+      "topics": [
+        "beginner-freelancing",
+        "client-acquisition",
+        "portfolio-and-brand"
+      ],
+      "topicLabels": [
+        "Beginner freelancing",
+        "Client acquisition",
+        "Portfolio and brand"
+      ],
+      "draftTitle": "How to use Online Jobs Account to find better freelance opportunities",
+      "angle": "Frame the post around practical steps a beginner can take before applying, pitching, or interviewing.",
+      "excerpt": "## Online Jobs Account ## Step by Step Guide How to Create Profile at Onlinejobs.ph This video shows the step by step process how to create your profile at onlinejobs.ph. The first step to get a home-based job is to create a profile that clients will never...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "15",
+      "sourceTitle": "Open University Guidelines",
+      "sourceCategory": "Courses / Freelancer Essentials",
+      "sourceSection": "courses/freelancer-essentials",
+      "sourceSlug": "handbook",
+      "wordCount": 1563,
+      "imageCount": 1,
+      "blogCategory": "Freelancing Foundations",
+      "topics": [
+        "beginner-freelancing",
+        "client-acquisition",
+        "communication",
+        "tools-and-systems"
+      ],
+      "topicLabels": [
+        "Beginner freelancing",
+        "Client acquisition",
+        "Communication",
+        "Tools and systems"
+      ],
+      "draftTitle": "How to use Open University Guidelines to find better freelance opportunities",
+      "angle": "Frame the post around practical steps a beginner can take before applying, pitching, or interviewing.",
+      "excerpt": "## Open University Guidelines ## RULES & GUIDELINES ## Who are we? Bonafide Filipino Freelancers believe that it is important to study and become an expert in our niche. We do not believe in get rich quick, scammy money making online schemes. We are talented...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "19",
+      "sourceTitle": "Organize your Work Files",
+      "sourceCategory": "Courses / Freelancing Journey",
+      "sourceSection": "courses/freelancing-journey",
+      "sourceSlug": "bonus-tips-1",
+      "wordCount": 32,
+      "imageCount": 2,
+      "blogCategory": "Freelancing Foundations",
+      "topics": [
+        "beginner-freelancing",
+        "tools-and-systems"
+      ],
+      "topicLabels": [
+        "Beginner freelancing",
+        "Tools and systems"
+      ],
+      "draftTitle": "The beginner freelancer guide to Organize your Work Files",
+      "angle": "Use this as a setup checklist that helps a new freelancer remove friction before paid work begins.",
+      "excerpt": "## Organize your Work Files Make sure your files are not scattered and are properly backed up. Make sure you have an organized browser & bookmarks. ORGANIZE YOUR TOOLS USING GOOGLE APPS",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "11",
+      "sourceTitle": "Selecting the best computer",
+      "sourceCategory": "Courses / Freelancer Essentials",
+      "sourceSection": "courses/freelancer-essentials",
+      "sourceSlug": "best-laptop",
+      "wordCount": 82,
+      "imageCount": 1,
+      "blogCategory": "Freelancing Foundations",
+      "topics": [
+        "beginner-freelancing",
+        "tools-and-systems"
+      ],
+      "topicLabels": [
+        "Beginner freelancing",
+        "Tools and systems"
+      ],
+      "draftTitle": "The beginner freelancer guide to Selecting the best computer",
+      "angle": "Use this as a setup checklist that helps a new freelancer remove friction before paid work begins.",
+      "excerpt": "## Selecting the best computer ## Should we buy the expensive one or the affordable one? I receive lots of questions regarding what computer should we buy. To answer those question, I listed here several criteria of a good computer. The goal is you will not...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "17",
+      "sourceTitle": "Storage Expert Secrets",
+      "sourceCategory": "Courses / Freelancer Essentials",
+      "sourceSection": "courses/freelancer-essentials",
+      "sourceSlug": "storage-expert-secrets",
+      "wordCount": 51,
+      "imageCount": 1,
+      "blogCategory": "Freelancing Foundations",
+      "topics": [
+        "beginner-freelancing",
+        "client-acquisition",
+        "tools-and-systems"
+      ],
+      "topicLabels": [
+        "Beginner freelancing",
+        "Client acquisition",
+        "Tools and systems"
+      ],
+      "draftTitle": "How to use Storage Expert Secrets to find better freelance opportunities",
+      "angle": "Frame the post around practical steps a beginner can take before applying, pitching, or interviewing.",
+      "excerpt": "## Storage Expert Secrets ## Offline and Online Storage Organising your files is a very important thing you can do for your client and for yourself. Trust me. Don't be lazy organising your files or you will experience lots of headaches and heartaches. ## Make...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "18",
+      "sourceTitle": "Trello Love",
+      "sourceCategory": "Courses / Freelancer Essentials",
+      "sourceSection": "courses/freelancer-essentials",
+      "sourceSlug": "trello-love",
+      "wordCount": 22,
+      "imageCount": 1,
+      "blogCategory": "Freelancing Foundations",
+      "topics": [
+        "beginner-freelancing",
+        "tools-and-systems"
+      ],
+      "topicLabels": [
+        "Beginner freelancing",
+        "Tools and systems"
+      ],
+      "draftTitle": "The beginner freelancer guide to Trello Love",
+      "angle": "Use this as a setup checklist that helps a new freelancer remove friction before paid work begins.",
+      "excerpt": "## Trello Love ## HOW TO USE TRELLO 1. Create an account on Trello.com 2. Watch this video 3. Do actual practice",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "35",
+      "sourceTitle": "Where to Start?",
+      "sourceCategory": "Courses / Fresh Starter",
+      "sourceSection": "courses/fresh-starter",
+      "sourceSlug": "where-to-start",
+      "wordCount": 80,
+      "imageCount": 1,
+      "blogCategory": "Freelancing Foundations",
+      "topics": [
+        "beginner-freelancing"
+      ],
+      "topicLabels": [
+        "Beginner freelancing"
+      ],
+      "draftTitle": "What beginners can learn from Where to Start?",
+      "angle": "Use Where to Start? as a source note for a practical WBL blog post aimed at beginners building a freelance life from home.",
+      "excerpt": "## Where to Start? ## MINDSET & PRACTICAL TIPS This video covers the mind setting and properly laying out the plan for your career. It is important to know the practical ways as well so this video is connected to the Lesson 2 of the Freelancing Journey. The...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "5",
+      "sourceTitle": "Career Path Training",
+      "sourceCategory": "Courses / Career Path Training",
+      "sourceSection": "courses/career-path-training",
+      "sourceSlug": "index",
+      "wordCount": 194,
+      "imageCount": 4,
+      "blogCategory": "Skill Paths and Tools",
+      "topics": [
+        "client-acquisition",
+        "content-creation",
+        "career-paths"
+      ],
+      "topicLabels": [
+        "Client acquisition",
+        "Content creation",
+        "Career paths"
+      ],
+      "draftTitle": "How to use Career Path Training to find better freelance opportunities",
+      "angle": "Frame the post around practical steps a beginner can take before applying, pitching, or interviewing.",
+      "excerpt": "## Career Path Training There are so many skills you can study and learn. Do not get overwhelmed. Take time to think about what career path you want to take and the career you really love doing. The reason you need to take these upgraded skill is for you to...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "8",
+      "sourceTitle": "Choosing my client",
+      "sourceCategory": "Courses / Enhancement Training",
+      "sourceSection": "courses/enhancement-training",
+      "sourceSlug": "choosing-my-client",
+      "wordCount": 60,
+      "imageCount": 1,
+      "blogCategory": "Skill Paths and Tools",
+      "topics": [
+        "beginner-freelancing",
+        "client-acquisition"
+      ],
+      "topicLabels": [
+        "Beginner freelancing",
+        "Client acquisition"
+      ],
+      "draftTitle": "How to use Choosing my client to find better freelance opportunities",
+      "angle": "Frame the post around practical steps a beginner can take before applying, pitching, or interviewing.",
+      "excerpt": "## Choosing my client ## 4 Business types - Choose the best one for you To help you achieve success as a Freelancer you need to know what is the appropriate kind of client you should support. You don't just take a job offer. You check first if it's a good fit...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "4",
+      "sourceTitle": "Creative/Artistic Skills",
+      "sourceCategory": "Courses / Career Path Training",
+      "sourceSection": "courses/career-path-training",
+      "sourceSlug": "creativeartistic-skills",
+      "wordCount": 216,
+      "imageCount": 1,
+      "blogCategory": "Skill Paths and Tools",
+      "topics": [
+        "content-creation",
+        "career-paths"
+      ],
+      "topicLabels": [
+        "Content creation",
+        "Career paths"
+      ],
+      "draftTitle": "What beginners can learn from Creative/Artistic Skills",
+      "angle": "Compare possible paths and help readers choose one next skill instead of trying to learn everything at once.",
+      "excerpt": "## Creative/Artistic Skills ## Become a Multimedia Specialist ## Advance Your Skills in UX Design ## Master Photoshop for Web Design ## Become a Video Editor ## Become a Certified CAD Designer with SOLIDWORKS ## Publish an eBook ## Master After Effects ##...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "9",
+      "sourceTitle": "Enhancement Training",
+      "sourceCategory": "Courses / Enhancement Training",
+      "sourceSection": "courses/enhancement-training",
+      "sourceSlug": "index",
+      "wordCount": 519,
+      "imageCount": 1,
+      "blogCategory": "Skill Paths and Tools",
+      "topics": [
+        "client-acquisition",
+        "tools-and-systems",
+        "social-media"
+      ],
+      "topicLabels": [
+        "Client acquisition",
+        "Tools and systems",
+        "Social media"
+      ],
+      "draftTitle": "How to use Enhancement Training to find better freelance opportunities",
+      "angle": "Frame the post around practical steps a beginner can take before applying, pitching, or interviewing.",
+      "excerpt": "## Enhancement Training ## I already have a client, what's my next step? I'm glad you already have a client. However, the question I want to ask you is, how challenging your role is? How many skills you apply to help your clients business? Virtual assistants...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "10",
+      "sourceTitle": "Professional Online Presence",
+      "sourceCategory": "Courses / Enhancement Training",
+      "sourceSection": "courses/enhancement-training",
+      "sourceSlug": "online-presence",
+      "wordCount": 73,
+      "imageCount": 1,
+      "blogCategory": "Skill Paths and Tools",
+      "topics": [
+        "client-acquisition",
+        "portfolio-and-brand",
+        "social-media"
+      ],
+      "topicLabels": [
+        "Client acquisition",
+        "Portfolio and brand",
+        "Social media"
+      ],
+      "draftTitle": "How to use Professional Online Presence to find better freelance opportunities",
+      "angle": "Frame the post around practical steps a beginner can take before applying, pitching, or interviewing.",
+      "excerpt": "## Professional Online Presence ## Top 4 Social Media Platforms every Filipino Freelancers should have Being lazy will not get you anywhere but doing hard work doesn't necessarily mean you will succeed unless you have the right foundation and you have good...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "6",
+      "sourceTitle": "Specialized Business Skills",
+      "sourceCategory": "Courses / Career Path Training",
+      "sourceSection": "courses/career-path-training",
+      "sourceSlug": "specialized-business-skills",
+      "wordCount": 221,
+      "imageCount": 1,
+      "blogCategory": "Skill Paths and Tools",
+      "topics": [
+        "client-acquisition",
+        "social-media",
+        "content-creation",
+        "career-paths"
+      ],
+      "topicLabels": [
+        "Client acquisition",
+        "Social media",
+        "Content creation",
+        "Career paths"
+      ],
+      "draftTitle": "How to use Specialized Business Skills to find better freelance opportunities",
+      "angle": "Frame the post around practical steps a beginner can take before applying, pitching, or interviewing.",
+      "excerpt": "## Specialized Business Skills ## Become a Marketing Manager ## Finding and Retaining Talent ## Become a Content Strategist ## Become a Sales Manager ## Become a Customer Service Manager ## Become a Public Relations Specialist ## Become an External Recruiter...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "7",
+      "sourceTitle": "Technical Skills",
+      "sourceCategory": "Courses / Career Path Training",
+      "sourceSection": "courses/career-path-training",
+      "sourceSlug": "technical-skills",
+      "wordCount": 381,
+      "imageCount": 1,
+      "blogCategory": "Skill Paths and Tools",
+      "topics": [
+        "career-paths"
+      ],
+      "topicLabels": [
+        "Career paths"
+      ],
+      "draftTitle": "What beginners can learn from Technical Skills",
+      "angle": "Compare possible paths and help readers choose one next skill instead of trying to learn everything at once.",
+      "excerpt": "## Technical Skills ## Become a Data Scientist ## Become a Java Programmer ## Become a Full-Stack Web Developer ## Become an IT Security Specialist ## Become a DevOps Engineer ## Become a Front-End Web Developer ## Become a Network Administrator ## Become a...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "64",
+      "sourceTitle": "Branding Guidelines",
+      "sourceCategory": "PRISMM Level 2 / Prep Work",
+      "sourceSection": "tutorials/prep-work",
+      "sourceSlug": "branding-guidelines",
+      "wordCount": 1559,
+      "imageCount": 10,
+      "blogCategory": "Social Media and Marketing",
+      "topics": [
+        "client-acquisition",
+        "portfolio-and-brand",
+        "communication",
+        "social-media"
+      ],
+      "topicLabels": [
+        "Client acquisition",
+        "Portfolio and brand",
+        "Communication",
+        "Social media"
+      ],
+      "draftTitle": "How to use Branding Guidelines to find better freelance opportunities",
+      "angle": "Frame the post around practical steps a beginner can take before applying, pitching, or interviewing.",
+      "excerpt": "## PRISMM Level 2 - Branding Guidelines Branding Anatomy & Guidelines GOAL: Create Branding Guidelines for Your Page What is Brand? What is branding? Three Core Pillars to Build an Effective Brand Brand Anatomy Brand Strategy Internal Brand Purpose Vision...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "70",
+      "sourceTitle": "Community Management",
+      "sourceCategory": "PRISMM Level 2 / Traffic",
+      "sourceSection": "tutorials/traffic",
+      "sourceSlug": "community-management",
+      "wordCount": 931,
+      "imageCount": 5,
+      "blogCategory": "Social Media and Marketing",
+      "topics": [
+        "client-acquisition",
+        "portfolio-and-brand",
+        "social-media",
+        "content-creation"
+      ],
+      "topicLabels": [
+        "Client acquisition",
+        "Portfolio and brand",
+        "Social media",
+        "Content creation"
+      ],
+      "draftTitle": "How to use Community Management to find better freelance opportunities",
+      "angle": "Frame the post around practical steps a beginner can take before applying, pitching, or interviewing.",
+      "excerpt": "## PRISMM Level 2 - Community Management Community Management or Community Building is at the heart of Facebook's Mission. We can say that this is at the heart of every social media platforms. All of them aims that everyone can stay connected. There is a...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "72",
+      "sourceTitle": "Contact",
+      "sourceCategory": "PRISMM Level 2 / Contact",
+      "sourceSection": "contact",
+      "sourceSlug": "contact",
+      "wordCount": 15,
+      "imageCount": 2,
+      "blogCategory": "Social Media and Marketing",
+      "topics": [
+        "social-media"
+      ],
+      "topicLabels": [
+        "Social media"
+      ],
+      "draftTitle": "What new freelancers should understand about Contact",
+      "angle": "Translate the lesson into a beginner-friendly explanation of what clients actually need from social media help.",
+      "excerpt": "## PRISMM Level 2 - Contact Need help? Send Message Follow us on Facebook! Join the #SWAHGteam!",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "69",
+      "sourceTitle": "Engagement Stacking",
+      "sourceCategory": "PRISMM Level 2 / Traffic",
+      "sourceSection": "tutorials/traffic",
+      "sourceSlug": "engagement-stacking",
+      "wordCount": 700,
+      "imageCount": 13,
+      "blogCategory": "Social Media and Marketing",
+      "topics": [
+        "client-acquisition",
+        "portfolio-and-brand",
+        "social-media",
+        "content-creation"
+      ],
+      "topicLabels": [
+        "Client acquisition",
+        "Portfolio and brand",
+        "Social media",
+        "Content creation"
+      ],
+      "draftTitle": "How to use Engagement Stacking to find better freelance opportunities",
+      "angle": "Frame the post around practical steps a beginner can take before applying, pitching, or interviewing.",
+      "excerpt": "## PRISMM Level 2 - Engagement Stacking What is Engagement Stacking? Why is Engagement important? One word. Visibility. How to get more Visibility or more Traffic? What are the types of Engagement? 2 Things You Need to Check Before Doing Engagement Stacking...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "36",
+      "sourceTitle": "FB + Chatbot Training",
+      "sourceCategory": "Courses / SMM Core Training",
+      "sourceSection": "courses/smm-core-training",
+      "sourceSlug": "fb-chatbot-training",
+      "wordCount": 11,
+      "imageCount": 1,
+      "blogCategory": "Social Media and Marketing",
+      "topics": [
+        "social-media"
+      ],
+      "topicLabels": [
+        "Social media"
+      ],
+      "draftTitle": "What new freelancers should understand about Facebook + Chatbot Training",
+      "angle": "Translate the lesson into a beginner-friendly explanation of what clients actually need from social media help.",
+      "excerpt": "## FB + Chatbot Training ## How to Manage Facebook Messages",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "37",
+      "sourceTitle": "FB Mobile Management",
+      "sourceCategory": "Courses / SMM Core Training",
+      "sourceSection": "courses/smm-core-training",
+      "sourceSlug": "fb-mobile-management",
+      "wordCount": 10,
+      "imageCount": 1,
+      "blogCategory": "Social Media and Marketing",
+      "topics": [
+        "social-media"
+      ],
+      "topicLabels": [
+        "Social media"
+      ],
+      "draftTitle": "What new freelancers should understand about Facebook Mobile Management",
+      "angle": "Translate the lesson into a beginner-friendly explanation of what clients actually need from social media help.",
+      "excerpt": "## FB Mobile Management ## Manage FB Page on Mobile",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "38",
+      "sourceTitle": "Getting Hired Fast",
+      "sourceCategory": "Courses / SMM Core Training",
+      "sourceSection": "courses/smm-core-training",
+      "sourceSlug": "getting-hired-fast",
+      "wordCount": 115,
+      "imageCount": 1,
+      "blogCategory": "Social Media and Marketing",
+      "topics": [
+        "client-acquisition",
+        "portfolio-and-brand",
+        "social-media"
+      ],
+      "topicLabels": [
+        "Client acquisition",
+        "Portfolio and brand",
+        "Social media"
+      ],
+      "draftTitle": "How to use Getting Hired Fast to find better freelance opportunities",
+      "angle": "Frame the post around practical steps a beginner can take before applying, pitching, or interviewing.",
+      "excerpt": "## Getting Hired Fast ## How to convince a client to hire you as their Social Media Manager even without experience and/or portfolio? ## Getting hired fast ACTION TAKER - These are the two words that will best describe a great SMM student. It is good to read...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "40",
+      "sourceTitle": "Instagram Strategy",
+      "sourceCategory": "Courses / SMM Core Training",
+      "sourceSection": "courses/smm-core-training",
+      "sourceSlug": "instagram-strategy",
+      "wordCount": 3,
+      "imageCount": 1,
+      "blogCategory": "Social Media and Marketing",
+      "topics": [
+        "social-media"
+      ],
+      "topicLabels": [
+        "Social media"
+      ],
+      "draftTitle": "What new freelancers should understand about Instagram Strategy",
+      "angle": "Translate the lesson into a beginner-friendly explanation of what clients actually need from social media help.",
+      "excerpt": "## Instagram Strategy",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "71",
+      "sourceTitle": "Internship Tasks",
+      "sourceCategory": "PRISMM Level 2 / Internship Tasks",
+      "sourceSection": "internship-tasks",
+      "sourceSlug": "internship-tasks",
+      "wordCount": 93,
+      "imageCount": 3,
+      "blogCategory": "Social Media and Marketing",
+      "topics": [
+        "social-media",
+        "content-creation",
+        "community-and-leadership"
+      ],
+      "topicLabels": [
+        "Social media",
+        "Content creation",
+        "Community and leadership"
+      ],
+      "draftTitle": "What new freelancers should understand about Internship Tasks",
+      "angle": "Translate the lesson into a beginner-friendly explanation of what clients actually need from social media help.",
+      "excerpt": "## PRISMM Level 2 - Internship Tasks Internship Videos \"An ounce of PRACTICE is worth more than tons of PREACHING .\" For the video training materials, please ask Lala or the admins to get access to the files used in the video training tasks. List of Tasks...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "41",
+      "sourceTitle": "Pinterest Marketing",
+      "sourceCategory": "Courses / SMM Core Training",
+      "sourceSection": "courses/smm-core-training",
+      "sourceSlug": "pinterest-marketing",
+      "wordCount": 3,
+      "imageCount": 1,
+      "blogCategory": "Social Media and Marketing",
+      "topics": [
+        "social-media"
+      ],
+      "topicLabels": [
+        "Social media"
+      ],
+      "draftTitle": "What new freelancers should understand about Pinterest Marketing",
+      "angle": "Translate the lesson into a beginner-friendly explanation of what clients actually need from social media help.",
+      "excerpt": "## Pinterest Marketing",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "61",
+      "sourceTitle": "Prep work",
+      "sourceCategory": "PRISMM Level 2 / Tutorials",
+      "sourceSection": "tutorials",
+      "sourceSlug": "prep-work",
+      "wordCount": 86,
+      "imageCount": 2,
+      "blogCategory": "Social Media and Marketing",
+      "topics": [
+        "client-acquisition",
+        "portfolio-and-brand",
+        "tools-and-systems",
+        "social-media"
+      ],
+      "topicLabels": [
+        "Client acquisition",
+        "Portfolio and brand",
+        "Tools and systems",
+        "Social media"
+      ],
+      "draftTitle": "How to use Prep work to find better freelance opportunities",
+      "angle": "Frame the post around practical steps a beginner can take before applying, pitching, or interviewing.",
+      "excerpt": "## PRISMM Level 2 - Prep work Prep Work covers the preliminary things you must do as soon as you work on your client's Social Media Page. They do not need to be followed by sequence but they are all required. Topics Covered Triple AAAs (Audit, Audit, Analyze)...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "59",
+      "sourceTitle": "PRISMM Level 2 Home",
+      "sourceCategory": "PRISMM Level 2 / Home",
+      "sourceSection": "home",
+      "sourceSlug": "home",
+      "wordCount": 233,
+      "imageCount": 2,
+      "blogCategory": "Social Media and Marketing",
+      "topics": [
+        "social-media",
+        "content-creation"
+      ],
+      "topicLabels": [
+        "Social media",
+        "Content creation"
+      ],
+      "draftTitle": "What new freelancers should understand about PRISMM Level 2 Home",
+      "angle": "Translate the lesson into a beginner-friendly explanation of what clients actually need from social media help.",
+      "excerpt": "## How to Grow Your Social Media Presence? \"We're not getting engagement!\", \"Our follower count is not growing!\", \"We're not getting any leads\". These are the common dilemma of many Social Media Managers. They thought that if they post a content, if they have...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "42",
+      "sourceTitle": "SMM Core Strategies",
+      "sourceCategory": "Courses / SMM Core Training",
+      "sourceSection": "courses/smm-core-training",
+      "sourceSlug": "smm-core-strategies",
+      "wordCount": 126,
+      "imageCount": 1,
+      "blogCategory": "Social Media and Marketing",
+      "topics": [
+        "client-acquisition",
+        "social-media"
+      ],
+      "topicLabels": [
+        "Client acquisition",
+        "Social media"
+      ],
+      "draftTitle": "How to use Social Media Management Core Strategies to find better freelance opportunities",
+      "angle": "Frame the post around practical steps a beginner can take before applying, pitching, or interviewing.",
+      "excerpt": "## SMM Core Strategies ## 5 SMM Core Strategies ## SMM Core Strategy #1 ​You know WHO you are now and you know WHO you want to become. ## SMM Core Strategy #2 You know WHY you are doing this and WHY you will not stop just to get there. ## SMM Core Strategy #3...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "39",
+      "sourceTitle": "SMM Core Training",
+      "sourceCategory": "Courses / SMM Core Training",
+      "sourceSection": "courses/smm-core-training",
+      "sourceSlug": "index",
+      "wordCount": 261,
+      "imageCount": 1,
+      "blogCategory": "Social Media and Marketing",
+      "topics": [
+        "client-acquisition",
+        "portfolio-and-brand",
+        "social-media",
+        "content-creation"
+      ],
+      "topicLabels": [
+        "Client acquisition",
+        "Portfolio and brand",
+        "Social media",
+        "Content creation"
+      ],
+      "draftTitle": "How to use Social Media Management Core Training to find better freelance opportunities",
+      "angle": "Frame the post around practical steps a beginner can take before applying, pitching, or interviewing.",
+      "excerpt": "## SMM Core Training ## Why study Social Media Marketing? ## Understanding Social Media Marketing \"Having a great Social Media Management Skill is like having a magic that can turn an unknown identity become a brand. Similar to the magic of the internet\"​ -...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "43",
+      "sourceTitle": "SMM Handbook",
+      "sourceCategory": "Courses / SMM Core Training",
+      "sourceSection": "courses/smm-core-training",
+      "sourceSlug": "smm-handbook",
+      "wordCount": 139,
+      "imageCount": 1,
+      "blogCategory": "Social Media and Marketing",
+      "topics": [
+        "client-acquisition",
+        "portfolio-and-brand",
+        "social-media",
+        "content-creation"
+      ],
+      "topicLabels": [
+        "Client acquisition",
+        "Portfolio and brand",
+        "Social media",
+        "Content creation"
+      ],
+      "draftTitle": "How to use Social Media Management Handbook to find better freelance opportunities",
+      "angle": "Frame the post around practical steps a beginner can take before applying, pitching, or interviewing.",
+      "excerpt": "## SMM Handbook ## FREE RESOURCE GUIDE ## SMM Handbook Guide - DOWNLOAD HERE This Handbook is a product of love, a gift from God and full of knowledge that will guide you to successful SMM campaigns! Enjoy! - Shela, Work At Home Geek​ - Social Media Gurus you...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "62",
+      "sourceTitle": "Social Media Marketing Ecosystem",
+      "sourceCategory": "PRISMM Level 2 / Prep Work",
+      "sourceSection": "tutorials/prep-work",
+      "sourceSlug": "social-media-marketing-ecosystem",
+      "wordCount": 2881,
+      "imageCount": 21,
+      "blogCategory": "Social Media and Marketing",
+      "topics": [
+        "client-acquisition",
+        "portfolio-and-brand",
+        "social-media",
+        "content-creation"
+      ],
+      "topicLabels": [
+        "Client acquisition",
+        "Portfolio and brand",
+        "Social media",
+        "Content creation"
+      ],
+      "draftTitle": "How to use Social Media Marketing Ecosystem to find better freelance opportunities",
+      "angle": "Frame the post around practical steps a beginner can take before applying, pitching, or interviewing.",
+      "excerpt": "## PRISMM Level 2 - Social Media Marketing Ecosystem GOAL: Build your own Organic Social Media Marketing Ecosystem What is Marketing? Different forms of Marketing What is Indoctrination Process? What is Social Media Marketing Ecosystem? Types of Social Media...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "68",
+      "sourceTitle": "Social Media Platform Anatomy",
+      "sourceCategory": "PRISMM Level 2 / Traffic",
+      "sourceSection": "tutorials/traffic",
+      "sourceSlug": "social-media-platform-anatomy",
+      "wordCount": 420,
+      "imageCount": 5,
+      "blogCategory": "Social Media and Marketing",
+      "topics": [
+        "client-acquisition",
+        "social-media",
+        "content-creation"
+      ],
+      "topicLabels": [
+        "Client acquisition",
+        "Social media",
+        "Content creation"
+      ],
+      "draftTitle": "How to use Social Media Platform Anatomy to find better freelance opportunities",
+      "angle": "Frame the post around practical steps a beginner can take before applying, pitching, or interviewing.",
+      "excerpt": "## PRISMM Level 2 - Social Media Platform Anatomy 3 Most Important Digital Marketing branches Social Media Managers should know Buyer Mindset Content What Social Media Platform should I focus on? Top 6 Most Popular Social Media Platforms Social Media...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "65",
+      "sourceTitle": "Tactical Triangle",
+      "sourceCategory": "PRISMM Level 2 / Prep Work",
+      "sourceSection": "tutorials/prep-work",
+      "sourceSlug": "tactical-triangle",
+      "wordCount": 573,
+      "imageCount": 4,
+      "blogCategory": "Social Media and Marketing",
+      "topics": [
+        "client-acquisition",
+        "portfolio-and-brand",
+        "social-media",
+        "content-creation"
+      ],
+      "topicLabels": [
+        "Client acquisition",
+        "Portfolio and brand",
+        "Social media",
+        "Content creation"
+      ],
+      "draftTitle": "How to use Tactical Triangle to find better freelance opportunities",
+      "angle": "Frame the post around practical steps a beginner can take before applying, pitching, or interviewing.",
+      "excerpt": "## PRISMM Level 2 - Tactical Triangle is a way to sell things. It is composed of 3 elements: Traffic, Conversion & Economics. For example: By getting people to come to your store (Traffic), then making them want to buy something (Convert), and making sure you...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "67",
+      "sourceTitle": "Traffic",
+      "sourceCategory": "PRISMM Level 2 / Tutorials",
+      "sourceSection": "tutorials",
+      "sourceSlug": "traffic",
+      "wordCount": 313,
+      "imageCount": 2,
+      "blogCategory": "Social Media and Marketing",
+      "topics": [
+        "client-acquisition",
+        "social-media",
+        "content-creation",
+        "mindset-and-faith"
+      ],
+      "topicLabels": [
+        "Client acquisition",
+        "Social media",
+        "Content creation",
+        "Mindset and faith"
+      ],
+      "draftTitle": "How to use Traffic to find better freelance opportunities",
+      "angle": "Frame the post around practical steps a beginner can take before applying, pitching, or interviewing.",
+      "excerpt": "## PRISMM Level 2 - Traffic Social Media Traffic covers the important things you must know to generate traffic and attention to your client's Social Media platforms. To understand Social Media Traffic, we must understand the essence of the word \"Traffic\" in...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "63",
+      "sourceTitle": "Triple AAAs",
+      "sourceCategory": "PRISMM Level 2 / Prep Work",
+      "sourceSection": "tutorials/prep-work",
+      "sourceSlug": "triple-aaas",
+      "wordCount": 3192,
+      "imageCount": 33,
+      "blogCategory": "Social Media and Marketing",
+      "topics": [
+        "beginner-freelancing",
+        "client-acquisition",
+        "portfolio-and-brand",
+        "communication"
+      ],
+      "topicLabels": [
+        "Beginner freelancing",
+        "Client acquisition",
+        "Portfolio and brand",
+        "Communication"
+      ],
+      "draftTitle": "How to use Triple AAAs to find better freelance opportunities",
+      "angle": "Frame the post around practical steps a beginner can take before applying, pitching, or interviewing.",
+      "excerpt": "## PRISMM Level 2 - Triple AAAs SMM Triple AAAs AUDIT - ANALYZE - ACCUMULATE GOAL: Confidence in taking an SMM Client AUDIT: Social Media Audit What is the purpose of Social Media Audit? How to format a Social Media Audit document? What is Engagement Rate?...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "60",
+      "sourceTitle": "Tutorials",
+      "sourceCategory": "PRISMM Level 2 / Tutorials",
+      "sourceSection": "tutorials",
+      "sourceSlug": "tutorials",
+      "wordCount": 287,
+      "imageCount": 2,
+      "blogCategory": "Social Media and Marketing",
+      "topics": [
+        "client-acquisition",
+        "portfolio-and-brand",
+        "social-media",
+        "content-creation"
+      ],
+      "topicLabels": [
+        "Client acquisition",
+        "Portfolio and brand",
+        "Social media",
+        "Content creation"
+      ],
+      "draftTitle": "How to use Tutorials to find better freelance opportunities",
+      "angle": "Frame the post around practical steps a beginner can take before applying, pitching, or interviewing.",
+      "excerpt": "## PRISMM Level 2 - Tutorials PRISMM LEVEL 2 \"An ounce of PRACTICE is worth more than tons of PREACHING .\" By the end of this program, successful interns should be able to do these two important goals: 1) Add the following Skills/Techniques in their resumes...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "66",
+      "sourceTitle": "What is a Social Media Manager?",
+      "sourceCategory": "PRISMM Level 2 / Prep Work",
+      "sourceSection": "tutorials/prep-work",
+      "sourceSlug": "what-is-a-social-media-manager",
+      "wordCount": 2246,
+      "imageCount": 3,
+      "blogCategory": "Social Media and Marketing",
+      "topics": [
+        "client-acquisition",
+        "portfolio-and-brand",
+        "communication",
+        "social-media"
+      ],
+      "topicLabels": [
+        "Client acquisition",
+        "Portfolio and brand",
+        "Communication",
+        "Social media"
+      ],
+      "draftTitle": "How to use What is a Social Media Manager? to find better freelance opportunities",
+      "angle": "Frame the post around practical steps a beginner can take before applying, pitching, or interviewing.",
+      "excerpt": "## PRISMM Level 2 - What is a Social Media Manager? 3 Types of Social Media Managers These types are like the levels of sophistication of Social Media Manager roles. You can start with a Role Specific - Social Media Manager type to start but the main goal is...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "44",
+      "sourceTitle": "YouTube Best Practices",
+      "sourceCategory": "Courses / SMM Core Training",
+      "sourceSection": "courses/smm-core-training",
+      "sourceSlug": "youtube-best-practices",
+      "wordCount": 4,
+      "imageCount": 1,
+      "blogCategory": "Social Media and Marketing",
+      "topics": [
+        "social-media"
+      ],
+      "topicLabels": [
+        "Social media"
+      ],
+      "draftTitle": "What new freelancers should understand about YouTube Best Practices",
+      "angle": "Translate the lesson into a beginner-friendly explanation of what clients actually need from social media help.",
+      "excerpt": "## YouTube Best Practices",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "46",
+      "sourceTitle": "Personal Branding Class",
+      "sourceCategory": "Courses / Writing Personal Brand",
+      "sourceSection": "courses/writing-personal-brand",
+      "sourceSlug": "personal-branding",
+      "wordCount": 739,
+      "imageCount": 1,
+      "blogCategory": "Personal Brand and Content",
+      "topics": [
+        "client-acquisition",
+        "portfolio-and-brand",
+        "content-creation",
+        "mindset-and-faith"
+      ],
+      "topicLabels": [
+        "Client acquisition",
+        "Portfolio and brand",
+        "Content creation",
+        "Mindset and faith"
+      ],
+      "draftTitle": "How to use Personal Branding Class to find better freelance opportunities",
+      "angle": "Frame the post around practical steps a beginner can take before applying, pitching, or interviewing.",
+      "excerpt": "## Personal Branding Class ## How do you position yourself as a Professional? ## You are a Queen inside To put it simply, Personal Branding is what people tell about you when you are not in the room. It is your reputation. It is who you are in the eyes of...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "45",
+      "sourceTitle": "Writing Personal Brand",
+      "sourceCategory": "Courses / Writing Personal Brand",
+      "sourceSection": "courses/writing-personal-brand",
+      "sourceSlug": "index",
+      "wordCount": 76,
+      "imageCount": 1,
+      "blogCategory": "Personal Brand and Content",
+      "topics": [
+        "portfolio-and-brand",
+        "social-media",
+        "content-creation"
+      ],
+      "topicLabels": [
+        "Portfolio and brand",
+        "Social media",
+        "Content creation"
+      ],
+      "draftTitle": "What new freelancers should understand about Writing Personal Brand",
+      "angle": "Translate the lesson into a beginner-friendly explanation of what clients actually need from social media help.",
+      "excerpt": "## Writing Personal Brand ## How to Write your Personal Branding as a Freelancer You should start building your personal branding and your portfolio as early as now and be very intentional. Learn a skill, build your professional experiences and stack your...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "47",
+      "sourceTitle": "Bible Reading",
+      "sourceCategory": "Stories",
+      "sourceSection": "stories",
+      "sourceSlug": "bible-reading",
+      "wordCount": 19,
+      "imageCount": 12,
+      "blogCategory": "BFF Stories",
+      "topics": [
+        "program-design",
+        "mindset-and-faith"
+      ],
+      "topicLabels": [
+        "Program design",
+        "Mindset and faith"
+      ],
+      "draftTitle": "What Bible Reading teaches about starting again",
+      "angle": "Turn this story into a personal essay about courage, provision, and the quiet decisions behind remote work growth.",
+      "excerpt": "## Bible Reading 7 BIBLE VERSES FOR ASPIRING FREELANCERS - DOWNLOAD FREE EBOOK DAY 1 - LOVE Coming soon...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "48",
+      "sourceTitle": "EVERYONE HAS A CHANCE",
+      "sourceCategory": "Stories",
+      "sourceSection": "stories",
+      "sourceSlug": "everyone-has-a-chance-shela-heramis",
+      "wordCount": 566,
+      "imageCount": 2,
+      "blogCategory": "BFF Stories",
+      "topics": [
+        "client-acquisition",
+        "portfolio-and-brand",
+        "communication",
+        "social-media"
+      ],
+      "topicLabels": [
+        "Client acquisition",
+        "Portfolio and brand",
+        "Communication",
+        "Social media"
+      ],
+      "draftTitle": "What EVERYONE HAS A CHANCE teaches about starting again",
+      "angle": "Turn this story into a personal essay about courage, provision, and the quiet decisions behind remote work growth.",
+      "excerpt": "## EVERYONE HAS A CHANCE By: Shela \"Lala\" Heramis (WORK AT HOME GEEK FOUNDER) How did I start working at home? It was March 2015, my health, my relationships, my work, and myself are all messed up. I had no choice but to give up my job as a Technical Support...",
+      "publication": {
+        "status": "published",
+        "statusLabel": "Published",
+        "path": "src/content/stories/everyone-has-a-chance-shela-heramis.md",
+        "title": "Everyone Has A Chance",
+        "slug": "everyone-has-a-chance-shela-heramis"
+      }
+    },
+    {
+      "id": "49",
+      "sourceTitle": "God Will Always Have Better Plans For You",
+      "sourceCategory": "Stories",
+      "sourceSection": "stories",
+      "sourceSlug": "god-will-always-have-better-plans-for-you-jean-cinence",
+      "wordCount": 339,
+      "imageCount": 2,
+      "blogCategory": "BFF Stories",
+      "topics": [
+        "beginner-freelancing",
+        "client-acquisition",
+        "portfolio-and-brand",
+        "communication"
+      ],
+      "topicLabels": [
+        "Beginner freelancing",
+        "Client acquisition",
+        "Portfolio and brand",
+        "Communication"
+      ],
+      "draftTitle": "What God Will Always Have Better Plans For You teaches about starting again",
+      "angle": "Turn this story into a personal essay about courage, provision, and the quiet decisions behind remote work growth.",
+      "excerpt": "## God Will Always Have Better Plans For You by: Mary Jean \"Jean\" Cinence SWAHG Moderator I was in the moment of depression earlier this year to the point of losing my self-worth and stopped believing that I have a space in this field. I prayed and asked for...",
+      "publication": {
+        "status": "published",
+        "statusLabel": "Published",
+        "path": "src/content/stories/god-will-always-have-better-plans-for-you-jean-cinence.md",
+        "title": "God Will Always Have Better Plans For You",
+        "slug": "god-will-always-have-better-plans-for-you-jean-cinence"
+      }
+    },
+    {
+      "id": "51",
+      "sourceTitle": "My Freelancing Journey",
+      "sourceCategory": "Stories",
+      "sourceSection": "stories",
+      "sourceSlug": "my-freelancing-journey-claudz",
+      "wordCount": 1281,
+      "imageCount": 3,
+      "blogCategory": "BFF Stories",
+      "topics": [
+        "beginner-freelancing",
+        "client-acquisition",
+        "social-media",
+        "content-creation"
+      ],
+      "topicLabels": [
+        "Beginner freelancing",
+        "Client acquisition",
+        "Social media",
+        "Content creation"
+      ],
+      "draftTitle": "What My Freelancing Journey teaches about starting again",
+      "angle": "Turn this story into a personal essay about courage, provision, and the quiet decisions behind remote work growth.",
+      "excerpt": "## My Freelancing Journey by: Claudine Ann Marie de Guzman SWAHG Core Admin “Our success does not depend merely on our career or salary or a number of clients, but our success is defined by how we make our life meaningful and make a difference in this world.”...",
+      "publication": {
+        "status": "published",
+        "statusLabel": "Published",
+        "path": "src/content/stories/my-freelancing-journey-claudz.md",
+        "title": "My Freelancing Journey",
+        "slug": "my-freelancing-journey-claudz"
+      }
+    },
+    {
+      "id": "50",
+      "sourceTitle": "Stories and Valuable Life Lessons",
+      "sourceCategory": "Stories",
+      "sourceSection": "stories",
+      "sourceSlug": "index",
+      "wordCount": 423,
+      "imageCount": 1,
+      "blogCategory": "BFF Stories",
+      "topics": [
+        "beginner-freelancing",
+        "mindset-and-faith"
+      ],
+      "topicLabels": [
+        "Beginner freelancing",
+        "Mindset and faith"
+      ],
+      "draftTitle": "What Stories and Valuable Life Lessons teaches about starting again",
+      "angle": "Turn this story into a personal essay about courage, provision, and the quiet decisions behind remote work growth.",
+      "excerpt": "## Stories and Valuable Life Lessons ## STRUGGLES, SUCCESSES, & REAL-LIFE EXPERIENCES FROM THE HEART You have a TALENT. You are good at something. Find it and embrace it. We believe that the most memorable life lessons come from stories. Each person's story...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "52",
+      "sourceTitle": "The Day I Stepped Out of My Comfort Zone",
+      "sourceCategory": "Stories",
+      "sourceSection": "stories",
+      "sourceSlug": "the-day-i-stepped-out-of-my-comfort-zone-liz",
+      "wordCount": 535,
+      "imageCount": 2,
+      "blogCategory": "BFF Stories",
+      "topics": [
+        "client-acquisition",
+        "portfolio-and-brand",
+        "communication",
+        "social-media"
+      ],
+      "topicLabels": [
+        "Client acquisition",
+        "Portfolio and brand",
+        "Communication",
+        "Social media"
+      ],
+      "draftTitle": "What The Day I Stepped Out of My Comfort Zone teaches about starting again",
+      "angle": "Turn this story into a personal essay about courage, provision, and the quiet decisions behind remote work growth.",
+      "excerpt": "## The Day I Stepped Out of My Comfort Zone by Liz Galacio SWAHG Core Admin If you don't have the courage, opportunity will leave you. When I saw “Work at Home Geek” page, I thought that it was just a “click-bait” because I’m so done with a Mentor or Coach...",
+      "publication": {
+        "status": "published",
+        "statusLabel": "Published",
+        "path": "src/content/stories/the-day-i-stepped-out-of-my-comfort-zone-liz.md",
+        "title": "The Day I Stepped Out of My Comfort Zone",
+        "slug": "the-day-i-stepped-out-of-my-comfort-zone-liz"
+      }
+    },
+    {
+      "id": "53",
+      "sourceTitle": "WE ALL HAVE A RACE TO RUN",
+      "sourceCategory": "Stories",
+      "sourceSection": "stories",
+      "sourceSlug": "we-all-have-a-race-to-run-shela-heramis",
+      "wordCount": 139,
+      "imageCount": 2,
+      "blogCategory": "BFF Stories",
+      "topics": [
+        "mindset-and-faith"
+      ],
+      "topicLabels": [
+        "Mindset and faith"
+      ],
+      "draftTitle": "What WE ALL HAVE A RACE TO RUN teaches about starting again",
+      "angle": "Turn this story into a personal essay about courage, provision, and the quiet decisions behind remote work growth.",
+      "excerpt": "## WE ALL HAVE A RACE TO RUN by: Shela Heramis ## Obedience: Stay on Track Kung hindi kaya tumakbo, maglakad. Kung hindi kaya maglakad, gumapang. Basta mahalaga hindi tumitigil. Makakarating ka din sa finish line! Then, if you will look back sa mga...",
+      "publication": {
+        "status": "published",
+        "statusLabel": "Published",
+        "path": "src/content/stories/we-all-have-a-race-to-run-shela-heramis.md",
+        "title": "We All Have A Race To Run",
+        "slug": "we-all-have-a-race-to-run-shela-heramis"
+      }
+    },
+    {
+      "id": "54",
+      "sourceTitle": "assignment",
+      "sourceCategory": "Top-level",
+      "sourceSection": "top",
+      "sourceSlug": "assignment",
+      "wordCount": 0,
+      "imageCount": 1,
+      "blogCategory": "Program and Community",
+      "topics": [
+        "program-design"
+      ],
+      "topicLabels": [
+        "Program design"
+      ],
+      "draftTitle": "What beginners can learn from assignment",
+      "angle": "Use assignment as a source note for a practical WBL blog post aimed at beginners building a freelance life from home.",
+      "excerpt": "assignment",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "2",
+      "sourceTitle": "Common Mistakes",
+      "sourceCategory": "Courses / Additional",
+      "sourceSection": "courses/additional",
+      "sourceSlug": "common-mistakes",
+      "wordCount": 225,
+      "imageCount": 1,
+      "blogCategory": "Program and Community",
+      "topics": [
+        "beginner-freelancing",
+        "portfolio-and-brand",
+        "communication",
+        "tools-and-systems"
+      ],
+      "topicLabels": [
+        "Beginner freelancing",
+        "Portfolio and brand",
+        "Communication",
+        "Tools and systems"
+      ],
+      "draftTitle": "The beginner freelancer guide to Common Mistakes",
+      "angle": "Use this as a setup checklist that helps a new freelancer remove friction before paid work begins.",
+      "excerpt": "## Common Mistakes ## Points of Improvements - Applying without a prepared resume (very unacceptable - please watch Lesson 3 of Freelancing Journey \"How to create a resume that stands out) - Resume or LinkedIn shows promising skills but no reliable success...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "3",
+      "sourceTitle": "English Communications 101",
+      "sourceCategory": "Courses / Additional",
+      "sourceSection": "courses/additional",
+      "sourceSlug": "english-101",
+      "wordCount": 566,
+      "imageCount": 1,
+      "blogCategory": "Program and Community",
+      "topics": [
+        "client-acquisition",
+        "communication",
+        "content-creation",
+        "community-and-leadership"
+      ],
+      "topicLabels": [
+        "Client acquisition",
+        "Communication",
+        "Content creation",
+        "Community and leadership"
+      ],
+      "draftTitle": "How to use English Communications 101 to find better freelance opportunities",
+      "angle": "Frame the post around practical steps a beginner can take before applying, pitching, or interviewing.",
+      "excerpt": "## English Communications 101 There are more and more Filipinos who are now interested in working from home. And why not? If it gives you the freedom to be with your loved ones while earning enough to enjoy it. Aside from struggling to know where and how to...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "56",
+      "sourceTitle": "FAQs & Next Steps",
+      "sourceCategory": "Top-level",
+      "sourceSection": "top",
+      "sourceSlug": "faqs",
+      "wordCount": 1736,
+      "imageCount": 2,
+      "blogCategory": "Program and Community",
+      "topics": [
+        "beginner-freelancing",
+        "client-acquisition",
+        "portfolio-and-brand",
+        "communication"
+      ],
+      "topicLabels": [
+        "Beginner freelancing",
+        "Client acquisition",
+        "Portfolio and brand",
+        "Communication"
+      ],
+      "draftTitle": "How to use FAQs & Next Steps to find better freelance opportunities",
+      "angle": "Frame the post around practical steps a beginner can take before applying, pitching, or interviewing.",
+      "excerpt": "## FAQs & Next Steps ## Frequently Asked Questions (FAQs) & Next Steps ## Where can I access Free Training Resources? ## Click HERE link to see over 250+ Training resources available for aspiring Freelancers, Graphic Designers, Video Editors, Social Media...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "57",
+      "sourceTitle": "home",
+      "sourceCategory": "Top-level",
+      "sourceSection": "top",
+      "sourceSlug": "home",
+      "wordCount": 0,
+      "imageCount": 2,
+      "blogCategory": "Program and Community",
+      "topics": [
+        "program-design"
+      ],
+      "topicLabels": [
+        "Program design"
+      ],
+      "draftTitle": "What beginners can learn from home",
+      "angle": "Use home as a source note for a practical WBL blog post aimed at beginners building a freelance life from home.",
+      "excerpt": "home",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "58",
+      "sourceTitle": "Internship",
+      "sourceCategory": "Top-level",
+      "sourceSection": "top",
+      "sourceSlug": "internship",
+      "wordCount": 152,
+      "imageCount": 1,
+      "blogCategory": "Program and Community",
+      "topics": [
+        "beginner-freelancing",
+        "client-acquisition",
+        "portfolio-and-brand",
+        "communication"
+      ],
+      "topicLabels": [
+        "Beginner freelancing",
+        "Client acquisition",
+        "Portfolio and brand",
+        "Communication"
+      ],
+      "draftTitle": "How to use Internship to find better freelance opportunities",
+      "angle": "Frame the post around practical steps a beginner can take before applying, pitching, or interviewing.",
+      "excerpt": "## Internship Your training should always start with understanding these 5 Important areas. Whether you want to become a virtual assistant, social media manager, freelancer, influencer or an expert or whatever it is that you want to do, we all need to have a...",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "55",
+      "sourceTitle": "Need help?",
+      "sourceCategory": "Top-level",
+      "sourceSection": "top",
+      "sourceSlug": "contact",
+      "wordCount": 3,
+      "imageCount": 1,
+      "blogCategory": "Program and Community",
+      "topics": [
+        "program-design"
+      ],
+      "topicLabels": [
+        "Program design"
+      ],
+      "draftTitle": "What beginners can learn from Need help?",
+      "angle": "Use Need help? as a source note for a practical WBL blog post aimed at beginners building a freelance life from home.",
+      "excerpt": "## Need help?",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "1",
+      "sourceTitle": "Paid Trainings",
+      "sourceCategory": "Courses / Misc",
+      "sourceSection": "courses",
+      "sourceSlug": "bff-blueprint",
+      "wordCount": 3,
+      "imageCount": 1,
+      "blogCategory": "Program and Community",
+      "topics": [
+        "program-design"
+      ],
+      "topicLabels": [
+        "Program design"
+      ],
+      "draftTitle": "What beginners can learn from Paid Trainings",
+      "angle": "Use Paid Trainings as a source note for a practical WBL blog post aimed at beginners building a freelance life from home.",
+      "excerpt": "## Paid Trainings",
+      "publication": {
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
+      }
+    },
+    {
+      "id": "wbl-10-years-ago-i-was-a-government-scholar",
+      "sourceTitle": "10 Years Ago I Was a Government Scholar",
+      "sourceCategory": "WBL Site / Story",
+      "sourceSection": "src/content/stories",
+      "sourceSlug": "10-years-ago-i-was-a-government-scholar",
+      "wordCount": 489,
+      "imageCount": 1,
+      "blogCategory": "Published WBL Library",
+      "topics": [
+        "faith-theology",
+        "freelancing",
+        "health"
+      ],
+      "topicLabels": [
+        "Faith and Theology",
+        "Freelancing and Remote Work",
+        "Health and Chronic Illness"
+      ],
+      "draftTitle": "10 Years Ago I Was a Government Scholar",
+      "angle": "An origin story from college. A government scholarship, a sick spleen, a poor family of nine, and the slow turn from being bitter at God to trusting Romans 8:28.",
+      "excerpt": "Ten years ago, I was a government scholar studying Computer Engineering. I was also bitter and angry with God. I tutored Korean students for five thousand pesos a month. I was a student assistant for three thousand more. The government paid my tuition. I...",
+      "publication": {
+        "status": "published",
+        "statusLabel": "Published",
+        "path": "src/content/stories/10-years-ago-i-was-a-government-scholar.md",
+        "title": "10 Years Ago I Was a Government Scholar",
+        "slug": "10-years-ago-i-was-a-government-scholar"
+      }
+    },
+    {
+      "id": "wbl-100-months-with-aj",
+      "sourceTitle": "100 Months With AJ",
+      "sourceCategory": "WBL Site / Story",
+      "sourceSection": "src/content/stories",
+      "sourceSlug": "100-months-with-aj",
+      "wordCount": 393,
+      "imageCount": 1,
+      "blogCategory": "Published WBL Library",
+      "topics": [
+        "marriage-family",
+        "faith-theology",
+        "health"
+      ],
+      "topicLabels": [
+        "Marriage and Family",
+        "Faith and Theology",
+        "Health and Chronic Illness"
+      ],
+      "draftTitle": "100 Months With AJ",
+      "angle": "100 months with AJ. For twenty years I was angry at God about my body and my life. Then He sent the man who stayed and fought with me. This is the story of how that one staying changed everything.",
+      "excerpt": "The first twenty years of my life was a dark empty room. It is late tonight. I am writing this with tears in my eyes and joy in my heart. Tonight is one hundred months with AJ. For the first twenty years of my life, the voice in my head asked the same...",
+      "publication": {
+        "status": "published",
+        "statusLabel": "Published",
+        "path": "src/content/stories/100-months-with-aj.md",
+        "title": "100 Months With AJ",
+        "slug": "100-months-with-aj"
+      }
+    },
+    {
+      "id": "wbl-every-post-is-a-hollow-block",
+      "sourceTitle": "Every Post Is a Hollow Block",
+      "sourceCategory": "WBL Site / Tool",
+      "sourceSection": "src/content/tools",
+      "sourceSlug": "every-post-is-a-hollow-block",
+      "wordCount": 559,
+      "imageCount": 1,
+      "blogCategory": "Published WBL Library",
+      "topics": [
+        "content-strategy",
+        "ai-content-systems"
+      ],
+      "topicLabels": [
+        "Content Strategy and SEO",
+        "AI Content Systems"
+      ],
+      "draftTitle": "Every Post Is a Hollow Block",
+      "angle": "A mental model I come back to every time I am about to post. You cannot post your way into an audience. You have to build your way into one.",
+      "excerpt": "I used to post whatever I thought of that day. I had a brand new Facebook page and a free weekend, so I filled it. A tip on Monday. A meme on Tuesday. A quote I liked on Wednesday. I was posting, which is what everyone said to do. And the page was not...",
+      "publication": {
+        "status": "published",
+        "statusLabel": "Published",
+        "path": "src/content/tools/every-post-is-a-hollow-block.md",
+        "title": "Every Post Is a Hollow Block",
+        "slug": "every-post-is-a-hollow-block"
+      }
+    },
+    {
+      "id": "wbl-fake-it-till-you-make-it-no",
+      "sourceTitle": "Fake It Till You Make It. No.",
+      "sourceCategory": "WBL Site / Guide",
+      "sourceSection": "src/content/guides",
+      "sourceSlug": "fake-it-till-you-make-it-no",
+      "wordCount": 614,
+      "imageCount": 1,
+      "blogCategory": "Published WBL Library",
+      "topics": [
+        "freelancing"
+      ],
+      "topicLabels": [
+        "Freelancing and Remote Work"
+      ],
+      "draftTitle": "Fake It Till You Make It. No.",
+      "angle": "The loudest voice in freelancing right now is telling you to charge fast and figure it out later. I do not believe in it. Here is why, and here is what I want you to do instead.",
+      "excerpt": "The loudest voice in the freelancing space right now is telling you to charge fast and figure it out later. \"Charge five figures on your first contract. If you are cheap, they will not take you seriously. Fake it till you make it.\" Every new freelancer I have...",
+      "publication": {
+        "status": "published",
+        "statusLabel": "Published",
+        "path": "src/content/guides/fake-it-till-you-make-it-no.md",
+        "title": "Fake It Till You Make It. No.",
+        "slug": "fake-it-till-you-make-it-no"
+      }
+    },
+    {
+      "id": "wbl-five-years-ago",
+      "sourceTitle": "Five Years Ago",
+      "sourceCategory": "WBL Site / Story",
+      "sourceSection": "src/content/stories",
+      "sourceSlug": "five-years-ago",
+      "wordCount": 600,
+      "imageCount": 1,
+      "blogCategory": "Published WBL Library",
+      "topics": [
+        "freelancing",
+        "health",
+        "faith-theology"
+      ],
+      "topicLabels": [
+        "Freelancing and Remote Work",
+        "Health and Chronic Illness",
+        "Faith and Theology"
+      ],
+      "draftTitle": "Five Years Ago",
+      "angle": "Five years ago I was broke, broken, and lost. A tumor in my brain, a missing spleen, a missing gallbladder, and a spine that was already forty years older than I was. This is what I wish someone had said to me then.",
+      "excerpt": "Five years ago, I was broke, broken, and lost. It was not just that I had no money and no work. I had a tumor in a vein in my brain. I had no spleen and no gallbladder anymore. I had degenerative disc disease, which means my spine was sixty years old inside...",
+      "publication": {
+        "status": "published",
+        "statusLabel": "Published",
+        "path": "src/content/stories/five-years-ago.md",
+        "title": "Five Years Ago",
+        "slug": "five-years-ago"
+      }
+    },
+    {
+      "id": "wbl-from-the-kitchen-table",
+      "sourceTitle": "From the Kitchen Table",
+      "sourceCategory": "WBL Site / Story",
+      "sourceSection": "src/content/stories",
+      "sourceSlug": "from-the-kitchen-table",
+      "wordCount": 418,
+      "imageCount": 1,
+      "blogCategory": "Published WBL Library",
+      "topics": [
+        "workstation-setup",
+        "freelancing",
+        "health"
+      ],
+      "topicLabels": [
+        "My Workstation and Tools",
+        "Freelancing and Remote Work",
+        "Health and Chronic Illness"
+      ],
+      "draftTitle": "From the Kitchen Table",
+      "angle": "I work at three in the morning sometimes. The desk lamp makes a small circle on my keyboard. AJ is sleeping. This is the story of how the kitchen table became this chair.",
+      "excerpt": "I work at three in the morning sometimes. The room is dark. AJ is sleeping. I do not turn on the ceiling light. I have a small desk lamp. It makes a circle of warm light on my keyboard. That circle is where I work. The chair I am sitting on right now is a...",
+      "publication": {
+        "status": "published",
+        "statusLabel": "Published",
+        "path": "src/content/stories/from-the-kitchen-table.md",
+        "title": "From the Kitchen Table",
+        "slug": "from-the-kitchen-table"
+      }
+    },
+    {
+      "id": "wbl-how-an-ordinary-girl-from-taguig",
+      "sourceTitle": "How an Ordinary Girl from Taguig",
+      "sourceCategory": "WBL Site / Field Note",
+      "sourceSection": "src/content/notes",
+      "sourceSlug": "how-an-ordinary-girl-from-taguig",
+      "wordCount": 103,
+      "imageCount": 1,
+      "blogCategory": "Published WBL Library",
+      "topics": [
+        "freelancing",
+        "faith-theology",
+        "filipino-professionals"
+      ],
+      "topicLabels": [
+        "Freelancing and Remote Work",
+        "Faith and Theology",
+        "Filipino Professionals"
+      ],
+      "draftTitle": "How an Ordinary Girl from Taguig",
+      "angle": "How did an ordinary girl from a humble place in Taguig build a platform with thousands of followers in a noisy world? There is no secret recipe. There is only genuine content and kindness. And the One who gave the seeds.",
+      "excerpt": "How did an ordinary girl from a humble place in Taguig build a platform with thousands of followers in the noisy world of social media? There are thousands of pages and groups in the hot market of \"work at home\" and \"freelancing\" that have huge followers and...",
+      "publication": {
+        "status": "published",
+        "statusLabel": "Published",
+        "path": "src/content/notes/how-an-ordinary-girl-from-taguig.md",
+        "title": "How an Ordinary Girl from Taguig",
+        "slug": "how-an-ordinary-girl-from-taguig"
+      }
+    },
+    {
+      "id": "wbl-how-to-get-experience-when-no-one-hires-you",
+      "sourceTitle": "How to Get Experience When No One Hires You",
+      "sourceCategory": "WBL Site / Guide",
+      "sourceSection": "src/content/guides",
+      "sourceSlug": "how-to-get-experience-when-no-one-hires-you",
+      "wordCount": 435,
+      "imageCount": 1,
+      "blogCategory": "Published WBL Library",
+      "topics": [
+        "freelancing",
+        "filipino-professionals"
+      ],
+      "topicLabels": [
+        "Freelancing and Remote Work",
+        "Filipino Professionals"
+      ],
+      "draftTitle": "How to Get Experience When No One Hires You",
+      "angle": "How do I get experience when no one hires beginners? Two proven ways I built my own portfolio when I started with zero, and one mindset that changed everything.",
+      "excerpt": "A reader asked me, \"How will I ever get experience if no one hires beginners?\" It is one of the most common questions inside the community. And I was exactly like this when I was starting out. Here is how I built my own portfolio. I started with what I knew...",
+      "publication": {
+        "status": "published",
+        "statusLabel": "Published",
+        "path": "src/content/guides/how-to-get-experience-when-no-one-hires-you.md",
+        "title": "How to Get Experience When No One Hires You",
+        "slug": "how-to-get-experience-when-no-one-hires-you"
+      }
+    },
+    {
+      "id": "wbl-how-to-grow-without-asking-friends-for-likes",
+      "sourceTitle": "How to Grow Without Asking Friends for Likes",
+      "sourceCategory": "WBL Site / Guide",
+      "sourceSection": "src/content/guides",
+      "sourceSlug": "how-to-grow-without-asking-friends-for-likes",
+      "wordCount": 401,
+      "imageCount": 1,
+      "blogCategory": "Published WBL Library",
+      "topics": [
+        "content-strategy",
+        "freelancing"
+      ],
+      "topicLabels": [
+        "Content Strategy and SEO",
+        "Freelancing and Remote Work"
+      ],
+      "draftTitle": "How to Grow Without Asking Friends for Likes",
+      "angle": "Why don't my friends like my page? Why am I not getting sales even though I have a lot of friends? You are asking the wrong question. Here is the right one.",
+      "excerpt": "\"Why don't my friends like and follow my page?\" \"Why are people not buying from my page? It feels like I have no friends.\" \"How is it that out of all my friends, only a few liked and followed my page?\" I was exactly like this when I was starting out. Maybe...",
+      "publication": {
+        "status": "published",
+        "statusLabel": "Published",
+        "path": "src/content/guides/how-to-grow-without-asking-friends-for-likes.md",
+        "title": "How to Grow Without Asking Friends for Likes",
+        "slug": "how-to-grow-without-asking-friends-for-likes"
+      }
+    },
+    {
+      "id": "wbl-i-am-a-rare-disease-survivor",
+      "sourceTitle": "I Am a Rare-Disease Survivor",
+      "sourceCategory": "WBL Site / Reflection",
+      "sourceSection": "src/content/reflections",
+      "sourceSlug": "i-am-a-rare-disease-survivor",
+      "wordCount": 212,
+      "imageCount": 1,
+      "blogCategory": "Published WBL Library",
+      "topics": [
+        "health",
+        "faith-theology"
+      ],
+      "topicLabels": [
+        "Health and Chronic Illness",
+        "Faith and Theology"
+      ],
+      "draftTitle": "I Am a Rare-Disease Survivor",
+      "angle": "This is personal. It is scary to go public and tell people that I am a rare-disease survivor. These sicknesses do not define me. My mission is to bring the hope that comes from God alone.",
+      "excerpt": "This is personal. It is scary to go public and tell people that I am a rare-disease survivor. I had hereditary spherocytosis since I was a child. I no longer have a spleen and a gall bladder. My spine is weak because of degenerative disc disease. My brain is...",
+      "publication": {
+        "status": "published",
+        "statusLabel": "Published",
+        "path": "src/content/reflections/i-am-a-rare-disease-survivor.md",
+        "title": "I Am a Rare-Disease Survivor",
+        "slug": "i-am-a-rare-disease-survivor"
+      }
+    },
+    {
+      "id": "wbl-my-bleeding-brain-and-my-hopeful-heart",
+      "sourceTitle": "My Bleeding Brain and My Hopeful Heart",
+      "sourceCategory": "WBL Site / Story",
+      "sourceSection": "src/content/stories",
+      "sourceSlug": "my-bleeding-brain-and-my-hopeful-heart",
+      "wordCount": 568,
+      "imageCount": 1,
+      "blogCategory": "Published WBL Library",
+      "topics": [
+        "health",
+        "faith-theology",
+        "marriage-family"
+      ],
+      "topicLabels": [
+        "Health and Chronic Illness",
+        "Faith and Theology",
+        "Marriage and Family"
+      ],
+      "draftTitle": "My Bleeding Brain and My Hopeful Heart",
+      "angle": "Cerebral Cavernous Malformation. My brain bled in 2019 and bled again this year. This is what I learned about brakes, about presence, and about the family the Lord placed beside me.",
+      "excerpt": "My brain bled in 2019. It bled again this year. Cerebral Cavernous Malformation is the name. An abnormal blood vessel that bleeds in my brain. This past week the headaches have been severe. The dizziness comes and goes. Sometimes I lose my balance. What if...",
+      "publication": {
+        "status": "published",
+        "statusLabel": "Published",
+        "path": "src/content/stories/my-bleeding-brain-and-my-hopeful-heart.md",
+        "title": "My Bleeding Brain and My Hopeful Heart",
+        "slug": "my-bleeding-brain-and-my-hopeful-heart"
+      }
+    },
+    {
+      "id": "wbl-not-yearly-bread",
+      "sourceTitle": "Not Yearly Bread",
+      "sourceCategory": "WBL Site / Field Note",
+      "sourceSection": "src/content/notes",
+      "sourceSlug": "not-yearly-bread",
+      "wordCount": 252,
+      "imageCount": 1,
+      "blogCategory": "Published WBL Library",
+      "topics": [
+        "faith-theology",
+        "learning-in-public"
+      ],
+      "topicLabels": [
+        "Faith and Theology",
+        "Learning in Public"
+      ],
+      "draftTitle": "Not Yearly Bread",
+      "angle": "A short note on why the Lord's prayer says today and not year. Seven years in and the fear has not gone away. That is not the problem.",
+      "excerpt": "I wake up at 4 AM. My body knows it is three in the afternoon Central Standard Time, which means my team is already in the middle of their day, and the laptop already has emails waiting in it that I cannot see yet. Before I open them, I close my eyes. \"Lord...",
+      "publication": {
+        "status": "published",
+        "statusLabel": "Published",
+        "path": "src/content/notes/not-yearly-bread.md",
+        "title": "Not Yearly Bread",
+        "slug": "not-yearly-bread"
+      }
+    },
+    {
+      "id": "wbl-para-akong-bulaklak-na-nagbloom",
+      "sourceTitle": "Para Akong Bulaklak Na Nagbloom",
+      "sourceCategory": "WBL Site / Story",
+      "sourceSection": "src/content/stories",
+      "sourceSlug": "para-akong-bulaklak-na-nagbloom",
+      "wordCount": 108,
+      "imageCount": 1,
+      "blogCategory": "Published WBL Library",
+      "topics": [
+        "bff-stories",
+        "community",
+        "filipino-professionals"
+      ],
+      "topicLabels": [
+        "BFF Stories",
+        "Community Building",
+        "Filipino Professionals"
+      ],
+      "draftTitle": "Para Akong Bulaklak Na Nagbloom",
+      "angle": "A BFF community note of thanks for Lala and the admins, shared as written.",
+      "excerpt": "Thank you La 😘 Di mo alam kung paano mo binago ang buhay ko, namin ❤️ Sinabi mo dati na balang araw papasalamatan nyo ako but deep inside araw2 kitang pinapasalamatan kasi di mo alam kung paano mo binago buhay ko after kitang mameet. Di ko alam na may ibang...",
+      "publication": {
+        "status": "published",
+        "statusLabel": "Published",
+        "path": "src/content/stories/para-akong-bulaklak-na-nagbloom.md",
+        "title": "Para Akong Bulaklak Na Nagbloom",
+        "slug": "para-akong-bulaklak-na-nagbloom"
+      }
+    },
+    {
+      "id": "wbl-salamat-sa-prayers",
+      "sourceTitle": "Salamat sa Prayers",
+      "sourceCategory": "WBL Site / Reflection",
+      "sourceSection": "src/content/reflections",
+      "sourceSlug": "salamat-sa-prayers",
+      "wordCount": 470,
+      "imageCount": 1,
+      "blogCategory": "Published WBL Library",
+      "topics": [
+        "health",
+        "faith-theology",
+        "community"
+      ],
+      "topicLabels": [
+        "Health and Chronic Illness",
+        "Faith and Theology",
+        "Community Building"
+      ],
+      "draftTitle": "Salamat sa Prayers",
+      "angle": "My cavernoma is stable. The bleed did not grow. Thank you for the prayers. Faith really does move mountains, but only the mountains the Lord wants moved. God is big. You are small. He put a defect in my brain so I would see the beauty of life.",
+      "excerpt": "Thank you for your prayers. It is true that our faith can move mountains. My neurologist said my cavernoma did not grow in size. It is stable. I do not need surgery. I was given medicine to better control the severe headaches caused by the bleeding. Sorrowful...",
+      "publication": {
+        "status": "published",
+        "statusLabel": "Published",
+        "path": "src/content/reflections/salamat-sa-prayers.md",
+        "title": "Salamat sa Prayers",
+        "slug": "salamat-sa-prayers"
+      }
+    },
+    {
+      "id": "wbl-salamat-year-2020",
+      "sourceTitle": "Salamat, Year 2020",
+      "sourceCategory": "WBL Site / Reflection",
+      "sourceSection": "src/content/reflections",
+      "sourceSlug": "salamat-year-2020",
+      "wordCount": 779,
+      "imageCount": 1,
+      "blogCategory": "Published WBL Library",
+      "topics": [
+        "faith-theology",
+        "learning-in-public",
+        "community"
+      ],
+      "topicLabels": [
+        "Faith and Theology",
+        "Learning in Public",
+        "Community Building"
+      ],
+      "draftTitle": "Salamat, Year 2020",
+      "angle": "If you had asked me at the end of 2020 whether I wasted the year, I would have said no. The brain bled. The body kept failing. I gave it my best anyway. This is a year-end accounting.",
+      "excerpt": "Life has no rewind button. Two weeks ago, someone left a comment on one of my posts. A man worried about a friend. He wrote, \"this is why I keep telling you to rest. I do not want you to end up in the hospital like she did. So hardworking, so goal-oriented...",
+      "publication": {
+        "status": "published",
+        "statusLabel": "Published",
+        "path": "src/content/reflections/salamat-year-2020.md",
+        "title": "Salamat, Year 2020",
+        "slug": "salamat-year-2020"
+      }
+    },
+    {
+      "id": "wbl-welcome",
+      "sourceTitle": "Starting Here",
+      "sourceCategory": "WBL Site / Field Note",
+      "sourceSection": "src/content/notes",
+      "sourceSlug": "welcome",
+      "wordCount": 302,
+      "imageCount": 1,
+      "blogCategory": "Published WBL Library",
+      "topics": [
+        "learning-in-public"
+      ],
+      "topicLabels": [
+        "Learning in Public"
+      ],
+      "draftTitle": "Starting Here",
+      "angle": "A short note on why this site exists and what it wants to be.",
+      "excerpt": "I keep a lot of notes. Some of them are tactical , how a prompt pattern worked, why a workflow broke, what I'd do differently next time. Some of them are quieter , a verse that caught me that morning, a hard conversation I'm still thinking about, a decision I...",
+      "publication": {
+        "status": "published",
+        "statusLabel": "Published",
+        "path": "src/content/notes/welcome.md",
+        "title": "Starting Here",
+        "slug": "welcome"
+      }
+    },
+    {
+      "id": "wbl-suffering-is-our-medicine",
+      "sourceTitle": "Suffering Is Our Medicine",
+      "sourceCategory": "WBL Site / Story",
+      "sourceSection": "src/content/stories",
+      "sourceSlug": "suffering-is-our-medicine",
+      "wordCount": 477,
+      "imageCount": 1,
+      "blogCategory": "Published WBL Library",
+      "topics": [
+        "faith-theology",
+        "marriage-family",
+        "health"
+      ],
+      "topicLabels": [
+        "Faith and Theology",
+        "Marriage and Family",
+        "Health and Chronic Illness"
+      ],
+      "draftTitle": "Suffering Is Our Medicine",
+      "angle": "A New Year conversation with Mama about heaven, John 3:16, and what it means to truly believe in Christ instead of going through the motions of duty.",
+      "excerpt": "My mama asked me once, \"Is heaven real?\" It was a quiet conversation. Just the two of us. \"Yes, ma. That is what the Bible says.\" \"For God so loved the world that whoever believes in Him shall not perish but have eternal life.\" John 3:16. \"If there is no...",
+      "publication": {
+        "status": "published",
+        "statusLabel": "Published",
+        "path": "src/content/stories/suffering-is-our-medicine.md",
+        "title": "Suffering Is Our Medicine",
+        "slug": "suffering-is-our-medicine"
+      }
+    },
+    {
+      "id": "wbl-the-day-my-spine-acted-abnormally",
+      "sourceTitle": "The Day My Spine Acted Abnormally",
+      "sourceCategory": "WBL Site / Field Note",
+      "sourceSection": "src/content/notes",
+      "sourceSlug": "the-day-my-spine-acted-abnormally",
+      "wordCount": 156,
+      "imageCount": 1,
+      "blogCategory": "Published WBL Library",
+      "topics": [
+        "health",
+        "learning-in-public"
+      ],
+      "topicLabels": [
+        "Health and Chronic Illness",
+        "Learning in Public"
+      ],
+      "draftTitle": "The Day My Spine Acted Abnormally",
+      "angle": "My spine decided to act abnormally for two days. Nerve pains down the left leg. I could not stand. Today the pain is lighter. A small note about being in bed, and the rain that makes trees bear more fruit.",
+      "excerpt": "For two days, my spine decided to act abnormally. Severe nerve pain in my left leg. I could not stand. I could not walk. Today the pain is not as bad. I am thankful and happy. It is okay if you are in bed today, and there is nothing to do but wait to get...",
+      "publication": {
+        "status": "published",
+        "statusLabel": "Published",
+        "path": "src/content/notes/the-day-my-spine-acted-abnormally.md",
+        "title": "The Day My Spine Acted Abnormally",
+        "slug": "the-day-my-spine-acted-abnormally"
+      }
+    },
+    {
+      "id": "wbl-the-fear-of-the-lord",
+      "sourceTitle": "The Fear of the Lord",
+      "sourceCategory": "WBL Site / Reflection",
+      "sourceSection": "src/content/reflections",
+      "sourceSlug": "the-fear-of-the-lord",
+      "wordCount": 568,
+      "imageCount": 1,
+      "blogCategory": "Published WBL Library",
+      "topics": [
+        "faith-theology"
+      ],
+      "topicLabels": [
+        "Faith and Theology"
+      ],
+      "draftTitle": "The Fear of the Lord",
+      "angle": "I have been in this industry seven years and I still wake up afraid. That is not the problem. This is what I wish someone had told me about fear when I started.",
+      "excerpt": "I have been in this industry seven years and I still wake up afraid. 4 AM is my start. The clock on my wall says morning, but my team is already in their afternoon. Central Standard Time, three in the afternoon, children picked up from school, coffee on the...",
+      "publication": {
+        "status": "published",
+        "statusLabel": "Published",
+        "path": "src/content/reflections/the-fear-of-the-lord.md",
+        "title": "The Fear of the Lord",
+        "slug": "the-fear-of-the-lord"
+      }
+    },
+    {
+      "id": "wbl-the-friend-i-never-met-in-person",
+      "sourceTitle": "The Friend I Never Met In Person",
+      "sourceCategory": "WBL Site / Story",
+      "sourceSection": "src/content/stories",
+      "sourceSlug": "the-friend-i-never-met-in-person",
+      "wordCount": 332,
+      "imageCount": 1,
+      "blogCategory": "Published WBL Library",
+      "topics": [
+        "community",
+        "faith-theology",
+        "health"
+      ],
+      "topicLabels": [
+        "Community Building",
+        "Faith and Theology",
+        "Health and Chronic Illness"
+      ],
+      "draftTitle": "The Friend I Never Met In Person",
+      "angle": "I never met May in person. We were friends through Skype. When she passed away in December, AJ was the one who told me. This is what virtual friendship taught me about heaven.",
+      "excerpt": "It is late tonight. I am thinking about May. I never met May in person. We were friends through Skype. Just video calls and chats. Many times we cried together on those calls. Those conversations were deep. Those conversations were painful. Life was heavy...",
+      "publication": {
+        "status": "published",
+        "statusLabel": "Published",
+        "path": "src/content/stories/the-friend-i-never-met-in-person.md",
+        "title": "The Friend I Never Met In Person",
+        "slug": "the-friend-i-never-met-in-person"
+      }
+    },
+    {
+      "id": "wbl-the-loneliest-days",
+      "sourceTitle": "The Loneliest Days",
+      "sourceCategory": "WBL Site / Reflection",
+      "sourceSection": "src/content/reflections",
+      "sourceSlug": "the-loneliest-days",
+      "wordCount": 690,
+      "imageCount": 1,
+      "blogCategory": "Published WBL Library",
+      "topics": [
+        "faith-theology",
+        "learning-in-public"
+      ],
+      "topicLabels": [
+        "Faith and Theology",
+        "Learning in Public"
+      ],
+      "draftTitle": "The Loneliest Days",
+      "angle": "The loneliest days are the days when we forget how much we are loved. The hugs of mama and papa. The night AJ slept on the PGH floor. The love you are remembering right now is love that comes from the Lord.",
+      "excerpt": "The loneliest days are the days when we forget how much we are loved. We lose hope when there is no one to share our grief. We lose our purpose when there is no one to share our dreams. There is no meaning when there is no one to share our joy. The hugs of...",
+      "publication": {
+        "status": "published",
+        "statusLabel": "Published",
+        "path": "src/content/reflections/the-loneliest-days.md",
+        "title": "The Loneliest Days",
+        "slug": "the-loneliest-days"
+      }
+    },
+    {
+      "id": "wbl-the-love-you-receive-is-not-about-you",
+      "sourceTitle": "The Love You Receive Is Not About You",
+      "sourceCategory": "WBL Site / Reflection",
+      "sourceSection": "src/content/reflections",
+      "sourceSlug": "the-love-you-receive-is-not-about-you",
+      "wordCount": 355,
+      "imageCount": 1,
+      "blogCategory": "Published WBL Library",
+      "topics": [
+        "faith-theology",
+        "marriage-family"
+      ],
+      "topicLabels": [
+        "Faith and Theology",
+        "Marriage and Family"
+      ],
+      "draftTitle": "The Love You Receive Is Not About You",
+      "angle": "The love you receive from the people around you is not a direct reflection of how great or bad you are. It is a reflection of who they are. And under all of it, who God is.",
+      "excerpt": "I remember a time when I thought love was earned. If I performed well, I would be loved. If I did badly, the love would be withdrawn. I carried that idea for a long time. It made me anxious every day. It made me exhausted around the people I most wanted to be...",
+      "publication": {
+        "status": "published",
+        "statusLabel": "Published",
+        "path": "src/content/reflections/the-love-you-receive-is-not-about-you.md",
+        "title": "The Love You Receive Is Not About You",
+        "slug": "the-love-you-receive-is-not-about-you"
+      }
+    },
+    {
+      "id": "wbl-the-reason-you-feel-overwhelmed-and-lost",
+      "sourceTitle": "The Reason You Feel Overwhelmed and Lost",
+      "sourceCategory": "WBL Site / Reflection",
+      "sourceSection": "src/content/reflections",
+      "sourceSlug": "the-reason-you-feel-overwhelmed-and-lost",
+      "wordCount": 575,
+      "imageCount": 1,
+      "blogCategory": "Published WBL Library",
+      "topics": [
+        "faith-theology",
+        "freelancing",
+        "filipino-professionals"
+      ],
+      "topicLabels": [
+        "Faith and Theology",
+        "Freelancing and Remote Work",
+        "Filipino Professionals"
+      ],
+      "draftTitle": "The Reason You Feel Overwhelmed and Lost",
+      "angle": "You wanted to learn so you could earn. You wanted to earn so you could have a lifestyle you love. The reason you feel overwhelmed is not lack of effort. It is the absence of strong goals. This is the prayer I say every morning before the work.",
+      "excerpt": "The reason you feel overwhelmed and lost is because you do not have strong goals in life. I am not saying you do not have dreams. What I am saying is, you are not targeting your strong goals. Many of us have dreams. Many of us do not have any action plan to...",
+      "publication": {
+        "status": "published",
+        "statusLabel": "Published",
+        "path": "src/content/reflections/the-reason-you-feel-overwhelmed-and-lost.md",
+        "title": "The Reason You Feel Overwhelmed and Lost",
+        "slug": "the-reason-you-feel-overwhelmed-and-lost"
+      }
+    },
+    {
+      "id": "wbl-the-workstation-i-prayed-for",
+      "sourceTitle": "The Workstation I Prayed For",
+      "sourceCategory": "WBL Site / Field Note",
+      "sourceSection": "src/content/notes",
+      "sourceSlug": "the-workstation-i-prayed-for",
+      "wordCount": 79,
+      "imageCount": 1,
+      "blogCategory": "Published WBL Library",
+      "topics": [
+        "workstation-setup",
+        "faith-theology",
+        "freelancing"
+      ],
+      "topicLabels": [
+        "My Workstation and Tools",
+        "Faith and Theology",
+        "Freelancing and Remote Work"
+      ],
+      "draftTitle": "The Workstation I Prayed For",
+      "angle": "I prayed for a wide desk, a window beside it, a violet-painted room, and a computer that does not hang. I worked for three years before I got it. The day you plant the seed is not the day you eat the fruit.",
+      "excerpt": "I dreamed of a work station. A wide desk. A window beside it. A violet-painted room. A computer that did not hang in the middle of a client call. I worked for three years before I got it. So I want to encourage you to be patient. It might be faster for you...",
+      "publication": {
+        "status": "published",
+        "statusLabel": "Published",
+        "path": "src/content/notes/the-workstation-i-prayed-for.md",
+        "title": "The Workstation I Prayed For",
+        "slug": "the-workstation-i-prayed-for"
+      }
+    },
+    {
+      "id": "wbl-three-ways-to-make-a-client-trust-you",
+      "sourceTitle": "Three Ways to Make a Client Trust You",
+      "sourceCategory": "WBL Site / Guide",
+      "sourceSection": "src/content/guides",
+      "sourceSlug": "three-ways-to-make-a-client-trust-you",
+      "wordCount": 325,
+      "imageCount": 1,
+      "blogCategory": "Published WBL Library",
+      "topics": [
+        "freelancing",
+        "b2b-saas",
+        "content-strategy"
+      ],
+      "topicLabels": [
+        "Freelancing and Remote Work",
+        "B2B SaaS Marketing",
+        "Content Strategy and SEO"
+      ],
+      "draftTitle": "Three Ways to Make a Client Trust You",
+      "angle": "Nine out of ten interviews fail because of the wrong things. Three ways to make a client like and trust you fast , without faking expertise or hustling for attention.",
+      "excerpt": "A reader asked me, \"How do I make a client trust me on the first call?\" I was exactly like this when I was starting out. I sat in front of every interview wondering the same thing. Nine out of ten interviews fail because the freelancer is doing the wrong...",
+      "publication": {
+        "status": "published",
+        "statusLabel": "Published",
+        "path": "src/content/guides/three-ways-to-make-a-client-trust-you.md",
+        "title": "Three Ways to Make a Client Trust You",
+        "slug": "three-ways-to-make-a-client-trust-you"
+      }
+    },
+    {
+      "id": "wbl-twelve-years-with-the-man-who-loved-me-yellow",
+      "sourceTitle": "Twelve Years With The Man Who Loved Me Yellow",
+      "sourceCategory": "WBL Site / Story",
+      "sourceSection": "src/content/stories",
+      "sourceSlug": "twelve-years-with-the-man-who-loved-me-yellow",
+      "wordCount": 262,
+      "imageCount": 1,
+      "blogCategory": "Published WBL Library",
+      "topics": [
+        "marriage-family",
+        "faith-theology",
+        "health"
+      ],
+      "topicLabels": [
+        "Marriage and Family",
+        "Faith and Theology",
+        "Health and Chronic Illness"
+      ],
+      "draftTitle": "Twelve Years With The Man Who Loved Me Yellow",
+      "angle": "Twelve years since the surgery that took the yellow out of my skin. The man who loved me before that day is still here. This is what the rain taught me.",
+      "excerpt": "When I was sick and yellow, AJ loved me. It is August again. Twelve years since the surgery. I am sitting and remembering. August 2010. I had surgery. It was the first time in my life I saw my skin not yellow. I looked at my arms. I looked at my eyes in the...",
+      "publication": {
+        "status": "published",
+        "statusLabel": "Published",
+        "path": "src/content/stories/twelve-years-with-the-man-who-loved-me-yellow.md",
+        "title": "Twelve Years With The Man Who Loved Me Yellow",
+        "slug": "twelve-years-with-the-man-who-loved-me-yellow"
+      }
+    },
+    {
+      "id": "wbl-what-mentors-do-not-tell-you",
+      "sourceTitle": "What Mentors Do Not Tell You",
+      "sourceCategory": "WBL Site / Guide",
+      "sourceSection": "src/content/guides",
+      "sourceSlug": "what-mentors-do-not-tell-you",
+      "wordCount": 504,
+      "imageCount": 1,
+      "blogCategory": "Published WBL Library",
+      "topics": [
+        "freelancing",
+        "content-strategy"
+      ],
+      "topicLabels": [
+        "Freelancing and Remote Work",
+        "Content Strategy and SEO"
+      ],
+      "draftTitle": "What Mentors Do Not Tell You",
+      "angle": "Many so-called mentors do not want their students to learn certain things. That is why many freelancers stay stuck or unhappy. Two wrong mindsets to throw out today, and the right ones to keep.",
+      "excerpt": "One of the most common questions I get in DMs is some version of this. \"Why am I still stuck even after taking the course?\" I have been there. I was exactly like this when I was starting out. Many so-called mentors do not want their students to know certain...",
+      "publication": {
+        "status": "published",
+        "statusLabel": "Published",
+        "path": "src/content/guides/what-mentors-do-not-tell-you.md",
+        "title": "What Mentors Do Not Tell You",
+        "slug": "what-mentors-do-not-tell-you"
+      }
+    },
+    {
+      "id": "wbl-when-everything-is-not-in-the-plan",
+      "sourceTitle": "When Everything Is Not in the Plan",
+      "sourceCategory": "WBL Site / Reflection",
+      "sourceSection": "src/content/reflections",
+      "sourceSlug": "when-everything-is-not-in-the-plan",
+      "wordCount": 343,
+      "imageCount": 1,
+      "blogCategory": "Published WBL Library",
+      "topics": [
+        "faith-theology",
+        "freelancing",
+        "learning-in-public"
+      ],
+      "topicLabels": [
+        "Faith and Theology",
+        "Freelancing and Remote Work",
+        "Learning in Public"
+      ],
+      "draftTitle": "When Everything Is Not in the Plan",
+      "angle": "When everything happening is not in the plan. When finding clients is hard. When the client is a headache. When learning the skill is hard. You do not need to be perfect to be successful.",
+      "excerpt": "You are feeling right now that everything happening is not in the plan. Finding clients is harder than you thought. The client is a headache. Learning the skill is harder than you thought. Three things hit at once. What I want to share today is this. You do...",
+      "publication": {
+        "status": "published",
+        "statusLabel": "Published",
+        "path": "src/content/reflections/when-everything-is-not-in-the-plan.md",
+        "title": "When Everything Is Not in the Plan",
+        "slug": "when-everything-is-not-in-the-plan"
+      }
+    }
+  ]
+}
