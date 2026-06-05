@@ -220,6 +220,47 @@
     gap: 10px;
     margin-top: 18px;
   }
+  .capture-form {
+    display: grid;
+    gap: 9px;
+    margin-top: 12px;
+  }
+  .capture-form h3 {
+    font-size: 18px;
+    line-height: 1.2;
+    margin: 0;
+  }
+  .capture-field {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  .capture-field input {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    font: inherit;
+    min-width: 0;
+    padding: 10px 12px;
+  }
+  .capture-form[aria-disabled="true"] {
+    opacity: .58;
+  }
+  .capture-form[aria-disabled="true"] input,
+  .capture-form[aria-disabled="true"] button {
+    cursor: not-allowed;
+  }
+  .capture-privacy,
+  .capture-status {
+    color: var(--muted);
+    font-size: 12px;
+  }
+  .capture-status {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-top: 10px;
+    padding: 10px 12px;
+  }
   .btn {
     border: 1px solid transparent;
     border-radius: 8px;
@@ -268,6 +309,8 @@
     .advice-grid { grid-template-columns: 1fr; }
     .advice-card.full { grid-column: auto; }
     .actions .btn { width: 100%; }
+    .capture-field { grid-template-columns: 1fr; }
+    .capture-field .btn { width: 100%; }
   }
 </style>
 </head>
@@ -291,7 +334,7 @@
   <section class="hero">
     <div class="eyebrow">Start here if you feel unsure</div>
     <h1>Find your BFF archetype</h1>
-    <p class="lede">This is the quick version. It helps you name your current path before you choose lessons, jobs, or a resume strategy. The detailed tool inventory belongs inside the Resume Builder.</p>
+    <p class="lede">Six quick questions. No login, no wrong answers. You get the name of your current path, plus what to fix before your next application.</p>
   </section>
 
   <section class="card" aria-label="BFF archetype finder">
@@ -376,100 +419,101 @@
 
 <script>
 const STORAGE_KEY = 'resume-builder-v1';
+const EMAIL_CAPTURE_ENDPOINT = '';
 
 const ARCHETYPES = {
-  polished:     { name: 'The Polished Freelancer', tag: 'You already have real client or remote-work evidence. Your next step is packaging, positioning, and higher-fit roles.', share: '25%', proceed: '80%' },
-  transitioner: { name: 'The Corporate Transitioner', tag: 'You bring office, BPO, or corporate discipline. Your next step is translating that experience into remote-work language.', share: '30%', proceed: '60%' },
-  creative:     { name: 'The Creative Specialist', tag: 'You have a visible skill in content, design, video, or social. Your next step is building proof and adding admin structure.', share: '15%', proceed: '70%' },
-  solo:         { name: 'The Solo Entrepreneur', tag: 'You have operated something yourself. Your next step is turning business instincts into a clear service path.', share: '15%', proceed: '55%' },
-  generalist:   { name: 'The Generalist Admin', tag: 'You have useful admin ability, but need one sharper wedge so clients remember what to hire you for.', share: '10%', proceed: '50%' },
-  fresh:        { name: 'The Fresh Starter', tag: 'You are early. Your next step is not pretending to be experienced, but building small proof through lessons and projects.', share: '5%', proceed: '30%' }
+  polished:     { name: 'The Polished Freelancer', tag: 'You already have real client or remote-work evidence. Your next step is packaging, positioning, and higher-fit roles.' },
+  transitioner: { name: 'The Corporate Transitioner', tag: 'You bring office, BPO, or corporate discipline. Your next step is translating that experience into remote-work language.' },
+  creative:     { name: 'The Creative Specialist', tag: 'You have a visible skill in content, design, video, or social. Your next step is building proof and adding admin structure.' },
+  solo:         { name: 'The Solo Entrepreneur', tag: 'You have operated something yourself. Your next step is turning business instincts into a clear service path.' },
+  generalist:   { name: 'The Generalist Admin', tag: 'You have useful admin ability, but need one sharper wedge so clients remember what to hire you for.' },
+  fresh:        { name: 'The Fresh Starter', tag: 'You are early. Your next step is not pretending to be experienced, but building small proof through lessons and projects.' }
 };
 
 const ADVICE = {
   polished: {
-    headline: 'What to know before you start applying as a Polished Freelancer',
-    intro: 'Your answers point to someone who already has usable proof. The main danger is not lack of experience. It is hiding your strongest client evidence under too many tools, vague tasks, and underpriced roles.',
-    truth: 'You are not trying to prove that you can freelance. You are proving that you can be trusted with a better-fit role, clearer scope, and stronger expectations.',
+    headline: 'Your problem is not experience. It is hidden proof.',
+    intro: 'You have already done the work. Real clients, real output, real hours. But that proof is buried under a long tool list and vague task descriptions, so clients price you like a beginner. Sayang naman.',
+    truth: 'You are past proving you can freelance. The next job is proving you can be trusted with bigger scope and better pay. That takes visible evidence, not more applications.',
     before: [
-      'Choose 2 to 3 client outcomes that show retention, repeat work, revenue support, time saved, content volume, or operational reliability.',
-      'Clean up your tool list. Lead with the tools you use weekly or professionally, not every app you have opened once.',
-      'Prepare a short portfolio or work sample page before sending applications. Make the proof easy to inspect.'
+      'Pick your 2 or 3 best client results and write each as one outcome sentence. Kept a client for two years? Say it. Handled 40 orders a week? Say it. Numbers you actually own, nothing padded.',
+      'Cut your tool list to the tools you use weekly. A short list of real skills beats a long list of apps you opened once.',
+      'Put your proof where a client can click it: one page with your best work samples. No portfolio page yet? The <a href="../lesson-google-sites-portfolio/index.html">Google Sites portfolio lesson</a> walks you through a free one.'
     ],
-    resume: 'Lead with tools, client results, portfolio, and your strongest remote-work history. Do not bury self-employed work below generic job titles.',
-    lessons: 'Your best lessons are positioning, account management, client communication, leadership, onboarding, and specialized business skills.',
-    risk: 'Watch for roles that treat senior skill like entry-level labor. If the scope is vague, the pay is far below your proof, or the client cannot define success, pause before applying.',
-    next: 'Pick one client result today and rewrite it as a clear outcome sentence.'
+    resume: 'Lead with results and your strongest remote-work history. Self-employed work goes on top, not hidden under old job titles.',
+    lessons: 'Start with <a href="../lesson-account-management-101/index.html">Account Management 101</a>, <a href="../lesson-choosing-my-client/index.html">Choosing My Client</a>, and <a href="../lesson-specialized-business-skills/index.html">Specialized Business Skills</a>.',
+    risk: 'Watch for clients who treat senior skill like entry-level labor. If the scope is vague and the pay ignores your proof, that is not your client. You are allowed to say no.',
+    next: 'Today: take one client result and rewrite it as a single outcome sentence.'
   },
   transitioner: {
-    headline: 'What to know before you start applying as a Corporate Transitioner',
-    intro: 'Your answers point to someone with real workplace discipline. The main danger is thinking your office, BPO, teaching, or support background does not count because it was not called freelance.',
-    truth: 'You are not starting from zero. You are translating what you have already carried into remote-work language.',
+    headline: 'Your office years count. Make a client see them.',
+    intro: 'Years of showing up on time, hitting metrics, staying calm with customers who were angry before they said hello. Then one lie stops you: walang freelance experience means walang experience. Hindi totoo. You have experience. It is just wearing a uniform.',
+    truth: 'You are not starting from zero. You are translating. Tickets closed, reports filed, teams supported: remote clients pay for exactly this work, they just call it by different names.',
     before: [
-      'Convert daily tasks into remote-work proof: tickets handled, customers served, reports completed, processes followed, team size supported, and schedule reliability.',
-      'Choose one or two tool gaps to close before applying. Trello, Notion, Google Sheets, Gmail, Slack, or a CRM tool can make your transition easier to explain.',
-      'Write your availability clearly, especially if night shift or overlap hours are possible.'
+      'Turn your daily tasks into numbers a client can picture: calls per day, tickets closed, reports submitted, people supported. Real counts, even rough ones.',
+      'Close one or two tool gaps before applying, not ten. Trello, Notion, or Google Sheets is enough to start. The <a href="../lesson-pm-tool-fluency/index.html">PM tool fluency lesson</a> covers the fastest path.',
+      'Write your available hours clearly. If you can work night shift, say it upfront. US overlap is a real advantage, not a sacrifice you should hide.'
     ],
-    resume: 'Do not submit a BPO-style resume unchanged. Rewrite phone, email, chat, admin, and team tasks as ownership, support, documentation, and client-service proof.',
-    lessons: 'Your best lessons are freelancing foundations, online jobs setup, interview prep, PM tool fluency, email address basics, browser basics, and onboarding.',
-    risk: 'Do not call yourself a newbie if you have years of work discipline. Also do not skip tool practice. Remote clients need both reliability and visible tool readiness.',
-    next: 'Rewrite one old work bullet today so it sounds like remote-work proof.'
+    resume: 'Never send a BPO-style resume unchanged. The <a href="../lesson-bpo-to-va-portfolio/index.html">BPO to VA lesson</a> and the <a href="../lesson-office-admin-to-va-portfolio/index.html">office admin version</a> show exactly how to rewrite it.',
+    lessons: 'Start with <a href="../lesson-employee-to-freelancer/index.html">Employee to Freelancer</a>, <a href="../lesson-online-jobs-account/index.html">Online Jobs Account Setup</a>, and <a href="../lesson-interviews-prep/index.html">Interview Prep</a>.',
+    risk: 'Do not call yourself a newbie. You have years of work discipline that beginners do not. But do not skip tool practice either. Clients need to see both.',
+    next: 'Today: rewrite one old work bullet so a remote client recognizes it as proof.'
   },
   creative: {
-    headline: 'What to know before you start applying as a Creative Specialist',
-    intro: 'Your answers point to a visible creative lane. The main danger is showing taste without showing process, reliability, and business value.',
-    truth: 'Pretty work helps, but clients hire proof. Your portfolio should answer: what did you make, for whom, how often, with what tools, and what changed after it shipped?',
+    headline: 'Clients do not hire pretty. They hire proof.',
+    intro: 'You can make things people stop scrolling for. That is rare. The trap is that taste alone does not get hired, because the client also needs to see process: deadlines met, revisions handled, files organized. Show them you are creative and safe to work with.',
+    truth: 'Your portfolio should answer five questions fast: what did you make, for whom, how often, with what tools, and what happened after it shipped.',
     before: [
-      'Put your portfolio link near the top of your resume or profile. Do not make the client search for your best evidence.',
-      'Choose 6 to 10 pieces that match the job you want. A smaller relevant portfolio is stronger than a mixed gallery.',
-      'Add admin language around deadlines, file naming, revision handling, content calendars, approvals, and communication.'
+      'Put your portfolio link at the top of your resume and profile. Never make a client hunt for your best work.',
+      'Choose 6 to 10 pieces that match the exact job you want. A small relevant set beats a big mixed gallery.',
+      'Add the boring proof creatives skip: deadlines, file naming, revision rounds, content calendars. That is what tells a client you are easy to manage.'
     ],
-    resume: 'Lead with selected work, output volume, platforms, tools, and any engagement or business result. Pair creativity with proof that you can work inside a team or client process.',
-    lessons: 'Your best lessons are personal branding, social media strategy, video editing, design basics, content systems, Trello, and client communication.',
-    risk: 'Do not rely on Canva, Photoshop, CapCut, or writing talent alone. If your process is unclear, clients will worry that managing you will take more work.',
-    next: 'Move your best portfolio link where a client can see it first.'
+    resume: 'Lead with selected work, output volume, platforms, and tools. Pair every creative claim with proof that you can work inside a client process, hindi lang solo.',
+    lessons: 'Start with <a href="../lesson-smm-core-strategies/index.html">SMM Core Strategies</a>, <a href="../lesson-video-editing-content-vas/index.html">Video Editing for Content VAs</a>, and <a href="../lesson-personal-branding/index.html">Personal Branding</a>.',
+    risk: 'Canva or CapCut talent alone is not enough. If your process is unclear, the client quietly worries that managing you will be extra work. Remove that worry before they feel it.',
+    next: 'Today: move your best portfolio link to where a client sees it first.'
   },
   solo: {
-    headline: 'What to know before you start applying as a Solo Entrepreneur',
-    intro: 'Your answers point to someone who has carried responsibility, even if the path was a shop, service, side hustle, family business, or personal project. The main danger is writing “owner” and leaving the real work invisible.',
-    truth: 'You did not just run something. You practiced operations, customer service, marketing, scheduling, budgeting, problem solving, and follow-through.',
+    headline: 'You ran something real. Stop hiding it behind the word owner.',
+    intro: 'A shop, a side hustle, a family business, a service you kept alive through hard months. You carried operations, customers, money, and problem-solving at the same time. Then the resume says one word, owner, and all of it turns invisible.',
+    truth: 'You were never just the owner. You were the customer service, the marketing, the bookkeeping, and the follow-up. Each of those is a service that remote clients hire for every day.',
     before: [
-      'Break your business story into functions: operations, customer service, sales, marketing, admin, inventory, vendor handling, or content.',
-      'Write numbers honestly: customers served, products handled, orders processed, posts created, inquiries answered, or monthly revenue range.',
-      'Decide your availability and boundaries before applying, especially if family, health, or business responsibilities still shape your schedule.'
+      'Break your business into functions: operations, customer service, sales, marketing, admin, inventory. Write down what you actually did in each one.',
+      'Use honest numbers: customers served, orders processed, inquiries answered per week. Rough counts are fine. Padding is not.',
+      'Decide your hours and boundaries before applying, lalo na if family or the business still needs part of your day.'
     ],
-    resume: 'Do not leave “owner” as one vague role. Decompose it into the actual services a remote client would recognize and value.',
-    lessons: 'Your best lessons are freelancer or VA basics, account management, customer support, Shopify or e-commerce adjacent tools, online presence, and choosing clients.',
-    risk: 'Do not frame a closed or paused business as failure. Frame the transferable work clearly, then show the role you are now ready to serve.',
-    next: 'List three functions you handled in your business and turn each one into one resume bullet.'
+    resume: 'Never leave owner as one vague line. List the functions you handled, then point each one at a service a client would pay for.',
+    lessons: 'Start with <a href="../lesson-freelancer-or-va/index.html">Freelancer or VA</a>, <a href="../lesson-customer-support-foundations/index.html">Customer Support Foundations</a>, and <a href="../lesson-account-management-101/index.html">Account Management 101</a>.',
+    risk: 'A closed or paused business is not a failure story. It is an operations story. Tell it that way, then show the role you are ready for now.',
+    next: 'Today: list three functions you handled in your business and turn each into one resume bullet.'
   },
   generalist: {
-    headline: 'What to know before you start applying as a Generalist Admin',
-    intro: 'Your answers point to someone with useful admin ability. The main danger is saying “I can do anything,” then sounding like everyone else.',
-    truth: 'Being helpful is good. Being specific gets remembered. A generalist needs a wedge so the client knows where to place you.',
+    headline: 'Saying I can do anything is why clients cannot remember you.',
+    intro: 'You are organized, dependable, and flexible. That is real value. The trap is offering everything at once, because a client reads it as nothing in particular. They do not need anything. They need one thing, done well, every week.',
+    truth: 'Helpful gets hired once. Specific gets remembered and rehired. You need one wedge for this season, not a new identity forever.',
     before: [
-      'Pick one lane for this season: inbox support, executive assistant work, calendar coordination, bookkeeping support, customer support, or data/admin cleanup.',
-      'Choose the tools that support that lane. For example, Google Sheets and QuickBooks for bookkeeping support, or Gmail, Calendly, and Notion for executive support.',
-      'Prepare one sample that shows organized thinking: a cleaned spreadsheet, inbox workflow, calendar plan, SOP, or tracker.'
+      'Pick one lane for now: inbox support, executive assistance, calendar coordination, bookkeeping support, customer support, or data cleanup. One. You can add more later.',
+      'Stack 2 or 3 tools that fit that lane. Sheets and QuickBooks for bookkeeping support. Gmail, Calendly, and Notion for executive support.',
+      'Make one sample that shows organized thinking: a cleaned spreadsheet, an inbox workflow, an SOP, a tracker. Proof that you can clean up this kind of mess.'
     ],
-    resume: 'Build one resume version per lane. Do not send the same “any VA” resume to every role.',
-    lessons: 'Your best lessons are admin systems, Google Sheets, PM tools, CRM basics, email basics, SOP writing, customer support, and interview preparation.',
-    risk: 'MS Office alone is not a differentiator. Add proof of the kind of admin problem you can solve.',
-    next: 'Choose one wedge before you rewrite your headline.'
+    resume: 'One resume version per lane. The same any-VA resume sent everywhere is how good generalists stay invisible.',
+    lessons: 'Start with <a href="../lesson-crm-basics/index.html">CRM Basics</a>, <a href="../lesson-pm-tool-fluency/index.html">PM Tool Fluency</a>, and <a href="../lesson-customer-support-foundations/index.html">Customer Support Foundations</a>.',
+    risk: 'MS Office alone does not set you apart, kasi everyone lists it. What sets you apart is proof of the specific admin problem you can solve.',
+    next: 'Today: choose one wedge. Then rewrite your headline around it.'
   },
   fresh: {
-    headline: 'What to know before you start applying as a Fresh Starter',
-    intro: 'Your answers point to someone early in the journey. The main danger is either pretending to have experience or waiting until you feel perfectly ready.',
-    truth: 'You can begin honestly. Your first proof can be small: one course, one tool, one project, one volunteer task, one clear sentence about what you are learning.',
+    headline: 'You do not need experience to start. You need one honest proof.',
+    intro: 'Everyone in this community started at zero. Nobody posts about that part, so it feels like you are the only one. You are not. The two traps at this stage: pretending you have experience, or waiting until you feel ready. Both keep you stuck. Kaya mo ito.',
+    truth: 'Your first proof can be small: one finished course, one practice project, one clear sentence about what you are learning right now. Clients trust small honest proof more than big padded claims.',
     before: [
-      'Complete one free short course before sending more applications. HubSpot Academy, Google Digital Garage, OnlineJobs training, or a beginner tool tutorial can give you one honest proof line.',
-      'Build one practice project: a sample content calendar, cleaned spreadsheet, inbox response template, Canva post set, simple portfolio page, or research tracker.',
-      'List your readiness basics clearly: internet speed, backup plan, device, workspace, available hours, and tools you are currently learning.'
+      'Finish one free short course this week, before you send another application. HubSpot Academy and Google Digital Garage are free and give you a certificate line you can honestly claim. The <a href="../lesson-where-to-start/index.html">Where to Start lesson</a> tells you which one fits you.',
+      'Build one practice project: a sample content calendar, a cleaned spreadsheet, a Canva post set, or a simple portfolio page. One finished thing you can show.',
+      'Write your setup honestly: internet speed, device, backup plan, available hours. Clients hire reliability, and reliability starts with knowing your own setup.'
     ],
-    resume: 'Lead with education, projects, self-taught skills, volunteer work, and course progress. Do not stretch a tiny internship into fake expertise.',
-    lessons: 'Your best lessons are where to start, online jobs account setup, email address basics, browser basics, choosing your computer, work accessories, and beginner portfolio lessons.',
-    risk: 'Do not apply as if confidence alone is proof. Also do not shame yourself for starting small. Small honest proof is stronger than padded experience.',
-    next: 'Finish one small practice project before sending the next application.'
+    resume: 'Lead with education, projects, self-taught skills, and course progress. Never stretch a small internship into fake expertise. One true line beats ten padded ones.',
+    lessons: 'Start with <a href="../lesson-where-to-start/index.html">Where to Start</a>, <a href="../lesson-online-jobs-account/index.html">Online Jobs Account Setup</a>, and <a href="../lesson-email-address-expert-secrets/index.html">Email Address Basics</a>.',
+    risk: 'Confidence alone is not proof, and shame is not humility. Start small, start honest, and let one finished thing speak for you.',
+    next: 'Today: pick one small practice project and finish it before your next application.'
   }
 };
 
@@ -548,29 +592,29 @@ function saveForBuilder(key, q) {
 function answerNotes(q) {
   const notes = [];
   const toolNote = {
-    low: 'Your tool answer says you need proof through practice. Start with one tool category and make one small output before adding more apps.',
-    mid: 'Your tool answer says you have a starting base. Choose the tools that match your target role instead of presenting yourself as broad but unclear.',
-    strong: 'Your tool answer gives you a credible base. Now connect each tool to a real task or result so it does not read like a plain app list.',
-    deep: 'Your tool answer is strong. Curate it tightly so the resume shows mastery and judgment, not tool clutter.'
+    low: 'You have used two tools or fewer so far. Good: you know exactly where you stand. Pick one tool, make one small output with it, and you have your first proof.',
+    mid: 'Three or four tools is a real base. Choose the ones that match your target role, so you look focused instead of scattered.',
+    strong: 'Five to seven tools is credible. Connect each one to a real task or result, or it reads like a plain app list.',
+    deep: 'Eight or more tools is strong. Curate hard: lead with the five you are best at, so the resume shows mastery instead of clutter.'
   };
   const englishNote = {
-    '1': 'Your English answer says communication practice should be part of the plan before heavy client-facing roles.',
-    '2': 'Your English answer says you should practice written templates and simple client updates before applying broadly.',
-    '3': 'Your English answer is workable for many support and admin paths, but your samples should show clear written communication.',
-    '4': 'Your English answer is a strength. Use it in support, admin, coordination, documentation, or client-facing proof.',
-    '5': 'Your English answer is a strong signal. Pair it with proof of judgment, ownership, and tool fluency.'
+    '1': 'English feels like a wall right now, but it does not close the door. Start with text-only roles, no calls and no Zoom, and grow your written English while you earn. The <a href="../lesson-english-101/index.html">English 101 lesson</a> was built for exactly this.',
+    '2': 'Your written English can carry you before your spoken English does. Practice simple client updates and reply templates, and aim first at roles with no calls.',
+    '3': 'Conversational English is enough for many support and admin roles. Make your samples show clear written communication, because that is what clients check first.',
+    '4': 'Professional English is a real strength here. Use it in client-facing proof: support replies, documentation, coordination updates.',
+    '5': 'Near-native English opens doors. Pair it with proof of judgment and tool fluency so you compete on skill, not just language.'
   };
   const shiftNote = {
-    day: 'Your shift answer points toward roles with clear daytime availability. Be upfront so you avoid mismatched expectations.',
-    night: 'Your shift answer can be an advantage for US or global support roles. Put overlap hours where clients can see them.',
-    flexible: 'Your shift answer is flexible. Use that as a hiring signal, but still define your healthiest working window.',
-    parttime: 'Your shift answer points to part-time roles. Choose focused scopes so limited hours still look reliable.'
+    day: 'Daytime hours work for plenty of roles. Just state them upfront so you never get trapped in a mismatched schedule.',
+    night: 'Willingness to work nights is an advantage. US clients pay for overlap, so put your overlap hours where they can see them.',
+    flexible: 'Flexible hours are a hiring signal. Offer them, but still protect one healthy working window for yourself.',
+    parttime: 'Part-time works when the scope is focused. Choose small clear scopes so limited hours still look reliable.'
   };
   const experienceNote = {
-    none: 'Your experience answer means projects and courses need to carry the proof for now.',
-    early: 'Your experience answer gives you early proof. Be specific about what you actually handled.',
-    steady: 'Your experience answer gives you enough history to translate tasks into outcomes.',
-    senior: 'Your experience answer is a seniority signal. Do not write a beginner summary if your work history says otherwise.'
+    none: 'Zero years on paper means projects and courses carry your proof for now. That is a normal starting point, not a defect.',
+    early: 'One to two years gives you early proof. Be specific about what you personally handled, not what your team did.',
+    steady: 'Three to five years is enough history to translate tasks into outcomes. Write results and numbers, not duty lists.',
+    senior: 'Six or more years is a seniority signal. Do not write a beginner summary when your history says otherwise.'
   };
   notes.push(toolNote[q.tools], englishNote[q.q5], shiftNote[q.q4], experienceNote[q.experience]);
   return notes.filter(Boolean);
@@ -580,6 +624,9 @@ function adviceMarkup(key, q) {
   const a = ADVICE[key];
   const notes = answerNotes(q).map(note => `<li>${note}</li>`).join('');
   const before = a.before.map(item => `<li>${item}</li>`).join('');
+  const captureDisabled = EMAIL_CAPTURE_ENDPOINT ? '' : ' disabled';
+  const captureAriaDisabled = EMAIL_CAPTURE_ENDPOINT ? 'false' : 'true';
+  const captureHeading = `Get the full ${ARCHETYPES[key].name.replace('The ', '')} starter plan by email. Free.`;
   return `
     <section class="advice" aria-label="Personalized archetype advice">
       <h2>${a.headline}</h2>
@@ -610,6 +657,23 @@ function adviceMarkup(key, q) {
           <p>${a.risk}</p>
           <p class="advice-next">${a.next}</p>
         </div>
+        <div class="advice-card full">
+          <div class="advice-label">Keep this plan</div>
+          <form class="capture-form" data-capture-form data-success="${captureHeading}" aria-disabled="${captureAriaDisabled}">
+            <h3>${captureHeading}</h3>
+            <input type="hidden" name="archetype" value="${key}">
+            <div class="capture-field">
+              <input type="email" name="email" placeholder="Your email address" autocomplete="email" required${captureDisabled}>
+              <button class="btn btn-primary" type="submit"${captureDisabled}>Send me the plan</button>
+            </div>
+            <div class="capture-privacy">No spam. Unsubscribe anytime.</div>
+          </form>
+          <div class="capture-status" data-capture-status hidden></div>
+          <p>This result disappears when you close this page. The community does not. Join the BFF Facebook group, share your result, and say you are new. You will not be the only one starting.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://facebook.com/groups/workathomegeek" target="_blank" rel="noopener">Join the BFF community</a>
+          </div>
+        </div>
       </div>
     </section>
   `;
@@ -635,7 +699,7 @@ function render() {
     <div class="eyebrow">Your current path</div>
     <div class="result-name">${a.name}</div>
     <div class="result-tag">${a.tag}</div>
-    <div class="result-detail">Share of pool: ${a.share}. Proceed-to-interview signal: ${a.proceed}. This is a starting point, not a life sentence.</div>
+    <div class="result-detail">This is a starting point, not a life sentence.</div>
     <div class="actions">
       <a class="btn btn-primary" href="../resume-builder/index.html">Build a resume with this archetype</a>
       <a class="btn btn-secondary" href="../curriculum/index.html">See lessons for this path</a>
@@ -646,6 +710,23 @@ function render() {
 }
 
 document.getElementById('finderForm').addEventListener('change', render);
+document.addEventListener('submit', async event => {
+  const form = event.target.closest('[data-capture-form]');
+  if (!form) return;
+  event.preventDefault();
+  if (!EMAIL_CAPTURE_ENDPOINT) return;
+  const status = form.parentElement.querySelector('[data-capture-status]');
+  const payload = new FormData(form);
+  const response = await fetch(EMAIL_CAPTURE_ENDPOINT, {
+    method: 'POST',
+    body: payload,
+    headers: { Accept: 'application/json' }
+  });
+  if (!response.ok) throw new Error('Email capture failed');
+  form.hidden = true;
+  status.textContent = form.dataset.success || '';
+  status.hidden = false;
+});
 render();
 </script>
 </body>
