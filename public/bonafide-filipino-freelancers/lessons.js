@@ -139,6 +139,20 @@ window.SWAHG_LESSONS = {
       format: "article",
       build_queue_rank: 2
     },
+    "master-tools-with-ai": {
+      title: "How to Master Tools Using AI",
+      stage: "prep",
+      status: "live",
+      url: "lesson-master-tools-with-ai/",
+      closes_va_gaps: ["pm-tools"],
+      ladders_to_roles: ["customer-service","smm","account-manager","sdr","admin","content","va"],
+      prerequisites: [],
+      next_lessons: ["trello-love","google-sites-portfolio"],
+      why_this_lesson: "The One-Tool Proof Loop: free AI as practice coach to close the hire gap (5.3 vs 3.5 tools) one proven client task at a time. Fresh Starter core method lesson.",
+      estimated_minutes: 30,
+      tier: 2,
+      format: "module"
+    },
     "trello-love": {
       title: "Trello Love",
       stage: "prep",
@@ -935,7 +949,7 @@ window.SWAHG_LESSONS = {
     /* TOP ROW — Preparation */
     "prep-1": { pdf_label: "Choosing your Computer",      stage: "prep",    lessons: ["best-laptop"] },
     "prep-2": { pdf_label: "Creating Work Emails",        stage: "prep",    lessons: ["email-address-is-gold","email-marketing-for-vas"] },
-    "prep-3": { pdf_label: "Setting up Online Tools",     stage: "prep",    lessons: ["browser-expert-secrets","storage-expert-secrets"] },
+    "prep-3": { pdf_label: "Setting up Online Tools",     stage: "prep",    lessons: ["browser-expert-secrets","storage-expert-secrets","master-tools-with-ai"] },
     "prep-4": { pdf_label: "Organizing Work Flow",        stage: "prep",    lessons: ["trello-love"] },
     "prep-5": { pdf_label: "Setting up Work Accessories", stage: "prep",    lessons: ["work-accessories"] },
 
