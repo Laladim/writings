@@ -148,7 +148,7 @@ window.SWAHG_LESSONS = {
       ladders_to_roles: ["customer-service","smm","account-manager","sdr","admin","content","va"],
       prerequisites: [],
       next_lessons: ["google-sites-portfolio","resume-builder"],
-      why_this_lesson: "The One-Tool Proof Loop: free AI as practice coach to close the hire gap (5.3 vs 3.5 tools) one proven client task at a time. Fresh Starter core method lesson.",
+      why_this_lesson: "Practice one tool at a time with free AI as your coach. Close the hire gap from about 3 tools to 5 by building one proven client task at a time.",
       estimated_minutes: 30,
       tier: 2,
       format: "module"
