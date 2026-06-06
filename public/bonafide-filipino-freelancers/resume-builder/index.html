@@ -26,7 +26,7 @@
     --lavender: #7a6a8f;
   }
   * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; }
+  html, body { margin: 0; padding: 0; overflow-x: hidden; }
   body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
     background: var(--bg);
@@ -107,14 +107,21 @@
     }
     .nav-links {
       width: 100%;
-      overflow-x: auto;
-      flex-wrap: nowrap;
+      overflow-x: visible;
+      flex-wrap: wrap;
       gap: 14px;
       font-size: 13px;
       padding-bottom: 4px;
-      -webkit-overflow-scrolling: touch;
     }
+    .nav-links a { white-space: normal; }
     .nav-links::-webkit-scrollbar { display: none; }
+  }
+  @media (max-width: 560px) {
+    body { width: 100%; max-width: 100vw; overflow-x: hidden; }
+    .topnav, .app, footer { width: 100%; max-width: 100vw; overflow-x: hidden; }
+    .topnav-inner, .nav-links, .starter-shell, .starter-panel { min-width: 0; }
+    .app { padding-left: 18px; padding-right: 18px; }
+    .topnav-inner { padding-left: 18px; padding-right: 18px; }
   }
 
   /* Header / progress */
@@ -126,6 +133,16 @@
     border-radius: 12px;
     margin-bottom: 18px;
     border-top: 3px solid var(--purple);
+  }
+  @media (max-width: 640px) {
+    header.top {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+    .stepbar {
+      max-width: none;
+      width: 100%;
+    }
   }
   header.top .brand {
     font-family: 'Playfair Display', serif;
@@ -347,6 +364,145 @@
     color: #2a2a2a;
   }
   .download-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+  .application-pack {
+    margin-top: 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #fdfcfb;
+    padding: 14px;
+  }
+  .application-pack h3 {
+    margin: 0 0 4px;
+    font-size: 15px;
+    color: var(--purple-deep);
+  }
+  .application-pack p {
+    margin: 0 0 12px;
+    color: var(--muted);
+    font-size: 12.5px;
+    line-height: 1.5;
+  }
+  .pack-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .pack-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-height: 128px;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #fff;
+  }
+  .pack-card strong {
+    color: var(--purple-deep);
+    font-size: 13px;
+  }
+  .pack-card span {
+    display: block;
+    color: var(--muted);
+    font-size: 11.5px;
+    line-height: 1.45;
+  }
+  .pack-card button {
+    margin-top: auto;
+    width: 100%;
+  }
+  @media (max-width: 1020px) { .pack-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 760px) { .pack-grid { grid-template-columns: 1fr; } }
+  .readiness-card {
+    margin: 14px 0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px;
+    background: #fffaf4;
+  }
+  .readiness-card.good { background: #f3f8f4; border-color: #d6e5d9; }
+  .readiness-card.warn { background: #fff8e6; border-color: #ead9a8; }
+  .readiness-card.alert { background: #fff0ee; border-color: #e8c4bd; }
+  .readiness-card strong {
+    display: block;
+    color: var(--purple-deep);
+    margin-bottom: 4px;
+  }
+  .readiness-card p {
+    margin: 0 0 8px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .readiness-card ul {
+    margin: 6px 0 0 18px;
+    padding: 0;
+    color: var(--muted);
+    font-size: 12.5px;
+  }
+  .proof-builder {
+    margin: 14px 0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px;
+    background: #fdfcfb;
+  }
+  .proof-builder h3 {
+    margin: 0 0 4px;
+    color: var(--purple-deep);
+    font-size: 15px;
+  }
+  .proof-builder p {
+    margin: 0 0 12px;
+    color: var(--muted);
+    font-size: 12.5px;
+    line-height: 1.5;
+  }
+  .proof-output {
+    margin-top: 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #fff;
+    padding: 11px 12px;
+    color: var(--purple-deep);
+    font-size: 12.5px;
+    line-height: 1.5;
+  }
+  .proof-output strong {
+    display: block;
+    margin-bottom: 3px;
+  }
+  .proof-template-note {
+    background: var(--sand);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--purple-deep);
+    font-size: 12.5px;
+    line-height: 1.45;
+    margin: 0 0 12px;
+    padding: 10px 12px;
+  }
+  .proof-checklist {
+    display: grid;
+    gap: 8px;
+    margin: 10px 0 12px;
+  }
+  .proof-check {
+    align-items: flex-start;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    display: flex;
+    gap: 8px;
+    font-size: 12.5px;
+    line-height: 1.4;
+    padding: 9px 10px;
+  }
+  .proof-check input {
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
 
   /* Reference panel */
   .ref-toggle {
@@ -678,6 +834,15 @@
   @media (max-width: 920px) {
     .starter-shell { grid-template-columns: 1fr; }
   }
+  @media (max-width: 560px) {
+    .starter-panel { padding: 18px; }
+    .starter-panel h1 { font-size: 25px; line-height: 1.15; }
+    .starter-panel h1, .starter-panel h2, .lede, .journey-note, .note { overflow-wrap: break-word; }
+    .preview-header { flex-direction: column; }
+    .download-row .btn,
+    .starter-actions .btn,
+    .starter-actions a { width: 100%; justify-content: center; }
+  }
   .starter-panel {
     background: var(--card);
     border: 1px solid var(--border);
@@ -699,6 +864,17 @@
     letter-spacing: .16em;
     text-transform: uppercase;
   }
+  .journey-note {
+    background: #fffaf4;
+    border: 1px solid #eadbc4;
+    border-radius: 8px;
+    color: var(--purple-deep);
+    font-size: 12.5px;
+    line-height: 1.5;
+    margin: 12px 0;
+    padding: 10px 12px;
+  }
+  .journey-note strong { color: var(--purple); }
   .starter-panel h1 {
     margin-top: 6px;
     margin-bottom: 8px;
@@ -869,6 +1045,7 @@
 
 </div>
 
+<script src="../shared/bff-state.js"></script>
 <script>
 /* =========================================================
    STATE
@@ -1897,7 +2074,7 @@ function emptyState() {
     archetype: null,
     archetypeOverride: null,
     quiz: { q1:'', q2_levels:{}, q2_none:{}, q2_other:{}, q3_creative:{}, q3_none:{}, q3_other:'', q4:'', q5:'', q6_remote:'', q6_corporate:'' },
-    target: { jobTitle: '', company: '', jd: '', templateKey: '', selectedJobId: '', selectedJobUrl: '', selectedJobResumeKeywords: '', selectedJobResumeAngle: '', selectedJobSource: '' },
+    target: { jobTitle: '', company: '', jd: '', templateKey: '', targetRoleId: '', selectedJobId: '', selectedJobUrl: '', selectedJobResumeKeywords: '', selectedJobResumeAngle: '', selectedJobSource: '' },
     existingResume: '',
     personal: {
       name: '', headline: '',
@@ -1914,14 +2091,52 @@ function emptyState() {
     education: [],      // { degree, school, location, year, current, notes }
     certifications: [], // { name, issuer, year }
     volunteer: [],      // { role, org, period, bullets }
-    projects: []        // { name, description, scale, tools }
+    projects: [],       // { name, description, scale, tools }
+    proofDraft: { projectName:'', output:'', metric:'', notes:'' }
   };
 }
 
 let state = loadState();
+applySharedContextToState();
 let jobBoardJobs = [];
 let jobBoardLoading = false;
 let initialJobParamApplied = false;
+
+function applySharedContextToState() {
+  const params = new URLSearchParams(window.location.search);
+  const incomingArch = params.get('archetype');
+  const incomingStart = params.get('start');
+  const incomingRole = params.get('role');
+  const incomingJob = params.get('job');
+  const shared = window.BFF ? window.BFF.readState() : {};
+  const arch = incomingArch || shared.archetype;
+  if (arch && ARCHETYPES[arch]) {
+    state.archetype = arch;
+    state.archetypeOverride = arch;
+    state.finderResult = Object.assign({}, state.finderResult || {}, { archetype: arch });
+    if (incomingStart === 'archetype' && !state.target.templateKey && !state.target.selectedJobId) {
+      state.startMode = 'template';
+    }
+  }
+  if (incomingJob) {
+    state.startMode = 'job';
+    state.target.selectedJobId = incomingJob;
+  }
+  const roleId = incomingRole || shared.recommendedRoleId || shared.targetRoleId || '';
+  const role = roleId ? (window.BFF && window.BFF.roleById(roleId)) : null;
+  if (role) {
+    state.target.targetRoleId = role.id;
+    if (!incomingJob) {
+      state.target.jobTitle = role.title;
+      state.target.company = 'BFF recommended role';
+      state.target.selectedJobResumeAngle = role.resumeAngle;
+      state.target.jd = `${role.title}\nTools: ${role.tools.join(', ')}\nWork sample to build: ${role.proofSample}`;
+      state.startMode = 'template';
+    }
+    if (window.BFF) window.BFF.writeState({ targetRoleId: role.id, recommendedRoleId: role.id, targetRole: role.title });
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e) {}
+  }
+}
 
 function loadState() {
   try {
@@ -1938,6 +2153,7 @@ function loadState() {
       const merged = Object.assign(base, loaded);
       merged.quiz = Object.assign(base.quiz, loaded.quiz || {});
       merged.target = Object.assign(base.target, loaded.target || {});
+      merged.proofDraft = Object.assign(base.proofDraft, loaded.proofDraft || {});
       if (!merged.startMode) merged.startMode = merged.target.selectedJobId ? 'job' : 'template';
       if (merged.startMode === 'archetype') merged.startMode = 'template';
       return merged;
@@ -1953,6 +2169,16 @@ function saveState() {
   saveTimer = setTimeout(() => {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      if (window.BFF) {
+        window.BFF.writeState({
+          archetype: currentArchetype(),
+          targetRoleId: state.target.targetRoleId || '',
+          targetRole: state.target.jobTitle || '',
+          resumeStatus: state.summary || state.experience.length ? 'draft' : 'not-started',
+          proofStatus: state.projects && state.projects.length ? 'started' : 'missing',
+          lastNextAction: state.target.jobTitle ? 'finish-resume-pack' : 'choose-target-role'
+        });
+      }
       setSaveState('saved');
     } catch(e) { setSaveState('error'); console.warn('save failed', e); }
   }, 250);
@@ -2162,6 +2388,8 @@ async function pickLiveJob(id) {
   state.target.selectedJobResumeKeywords = detail.resume_keywords || summary.resume_keywords || '';
   state.target.selectedJobResumeAngle = detail.resume_angle || summary.resume_angle || '';
   state.target.selectedJobSource = detail.source || detail.ats_platform || summary.source || summary.ats_platform || '';
+  const catalogRole = window.BFF ? window.BFF.roleForTitle(detail.role_lala_category || summary.role_lala_category || detail.title || summary.title || '') : null;
+  state.target.targetRoleId = catalogRole ? catalogRole.id : state.target.targetRoleId;
   state.target.templateKey = '';
   state.target.jobTitle = detail.title || summary.title || '';
   state.target.company = detail.company || summary.company || '';
@@ -2288,6 +2516,116 @@ function renderStepbar() {
   sb.innerHTML = '<div class="step active" title="Resume starter"></div>';
 }
 
+function currentCatalogRole() {
+  if (!window.BFF) return null;
+  if (state.target.targetRoleId) {
+    const direct = window.BFF.roleById(state.target.targetRoleId);
+    if (direct) return direct;
+  }
+  const selectedJob = selectedJobSummary();
+  const titleCandidates = [
+    state.target.jobTitle,
+    selectedJob && selectedJob.role_lala_category,
+    selectedJob && selectedJob.archetype_primary
+  ].filter(Boolean);
+  const matched = titleCandidates.map(title => window.BFF.roleForTitle(title)).find(Boolean);
+  if (matched) return matched;
+  return window.BFF.rolesForArchetype(currentArchetype())[0] || null;
+}
+
+function readinessVerdict(audit, role) {
+  const proofReady = !!firstProofBullet() || (state.projects || []).some(project => project.description || project.name);
+  if (audit.score >= 8.5 && proofReady) {
+    return {
+      cls: 'good',
+      label: 'Apply now',
+      message: 'The resume has enough proof to start applying. Keep tailoring the title, keywords, and first bullet for each job.'
+    };
+  }
+  if (audit.score >= 7) {
+    return {
+      cls: 'warn',
+      label: 'Build one work sample first',
+      message: role ? `The resume is close, but this role needs visible proof before outreach feels credible.` : 'The resume is close, but it still needs one concrete proof action before outreach.'
+    };
+  }
+  return {
+    cls: 'alert',
+    label: 'Choose an easier role first',
+    message: role ? `This target is still too exposed for the current proof level. Use the proof action below, or pick a simpler recommended role before applying.` : 'This target is too exposed for the current proof level. Add tools, quantified bullets, and one work sample before applying.'
+  };
+}
+
+function proofDraftBullet(role) {
+  const draft = state.proofDraft || {};
+  const roleTitle = role ? role.title : (state.target.jobTitle || 'target role');
+  const template = role && role.proofTemplate ? role.proofTemplate : null;
+  const output = draft.output || (template ? template.output : (role ? role.proofSample : 'role-matched work sample'));
+  const metric = draft.metric || '[number or scope]';
+  const tools = role ? role.tools.slice(0, 3).join(', ') : '[tools]';
+  if (template && template.resumeBullet) {
+    return template.resumeBullet
+      .replace('[metric]', metric)
+      .replace('[output]', output)
+      .replace('[role]', roleTitle)
+      .replace('[tools]', tools);
+  }
+  return `Built ${metric} by creating ${output} for a ${roleTitle} practice brief, using ${tools} to show clear follow-through.`;
+}
+
+function renderProofBuilder(role) {
+  const draft = state.proofDraft || {};
+  const template = role && role.proofTemplate ? role.proofTemplate : null;
+  const sampleName = template ? template.projectName : (role ? role.proofSample : 'role-matched work sample');
+  const outputName = template ? template.output : sampleName;
+  const metricPlaceholder = template ? template.metricPlaceholder : '5 reply templates, 7-day tracker, 30 sample transactions';
+  const notesPrompt = template ? template.notesPrompt : 'What did you create, what tool did you use, and what would a client inspect?';
+  const steps = role && role.proofSteps ? role.proofSteps : ['Choose one realistic task', 'Create a small sample output', 'Write one proof bullet'];
+  const checklist = template && template.checklist ? template.checklist : steps;
+  const checked = draft.checked || {};
+  return `
+    <div class="proof-builder">
+      <h3>Proof sample builder</h3>
+      <p>Turn the proof action into a small project you can mention in the resume, OnlineJobs.ph profile, and outreach pitch.</p>
+      ${role && role.beginnerLabel ? `<div class="proof-template-note"><strong>${esc(role.beginnerLabel)} · ${esc(String(role.beginnerScore || 3))}/5 beginner score</strong><br>${esc(role.beginnerReason || '')}</div>` : ''}
+      <div class="compact-row">
+        <label class="field">
+          <span class="lbl">Proof project name</span>
+          <input type="text" id="proofProjectName" value="${esc(draft.projectName || sampleName)}" placeholder="${esc(sampleName)}">
+        </label>
+        <label class="field">
+          <span class="lbl">Output created</span>
+          <input type="text" id="proofOutput" value="${esc(draft.output || outputName)}" placeholder="${esc(outputName)}">
+        </label>
+      </div>
+      <label class="field">
+        <span class="lbl">Metric or scope</span>
+        <input type="text" id="proofMetric" value="${esc(draft.metric || '')}" placeholder="${esc(metricPlaceholder)}">
+      </label>
+      <label class="field">
+        <span class="lbl">Notes</span>
+        <textarea id="proofNotes" rows="3" placeholder="${esc(notesPrompt)}">${esc(draft.notes || checklist.join('\n'))}</textarea>
+      </label>
+      <div class="proof-checklist" aria-label="Proof sample checklist">
+        ${checklist.map((step, index) => `
+          <label class="proof-check">
+            <input type="checkbox" data-proof-step="${index}" ${checked[index] ? 'checked' : ''}>
+            <span>${esc(step)}</span>
+          </label>
+        `).join('')}
+      </div>
+      <div class="proof-output">
+        <strong>Resume bullet preview</strong>
+        <span id="proofBulletPreview">${esc(proofDraftBullet(role))}</span>
+      </div>
+      <div class="download-row">
+        <button class="btn btn-primary" type="button" onclick="saveProofProject()">Save proof to resume</button>
+        <button class="btn btn-secondary" type="button" onclick="copyProofBullet()">Copy proof bullet</button>
+      </div>
+    </div>
+  `;
+}
+
 function renderStarterWorkbench() {
   const mode = state.startMode || 'template';
   const selectedJob = selectedJobSummary();
@@ -2302,17 +2640,24 @@ function renderStarterWorkbench() {
   const orderedTemplates = [...recommendedTemplates, ...otherTemplates];
   const audit = auditResume();
   const topFixes = audit.fixes.slice(0, 3);
+  const catalogRole = currentCatalogRole();
+  const readiness = readinessVerdict(audit, catalogRole);
+  const sharedRoles = window.BFF ? window.BFF.rolesForArchetype(templateArch).slice(0, 3) : [];
+  const journeyNote = state.finderResult && state.finderResult.archetype
+    ? `<div class="journey-note"><strong>Imported from Archetype Finder:</strong> ${esc(arch.name)}. The job post still decides the final resume, but your archetype filters the first role recommendations.</div>`
+    : `<div class="journey-note"><strong>Not sure where to aim?</strong> Take the Archetype Finder first, then come back here with recommended roles already filtered.</div>`;
   return `
     <div class="starter-shell">
       <section class="starter-panel sticky">
-        <div class="starter-kicker">Resume lead magnet</div>
-        <h1>Pick a starter role. Get a resume draft.</h1>
-        <p class="lede">Start with an archetype-matched role template. Use the Job Board only when there is a real target job to chase.</p>
+        <div class="starter-kicker">Job-match resume coach</div>
+        <h1>Choose a realistic role. Build the resume pack.</h1>
+        <p class="lede">Start from your archetype, a real target job, or an old resume. The goal is honest positioning, not a pretty template with fake proof.</p>
+        ${journeyNote}
 
         <div class="starter-tabs" role="tablist" aria-label="Starting point">
           <button class="starter-tab ${mode==='template'?'active':''}" type="button" onclick="setStartMode('template')">
-            <span>Starter roles</span>
-            Archetype templates
+            <span>Recommended roles</span>
+            Based on your path
           </button>
           <button class="starter-tab ${mode==='job'?'active':''}" type="button" onclick="setStartMode('job')">
             <span>Target job</span>
@@ -2325,8 +2670,8 @@ function renderStarterWorkbench() {
         </div>
 
         <label class="field">
-          <span class="lbl">Resume path</span>
-          <span class="hint">This filters the starter roles. The full Archetype Finder stays separate.</span>
+          <span class="lbl">Current path</span>
+          <span class="hint">This filters the recommended roles. The full Archetype Finder stays separate.</span>
           <select id="archOverride" aria-label="Resume path">
             ${Object.keys(ARCHETYPES).map(k => `<option value="${k}" ${currentArchetype()===k?'selected':''}>${ARCHETYPES[k].name}</option>`).join('')}
           </select>
@@ -2334,9 +2679,15 @@ function renderStarterWorkbench() {
 
         ${mode === 'template' ? `
           <div class="note good">
-            <strong>${recommendedTemplates.length} recommended starter roles for ${esc(arch.name)}.</strong><br>
+            <strong>${recommendedTemplates.length} role templates match ${esc(arch.name)}.</strong><br>
             Pick one to generate a draft. Later, replace the template details with a real target job if needed.
           </div>
+          ${sharedRoles.length ? `
+            <div class="note" style="margin-bottom:12px;">
+              <strong>First roles to consider:</strong>
+              ${sharedRoles.map(role => `${esc(role.title)} (${esc(role.level === 'best-fit' ? 'best fit' : 'stretch')})`).join(' · ')}
+            </div>
+          ` : ''}
           <div class="templates-grid" style="grid-template-columns:1fr;margin-bottom:14px;">
             ${orderedTemplates.slice(0, 8).map(t => {
               const isRecommended = t.archetypeHint.includes(templateArch);
@@ -2347,7 +2698,7 @@ function renderStarterWorkbench() {
                   <div class="tpl-meta"><span class="pay">${esc(t.payShort)}</span></div>
                   <div class="tpl-meta">${esc(t.scheduleShort)}</div>
                   <div class="tpl-tools">${esc(t.toolsShort)}</div>
-                  <div class="tpl-pick">${state.target.templateKey===t.key?'Selected':'Use starter role'}</div>
+                  <div class="tpl-pick">${state.target.templateKey===t.key?'Selected':'Use this role'}</div>
                 </div>
               `;
             }).join('')}
@@ -2440,7 +2791,7 @@ function renderStarterWorkbench() {
         </details>
 
         <div class="starter-actions">
-          <button class="btn btn-primary" onclick="createStarterResume()">Create starter draft</button>
+          <button class="btn btn-primary" onclick="createStarterResume()">Create resume draft</button>
           <button class="btn btn-secondary" onclick="resetAll()">Reset</button>
           <a class="btn btn-secondary" href="../jobs/index.html">Open Job Board</a>
         </div>
@@ -2458,7 +2809,7 @@ function renderStarterWorkbench() {
         <div class="why-strip">
           <div class="why-card"><strong>Why this works</strong> The job gives the keywords and the resume gives proof. The archetype only shapes the framing.</div>
           <div class="why-card"><strong>Transferable skills</strong> Customer support, admin, organizing, writing, follow-up, and tool use can be translated honestly.</div>
-          <div class="why-card"><strong>Next problem</strong> If a section feels weak, build a small proof piece before applying.</div>
+          <div class="why-card"><strong>Next problem</strong> If a section feels weak, build a small work sample before applying.</div>
         </div>
 
         <div class="edit-grid">
@@ -2474,16 +2825,54 @@ function renderStarterWorkbench() {
           ${topFixes.length ? `<ul>${topFixes.map(f => `<li>${f}</li>`).join('')}</ul>` : '<div>Draft has the minimum pieces. Fact-check every bracket before sending.</div>'}
         </div>
 
+        <div class="readiness-card ${readiness.cls}">
+          <strong>${esc(readiness.label)}</strong>
+          <p>${esc(readiness.message)}</p>
+          ${catalogRole ? `
+            <p><strong style="display:inline;margin:0;">Proof action:</strong> ${esc(catalogRole.proofSample)}</p>
+            ${(catalogRole.proofSteps || []).length ? `<ul>${catalogRole.proofSteps.map(step => `<li>${esc(step)}</li>`).join('')}</ul>` : ''}
+          ` : ''}
+        </div>
+
+        ${renderProofBuilder(catalogRole)}
+
         <div class="preview-wrap" id="preview">${renderResumeHTML()}</div>
 
+        <div class="application-pack">
+          <h3>Application pack</h3>
+          <p>Copy platform-ready drafts from the same job target, archetype, resume angle, and proof bullets. Edit the brackets before sending.</p>
+          <div class="pack-grid">
+            <div class="pack-card">
+              <strong>LinkedIn About</strong>
+              <span>Short positioning for recruiters and clients who scan your profile before replying.</span>
+              <button class="btn btn-secondary" onclick="copyLinkedInAbout()">Copy LinkedIn About</button>
+            </div>
+            <div class="pack-card">
+              <strong>OnlineJobs.ph profile</strong>
+              <span>Client-friendly summary with availability, tools, internet speed, and role fit.</span>
+              <button class="btn btn-secondary" onclick="copyOnlineJobsProfile()">Copy OLJ profile</button>
+            </div>
+            <div class="pack-card">
+              <strong>Email pitch</strong>
+              <span>Direct outreach note for a specific job post or hiring manager.</span>
+              <button class="btn btn-secondary" onclick="copyEmailPitch()">Copy email pitch</button>
+            </div>
+            <div class="pack-card">
+              <strong>Short proposal</strong>
+              <span>Compact reply for Upwork, Facebook leads, and quick application forms.</span>
+              <button class="btn btn-secondary" onclick="copyShortProposal()">Copy short proposal</button>
+            </div>
+          </div>
+        </div>
+
         <div class="download-row">
-          <button class="btn btn-primary" onclick="downloadHTML()">Download resume HTML</button>
+          <button class="btn btn-primary" onclick="downloadHTML()">Download resume file</button>
           <button class="btn btn-secondary" onclick="copyPlain()">Copy plain text</button>
         </div>
 
         <div class="next-step-band">
-          <a href="../lesson-bpo-to-va-portfolio/index.html">Build proof<small>Use a portfolio sample when the resume claim is weak.</small></a>
-          <button type="button" onclick="copyPlain()">Customize cover letter<small>Use the same target job and plain-text resume.</small></button>
+          <a href="../lesson-bpo-to-va-portfolio/index.html">Build a work sample<small>Use a small proof project when the resume claim is weak.</small></a>
+          <button type="button" onclick="copyEmailPitch()">Customize outreach<small>Start from the same target job and proof points.</small></button>
           <a href="../archetype/index.html">Find your archetype<small>Use this only when the student has no job target yet.</small></a>
         </div>
       </section>
@@ -2500,7 +2889,7 @@ function renderStarterWorkbench() {
 
 function renderInlineExperienceEditor() {
   if (!state.experience.length) return `
-    <div class="note">No experience block yet. Create a starter draft, or add one role below.</div>
+    <div class="note">No experience block yet. Create a resume draft, or add one role below.</div>
     <button class="add-btn" onclick="addEntry('experience')">Add role</button>
   `;
   return state.experience.slice(0, 1).map((e, i) => `
@@ -3518,7 +3907,7 @@ function auditResume() {
 
   // bullets quantified
   const allBullets = (state.experience||[]).flatMap(e => e.bullets||[]);
-  if (allBullets.length === 0 && a !== 'fresh') { score -= 2; fixes.push('No experience bullets yet. Create a starter draft or add proof bullets.'); }
+  if (allBullets.length === 0 && a !== 'fresh') { score -= 2; fixes.push('No experience bullets yet. Create a resume draft or add proof bullets.'); }
   const quantified = allBullets.filter(b => /\d/.test(b)).length;
   const pct = allBullets.length ? quantified/allBullets.length : 0;
   if (allBullets.length && pct < 0.5) { score -= 2; fixes.push(`Only ${Math.round(pct*100)}% of bullets have a number. Target 80%+. Add honest metrics to the proof bullets.`); }
@@ -3682,9 +4071,9 @@ function renderResumeHTML() {
   if (isFresh) {
     body = head + summary + education + projects + skills + certs + volunteer + freshExperience;
   } else if (isPolished) {
-    body = head + summary + skills + experience + education + certs + volunteer;
+    body = head + summary + skills + projects + experience + education + certs + volunteer;
   } else {
-    body = head + summary + experience + skills + education + certs + volunteer;
+    body = head + summary + experience + projects + skills + education + certs + volunteer;
   }
 
   return body;
@@ -3717,13 +4106,228 @@ function downloadHTML() {
   setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 200);
 }
 
-function copyPlain() {
+function plainResumeText() {
+  updateStarterInputs();
   const div = document.createElement('div');
   div.innerHTML = renderResumeHTML();
-  const text = div.innerText.replace(/\n{3,}/g,'\n\n');
-  navigator.clipboard.writeText(text).then(() => {
-    alert('Plain text copied. Paste into OnlineJobs.ph profile or email body.');
+  return div.innerText.replace(/\n{3,}/g,'\n\n').trim();
+}
+
+function selectedToolsList(limit = 8) {
+  const tools = [];
+  Object.values(state.skills || {}).forEach(group => {
+    (group || []).forEach(tool => {
+      if (tool && !tools.includes(tool)) tools.push(tool);
+    });
   });
+  return tools.slice(0, limit);
+}
+
+function firstProofBullet() {
+  const bullets = (state.experience || []).flatMap(e => e.bullets || []);
+  const proof = bullets.find(b => b && b.trim() && !b.includes('['));
+  return proof ? proof.trim() : '';
+}
+
+function targetRoleLabel() {
+  return state.target.jobTitle || state.personal.headline || 'remote role';
+}
+
+function availabilityLine() {
+  const parts = [];
+  if (state.personal.hoursPerWeek) parts.push(`${state.personal.hoursPerWeek} hours per week`);
+  if (state.personal.internetSpeed) parts.push(`${state.personal.internetSpeed} Mbps internet`);
+  if (state.personal.backup === 'yes') parts.push('backup internet available');
+  return parts.join(', ');
+}
+
+function cleanResumeAngle(angle) {
+  return String(angle || '').replace(/^Position your resume around\s+/i, '').replace(/[.]+$/g, '').trim();
+}
+
+function sentenceCase(text) {
+  const value = String(text || '').trim();
+  if (!value) return '';
+  return (value.charAt(0).toUpperCase() + value.slice(1))
+    .replace(/\bSeo\b/g, 'SEO')
+    .replace(/\bSmm\b/g, 'SMM')
+    .replace(/\bCrm\b/g, 'CRM')
+    .replace(/\bVa\b/g, 'VA')
+    .replace(/\bBpo\b/g, 'BPO');
+}
+
+function applicationContext() {
+  updateStarterInputs();
+  const catalogRole = currentCatalogRole();
+  const selectedTools = selectedToolsList(7);
+  const tools = catalogRole && catalogRole.tools ? catalogRole.tools.slice(0, 5) : selectedTools;
+  const role = targetRoleLabel();
+  const company = state.target.company || 'your team';
+  const angle = cleanResumeAngle(state.target.selectedJobResumeAngle);
+  const proof = firstProofBullet() || angle || 'I can show a small work sample aligned with this role.';
+  const summary = state.summary || SUMMARY_TEMPLATES[currentArchetype()] || `I am preparing for ${role} work with honest proof, tool practice, and clear remote-work basics.`;
+  const archetypeName = (ARCHETYPES[currentArchetype()].name || '').replace(/^The\s+/i, '');
+  return {
+    name: state.personal.name || '[Your name]',
+    role,
+    company,
+    summary,
+    proof,
+    tools: tools.length ? tools.join(', ') : '[tools from the job post]',
+    availability: availabilityLine() || '[availability and internet speed]',
+    email: state.personal.email || '[email]',
+    archetype: archetypeName,
+    jobSource: state.target.selectedJobSource || '',
+    jobUrl: state.target.selectedJobUrl || '',
+    resumeAngle: angle
+  };
+}
+
+function buildLinkedInAbout() {
+  const c = applicationContext();
+  return [
+    `I help teams with ${c.role} work by combining my ${c.archetype.toLowerCase()} background with practical remote-work tools.`,
+    '',
+    c.summary,
+    '',
+    `Tools and strengths: ${c.tools}.`,
+    `Proof point: ${c.proof}`,
+    '',
+    `Current target: ${c.role}.`,
+    `Availability: ${c.availability}.`,
+    '',
+    'Open to remote roles where clear communication, reliable follow-through, and honest skill growth matter.'
+  ].join('\n');
+}
+
+function buildOnlineJobsProfile() {
+  const c = applicationContext();
+  return [
+    `Hi, I am ${c.name}. I am applying for ${c.role} work and I am positioning my background for practical remote support, digital marketing, and client operations tasks.`,
+    '',
+    `What I can help with: ${c.tools}.`,
+    `Why I fit: ${c.proof}`,
+    `Availability: ${c.availability}.`,
+    '',
+    'I am comfortable following SOPs, documenting work, asking clear questions, and improving through feedback. I prefer honest expectations and measurable tasks over vague job promises.',
+    '',
+    `Best contact: ${c.email}.`
+  ].join('\n');
+}
+
+function buildEmailPitch() {
+  const c = applicationContext();
+  const sourceLine = c.jobSource ? `I found the role through ${c.jobSource} and tailored this note around the responsibilities in that post.` : `I saw your opening for ${c.role} and wanted to send a focused application.`;
+  const angleLine = c.resumeAngle ? `The main angle I would bring is ${c.resumeAngle}.` : '';
+  return [
+    `Subject: Application for ${c.role}${c.company && c.company !== 'your team' ? ` at ${c.company}` : ''}`,
+    '',
+    `Hi ${c.company},`,
+    '',
+    sourceLine,
+    angleLine,
+    `My background fits this role because ${c.proof}`,
+    '',
+    `The tools and responsibilities I can support include ${c.tools}. I am available for ${c.availability}, and I can also prepare a short work sample if you want to see how I would approach the role.`,
+    '',
+    'I attached my resume for reference. Thank you for considering my application.',
+    '',
+    `Best,`,
+    c.name
+  ].join('\n');
+}
+
+function buildShortProposal() {
+  const c = applicationContext();
+  const source = c.jobSource ? `I saw this ${c.role} role on ${c.jobSource}.` : `I saw your ${c.role} post.`;
+  const angle = c.resumeAngle ? `My strongest angle is ${sentenceCase(c.resumeAngle)}.` : `My strongest angle is reliable execution, clear updates, and honest proof of work.`;
+  const proof = sentenceCase(c.proof);
+  return [
+    `Hi ${c.company && c.company !== 'your team' ? c.company : 'there'},`,
+    '',
+    `${source} ${angle}`,
+    '',
+    `I can help with ${c.tools}.`,
+    `Relevant proof: ${proof}`,
+    '',
+    `Availability: ${c.availability}.`,
+    '',
+    'If helpful, I can send a small work sample matched to this role before the next step.',
+    '',
+    c.name
+  ].join('\n');
+}
+
+function copyText(label, text) {
+  navigator.clipboard.writeText(text).then(() => {
+    alert(`${label} copied. Review every bracket before sending.`);
+  }).catch(() => {
+    alert(`Could not copy ${label}. Select the resume text manually and try again.`);
+  });
+}
+
+function copyPlain() {
+  copyText('Plain text resume', plainResumeText());
+}
+
+function copyLinkedInAbout() {
+  copyText('LinkedIn About', buildLinkedInAbout());
+}
+
+function copyOnlineJobsProfile() {
+  copyText('OnlineJobs.ph profile', buildOnlineJobsProfile());
+}
+
+function copyEmailPitch() {
+  copyText('Email pitch', buildEmailPitch());
+}
+
+function copyShortProposal() {
+  copyText('Short proposal', buildShortProposal());
+}
+
+function updateProofDraft() {
+  state.proofDraft = state.proofDraft || {};
+  const projectName = document.getElementById('proofProjectName');
+  const output = document.getElementById('proofOutput');
+  const metric = document.getElementById('proofMetric');
+  const notes = document.getElementById('proofNotes');
+  if (projectName) state.proofDraft.projectName = projectName.value.trim();
+  if (output) state.proofDraft.output = output.value.trim();
+  if (metric) state.proofDraft.metric = metric.value.trim();
+  if (notes) state.proofDraft.notes = notes.value.trim();
+}
+
+function saveProofProject() {
+  updateProofDraft();
+  const role = currentCatalogRole();
+  const draft = state.proofDraft || {};
+  const template = role && role.proofTemplate ? role.proofTemplate : null;
+  const checklist = template && template.checklist ? template.checklist : (role && role.proofSteps ? role.proofSteps : []);
+  const completedSteps = checklist.filter((step, index) => draft.checked && draft.checked[index]);
+  const descriptionParts = [];
+  if (draft.notes) descriptionParts.push(draft.notes);
+  if (completedSteps.length) descriptionParts.push(`Completed checklist: ${completedSteps.join('; ')}`);
+  const project = {
+    name: draft.projectName || (template ? template.projectName : (role ? role.proofSample : 'Role-matched work sample')),
+    description: descriptionParts.join('\n') || proofDraftBullet(role),
+    scale: draft.metric || '',
+    tools: role ? role.tools.join(', ') : selectedToolsList(4).join(', '),
+    source: 'proof-builder'
+  };
+  state.projects = state.projects || [];
+  const existingIndex = state.projects.findIndex(item => item.source === 'proof-builder');
+  if (existingIndex >= 0) state.projects[existingIndex] = Object.assign({}, state.projects[existingIndex], project);
+  else state.projects.unshift(project);
+  if (window.BFF) window.BFF.writeState({ proofStatus: 'started', lastNextAction: 'use-proof-in-applications' });
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e) {}
+  saveState();
+  render();
+}
+
+function copyProofBullet() {
+  updateProofDraft();
+  copyText('Proof bullet', proofDraftBullet(currentCatalogRole()));
 }
 
 /* =========================================================
@@ -3763,6 +4367,24 @@ function bindHandlers() {
       saveState();
     });
   }
+  ['proofProjectName','proofOutput','proofMetric','proofNotes'].forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener('input', () => {
+      updateProofDraft();
+      const preview = document.getElementById('proofBulletPreview');
+      if (preview) preview.textContent = proofDraftBullet(currentCatalogRole());
+      saveState();
+    });
+  });
+  document.querySelectorAll('[data-proof-step]').forEach(el => {
+    el.addEventListener('change', () => {
+      state.proofDraft = state.proofDraft || {};
+      state.proofDraft.checked = state.proofDraft.checked || {};
+      state.proofDraft.checked[el.dataset.proofStep] = el.checked;
+      saveState();
+    });
+  });
 
   // radios (Step 1 single-choice questions: q1, q4, q5, q6_remote, q6_corporate)
   document.querySelectorAll('input[type=radio]').forEach(el => {

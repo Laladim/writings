@@ -25,7 +25,7 @@
     --red: #c45a5a;
   }
   * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; }
+  html, body { margin: 0; padding: 0; overflow-x: hidden; }
   body {
     background: var(--bg);
     color: var(--text);
@@ -220,6 +220,43 @@
     gap: 10px;
     margin-top: 18px;
   }
+  .role-grid {
+    display: grid;
+    gap: 10px;
+    margin-top: 12px;
+  }
+  .role-card {
+    background: #fdfcfb;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px;
+  }
+  .role-card.role-card-caution {
+    background: #fff8f1;
+    border-color: #e3c49c;
+  }
+  .role-card strong {
+    color: var(--purple-deep);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .role-card .role-pill {
+    background: var(--sand);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--purple-deep);
+    display: inline-flex;
+    font-size: 11.5px;
+    font-weight: 700;
+    margin: 2px 0 8px;
+    padding: 4px 9px;
+  }
+  .role-card span {
+    color: var(--muted);
+    display: block;
+    font-size: 12.5px;
+    line-height: 1.45;
+  }
   .capture-form {
     display: grid;
     gap: 9px;
@@ -298,12 +335,18 @@
   }
   @media (max-width: 768px) {
     .topnav-inner { align-items: flex-start; flex-direction: column; gap: 10px; padding: 12px 18px; }
-    .nav-links { width: 100%; max-width: 100%; overflow-x: auto; flex-wrap: nowrap; gap: 14px; font-size: 13px; padding-bottom: 4px; -webkit-overflow-scrolling: touch; }
+    .nav-links { width: 100%; max-width: 100%; overflow-x: visible; flex-wrap: wrap; gap: 14px; font-size: 13px; padding-bottom: 4px; }
+    .nav-links a { white-space: normal; }
     .nav-links::-webkit-scrollbar { display: none; }
   }
   @media (max-width: 620px) {
-    .hero, .card { width: 354px; max-width: calc(100vw - 36px); padding: 22px 18px; }
+    body { width: 100%; max-width: 100vw; overflow-x: hidden; }
+    .topnav, .app, footer { width: 100%; max-width: 100vw; overflow-x: hidden; }
+    .topnav-inner, .nav-links, .hero, .card { min-width: 0; }
+    .app { padding-left: 18px; padding-right: 18px; }
+    .hero, .card { width: 100%; max-width: 100%; padding: 22px 18px; }
     h1 { font-size: 24px; line-height: 1.14; }
+    p.lede, .q-text, .hint { overflow-wrap: break-word; }
     .opt-grid { grid-template-columns: 1fr; }
     .advice { padding: 14px; }
     .advice-grid { grid-template-columns: 1fr; }
@@ -417,8 +460,9 @@
   </footer>
 </main>
 
+<script src="../shared/bff-state.js"></script>
 <script>
-const STORAGE_KEY = 'resume-builder-v1';
+const STORAGE_KEY = 'resume-builder-v2';
 const EMAIL_CAPTURE_ENDPOINT = '';
 
 const ARCHETYPES = {
@@ -582,11 +626,66 @@ function saveForBuilder(key, q) {
   let state = {};
   try { state = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch(e) { state = {}; }
   state.step = 1;
+  state.startMode = 'template';
   state.archetype = key;
   state.archetypeOverride = key;
   state.quiz = Object.assign({}, state.quiz || {}, resumeQuizPatch(q));
   state.finderResult = { archetype: key, savedAt: new Date().toISOString() };
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  if (window.BFF) {
+    const roles = window.BFF.rolesForArchetype(key);
+    window.BFF.writeState({
+      archetype: key,
+      recommendedRoleId: roles[0] ? roles[0].id : '',
+      resumeStatus: 'not-started',
+      proofStatus: 'missing',
+      lastNextAction: 'build-resume-pack'
+    });
+  }
+}
+
+function recommendedRolesMarkup(key) {
+  if (!window.BFF) return '';
+  const roles = window.BFF.rolesForArchetype(key).slice(0, 3);
+  const cautions = window.BFF.notYetForArchetype ? window.BFF.notYetForArchetype(key).slice(0, 1) : [];
+  if (!roles.length) return '';
+  return `
+    <div class="advice-card full">
+      <div class="advice-label">Best-fit roles to try first</div>
+      <div class="role-grid">
+        ${roles.map(role => `
+          <div class="role-card">
+            <strong>${role.title} · ${window.BFF.levelLabel ? window.BFF.levelLabel(role.level) : role.level}</strong>
+            <span class="role-pill">${role.beginnerLabel || 'Role fit'} · ${role.beginnerScore || 3}/5 beginner score</span>
+            <span>${role.resumeAngle}</span>
+            <span>Why this fits: ${role.fitReason}</span>
+            <span>Beginner reality: ${role.beginnerReason || 'Start with one small visible sample before applying.'}</span>
+            <span>Work sample: ${role.proofSample}</span>
+            ${role.proofTemplate ? `<span>Proof template: ${role.proofTemplate.output}</span>` : ''}
+            <span>Avoid if: ${role.avoidIf}</span>
+            <span>Typical PH range: ${role.salaryRangePH}</span>
+            ${role.lessonUrl ? `<a href="${role.lessonUrl}">Start the next lesson</a>` : ''}
+            <a href="../resume-builder/index.html?archetype=${key}&role=${role.id}">Build this resume pack</a>
+          </div>
+        `).join('')}
+      </div>
+      ${cautions.length ? `
+        <div class="advice-label" style="margin-top:14px;">Not yet for this path</div>
+        <div class="role-grid">
+          ${cautions.map(item => `
+            <div class="role-card role-card-caution">
+              <strong>${item.role.title} · Not yet</strong>
+              <span class="role-pill">Postpone this role</span>
+              <span>Why: ${item.reason}</span>
+              <span>Build first: ${item.prerequisite}</span>
+              ${item.saferRole ? `<span>Safer first target: ${item.saferRole.title}</span>` : ''}
+              ${item.saferRole ? `<a href="../resume-builder/index.html?archetype=${key}&role=${item.saferRole.id}">Build the safer resume pack</a>` : ''}
+            </div>
+          `).join('')}
+        </div>
+      ` : ''}
+    </div>
+  `;
 }
 
 function answerNotes(q) {
@@ -636,6 +735,7 @@ function adviceMarkup(key, q) {
           <div class="advice-label">Based on your answers</div>
           <ul>${notes}</ul>
         </div>
+        ${recommendedRolesMarkup(key)}
         <div class="advice-card full">
           <div class="advice-label">What is true about this path</div>
           <p>${a.truth}</p>
@@ -701,7 +801,7 @@ function render() {
     <div class="result-tag">${a.tag}</div>
     <div class="result-detail">This is a starting point, not a life sentence.</div>
     <div class="actions">
-      <a class="btn btn-primary" href="../resume-builder/index.html">Build a resume with this archetype</a>
+      <a class="btn btn-primary" href="../resume-builder/index.html?archetype=${key}&start=archetype">Build a resume with this archetype</a>
       <a class="btn btn-secondary" href="../curriculum/index.html">See lessons for this path</a>
       <a class="btn btn-secondary" href="../jobs/index.html">Browse matching jobs</a>
     </div>

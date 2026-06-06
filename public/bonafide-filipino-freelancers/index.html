@@ -30,21 +30,23 @@
     --working-bg:#fceea1;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;scroll-padding-top:70px}
+  html{scroll-behavior:smooth;scroll-padding-top:70px;overflow-x:hidden}
   body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.6}
 
   .topnav{position:sticky;top:0;background:rgba(255,255,255,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);z-index:50}
-  .topnav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .topnav-inner{max-width:1200px;width:100%;min-width:0;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
   .logo{font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--primary);font-size:22px;letter-spacing:-.01em;text-decoration:none}
   .logo .sub{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-deep);display:block;margin-top:-3px;font-weight:600;font-family:'Inter',sans-serif}
-  .nav-links{display:flex;gap:22px;font-size:14px;flex-wrap:wrap;align-items:center}
+  .nav-links{display:flex;gap:22px;font-size:14px;flex-wrap:wrap;align-items:center;min-width:0}
   .nav-links a{color:var(--text-soft);text-decoration:none;transition:color .15s;white-space:nowrap}
   .nav-links a:hover{color:var(--primary)}
   .nav-links a[aria-current="page"]{color:var(--primary);font-weight:600;border-bottom:2px solid var(--accent);padding-bottom:2px}
   .nav-links a.cta{background:var(--primary);color:#fff;padding:8px 16px;border-radius:6px;font-weight:500}
   .nav-links a.cta:hover{background:var(--primary-deep);color:#fff}
   @media (max-width:768px){
-    .nav-links{display:flex;overflow-x:auto;gap:14px;font-size:13px;-webkit-overflow-scrolling:touch;padding-bottom:4px}
+    .topnav-inner{align-items:flex-start;flex-direction:column;gap:10px;padding:12px 18px}
+    .nav-links{display:flex;width:100%;max-width:100%;overflow-x:visible;flex-wrap:wrap;gap:14px;font-size:13px;padding-bottom:4px}
+    .nav-links a{white-space:normal}
     .nav-links::-webkit-scrollbar{display:none}
     .nav-links a.cta{flex-shrink:0}
   }
@@ -55,7 +57,7 @@
   .narrow{max-width:780px;margin:0 auto}
   .section-label{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--accent-deep);font-weight:700;margin-bottom:14px}
 
-  h1.hero-h{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(36px,6vw,62px);line-height:1.05;letter-spacing:-.02em;color:var(--primary);margin-bottom:20px}
+  h1.hero-h{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(36px,6vw,62px);line-height:1.05;letter-spacing:-.02em;color:var(--primary);margin-bottom:20px;overflow-wrap:break-word}
   h2.section-h{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(28px,4.5vw,42px);line-height:1.12;color:var(--primary);margin-bottom:14px;letter-spacing:-.01em}
   h3{font-family:'Cormorant Garamond',serif;font-weight:600;color:var(--primary);font-size:22px;margin-bottom:8px}
   p.lead{font-size:18px;color:var(--text-soft);line-height:1.55;max-width:680px;margin-bottom:24px}
@@ -71,6 +73,7 @@
     border:none;padding:13px 24px;border-radius:8px;font-size:15px;font-weight:500;
     font-family:inherit;cursor:pointer;text-decoration:none;
     display:inline-flex;align-items:center;gap:8px;transition:all .15s;
+    max-width:100%;
   }
   .btn-primary{background:var(--primary);color:#fff}
   .btn-primary:hover{background:var(--primary-deep);transform:translateY(-1px)}
@@ -84,6 +87,18 @@
     padding:24px 20px;background:var(--surface);border:1px solid var(--border);border-radius:14px;
   }
   @media (max-width:680px){.stats-strip{grid-template-columns:1fr 1fr}}
+  @media (max-width:560px){
+    body{width:100%;max-width:100vw;overflow-x:hidden}
+    section{padding-left:18px;padding-right:18px}
+    .topnav,.mobile-rescue,.journey-status,section,footer{width:100%;max-width:100vw;overflow-x:hidden}
+    .wrap,.narrow{width:100%;max-width:100%;min-width:0}
+    .mobile-rescue a{overflow-wrap:anywhere}
+    #hero{padding-top:70px}
+    h1.hero-h{font-size:clamp(32px,11vw,42px)}
+    p.lead{overflow-wrap:break-word}
+    .hero-cta{display:grid;grid-template-columns:1fr}
+    .hero-cta .btn{width:100%;justify-content:center;text-align:center}
+  }
   .stat{text-align:center}
   .stat .num{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--accent);font-weight:600;line-height:1.1;display:block}
   .stat .lbl{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-soft);font-weight:600;margin-top:4px;display:block;line-height:1.3}
@@ -136,6 +151,18 @@
     }
     .mobile-rescue a{color:var(--primary);font-weight:600;text-decoration:underline}
   }
+
+  .journey-status{
+    display:none;
+    background:#fffaf4;
+    border-bottom:1px solid var(--border);
+    color:var(--primary-deep);
+    font-size:13px;
+    padding:12px 20px;
+    text-align:center;
+  }
+  .journey-status.show{display:block}
+  .journey-status a{color:var(--primary);font-weight:700;text-decoration:none;border-bottom:1px solid var(--primary)}
 
   /* HOW IT WORKS */
   #how{background:var(--bg)}
@@ -238,7 +265,7 @@
     <div class="nav-links">
       <a href="../">← Writings by Lala</a>
       <a href="./index.html" aria-current="page">Home</a>
-      <a href="blueprint/index.html">Bonafide Filipino Freelancers Blueprint</a>
+      <a href="blueprint/index.html">Blueprint</a>
       <a href="events/index.html">Events</a>
       <a href="#stories">Stories</a>
       <a href="archetype/index.html">Archetype Finder</a>
@@ -252,16 +279,17 @@
 <div class="mobile-rescue">
   Not sure where to start? <a href="archetype/index.html">Identify your archetype →</a>
 </div>
+<div class="journey-status" id="journeyStatus"></div>
 
 <section id="hero">
   <div class="wrap narrow">
     <span class="hero-tag">Free · Filipino-built · Always</span>
     <h1 class="hero-h">Bonafide Filipino Freelancers Open University</h1>
-    <p class="lead">A free remote-work training home for the Filipino freelancer who wants to figure out remote work without pretending to be someone she's not, without leaving her kids, and without giving anyone her credit card. Pick the door that fits where you are today.</p>
+    <p class="lead">A free remote-work training home for the Filipino freelancer who wants to figure out remote work without pretending to be someone she's not, without leaving her kids, and without giving anyone her credit card. Find your path, choose a realistic role, learn what is missing, build your resume pack, then apply with proof.</p>
     <div class="hero-cta">
-      <a href="#doors" class="btn btn-primary">Pick a Door ↓</a>
-      <a href="archetype/index.html" class="btn btn-ghost">Not sure? Find your archetype →</a>
-      <a href="bff-blueprint-printable-guide.pdf" class="btn btn-ghost">Print the Bonafide Filipino Freelancers Blueprint Guide</a>
+      <a href="archetype/index.html" class="btn btn-primary">Find Your Archetype →</a>
+      <a href="#doors" class="btn btn-ghost">Choose Your Starting Point ↓</a>
+      <a href="bff-blueprint-printable-guide.pdf" class="btn btn-ghost">Print the BFF Blueprint Guide</a>
     </div>
     <div class="stats-strip" id="statsStrip">
       <div class="stat"><span class="num" id="stat-lessons">…</span><span class="lbl">Lessons</span></div>
@@ -275,8 +303,8 @@
 <section id="doors">
   <div class="wrap">
     <div class="section-label" style="text-align:center">Four Doors · One Goal</div>
-    <h2 class="section-h" style="text-align:center;max-width:780px;margin:0 auto 14px">Pick the door that fits where you are today.</h2>
-    <p class="lead" style="text-align:center;margin:0 auto 8px">Each door takes you to a different BFF tool. They all share the same lessons underneath, so you can switch doors anytime.</p>
+    <h2 class="section-h" style="text-align:center;max-width:780px;margin:0 auto 14px">Choose the starting point that fits today.</h2>
+    <p class="lead" style="text-align:center;margin:0 auto 8px">Each door takes you to a different BFF tool. They now share the same path context, so your archetype and target role can carry into the next step.</p>
 
     <div class="doors-grid">
       <a href="blueprint/index.html" class="door door-1">
@@ -300,7 +328,7 @@
         <span class="door-q">Door 3 · Resume Help</span>
         <h3>"I need help to build my resume."</h3>
         <p>A 7-step wizard with role-keyed bullet libraries, archetype-aware soft-skill groups, a detailed tool inventory, and an embedded ATS-friendly renderer. Walk through with what you've got and graduate with a real, printable resume.</p>
-        <span class="door-cta">Build my resume <span class="arrow">→</span></span>
+        <span class="door-cta">Build my resume pack <span class="arrow">→</span></span>
       </a>
 
       <a href="curriculum/index.html" class="door door-4">
@@ -406,9 +434,9 @@
 
 <section id="flow">
   <div class="wrap">
-    <div class="section-label" style="text-align:center">The Typical Journey</div>
-    <h2 class="section-h" style="text-align:center;margin-bottom:14px">From "I want to try" to your first paycheck.</h2>
-    <p class="lead" style="text-align:center;margin:0 auto">Most BFF members ladder through these five steps. You can skip steps if you already know where you're going.</p>
+    <div class="section-label" style="text-align:center">The Transition System</div>
+    <h2 class="section-h" style="text-align:center;margin-bottom:14px">From "I want to try" to prepared applicant.</h2>
+    <p class="lead" style="text-align:center;margin:0 auto">Most BFF members ladder through these five steps. You can skip steps if you already know where you are going.</p>
 
     <div class="flow-steps">
       <div class="flow-step">
@@ -419,26 +447,26 @@
       </div>
       <div class="flow-step">
         <span class="n">Step 2</span>
-        <h4>See the Blueprint</h4>
-        <p>The 4-stage map: see where your archetype slots into the bigger journey.</p>
-        <a class="link" href="blueprint/index.html">Open Blueprint →</a>
+        <h4>Pick a realistic role</h4>
+        <p>Use your archetype to shortlist roles you can honestly chase first.</p>
+        <a class="link" href="resume-builder/index.html">See role matches →</a>
       </div>
       <div class="flow-step">
         <span class="n">Step 3</span>
-        <h4>Pick your skills</h4>
-        <p>Check off skills in My Curriculum to see which jobs and lessons match.</p>
+        <h4>Learn what is missing</h4>
+        <p>Use the Curriculum to close the specific skill gap for your role.</p>
         <a class="link" href="curriculum/index.html">Open Curriculum →</a>
       </div>
       <div class="flow-step">
         <span class="n">Step 4</span>
-        <h4>Finish your resume</h4>
-        <p>Return to the Resume Builder, walk the 7 steps, and print an ATS-friendly resume.</p>
+        <h4>Build your resume pack</h4>
+        <p>Generate an editable resume draft, plain-text copy, and proof direction.</p>
         <a class="link" href="resume-builder/index.html">Open builder →</a>
       </div>
       <div class="flow-step">
         <span class="n">Step 5</span>
-        <h4>Apply for real jobs</h4>
-        <p>Take your new resume to the live job board and start applying.</p>
+        <h4>Apply with proof</h4>
+        <p>Take your resume and work sample plan to real listings.</p>
         <a class="link" href="jobs/index.html">Open Job Board →</a>
       </div>
     </div>
@@ -455,7 +483,7 @@
 
 <section id="final">
   <div class="wrap narrow">
-    <div class="section-label">Pick a Door</div>
+    <div class="section-label">Choose Your Starting Point</div>
     <h2 class="section-h">There's no wrong way in.</h2>
     <p class="lead">The Blueprint, the Archetype Finder, the Curriculum, the Resume Builder: all four read from the same lessons. Nothing here is tracked, so there's nothing to lose by clicking around and switching doors anytime.</p>
     <div class="final-doors">
@@ -479,6 +507,7 @@
   <div class="credit">BFF Open University</div>
 </footer>
 
+<script src="shared/bff-state.js"></script>
 <script src="lessons.js"></script>
 <script>
 /* Populate live stats from registry */
@@ -487,6 +516,20 @@ window.addEventListener("DOMContentLoaded",()=>{
   const lessons = Object.values(window.SWAHG_LESSONS.lessons);
   const liveCount = lessons.filter(l => l.status === "live" || l.status === "built").length;
   document.getElementById("stat-lessons").textContent = liveCount;
+
+  if (window.BFF) {
+    const saved = window.BFF.readState();
+    const status = document.getElementById("journeyStatus");
+    if (saved.archetype) {
+      const roles = window.BFF.rolesForArchetype(saved.archetype);
+      const savedRole = window.BFF.roleById(saved.recommendedRoleId || saved.targetRoleId || "");
+      const role = savedRole || roles[0];
+      const label = window.BFF.archetypeLabel(saved.archetype) || saved.archetype.replace(/-/g, " ");
+      const roleCopy = role ? ` Recommended next role: ${role.title}.` : "";
+      status.innerHTML = `Welcome back. Your saved path is <strong>${label}</strong>.${roleCopy} <a href="resume-builder/index.html${role ? `?archetype=${saved.archetype}&role=${role.id}` : ""}">Continue your resume pack</a>.`;
+      status.classList.add("show");
+    }
+  }
 });
 </script>
 </body>
