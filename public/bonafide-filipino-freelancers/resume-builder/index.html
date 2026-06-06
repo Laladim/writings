@@ -2707,10 +2707,10 @@ function renderStarterWorkbench() {
 
         ${mode === 'job' ? `
           <label class="field">
-            <span class="lbl">Choose a real target job from the BFF Job Board</span>
+            <span class="lbl">Choose your target job from the BFF Job Board</span>
             <span class="hint">${jobBoardJobs.length ? `${jobBoardJobs.length} current jobs loaded.` : 'Loading current jobs.'}</span>
             <select id="liveJobSelect">
-              <option value="">Choose a current job</option>
+              <option value="">Choose your target job</option>
               ${jobs.map(j => `<option value="${esc(j.id)}" ${state.target.selectedJobId===j.id?'selected':''}>${esc(j.title)} · ${esc(j.company)} · ${esc(j.archetype_primary || 'Generalist Admin')}</option>`).join('')}
             </select>
           </label>
@@ -2986,10 +2986,10 @@ function renderStartChooser() {
         <div class="q-text">2. Pick the job this resume should chase.</div>
         <div class="job-seed-grid">
           <label class="field">
-            <span class="lbl">BFF Job Board role</span>
+            <span class="lbl">Choose your target job</span>
             <span class="hint">${jobBoardJobs.length ? `${jobBoardJobs.length} current jobs loaded. Pick one to prefill target role, keywords, and resume angle.` : 'Loading current jobs from the BFF Job Board.'}</span>
             <select id="liveJobSelect">
-              <option value="">Choose a current job</option>
+              <option value="">Choose your target job</option>
               ${jobs.map(j => `<option value="${esc(j.id)}" ${state.target.selectedJobId===j.id?'selected':''}>${esc(j.title)} · ${esc(j.company)} · ${esc(j.archetype_primary || 'Generalist Admin')}</option>`).join('')}
             </select>
           </label>
