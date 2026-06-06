@@ -141,13 +141,13 @@ window.SWAHG_LESSONS = {
     },
     "master-tools-with-ai": {
       title: "How to Master Tools Using AI",
-      stage: "prep",
+      stage: "working",
       status: "live",
       url: "lesson-master-tools-with-ai/",
       closes_va_gaps: ["pm-tools"],
       ladders_to_roles: ["customer-service","smm","account-manager","sdr","admin","content","va"],
       prerequisites: [],
-      next_lessons: ["trello-love","google-sites-portfolio"],
+      next_lessons: ["google-sites-portfolio","resume-builder"],
       why_this_lesson: "The One-Tool Proof Loop: free AI as practice coach to close the hire gap (5.3 vs 3.5 tools) one proven client task at a time. Fresh Starter core method lesson.",
       estimated_minutes: 30,
       tier: 2,
@@ -949,7 +949,7 @@ window.SWAHG_LESSONS = {
     /* TOP ROW — Preparation */
     "prep-1": { pdf_label: "Choosing your Computer",      stage: "prep",    lessons: ["best-laptop"] },
     "prep-2": { pdf_label: "Creating Work Emails",        stage: "prep",    lessons: ["email-address-is-gold","email-marketing-for-vas"] },
-    "prep-3": { pdf_label: "Setting up Online Tools",     stage: "prep",    lessons: ["browser-expert-secrets","storage-expert-secrets","master-tools-with-ai"] },
+    "prep-3": { pdf_label: "Setting up Online Tools",     stage: "prep",    lessons: ["browser-expert-secrets","storage-expert-secrets"] },
     "prep-4": { pdf_label: "Organizing Work Flow",        stage: "prep",    lessons: ["trello-love"] },
     "prep-5": { pdf_label: "Setting up Work Accessories", stage: "prep",    lessons: ["work-accessories"] },
 
@@ -962,7 +962,7 @@ window.SWAHG_LESSONS = {
 
     /* TOP ROW — Launch */
     "launch-1":{ pdf_label: "Setting Up Accounts",        stage: "launch",  lessons: ["online-jobs-account","freelancing-platforms"] },
-    "launch-2":{ pdf_label: "Creating Powerful Resume",   stage: "launch",  lessons: ["resume-builder","example-portfolio-zero-work-experience","example-portfolio-bpo-to-virtual-assistant"] },
+    "launch-2":{ pdf_label: "Creating Powerful Resume",   stage: "launch",  lessons: ["resume-builder","google-sites-portfolio","bpo-to-va-portfolio","office-admin-to-va-portfolio","example-portfolio-zero-work-experience","example-portfolio-bpo-to-virtual-assistant"] },
     "launch-3":{ pdf_label: "Job Hunting",                stage: "launch",  lessons: ["find-your-path-quiz","freelancing-platforms","job-board"] },
     "launch-4":{ pdf_label: "Join Groups and Forums",     stage: "launch",  lessons: ["groups-and-forums"] },
     "launch-5":{ pdf_label: "Creating your Portfolio",    stage: "launch",  lessons: ["personal-branding","online-presence","google-sites-portfolio","bpo-to-va-portfolio","office-admin-to-va-portfolio"] },
@@ -970,7 +970,7 @@ window.SWAHG_LESSONS = {
     /* TOP ROW — Working on it! */
     "work-1":  { pdf_label: "Interviews",                 stage: "working", lessons: ["interviews-prep","freelancing-journey-lesson-5"] },
     "work-2":  { pdf_label: "Internship",                 stage: "working", lessons: ["internship-options"] },
-    "work-3":  { pdf_label: "Skill Practice",             stage: "working", lessons: ["google-sites-portfolio","bpo-to-va-portfolio","office-admin-to-va-portfolio"] },
+    "work-3":  { pdf_label: "Skill Practice",             stage: "working", lessons: ["master-tools-with-ai"] },
     "work-4":  { pdf_label: "Creating Proposal",          stage: "working", lessons: ["common-mistakes"] },
     "work-5":  { pdf_label: "Bidding",                    stage: "working", lessons: ["getting-hired-fast","freelancing-platforms","common-mistakes"] },
 
