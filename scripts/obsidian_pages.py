@@ -208,6 +208,10 @@ def html_export_path(source_path: Path) -> Path:
         group = "SWAHG Lessons"
     elif page_slug.startswith("swahg"):
         group = "SWAHG Pages"
+    elif page_slug.startswith("bonafide-filipino-freelancers-lesson-"):
+        group = "BFF Lessons"
+    elif page_slug.startswith("bonafide-filipino-freelancers"):
+        group = "BFF Pages"
     else:
         group = "Other Pages"
     return HTML_EXPORT_ROOT / group / f"{page_slug}.md"
