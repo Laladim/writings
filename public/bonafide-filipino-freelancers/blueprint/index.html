@@ -535,6 +535,13 @@ function isLocalUrl(url){
   return url && !/^https?:\/\//i.test(url);
 }
 
+function lessonHref(url){
+  if(!url) return "";
+  if(!isLocalUrl(url)) return url;
+  if(url.startsWith("/")) return url;
+  return `../${url.replace(/^\.\//, "")}`;
+}
+
 function lessonStatusBadge(lesson){
   const label = STATUS_LABEL[lesson.status] || "Live";
   const color = STATUS_COLOR[lesson.status] || "var(--primary)";
@@ -582,8 +589,9 @@ function openModal(boxKey){
       const mins = l.estimated_minutes ? `${l.estimated_minutes} min` : "";
       const tier = l.tier ? `Tier ${l.tier}` : "";
       const metaLine = [mins, tier, l.format].filter(Boolean).join(" · ");
+      const href = lessonHref(l.url);
       const urlBtn = l.url
-        ? `<a href="${l.url}" target="${isLocalUrl(l.url) ? "_self" : "_blank"}" rel="noopener" style="color:var(--primary);font-size:13px;text-decoration:underline">Open →</a>`
+        ? `<a href="${href}" target="${isLocalUrl(l.url) ? "_self" : "_blank"}" rel="noopener" style="color:var(--primary);font-size:13px;text-decoration:underline">Open →</a>`
         : `<span style="color:var(--text-soft);font-size:13px;font-style:italic">Not yet published</span>`;
       html += `
         <div style="background:#faf7f5;border:1px solid var(--border);border-radius:8px;padding:12px 14px">
@@ -610,7 +618,7 @@ function openModal(boxKey){
   const primaryLesson = resolvedLessons.find(l => l.url) || resolvedLessons[0];
   const link = document.getElementById("modalLink");
   if(primaryLesson && primaryLesson.url){
-    link.href = primaryLesson.url;
+    link.href = lessonHref(primaryLesson.url);
     link.style.display = "inline-flex";
     link.target = isLocalUrl(primaryLesson.url) ? "_self" : "_blank";
     link.rel = isLocalUrl(primaryLesson.url) ? "" : "noopener";
