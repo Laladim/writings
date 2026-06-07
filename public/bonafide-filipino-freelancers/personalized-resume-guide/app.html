@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Personalized Resume Guide · Bonafide Filipino Freelancers</title>
+<meta name="description" content="Create a personalized BFF resume and portfolio guide with role direction, resume copy, proof project steps, application messages, and live BFF links.">
+<link rel="icon" type="image/png" href="../../brand/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --plum: #56466f;
+    --plum-deep: #3f3155;
+    --plum-soft: #eee8f4;
+    --brass: #bd884f;
+    --brass-deep: #8a6137;
+    --fern: #58735f;
+    --ink: #302d31;
+    --muted: #6d6670;
+    --paper: #fbf8f3;
+    --surface: #ffffff;
+    --wash: #f1e9df;
+    --line: #ded4c8;
+    --danger: #a04c45;
+    --danger-soft: #f7e4e1;
+    --ok: #51745d;
+    --ok-soft: #e5efe5;
+    --shadow: 0 22px 55px rgba(64, 49, 39, .10);
+    --serif: "Cormorant Garamond", Georgia, serif;
+    --sans: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background:
+      linear-gradient(90deg, rgba(86, 70, 111, .055) 1px, transparent 1px) 0 0 / 48px 48px,
+      linear-gradient(0deg, rgba(189, 136, 79, .045) 1px, transparent 1px) 0 0 / 48px 48px,
+      var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; }
+  button, input, select, textarea { font: inherit; }
+  button { cursor: pointer; }
+
+  .topnav {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: rgba(255, 255, 255, .95);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(10px);
+  }
+  .topnav-inner {
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 13px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+  }
+  .logo {
+    color: var(--plum);
+    font-family: var(--serif);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+  }
+  .logo .sub {
+    display: block;
+    margin-top: 2px;
+    color: var(--brass-deep);
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .nav-links a {
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .nav-links a:hover,
+  .nav-links a[aria-current="page"] {
+    color: var(--plum);
+  }
+  .nav-links a[aria-current="page"] {
+    border-bottom: 2px solid var(--brass);
+    font-weight: 700;
+    padding-bottom: 2px;
+  }
+
+  .page {
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 30px 22px 72px;
+  }
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(330px, .85fr);
+    gap: 26px;
+    align-items: stretch;
+    padding: 34px 0 24px;
+  }
+  .hero-main,
+  .hero-aside,
+  .panel,
+  .guide-shell,
+  .admin-shell {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, .80);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .8) inset;
+  }
+  .hero-main {
+    padding: clamp(28px, 5vw, 54px);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-main::after {
+    content: "";
+    position: absolute;
+    inset: auto -20px -60px auto;
+    width: 240px;
+    height: 240px;
+    border: 1px solid rgba(189, 136, 79, .38);
+    border-radius: 50%;
+  }
+  .hero-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    color: var(--brass-deep);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+  .hero-label::before {
+    content: "";
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--fern);
+  }
+  h1, h2, h3 { margin: 0; letter-spacing: 0; }
+  h1 {
+    max-width: 760px;
+    color: var(--plum-deep);
+    font-family: var(--serif);
+    font-size: clamp(40px, 6.5vw, 74px);
+    font-weight: 700;
+    line-height: .96;
+  }
+  .lede {
+    max-width: 720px;
+    margin: 20px 0 0;
+    color: var(--muted);
+    font-size: 19px;
+  }
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+  }
+  .hero-aside {
+    display: grid;
+    align-content: space-between;
+    gap: 18px;
+    padding: 24px;
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .hero-aside h2 {
+    color: var(--paper);
+    font-family: var(--serif);
+    font-size: 30px;
+    line-height: 1.05;
+  }
+  .hero-aside p {
+    margin: 10px 0 0;
+    color: #e8dfd4;
+  }
+  .status-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .status-chip {
+    min-height: 78px;
+    border: 1px solid rgba(255, 255, 255, .18);
+    border-radius: 8px;
+    padding: 12px;
+  }
+  .status-chip strong {
+    display: block;
+    color: #fff2d8;
+    font-size: 18px;
+  }
+  .status-chip span {
+    display: block;
+    color: #d5cbbd;
+    font-size: 12px;
+  }
+
+  .btn {
+    min-height: 42px;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    padding: 10px 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--ink);
+    font-weight: 800;
+    text-decoration: none;
+    transition: transform .16s ease, background .16s ease, border-color .16s ease;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-primary {
+    background: var(--plum);
+    color: #fff;
+  }
+  .btn-primary:hover { background: var(--plum-deep); }
+  .btn-secondary {
+    border-color: var(--line);
+    background: #fff;
+    color: var(--plum-deep);
+  }
+  .btn-gold {
+    background: var(--brass);
+    color: #fff;
+  }
+  .btn-plain {
+    background: transparent;
+    border-color: var(--line);
+    color: var(--muted);
+  }
+
+  .workspace {
+    display: grid;
+    grid-template-columns: minmax(300px, 420px) minmax(0, 1fr);
+    gap: 18px;
+    align-items: start;
+  }
+  .panel {
+    position: sticky;
+    top: 78px;
+    padding: 20px;
+  }
+  .panel h2,
+  .guide-shell h2,
+  .admin-shell h2 {
+    color: var(--plum-deep);
+    font-family: var(--serif);
+    font-size: 31px;
+    line-height: 1.06;
+  }
+  .panel p.help,
+  .guide-shell p.help,
+  .admin-shell p.help {
+    margin: 8px 0 16px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .progress {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    margin: 0 0 16px;
+  }
+  .bar {
+    height: 6px;
+    border-radius: 999px;
+    background: var(--line);
+  }
+  .bar.active { background: var(--brass); }
+  .step {
+    display: none;
+  }
+  .step.active {
+    display: block;
+  }
+  .step-kicker {
+    margin: 0 0 10px;
+    color: var(--brass-deep);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+  .field {
+    display: grid;
+    gap: 5px;
+    margin-bottom: 13px;
+  }
+  .field span:first-child {
+    color: var(--ink);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  .hint {
+    color: var(--muted);
+    font-size: 12px;
+  }
+  input, select, textarea {
+    width: 100%;
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    background: #fffdf9;
+    color: var(--ink);
+    padding: 9px 10px;
+  }
+  textarea {
+    min-height: 92px;
+    resize: vertical;
+  }
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--plum);
+    box-shadow: 0 0 0 3px rgba(86, 70, 111, .12);
+    outline: none;
+  }
+  .two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .check-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .check-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    background: #fffdf9;
+    padding: 9px 10px;
+    color: var(--ink);
+    font-size: 14px;
+  }
+  .check-card input {
+    width: auto;
+    margin-top: 4px;
+    accent-color: var(--plum);
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 16px;
+  }
+  .error {
+    display: none;
+    margin: 0 0 13px;
+    border: 1px solid var(--danger);
+    border-radius: 7px;
+    background: var(--danger-soft);
+    color: #6e2e29;
+    padding: 10px 12px;
+    font-weight: 700;
+  }
+  .error.show { display: block; }
+
+  .guide-shell {
+    min-height: 740px;
+    padding: 0;
+    overflow: hidden;
+  }
+  .empty-guide {
+    min-height: 740px;
+    display: grid;
+    place-items: center;
+    padding: 40px;
+    text-align: center;
+  }
+  .empty-guide img {
+    width: 76px;
+    height: 76px;
+    object-fit: contain;
+    margin-bottom: 16px;
+  }
+  .empty-guide h2 {
+    font-size: 34px;
+  }
+  .empty-guide p {
+    max-width: 520px;
+    margin: 10px auto 0;
+    color: var(--muted);
+  }
+  .guide-doc {
+    background: #fff;
+  }
+  .guide-cover {
+    padding: 38px 38px 26px;
+    color: #fff;
+    background:
+      linear-gradient(135deg, rgba(86, 70, 111, .98), rgba(63, 49, 85, .96)),
+      var(--plum);
+  }
+  .guide-cover .doc-label {
+    color: #f6d9ad;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+  }
+  .guide-cover h2 {
+    max-width: 720px;
+    margin-top: 12px;
+    color: #fff;
+    font-size: clamp(34px, 5vw, 56px);
+  }
+  .guide-cover p {
+    max-width: 720px;
+    margin: 12px 0 0;
+    color: #f2e8df;
+  }
+  .guide-meta {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 22px;
+  }
+  .guide-meta div {
+    border: 1px solid rgba(255, 255, 255, .20);
+    border-radius: 7px;
+    padding: 10px;
+  }
+  .guide-meta span {
+    display: block;
+    color: #dacdbf;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  .guide-meta strong {
+    display: block;
+    margin-top: 3px;
+    color: #fff6e7;
+    font-size: 14px;
+  }
+  .guide-body {
+    padding: 28px 38px 40px;
+  }
+  .guide-section {
+    padding: 23px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .guide-section:last-child {
+    border-bottom: 0;
+  }
+  .guide-section h3 {
+    color: var(--plum-deep);
+    font-family: var(--serif);
+    font-size: 28px;
+    line-height: 1.08;
+  }
+  .guide-section p,
+  .guide-section li {
+    color: var(--ink);
+  }
+  .guide-section ul,
+  .guide-section ol {
+    margin: 10px 0 0;
+    padding-left: 22px;
+  }
+  .guide-section li + li {
+    margin-top: 5px;
+  }
+  .copy-box {
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--brass);
+    border-radius: 7px;
+    background: #fffaf2;
+    margin-top: 12px;
+    padding: 13px;
+  }
+  .copy-box strong {
+    color: var(--plum-deep);
+  }
+  .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 12px;
+  }
+  .resource-card {
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    padding: 12px;
+    background: #fffdf9;
+  }
+  .resource-card a {
+    color: var(--plum-deep);
+    font-weight: 900;
+    text-decoration: none;
+  }
+  .resource-card a:hover { text-decoration: underline; }
+  .resource-card small {
+    display: block;
+    margin-top: 3px;
+    color: var(--muted);
+  }
+  .privacy-note {
+    border: 1px solid var(--ok);
+    border-radius: 7px;
+    background: var(--ok-soft);
+    color: #28412f;
+    padding: 10px 12px;
+    margin-top: 14px;
+    font-size: 14px;
+  }
+
+  .admin-shell {
+    margin-top: 18px;
+    padding: 20px;
+  }
+  .admin-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 16px 0;
+  }
+  .admin-card {
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    background: #fffdf9;
+    padding: 12px;
+  }
+  .admin-card strong {
+    display: block;
+    color: var(--plum-deep);
+    font-size: 22px;
+    line-height: 1;
+  }
+  .admin-card span {
+    display: block;
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  .queue-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .queue-table th,
+  .queue-table td {
+    border-top: 1px solid var(--line);
+    padding: 9px 7px;
+    text-align: left;
+    vertical-align: top;
+  }
+  .queue-table th {
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 999px;
+    padding: 3px 8px;
+    background: var(--plum-soft);
+    color: var(--plum-deep);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+  .badge.ok {
+    background: var(--ok-soft);
+    color: #294d34;
+  }
+  .badge.warn {
+    background: #fff0d8;
+    color: #69461d;
+  }
+
+  .hidden-honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  footer {
+    max-width: 1220px;
+    margin: 28px auto 0;
+    padding: 0 22px 34px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  @media (max-width: 980px) {
+    .hero,
+    .workspace {
+      grid-template-columns: 1fr;
+    }
+    .panel {
+      position: static;
+    }
+  }
+  @media (max-width: 720px) {
+    .topnav-inner {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 10px;
+      padding: 12px 18px;
+    }
+    .nav-links {
+      gap: 12px;
+      font-size: 13px;
+    }
+    .page {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    .hero-main,
+    .hero-aside,
+    .panel,
+    .admin-shell {
+      padding: 18px;
+    }
+    .two,
+    .check-grid,
+    .resource-grid,
+    .admin-grid,
+    .guide-meta,
+    .status-grid {
+      grid-template-columns: 1fr;
+    }
+    .guide-cover,
+    .guide-body {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .queue-table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  }
+
+  @media print {
+    body { background: #fff; }
+    .topnav, .hero, .panel, .admin-shell, footer, .doc-actions { display: none !important; }
+    .page { max-width: none; padding: 0; }
+    .workspace { display: block; }
+    .guide-shell { border: 0; box-shadow: none; }
+    .guide-cover { color: #111; background: #fff; border-bottom: 2px solid #111; }
+    .guide-cover h2, .guide-cover p, .guide-cover .doc-label, .guide-meta strong, .guide-meta span { color: #111; }
+    .guide-meta div { border-color: #ddd; }
+  }
+</style>
+</head>
+<body>
+<nav class="topnav">
+  <div class="topnav-inner">
+    <a href="../index.html" class="logo">BFF<span class="sub">Open University</span></a>
+    <div class="nav-links">
+      <a href="../../">Writings by Lala</a>
+      <a href="../index.html">Home</a>
+      <a href="../blueprint/index.html">Blueprint</a>
+      <a href="../archetype/index.html">Archetype Finder</a>
+      <a href="../resume-builder/index.html">Resume Builder</a>
+      <a href="./app.html" aria-current="page">Personalized Guide</a>
+      <a href="../curriculum/index.html">My Curriculum</a>
+      <a href="../jobs/index.html">Job Board</a>
+    </div>
+  </div>
+</nav>
+
+<main class="page">
+  <section class="hero" aria-labelledby="page-title">
+    <div class="hero-main">
+      <div class="hero-label">Personalized guide</div>
+      <h1 id="page-title">Create your personalized BFF resume and portfolio guide.</h1>
+      <p class="lede">Answer one guided intake. Get your best-fit role, resume direction, portfolio proof project, application copy, and next BFF lessons in one clear guide.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#intake">Start the intake</a>
+        <a class="btn btn-secondary" href="../resume-builder/index.html">Open resume builder</a>
+      </div>
+    </div>
+    <aside class="hero-aside">
+      <div>
+        <h2>Know what to do next.</h2>
+        <p>This guide turns your background into a practical next step, so you are not guessing which role, proof project, or lesson to start with.</p>
+      </div>
+      <div class="status-grid" aria-label="Guide contents">
+        <div class="status-chip"><strong>Best-fit role</strong><span>Based on your answers</span></div>
+        <div class="status-chip"><strong>Resume focus</strong><span>What to emphasize</span></div>
+        <div class="status-chip"><strong>Proof project</strong><span>What to build first</span></div>
+        <div class="status-chip"><strong>Next lessons</strong><span>Where to continue</span></div>
+      </div>
+    </aside>
+  </section>
+
+  <section class="workspace" id="intake">
+    <form class="panel" id="guideForm" novalidate>
+      <div class="progress" aria-hidden="true">
+        <span class="bar active" id="bar1"></span>
+        <span class="bar" id="bar2"></span>
+        <span class="bar" id="bar3"></span>
+        <span class="bar" id="bar4"></span>
+      </div>
+      <div class="error" id="formError" role="alert"></div>
+
+      <section class="step active" data-step="1">
+        <p class="step-kicker">Step 1 of 4</p>
+        <h2>Your starting point</h2>
+        <p class="help">Use the name and email you normally use for applications.</p>
+        <div class="two">
+          <label class="field">
+            <span>Name</span>
+            <input id="name" name="name" type="text" autocomplete="name" required placeholder="Maria Santos">
+          </label>
+          <label class="field">
+            <span>Email</span>
+            <input id="email" name="email" type="email" autocomplete="email" required placeholder="maria@example.com">
+          </label>
+        </div>
+        <label class="field">
+          <span>Current situation</span>
+          <select id="situation" name="situation" required>
+            <option value="">Choose one</option>
+            <option>Fresh starter</option>
+            <option>BPO or customer support worker</option>
+            <option>Corporate or office transitioner</option>
+            <option>Existing freelancer</option>
+            <option>Creative or social media learner</option>
+            <option>Business owner moving to remote work</option>
+          </select>
+        </label>
+        <div class="hidden-honeypot" aria-hidden="true">
+          <label>Website <input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></label>
+        </div>
+        <div class="actions">
+          <button class="btn btn-primary" type="button" onclick="nextStep()">Continue</button>
+        </div>
+      </section>
+
+      <section class="step" data-step="2">
+        <p class="step-kicker">Step 2 of 4</p>
+        <h2>Background and tools</h2>
+        <p class="help">The guide uses these facts only. It will not invent employers, metrics, dates, certifications, or outcomes.</p>
+        <label class="field">
+          <span>Work history summary</span>
+          <span class="hint">Write 2 to 5 lines about actual jobs, school, volunteer work, business, or freelance projects.</span>
+          <textarea id="workHistory" required placeholder="Example: 4 years in BPO customer support, handled chat and email tickets, used Zendesk and Google Sheets."></textarea>
+        </label>
+        <label class="field">
+          <span>Tools you can defend</span>
+          <span class="hint">Choose tools you can explain in an interview.</span>
+        </label>
+        <div class="check-grid" id="toolsGrid"></div>
+        <div class="two">
+          <label class="field">
+            <span>English confidence</span>
+            <select id="english" required>
+              <option value="">Choose one</option>
+              <option value="low">Still building confidence</option>
+              <option value="medium">Can handle written work with review</option>
+              <option value="high">Comfortable with clients</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Application timeline</span>
+            <select id="timeline" required>
+              <option value="">Choose one</option>
+              <option>Within 7 days</option>
+              <option>Within 2 to 4 weeks</option>
+              <option>Within 1 to 3 months</option>
+              <option>Still preparing</option>
+            </select>
+          </label>
+        </div>
+        <div class="actions">
+          <button class="btn btn-plain" type="button" onclick="prevStep()">Back</button>
+          <button class="btn btn-primary" type="button" onclick="nextStep()">Continue</button>
+        </div>
+      </section>
+
+      <section class="step" data-step="3">
+        <p class="step-kicker">Step 3 of 4</p>
+        <h2>Target and proof</h2>
+        <label class="field">
+          <span>Target role</span>
+          <select id="targetRole" required>
+            <option value="">Choose one</option>
+            <option value="not-sure">I am not sure yet</option>
+            <option value="executive-assistant">Executive Assistant</option>
+            <option value="customer-support-va">Customer Support VA</option>
+            <option value="marketing-va">Marketing VA</option>
+            <option value="social-media-assistant">Social Media Assistant</option>
+            <option value="content-assistant">Content Assistant</option>
+            <option value="crm-assistant">CRM Assistant</option>
+            <option value="bookkeeping-va">Bookkeeping VA</option>
+            <option value="project-coordinator">Project Coordinator</option>
+            <option value="seo-assistant">SEO Assistant</option>
+            <option value="data-entry-va">Data Entry VA</option>
+          </select>
+        </label>
+        <div class="two">
+          <label class="field">
+            <span>Current resume status</span>
+            <select id="resumeStatus" required>
+              <option value="">Choose one</option>
+              <option>No resume yet</option>
+              <option>Old resume, not remote-ready</option>
+              <option>Has a resume, needs tailoring</option>
+              <option>Has a strong resume</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Portfolio status</span>
+            <select id="portfolioStatus" required>
+              <option value="">Choose one</option>
+              <option>No portfolio yet</option>
+              <option>Has samples, not organized</option>
+              <option>Has a portfolio link</option>
+              <option>Has client work and proof</option>
+            </select>
+          </label>
+        </div>
+        <label class="field">
+          <span>Biggest struggle</span>
+          <textarea id="struggle" required placeholder="Example: I do not know what role fits me, and my resume sounds like a BPO resume."></textarea>
+        </label>
+        <label class="field">
+          <span>Optional resume or notes</span>
+          <span class="hint">Paste your old resume, job notes, or rough bullets if you want the guide to use them.</span>
+          <textarea id="resumeText" placeholder="Paste old resume, job notes, or role notes here."></textarea>
+        </label>
+        <div class="actions">
+          <button class="btn btn-plain" type="button" onclick="prevStep()">Back</button>
+          <button class="btn btn-primary" type="button" onclick="nextStep()">Continue</button>
+        </div>
+      </section>
+
+      <section class="step" data-step="4">
+        <p class="step-kicker">Step 4 of 4</p>
+        <h2>Generate and review</h2>
+        <p class="help">Your guide appears on the right. Review it, then copy or download it for your next resume update.</p>
+        <label class="field">
+          <span>How will you use this guide?</span>
+          <select id="delivery" required>
+            <option value="Copy into Google Docs">Copy into Google Docs</option>
+            <option value="Download a copy">Download a copy</option>
+            <option value="Use both copy and download">Use both copy and download</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>Specific job post URL, optional</span>
+          <input id="jobUrl" type="url" placeholder="https://...">
+        </label>
+        <input id="turnstileToken" type="hidden" value="dev-valid-turnstile">
+        <div class="actions">
+          <button class="btn btn-plain" type="button" onclick="prevStep()">Back</button>
+          <button class="btn btn-gold" type="button" onclick="generateGuide()">Generate guide</button>
+          <button class="btn btn-secondary" type="button" onclick="resetForm()">Reset</button>
+        </div>
+      </section>
+    </form>
+
+    <section class="guide-shell" aria-live="polite">
+      <div class="empty-guide" id="emptyGuide">
+        <div>
+          <img src="../../brand/favicon.png" alt="Writings by Lala mark">
+          <h2>Your guide will appear here.</h2>
+          <p>Complete the intake to generate your role match, resume direction, portfolio project, application copy, and next BFF lessons.</p>
+        </div>
+      </div>
+      <article class="guide-doc" id="guideDoc" hidden></article>
+    </section>
+  </section>
+</main>
+
+<footer>
+  Bonafide Filipino Freelancers Open University · Resume and portfolio guide
+</footer>
+
+<script>
+let currentStep = 1;
+let activeLeadId = null;
+
+const TOOLS = [
+  "Google Workspace", "Microsoft Excel", "Canva", "Trello", "Notion", "Asana",
+  "Slack", "Zoom", "Zendesk", "HubSpot", "Mailchimp", "CapCut",
+  "WordPress", "QuickBooks", "Shopify", "Meta Business Suite"
+];
+
+const ROLE_DATA = {
+  "executive-assistant": {
+    title: "Executive Assistant",
+    archetype: "Generalist Admin",
+    secondary: ["Project Coordinator", "CRM Assistant"],
+    avoid: "Senior operations manager roles until you can show ownership over calendars, inboxes, follow-ups, and reporting.",
+    headline: "Executive Assistant for calendar, inbox, and client coordination",
+    proof: "Inbox and calendar command center",
+    project: [
+      "Create a one-week mock executive calendar with meetings, travel blocks, and protected focus time.",
+      "Build an inbox triage board with priority labels, response templates, and follow-up dates.",
+      "Document the before and after workflow in Google Docs or Notion."
+    ],
+    lessons: [
+      ["Where to Start", "../lesson-where-to-start/index.html", "Use this to confirm your first direction before applying."],
+      ["PM Tool Fluency", "../lesson-pm-tool-fluency/index.html", "EA roles need task ownership and update rhythm."],
+      ["Trello Love", "../lesson-trello-love/index.html", "Build a simple work tracker you can show."],
+      ["Online Presence", "../lesson-online-presence/index.html", "Make your profile match your EA target."]
+    ],
+    terms: "executive assistant, inbox management, calendar management, admin assistant"
+  },
+  "customer-support-va": {
+    title: "Customer Support VA",
+    archetype: "Corporate Transitioner",
+    secondary: ["CRM Assistant", "Data Entry VA"],
+    avoid: "Customer success manager roles until you can show account ownership, renewals, or reporting.",
+    headline: "Customer Support VA for chat, email, and ticket workflows",
+    proof: "Support ticket response kit",
+    project: [
+      "Create 10 support reply templates for billing, refund, shipping, account access, and product questions.",
+      "Build a simple ticket tracker in Google Sheets with priority, status, SLA, and resolution notes.",
+      "Write a short support quality checklist for tone, clarity, and next action."
+    ],
+    lessons: [
+      ["Customer Support Foundations", "../lesson-customer-support-foundations/index.html", "This is the strongest first lesson for support roles."],
+      ["CRM Basics", "../lesson-crm-basics/index.html", "Support teams need clean customer records."],
+      ["English 101", "../lesson-english-101/index.html", "Use this if client communication feels shaky."],
+      ["Interviews Prep", "../lesson-interviews-prep/index.html", "Practice explaining your BPO or support proof."]
+    ],
+    terms: "customer support, chat support, email support, Zendesk, CRM"
+  },
+  "marketing-va": {
+    title: "Marketing VA",
+    archetype: "Creative Specialist",
+    secondary: ["Content Assistant", "Social Media Assistant"],
+    avoid: "Growth marketing manager roles until you can show campaign ownership, analytics, and funnel decisions.",
+    headline: "Marketing VA for content, email, and campaign support",
+    proof: "Mini campaign operations board",
+    project: [
+      "Choose one small brand and build a 7-day campaign plan with content, email, and tracking tasks.",
+      "Create three Canva assets and one email draft for the campaign.",
+      "Add a simple KPI tracker with clicks, posts, email sends, and notes."
+    ],
+    lessons: [
+      ["Specialized Business Skills", "../lesson-specialized-business-skills/index.html", "Use this to choose a marketing wedge."],
+      ["Email Marketing for VAs", "../lesson-email-marketing-for-vas/index.html", "Email is a practical marketing VA signal."],
+      ["SMM Core Strategies", "../lesson-smm-core-strategies/index.html", "Strengthen campaign thinking."],
+      ["Personal Branding", "../lesson-personal-branding/index.html", "Make your profile match your marketing angle."]
+    ],
+    terms: "marketing assistant, content marketing, email marketing, campaign support, Canva"
+  },
+  "social-media-assistant": {
+    title: "Social Media Assistant",
+    archetype: "Creative Specialist",
+    secondary: ["Marketing VA", "Content Assistant"],
+    avoid: "Social media strategist roles until you can show analytics, content planning, and account decisions.",
+    headline: "Social Media Assistant for content calendars and platform support",
+    proof: "Seven-day content calendar and asset pack",
+    project: [
+      "Create a 7-day content calendar for one brand with captions, content goals, and platform notes.",
+      "Design three Canva posts and one short-form video outline.",
+      "Write a reporting note that explains what to watch weekly."
+    ],
+    lessons: [
+      ["SMM Handbook", "../lesson-smm-handbook/index.html", "Start here for the social media role path."],
+      ["Instagram Strategy", "../lesson-instagram-strategy/index.html", "Use this if Instagram is your strongest platform."],
+      ["Pinterest Marketing", "../lesson-pinterest-marketing/index.html", "Useful for visual and content-heavy brands."],
+      ["YouTube Best Practices", "../lesson-youtube-best-practices/index.html", "Use if you want video support roles."]
+    ],
+    terms: "social media assistant, content calendar, Canva, Instagram, short-form video"
+  },
+  "content-assistant": {
+    title: "Content Assistant",
+    archetype: "Creative Specialist",
+    secondary: ["Marketing VA", "SEO Assistant"],
+    avoid: "Content strategist roles until you can show briefs, publishing workflows, and performance review.",
+    headline: "Content Assistant for blog, newsletter, and publishing workflows",
+    proof: "Content repurposing sample pack",
+    project: [
+      "Pick one article or video and turn it into a blog outline, three social posts, and one newsletter blurb.",
+      "Create a simple publishing checklist in Notion or Google Docs.",
+      "Add a quality check for links, headings, grammar, and source accuracy."
+    ],
+    lessons: [
+      ["Creative and Artistic Skills", "../lesson-creativeartistic-skills/index.html", "Use this to shape your content skill path."],
+      ["Email Marketing for VAs", "../lesson-email-marketing-for-vas/index.html", "Newsletter support is a practical content lane."],
+      ["Online Presence", "../lesson-online-presence/index.html", "Your samples need a visible home."],
+      ["Master Tools with AI", "../lesson-master-tools-with-ai/index.html", "Use AI as a support tool, not a fake experience engine."]
+    ],
+    terms: "content assistant, blog assistant, newsletter assistant, publishing assistant, SEO"
+  },
+  "crm-assistant": {
+    title: "CRM Assistant",
+    archetype: "Generalist Admin",
+    secondary: ["Customer Support VA", "Data Entry VA"],
+    avoid: "CRM administrator roles until you can show automations, lifecycle reporting, and field governance.",
+    headline: "CRM Assistant for lead records, pipeline hygiene, and follow-ups",
+    proof: "CRM cleanup and follow-up tracker",
+    project: [
+      "Create a sample CRM spreadsheet with lead source, stage, owner, next action, and notes.",
+      "Write cleanup rules for duplicates, missing emails, stale leads, and next-step reminders.",
+      "Build three follow-up email templates for cold, warm, and inactive leads."
+    ],
+    lessons: [
+      ["CRM Basics", "../lesson-crm-basics/index.html", "This is the required first lesson for CRM work."],
+      ["Account Management 101", "../lesson-account-management-101/index.html", "Learn the customer relationship angle."],
+      ["PM Tool Fluency", "../lesson-pm-tool-fluency/index.html", "CRM work needs follow-up discipline."],
+      ["Online Jobs Account", "../lesson-online-jobs-account/index.html", "Update your profile around CRM support."]
+    ],
+    terms: "CRM assistant, HubSpot, pipeline, lead management, data hygiene"
+  },
+  "bookkeeping-va": {
+    title: "Bookkeeping VA",
+    archetype: "Generalist Admin",
+    secondary: ["Data Entry VA", "Executive Assistant"],
+    avoid: "Accountant or finance manager roles unless you have the required credentials and actual finance ownership.",
+    headline: "Bookkeeping VA for records, receipts, and monthly admin support",
+    proof: "Receipt and expense tracker",
+    project: [
+      "Create a sample expense tracker with vendor, date, category, amount, receipt status, and notes.",
+      "Add a monthly summary tab with totals by category.",
+      "Write a short process note for receipt collection and reconciliation."
+    ],
+    lessons: [
+      ["Specialized Business Skills", "../lesson-specialized-business-skills/index.html", "Use this to understand admin specialization."],
+      ["Google Sites Portfolio", "../lesson-google-sites-portfolio/index.html", "Show your tracker and process safely."],
+      ["Common Mistakes", "../lesson-common-mistakes/index.html", "Avoid overclaiming finance authority."],
+      ["Interviews Prep", "../lesson-interviews-prep/index.html", "Prepare to explain accuracy and confidentiality."]
+    ],
+    terms: "bookkeeping VA, expense tracker, QuickBooks, invoices, receipts"
+  },
+  "project-coordinator": {
+    title: "Project Coordinator",
+    archetype: "Corporate Transitioner",
+    secondary: ["Executive Assistant", "CRM Assistant"],
+    avoid: "Project manager roles until you can show ownership over scope, risk, deadlines, and stakeholder decisions.",
+    headline: "Project Coordinator for task tracking, updates, and team follow-through",
+    proof: "Project tracker and weekly update pack",
+    project: [
+      "Create a project board with tasks, owners, due dates, blockers, and status.",
+      "Write one weekly update template for a client or manager.",
+      "Add a risk log with issue, impact, owner, and next action."
+    ],
+    lessons: [
+      ["PM Tool Fluency", "../lesson-pm-tool-fluency/index.html", "Required for this role path."],
+      ["Trello Love", "../lesson-trello-love/index.html", "Use Trello to build your proof project."],
+      ["Onboarding First 30 Days", "../lesson-onboarding-first-30-days/index.html", "Learn how to show up well after hiring."],
+      ["Leadership Mentorship", "../lesson-leadership-mentorship/index.html", "Use this when moving into coordination work."]
+    ],
+    terms: "project coordinator, task tracker, Asana, Trello, status update"
+  },
+  "seo-assistant": {
+    title: "SEO Assistant",
+    archetype: "Creative Specialist",
+    secondary: ["Content Assistant", "Data Entry VA"],
+    avoid: "SEO strategist roles until you can show audits, keyword decisions, and performance analysis.",
+    headline: "SEO Assistant for content updates, keyword checks, and publishing support",
+    proof: "Basic SEO content audit",
+    project: [
+      "Choose one public article and audit the title, headings, meta description, links, and readability.",
+      "Build a keyword notes sheet with search terms, page intent, and suggested updates.",
+      "Write a one-page before and after recommendation note."
+    ],
+    lessons: [
+      ["Specialized Business Skills", "../lesson-specialized-business-skills/index.html", "Use this to choose SEO as a wedge."],
+      ["Content Assistant path", "../lesson-creativeartistic-skills/index.html", "Strengthen the content side of SEO support."],
+      ["Online Presence", "../lesson-online-presence/index.html", "Make your audit sample easy to find."],
+      ["Master Tools with AI", "../lesson-master-tools-with-ai/index.html", "Use AI carefully for research support."]
+    ],
+    terms: "SEO assistant, content audit, keyword research, WordPress, publishing"
+  },
+  "data-entry-va": {
+    title: "Data Entry VA",
+    archetype: "Fresh Starter",
+    secondary: ["CRM Assistant", "Customer Support VA"],
+    avoid: "Data analyst roles until you can show spreadsheet analysis, dashboards, formulas, and business interpretation.",
+    headline: "Data Entry VA for clean records, spreadsheet updates, and admin support",
+    proof: "Clean data tracker",
+    project: [
+      "Create a sample spreadsheet with 50 rows of clean customer or product records.",
+      "Add validation rules, status labels, and a duplicate check.",
+      "Write a process note that explains how you keep data accurate."
+    ],
+    lessons: [
+      ["Where to Start", "../lesson-where-to-start/index.html", "Use this if you are still choosing a path."],
+      ["Google Sites Portfolio", "../lesson-google-sites-portfolio/index.html", "Show your tracker as proof."],
+      ["English 101", "../lesson-english-101/index.html", "Improve written confidence for applications."],
+      ["Online Jobs Account", "../lesson-online-jobs-account/index.html", "Make your profile match entry admin work."]
+    ],
+    terms: "data entry VA, spreadsheet, Google Sheets, records, admin support"
+  }
+};
+
+const DEFAULT_ROLE = ROLE_DATA["data-entry-va"];
+
+function esc(value) {
+  return String(value || "").replace(/[&<>"']/g, ch => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+  }[ch]));
+}
+
+function slugify(value) {
+  return String(value || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "guide";
+}
+
+function checkedTools() {
+  return Array.from(document.querySelectorAll("input[name='tool']:checked")).map(input => input.value);
+}
+
+function formData() {
+  const roleKey = document.getElementById("targetRole").value;
+  const role = roleKey && roleKey !== "not-sure" ? ROLE_DATA[roleKey] : pickRoleFromInputs();
+  return {
+    leadId: activeLeadId || `BFF-${Date.now().toString(36).toUpperCase()}`,
+    createdAt: new Date().toISOString(),
+    name: document.getElementById("name").value.trim(),
+    email: document.getElementById("email").value.trim(),
+    situation: document.getElementById("situation").value,
+    workHistory: document.getElementById("workHistory").value.trim(),
+    tools: checkedTools(),
+    english: document.getElementById("english").value,
+    timeline: document.getElementById("timeline").value,
+    targetRoleKey: roleKey || "not-sure",
+    targetRole: role.title,
+    role,
+    resumeStatus: document.getElementById("resumeStatus").value,
+    portfolioStatus: document.getElementById("portfolioStatus").value,
+    struggle: document.getElementById("struggle").value.trim(),
+    resumeText: document.getElementById("resumeText").value.trim(),
+    delivery: document.getElementById("delivery").value,
+    jobUrl: document.getElementById("jobUrl").value.trim()
+  };
+}
+
+function pickRoleFromInputs() {
+  const situation = document.getElementById("situation").value.toLowerCase();
+  const tools = checkedTools().join(" ").toLowerCase();
+  const work = document.getElementById("workHistory").value.toLowerCase();
+  const combined = `${situation} ${tools} ${work}`;
+  if (/zendesk|support|bpo|ticket|customer|chat/.test(combined)) return ROLE_DATA["customer-support-va"];
+  if (/canva|capcut|instagram|social|meta|video|creative/.test(combined)) return ROLE_DATA["social-media-assistant"];
+  if (/mailchimp|marketing|campaign|content|wordpress/.test(combined)) return ROLE_DATA["marketing-va"];
+  if (/hubspot|crm|pipeline|lead/.test(combined)) return ROLE_DATA["crm-assistant"];
+  if (/quickbooks|bookkeeping|invoice|accounting/.test(combined)) return ROLE_DATA["bookkeeping-va"];
+  if (/trello|asana|project|coordinator|notion/.test(combined)) return ROLE_DATA["project-coordinator"];
+  if (/seo|keyword|wordpress|blog/.test(combined)) return ROLE_DATA["seo-assistant"];
+  if (/calendar|inbox|executive|admin/.test(combined)) return ROLE_DATA["executive-assistant"];
+  return DEFAULT_ROLE;
+}
+
+function validateStep(step) {
+  const data = formData();
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email);
+  const errors = [];
+  if (step === 1) {
+    if (document.getElementById("website").value.trim()) errors.push("Spam check failed. Leave the hidden website field blank.");
+    if (!data.name) errors.push("Name is required.");
+    if (!emailOk) errors.push("Valid email is required.");
+    if (!data.situation) errors.push("Current situation is required.");
+  }
+  if (step === 2) {
+    if (!data.workHistory) errors.push("Work history summary is required.");
+    if (!data.tools.length) errors.push("Choose at least one tool you can defend.");
+    if (!data.english) errors.push("English confidence is required.");
+    if (!data.timeline) errors.push("Application timeline is required.");
+  }
+  if (step === 3) {
+    if (!data.targetRoleKey) errors.push("Target role is required. Choose not sure if needed.");
+    if (!data.resumeStatus) errors.push("Resume status is required.");
+    if (!data.portfolioStatus) errors.push("Portfolio status is required.");
+    if (!data.struggle) errors.push("Biggest struggle is required.");
+  }
+  if (step === 4) {
+    if (!data.delivery) errors.push("Choose how you will use the guide.");
+  }
+  showError(errors.join(" "));
+  return errors.length === 0;
+}
+
+function showError(message) {
+  const box = document.getElementById("formError");
+  if (!message) {
+    box.textContent = "";
+    box.classList.remove("show");
+    return;
+  }
+  box.textContent = message;
+  box.classList.add("show");
+}
+
+function showStep(step) {
+  currentStep = Math.max(1, Math.min(4, step));
+  document.querySelectorAll(".step").forEach(section => {
+    section.classList.toggle("active", Number(section.dataset.step) === currentStep);
+  });
+  for (let i = 1; i <= 4; i += 1) {
+    document.getElementById(`bar${i}`).classList.toggle("active", i <= currentStep);
+  }
+  showError("");
+}
+
+function nextStep() {
+  if (!validateStep(currentStep)) return;
+  showStep(currentStep + 1);
+}
+
+function prevStep() {
+  showStep(currentStep - 1);
+}
+
+function roleReadiness(data) {
+  const toolCount = data.tools.length;
+  const noPortfolio = /No portfolio/.test(data.portfolioStatus);
+  const noResume = /No resume/.test(data.resumeStatus);
+  if (toolCount < 3 || noPortfolio || noResume || data.english === "low") {
+    return {
+      label: "Preparing",
+      note: `Aim for ${data.role.title}, but apply first to lower-risk support tasks while building proof. Do not claim senior ownership yet.`
+    };
+  }
+  if (toolCount < 5) {
+    return {
+      label: "Almost ready",
+      note: `You can prepare for ${data.role.title}, but your resume should lead with one clear proof project and a currently learning line.`
+    };
+  }
+  return {
+    label: "Application ready",
+    note: `You have enough visible tools to start applying for ${data.role.title}, as long as every claim is tied to real work or a clear project.`
+  };
+}
+
+function summaryCopy(data, readiness) {
+  const toolLine = data.tools.length ? data.tools.slice(0, 6).join(", ") : "remote-work tools";
+  const situation = data.situation.toLowerCase();
+  return `${data.role.headline}. Brings ${situation} experience with ${toolLine}. Focused on clear communication, organized execution, and honest proof of work.`;
+}
+
+function skillList(data) {
+  const base = data.tools.slice(0, 8);
+  const roleSkills = {
+    "Customer Support VA": ["ticket handling", "response templates", "customer records"],
+    "Executive Assistant": ["calendar support", "inbox triage", "follow-up tracking"],
+    "Marketing VA": ["campaign support", "content coordination", "basic reporting"],
+    "Social Media Assistant": ["content calendar", "caption drafting", "asset coordination"],
+    "Content Assistant": ["content repurposing", "publishing checklist", "link checks"],
+    "CRM Assistant": ["lead records", "pipeline hygiene", "follow-up tracking"],
+    "Bookkeeping VA": ["expense records", "receipt tracking", "monthly summaries"],
+    "Project Coordinator": ["task tracking", "status updates", "blocker logs"],
+    "SEO Assistant": ["content audit", "keyword notes", "publishing support"],
+    "Data Entry VA": ["clean data entry", "spreadsheet checks", "record updates"]
+  }[data.role.title] || ["remote admin support"];
+  return [...new Set([...roleSkills, ...base])];
+}
+
+function actionPlan(data) {
+  return [
+    `Day 1: Finalize ${data.role.title} as your working target role and bookmark the BFF role links.`,
+    "Day 2: Edit your resume headline, summary, and skills section.",
+    `Day 3: Outline the ${data.role.proof} proof project.`,
+    "Day 4: Build the smallest complete proof output and take screenshots.",
+    "Day 5: Add the project to your resume, OnlineJobs.ph profile, and LinkedIn About section.",
+    "Day 6: Prepare the email pitch, short proposal, and follow-up message.",
+    "Day 7: Apply to 3 to 5 matched roles and ask for feedback in the BFF community."
+  ];
+}
+
+function guideHtml(data) {
+  const readiness = roleReadiness(data);
+  const skills = skillList(data);
+  const resumeSummary = summaryCopy(data, readiness);
+  const lessonCards = data.role.lessons.map(([title, href, why]) => `
+    <div class="resource-card">
+      <a href="${esc(href)}" target="_blank" rel="noopener">${esc(title)}</a>
+      <small>${esc(why)}</small>
+    </div>`).join("");
+  const jobBoardHref = `../jobs/index.html?role=${encodeURIComponent(slugify(data.role.title))}`;
+  const resumeBuilderHref = `../resume-builder/index.html?role=${encodeURIComponent(data.targetRoleKey)}&archetype=${encodeURIComponent(slugify(data.role.archetype))}`;
+  const curriculumHref = `../curriculum/index.html?role=${encodeURIComponent(slugify(data.role.title))}&archetype=${encodeURIComponent(slugify(data.role.archetype))}`;
+  return `
+    <div class="guide-cover">
+      <div class="doc-label">Your Personalized BFF Resume and Portfolio Guide</div>
+      <h2>${esc(data.name)}, here is your practical application path.</h2>
+      <p>Generated from your intake answers on ${new Date(data.createdAt).toLocaleString()}.</p>
+      <div class="guide-meta">
+        <div><span>Lead ID</span><strong>${esc(data.leadId)}</strong></div>
+        <div><span>Archetype</span><strong>${esc(data.role.archetype)}</strong></div>
+        <div><span>Target role</span><strong>${esc(data.role.title)}</strong></div>
+        <div><span>Status</span><strong>${esc(readiness.label)}</strong></div>
+      </div>
+    </div>
+    <div class="guide-body">
+      <div class="doc-actions actions">
+        <button class="btn btn-secondary" type="button" onclick="window.print()">Print or save PDF</button>
+        <button class="btn btn-secondary" type="button" onclick="downloadGuideHtml()">Download guide HTML</button>
+        <button class="btn btn-secondary" type="button" onclick="copyGuideText()">Copy guide text</button>
+        <a class="btn btn-primary" href="${esc(resumeBuilderHref)}">Continue in Resume Builder</a>
+      </div>
+
+      <section class="guide-section">
+        <h3>1. Your Starting Point</h3>
+        <p><strong>Current situation:</strong> ${esc(data.situation)}.</p>
+        <p><strong>Strengths visible from intake:</strong> ${esc(data.tools.slice(0, 5).join(", ") || "you have a starting point to build from")}.</p>
+        <p><strong>Main constraint:</strong> ${esc(data.struggle)}.</p>
+        <p><strong>Plain recommendation:</strong> ${esc(readiness.note)}</p>
+      </section>
+
+      <section class="guide-section">
+        <h3>2. Your Best-Fit Remote Role</h3>
+        <p><strong>Primary role:</strong> ${esc(data.role.title)}.</p>
+        <p><strong>Why this fits:</strong> Your situation and tools point toward a role where honest execution, clean communication, and visible proof matter more than pretending to have senior experience.</p>
+        <p><strong>Employers will expect:</strong> role-matched tools, clear examples, reliable updates, and proof that you can finish the work.</p>
+        <p><strong>Do not claim:</strong> employers, dates, certifications, outcomes, metrics, or tools you did not provide.</p>
+        <p><strong>Secondary roles:</strong> ${esc(data.role.secondary.join(", "))}.</p>
+        <p><strong>Avoid for now:</strong> ${esc(data.role.avoid)}</p>
+      </section>
+
+      <section class="guide-section">
+        <h3>3. Your Resume Strategy</h3>
+        <div class="copy-box"><strong>Resume headline:</strong><br>${esc(data.role.headline)}</div>
+        <div class="copy-box"><strong>Professional summary:</strong><br>${esc(resumeSummary)}</div>
+        <p><strong>Core skills to show:</strong> ${esc(skills.join(", "))}.</p>
+        <p><strong>Experience positioning:</strong> Rewrite your work history around transferable tasks, tools used, volume handled, deadlines met, and proof you can explain.</p>
+        <p><strong>Remove or reduce:</strong> vague claims like hard-working, team player, detail-oriented, and anything that sounds senior without evidence.</p>
+      </section>
+
+      <section class="guide-section">
+        <h3>4. Resume Draft</h3>
+        <div class="copy-box"><strong>Contact header placeholders:</strong><br>${esc(data.name)} · ${esc(data.email)} · Philippines · OnlineJobs.ph link · LinkedIn link · Portfolio link</div>
+        <div class="copy-box"><strong>Summary:</strong><br>${esc(resumeSummary)}</div>
+        <div class="copy-box"><strong>Skills:</strong><br>${esc(skills.join(" · "))}</div>
+        <div class="copy-box"><strong>Experience bullets:</strong>
+          <ul>
+            <li>Handled [volume] of [task] using ${esc(data.tools[0] || "[tool]")} while maintaining [quality signal].</li>
+            <li>Organized [workflow or records] so the team could track [status, customer, task, or deadline] clearly.</li>
+            <li>Created or improved [template, tracker, content, response, or process] based on the work you actually did.</li>
+          </ul>
+        </div>
+        <div class="copy-box"><strong>Projects or proof:</strong><br>Add the ${esc(data.role.proof)} project below as a Projects section if paid experience is thin.</div>
+      </section>
+
+      <section class="guide-section">
+        <h3>5. Portfolio or Proof Project</h3>
+        <p><strong>Project name:</strong> ${esc(data.role.proof)}.</p>
+        <ol>${data.role.project.map(item => `<li>${esc(item)}</li>`).join("")}</ol>
+        <p><strong>Output checklist:</strong> one public-safe document or Google Sites page, one screenshot, one short process note, and one resume bullet.</p>
+        <div class="copy-box"><strong>Resume bullet from the project:</strong><br>Built a ${esc(data.role.proof.toLowerCase())} to demonstrate ${esc(data.role.title.toLowerCase())} readiness, including clear steps, organized tracking, and a reusable workflow.</div>
+      </section>
+
+      <section class="guide-section">
+        <h3>6. Application Pack</h3>
+        <div class="copy-box"><strong>LinkedIn About:</strong><br>I am building my path toward ${esc(data.role.title)} work. My focus is ${esc(data.role.headline.toLowerCase())}. I use ${esc(data.tools.slice(0, 5).join(", ") || "practical remote-work tools")} and I am building visible proof through a ${esc(data.role.proof.toLowerCase())}.</div>
+        <div class="copy-box"><strong>OnlineJobs.ph profile summary:</strong><br>${esc(resumeSummary)} I am currently preparing proof through a ${esc(data.role.proof.toLowerCase())} and can share samples during application.</div>
+        <div class="copy-box"><strong>Email pitch:</strong><br>Hello, I saw your opening for ${esc(data.role.title)} support. My background is ${esc(data.situation.toLowerCase())}, and I can help with ${esc(skills.slice(0, 4).join(", "))}. I attached my resume and can also share a small proof project if helpful. Thank you for considering my application.</div>
+        <div class="copy-box"><strong>Short proposal:</strong><br>I can help with ${esc(data.role.title.toLowerCase())} tasks by combining clear updates, organized execution, and tools like ${esc(data.tools.slice(0, 4).join(", ") || "[your tools]")}.</div>
+        <div class="copy-box"><strong>Follow-up:</strong><br>Hello, I wanted to follow up on my application for the ${esc(data.role.title)} role. I am still interested and can send a small sample related to your workflow if useful.</div>
+      </section>
+
+      <section class="guide-section">
+        <h3>7. Your BFF Lesson Path</h3>
+        <p>Start with these lessons based on your role path. These links point to the live BFF curriculum, so the lesson list can improve over time.</p>
+        <div class="resource-grid">${lessonCards}</div>
+        <p><a href="${esc(curriculumHref)}" target="_blank" rel="noopener">Open personalized curriculum path</a></p>
+      </section>
+
+      <section class="guide-section">
+        <h3>8. Jobs To Watch</h3>
+        <p><strong>Role category:</strong> ${esc(data.role.title)}.</p>
+        <p><strong>Search terms:</strong> ${esc(data.role.terms)}.</p>
+        <p><strong>Good-fit signals:</strong> clear task list, beginner-safe expectations, tools you know, and sample work accepted.</p>
+        <p><strong>Red flags:</strong> unpaid trial work, vague role scope, senior strategy expectations, or tools you cannot explain.</p>
+        <p><a href="${esc(jobBoardHref)}" target="_blank" rel="noopener">Open BFF Job Board path</a></p>
+      </section>
+
+      <section class="guide-section">
+        <h3>9. Community Updates and Tutorials</h3>
+        <div class="resource-grid">
+          <div class="resource-card"><a href="../events/index.html" target="_blank" rel="noopener">Community updates</a><small>Check this weekly for live support and events.</small></div>
+          <div class="resource-card"><a href="../lesson-master-tools-with-ai/index.html" target="_blank" rel="noopener">Master tools with AI</a><small>Use AI to learn tools and practice, not to fake experience.</small></div>
+          <div class="resource-card"><a href="../lesson-groups-and-forums/index.html" target="_blank" rel="noopener">Groups and forums</a><small>Ask for feedback where your role path fits.</small></div>
+          <div class="resource-card"><a href="../resume-builder/index.html" target="_blank" rel="noopener">Resume Builder</a><small>Turn this guide into a printable resume pack.</small></div>
+        </div>
+        <p><strong>Question to ask:</strong> I am targeting ${esc(data.role.title)}. Can someone review whether my proof project is enough for beginner applications?</p>
+      </section>
+
+      <section class="guide-section">
+        <h3>10. 7-Day Action Plan</h3>
+        <ol>${actionPlan(data).map(item => `<li>${esc(item)}</li>`).join("")}</ol>
+      </section>
+
+      <section class="guide-section">
+        <h3>11. Final Checklist</h3>
+        <ul>
+          <li>Resume matches ${esc(data.role.title)}.</li>
+          <li>Portfolio proof exists and does not invent paid experience.</li>
+          <li>OnlineJobs.ph profile is updated.</li>
+          <li>LinkedIn About is updated.</li>
+          <li>Application pitch is ready.</li>
+          <li>BFF lessons started.</li>
+          <li>Job board filter bookmarked.</li>
+          <li>Community question prepared.</li>
+        </ul>
+      </section>
+    </div>
+  `;
+}
+
+function generateGuide() {
+  if (![1, 2, 3, 4].every(validateStep)) return;
+  const data = formData();
+  activeLeadId = data.leadId;
+  document.getElementById("emptyGuide").hidden = true;
+  const guide = document.getElementById("guideDoc");
+  guide.hidden = false;
+  guide.innerHTML = guideHtml(data);
+  showStep(4);
+}
+
+function downloadGuideHtml() {
+  const data = formData();
+  const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>${esc(data.name)} BFF Guide</title></head><body>${document.getElementById("guideDoc").innerHTML}</body></html>`;
+  const blob = new Blob([html], { type: "text/html" });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = `${slugify(data.name)}-bff-personalized-guide.html`;
+  link.click();
+  URL.revokeObjectURL(link.href);
+}
+
+async function copyGuideText() {
+  const text = document.getElementById("guideDoc").innerText.trim();
+  if (!text) return;
+  await navigator.clipboard.writeText(text);
+}
+
+function resetForm() {
+  document.getElementById("guideForm").reset();
+  activeLeadId = null;
+  showStep(1);
+  document.getElementById("guideDoc").hidden = true;
+  document.getElementById("guideDoc").innerHTML = "";
+  document.getElementById("emptyGuide").hidden = false;
+}
+
+function initTools() {
+  document.getElementById("toolsGrid").innerHTML = TOOLS.map(tool => `
+    <label class="check-card">
+      <input type="checkbox" name="tool" value="${esc(tool)}">
+      <span>${esc(tool)}</span>
+    </label>
+  `).join("");
+}
+
+initTools();
+</script>
+</body>
+</html>
