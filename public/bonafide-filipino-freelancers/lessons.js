@@ -254,7 +254,7 @@ window.SWAHG_LESSONS = {
       format: "video"
     },
     "english-101": {
-      title: "English 101",
+      title: "English Communications 101",
       stage: "warmup",
       status: "live",
       url: "lesson-english-101/",
@@ -262,10 +262,10 @@ window.SWAHG_LESSONS = {
       ladders_to_roles: ["customer-service","admin","content"],
       prerequisites: [],
       next_lessons: ["customer-support-foundations"],
-      why_this_lesson: "For learners who don't feel fluent. Builds enough working English for async (text-only) roles.",
-      estimated_minutes: 15,
-      tier: 0,
-      format: "video"
+      why_this_lesson: "Speak English with a free AI voice coach via the Tell-It-Twice Loop. Apply to No-Calls roles now, practice daily for the talking roles that pay more.",
+      estimated_minutes: 20,
+      tier: 1,
+      format: "module"
     },
     "support-group": {
       title: "The Value of a Support Group",
