@@ -167,6 +167,20 @@ window.SWAHG_LESSONS = {
       tier: 2,
       format: "module"
     },
+    "finish-courses-with-ai": {
+      title: "How to Finish a Course Using AI",
+      stage: "warmup",
+      status: "live",
+      url: "lesson-finish-courses-with-ai/",
+      closes_va_gaps: ["email-marketing"],
+      ladders_to_roles: ["customer-service","smm","account-manager","sdr","admin","content","va"],
+      prerequisites: [],
+      next_lessons: ["master-tools-with-ai","email-marketing-for-vas"],
+      why_this_lesson: "Sibling of the One-Tool Proof Loop: AI as examiner, not note-taker. Converts any free course into a client-visible artifact via the Course-to-Proof Loop; walkthrough closes the 96% email-marketing gap.",
+      estimated_minutes: 30,
+      tier: 2,
+      format: "module"
+    },
     "trello-love": {
       title: "Trello Love",
       stage: "prep",
@@ -972,7 +986,7 @@ window.SWAHG_LESSONS = {
     "warm-2": { pdf_label: "Planning",                    stage: "warmup",  lessons: ["10-secret-skills"] },
     "warm-3": { pdf_label: "Basic Foundation",            stage: "warmup",  lessons: ["career-path-training","specialized-business-skills","creative-artistic-skills","english-101"] },
     "warm-4": { pdf_label: "Support Group",               stage: "warmup",  lessons: ["support-group"] },
-    "warm-5": { pdf_label: "Ongoing Training",            stage: "warmup",  lessons: [], coming_soon: "Coming Soon" },
+    "warm-5": { pdf_label: "Ongoing Training",            stage: "warmup",  lessons: ["finish-courses-with-ai"] },
 
     /* TOP ROW — Launch */
     "launch-1":{ pdf_label: "Setting Up Accounts",        stage: "launch",  lessons: ["online-jobs-account","freelancing-platforms"] },
