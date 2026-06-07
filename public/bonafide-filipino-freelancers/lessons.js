@@ -153,6 +153,20 @@ window.SWAHG_LESSONS = {
       tier: 2,
       format: "module"
     },
+    "30-day-hired-plan": {
+      title: "The 30-Day Hired Plan",
+      stage: "launch",
+      status: "live",
+      url: "lesson-30-day-hired-plan/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["admin","va","customer-service","account-manager"],
+      prerequisites: [],
+      next_lessons: ["interviews-prep","master-tools-with-ai"],
+      why_this_lesson: "One AI-assisted service (inbox + calendar), one recorded proof artifact, one aimed pitch a day for 30 days. Proof-first hiring run sized to one hour a day.",
+      estimated_minutes: 30,
+      tier: 2,
+      format: "module"
+    },
     "trello-love": {
       title: "Trello Love",
       stage: "prep",
@@ -963,7 +977,7 @@ window.SWAHG_LESSONS = {
     /* TOP ROW — Launch */
     "launch-1":{ pdf_label: "Setting Up Accounts",        stage: "launch",  lessons: ["online-jobs-account","freelancing-platforms"] },
     "launch-2":{ pdf_label: "Creating Powerful Resume",   stage: "launch",  lessons: ["resume-builder","google-sites-portfolio","bpo-to-va-portfolio","office-admin-to-va-portfolio","example-portfolio-zero-work-experience","example-portfolio-bpo-to-virtual-assistant"] },
-    "launch-3":{ pdf_label: "Job Hunting",                stage: "launch",  lessons: ["find-your-path-quiz","freelancing-platforms","job-board"] },
+    "launch-3":{ pdf_label: "Job Hunting",                stage: "launch",  lessons: ["find-your-path-quiz","freelancing-platforms","job-board","30-day-hired-plan"] },
     "launch-4":{ pdf_label: "Join Groups and Forums",     stage: "launch",  lessons: ["groups-and-forums"] },
     "launch-5":{ pdf_label: "Creating your Portfolio",    stage: "launch",  lessons: ["personal-branding","online-presence","google-sites-portfolio","bpo-to-va-portfolio","office-admin-to-va-portfolio"] },
 
