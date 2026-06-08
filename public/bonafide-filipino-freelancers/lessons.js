@@ -169,7 +169,7 @@ window.SWAHG_LESSONS = {
     },
     "finish-courses-with-ai": {
       title: "How to Finish a Course Using AI",
-      stage: "warmup",
+      stage: "working",
       status: "live",
       url: "lesson-finish-courses-with-ai/",
       closes_va_gaps: ["email-marketing"],
@@ -986,7 +986,7 @@ window.SWAHG_LESSONS = {
     "warm-2": { pdf_label: "Planning",                    stage: "warmup",  lessons: ["10-secret-skills"] },
     "warm-3": { pdf_label: "Basic Foundation",            stage: "warmup",  lessons: ["career-path-training","specialized-business-skills","creative-artistic-skills","english-101"] },
     "warm-4": { pdf_label: "Support Group",               stage: "warmup",  lessons: ["support-group"] },
-    "warm-5": { pdf_label: "Ongoing Training",            stage: "warmup",  lessons: ["finish-courses-with-ai"] },
+    "warm-5": { pdf_label: "Ongoing Training",            stage: "warmup",  lessons: [], coming_soon: "Coming Soon" },
 
     /* TOP ROW — Launch */
     "launch-1":{ pdf_label: "Setting Up Accounts",        stage: "launch",  lessons: ["online-jobs-account","freelancing-platforms"] },
@@ -998,7 +998,7 @@ window.SWAHG_LESSONS = {
     /* TOP ROW — Working on it! */
     "work-1":  { pdf_label: "Interviews",                 stage: "working", lessons: ["interviews-prep","freelancing-journey-lesson-5"] },
     "work-2":  { pdf_label: "Internship",                 stage: "working", lessons: ["internship-options"] },
-    "work-3":  { pdf_label: "Skill Practice",             stage: "working", lessons: ["master-tools-with-ai","30-day-hired-plan"] },
+    "work-3":  { pdf_label: "Skill Practice",             stage: "working", lessons: ["master-tools-with-ai","30-day-hired-plan","finish-courses-with-ai"] },
     "work-4":  { pdf_label: "Creating Proposal",          stage: "working", lessons: ["common-mistakes"] },
     "work-5":  { pdf_label: "Bidding",                    stage: "working", lessons: ["getting-hired-fast","freelancing-platforms","common-mistakes"] },
 
