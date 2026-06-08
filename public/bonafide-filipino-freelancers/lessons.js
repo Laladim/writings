@@ -153,6 +153,20 @@ window.SWAHG_LESSONS = {
       tier: 2,
       format: "module"
     },
+    "stop-using-ai-wrong": {
+      title: "How to Stop Using AI Wrong",
+      stage: "working",
+      status: "live",
+      url: "lesson-stop-using-ai-wrong/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["customer-service","smm","account-manager","sdr","admin","content","va"],
+      prerequisites: [],
+      next_lessons: ["master-tools-with-ai","google-sites-portfolio"],
+      why_this_lesson: "The Three-Line Brief: done looks like, output lives at, verified by. Stop making AI guess, demand visible proof, and keep every brief so the work compounds instead of dying in the chat.",
+      estimated_minutes: 30,
+      tier: 2,
+      format: "module"
+    },
     "30-day-hired-plan": {
       title: "The 30-Day Hired Plan",
       stage: "launch",
@@ -998,7 +1012,7 @@ window.SWAHG_LESSONS = {
     /* TOP ROW — Working on it! */
     "work-1":  { pdf_label: "Interviews",                 stage: "working", lessons: ["interviews-prep","freelancing-journey-lesson-5"] },
     "work-2":  { pdf_label: "Internship",                 stage: "working", lessons: ["internship-options"] },
-    "work-3":  { pdf_label: "Skill Practice",             stage: "working", lessons: ["master-tools-with-ai"] },
+    "work-3":  { pdf_label: "Skill Practice",             stage: "working", lessons: ["master-tools-with-ai","stop-using-ai-wrong"] },
     "work-4":  { pdf_label: "Creating Proposal",          stage: "working", lessons: ["common-mistakes"] },
     "work-5":  { pdf_label: "Bidding",                    stage: "working", lessons: ["getting-hired-fast","freelancing-platforms","common-mistakes"] },
 
