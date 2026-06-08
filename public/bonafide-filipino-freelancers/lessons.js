@@ -544,6 +544,35 @@ window.SWAHG_LESSONS = {
       format: "module"
     },
 
+    "set-your-first-rate": {
+      title: "Pricing: Set Your First Rate",
+      stage: "working",
+      status: "live",
+      url: "lesson-set-your-first-rate/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["customer-service","smm","account-manager","sdr","admin","content","va"],
+      prerequisites: ["common-mistakes"],
+      next_lessons: ["raising-your-rate","account-management-101"],
+      why_this_lesson: "Set a first rate without racing to the bottom. The Rate Floor Method plus a four-part quoting script. Earn in dollars, stay in the Philippines.",
+      estimated_minutes: 25,
+      tier: 2,
+      format: "module"
+    },
+    "raising-your-rate": {
+      title: "Pricing: Raising Your Rate",
+      stage: "skill",
+      status: "live",
+      url: "lesson-raising-your-rate/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["customer-service","smm","account-manager","sdr","admin","content","va"],
+      prerequisites: ["set-your-first-rate","account-management-101"],
+      next_lessons: ["building-brand-agency"],
+      why_this_lesson: "When and how to raise an existing client's rate without losing the client. The Raise Trigger method, a four-part raise script, and a graceful exit if they say no.",
+      estimated_minutes: 25,
+      tier: 2,
+      format: "module"
+    },
+
     /* ====== Freelancing Platforms ====== */
     "freelancing-platforms": {
       title: "Freelancing Platforms",
@@ -1014,7 +1043,7 @@ window.SWAHG_LESSONS = {
     "work-1":  { pdf_label: "Interviews",                 stage: "working", lessons: ["interviews-prep","freelancing-journey-lesson-5"] },
     "work-2":  { pdf_label: "Internship",                 stage: "working", lessons: ["internship-options"] },
     "work-3":  { pdf_label: "Skill Practice",             stage: "working", lessons: ["master-tools-with-ai","30-day-hired-plan","finish-courses-with-ai"] },
-    "work-4":  { pdf_label: "Creating Proposal",          stage: "working", lessons: ["common-mistakes"] },
+    "work-4":  { pdf_label: "Creating Proposal",          stage: "working", lessons: ["common-mistakes","set-your-first-rate"] },
     "work-5":  { pdf_label: "Bidding",                    stage: "working", lessons: ["getting-hired-fast","freelancing-platforms","common-mistakes","reading-a-job-post"] },
 
     /* BOTTOM ROW — Stage 1 */
@@ -1027,7 +1056,7 @@ window.SWAHG_LESSONS = {
     /* BOTTOM ROW — Skill Upgrade */
     "sk-1":    { pdf_label: "New or Upgraded Skill",      stage: "skill",   lessons: ["customer-support-foundations","account-management-101","cold-outreach-sdrs","crm-basics","video-editing-content-vas","pm-tool-fluency","article-curation-training","ecommerce-classes"] },
     "sk-2":    { pdf_label: "More Training",              stage: "skill",   lessons: ["smm-handbook","fb-chatbot-training","fb-mobile-management","pinterest-marketing","youtube-best-practices","article-curation-training","ecommerce-classes"] },
-    "sk-3":    { pdf_label: "More Value to Client",       stage: "skill",   lessons: ["account-management-101"] },
+    "sk-3":    { pdf_label: "More Value to Client",       stage: "skill",   lessons: ["account-management-101","set-your-first-rate","raising-your-rate"] },
     "sk-4":    { pdf_label: "Career & Personal Growth",   stage: "skill",   lessons: ["career-path-training"] },
 
     /* BOTTOM ROW — Higher Level */
