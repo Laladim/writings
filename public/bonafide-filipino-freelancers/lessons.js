@@ -529,6 +529,21 @@ window.SWAHG_LESSONS = {
       format: "video"
     },
 
+    "reading-a-job-post": {
+      title: "Reading a Job Post: Red Flags and Scam Filters",
+      stage: "working",
+      status: "live",
+      url: "lesson-reading-a-job-post/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["customer-service","smm","account-manager","sdr","admin","content","va"],
+      prerequisites: ["choosing-my-client"],
+      next_lessons: ["common-mistakes"],
+      why_this_lesson: "Read any remote job post in two minutes and decide reject, clarify, or apply. The 7-Signal Scan protects money, samples, IDs, and energy before you reply.",
+      estimated_minutes: 25,
+      tier: 2,
+      format: "module"
+    },
+
     /* ====== Freelancing Platforms ====== */
     "freelancing-platforms": {
       title: "Freelancing Platforms",
@@ -991,7 +1006,7 @@ window.SWAHG_LESSONS = {
     /* TOP ROW — Launch */
     "launch-1":{ pdf_label: "Setting Up Accounts",        stage: "launch",  lessons: ["online-jobs-account","freelancing-platforms"] },
     "launch-2":{ pdf_label: "Creating Powerful Resume",   stage: "launch",  lessons: ["resume-builder","google-sites-portfolio","bpo-to-va-portfolio","office-admin-to-va-portfolio","example-portfolio-zero-work-experience","example-portfolio-bpo-to-virtual-assistant"] },
-    "launch-3":{ pdf_label: "Job Hunting",                stage: "launch",  lessons: ["find-your-path-quiz","freelancing-platforms","job-board"] },
+    "launch-3":{ pdf_label: "Job Hunting",                stage: "launch",  lessons: ["find-your-path-quiz","freelancing-platforms","job-board","reading-a-job-post"] },
     "launch-4":{ pdf_label: "Join Groups and Forums",     stage: "launch",  lessons: ["groups-and-forums"] },
     "launch-5":{ pdf_label: "Creating your Portfolio",    stage: "launch",  lessons: ["personal-branding","online-presence","google-sites-portfolio","bpo-to-va-portfolio","office-admin-to-va-portfolio"] },
 
@@ -1000,13 +1015,13 @@ window.SWAHG_LESSONS = {
     "work-2":  { pdf_label: "Internship",                 stage: "working", lessons: ["internship-options"] },
     "work-3":  { pdf_label: "Skill Practice",             stage: "working", lessons: ["master-tools-with-ai","30-day-hired-plan","finish-courses-with-ai"] },
     "work-4":  { pdf_label: "Creating Proposal",          stage: "working", lessons: ["common-mistakes"] },
-    "work-5":  { pdf_label: "Bidding",                    stage: "working", lessons: ["getting-hired-fast","freelancing-platforms","common-mistakes"] },
+    "work-5":  { pdf_label: "Bidding",                    stage: "working", lessons: ["getting-hired-fast","freelancing-platforms","common-mistakes","reading-a-job-post"] },
 
     /* BOTTOM ROW — Stage 1 */
     "s1-1":    { pdf_label: "Onboarding",                 stage: "stage1",  lessons: ["onboarding-first-30-days"] },
     "s1-2":    { pdf_label: "Learn Business Tools",       stage: "stage1",  lessons: ["trello-love","browser-expert-secrets","storage-expert-secrets","pm-tool-fluency","organize-work-files"] },
     "s1-3":    { pdf_label: "Collaboration",              stage: "stage1",  lessons: ["account-management-101","pm-tool-fluency","onboarding-first-30-days"] },
-    "s1-4":    { pdf_label: "Client Demands",             stage: "stage1",  lessons: ["choosing-my-client","common-mistakes"] },
+    "s1-4":    { pdf_label: "Client Demands",             stage: "stage1",  lessons: ["choosing-my-client","common-mistakes","reading-a-job-post"] },
     "s1-5":    { pdf_label: "Organization",               stage: "stage1",  lessons: ["trello-love","organize-work-files"] },
 
     /* BOTTOM ROW — Skill Upgrade */
