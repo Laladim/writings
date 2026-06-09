@@ -139,6 +139,20 @@ window.SWAHG_LESSONS = {
       format: "article",
       build_queue_rank: 2
     },
+    "2026-tool-stack": {
+      title: "The 2026 Tool Stack",
+      stage: "warmup",
+      status: "live",
+      url: "lesson-2026-tool-stack/",
+      closes_va_gaps: ["pm-tools","crm","email-marketing","social-media-tools","video-editing","time-tracking"],
+      ladders_to_roles: ["customer-service","smm","account-manager","sdr","admin","content","va"],
+      prerequisites: [],
+      next_lessons: ["master-tools-with-ai","finish-courses-with-ai"],
+      why_this_lesson: "The tools each remote role actually needs in 2026, where to learn each one free, and the community skill gap each one closes. Learn your role's 3 to 5, not everyone's 50.",
+      estimated_minutes: 20,
+      tier: 2,
+      format: "guide"
+    },
     "master-tools-with-ai": {
       title: "How to Master Tools Using AI",
       stage: "working",
@@ -1058,7 +1072,7 @@ window.SWAHG_LESSONS = {
     "warm-2": { pdf_label: "Planning",                    stage: "warmup",  lessons: ["10-secret-skills"] },
     "warm-3": { pdf_label: "Basic Foundation",            stage: "warmup",  lessons: ["career-path-training","specialized-business-skills","creative-artistic-skills","english-101"] },
     "warm-4": { pdf_label: "Support Group",               stage: "warmup",  lessons: ["support-group"] },
-    "warm-5": { pdf_label: "Ongoing Training",            stage: "warmup",  lessons: [], coming_soon: "Coming Soon" },
+    "warm-5": { pdf_label: "Ongoing Training",            stage: "warmup",  lessons: ["2026-tool-stack"] },
 
     /* TOP ROW — Launch */
     "launch-1":{ pdf_label: "Setting Up Accounts",        stage: "launch",  lessons: ["online-jobs-account","freelancing-platforms"] },
@@ -1070,7 +1084,7 @@ window.SWAHG_LESSONS = {
     /* TOP ROW — Working on it! */
     "work-1":  { pdf_label: "Interviews",                 stage: "working", lessons: ["interviews-prep","freelancing-journey-lesson-5"] },
     "work-2":  { pdf_label: "Internship",                 stage: "working", lessons: ["internship-options"] },
-    "work-3":  { pdf_label: "Skill Practice",             stage: "working", lessons: ["master-tools-with-ai","30-day-hired-plan","finish-courses-with-ai","business-owner-to-va-portfolio"] },
+    "work-3":  { pdf_label: "Skill Practice",             stage: "working", lessons: ["master-tools-with-ai","30-day-hired-plan","finish-courses-with-ai","business-owner-to-va-portfolio","2026-tool-stack"] },
     "work-4":  { pdf_label: "Creating Proposal",          stage: "working", lessons: ["common-mistakes","set-your-first-rate"] },
     "work-5":  { pdf_label: "Bidding",                    stage: "working", lessons: ["getting-hired-fast","freelancing-platforms","common-mistakes","reading-a-job-post"] },
 
