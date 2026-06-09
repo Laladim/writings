@@ -214,6 +214,45 @@
     margin-top: 14px;
     padding-left: 12px;
   }
+  .diagnostic-list {
+    display: grid;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+  }
+  .diagnostic-item {
+    background: #fffaf4;
+    border: 1px solid #e3c49c;
+    border-radius: 8px;
+    color: var(--text);
+    list-style: none;
+    padding: 10px 12px;
+  }
+  .diagnostic-item strong {
+    color: var(--purple-deep);
+    display: block;
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
+  .mini-table {
+    border: 1px solid var(--border);
+    border-collapse: collapse;
+    font-size: 12.5px;
+    margin-top: 8px;
+    width: 100%;
+  }
+  .mini-table th,
+  .mini-table td {
+    border: 1px solid var(--border);
+    padding: 8px;
+    text-align: left;
+    vertical-align: top;
+  }
+  .mini-table th {
+    background: var(--sand);
+    color: var(--purple-deep);
+    font-weight: 800;
+  }
   .actions {
     display: flex;
     flex-wrap: wrap;
@@ -570,6 +609,11 @@ function complete(q) {
 }
 
 function score(q) {
+  const v = scoreValues(q);
+  return Object.keys(v).sort((a,b) => v[b] - v[a])[0];
+}
+
+function scoreValues(q) {
   const v = { polished:0, transitioner:0, creative:0, solo:0, generalist:0, fresh:0 };
   switch (q.q1) {
     case 'freelance': v.polished += 3; break;
@@ -609,7 +653,121 @@ function score(q) {
     case 'steady': v.transitioner += 2; v.polished += 1; break;
     case 'senior': v.polished += 3; v.transitioner += 1; break;
   }
-  return Object.keys(v).sort((a,b) => v[b] - v[a])[0];
+  return v;
+}
+
+const LABELS = {
+  q1: {
+    freelance: 'online or freelance work',
+    corporate: 'corporate office work',
+    bpo: 'BPO or call center work',
+    business: 'business ownership',
+    creative: 'creative, media, or content work',
+    school: 'school, training, or no formal work yet'
+  },
+  tools: {
+    low: '0 to 2 remote-work tools',
+    mid: '3 to 4 remote-work tools',
+    strong: '5 to 7 remote-work tools',
+    deep: '8 or more remote-work tools'
+  },
+  creative: {
+    none: 'no clear creative skill yet',
+    learning: 'a creative skill in progress',
+    used: 'creative work used in real projects',
+    paid: 'paid creative work'
+  },
+  q4: {
+    day: 'day shift only',
+    night: 'night shift is okay',
+    flexible: 'flexible or any shift',
+    parttime: 'part-time only'
+  },
+  q5: {
+    '1': 'struggling English',
+    '2': 'basic English',
+    '3': 'conversational English',
+    '4': 'professional English',
+    '5': 'fluent or near-native English'
+  },
+  experience: {
+    none: '0 years of work experience',
+    early: '1 to 2 years of work experience',
+    steady: '3 to 5 years of work experience',
+    senior: '6 or more years of work experience'
+  }
+};
+
+function labelFor(field, value) {
+  return (LABELS[field] && LABELS[field][value]) || value || '';
+}
+
+function resultContext(key, q) {
+  const scores = scoreValues(q);
+  const ranked = Object.keys(scores).sort((a,b) => scores[b] - scores[a]);
+  const second = ranked.find(item => item !== key) || '';
+  const nearMiss = second && scores[key] - scores[second] <= 2 ? second : '';
+  const communicationRisk = q.q5 === '1' || q.q5 === '2';
+  const hybridBusinessStarter = q.q1 === 'business' && key === 'fresh';
+  const creativePaidPolished = key === 'polished' && q.q1 === 'creative' && q.creative === 'paid';
+  return {
+    scores,
+    ranked,
+    second,
+    nearMiss,
+    communicationRisk,
+    hybridBusinessStarter,
+    creativePaidPolished,
+    partTime: q.q4 === 'parttime',
+    blocker: blockerFor(q)
+  };
+}
+
+function blockerFor(q) {
+  if (q.q5 === '1' || q.q5 === '2') return 'communication';
+  if (q.tools === 'low') return 'tool-proof';
+  if (q.experience === 'none') return 'zero-evidence';
+  if (q.q4 === 'parttime') return 'scope-fit';
+  return 'proof-packaging';
+}
+
+function blockerCopy(blocker) {
+  return {
+    communication: 'Your biggest gap right now is written English. Until you have four to five examples of clear professional messages, avoid roles that depend on frequent client-facing communication.',
+    'tool-proof': 'Your biggest gap right now is tool proof. Until you have one finished output from a tool a client uses daily, your application has no evidence to anchor.',
+    'zero-evidence': 'Your biggest gap right now is the absence of a finished work sample. One practice project changes that. A resume without one will not clear most entry screening.',
+    'scope-fit': 'Your biggest constraint right now is availability. Some roles that look beginner-friendly require daily coverage, so every target role must be part-time safe.',
+    'proof-packaging': 'Your biggest gap right now is packaging. You have usable signals, but the client needs to see them as one role, one proof sample, and one next action.'
+  }[blocker];
+}
+
+function whyResultMarkup(key, q, ctx) {
+  const near = ctx.nearMiss ? ` You were close to ${ARCHETYPES[ctx.nearMiss].name}; one stronger signal there would have changed the result.` : '';
+  const sublabel = ctx.hybridBusinessStarter
+    ? '<p><strong>Important:</strong> this means remote-work beginner with business operations background, not beginner at work.</p>'
+    : ctx.creativePaidPolished
+      ? '<p><strong>Important:</strong> your paid creative background is still the asset. Polished Freelancer means proof exists already, but you may need to position it as a creative service instead of a general freelance history.</p>'
+      : '';
+  return `
+    <div class="advice-card full">
+      <div class="advice-label">Why you got this result</div>
+      <ul class="diagnostic-list">
+        <li class="diagnostic-item"><strong>Background signal</strong>${labelFor('q1', q.q1)} pointed the result toward ${ARCHETYPES[key].name}.</li>
+        <li class="diagnostic-item"><strong>Proof signal</strong>${labelFor('experience', q.experience)} plus ${labelFor('tools', q.tools)} shaped how ready the guide thinks you are.</li>
+        <li class="diagnostic-item"><strong>Constraint signal</strong>${labelFor('q5', q.q5)} and ${labelFor('q4', q.q4)} decide what you should avoid first.${near}</li>
+      </ul>
+      ${sublabel}
+    </div>
+  `;
+}
+
+function blockerMarkup(ctx) {
+  return `
+    <div class="advice-card full">
+      <div class="advice-label">Your biggest blocker</div>
+      <p>${blockerCopy(ctx.blocker)}</p>
+    </div>
+  `;
 }
 
 function resumeQuizPatch(q) {
@@ -644,10 +802,43 @@ function saveForBuilder(key, q) {
   }
 }
 
-function recommendedRolesMarkup(key) {
+function recommendedRoleIds(key, q, ctx) {
+  if (!window.BFF) return [];
+  if (ctx.communicationRisk) {
+    if (key === 'polished') return ['data-entry-va', 'social-media-assistant', 'customer-support-va'];
+    if (key === 'transitioner') return ['customer-support-va', 'data-entry-va', 'marketing-va'];
+    if (key === 'fresh' && q.q1 === 'business') return ['data-entry-va', 'customer-support-va', 'crm-assistant'];
+    if (key === 'fresh') return ['data-entry-va', 'customer-support-va', 'social-media-assistant'];
+  }
+  if (ctx.hybridBusinessStarter) return ['data-entry-va', 'customer-support-va', 'crm-assistant'];
+  if (ctx.creativePaidPolished) return ['social-media-assistant', 'content-assistant', 'project-coordinator'];
+  if (ctx.partTime) {
+    if (key === 'transitioner') return ['content-assistant', 'marketing-va', 'data-entry-va'];
+    if (key === 'solo') return ['crm-assistant', 'data-entry-va', 'bookkeeping-va'];
+  }
+  return window.BFF.rolesForArchetype(key).slice(0, 3).map(role => role.id);
+}
+
+function roleConstraintNote(role, q, ctx) {
+  if (ctx.communicationRisk && ['executive-assistant','project-coordinator','content-assistant'].includes(role.id)) {
+    return 'This role is risky until written English proof is stronger.';
+  }
+  if (ctx.partTime && ['executive-assistant','project-coordinator','customer-support-va'].includes(role.id)) {
+    return 'Only use this role if the job post clearly accepts async part-time work.';
+  }
+  if (ctx.hybridBusinessStarter && role.id === 'crm-assistant') {
+    return 'Treat this as a practice path first: lead tracking and follow-up proof must come before applications.';
+  }
+  return '';
+}
+
+function recommendedRolesMarkup(key, q, ctx) {
   if (!window.BFF) return '';
-  const roles = window.BFF.rolesForArchetype(key).slice(0, 3);
-  const cautions = window.BFF.notYetForArchetype ? window.BFF.notYetForArchetype(key).slice(0, 1) : [];
+  const roles = recommendedRoleIds(key, q, ctx).map(id => window.BFF.roleById(id)).filter(Boolean);
+  const roleIds = new Set(roles.map(role => role.id));
+  const cautions = window.BFF.notYetForArchetype
+    ? window.BFF.notYetForArchetype(key).filter(item => !roleIds.has(item.roleId)).slice(0, 1)
+    : [];
   if (!roles.length) return '';
   return `
     <div class="advice-card full">
@@ -662,6 +853,7 @@ function recommendedRolesMarkup(key) {
             <span>Beginner reality: ${role.beginnerReason || 'Start with one small visible sample before applying.'}</span>
             <span>Work sample: ${role.proofSample}</span>
             ${role.proofTemplate ? `<span>Proof template: ${role.proofTemplate.output}</span>` : ''}
+            ${roleConstraintNote(role, q, ctx) ? `<span>Constraint note: ${roleConstraintNote(role, q, ctx)}</span>` : ''}
             <span>Avoid if: ${role.avoidIf}</span>
             <span>Typical PH range: ${role.salaryRangePH}</span>
             ${role.lessonUrl ? `<a href="${role.lessonUrl}">Start the next lesson</a>` : ''}
@@ -686,6 +878,182 @@ function recommendedRolesMarkup(key) {
       ` : ''}
     </div>
   `;
+}
+
+function concreteBlocksMarkup(key, q, ctx) {
+  const blocks = [];
+  if (key === 'transitioner' && q.q1 === 'bpo') {
+    blocks.push(`
+      <div class="advice-card full">
+        <div class="advice-label">BPO to remote translation</div>
+        <table class="mini-table">
+          <thead><tr><th>What you did in BPO</th><th>What remote clients call it</th><th>Where to show it</th></tr></thead>
+          <tbody>
+            <tr><td>Voice calls, inbound</td><td>Customer Support VA</td><td>Call resolution rate, AHT, CSAT</td></tr>
+            <tr><td>Chat or email support</td><td>Customer Support VA or Email VA</td><td>Ticket closure count, reply time</td></tr>
+            <tr><td>Quality assurance</td><td>Operations Assistant</td><td>QA pass rate, audit volume per week</td></tr>
+            <tr><td>Reports and dashboards</td><td>Admin Assistant or Data VA</td><td>Reports filed per week, tools used</td></tr>
+            <tr><td>Team lead or coaching</td><td>Project Coordinator, stretch</td><td>Team size, metric improvements</td></tr>
+            <tr><td>Sales or appointments</td><td>Appointment Setter</td><td>Conversion rate, calls per day</td></tr>
+          </tbody>
+        </table>
+      </div>
+    `);
+  }
+  if (key === 'solo' || ctx.hybridBusinessStarter) {
+    blocks.push(`
+      <div class="advice-card full">
+        <div class="advice-label">Business tasks to remote services</div>
+        <ul>
+          <li><strong>Online shop:</strong> inventory tracking becomes ecommerce admin, order processing becomes operations assistant, customer messages become customer support VA.</li>
+          <li><strong>Local retail or food business:</strong> cash recording becomes bookkeeping support, supplier follow-up becomes vendor coordination, stock counting becomes inventory admin.</li>
+          <li><strong>Service business:</strong> client scheduling becomes calendar support, inquiry replies become customer support, payment tracking becomes accounts receivable support.</li>
+          <li><strong>Family business:</strong> name only the tasks you personally completed from start to finish.</li>
+        </ul>
+      </div>
+    `);
+  }
+  if (key === 'generalist') {
+    blocks.push(`
+      <div class="advice-card full">
+        <div class="advice-label">Choose one wedge</div>
+        <ul>
+          <li><strong>You track schedules, files, to-do lists, or deadlines:</strong> admin coordinator. Tools: Google Workspace, Notion, Trello.</li>
+          <li><strong>You answer questions or complaints:</strong> customer support VA. Tools: Zendesk, Freshdesk, Gmail labels.</li>
+          <li><strong>You write captions or make graphics:</strong> social media or content assistant. Tools: Canva, Buffer, Meta Business Suite.</li>
+          <li><strong>You clean up spreadsheets or contact lists:</strong> data admin or research VA. Tools: Google Sheets, Excel, Airtable.</li>
+          <li><strong>You track payments or invoices:</strong> bookkeeping support VA. Tools: QuickBooks, Wave, Xero.</li>
+        </ul>
+        <p class="advice-next">Pick the lane that sounds like you today, not who you want to become later.</p>
+      </div>
+    `);
+  }
+  if (key === 'fresh' && !ctx.hybridBusinessStarter) {
+    blocks.push(`
+      <div class="advice-card full">
+        <div class="advice-label">7-day beginner sprint</div>
+        <ul>
+          <li><strong>Day 1:</strong> start one free course. Finish the first module before you close the tab.</li>
+          <li><strong>Day 2:</strong> set up a professional Gmail address and sender name.</li>
+          <li><strong>Day 3:</strong> start a one-page Google Sites or Canva portfolio.</li>
+          <li><strong>Day 4:</strong> make one practice output: content calendar, 3 Canva posts, or cleaned spreadsheet.</li>
+          <li><strong>Day 5:</strong> write your setup statement: internet speed, device, available hours, available days.</li>
+          <li><strong>Day 6:</strong> write two sentences about what you made and what tool you used.</li>
+          <li><strong>Day 7:</strong> write this headline: Beginner VA building [skill] skills, available [hours] hours per week for part-time remote work.</li>
+        </ul>
+      </div>
+    `);
+  }
+  if (key === 'creative') {
+    blocks.push(`
+      <div class="advice-card full">
+        <div class="advice-label">Creative proof ladder</div>
+        <ul>
+          <li><strong>Level 1, practice sample:</strong> made for yourself. Shows you know the tool.</li>
+          <li><strong>Level 2, simulated client project:</strong> a brief you wrote for a real type of client. This shows client-context thinking.</li>
+          <li><strong>Level 3, portfolio case study:</strong> brief, output, and one sentence on what you would improve next time.</li>
+        </ul>
+        <p class="advice-next">You need at least one Level 2 sample before applying for paid creative work. Level 1 alone gets ignored.</p>
+      </div>
+    `);
+  }
+  if (ctx.partTime) {
+    blocks.push(`
+      <div class="advice-card full">
+        <div class="advice-label">Part-time-safe scopes</div>
+        <ul>
+          <li><strong>Inbox management:</strong> label, draft, flag, archive. One defined account. Two-hour daily block.</li>
+          <li><strong>Content scheduling:</strong> 10 to 12 posts per month, pre-approved copy, scheduled in Buffer or Meta.</li>
+          <li><strong>Weekly report formatting:</strong> pull data, format a template, send by Friday.</li>
+          <li><strong>Research and list-building:</strong> one topic per week, defined format, delivered in a sheet.</li>
+        </ul>
+        <p class="advice-next">Avoid roles that require full customer support coverage, same-day Slack response, or daily standups unless the post clearly accepts part-time async work.</p>
+      </div>
+    `);
+  }
+  if (ctx.communicationRisk) {
+    blocks.push(`
+      <div class="advice-card full">
+        <div class="advice-label">14-day written English repair plan</div>
+        <ul>
+          <li><strong>Days 1 to 3:</strong> write one short professional message per day: status update, clarification request, or delay notice.</li>
+          <li><strong>Days 4 to 7:</strong> rewrite each message shorter and clearer. One sentence per thought.</li>
+          <li><strong>Days 8 to 14:</strong> write one client handoff note per day: what you finished, where it is saved, what happens next, and what you need.</li>
+        </ul>
+        <p style="margin-top:8px">Work this plan alongside the <a href="../lesson-english-101/index.html">English Communications 101 lesson</a>, which gives you a free AI voice coach and reply templates to practice with.</p>
+      </div>
+    `);
+  }
+  return blocks.join('');
+}
+
+function beforeItemsFor(key, q, ctx) {
+  if (ctx.hybridBusinessStarter) {
+    return [
+      'Pick one business task you completed by yourself. Write what the task was, how often you did it, and what changed because you did it.',
+      'Make one simple output in Google Sheets: order tracker, inventory list, customer message log, or payment tracker.',
+      'Write one honest English message a client would understand: task completed, file sent, please confirm the deadline.'
+    ];
+  }
+  if (ctx.creativePaidPolished) {
+    return [
+      'Choose 6 to 10 paid creative samples that match the job you want. Put them in one page, not a mixed gallery.',
+      'Write one case note for each sample: client type, brief, tool, final output, and one result or usage detail.',
+      'Choose whether your next role is creative execution, content support, or project coordination. Do not sell all three at once.'
+    ];
+  }
+  if (ctx.communicationRisk) {
+    return [
+      'Build one proof sample where output speaks louder than conversation: cleaned sheet, scheduled posts, research list, inbox labels, or formatted tracker.',
+      'Write four short client messages in English: status update, clarification request, delay notice, and handoff note.',
+      'Avoid roles that require daily calls until those written samples are clear and easy to understand.'
+    ];
+  }
+  if (key === 'polished') {
+    return [
+      'Write one outcome sentence for your best client result: task, client type, volume or duration, and result.',
+      'List every tool you used in the last 90 days. Remove any tool you opened fewer than four times.',
+      'Open a free Google Sites page and add your offer plus three work samples you already own.'
+    ];
+  }
+  if (key === 'transitioner') {
+    return [
+      'Rewrite one old work bullet using a remote-work label: support, reporting, coordination, QA, follow-up, or documentation.',
+      'Pick one tool gap to close this week, not ten. Trello, Notion, Google Sheets, Zendesk, or Canva is enough.',
+      'Write your availability in one clean sentence before applying.'
+    ];
+  }
+  if (key === 'solo') {
+    return [
+      'Break one business into three functions: customer messages, records, operations, sales, inventory, or follow-up.',
+      'Use honest numbers: orders processed, customers served, inquiries answered, or records updated per week.',
+      'Write one business-owner line without hiding behind the word owner.'
+    ];
+  }
+  if (key === 'generalist') {
+    return [
+      'Choose one lane from the wedge selector below. One lane, one resume, one proof sample.',
+      'Make one sample that matches that lane: inbox workflow, cleaned sheet, content tracker, support templates, or expense tracker.',
+      'Rewrite your headline around the lane, not around being flexible.'
+    ];
+  }
+  if (key === 'fresh') {
+    return [
+      'Finish one free module before sending another application.',
+      'Make one practice output a client can inspect.',
+      'Write your setup honestly: internet, device, backup plan, available hours, and available days.'
+    ];
+  }
+  return ADVICE[key].before;
+}
+
+function oneActionToday(key, q, ctx) {
+  if (ctx.communicationRisk) return 'Today: write one clear client handoff note for a practice task. Keep it to four lines.';
+  if (ctx.hybridBusinessStarter) return 'Today: turn one business task you personally owned into one remote-work bullet.';
+  if (ctx.creativePaidPolished) return 'Today: choose one paid creative sample and write its brief, tool, output, and result.';
+  if (ctx.partTime) return 'Today: write your exact part-time availability statement before looking at job posts.';
+  if (key === 'fresh') return 'Today: make one practice output before sending another application.';
+  return ADVICE[key].next;
 }
 
 function answerNotes(q) {
@@ -721,21 +1089,31 @@ function answerNotes(q) {
 
 function adviceMarkup(key, q) {
   const a = ADVICE[key];
+  const ctx = resultContext(key, q);
   const notes = answerNotes(q).map(note => `<li>${note}</li>`).join('');
-  const before = a.before.map(item => `<li>${item}</li>`).join('');
+  const before = beforeItemsFor(key, q, ctx).map(item => `<li>${item}</li>`).join('');
   const captureDisabled = EMAIL_CAPTURE_ENDPOINT ? '' : ' disabled';
   const captureAriaDisabled = EMAIL_CAPTURE_ENDPOINT ? 'false' : 'true';
   const captureHeading = `Get the full ${ARCHETYPES[key].name.replace('The ', '')} starter plan by email. Free.`;
+  const headline = ctx.communicationRisk && key === 'polished'
+    ? 'Your experience is real. Choose roles where proof speaks louder than conversation.'
+    : a.headline;
+  const intro = ctx.hybridBusinessStarter
+    ? 'You have already carried a business. That is different from never working. The gap is remote-work language, tool proof, and English fluency. Your business operations background stays on the resume and comes first.'
+    : a.intro;
   return `
     <section class="advice" aria-label="Personalized archetype advice">
-      <h2>${a.headline}</h2>
-      <p class="advice-intro">${a.intro}</p>
+      <h2>${headline}</h2>
+      <p class="advice-intro">${intro}</p>
       <div class="advice-grid">
+        ${whyResultMarkup(key, q, ctx)}
+        ${blockerMarkup(ctx)}
         <div class="advice-card full">
           <div class="advice-label">Based on your answers</div>
           <ul>${notes}</ul>
         </div>
-        ${recommendedRolesMarkup(key)}
+        ${concreteBlocksMarkup(key, q, ctx)}
+        ${recommendedRolesMarkup(key, q, ctx)}
         <div class="advice-card full">
           <div class="advice-label">What is true about this path</div>
           <p>${a.truth}</p>
@@ -755,7 +1133,7 @@ function adviceMarkup(key, q) {
         <div class="advice-card full">
           <div class="advice-label">Watch-out</div>
           <p>${a.risk}</p>
-          <p class="advice-next">${a.next}</p>
+          <p class="advice-next">${oneActionToday(key, q, ctx)}</p>
         </div>
         <div class="advice-card full">
           <div class="advice-label">Keep this plan</div>
@@ -769,10 +1147,7 @@ function adviceMarkup(key, q) {
             <div class="capture-privacy">No spam. Unsubscribe anytime.</div>
           </form>
           <div class="capture-status" data-capture-status hidden></div>
-          <p>This result disappears when you close this page. The community does not. Join the BFF Facebook group, share your result, and say you are new. You will not be the only one starting.</p>
-          <div class="actions">
-            <a class="btn btn-primary" href="https://facebook.com/groups/workathomegeek" target="_blank" rel="noopener">Join the BFF community</a>
-          </div>
+          <p>The emailed plan should include this result, your blocker, your proof sample, and the next lesson. If email capture is disabled, use the action above first.</p>
         </div>
       </div>
     </section>
@@ -799,11 +1174,9 @@ function render() {
     <div class="eyebrow">Your current path</div>
     <div class="result-name">${a.name}</div>
     <div class="result-tag">${a.tag}</div>
-    <div class="result-detail">This is a starting point, not a life sentence.</div>
+    <div class="result-detail">Use this as a diagnostic. The most important part is the blocker and the one action today.</div>
     <div class="actions">
       <a class="btn btn-primary" href="../resume-builder/index.html?archetype=${key}&start=archetype">Build a resume with this archetype</a>
-      <a class="btn btn-secondary" href="../curriculum/index.html">See lessons for this path</a>
-      <a class="btn btn-secondary" href="../jobs/index.html">Browse matching jobs</a>
     </div>
     ${adviceMarkup(key, q)}
   `;
