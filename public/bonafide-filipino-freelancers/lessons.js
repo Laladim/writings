@@ -768,6 +768,20 @@ window.SWAHG_LESSONS = {
       tier: 2,
       format: "article"
     },
+    "business-owner-to-va-portfolio": {
+      title: "Business Owner to VA Portfolio",
+      stage: "working",
+      status: "live",
+      url: "lesson-business-owner-to-va-portfolio/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["admin","va","customer-service","account-manager"],
+      prerequisites: ["career-path-training"],
+      next_lessons: ["google-sites-portfolio","personal-branding","resume-builder"],
+      why_this_lesson: "Skill Practice lesson for online sellers and small-business owners turning inventory, supplier, sales, and customer experience into VA-ready Google Workspace portfolio samples.",
+      estimated_minutes: 45,
+      tier: 2,
+      format: "article"
+    },
     "onboarding-first-30-days": {
       title: "Onboarding: First 30 Days",
       stage: "stage1",
@@ -1009,6 +1023,20 @@ window.SWAHG_LESSONS = {
       estimated_minutes: 8,
       tier: 0,
       format: "example"
+    },
+    "example-portfolio-business-owner": {
+      title: "Example Portfolio | Business Owner to Virtual Assistant",
+      stage: "launch",
+      status: "live",
+      url: "lesson-business-owner-to-va-portfolio/business-owner-sample-portfolio.html",
+      closes_va_gaps: [],
+      ladders_to_roles: ["admin","va","customer-service","account-manager"],
+      prerequisites: ["business-owner-to-va-portfolio"],
+      next_lessons: ["resume-builder"],
+      why_this_lesson: "Sample Google Sites-style portfolio for former small-business owners and online sellers transitioning into Virtual Assistant work.",
+      estimated_minutes: 8,
+      tier: 0,
+      format: "example"
     }
   },
 
@@ -1034,15 +1062,15 @@ window.SWAHG_LESSONS = {
 
     /* TOP ROW — Launch */
     "launch-1":{ pdf_label: "Setting Up Accounts",        stage: "launch",  lessons: ["online-jobs-account","freelancing-platforms"] },
-    "launch-2":{ pdf_label: "Creating Powerful Resume",   stage: "launch",  lessons: ["resume-builder","google-sites-portfolio","bpo-to-va-portfolio","office-admin-to-va-portfolio","example-portfolio-zero-work-experience","example-portfolio-bpo-to-virtual-assistant"] },
+    "launch-2":{ pdf_label: "Creating Powerful Resume",   stage: "launch",  lessons: ["resume-builder","google-sites-portfolio","bpo-to-va-portfolio","office-admin-to-va-portfolio","business-owner-to-va-portfolio","example-portfolio-zero-work-experience","example-portfolio-bpo-to-virtual-assistant","example-portfolio-business-owner"] },
     "launch-3":{ pdf_label: "Job Hunting",                stage: "launch",  lessons: ["find-your-path-quiz","freelancing-platforms","job-board","reading-a-job-post"] },
     "launch-4":{ pdf_label: "Join Groups and Forums",     stage: "launch",  lessons: ["groups-and-forums"] },
-    "launch-5":{ pdf_label: "Creating your Portfolio",    stage: "launch",  lessons: ["personal-branding","online-presence","google-sites-portfolio","bpo-to-va-portfolio","office-admin-to-va-portfolio"] },
+    "launch-5":{ pdf_label: "Creating your Portfolio",    stage: "launch",  lessons: ["personal-branding","online-presence","google-sites-portfolio","bpo-to-va-portfolio","office-admin-to-va-portfolio","business-owner-to-va-portfolio"] },
 
     /* TOP ROW — Working on it! */
     "work-1":  { pdf_label: "Interviews",                 stage: "working", lessons: ["interviews-prep","freelancing-journey-lesson-5"] },
     "work-2":  { pdf_label: "Internship",                 stage: "working", lessons: ["internship-options"] },
-    "work-3":  { pdf_label: "Skill Practice",             stage: "working", lessons: ["master-tools-with-ai","30-day-hired-plan","finish-courses-with-ai"] },
+    "work-3":  { pdf_label: "Skill Practice",             stage: "working", lessons: ["master-tools-with-ai","30-day-hired-plan","finish-courses-with-ai","business-owner-to-va-portfolio"] },
     "work-4":  { pdf_label: "Creating Proposal",          stage: "working", lessons: ["common-mistakes","set-your-first-rate"] },
     "work-5":  { pdf_label: "Bidding",                    stage: "working", lessons: ["getting-hired-fast","freelancing-platforms","common-mistakes","reading-a-job-post"] },
 

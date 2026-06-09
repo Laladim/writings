@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sample Portfolio · Business Owner to VA · BFF Open University</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  :root{--purple:#5a4a7a;--purple-deep:#473a63;--gold:#b68a4a;--green:#4f735d;--paper:#fbf8f3;--card:#ffffff;--line:#e3dcd2;--ink:#2f2a36;--soft:#6f6878;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;line-height:1.6;}
+  .topbar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:14px 22px;background:var(--purple-deep);color:#fdfbfa;}
+  .topbar .mark{width:30px;height:30px;border-radius:7px;background:var(--gold);color:#3a2f18;font-weight:700;display:flex;align-items:center;justify-content:center;}
+  .topbar .title{font-weight:700;}
+  .topbar .links{margin-left:auto;display:flex;gap:14px;flex-wrap:wrap;}
+  .topbar a{color:#f1ebdf;text-decoration:none;font-size:14px;border-bottom:1px solid rgba(241,235,223,.4);}
+  .shell{display:grid;grid-template-columns:260px 1fr 286px;gap:22px;max-width:1320px;margin:0 auto;padding:22px;}
+  .side,.builder{align-self:start;position:sticky;top:18px;}
+  .side nav{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;}
+  .side a{display:block;color:var(--purple);text-decoration:none;padding:7px 0;font-size:14px;border-bottom:1px solid #f0ece4;}
+  .side a:last-child{border-bottom:0;}
+  .site{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;}
+  .sitebar{display:flex;gap:6px;padding:10px 16px;background:#f3eee6;border-bottom:1px solid var(--line);}
+  .sitebar span{width:11px;height:11px;border-radius:50%;background:#cfc6b8;}
+  .hero{padding:34px 34px 26px;}
+  .hero .eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:700;}
+  .hero h1{font-family:Georgia,serif;font-size:34px;margin:8px 0 6px;color:var(--purple-deep);}
+  .hero .pos{font-size:18px;color:var(--soft);}
+  .section{padding:24px 34px;border-top:1px solid var(--line);}
+  .section h2{font-size:21px;color:var(--purple-deep);margin:0 0 14px;}
+  .translation{display:grid;gap:8px;}
+  .trow{display:grid;grid-template-columns:1fr 1fr;gap:10px;background:#faf7f1;border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:14px;}
+  .trow .from{color:var(--soft);}
+  .trow .to{color:var(--purple-deep);font-weight:600;}
+  .skills{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .skill{background:#faf7f1;border:1px solid var(--line);border-radius:8px;padding:12px 14px;font-size:14px;}
+  .skill b{color:var(--purple-deep);}
+  .sample{border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:0 0 12px;}
+  .sample .tag{display:inline-block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:#3a2f18;background:var(--gold);border-radius:5px;padding:3px 8px;margin-bottom:8px;}
+  .sample h3{margin:0 0 6px;font-size:17px;color:var(--purple-deep);}
+  .sample p{margin:0;font-size:14px;color:var(--ink);}
+  .note{background:#f4f1ea;border-left:4px solid var(--green);border-radius:0 8px 8px 0;padding:14px 16px;font-size:14px;color:var(--ink);margin:10px 0 0;}
+  .focus-note{background:#f4f1ea;border-left:4px solid var(--purple);border-radius:0 8px 8px 0;padding:14px 16px;font-size:14px;margin:12px 0 0;}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:14px;}
+  .contact-grid div span{display:block;color:var(--soft);font-size:12px;text-transform:uppercase;letter-spacing:.08em;}
+  .builder .box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;}
+  .builder .notice{background:#fff6e8;border:1px solid #ecd9b3;border-radius:10px;padding:12px 14px;font-size:13px;color:#6b531f;margin:0 0 14px;}
+  .builder ol{margin:0;padding-left:20px;font-size:13px;color:var(--ink);}
+  .builder li{margin-bottom:8px;}
+  .builder h3{margin:0 0 10px;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);}
+  footer{max-width:1320px;margin:0 auto;padding:18px 22px 40px;color:var(--soft);font-size:13px;}
+  @media (max-width:1080px){.shell{grid-template-columns:1fr;}.side,.builder{position:static;}.skills,.contact-grid,.trow{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="topbar">
+<div class="mark">A</div>
+<div class="title">Sample VA Portfolio &middot; Business Owner Path</div>
+<div class="links">
+<a href="index.html">Back to Lesson</a>
+<a href="../lesson-google-sites-portfolio/index.html">Google Sites Build Lesson</a>
+</div>
+</div>
+
+<div class="shell">
+
+<aside class="side">
+<nav>
+<a href="#summary">Summary</a>
+<a href="#skills">Transferable Skills</a>
+<a href="#samples">Sample Activities</a>
+<a href="#trust">Trust Notes</a>
+<a href="#contact">Contact</a>
+</nav>
+</aside>
+
+<main class="site">
+<div class="sitebar"><span></span><span></span><span></span></div>
+<div class="hero">
+<div class="eyebrow">Virtual Assistant Portfolio</div>
+<h1>Annie "Anne" Dela Cruz</h1>
+<div class="pos">Business Operator becoming a Remote Beginner &middot; Admin and operations support for busy online sellers</div>
+</div>
+
+<section class="section" id="summary">
+<h2>Summary</h2>
+<p>I ran a small online clothing shop for three years. I handled inventory, suppliers, daily sales records, and customer messages myself. I am now bringing that same back-office discipline to remote clients as a virtual assistant. Below are recreated samples that show how I work. The data is fictional; the work behavior is real.</p>
+<div class="translation">
+<div class="trow"><div class="from">Tracked my own stock and reorders</div><div class="to">Inventory management for a client</div></div>
+<div class="trow"><div class="from">Chased my suppliers for deliveries</div><div class="to">Vendor coordination and follow-up</div></div>
+<div class="trow"><div class="from">Recorded daily sales and costs</div><div class="to">Recordkeeping and basic income/expense tracking</div></div>
+<div class="trow"><div class="from">Answered customer messages all day</div><div class="to">Customer support and inbox management</div></div>
+</div>
+</section>
+
+<section class="section" id="skills">
+<h2>Transferable Skills</h2>
+<div class="skills">
+<div class="skill"><b>Inventory tracking</b><br/>Stock levels, reorder points, low-stock flags.</div>
+<div class="skill"><b>Vendor coordination</b><br/>Order status, deadlines, follow-ups.</div>
+<div class="skill"><b>Recordkeeping</b><br/>Income, expenses, running totals.</div>
+<div class="skill"><b>Customer communication</b><br/>Clear, warm, on-brand replies.</div>
+<div class="skill"><b>Google Workspace</b><br/>Sheets, Docs, Forms, Drive.</div>
+<div class="skill"><b>Order intake</b><br/>Clean forms, no back-and-forth.</div>
+</div>
+</section>
+
+<section class="section" id="samples">
+<h2>Sample Activities</h2>
+<div class="sample">
+<span class="tag">Google Sheets</span>
+<h3>Inventory and stock tracker</h3>
+<p>Item, SKU, stock on hand, reorder point, supplier, lead time, and a low-stock flag, with a summary tab that lists what to reorder. Fictional products. I would update it daily and flag low stock before it runs out.</p>
+</div>
+<div class="sample">
+<span class="tag">Google Sheets</span>
+<h3>Vendor and supplier tracker</h3>
+<p>Supplier (fictional), product, order date, expected date, status, last follow-up, and next action. Keeps every order moving without a single dropped delivery.</p>
+</div>
+<div class="sample">
+<span class="tag">Google Sheets</span>
+<h3>Income and expense tracker</h3>
+<p>Date, description, category, money in, money out, and a running total, all with fictional figures. Shows clean recordkeeping a client can rely on. Sample only, not real financials.</p>
+</div>
+<div class="sample">
+<span class="tag">Google Docs</span>
+<h3>Customer reply template library</h3>
+<p>Templates for order confirmation, shipping update, out-of-stock reply, refund or return, and a polite follow-up. Warm and clear, ready to adapt to a client's brand voice.</p>
+</div>
+<div class="sample">
+<span class="tag">Google Forms</span>
+<h3>Order and client intake form</h3>
+<p>The exact fields needed to take an order or onboard a client without endless back-and-forth. Shows I gather the right information up front.</p>
+</div>
+</section>
+
+<section class="section" id="trust">
+<h2>Trust Notes</h2>
+<div class="note"><b>Recreated portfolio sample.</b> These samples are based on anonymized patterns from prior business experience. All names, products, suppliers, dates, and figures are fictional. No confidential information is included.</div>
+<div class="focus-note"><b>AI assistance note.</b> I used Google Gemini to help draft and check clarity. I reviewed every sample myself and kept all facts and figures fictional. The judgment and the work behavior are my own.</div>
+</section>
+
+<section class="section" id="contact">
+<h2>Contact</h2>
+<div class="contact-grid">
+<div><span>Name</span>Annie "Anne" Dela Cruz</div>
+<div><span>Target Role</span>Admin / Operations VA</div>
+<div><span>Availability</span>Part-time, growing to full-time</div>
+<div><span>Email</span>anne.delacruz@example.com</div>
+</div>
+</section>
+</main>
+
+<aside class="builder">
+<div class="box">
+<div class="notice">This is a sample for learning. It does not claim real VA client work. Every artifact is recreated with fictional data to show transferable skill.</div>
+<h3>How Anne built this</h3>
+<ol>
+<li>Listed everything she did in her shop: stock, suppliers, sales, customer messages.</li>
+<li>Matched each one to a VA sample using the translation map in the lesson.</li>
+<li>Built each sample in Google Sheets, Docs, or Forms with fictional data.</li>
+<li>Added the recreated-sample label to every file.</li>
+<li>Assembled it into this one-page Google Site, set to view-only.</li>
+</ol>
+</div>
+</aside>
+
+</div>
+
+<footer>
+Sample portfolio for the lesson "Business Owner to VA Portfolio" &middot; Persona: Annie "Anne" Dela Cruz, former online-shop owner (fictional) &middot; BFF Open University &middot; Writings by Lala &middot; June 9, 2026
+</footer>
+
+</body>
+</html>
