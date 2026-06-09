@@ -139,6 +139,20 @@ window.SWAHG_LESSONS = {
       format: "article",
       build_queue_rank: 2
     },
+    "free-upskilling-vault": {
+      title: "The Free Upskilling Vault",
+      stage: "warmup",
+      status: "live",
+      url: "lesson-free-upskilling-vault/",
+      closes_va_gaps: ["email-marketing"],
+      ladders_to_roles: ["customer-service","smm","account-manager","sdr","admin","content","va"],
+      prerequisites: [],
+      next_lessons: ["finish-courses-with-ai","master-tools-with-ai"],
+      why_this_lesson: "The free courses and uncommon gold-find certifications worth your time in 2026, mapped to your role, each tied to the proof you should build. Finish one, prove it, move on.",
+      estimated_minutes: 20,
+      tier: 2,
+      format: "guide"
+    },
     "2026-tool-stack": {
       title: "The 2026 Tool Stack",
       stage: "warmup",
@@ -1072,7 +1086,7 @@ window.SWAHG_LESSONS = {
     "warm-2": { pdf_label: "Planning",                    stage: "warmup",  lessons: ["10-secret-skills"] },
     "warm-3": { pdf_label: "Basic Foundation",            stage: "warmup",  lessons: ["career-path-training","specialized-business-skills","creative-artistic-skills","english-101"] },
     "warm-4": { pdf_label: "Support Group",               stage: "warmup",  lessons: ["support-group"] },
-    "warm-5": { pdf_label: "Ongoing Training",            stage: "warmup",  lessons: ["2026-tool-stack"] },
+    "warm-5": { pdf_label: "Ongoing Training",            stage: "warmup",  lessons: ["2026-tool-stack","free-upskilling-vault"] },
 
     /* TOP ROW — Launch */
     "launch-1":{ pdf_label: "Setting Up Accounts",        stage: "launch",  lessons: ["online-jobs-account","freelancing-platforms"] },
