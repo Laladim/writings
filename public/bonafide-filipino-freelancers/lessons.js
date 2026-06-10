@@ -282,18 +282,18 @@ window.SWAHG_LESSONS = {
       format: "video"
     },
     "10-secret-skills": {
-      title: "10 Useful Skills",
+      title: "Your Free BFF Toolbox",
       stage: "warmup",
       status: "live",
       url: "lesson-10-secret-skills/",
       closes_va_gaps: [],
-      ladders_to_roles: ["customer-service","smm","admin","va"],
+      ladders_to_roles: ["customer-service","smm","account-manager","sdr","admin","content","va"],
       prerequisites: [],
-      next_lessons: ["career-path-training"],
-      why_this_lesson: "Practical proof-building lesson for beginner freelancers: briefs, updates, files, boards, research, AI verification, reporting, customer replies, tailored applications, and handoffs.",
+      next_lessons: ["career-path-training","resume-builder"],
+      why_this_lesson: "A guided tour of every free BFF resource and the exact order to use them. The 6-step Toolbox Loop: Blueprint, Archetype Finder, Curriculum, Resume Builder, Job Board, Community. Cures the where-do-I-start freeze by turning the tools from a menu into a sequence, with one small proof from each.",
       estimated_minutes: 25,
-      tier: 0,
-      format: "video"
+      tier: 2,
+      format: "guide"
     },
     "online-jobs-account": {
       title: "OnlineJobs.ph Account Setup",
