@@ -8,7 +8,14 @@
  *   lessons[slug]          → individual lesson nodes
  *   blueprint_boxes[box]   → maps PDF blueprint boxes (5 per stage) to lesson_slugs[]
  *   va_gaps[slug]          → Mar 18 2026 community gap data (641 candidates)
- *   roles[slug]            → Job List Role Categories (244 active rows, 2026-05-11)
+ *   roles[slug]            → Job List Role Categories. Market-mix SNAPSHOT from
+ *                            2026-05-11 (244 rows). NOT the live board (see
+ *                            meta.live_board). Role keys here are load-bearing:
+ *                            lessons[].ladders_to_roles references them, so do not
+ *                            rename them. NOTE: the live board's role taxonomy has
+ *                            since shifted (Customer Support now dominates; SEO +
+ *                            Community Manager added); a full re-derivation is a
+ *                            separate task that must remap ladders_to_roles too.
  *
  * Update protocol:
  *   - When a lesson is rewritten/published, change lessons[slug].url + status
@@ -23,11 +30,18 @@
 window.SWAHG_LESSONS = {
   meta: {
     version: "1.0",
-    last_updated: "2026-05-19",
+    last_updated: "2026-06-10",
     blueprint_pdf_source: "Bonafide Filipino Freelancer Simplified Blueprint",
     data_sources: {
       va_assessments: { date: "2026-03-18", candidates: 641 },
-      job_list: { date: "2026-05-11", active_rows: 244 },
+      // job_list = the 2026-05-11 market-mix SNAPSHOT that the roles[] block below
+      // was derived from. It is NOT the live job board. Kept as a dated strategy
+      // snapshot (roles[].market_pct only changes on a >=5pt mix shift). Do not
+      // cite active_rows as the live count.
+      job_list: { date: "2026-05-11", active_rows: 244, note: "market-mix snapshot for roles[]; not the live board" },
+      // live_board = the count learners actually see; auto-refreshed daily by the
+      // Rodge GitHub Actions pipeline. Source of truth: jobs/data/run-manifest.json.
+      live_board: { date: "2026-06-10", job_count: 40, source: "jobs/data/run-manifest.json", note: "auto-refreshes daily; rolling, not cumulative" },
       lesson_scrape: { date: "2026-05-11", pages: 58 }
     }
   },
