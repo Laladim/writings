@@ -257,13 +257,17 @@ import Base from '../layouts/Base.astro';
   .faq { margin-top: 3rem; border-top: 1px solid color-mix(in srgb, var(--accent-soft), transparent 68%); padding-top: 2.5rem; }
   .faq-kicker { color: var(--accent-soft); font-size: 1.15rem; margin: 0 0 0.25rem; }
   .faq h2 { font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem); margin: 0 0 1.25rem; }
-  .faq details { border-bottom: 1px solid color-mix(in srgb, var(--accent-soft), transparent 76%); padding: 0.2rem 0; }
-  .faq summary { cursor: pointer; font-family: var(--font-nav); font-size: clamp(1.05rem, 1rem + 0.35vw, 1.25rem); line-height: 1.35; padding: 1rem 2rem 1rem 0; color: var(--ink); list-style: none; position: relative; }
+  .faq details { border: 1px solid transparent; border-bottom-color: color-mix(in srgb, var(--accent-soft), transparent 76%); border-radius: 8px; margin: 0.15rem -0.75rem; padding: 0.15rem 0.75rem; transition: background-color 180ms ease-out, border-color 180ms ease-out, box-shadow 180ms ease-out; }
+  .faq summary { cursor: pointer; font-family: Inter, sans-serif; font-size: clamp(1.05rem, 1rem + 0.35vw, 1.25rem); font-weight: 500; line-height: 1.35; padding: 1rem 2rem 1rem 0; color: var(--ink); list-style: none; position: relative; }
   .faq summary::-webkit-details-marker { display: none; }
   .faq summary::after { content: "+"; position: absolute; right: 0.25rem; top: 0.95rem; color: var(--accent); font-size: 1.35rem; line-height: 1; }
+  .faq details[open] { background: color-mix(in srgb, var(--paper), var(--accent-soft) 6%); border-color: color-mix(in srgb, var(--accent-soft), transparent 48%); box-shadow: 0 10px 28px rgba(42, 31, 60, 0.07); padding-bottom: 0.85rem; }
   .faq details[open] summary::after { content: "−"; }
-  .faq details[open] summary { color: var(--accent); }
+  .faq details[open] summary { color: var(--accent); font-weight: 600; }
   .faq details p { margin: 0 0 1rem; color: var(--ink-soft); }
+  .faq details[open] p { color: var(--ink); line-height: 1.72; padding-right: 0.5rem; }
+  .faq details[open] summary + p { border-top: 1px solid color-mix(in srgb, var(--gold), transparent 72%); padding-top: 0.9rem; }
+  .faq details[open] p:last-child { margin-bottom: 0.15rem; }
   .glory { margin-top: 2.5rem; color: var(--accent-soft); font-style: italic; }
   .sig { font-size: 1.6rem; color: var(--accent); margin-top: 0.25rem; }
 </style>
