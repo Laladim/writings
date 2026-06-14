@@ -124,6 +124,34 @@ window.SWAHG_LESSONS = {
       tier: 0,
       format: "video"
     },
+    "internet-connection-readiness": {
+      title: "Internet Connection Readiness",
+      stage: "prep",
+      status: "live",
+      url: "lesson-internet-connection-readiness/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["customer-service","smm","account-manager","sdr","admin","content","va"],
+      prerequisites: ["best-laptop"],
+      next_lessons: ["bank-account-payment-readiness","work-accessories"],
+      why_this_lesson: "Tests speed, stability, backup internet, workspace signal, and the client-ready reliability line before remote work starts.",
+      estimated_minutes: 15,
+      tier: 2,
+      format: "guide"
+    },
+    "bank-account-payment-readiness": {
+      title: "Bank Account and Payment Readiness",
+      stage: "prep",
+      status: "live",
+      url: "lesson-bank-account-payment-readiness/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["customer-service","smm","account-manager","sdr","admin","content","va"],
+      prerequisites: [],
+      next_lessons: ["browser-expert-secrets","storage-expert-secrets"],
+      why_this_lesson: "Prepares an own-name receiving account, valid ID, payment-name match, backup payment rail, and simple income record before client onboarding.",
+      estimated_minutes: 15,
+      tier: 2,
+      format: "guide"
+    },
     "email-address-is-gold": {
       title: "Email Address Expert Secrets",
       stage: "prep",
@@ -1091,7 +1119,7 @@ window.SWAHG_LESSONS = {
     /* TOP ROW — Preparation */
     "prep-1": { pdf_label: "Choosing your Computer",      stage: "prep",    lessons: ["best-laptop"] },
     "prep-2": { pdf_label: "Creating Work Emails",        stage: "prep",    lessons: ["email-address-is-gold","email-marketing-for-vas"] },
-    "prep-3": { pdf_label: "Setting up Online Tools",     stage: "prep",    lessons: ["browser-expert-secrets","storage-expert-secrets"] },
+    "prep-3": { pdf_label: "Setting up Online Tools",     stage: "prep",    lessons: ["browser-expert-secrets","storage-expert-secrets","internet-connection-readiness","bank-account-payment-readiness"] },
     "prep-4": { pdf_label: "Organizing Work Flow",        stage: "prep",    lessons: ["trello-love"] },
     "prep-5": { pdf_label: "Setting up Work Accessories", stage: "prep",    lessons: ["work-accessories"] },
 
