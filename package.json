@@ -14,6 +14,11 @@
     "obsidian:publish": "python3 scripts/obsidian_pages.py publish",
     "images:optimize": "node scripts/optimize-images.mjs",
     "images:audit": "node scripts/audit-images.mjs",
+    "bff:guide:worker": "node scripts/bff-guide/local-worker-server.mjs",
+    "bff:guide:verify-worker": "node scripts/bff-guide/verify-worker.mjs",
+    "bff:guide:verify-google-doc": "node scripts/bff-guide/verify-google-doc.mjs",
+    "bff:archetype:authorize": "node scripts/bff-archetype/deploy-google-apps-script.mjs authorize",
+    "bff:archetype:deploy": "node scripts/bff-archetype/deploy-google-apps-script.mjs deploy",
     "preview": "astro preview",
     "astro": "astro"
   },

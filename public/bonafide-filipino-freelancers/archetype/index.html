@@ -26,6 +26,17 @@
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; overflow-x: hidden; }
+  .screen-reader-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
   body {
     background: var(--bg);
     color: var(--text);
@@ -500,9 +511,10 @@
 </main>
 
 <script src="../shared/bff-state.js"></script>
+<script src="../shared/bff-capture-config.js"></script>
 <script>
 const STORAGE_KEY = 'resume-builder-v2';
-const EMAIL_CAPTURE_ENDPOINT = '';
+const EMAIL_CAPTURE_ENDPOINT = window.BFF_CAPTURE_ENDPOINT || '';
 
 const ARCHETYPES = {
   polished:     { name: 'The Polished Freelancer', tag: 'You already have real client or remote-work evidence. Your next step is packaging, positioning, and higher-fit roles.' },
@@ -739,6 +751,17 @@ function blockerCopy(blocker) {
     'scope-fit': 'Your biggest constraint right now is availability. Some roles that look beginner-friendly require daily coverage, so every target role must be part-time safe.',
     'proof-packaging': 'Your biggest gap right now is packaging. You have usable signals, but the client needs to see them as one role, one proof sample, and one next action.'
   }[blocker];
+}
+
+function proofSampleFor(key, q, ctx) {
+  if (ctx.blocker === 'communication') return 'Four clear professional message samples.';
+  if (ctx.blocker === 'tool-proof') return 'One finished output from a daily client tool.';
+  if (ctx.blocker === 'zero-evidence') return 'One small practice project matched to the target role.';
+  if (ctx.blocker === 'scope-fit') return 'One part-time-safe proof sample with clear available hours.';
+  if (key === 'polished') return 'One client result rewritten as an outcome sentence.';
+  if (key === 'creative') return 'A small portfolio set with process notes.';
+  if (key === 'solo') return 'Three business functions turned into service bullets.';
+  return 'One role-specific proof sample tied to the next lesson.';
 }
 
 function whyResultMarkup(key, q, ctx) {
@@ -1095,6 +1118,10 @@ function adviceMarkup(key, q) {
   const captureDisabled = EMAIL_CAPTURE_ENDPOINT ? '' : ' disabled';
   const captureAriaDisabled = EMAIL_CAPTURE_ENDPOINT ? 'false' : 'true';
   const captureHeading = `Get the full ${ARCHETYPES[key].name.replace('The ', '')} starter plan by email. Free.`;
+  const roleIds = recommendedRoleIds(key, q, ctx);
+  const firstRole = window.BFF && roleIds[0] ? window.BFF.roleById(roleIds[0]) : null;
+  const nextLessonUrl = firstRole && firstRole.lessonUrl ? firstRole.lessonUrl : '';
+  const proofSample = proofSampleFor(key, q, ctx);
   const headline = ctx.communicationRisk && key === 'polished'
     ? 'Your experience is real. Choose roles where proof speaks louder than conversation.'
     : a.headline;
@@ -1140,6 +1167,18 @@ function adviceMarkup(key, q) {
           <form class="capture-form" data-capture-form data-success="${captureHeading}" aria-disabled="${captureAriaDisabled}">
             <h3>${captureHeading}</h3>
             <input type="hidden" name="archetype" value="${key}">
+            <input type="hidden" name="archetype_name" value="${ARCHETYPES[key].name.replace('The ', '')}">
+            <input type="hidden" name="blocker" value="${ctx.blocker}">
+            <input type="hidden" name="proof_sample" value="${proofSample}">
+            <input type="hidden" name="next_lesson_url" value="${nextLessonUrl}">
+            <input type="hidden" name="source_page" value="${location.pathname}">
+            <input type="hidden" name="q1" value="${q.q1}">
+            <input type="hidden" name="tools" value="${q.tools}">
+            <input type="hidden" name="creative" value="${q.creative}">
+            <input type="hidden" name="q4" value="${q.q4}">
+            <input type="hidden" name="q5" value="${q.q5}">
+            <input type="hidden" name="experience" value="${q.experience}">
+            <input class="screen-reader-only" type="text" name="website" tabindex="-1" autocomplete="off">
             <div class="capture-field">
               <input type="email" name="email" placeholder="Your email address" autocomplete="email" required${captureDisabled}>
               <button class="btn btn-primary" type="submit"${captureDisabled}>Send me the plan</button>
@@ -1189,16 +1228,37 @@ document.addEventListener('submit', async event => {
   event.preventDefault();
   if (!EMAIL_CAPTURE_ENDPOINT) return;
   const status = form.parentElement.querySelector('[data-capture-status]');
+  const button = form.querySelector('button[type="submit"]');
   const payload = new FormData(form);
-  const response = await fetch(EMAIL_CAPTURE_ENDPOINT, {
-    method: 'POST',
-    body: payload,
-    headers: { Accept: 'application/json' }
-  });
-  if (!response.ok) throw new Error('Email capture failed');
-  form.hidden = true;
-  status.textContent = form.dataset.success || '';
-  status.hidden = false;
+  status.hidden = true;
+  status.textContent = '';
+  button.disabled = true;
+  try {
+    const isGoogleScriptEndpoint = /^https:\/\/script\.google\.com\//.test(EMAIL_CAPTURE_ENDPOINT);
+    const response = await fetch(EMAIL_CAPTURE_ENDPOINT, {
+      method: 'POST',
+      body: payload,
+      mode: isGoogleScriptEndpoint ? 'no-cors' : 'cors',
+      headers: isGoogleScriptEndpoint ? {} : { Accept: 'application/json' }
+    });
+    if (isGoogleScriptEndpoint && response.type === 'opaque') {
+      form.hidden = true;
+      status.textContent = form.dataset.success || '';
+      status.hidden = false;
+      return;
+    }
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok || !result.ok) {
+      throw new Error((result.errors && result.errors[0]) || 'Email capture failed.');
+    }
+    form.hidden = true;
+    status.textContent = form.dataset.success || '';
+    status.hidden = false;
+  } catch (error) {
+    status.textContent = 'Something went wrong. Please try again in a minute.';
+    status.hidden = false;
+    button.disabled = false;
+  }
 });
 render();
 </script>
