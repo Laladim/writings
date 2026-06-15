@@ -343,10 +343,18 @@
     font-size: 12px;
   }
   .capture-status {
-    border: 1px solid var(--border);
+    background: #edf8f1;
+    border: 1px solid #9cc9aa;
     border-radius: 8px;
+    color: #24462e;
     margin-top: 10px;
     padding: 10px 12px;
+  }
+  .capture-status strong {
+    color: #173a23;
+    display: block;
+    font-size: 14px;
+    margin-bottom: 3px;
   }
   .btn {
     border: 1px solid transparent;
@@ -1117,7 +1125,10 @@ function adviceMarkup(key, q) {
   const before = beforeItemsFor(key, q, ctx).map(item => `<li>${item}</li>`).join('');
   const captureDisabled = EMAIL_CAPTURE_ENDPOINT ? '' : ' disabled';
   const captureAriaDisabled = EMAIL_CAPTURE_ENDPOINT ? 'false' : 'true';
-  const captureHeading = `Get the full ${ARCHETYPES[key].name.replace('The ', '')} starter plan by email. Free.`;
+  const planName = ARCHETYPES[key].name.replace('The ', '');
+  const planLabel = planName.endsWith('Starter') ? planName : `${planName} starter`;
+  const captureHeading = `Get the full ${planLabel} plan by email. Free.`;
+  const captureSuccess = `Your ${planLabel} plan was added to the BFF list. Keep this page open for your result, blocker, proof sample, and next lesson.`;
   const roleIds = recommendedRoleIds(key, q, ctx);
   const firstRole = window.BFF && roleIds[0] ? window.BFF.roleById(roleIds[0]) : null;
   const nextLessonUrl = firstRole && firstRole.lessonUrl ? firstRole.lessonUrl : '';
@@ -1164,7 +1175,7 @@ function adviceMarkup(key, q) {
         </div>
         <div class="advice-card full">
           <div class="advice-label">Keep this plan</div>
-          <form class="capture-form" data-capture-form data-success="${captureHeading}" aria-disabled="${captureAriaDisabled}">
+          <form class="capture-form" data-capture-form data-success="${captureSuccess}" aria-disabled="${captureAriaDisabled}">
             <h3>${captureHeading}</h3>
             <input type="hidden" name="archetype" value="${key}">
             <input type="hidden" name="archetype_name" value="${ARCHETYPES[key].name.replace('The ', '')}">
@@ -1185,7 +1196,7 @@ function adviceMarkup(key, q) {
             </div>
             <div class="capture-privacy">No spam. Unsubscribe anytime.</div>
           </form>
-          <div class="capture-status" data-capture-status hidden></div>
+          <div class="capture-status" data-capture-status hidden role="status" aria-live="polite"></div>
           <p>The emailed plan should include this result, your blocker, your proof sample, and the next lesson. If email capture is disabled, use the action above first.</p>
         </div>
       </div>
@@ -1243,7 +1254,7 @@ document.addEventListener('submit', async event => {
     });
     if (isGoogleScriptEndpoint && response.type === 'opaque') {
       form.hidden = true;
-      status.textContent = form.dataset.success || '';
+      status.innerHTML = successMarkup(form.dataset.success);
       status.hidden = false;
       return;
     }
@@ -1252,7 +1263,7 @@ document.addEventListener('submit', async event => {
       throw new Error((result.errors && result.errors[0]) || 'Email capture failed.');
     }
     form.hidden = true;
-    status.textContent = form.dataset.success || '';
+    status.innerHTML = successMarkup(form.dataset.success);
     status.hidden = false;
   } catch (error) {
     status.textContent = 'Something went wrong. Please try again in a minute.';
@@ -1260,6 +1271,10 @@ document.addEventListener('submit', async event => {
     button.disabled = false;
   }
 });
+
+function successMarkup(message) {
+  return `<strong>Plan saved.</strong><span>${message || 'Your starter plan is now saved.'}</span>`;
+}
 render();
 </script>
 </body>
