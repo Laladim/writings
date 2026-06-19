@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-06-18T01:44:45",
+  "generated_at": "2026-06-19T02:07:51",
   "sources": [
     {
       "source": "RemoteOK",
-      "status": "ok",
-      "fetched_count": 100,
-      "accepted_count": 10,
-      "last_error": ""
+      "status": "error",
+      "fetched_count": 0,
+      "accepted_count": 0,
+      "last_error": "The read operation timed out"
     },
     {
       "source": "Remotive",
       "status": "ok",
-      "fetched_count": 30,
-      "accepted_count": 8,
+      "fetched_count": 32,
+      "accepted_count": 7,
       "last_error": ""
     },
     {
@@ -25,7 +25,7 @@
     {
       "source": "WeWorkRemotely",
       "status": "ok",
-      "fetched_count": 82,
+      "fetched_count": 91,
       "accepted_count": 15,
       "last_error": ""
     },
@@ -33,7 +33,7 @@
       "source": "Jobicy",
       "status": "ok",
       "fetched_count": 100,
-      "accepted_count": 3,
+      "accepted_count": 8,
       "last_error": ""
     },
     {
