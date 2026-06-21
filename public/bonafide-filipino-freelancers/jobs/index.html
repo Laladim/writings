@@ -194,9 +194,10 @@ function sourceModeLabel(job){return String(job.source_mode || 'automated_daily'
 function sourceLabel(job){return job.source || job.ats_platform || 'Source not listed';}
 function hasArchetype(job,label){return String(job.archetype_labels || '').split(',').map(s => s.trim()).includes(label);}
 function savedPath(){return window.BFF ? window.BFF.readState() : {};}
-function savedArchetypeLabel(){const saved=savedPath(); return saved.archetype && window.BFF ? window.BFF.archetypeLabel(saved.archetype) : '';}
-function applySavedArchetypeFilter(){const label=savedArchetypeLabel(); if(!label) return; const select=document.getElementById('archetype'); if([...select.options].some(opt => opt.value === label || opt.textContent === label)){select.value=label; document.querySelectorAll('.archetype-card').forEach(card => card.classList.toggle('active', card.dataset.archetype === label));}}
-function renderPathBanner(){const banner=document.getElementById('pathBanner'); if(!window.BFF){return;} const saved=savedPath(); if(!saved.archetype){banner.classList.remove('show'); banner.innerHTML=''; return;} const label=window.BFF.archetypeLabel(saved.archetype); const roles=window.BFF.rolesForArchetype(saved.archetype); const role=roles[0]; banner.innerHTML=`Showing jobs for <strong>${esc(label)}</strong>. ${role ? `First role to compare against: <strong>${esc(role.title)}</strong>. ` : ''}<a href="../resume-builder/index.html?archetype=${esc(saved.archetype)}&start=archetype">Build your resume pack</a>.`; banner.classList.add('show');}
+function selectedArchetypeKey(label){const item=ARCHETYPES.find(item => item.name === label); return item ? item.key : '';}
+function archetypeLabelForKey(key){const value=String(key || '').trim().toLowerCase(); const item=ARCHETYPES.find(item => item.key === value || item.name.toLowerCase() === value); return item ? item.name : '';}
+function applyUrlArchetypeFilter(){const label=archetypeLabelForKey(new URLSearchParams(location.search).get('archetype')); if(!label) return; document.getElementById('archetype').value=label; document.querySelectorAll('.archetype-card').forEach(card => card.classList.toggle('active', card.dataset.archetype === label));}
+function renderPathBanner(){const banner=document.getElementById('pathBanner'); const label=document.getElementById('archetype').value; if(!label){banner.classList.remove('show'); banner.innerHTML=''; return;} const key=selectedArchetypeKey(label); const roles=window.BFF && key ? window.BFF.rolesForArchetype(key) : []; const role=roles[0]; const action=key ? `<a href="../resume-builder/index.html?archetype=${esc(key)}&start=archetype">Build your resume pack</a>.` : ''; banner.innerHTML=`Showing jobs for <strong>${esc(label)}</strong>. ${role ? `First role to compare against: <strong>${esc(role.title)}</strong>. ` : ''}${action}`; banner.classList.add('show');}
 function saveSelectedJob(job){if(!window.BFF || !job) return; const existing=savedPath().archetype || ''; const key=existing || window.BFF.archetypeKeyFromLabel(job.archetype_primary || '') || ''; const role=window.BFF.roleForTitle(job.role_lala_category || job.title || ''); window.BFF.writeState({archetype:key, selectedJobId:job.id || job.job_id || '', targetRoleId:role ? role.id : '', targetRole:job.role_lala_category || job.title || '', selectedJobTitle:job.title || '', selectedJobCompany:job.company || '', resumeStatus:'not-started', lastNextAction:'build-resume-for-selected-job'});}
 function savedJobs(){const saved=savedPath(); return Array.isArray(saved.savedJobs) ? saved.savedJobs : [];}
 function jobId(job){return job && (job.id || job.job_id) || '';}
@@ -275,7 +276,7 @@ async function init(){
   archetypeOptions();
   roleChips();
   sourceOptions();
-  applySavedArchetypeFilter();
+  applyUrlArchetypeFilter();
   document.getElementById('jobTotal').textContent = `${state.jobs.length} jobs`;
   const dates = state.jobs.map(j => j.posted).filter(Boolean).sort();
   if(dates.length) document.getElementById('updated').textContent = `Latest posting ${dates[dates.length - 1]}`;
