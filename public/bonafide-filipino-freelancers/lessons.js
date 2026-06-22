@@ -462,11 +462,25 @@ window.SWAHG_LESSONS = {
       closes_va_gaps: [],
       ladders_to_roles: ["smm","content"],
       prerequisites: [],
-      next_lessons: ["instagram-strategy","fb-mobile-management"],
-      why_this_lesson: "SMM strategy foundation. Pairs with platform-specific lessons (IG, FB, Pinterest, YT).",
-      estimated_minutes: 30,
+      next_lessons: ["smm-toolkit-2026","instagram-strategy","fb-mobile-management"],
+      why_this_lesson: "SMM strategy foundation, now content-pillar and one-week-plan driven (v3, ungated). Pairs with the SMM Toolkit workflow and the platform lessons.",
+      estimated_minutes: 20,
       tier: 0,
       format: "video"
+    },
+    "smm-toolkit-2026": {
+      title: "SMM Toolkit and Workflow 2026",
+      stage: "warmup",
+      status: "live",
+      url: "lesson-smm-toolkit-2026/",
+      closes_va_gaps: ["social-media-tools"],
+      ladders_to_roles: ["smm","content"],
+      prerequisites: ["smm-core-strategies"],
+      next_lessons: ["getting-hired-fast","instagram-strategy"],
+      why_this_lesson: "Closes the 7% social-media-tools gap with the doing, not a tour: the four-layer stack (plan, make, schedule, measure) and the repeatable weekly workflow a hired SMM runs. The execution spine the platform lessons plug into.",
+      estimated_minutes: 30,
+      tier: 2,
+      format: "module"
     },
     "instagram-strategy": {
       title: "Instagram Strategy",
@@ -545,10 +559,10 @@ window.SWAHG_LESSONS = {
       url: "lesson-getting-hired-fast/",
       closes_va_gaps: [],
       ladders_to_roles: ["smm"],
-      prerequisites: ["smm-core-strategies","personal-branding"],
-      next_lessons: ["common-mistakes"],
-      why_this_lesson: "Applicant tactics that get response — portfolio shape, sample work, timing. SMM-specific but principles transfer.",
-      estimated_minutes: 18,
+      prerequisites: ["smm-core-strategies","smm-toolkit-2026","personal-branding"],
+      next_lessons: ["personal-branding","common-mistakes"],
+      why_this_lesson: "Applicant tactics that get response (v3): the 30-day plan, the SMM portfolio sample a hirer actually opens, fill-in cover letter and Loom templates, and a live Job Board link. SMM-specific but principles transfer.",
+      estimated_minutes: 20,
       tier: 0,
       format: "video"
     },
@@ -1153,7 +1167,7 @@ window.SWAHG_LESSONS = {
 
     /* BOTTOM ROW — Skill Upgrade */
     "sk-1":    { pdf_label: "New or Upgraded Skill",      stage: "skill",   lessons: ["customer-support-foundations","account-management-101","cold-outreach-sdrs","crm-basics","video-editing-content-vas","pm-tool-fluency","article-curation-training","ecommerce-classes"] },
-    "sk-2":    { pdf_label: "More Training",              stage: "skill",   lessons: ["smm-handbook","fb-chatbot-training","fb-mobile-management","pinterest-marketing","youtube-best-practices","article-curation-training","ecommerce-classes"] },
+    "sk-2":    { pdf_label: "More Training",              stage: "skill",   lessons: ["smm-toolkit-2026","smm-handbook","fb-chatbot-training","fb-mobile-management","pinterest-marketing","youtube-best-practices","article-curation-training","ecommerce-classes"] },
     "sk-3":    { pdf_label: "More Value to Client",       stage: "skill",   lessons: ["account-management-101","set-your-first-rate","raising-your-rate"] },
     "sk-4":    { pdf_label: "Career & Personal Growth",   stage: "skill",   lessons: ["career-path-training"] },
 
