@@ -211,6 +211,50 @@ window.SWAHG_LESSONS = {
       format: "lesson"
     },
 
+    /* ====== Applicant-to-Hired: understand-the-business cluster (Tutorial 2) ====== */
+    "understand-the-business-first": {
+      title: "Understand the Business Before You Create",
+      stage: "working",
+      status: "live",
+      url: "lesson-understand-the-business-first/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin","account-manager"],
+      prerequisites: [],
+      next_lessons: ["how-do-i-show-a-client-i-can-easily-understand-their-business","go-the-extra-mile"],
+      why_this_lesson: "You cannot create powerful content for a business you do not understand. Understanding first is the unfair advantage.",
+      estimated_minutes: 15,
+      tier: 1,
+      format: "module"
+    },
+    "how-do-i-show-a-client-i-can-easily-understand-their-business": {
+      title: "How to Show a Client You Understand Their Business",
+      stage: "working",
+      status: "live",
+      url: "lesson-how-do-i-show-a-client-i-can-easily-understand-their-business/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: ["understand-the-business-first"],
+      next_lessons: ["why-can-you-not-make-powerful-content-without-understanding-the"],
+      why_this_lesson: "Make understanding visible with an artifact the client can hold, like branding guidelines.",
+      estimated_minutes: 6,
+      tier: 1,
+      format: "lesson"
+    },
+    "why-can-you-not-make-powerful-content-without-understanding-the": {
+      title: "Why Understanding Comes Before Content",
+      stage: "working",
+      status: "live",
+      url: "lesson-why-can-you-not-make-powerful-content-without-understanding-the/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: ["understand-the-business-first"],
+      next_lessons: ["how-do-i-show-a-client-i-can-easily-understand-their-business"],
+      why_this_lesson: "Skill without understanding produces polished, generic work that does not land.",
+      estimated_minutes: 5,
+      tier: 1,
+      format: "lesson"
+    },
+
     /* ====== Applicant-to-Hired: AI-differentiator cluster (Tutorial 2) ====== */
     "talk-about-ai-to-stand-out": {
       title: "Talk About AI to Set Yourself Apart",
@@ -1591,7 +1635,7 @@ window.SWAHG_LESSONS = {
     "work-3":  { pdf_label: "Skill Practice",             stage: "working", lessons: ["master-tools-with-ai","30-day-hired-plan","finish-courses-with-ai","2026-tool-stack"] },
     "work-4":  { pdf_label: "Creating Proposal",          stage: "working", lessons: ["common-mistakes","set-your-first-rate"] },
     "work-5":  { pdf_label: "Bidding",                    stage: "working", lessons: ["getting-hired-fast","freelancing-platforms","common-mistakes","reading-a-job-post"] },
-    "work-6":  { pdf_label: "Winning the Trial",          stage: "working", lessons: ["trial-task-as-audition","what-is-a-trial-task-and-why-does-it-matter","go-the-extra-mile","what-does-going-the-extra-mile-on-a-trial-actually-look-like","talk-about-ai-to-stand-out","what-actually-set-this-freelancer-apart-from-other-applicant","is-it-true-that-talking-about-ai-can-help-me-get-hired","why-did-mentioning-chatgpt-and-learning-python-help-her"] },
+    "work-6":  { pdf_label: "Winning the Trial",          stage: "working", lessons: ["trial-task-as-audition","what-is-a-trial-task-and-why-does-it-matter","go-the-extra-mile","what-does-going-the-extra-mile-on-a-trial-actually-look-like","talk-about-ai-to-stand-out","what-actually-set-this-freelancer-apart-from-other-applicant","is-it-true-that-talking-about-ai-can-help-me-get-hired","why-did-mentioning-chatgpt-and-learning-python-help-her","understand-the-business-first","how-do-i-show-a-client-i-can-easily-understand-their-business","why-can-you-not-make-powerful-content-without-understanding-the"] },
 
     /* BOTTOM ROW — Stage 1 */
     "s1-1":    { pdf_label: "Onboarding",                 stage: "stage1",  lessons: ["onboarding-first-30-days"] },
