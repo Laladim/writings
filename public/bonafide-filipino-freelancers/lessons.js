@@ -849,6 +849,50 @@ window.SWAHG_LESSONS = {
       format: "lesson"
     },
 
+    /* ====== Applicant-to-Hired: follow-instructions cluster (final NEW) ====== */
+    "follow-instructions-resume-format": {
+      title: "Follow Instructions: The Resume-Format Test",
+      stage: "launch",
+      status: "live",
+      url: "lesson-follow-instructions-resume-format/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: [],
+      next_lessons: ["why-might-they-ask-me-to-revise-my-resume-to-their-format","resume-builder"],
+      why_this_lesson: "Following an exact format perfectly is a quiet trust test that decides whether you get bigger work.",
+      estimated_minutes: 12,
+      tier: 1,
+      format: "module"
+    },
+    "why-might-they-ask-me-to-revise-my-resume-to-their-format": {
+      title: "Why Revise Your Resume to Their Format",
+      stage: "launch",
+      status: "live",
+      url: "lesson-why-might-they-ask-me-to-revise-my-resume-to-their-format/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: ["follow-instructions-resume-format"],
+      next_lessons: ["why-is-following-instructions-exactly-so-important"],
+      why_this_lesson: "That resume goes to their client; reformatting it protects their reputation and proves yours.",
+      estimated_minutes: 5,
+      tier: 1,
+      format: "lesson"
+    },
+    "why-is-following-instructions-exactly-so-important": {
+      title: "Why Following Instructions Exactly Matters",
+      stage: "launch",
+      status: "live",
+      url: "lesson-why-is-following-instructions-exactly-so-important/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: ["follow-instructions-resume-format"],
+      next_lessons: ["go-the-extra-mile"],
+      why_this_lesson: "Precision with small directions is how you earn trust, and trust earns bigger work.",
+      estimated_minutes: 5,
+      tier: 1,
+      format: "lesson"
+    },
+
     /* ====== Applicant-to-Hired: win-log cluster ====== */
     "document-your-wins": {
       title: "Document Your Wins",
@@ -2031,7 +2075,7 @@ window.SWAHG_LESSONS = {
     /* TOP ROW — Launch */
     "launch-1":{ pdf_label: "Setting Up Accounts",        stage: "launch",  lessons: ["online-jobs-account","freelancing-platforms"] },
     "launch-2":{ pdf_label: "Creating Powerful Resume",   stage: "launch",  lessons: ["resume-builder","google-sites-portfolio","bpo-to-va-portfolio","office-admin-to-va-portfolio","business-owner-to-va-portfolio","example-portfolio-zero-work-experience","example-portfolio-bpo-to-virtual-assistant","example-portfolio-business-owner"] },
-    "launch-3":{ pdf_label: "Job Hunting",                stage: "launch",  lessons: ["find-clients-ai-aggregator","what-is-hiring-cafe-and-why-use-it","why-is-an-ai-powered-job-aggregator-better-than-one-job-site","what-is-the-problem-with-relying-only-on-onlinejobs-ph","how-do-i-avoid-low-ball-clients","verify-job-legitimacy","how-do-i-check-if-a-job-offer-is-legit","how-do-i-verify-the-senders-email-domain","how-do-i-research-the-real-client-behind-an-agency","find-your-path-quiz","freelancing-platforms","job-board","reading-a-job-post"] },
+    "launch-3":{ pdf_label: "Job Hunting",                stage: "launch",  lessons: ["find-clients-ai-aggregator","what-is-hiring-cafe-and-why-use-it","why-is-an-ai-powered-job-aggregator-better-than-one-job-site","what-is-the-problem-with-relying-only-on-onlinejobs-ph","how-do-i-avoid-low-ball-clients","verify-job-legitimacy","how-do-i-check-if-a-job-offer-is-legit","how-do-i-verify-the-senders-email-domain","how-do-i-research-the-real-client-behind-an-agency","follow-instructions-resume-format","why-might-they-ask-me-to-revise-my-resume-to-their-format","why-is-following-instructions-exactly-so-important","find-your-path-quiz","freelancing-platforms","job-board","reading-a-job-post"] },
     "launch-4":{ pdf_label: "Join Groups and Forums",     stage: "launch",  lessons: ["groups-and-forums"] },
     "launch-5":{ pdf_label: "Creating your Portfolio",    stage: "launch",  lessons: ["document-your-wins","why-should-i-document-even-my-small-wins","how-do-i-label-my-skills-as-expert-or-intermediate","why-keep-a-list-of-the-tools-i-know","copy-paste-portfolio-doc","what-is-a-portfolio-document-and-why-do-i-need-one","where-do-i-keep-my-portfolio-if-i-have-no-website","how-do-i-use-notion-as-a-portfolio","personal-branding","online-presence","google-sites-portfolio","bpo-to-va-portfolio","office-admin-to-va-portfolio","business-owner-to-va-portfolio"] },
 
