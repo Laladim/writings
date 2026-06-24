@@ -211,6 +211,64 @@ window.SWAHG_LESSONS = {
       format: "lesson"
     },
 
+    /* ====== Applicant-to-Hired: staying-hired cluster (Tutorial 3) ====== */
+    "why-clients-come-and-go": {
+      title: "Why Clients Come and Go",
+      stage: "working",
+      status: "live",
+      url: "lesson-why-clients-come-and-go/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin","account-manager"],
+      prerequisites: [],
+      next_lessons: ["why-are-most-freelancing-clients-startups-and-why-does-that-ma","how-does-the-fast-pace-of-ai-and-marketing-tech-affect-my-job-s"],
+      why_this_lesson: "Clients leave for three predictable reasons. Two you answer with one habit: never stop learning, especially AI.",
+      estimated_minutes: 16,
+      tier: 1,
+      format: "module"
+    },
+    "why-are-most-freelancing-clients-startups-and-why-does-that-ma": {
+      title: "Why Most Freelancing Clients Are Startups",
+      stage: "working",
+      status: "live",
+      url: "lesson-why-are-most-freelancing-clients-startups-and-why-does-that-ma/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: ["why-clients-come-and-go"],
+      next_lessons: ["how-does-the-fast-pace-of-ai-and-marketing-tech-affect-my-job-s"],
+      why_this_lesson: "Untested business models mean some clients fold. That is about them, not your work.",
+      estimated_minutes: 5,
+      tier: 1,
+      format: "lesson"
+    },
+    "how-does-the-fast-pace-of-ai-and-marketing-tech-affect-my-job-s": {
+      title: "How AI's Pace Affects Your Job Security",
+      stage: "working",
+      status: "live",
+      url: "lesson-how-does-the-fast-pace-of-ai-and-marketing-tech-affect-my-job-s/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: ["why-clients-come-and-go"],
+      next_lessons: ["what-is-the-difference-between-a-corporate-mindset-and-a-freela"],
+      why_this_lesson: "Fast change replaces those who stop learning and secures those who keep up. The moat reframe.",
+      estimated_minutes: 6,
+      tier: 1,
+      format: "lesson"
+    },
+    "what-is-the-difference-between-a-corporate-mindset-and-a-freela": {
+      title: "Corporate Mindset vs Freelancer Mindset",
+      stage: "working",
+      status: "live",
+      url: "lesson-what-is-the-difference-between-a-corporate-mindset-and-a-freela/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: ["why-clients-come-and-go"],
+      next_lessons: ["employee-to-freelancer"],
+      why_this_lesson: "One mindset coasts after learning the process; the other keeps learning to keep rising.",
+      estimated_minutes: 6,
+      tier: 1,
+      format: "lesson"
+    },
+
     /* ====== Applicant-to-Hired: understand-the-business cluster (Tutorial 2) ====== */
     "understand-the-business-first": {
       title: "Understand the Business Before You Create",
@@ -1636,6 +1694,7 @@ window.SWAHG_LESSONS = {
     "work-4":  { pdf_label: "Creating Proposal",          stage: "working", lessons: ["common-mistakes","set-your-first-rate"] },
     "work-5":  { pdf_label: "Bidding",                    stage: "working", lessons: ["getting-hired-fast","freelancing-platforms","common-mistakes","reading-a-job-post"] },
     "work-6":  { pdf_label: "Winning the Trial",          stage: "working", lessons: ["trial-task-as-audition","what-is-a-trial-task-and-why-does-it-matter","go-the-extra-mile","what-does-going-the-extra-mile-on-a-trial-actually-look-like","talk-about-ai-to-stand-out","what-actually-set-this-freelancer-apart-from-other-applicant","is-it-true-that-talking-about-ai-can-help-me-get-hired","why-did-mentioning-chatgpt-and-learning-python-help-her","understand-the-business-first","how-do-i-show-a-client-i-can-easily-understand-their-business","why-can-you-not-make-powerful-content-without-understanding-the"] },
+    "work-7":  { pdf_label: "Becoming Irreplaceable",      stage: "working", lessons: ["why-clients-come-and-go","why-are-most-freelancing-clients-startups-and-why-does-that-ma","how-does-the-fast-pace-of-ai-and-marketing-tech-affect-my-job-s","what-is-the-difference-between-a-corporate-mindset-and-a-freela"] },
 
     /* BOTTOM ROW — Stage 1 */
     "s1-1":    { pdf_label: "Onboarding",                 stage: "stage1",  lessons: ["onboarding-first-30-days"] },
