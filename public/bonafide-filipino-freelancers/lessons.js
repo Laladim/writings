@@ -211,6 +211,64 @@ window.SWAHG_LESSONS = {
       format: "lesson"
     },
 
+    /* ====== Applicant-to-Hired: win-log cluster ====== */
+    "document-your-wins": {
+      title: "Document Your Wins",
+      stage: "warmup",
+      status: "live",
+      url: "lesson-document-your-wins/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: [],
+      next_lessons: ["why-should-i-document-even-my-small-wins","copy-paste-portfolio-doc"],
+      why_this_lesson: "A win you wrote down is a win you can show. The habit that turns a year of work into provable proof.",
+      estimated_minutes: 15,
+      tier: 1,
+      format: "module"
+    },
+    "why-should-i-document-even-my-small-wins": {
+      title: "Why Document Even Your Small Wins",
+      stage: "warmup",
+      status: "live",
+      url: "lesson-why-should-i-document-even-my-small-wins/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: ["document-your-wins"],
+      next_lessons: ["how-do-i-label-my-skills-as-expert-or-intermediate"],
+      why_this_lesson: "Small, specific, true wins are what make a portfolio believable.",
+      estimated_minutes: 5,
+      tier: 1,
+      format: "lesson"
+    },
+    "how-do-i-label-my-skills-as-expert-or-intermediate": {
+      title: "How to Label Your Skills as Expert or Intermediate",
+      stage: "warmup",
+      status: "live",
+      url: "lesson-how-do-i-label-my-skills-as-expert-or-intermediate/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: ["document-your-wins"],
+      next_lessons: ["why-keep-a-list-of-the-tools-i-know"],
+      why_this_lesson: "Honest skill levels make you trustworthy and easy to match. A simple test for expert vs intermediate.",
+      estimated_minutes: 6,
+      tier: 1,
+      format: "lesson"
+    },
+    "why-keep-a-list-of-the-tools-i-know": {
+      title: "Why Keep a List of the Tools You Know",
+      stage: "warmup",
+      status: "live",
+      url: "lesson-why-keep-a-list-of-the-tools-i-know/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: ["document-your-wins"],
+      next_lessons: ["copy-paste-portfolio-doc"],
+      why_this_lesson: "A running tools list is a fast, honest answer waiting to be given.",
+      estimated_minutes: 5,
+      tier: 1,
+      format: "lesson"
+    },
+
     /* ====== Applicant-to-Hired: portfolio cluster ====== */
     "copy-paste-portfolio-doc": {
       title: "Build a Copy-Paste Portfolio Document",
@@ -1337,7 +1395,7 @@ window.SWAHG_LESSONS = {
     "launch-2":{ pdf_label: "Creating Powerful Resume",   stage: "launch",  lessons: ["resume-builder","google-sites-portfolio","bpo-to-va-portfolio","office-admin-to-va-portfolio","business-owner-to-va-portfolio","example-portfolio-zero-work-experience","example-portfolio-bpo-to-virtual-assistant","example-portfolio-business-owner"] },
     "launch-3":{ pdf_label: "Job Hunting",                stage: "launch",  lessons: ["find-clients-ai-aggregator","what-is-hiring-cafe-and-why-use-it","why-is-an-ai-powered-job-aggregator-better-than-one-job-site","what-is-the-problem-with-relying-only-on-onlinejobs-ph","how-do-i-avoid-low-ball-clients","verify-job-legitimacy","how-do-i-check-if-a-job-offer-is-legit","how-do-i-verify-the-senders-email-domain","how-do-i-research-the-real-client-behind-an-agency","find-your-path-quiz","freelancing-platforms","job-board","reading-a-job-post"] },
     "launch-4":{ pdf_label: "Join Groups and Forums",     stage: "launch",  lessons: ["groups-and-forums"] },
-    "launch-5":{ pdf_label: "Creating your Portfolio",    stage: "launch",  lessons: ["copy-paste-portfolio-doc","what-is-a-portfolio-document-and-why-do-i-need-one","where-do-i-keep-my-portfolio-if-i-have-no-website","how-do-i-use-notion-as-a-portfolio","personal-branding","online-presence","google-sites-portfolio","bpo-to-va-portfolio","office-admin-to-va-portfolio","business-owner-to-va-portfolio"] },
+    "launch-5":{ pdf_label: "Creating your Portfolio",    stage: "launch",  lessons: ["document-your-wins","why-should-i-document-even-my-small-wins","how-do-i-label-my-skills-as-expert-or-intermediate","why-keep-a-list-of-the-tools-i-know","copy-paste-portfolio-doc","what-is-a-portfolio-document-and-why-do-i-need-one","where-do-i-keep-my-portfolio-if-i-have-no-website","how-do-i-use-notion-as-a-portfolio","personal-branding","online-presence","google-sites-portfolio","bpo-to-va-portfolio","office-admin-to-va-portfolio","business-owner-to-va-portfolio"] },
 
     /* TOP ROW — Working on it! */
     "work-1":  { pdf_label: "Interviews",                 stage: "working", lessons: ["interviews-prep","freelancing-journey-lesson-5"] },
