@@ -211,6 +211,64 @@ window.SWAHG_LESSONS = {
       format: "lesson"
     },
 
+    /* ====== Applicant-to-Hired: tight-deadline cluster (Tutorial 2) ====== */
+    "prioritize-tight-deadline": {
+      title: "Prioritize a Tight Deadline",
+      stage: "working",
+      status: "live",
+      url: "lesson-prioritize-tight-deadline/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: ["go-the-extra-mile"],
+      next_lessons: ["how-can-i-deliver-more-without-burning-out","go-the-extra-mile"],
+      why_this_lesson: "Protect the core, rank the extras, speed the rest. A tight deadline is won by order and tools, not panic.",
+      estimated_minutes: 14,
+      tier: 1,
+      format: "module"
+    },
+    "how-can-i-deliver-more-without-burning-out": {
+      title: "How to Deliver More Without Burning Out",
+      stage: "working",
+      status: "live",
+      url: "lesson-how-can-i-deliver-more-without-burning-out/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: ["prioritize-tight-deadline"],
+      next_lessons: ["is-it-okay-to-work-late-to-wow-a-client-on-a-trial"],
+      why_this_lesson: "Over-deliver with smart effort: AI for extras, cut from the bottom, repurpose not rebuild.",
+      estimated_minutes: 6,
+      tier: 1,
+      format: "lesson"
+    },
+    "how-do-i-prioritize-tasks-under-a-3-day-deadline": {
+      title: "How to Prioritize Tasks Under a 3-Day Deadline",
+      stage: "working",
+      status: "live",
+      url: "lesson-how-do-i-prioritize-tasks-under-a-3-day-deadline/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: ["prioritize-tight-deadline"],
+      next_lessons: ["how-can-i-deliver-more-without-burning-out"],
+      why_this_lesson: "The exact day-by-day order to deliver four things in three days.",
+      estimated_minutes: 6,
+      tier: 1,
+      format: "lesson"
+    },
+    "is-it-okay-to-work-late-to-wow-a-client-on-a-trial": {
+      title: "Is It Okay to Work Late to Wow a Client",
+      stage: "working",
+      status: "live",
+      url: "lesson-is-it-okay-to-work-late-to-wow-a-client-on-a-trial/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: ["prioritize-tight-deadline"],
+      next_lessons: ["how-can-i-deliver-more-without-burning-out"],
+      why_this_lesson: "A chosen sprint for a one-time trial is fine; a forced permanent crunch is a problem to fix.",
+      estimated_minutes: 5,
+      tier: 1,
+      format: "lesson"
+    },
+
     /* ====== Applicant-to-Hired: branding-with-AI cluster (Tutorial 2) ====== */
     "branding-guidelines-with-ai": {
       title: "Branding Guidelines With AI",
@@ -1751,7 +1809,7 @@ window.SWAHG_LESSONS = {
     "work-3":  { pdf_label: "Skill Practice",             stage: "working", lessons: ["master-tools-with-ai","30-day-hired-plan","finish-courses-with-ai","2026-tool-stack"] },
     "work-4":  { pdf_label: "Creating Proposal",          stage: "working", lessons: ["common-mistakes","set-your-first-rate"] },
     "work-5":  { pdf_label: "Bidding",                    stage: "working", lessons: ["getting-hired-fast","freelancing-platforms","common-mistakes","reading-a-job-post"] },
-    "work-6":  { pdf_label: "Winning the Trial",          stage: "working", lessons: ["trial-task-as-audition","what-is-a-trial-task-and-why-does-it-matter","go-the-extra-mile","what-does-going-the-extra-mile-on-a-trial-actually-look-like","talk-about-ai-to-stand-out","what-actually-set-this-freelancer-apart-from-other-applicant","is-it-true-that-talking-about-ai-can-help-me-get-hired","why-did-mentioning-chatgpt-and-learning-python-help-her","understand-the-business-first","how-do-i-show-a-client-i-can-easily-understand-their-business","why-can-you-not-make-powerful-content-without-understanding-the","branding-guidelines-with-ai","why-create-branding-guidelines-for-a-trial-task","how-do-i-generate-branding-guidelines-with-chatgpt","what-is-a-brand-persona"] },
+    "work-6":  { pdf_label: "Winning the Trial",          stage: "working", lessons: ["trial-task-as-audition","what-is-a-trial-task-and-why-does-it-matter","go-the-extra-mile","what-does-going-the-extra-mile-on-a-trial-actually-look-like","talk-about-ai-to-stand-out","what-actually-set-this-freelancer-apart-from-other-applicant","is-it-true-that-talking-about-ai-can-help-me-get-hired","why-did-mentioning-chatgpt-and-learning-python-help-her","understand-the-business-first","how-do-i-show-a-client-i-can-easily-understand-their-business","why-can-you-not-make-powerful-content-without-understanding-the","branding-guidelines-with-ai","why-create-branding-guidelines-for-a-trial-task","how-do-i-generate-branding-guidelines-with-chatgpt","what-is-a-brand-persona","prioritize-tight-deadline","how-can-i-deliver-more-without-burning-out","how-do-i-prioritize-tasks-under-a-3-day-deadline","is-it-okay-to-work-late-to-wow-a-client-on-a-trial"] },
     "work-7":  { pdf_label: "Becoming Irreplaceable",      stage: "working", lessons: ["why-clients-come-and-go","why-are-most-freelancing-clients-startups-and-why-does-that-ma","how-does-the-fast-pace-of-ai-and-marketing-tech-affect-my-job-s","what-is-the-difference-between-a-corporate-mindset-and-a-freela"] },
 
     /* BOTTOM ROW — Stage 1 */
