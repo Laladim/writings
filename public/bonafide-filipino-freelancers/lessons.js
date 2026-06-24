@@ -81,6 +81,78 @@ window.SWAHG_LESSONS = {
    * ──────────────────────────────────────────────────────────── */
   lessons: {
 
+    /* ====== Applicant-to-Hired series (AI-threaded case study) ====== */
+    "find-clients-ai-aggregator": {
+      title: "How to Find Clients With an AI Job Aggregator",
+      stage: "launch",
+      status: "live",
+      url: "lesson-find-clients-ai-aggregator/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: [],
+      next_lessons: ["what-is-hiring-cafe-and-why-use-it","reading-a-job-post"],
+      why_this_lesson: "Find more and better clients by letting an AI aggregator gather many job sites into one feed. The gentle on-ramp to using AI.",
+      estimated_minutes: 20,
+      tier: 1,
+      format: "module"
+    },
+    "what-is-hiring-cafe-and-why-use-it": {
+      title: "What Is hiring.cafe and Why Use It",
+      stage: "launch",
+      status: "live",
+      url: "lesson-what-is-hiring-cafe-and-why-use-it/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: ["find-clients-ai-aggregator"],
+      next_lessons: ["why-is-an-ai-powered-job-aggregator-better-than-one-job-site"],
+      why_this_lesson: "The gentlest first contact with AI: a free tool that gathers jobs for you.",
+      estimated_minutes: 8,
+      tier: 1,
+      format: "lesson"
+    },
+    "why-is-an-ai-powered-job-aggregator-better-than-one-job-site": {
+      title: "Why an AI Aggregator Beats One Job Site",
+      stage: "launch",
+      status: "live",
+      url: "lesson-why-is-an-ai-powered-job-aggregator-better-than-one-job-site/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: ["find-clients-ai-aggregator"],
+      next_lessons: ["what-is-the-problem-with-relying-only-on-onlinejobs-ph"],
+      why_this_lesson: "The honest comparison: one site is one window, an aggregator is the whole street.",
+      estimated_minutes: 8,
+      tier: 1,
+      format: "lesson"
+    },
+    "what-is-the-problem-with-relying-only-on-onlinejobs-ph": {
+      title: "The Problem With Relying Only on OnlineJobs.ph",
+      stage: "launch",
+      status: "live",
+      url: "lesson-what-is-the-problem-with-relying-only-on-onlinejobs-ph/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: ["find-clients-ai-aggregator"],
+      next_lessons: ["how-do-i-avoid-low-ball-clients"],
+      why_this_lesson: "One pond fills with one kind of pay. Keep the site, add the market.",
+      estimated_minutes: 7,
+      tier: 1,
+      format: "lesson"
+    },
+    "how-do-i-avoid-low-ball-clients": {
+      title: "How to Avoid Low-Ball Clients",
+      stage: "launch",
+      status: "live",
+      url: "lesson-how-do-i-avoid-low-ball-clients/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: ["find-clients-ai-aggregator"],
+      next_lessons: ["raising-your-rate"],
+      why_this_lesson: "Low offers are a pattern you can spot and skip, not a verdict on your worth.",
+      estimated_minutes: 8,
+      tier: 1,
+      format: "lesson"
+    },
+
     /* ====== Fresh Starter / Preparation ====== */
     "best-laptop": {
       title: "Best Laptop",
@@ -1147,7 +1219,7 @@ window.SWAHG_LESSONS = {
     /* TOP ROW — Launch */
     "launch-1":{ pdf_label: "Setting Up Accounts",        stage: "launch",  lessons: ["online-jobs-account","freelancing-platforms"] },
     "launch-2":{ pdf_label: "Creating Powerful Resume",   stage: "launch",  lessons: ["resume-builder","google-sites-portfolio","bpo-to-va-portfolio","office-admin-to-va-portfolio","business-owner-to-va-portfolio","example-portfolio-zero-work-experience","example-portfolio-bpo-to-virtual-assistant","example-portfolio-business-owner"] },
-    "launch-3":{ pdf_label: "Job Hunting",                stage: "launch",  lessons: ["find-your-path-quiz","freelancing-platforms","job-board","reading-a-job-post"] },
+    "launch-3":{ pdf_label: "Job Hunting",                stage: "launch",  lessons: ["find-clients-ai-aggregator","what-is-hiring-cafe-and-why-use-it","why-is-an-ai-powered-job-aggregator-better-than-one-job-site","what-is-the-problem-with-relying-only-on-onlinejobs-ph","how-do-i-avoid-low-ball-clients","find-your-path-quiz","freelancing-platforms","job-board","reading-a-job-post"] },
     "launch-4":{ pdf_label: "Join Groups and Forums",     stage: "launch",  lessons: ["groups-and-forums"] },
     "launch-5":{ pdf_label: "Creating your Portfolio",    stage: "launch",  lessons: ["personal-branding","online-presence","google-sites-portfolio","bpo-to-va-portfolio","office-admin-to-va-portfolio","business-owner-to-va-portfolio"] },
 
