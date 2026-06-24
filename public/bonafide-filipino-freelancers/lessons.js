@@ -211,6 +211,50 @@ window.SWAHG_LESSONS = {
       format: "lesson"
     },
 
+    /* ====== Applicant-to-Hired: communication cluster (Tutorial 2) ====== */
+    "proactive-progress-updates": {
+      title: "Proactive Progress Updates",
+      stage: "working",
+      status: "live",
+      url: "lesson-proactive-progress-updates/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin","account-manager"],
+      prerequisites: ["trial-task-as-audition"],
+      next_lessons: ["why-send-daily-progress-updates-during-a-trial","go-the-extra-mile"],
+      why_this_lesson: "Short updates during the work prove reliability before you finish; an easy delivery seals it.",
+      estimated_minutes: 13,
+      tier: 1,
+      format: "module"
+    },
+    "why-send-daily-progress-updates-during-a-trial": {
+      title: "Why Send Daily Updates During a Trial",
+      stage: "working",
+      status: "live",
+      url: "lesson-why-send-daily-progress-updates-during-a-trial/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: ["proactive-progress-updates"],
+      next_lessons: ["how-do-i-make-a-deliverable-easy-for-the-client-to-open-and-view"],
+      why_this_lesson: "Updates prove reliability, not neediness. The three-line daily note.",
+      estimated_minutes: 5,
+      tier: 1,
+      format: "lesson"
+    },
+    "how-do-i-make-a-deliverable-easy-for-the-client-to-open-and-view": {
+      title: "How to Make a Deliverable Easy to Open",
+      stage: "working",
+      status: "live",
+      url: "lesson-how-do-i-make-a-deliverable-easy-for-the-client-to-open-and-view/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: ["proactive-progress-updates"],
+      next_lessons: ["go-the-extra-mile"],
+      why_this_lesson: "One click to clear, impressive work; remove the friction that dims good work.",
+      estimated_minutes: 5,
+      tier: 1,
+      format: "lesson"
+    },
+
     /* ====== Applicant-to-Hired: find-your-edge cluster (Tutorial 3) ====== */
     "ai-competitor-analysis": {
       title: "Use AI for Competitor Analysis",
@@ -1881,7 +1925,7 @@ window.SWAHG_LESSONS = {
     "work-3":  { pdf_label: "Skill Practice",             stage: "working", lessons: ["master-tools-with-ai","30-day-hired-plan","finish-courses-with-ai","2026-tool-stack"] },
     "work-4":  { pdf_label: "Creating Proposal",          stage: "working", lessons: ["common-mistakes","set-your-first-rate"] },
     "work-5":  { pdf_label: "Bidding",                    stage: "working", lessons: ["getting-hired-fast","freelancing-platforms","common-mistakes","reading-a-job-post"] },
-    "work-6":  { pdf_label: "Winning the Trial",          stage: "working", lessons: ["trial-task-as-audition","what-is-a-trial-task-and-why-does-it-matter","go-the-extra-mile","what-does-going-the-extra-mile-on-a-trial-actually-look-like","talk-about-ai-to-stand-out","what-actually-set-this-freelancer-apart-from-other-applicant","is-it-true-that-talking-about-ai-can-help-me-get-hired","why-did-mentioning-chatgpt-and-learning-python-help-her","understand-the-business-first","how-do-i-show-a-client-i-can-easily-understand-their-business","why-can-you-not-make-powerful-content-without-understanding-the","branding-guidelines-with-ai","why-create-branding-guidelines-for-a-trial-task","how-do-i-generate-branding-guidelines-with-chatgpt","what-is-a-brand-persona","prioritize-tight-deadline","how-can-i-deliver-more-without-burning-out","how-do-i-prioritize-tasks-under-a-3-day-deadline","is-it-okay-to-work-late-to-wow-a-client-on-a-trial"] },
+    "work-6":  { pdf_label: "Winning the Trial",          stage: "working", lessons: ["trial-task-as-audition","what-is-a-trial-task-and-why-does-it-matter","go-the-extra-mile","what-does-going-the-extra-mile-on-a-trial-actually-look-like","talk-about-ai-to-stand-out","what-actually-set-this-freelancer-apart-from-other-applicant","is-it-true-that-talking-about-ai-can-help-me-get-hired","why-did-mentioning-chatgpt-and-learning-python-help-her","understand-the-business-first","how-do-i-show-a-client-i-can-easily-understand-their-business","why-can-you-not-make-powerful-content-without-understanding-the","branding-guidelines-with-ai","why-create-branding-guidelines-for-a-trial-task","how-do-i-generate-branding-guidelines-with-chatgpt","what-is-a-brand-persona","prioritize-tight-deadline","how-can-i-deliver-more-without-burning-out","how-do-i-prioritize-tasks-under-a-3-day-deadline","is-it-okay-to-work-late-to-wow-a-client-on-a-trial","proactive-progress-updates","why-send-daily-progress-updates-during-a-trial","how-do-i-make-a-deliverable-easy-for-the-client-to-open-and-view"] },
     "work-7":  { pdf_label: "Becoming Irreplaceable",      stage: "working", lessons: ["why-clients-come-and-go","why-are-most-freelancing-clients-startups-and-why-does-that-ma","how-does-the-fast-pace-of-ai-and-marketing-tech-affect-my-job-s","what-is-the-difference-between-a-corporate-mindset-and-a-freela","ai-competitor-analysis","how-do-i-use-chatgpt-to-analyze-top-competitor-articles","find-the-unique-selling-point","what-is-a-unique-selling-point-and-why-does-it-matter","how-do-i-judge-whether-a-clients-business-model-is-strong"] },
 
     /* BOTTOM ROW — Stage 1 */
