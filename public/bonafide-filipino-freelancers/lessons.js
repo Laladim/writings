@@ -211,6 +211,78 @@ window.SWAHG_LESSONS = {
       format: "lesson"
     },
 
+    /* ====== Applicant-to-Hired: onboarding cluster (Tutorial 3) ====== */
+    "prepare-the-kickoff-meeting": {
+      title: "Prepare for the Kickoff Meeting",
+      stage: "working",
+      status: "live",
+      url: "lesson-prepare-the-kickoff-meeting/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","smm","content","admin","account-manager"],
+      prerequisites: [],
+      next_lessons: ["what-is-the-tactical-triangle","diagnose-the-current-situation"],
+      why_this_lesson: "Walk in as a strategist: a content audit plus tactical-triangle questions, not a blank page.",
+      estimated_minutes: 14,
+      tier: 1,
+      format: "module"
+    },
+    "what-is-the-tactical-triangle": {
+      title: "What Is the Tactical Triangle",
+      stage: "working",
+      status: "live",
+      url: "lesson-what-is-the-tactical-triangle/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","smm","content","account-manager"],
+      prerequisites: ["prepare-the-kickoff-meeting"],
+      next_lessons: ["diagnose-the-current-situation"],
+      why_this_lesson: "Traffic, conversion, cost. Three questions that explain how a business runs.",
+      estimated_minutes: 5,
+      tier: 1,
+      format: "lesson"
+    },
+    "diagnose-the-current-situation": {
+      title: "Diagnose the Current Situation",
+      stage: "working",
+      status: "live",
+      url: "lesson-diagnose-the-current-situation/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","smm","content","account-manager"],
+      prerequisites: ["prepare-the-kickoff-meeting"],
+      next_lessons: ["how-do-i-diagnose-a-clients-current-situation-through-seo-and-an","onboarding-first-30-days"],
+      why_this_lesson: "Check SEO, analytics, newsletter, and social before creating; treat zero as a clean slate.",
+      estimated_minutes: 14,
+      tier: 1,
+      format: "module"
+    },
+    "how-do-i-diagnose-a-clients-current-situation-through-seo-and-an": {
+      title: "How to Diagnose Through SEO and Analytics",
+      stage: "working",
+      status: "live",
+      url: "lesson-how-do-i-diagnose-a-clients-current-situation-through-seo-and-an/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","smm","content"],
+      prerequisites: ["diagnose-the-current-situation"],
+      next_lessons: ["why-is-starting-from-zero-exciting-instead-of-scary"],
+      why_this_lesson: "A beginner-friendly read of the few numbers that matter first.",
+      estimated_minutes: 7,
+      tier: 1,
+      format: "lesson"
+    },
+    "why-is-starting-from-zero-exciting-instead-of-scary": {
+      title: "Why Starting From Zero Is Exciting",
+      stage: "working",
+      status: "live",
+      url: "lesson-why-is-starting-from-zero-exciting-instead-of-scary/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","smm","content"],
+      prerequisites: ["diagnose-the-current-situation"],
+      next_lessons: ["smm-core-strategies"],
+      why_this_lesson: "A blank slate means nothing to undo; build it right from the ground up.",
+      estimated_minutes: 5,
+      tier: 1,
+      format: "lesson"
+    },
+
     /* ====== Applicant-to-Hired: communication cluster (Tutorial 2) ====== */
     "proactive-progress-updates": {
       title: "Proactive Progress Updates",
@@ -1926,7 +1998,7 @@ window.SWAHG_LESSONS = {
     "work-4":  { pdf_label: "Creating Proposal",          stage: "working", lessons: ["common-mistakes","set-your-first-rate"] },
     "work-5":  { pdf_label: "Bidding",                    stage: "working", lessons: ["getting-hired-fast","freelancing-platforms","common-mistakes","reading-a-job-post"] },
     "work-6":  { pdf_label: "Winning the Trial",          stage: "working", lessons: ["trial-task-as-audition","what-is-a-trial-task-and-why-does-it-matter","go-the-extra-mile","what-does-going-the-extra-mile-on-a-trial-actually-look-like","talk-about-ai-to-stand-out","what-actually-set-this-freelancer-apart-from-other-applicant","is-it-true-that-talking-about-ai-can-help-me-get-hired","why-did-mentioning-chatgpt-and-learning-python-help-her","understand-the-business-first","how-do-i-show-a-client-i-can-easily-understand-their-business","why-can-you-not-make-powerful-content-without-understanding-the","branding-guidelines-with-ai","why-create-branding-guidelines-for-a-trial-task","how-do-i-generate-branding-guidelines-with-chatgpt","what-is-a-brand-persona","prioritize-tight-deadline","how-can-i-deliver-more-without-burning-out","how-do-i-prioritize-tasks-under-a-3-day-deadline","is-it-okay-to-work-late-to-wow-a-client-on-a-trial","proactive-progress-updates","why-send-daily-progress-updates-during-a-trial","how-do-i-make-a-deliverable-easy-for-the-client-to-open-and-view"] },
-    "work-7":  { pdf_label: "Becoming Irreplaceable",      stage: "working", lessons: ["why-clients-come-and-go","why-are-most-freelancing-clients-startups-and-why-does-that-ma","how-does-the-fast-pace-of-ai-and-marketing-tech-affect-my-job-s","what-is-the-difference-between-a-corporate-mindset-and-a-freela","ai-competitor-analysis","how-do-i-use-chatgpt-to-analyze-top-competitor-articles","find-the-unique-selling-point","what-is-a-unique-selling-point-and-why-does-it-matter","how-do-i-judge-whether-a-clients-business-model-is-strong"] },
+    "work-7":  { pdf_label: "Becoming Irreplaceable",      stage: "working", lessons: ["why-clients-come-and-go","why-are-most-freelancing-clients-startups-and-why-does-that-ma","how-does-the-fast-pace-of-ai-and-marketing-tech-affect-my-job-s","what-is-the-difference-between-a-corporate-mindset-and-a-freela","ai-competitor-analysis","how-do-i-use-chatgpt-to-analyze-top-competitor-articles","find-the-unique-selling-point","what-is-a-unique-selling-point-and-why-does-it-matter","how-do-i-judge-whether-a-clients-business-model-is-strong","prepare-the-kickoff-meeting","what-is-the-tactical-triangle","diagnose-the-current-situation","how-do-i-diagnose-a-clients-current-situation-through-seo-and-an","why-is-starting-from-zero-exciting-instead-of-scary"] },
 
     /* BOTTOM ROW — Stage 1 */
     "s1-1":    { pdf_label: "Onboarding",                 stage: "stage1",  lessons: ["onboarding-first-30-days"] },
