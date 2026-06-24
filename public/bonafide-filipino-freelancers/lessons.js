@@ -153,6 +153,64 @@ window.SWAHG_LESSONS = {
       format: "lesson"
     },
 
+    /* ====== Applicant-to-Hired: portfolio cluster ====== */
+    "copy-paste-portfolio-doc": {
+      title: "Build a Copy-Paste Portfolio Document",
+      stage: "warmup",
+      status: "live",
+      url: "lesson-copy-paste-portfolio-doc/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: [],
+      next_lessons: ["what-is-a-portfolio-document-and-why-do-i-need-one","find-clients-ai-aggregator"],
+      why_this_lesson: "One paste-ready document with all your details. Turns a 20-minute application into 2 and gives your wins a home.",
+      estimated_minutes: 20,
+      tier: 1,
+      format: "module"
+    },
+    "what-is-a-portfolio-document-and-why-do-i-need-one": {
+      title: "What Is a Portfolio Document and Why Do I Need One",
+      stage: "warmup",
+      status: "live",
+      url: "lesson-what-is-a-portfolio-document-and-why-do-i-need-one/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: ["copy-paste-portfolio-doc"],
+      next_lessons: ["where-do-i-keep-my-portfolio-if-i-have-no-website"],
+      why_this_lesson: "The plain answer for beginners: what a portfolio document is and why it comes before a website.",
+      estimated_minutes: 6,
+      tier: 1,
+      format: "lesson"
+    },
+    "where-do-i-keep-my-portfolio-if-i-have-no-website": {
+      title: "Where to Keep Your Portfolio With No Website",
+      stage: "warmup",
+      status: "live",
+      url: "lesson-where-do-i-keep-my-portfolio-if-i-have-no-website/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: ["copy-paste-portfolio-doc"],
+      next_lessons: ["how-do-i-use-notion-as-a-portfolio"],
+      why_this_lesson: "Free homes for your work that look professional and need no website.",
+      estimated_minutes: 7,
+      tier: 1,
+      format: "lesson"
+    },
+    "how-do-i-use-notion-as-a-portfolio": {
+      title: "How to Use Notion as a Portfolio",
+      stage: "warmup",
+      status: "live",
+      url: "lesson-how-do-i-use-notion-as-a-portfolio/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: ["copy-paste-portfolio-doc"],
+      next_lessons: ["find-clients-ai-aggregator"],
+      why_this_lesson: "A free, clean Notion portfolio in one sitting, with the share setting people forget.",
+      estimated_minutes: 8,
+      tier: 1,
+      format: "lesson"
+    },
+
     /* ====== Fresh Starter / Preparation ====== */
     "best-laptop": {
       title: "Best Laptop",
@@ -1221,7 +1279,7 @@ window.SWAHG_LESSONS = {
     "launch-2":{ pdf_label: "Creating Powerful Resume",   stage: "launch",  lessons: ["resume-builder","google-sites-portfolio","bpo-to-va-portfolio","office-admin-to-va-portfolio","business-owner-to-va-portfolio","example-portfolio-zero-work-experience","example-portfolio-bpo-to-virtual-assistant","example-portfolio-business-owner"] },
     "launch-3":{ pdf_label: "Job Hunting",                stage: "launch",  lessons: ["find-clients-ai-aggregator","what-is-hiring-cafe-and-why-use-it","why-is-an-ai-powered-job-aggregator-better-than-one-job-site","what-is-the-problem-with-relying-only-on-onlinejobs-ph","how-do-i-avoid-low-ball-clients","find-your-path-quiz","freelancing-platforms","job-board","reading-a-job-post"] },
     "launch-4":{ pdf_label: "Join Groups and Forums",     stage: "launch",  lessons: ["groups-and-forums"] },
-    "launch-5":{ pdf_label: "Creating your Portfolio",    stage: "launch",  lessons: ["personal-branding","online-presence","google-sites-portfolio","bpo-to-va-portfolio","office-admin-to-va-portfolio","business-owner-to-va-portfolio"] },
+    "launch-5":{ pdf_label: "Creating your Portfolio",    stage: "launch",  lessons: ["copy-paste-portfolio-doc","what-is-a-portfolio-document-and-why-do-i-need-one","where-do-i-keep-my-portfolio-if-i-have-no-website","how-do-i-use-notion-as-a-portfolio","personal-branding","online-presence","google-sites-portfolio","bpo-to-va-portfolio","office-admin-to-va-portfolio","business-owner-to-va-portfolio"] },
 
     /* TOP ROW — Working on it! */
     "work-1":  { pdf_label: "Interviews",                 stage: "working", lessons: ["interviews-prep","freelancing-journey-lesson-5"] },
