@@ -211,6 +211,64 @@ window.SWAHG_LESSONS = {
       format: "lesson"
     },
 
+    /* ====== Applicant-to-Hired: winning-the-trial cluster (Tutorial 2) ====== */
+    "trial-task-as-audition": {
+      title: "Treat the Trial Task as Your Audition",
+      stage: "working",
+      status: "live",
+      url: "lesson-trial-task-as-audition/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin","account-manager"],
+      prerequisites: [],
+      next_lessons: ["what-is-a-trial-task-and-why-does-it-matter","go-the-extra-mile"],
+      why_this_lesson: "The trial is where the contract is really won. Deliver a preview of your best, not a sample of your minimum.",
+      estimated_minutes: 18,
+      tier: 1,
+      format: "module"
+    },
+    "what-is-a-trial-task-and-why-does-it-matter": {
+      title: "What Is a Trial Task and Why Does It Matter",
+      stage: "working",
+      status: "live",
+      url: "lesson-what-is-a-trial-task-and-why-does-it-matter/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: ["trial-task-as-audition"],
+      next_lessons: ["go-the-extra-mile"],
+      why_this_lesson: "What a trial task is, why it decides the contract, and the paid-vs-unpaid line.",
+      estimated_minutes: 5,
+      tier: 1,
+      format: "lesson"
+    },
+    "go-the-extra-mile": {
+      title: "Go the Extra Mile",
+      stage: "working",
+      status: "live",
+      url: "lesson-go-the-extra-mile/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin","account-manager"],
+      prerequisites: ["trial-task-as-audition"],
+      next_lessons: ["what-does-going-the-extra-mile-on-a-trial-actually-look-like","master-tools-with-ai"],
+      why_this_lesson: "Wow beats fine. Deliver more than asked, made light by a powerful tool.",
+      estimated_minutes: 15,
+      tier: 1,
+      format: "module"
+    },
+    "what-does-going-the-extra-mile-on-a-trial-actually-look-like": {
+      title: "What Going the Extra Mile Actually Looks Like",
+      stage: "working",
+      status: "live",
+      url: "lesson-what-does-going-the-extra-mile-on-a-trial-actually-look-like/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: ["go-the-extra-mile"],
+      next_lessons: ["master-tools-with-ai"],
+      why_this_lesson: "The concrete example: one newsletter trial that became four deliverables in three days with AI.",
+      estimated_minutes: 6,
+      tier: 1,
+      format: "lesson"
+    },
+
     /* ====== Applicant-to-Hired: client-research / interview cluster ====== */
     "research-the-client-first": {
       title: "Research the Client Before You Talk",
@@ -1475,6 +1533,7 @@ window.SWAHG_LESSONS = {
     "work-3":  { pdf_label: "Skill Practice",             stage: "working", lessons: ["master-tools-with-ai","30-day-hired-plan","finish-courses-with-ai","2026-tool-stack"] },
     "work-4":  { pdf_label: "Creating Proposal",          stage: "working", lessons: ["common-mistakes","set-your-first-rate"] },
     "work-5":  { pdf_label: "Bidding",                    stage: "working", lessons: ["getting-hired-fast","freelancing-platforms","common-mistakes","reading-a-job-post"] },
+    "work-6":  { pdf_label: "Winning the Trial",          stage: "working", lessons: ["trial-task-as-audition","what-is-a-trial-task-and-why-does-it-matter","go-the-extra-mile","what-does-going-the-extra-mile-on-a-trial-actually-look-like"] },
 
     /* BOTTOM ROW — Stage 1 */
     "s1-1":    { pdf_label: "Onboarding",                 stage: "stage1",  lessons: ["onboarding-first-30-days"] },
