@@ -211,6 +211,64 @@ window.SWAHG_LESSONS = {
       format: "lesson"
     },
 
+    /* ====== Applicant-to-Hired: AI-differentiator cluster (Tutorial 2) ====== */
+    "talk-about-ai-to-stand-out": {
+      title: "Talk About AI to Set Yourself Apart",
+      stage: "working",
+      status: "live",
+      url: "lesson-talk-about-ai-to-stand-out/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin","account-manager"],
+      prerequisites: [],
+      next_lessons: ["what-actually-set-this-freelancer-apart-from-other-applicant","research-the-client-first"],
+      why_this_lesson: "A genuine, fitting interest in AI is often the tie-breaker with a tech-forward client. Honest, specific, aimed.",
+      estimated_minutes: 16,
+      tier: 1,
+      format: "module"
+    },
+    "what-actually-set-this-freelancer-apart-from-other-applicant": {
+      title: "What Actually Set This Freelancer Apart",
+      stage: "working",
+      status: "live",
+      url: "lesson-what-actually-set-this-freelancer-apart-from-other-applicant/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: ["talk-about-ai-to-stand-out"],
+      next_lessons: ["is-it-true-that-talking-about-ai-can-help-me-get-hired"],
+      why_this_lesson: "You win by being the best fit, not the most qualified. The honest tie-breaker.",
+      estimated_minutes: 5,
+      tier: 1,
+      format: "lesson"
+    },
+    "is-it-true-that-talking-about-ai-can-help-me-get-hired": {
+      title: "Can Talking About AI Help Me Get Hired",
+      stage: "working",
+      status: "live",
+      url: "lesson-is-it-true-that-talking-about-ai-can-help-me-get-hired/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: ["talk-about-ai-to-stand-out"],
+      next_lessons: ["why-did-mentioning-chatgpt-and-learning-python-help-her"],
+      why_this_lesson: "Yes, when it is true and fits the client. Why it works and the one way it backfires.",
+      estimated_minutes: 6,
+      tier: 1,
+      format: "lesson"
+    },
+    "why-did-mentioning-chatgpt-and-learning-python-help-her": {
+      title: "Why Mentioning ChatGPT and Python Helped",
+      stage: "working",
+      status: "live",
+      url: "lesson-why-did-mentioning-chatgpt-and-learning-python-help-her/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: ["talk-about-ai-to-stand-out"],
+      next_lessons: ["research-the-client-first"],
+      why_this_lesson: "The exact interests shared and what each signalled to a tech-forward client.",
+      estimated_minutes: 6,
+      tier: 1,
+      format: "lesson"
+    },
+
     /* ====== Applicant-to-Hired: winning-the-trial cluster (Tutorial 2) ====== */
     "trial-task-as-audition": {
       title: "Treat the Trial Task as Your Audition",
@@ -1533,7 +1591,7 @@ window.SWAHG_LESSONS = {
     "work-3":  { pdf_label: "Skill Practice",             stage: "working", lessons: ["master-tools-with-ai","30-day-hired-plan","finish-courses-with-ai","2026-tool-stack"] },
     "work-4":  { pdf_label: "Creating Proposal",          stage: "working", lessons: ["common-mistakes","set-your-first-rate"] },
     "work-5":  { pdf_label: "Bidding",                    stage: "working", lessons: ["getting-hired-fast","freelancing-platforms","common-mistakes","reading-a-job-post"] },
-    "work-6":  { pdf_label: "Winning the Trial",          stage: "working", lessons: ["trial-task-as-audition","what-is-a-trial-task-and-why-does-it-matter","go-the-extra-mile","what-does-going-the-extra-mile-on-a-trial-actually-look-like"] },
+    "work-6":  { pdf_label: "Winning the Trial",          stage: "working", lessons: ["trial-task-as-audition","what-is-a-trial-task-and-why-does-it-matter","go-the-extra-mile","what-does-going-the-extra-mile-on-a-trial-actually-look-like","talk-about-ai-to-stand-out","what-actually-set-this-freelancer-apart-from-other-applicant","is-it-true-that-talking-about-ai-can-help-me-get-hired","why-did-mentioning-chatgpt-and-learning-python-help-her"] },
 
     /* BOTTOM ROW — Stage 1 */
     "s1-1":    { pdf_label: "Onboarding",                 stage: "stage1",  lessons: ["onboarding-first-30-days"] },
