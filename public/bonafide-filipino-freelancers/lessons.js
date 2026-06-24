@@ -211,6 +211,78 @@ window.SWAHG_LESSONS = {
       format: "lesson"
     },
 
+    /* ====== Applicant-to-Hired: client-research / interview cluster ====== */
+    "research-the-client-first": {
+      title: "Research the Client Before You Talk",
+      stage: "working",
+      status: "live",
+      url: "lesson-research-the-client-first/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin","account-manager"],
+      prerequisites: [],
+      next_lessons: ["how-do-i-prepare-for-the-client-interview","verify-job-legitimacy"],
+      why_this_lesson: "Understand their business before you sell yourself. The research that makes you the candidate who gets it.",
+      estimated_minutes: 20,
+      tier: 1,
+      format: "module"
+    },
+    "how-do-i-prepare-for-the-client-interview": {
+      title: "How to Prepare for the Client Interview",
+      stage: "working",
+      status: "live",
+      url: "lesson-how-do-i-prepare-for-the-client-interview/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin","account-manager"],
+      prerequisites: ["research-the-client-first"],
+      next_lessons: ["how-did-a-broken-front-tooth-the-day-before-an-interview-not"],
+      why_this_lesson: "The five-part prep routine that lets you walk in calm and fitting.",
+      estimated_minutes: 8,
+      tier: 1,
+      format: "lesson"
+    },
+    "how-did-a-broken-front-tooth-the-day-before-an-interview-not": {
+      title: "The Broken Tooth and the Mantra That Carried Me",
+      stage: "working",
+      status: "live",
+      url: "lesson-how-did-a-broken-front-tooth-the-day-before-an-interview-not/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: ["research-the-client-first"],
+      next_lessons: ["how-do-beginners-build-confidence-before-they-feel-ready"],
+      why_this_lesson: "Preparation outlasts a bad day. Showing up when something goes wrong.",
+      estimated_minutes: 5,
+      tier: 1,
+      format: "lesson"
+    },
+    "how-do-beginners-build-confidence-before-they-feel-ready": {
+      title: "Confidence Before You Feel Ready",
+      stage: "working",
+      status: "live",
+      url: "lesson-how-do-beginners-build-confidence-before-they-feel-ready/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: ["research-the-client-first"],
+      next_lessons: ["why-do-a-background-check-on-the-client-first"],
+      why_this_lesson: "Confidence is what preparation leaves behind, not a feeling you wait for.",
+      estimated_minutes: 6,
+      tier: 1,
+      format: "lesson"
+    },
+    "why-do-a-background-check-on-the-client-first": {
+      title: "Why Do a Background Check on the Client First",
+      stage: "working",
+      status: "live",
+      url: "lesson-why-do-a-background-check-on-the-client-first/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: ["research-the-client-first"],
+      next_lessons: ["verify-job-legitimacy"],
+      why_this_lesson: "One habit, two payoffs: safety and connection.",
+      estimated_minutes: 6,
+      tier: 1,
+      format: "lesson"
+    },
+
     /* ====== Applicant-to-Hired: win-log cluster ====== */
     "document-your-wins": {
       title: "Document Your Wins",
@@ -1398,7 +1470,7 @@ window.SWAHG_LESSONS = {
     "launch-5":{ pdf_label: "Creating your Portfolio",    stage: "launch",  lessons: ["document-your-wins","why-should-i-document-even-my-small-wins","how-do-i-label-my-skills-as-expert-or-intermediate","why-keep-a-list-of-the-tools-i-know","copy-paste-portfolio-doc","what-is-a-portfolio-document-and-why-do-i-need-one","where-do-i-keep-my-portfolio-if-i-have-no-website","how-do-i-use-notion-as-a-portfolio","personal-branding","online-presence","google-sites-portfolio","bpo-to-va-portfolio","office-admin-to-va-portfolio","business-owner-to-va-portfolio"] },
 
     /* TOP ROW — Working on it! */
-    "work-1":  { pdf_label: "Interviews",                 stage: "working", lessons: ["interviews-prep","freelancing-journey-lesson-5"] },
+    "work-1":  { pdf_label: "Interviews",                 stage: "working", lessons: ["research-the-client-first","how-do-i-prepare-for-the-client-interview","how-did-a-broken-front-tooth-the-day-before-an-interview-not","how-do-beginners-build-confidence-before-they-feel-ready","why-do-a-background-check-on-the-client-first","interviews-prep","freelancing-journey-lesson-5"] },
     "work-2":  { pdf_label: "Internship",                 stage: "working", lessons: ["internship-options"] },
     "work-3":  { pdf_label: "Skill Practice",             stage: "working", lessons: ["master-tools-with-ai","30-day-hired-plan","finish-courses-with-ai","2026-tool-stack"] },
     "work-4":  { pdf_label: "Creating Proposal",          stage: "working", lessons: ["common-mistakes","set-your-first-rate"] },
