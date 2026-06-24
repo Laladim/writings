@@ -211,6 +211,64 @@ window.SWAHG_LESSONS = {
       format: "lesson"
     },
 
+    /* ====== Applicant-to-Hired: branding-with-AI cluster (Tutorial 2) ====== */
+    "branding-guidelines-with-ai": {
+      title: "Branding Guidelines With AI",
+      stage: "working",
+      status: "live",
+      url: "lesson-branding-guidelines-with-ai/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","smm","content","admin","account-manager"],
+      prerequisites: ["understand-the-business-first"],
+      next_lessons: ["why-create-branding-guidelines-for-a-trial-task","go-the-extra-mile"],
+      why_this_lesson: "Expert-level brand work made reachable: study the brand, let AI draft, you decide the truth.",
+      estimated_minutes: 16,
+      tier: 1,
+      format: "module"
+    },
+    "why-create-branding-guidelines-for-a-trial-task": {
+      title: "Why Create Branding Guidelines for a Trial",
+      stage: "working",
+      status: "live",
+      url: "lesson-why-create-branding-guidelines-for-a-trial-task/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","smm","content","admin"],
+      prerequisites: ["branding-guidelines-with-ai"],
+      next_lessons: ["how-do-i-generate-branding-guidelines-with-chatgpt"],
+      why_this_lesson: "Branding guidelines are the clearest proof of understanding, and proof wins trials.",
+      estimated_minutes: 5,
+      tier: 1,
+      format: "lesson"
+    },
+    "how-do-i-generate-branding-guidelines-with-chatgpt": {
+      title: "How to Generate Branding Guidelines With ChatGPT",
+      stage: "working",
+      status: "live",
+      url: "lesson-how-do-i-generate-branding-guidelines-with-chatgpt/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","smm","content","admin"],
+      prerequisites: ["branding-guidelines-with-ai"],
+      next_lessons: ["what-is-a-brand-persona"],
+      why_this_lesson: "The four-prompt flow: gather, persona, voice and messages, then correct.",
+      estimated_minutes: 7,
+      tier: 1,
+      format: "lesson"
+    },
+    "what-is-a-brand-persona": {
+      title: "What Is a Brand Persona",
+      stage: "working",
+      status: "live",
+      url: "lesson-what-is-a-brand-persona/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","smm","content","admin"],
+      prerequisites: ["branding-guidelines-with-ai"],
+      next_lessons: ["understand-the-business-first"],
+      why_this_lesson: "Who the brand would be as a person. The key that makes content sound like them.",
+      estimated_minutes: 5,
+      tier: 1,
+      format: "lesson"
+    },
+
     /* ====== Applicant-to-Hired: staying-hired cluster (Tutorial 3) ====== */
     "why-clients-come-and-go": {
       title: "Why Clients Come and Go",
@@ -1693,7 +1751,7 @@ window.SWAHG_LESSONS = {
     "work-3":  { pdf_label: "Skill Practice",             stage: "working", lessons: ["master-tools-with-ai","30-day-hired-plan","finish-courses-with-ai","2026-tool-stack"] },
     "work-4":  { pdf_label: "Creating Proposal",          stage: "working", lessons: ["common-mistakes","set-your-first-rate"] },
     "work-5":  { pdf_label: "Bidding",                    stage: "working", lessons: ["getting-hired-fast","freelancing-platforms","common-mistakes","reading-a-job-post"] },
-    "work-6":  { pdf_label: "Winning the Trial",          stage: "working", lessons: ["trial-task-as-audition","what-is-a-trial-task-and-why-does-it-matter","go-the-extra-mile","what-does-going-the-extra-mile-on-a-trial-actually-look-like","talk-about-ai-to-stand-out","what-actually-set-this-freelancer-apart-from-other-applicant","is-it-true-that-talking-about-ai-can-help-me-get-hired","why-did-mentioning-chatgpt-and-learning-python-help-her","understand-the-business-first","how-do-i-show-a-client-i-can-easily-understand-their-business","why-can-you-not-make-powerful-content-without-understanding-the"] },
+    "work-6":  { pdf_label: "Winning the Trial",          stage: "working", lessons: ["trial-task-as-audition","what-is-a-trial-task-and-why-does-it-matter","go-the-extra-mile","what-does-going-the-extra-mile-on-a-trial-actually-look-like","talk-about-ai-to-stand-out","what-actually-set-this-freelancer-apart-from-other-applicant","is-it-true-that-talking-about-ai-can-help-me-get-hired","why-did-mentioning-chatgpt-and-learning-python-help-her","understand-the-business-first","how-do-i-show-a-client-i-can-easily-understand-their-business","why-can-you-not-make-powerful-content-without-understanding-the","branding-guidelines-with-ai","why-create-branding-guidelines-for-a-trial-task","how-do-i-generate-branding-guidelines-with-chatgpt","what-is-a-brand-persona"] },
     "work-7":  { pdf_label: "Becoming Irreplaceable",      stage: "working", lessons: ["why-clients-come-and-go","why-are-most-freelancing-clients-startups-and-why-does-that-ma","how-does-the-fast-pace-of-ai-and-marketing-tech-affect-my-job-s","what-is-the-difference-between-a-corporate-mindset-and-a-freela"] },
 
     /* BOTTOM ROW — Stage 1 */
