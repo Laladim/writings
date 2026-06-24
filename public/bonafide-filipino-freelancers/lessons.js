@@ -153,6 +153,64 @@ window.SWAHG_LESSONS = {
       format: "lesson"
     },
 
+    /* ====== Applicant-to-Hired: legitimacy cluster ====== */
+    "verify-job-legitimacy": {
+      title: "How to Verify a Job Is Legitimate",
+      stage: "launch",
+      status: "live",
+      url: "lesson-verify-job-legitimacy/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: [],
+      next_lessons: ["how-do-i-check-if-a-job-offer-is-legit","find-clients-ai-aggregator"],
+      why_this_lesson: "A two-minute check (domain, website, end client) that keeps your time and details safe from scams.",
+      estimated_minutes: 15,
+      tier: 1,
+      format: "module"
+    },
+    "how-do-i-check-if-a-job-offer-is-legit": {
+      title: "How to Check If a Job Offer Is Legit",
+      stage: "launch",
+      status: "live",
+      url: "lesson-how-do-i-check-if-a-job-offer-is-legit/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: ["verify-job-legitimacy"],
+      next_lessons: ["how-do-i-verify-the-senders-email-domain"],
+      why_this_lesson: "The fast 60-second version of the legitimacy check.",
+      estimated_minutes: 5,
+      tier: 1,
+      format: "lesson"
+    },
+    "how-do-i-verify-the-senders-email-domain": {
+      title: "How to Verify the Sender's Email Domain",
+      stage: "launch",
+      status: "live",
+      url: "lesson-how-do-i-verify-the-senders-email-domain/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: ["verify-job-legitimacy"],
+      next_lessons: ["how-do-i-research-the-real-client-behind-an-agency"],
+      why_this_lesson: "The single strongest signal: how to read and test the email domain.",
+      estimated_minutes: 7,
+      tier: 1,
+      format: "lesson"
+    },
+    "how-do-i-research-the-real-client-behind-an-agency": {
+      title: "Research the Real Client Behind an Agency",
+      stage: "launch",
+      status: "live",
+      url: "lesson-how-do-i-research-the-real-client-behind-an-agency/",
+      closes_va_gaps: [],
+      ladders_to_roles: ["va","customer-service","smm","content","admin"],
+      prerequisites: ["verify-job-legitimacy"],
+      next_lessons: ["reading-a-job-post"],
+      why_this_lesson: "Find and check the end client you will actually serve, which also preps you for the interview.",
+      estimated_minutes: 7,
+      tier: 1,
+      format: "lesson"
+    },
+
     /* ====== Applicant-to-Hired: portfolio cluster ====== */
     "copy-paste-portfolio-doc": {
       title: "Build a Copy-Paste Portfolio Document",
@@ -1277,7 +1335,7 @@ window.SWAHG_LESSONS = {
     /* TOP ROW — Launch */
     "launch-1":{ pdf_label: "Setting Up Accounts",        stage: "launch",  lessons: ["online-jobs-account","freelancing-platforms"] },
     "launch-2":{ pdf_label: "Creating Powerful Resume",   stage: "launch",  lessons: ["resume-builder","google-sites-portfolio","bpo-to-va-portfolio","office-admin-to-va-portfolio","business-owner-to-va-portfolio","example-portfolio-zero-work-experience","example-portfolio-bpo-to-virtual-assistant","example-portfolio-business-owner"] },
-    "launch-3":{ pdf_label: "Job Hunting",                stage: "launch",  lessons: ["find-clients-ai-aggregator","what-is-hiring-cafe-and-why-use-it","why-is-an-ai-powered-job-aggregator-better-than-one-job-site","what-is-the-problem-with-relying-only-on-onlinejobs-ph","how-do-i-avoid-low-ball-clients","find-your-path-quiz","freelancing-platforms","job-board","reading-a-job-post"] },
+    "launch-3":{ pdf_label: "Job Hunting",                stage: "launch",  lessons: ["find-clients-ai-aggregator","what-is-hiring-cafe-and-why-use-it","why-is-an-ai-powered-job-aggregator-better-than-one-job-site","what-is-the-problem-with-relying-only-on-onlinejobs-ph","how-do-i-avoid-low-ball-clients","verify-job-legitimacy","how-do-i-check-if-a-job-offer-is-legit","how-do-i-verify-the-senders-email-domain","how-do-i-research-the-real-client-behind-an-agency","find-your-path-quiz","freelancing-platforms","job-board","reading-a-job-post"] },
     "launch-4":{ pdf_label: "Join Groups and Forums",     stage: "launch",  lessons: ["groups-and-forums"] },
     "launch-5":{ pdf_label: "Creating your Portfolio",    stage: "launch",  lessons: ["copy-paste-portfolio-doc","what-is-a-portfolio-document-and-why-do-i-need-one","where-do-i-keep-my-portfolio-if-i-have-no-website","how-do-i-use-notion-as-a-portfolio","personal-branding","online-presence","google-sites-portfolio","bpo-to-va-portfolio","office-admin-to-va-portfolio","business-owner-to-va-portfolio"] },
 
