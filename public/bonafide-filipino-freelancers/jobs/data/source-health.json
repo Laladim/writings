@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-06-24T00:12:54",
+  "generated_at": "2026-06-25T01:28:21",
   "sources": [
     {
       "source": "RemoteOK",
       "status": "ok",
       "fetched_count": 100,
-      "accepted_count": 18,
+      "accepted_count": 16,
       "last_error": ""
     },
     {
       "source": "Remotive",
       "status": "ok",
-      "fetched_count": 30,
+      "fetched_count": 36,
       "accepted_count": 2,
       "last_error": ""
     },
@@ -19,13 +19,13 @@
       "source": "Himalayas",
       "status": "ok",
       "fetched_count": 60,
-      "accepted_count": 1,
+      "accepted_count": 5,
       "last_error": ""
     },
     {
       "source": "WeWorkRemotely",
       "status": "ok",
-      "fetched_count": 93,
+      "fetched_count": 92,
       "accepted_count": 13,
       "last_error": ""
     },
@@ -33,7 +33,7 @@
       "source": "Jobicy",
       "status": "ok",
       "fetched_count": 100,
-      "accepted_count": 6,
+      "accepted_count": 4,
       "last_error": ""
     },
     {
