@@ -1,21 +1,21 @@
 {
   "manifest_version": "1.0",
-  "run_id": "20260626T013140",
-  "generated_at": "2026-06-26T01:31:40",
+  "run_id": "20260627T012442",
+  "generated_at": "2026-06-27T01:24:42",
   "job_count": 40,
   "newest_posting": "2026-06-26",
-  "oldest_posting": "2026-05-27",
+  "oldest_posting": "2026-05-28",
   "source_counts": {
-    "RemoteOK": 8,
-    "WeWorkRemotely": 15,
-    "Jobicy": 12,
-    "Remotive": 3,
-    "Himalayas": 2
+    "RemoteOK": 4,
+    "WeWorkRemotely": 13,
+    "Jobicy": 17,
+    "Remotive": 5,
+    "Himalayas": 1
   },
   "role_counts": {
-    "Virtual Assistant": 9,
-    "Customer Support": 24,
-    "SEO": 4,
+    "Virtual Assistant": 6,
+    "Customer Support": 26,
+    "SEO": 5,
     "Content Specialist": 3
   },
   "publish_status": "publishable",
