@@ -1,22 +1,23 @@
 {
   "manifest_version": "1.0",
-  "run_id": "20260627T012442",
-  "generated_at": "2026-06-27T01:24:42",
+  "run_id": "20260628T001619",
+  "generated_at": "2026-06-28T00:16:19",
   "job_count": 40,
-  "newest_posting": "2026-06-26",
-  "oldest_posting": "2026-05-28",
+  "newest_posting": "2026-06-27",
+  "oldest_posting": "2026-06-02",
   "source_counts": {
-    "RemoteOK": 4,
-    "WeWorkRemotely": 13,
-    "Jobicy": 17,
-    "Remotive": 5,
-    "Himalayas": 1
+    "RemoteOK": 9,
+    "WeWorkRemotely": 12,
+    "Jobicy": 14,
+    "Remotive": 3,
+    "Himalayas": 2
   },
   "role_counts": {
-    "Virtual Assistant": 6,
-    "Customer Support": 26,
-    "SEO": 5,
-    "Content Specialist": 3
+    "Content Specialist": 7,
+    "Customer Support": 23,
+    "Executive Assistant": 3,
+    "Virtual Assistant": 4,
+    "SEO": 3
   },
   "publish_status": "publishable",
   "refresh_mode": "github-actions-no-secret"
