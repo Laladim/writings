@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-07T01:09:30",
+  "generated_at": "2026-07-08T00:13:21",
   "sources": [
     {
       "source": "RemoteOK",
@@ -19,14 +19,14 @@
       "source": "Himalayas",
       "status": "ok",
       "fetched_count": 60,
-      "accepted_count": 6,
+      "accepted_count": 5,
       "last_error": ""
     },
     {
       "source": "WeWorkRemotely",
       "status": "ok",
-      "fetched_count": 66,
-      "accepted_count": 12,
+      "fetched_count": 68,
+      "accepted_count": 13,
       "last_error": ""
     },
     {
