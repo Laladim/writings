@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T00:13:21",
+  "generated_at": "2026-07-09T01:03:25",
   "sources": [
     {
       "source": "RemoteOK",
@@ -25,15 +25,15 @@
     {
       "source": "WeWorkRemotely",
       "status": "ok",
-      "fetched_count": 68,
-      "accepted_count": 13,
+      "fetched_count": 65,
+      "accepted_count": 12,
       "last_error": ""
     },
     {
       "source": "Jobicy",
       "status": "ok",
       "fetched_count": 100,
-      "accepted_count": 7,
+      "accepted_count": 8,
       "last_error": ""
     },
     {
