@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-07-13T00:12:31",
+  "generated_at": "2026-07-14T00:09:05",
   "sources": [
     {
       "source": "RemoteOK",
       "status": "ok",
       "fetched_count": 100,
-      "accepted_count": 11,
+      "accepted_count": 16,
       "last_error": ""
     },
     {
       "source": "Remotive",
       "status": "ok",
-      "fetched_count": 39,
-      "accepted_count": 1,
+      "fetched_count": 38,
+      "accepted_count": 2,
       "last_error": ""
     },
     {
       "source": "Himalayas",
       "status": "ok",
       "fetched_count": 60,
-      "accepted_count": 7,
+      "accepted_count": 1,
       "last_error": ""
     },
     {
