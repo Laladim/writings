@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Choosing Your Computer · BFF Open University · Lesson 01</title>
-<meta name="description" content="The first box on the BFF Blueprint. A practical, faith-warm lesson on choosing the right computer for freelance work, with action items for all 6 Filipino VA archetypes.">
+<meta name="description" content="The first box on the BFF Blueprint. A research-backed, faith-warm lesson on choosing the right computer for digital marketing freelance work: the real tool load, the starter-to-pro ladder, the problems freelancers actually report, and action items for all 6 Filipino VA archetypes.">
 <link rel="icon" type="image/png" href="../../brand/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -164,6 +164,21 @@
   table.criteria tr:nth-child(even) td{background:#faf7f5}
   table.criteria .spec{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--accent-deep)}
 
+  /* Ladder cards */
+  .ladder{display:grid;grid-template-columns:1fr;gap:16px;margin:22px 0}
+  .rung{
+    background:var(--surface);border:1px solid var(--border);border-radius:12px;
+    padding:22px 26px;border-left:5px solid var(--primary);
+  }
+  .rung[data-tier="start"]{border-left-color:var(--sage)}
+  .rung[data-tier="work"]{border-left-color:var(--accent)}
+  .rung[data-tier="pro"]{border-left-color:var(--lavender)}
+  .rung .rung-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+  .rung .rung-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--primary-deep)}
+  .rung .rung-spec{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent-deep);letter-spacing:.03em}
+  .rung .rung-pick{font-size:14px;color:var(--text-soft);margin:8px 0}
+  .rung .rung-carry{font-size:15px}
+
   /* Lala's setup card */
   .setup-card{
     background:var(--surface);border:1px solid var(--border);border-radius:10px;
@@ -175,6 +190,22 @@
   }
   @media (max-width:600px){.setup-card .grid{grid-template-columns:1fr}}
   .setup-card .spec-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;color:var(--accent-deep);text-transform:uppercase;margin-bottom:2px}
+
+  /* Problem list */
+  .problems{margin:20px 0 0}
+  .problem{
+    background:var(--surface);border:1px solid var(--border);border-radius:10px;
+    padding:20px 24px;margin-bottom:14px;border-left:4px solid var(--red);
+  }
+  .problem .p-title{
+    font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;
+    color:var(--primary-deep);margin-bottom:8px;
+  }
+  .problem .p-line{font-size:15px;margin-bottom:6px}
+  .problem .p-tag{
+    font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--accent-deep);font-weight:600;margin-right:6px;
+  }
 
   /* Archetype action items */
   .arch-grid{
@@ -227,41 +258,9 @@
   .checklist{list-style:none;margin-left:0}
   .checklist li{padding-left:28px;position:relative;margin-bottom:10px}
   .checklist li::before{
-    content:"☐";position:absolute;left:0;top:-2px;
+    content:"\2610";position:absolute;left:0;top:-2px;
     font-size:18px;color:var(--accent-deep);
   }
-
-  /* Approval blocks */
-  .approval{
-    background:var(--surface);border:1px solid var(--border);border-radius:10px;
-    padding:22px 26px;margin:24px 0;
-  }
-  .approval .gate-label{
-    font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;
-    text-transform:uppercase;color:var(--sage);font-weight:600;margin-bottom:4px;
-  }
-  .approval h3{margin-top:0}
-  .approval .verdict{
-    display:inline-block;background:var(--sage);color:#fff;
-    padding:3px 12px;border-radius:20px;font-size:12px;font-weight:700;
-    letter-spacing:.06em;margin-left:10px;vertical-align:middle;
-  }
-  .scores{
-    display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:10px;margin:14px 0;font-size:14px;
-  }
-  .score-row{
-    display:flex;justify-content:space-between;padding:8px 12px;
-    background:#faf7f5;border-radius:6px;
-  }
-  .score-row .num{
-    font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--sage);
-  }
-  .audit-list{
-    list-style:none;margin-left:0;font-size:14px;color:var(--text-soft);
-  }
-  .audit-list li{padding-left:24px;position:relative;margin-bottom:6px}
-  .audit-list li::before{content:"✓";position:absolute;left:0;color:var(--sage);font-weight:700}
 
   /* Video embed */
   .video-wrap{
@@ -328,125 +327,226 @@
   </div>
   <div class="kicker">Preparation · Box 1 · Freelancer Essentials</div>
   <h1>Choosing Your Computer</h1>
-  <p class="subtitle">"Let me tell the story first." How to choose a computer that will not hold you back with your first client.</p>
+  <p class="subtitle">"Let me tell the story first." The computer is not the goal. Keeping the client is the goal. Here is how to choose a machine that will not embarrass you on a call.</p>
   <div class="meta-row">
-    <span><strong>Length:</strong> 18 minutes</span>
+    <span><strong>Length:</strong> 20 minutes</span>
     <span><strong>For:</strong> Every BFF learner before Box 2</span>
-    <span><strong>Updated:</strong> 2026-05-15 (v2)</span>
-    <span><strong>Replaces:</strong> 2019 video lesson</span>
+    <span><strong>Updated:</strong> 2026-07-16 (v3, research-backed)</span>
+    <span><strong>Replaces:</strong> May 2026 (v2)</span>
   </div>
 </header>
 
 <section id="mirror">
   <div class="mirror">
     <p class="quote">"It is on sale on <a href="https://www.lazada.com.ph" target="_blank" rel="noopener">Lazada</a>. The laptop is only eight thousand pesos. Is that enough for VA work?"</p>
-    <p class="who">Common question from new BFF learners</p>
+    <p class="who">The most common question in the BFF group</p>
   </div>
-  <p>I was like that before. I wanted the cheapest option because I was afraid of wasting money. But I learned this: <strong>a bad computer may hurt your career growth in freelancing.</strong> The problem is not that a good computer is expensive. The problem is that a slow computer makes you wait while your client is also waiting. And the client can choose not to keep paying you next month.</p>
+  <p>I was like that once. I wanted the cheapest option because I was scared of wasting money. Then I learned the lesson the hard way: <strong>a weak computer does not just slow you down, it can quietly cost you the client.</strong> The problem is not that a good machine is expensive. The problem is that a slow machine makes you wait while your client is also waiting. And a client who waits too often is a client who leaves.</p>
+  <p>So before you open Lazada, we are going to do this the right way. First we look at what the work actually demands. Then we look at what real freelancers use, from the machine you start with to the one you grow into. Then I will show you the exact problems people complain about on the forums, so you never have to learn them the hard way.</p>
+</section>
+
+<section id="workload">
+  <h2>First, look at what you will actually run all day</h2>
+  <p>Do not start with specs. Start with the real work. A digital marketing VA in 2026 does not open one app and close it. On a normal Tuesday, you have <em>all of these open at the same time</em>:</p>
+  <ul>
+    <li><strong>Google Workspace:</strong> Gmail, Docs, Sheets, and Calendar, always open</li>
+    <li><strong>One project tool:</strong> <a href="https://trello.com" target="_blank" rel="noopener">Trello</a>, <a href="https://asana.com" target="_blank" rel="noopener">Asana</a>, or <a href="https://clickup.com" target="_blank" rel="noopener">ClickUp</a></li>
+    <li><strong>One chat tool:</strong> <a href="https://slack.com" target="_blank" rel="noopener">Slack</a> or <a href="https://www.microsoft.com/microsoft-teams" target="_blank" rel="noopener">Microsoft Teams</a>, pinging all day</li>
+    <li><strong>Design and recording:</strong> <a href="https://www.canva.com" target="_blank" rel="noopener">Canva</a> for graphics, <a href="https://www.loom.com" target="_blank" rel="noopener">Loom</a> for quick videos</li>
+    <li><strong>A browser with 15 to 30 tabs:</strong> client dashboards, research, schedulers, analytics</li>
+    <li><strong>A live call:</strong> <a href="https://zoom.us" target="_blank" rel="noopener">Zoom</a> or <a href="https://meet.google.com/new" target="_blank" rel="noopener">Google Meet</a>, often while everything above is still open</li>
+  </ul>
+  <p>That is the starter load for social media and admin work. If you grow into content or video, you add <a href="https://www.adobe.com/creativecloud.html" target="_blank" rel="noopener">Adobe Photoshop</a>, <a href="https://www.adobe.com/products/premiere.html" target="_blank" rel="noopener">Premiere</a>, or <a href="https://www.capcut.com" target="_blank" rel="noopener">CapCut</a>, plus heavy video files.</p>
+  <div class="callout sage">
+    <div class="callout-label">The one idea that decides everything</div>
+    <p>Every open app and every browser tab lives inside your <strong>RAM (memory)</strong>. When the RAM fills up, the computer starts using the slow disk as fake memory, and <em>that</em> is the exact moment everything crawls. So the question is never "can it run Canva." Almost any laptop runs Canva by itself. The real question is: <strong>"Can it run all of this at once, for eight hours, without freezing on a client call?"</strong></p>
+  </div>
 </section>
 
 <section id="question">
   <h2>The wrong question vs the right question</h2>
   <p><strong>Wrong question:</strong> "What is the cheapest laptop I can buy?"</p>
-  <p><strong>Better question:</strong> "What computer can keep up with my first three clients, last for three years, and still respect my family budget today?"</p>
-  <p>The first question gives you a laptop. The second gives you a <em>career foundation</em>. Every box in the <a href="../blueprint/index.html">Blueprint</a> depends on this.</p>
+  <p><strong>Right question:</strong> "What computer can keep up with my first three clients, last me three years, and still respect my family budget today?"</p>
+  <p>The first question gives you a laptop. The second gives you a <em>career foundation</em>. Every box in the <a href="../blueprint/index.html">Blueprint</a> depends on this one.</p>
+</section>
+
+<section id="ladder">
+  <h2>The starter computer, and the way up</h2>
+  <p>You do not need the top machine on day one. You need the right machine for the stage you are in. This is the honest ladder, from the computer you begin with to the one you grow into. The prices are July 2026 Philippine figures for reference, not fixed quotes.</p>
+
+  <div class="ladder">
+
+    <div class="rung" data-tier="start">
+      <div class="rung-head">
+        <span class="rung-name">🌱 Start here (Month 1)</span>
+        <span class="rung-spec">8 GB RAM · 256 to 512 GB SSD · i5 / Ryzen 5 / Apple M1</span>
+      </div>
+      <p class="rung-pick"><em>Real example:</em> refurbished <a href="https://www.acer.com/ph-en/laptops/aspire" target="_blank" rel="noopener">Acer Aspire</a> or a used <a href="https://www.lenovo.com/ph/en/outletph/" target="_blank" rel="noopener">Lenovo ThinkPad</a>, around ₱18,000 to ₱30,000.</p>
+      <p class="rung-carry">Enough to carry Docs, Sheets, Gmail, one project tool, light Canva, and a video call. This can absolutely land you Client #1. Just do not stack 30 tabs on it while you are on Zoom.</p>
+    </div>
+
+    <div class="rung" data-tier="work">
+      <div class="rung-head">
+        <span class="rung-name">💪 The real working machine</span>
+        <span class="rung-spec">16 GB RAM · 512 GB SSD · i5+ / Ryzen 5+ / Apple M-series</span>
+      </div>
+      <p class="rung-pick"><em>Real example:</em> <a href="https://www.apple.com/shop/buy-mac/macbook-air" target="_blank" rel="noopener">MacBook Air M4</a> 16 GB · 512 GB (~₱78,000, near 18 hours of battery) or a <a href="https://www.lenovo.com/ph" target="_blank" rel="noopener">Lenovo Yoga Slim 7i</a> 16 GB · 512 GB (~₱80,000).</p>
+      <p class="rung-carry">This is the true minimum for <strong>paid digital marketing work</strong>. It runs 30 tabs plus Canva plus Slack plus Zoom, all day, without the freeze. Every serious buyer guide in 2026 lands on the same number: 16 GB is the floor for marketing multitasking.</p>
+    </div>
+
+    <div class="rung" data-tier="pro">
+      <div class="rung-head">
+        <span class="rung-name">🚀 The pro / content machine</span>
+        <span class="rung-spec">32 GB RAM · 1 TB SSD + external SSD · M-series Pro / Intel Core Ultra</span>
+      </div>
+      <p class="rung-pick"><em>Real example:</em> <a href="https://www.apple.com/shop/buy-mac/macbook-pro" target="_blank" rel="noopener">MacBook Pro</a> M-series 32 GB, a <a href="https://www.dell.com/en-ph" target="_blank" rel="noopener">Dell XPS</a> 32 GB · 1 TB (~₱158,000), or a <a href="https://www.lenovo.com/ph" target="_blank" rel="noopener">ThinkPad X1 Carbon</a>.</p>
+      <p class="rung-carry">For 4K video, heavy Photoshop, Premiere, and juggling large files. Adobe recommends 16 GB for Photoshop, but working editors reach for 32 GB. Only buy this once your work truly needs it.</p>
+    </div>
+
+  </div>
+
+  <div class="callout lavender">
+    <div class="callout-label">The jump that matters</div>
+    <p>The step that changes your life is <strong>8 GB to 16 GB</strong>, not 16 to 32. That single upgrade removes almost all of the freezing complaints you will read on the forums. If you can only afford one good decision, make it 16 GB of RAM. On Apple Silicon especially, remember you <em>cannot</em> add RAM later, so choose it at purchase.</p>
+  </div>
 </section>
 
 <section id="criteria">
-  <h2>The 6 criteria of a good freelancer computer</h2>
-  <p>This is the checklist I use when someone asks for advice in the BFF group. I do not start with specs. I ask what <em>job</em> your machine needs to handle.</p>
+  <h2>The 6 things that make a machine client-ready</h2>
+  <p>This is the checklist I use when someone asks me for advice. I do not start with brand names. I ask what <em>job</em> the machine has to survive.</p>
 
   <table class="criteria">
     <thead>
       <tr><th style="width:24%">What</th><th style="width:46%">Why it matters</th><th style="width:30%">Minimum to ship</th></tr>
     </thead>
     <tbody>
-      <tr><td><strong>RAM (memory)</strong></td><td>If memory is too low, the laptop can freeze when you are on Zoom while Chrome and <a href="https://www.canva.com" target="_blank" rel="noopener">Canva</a> are open</td><td class="spec">8 GB minimum, 16 GB target</td></tr>
-      <tr><td><strong>Storage (SSD)</strong></td><td>An old HDD will feel painfully slow. SSD is the standard now.</td><td class="spec">256 GB SSD floor, 512 GB target</td></tr>
-      <tr><td><strong>Processor</strong></td><td>A decent chip so client video calls do not leave you behind</td><td class="spec">Intel i5 / AMD Ryzen 5 / Apple M-series</td></tr>
-      <tr><td><strong>Battery life</strong></td><td>During a brownout, you should still have time to message the client</td><td class="spec">6+ hours real use</td></tr>
-      <tr><td><strong>Webcam + mic</strong></td><td>For interviews, "audio only" should not be your excuse</td><td class="spec">720p+ webcam, working mic</td></tr>
-      <tr><td><strong>Keyboard + screen</strong></td><td>You will use it for eight hours. If the setup is poor, your back and eyes will suffer.</td><td class="spec">13"+ screen, full keyboard</td></tr>
+      <tr><td><strong>RAM (memory)</strong></td><td>Too little memory and the laptop freezes when you are on Zoom while <a href="https://www.google.com/chrome/" target="_blank" rel="noopener">Chrome</a> and <a href="https://www.canva.com" target="_blank" rel="noopener">Canva</a> are open</td><td class="spec">8 GB floor, 16 GB target</td></tr>
+      <tr><td><strong>Storage (SSD)</strong></td><td>An old HDD feels painfully slow. SSD is the standard. Keep 15 to 20% free or it slows down.</td><td class="spec">256 GB SSD floor, 512 GB target</td></tr>
+      <tr><td><strong>Processor</strong></td><td>A modern chip so client video calls do not leave you buffering behind</td><td class="spec">Intel i5 / Ryzen 5 / Apple M1 or newer</td></tr>
+      <tr><td><strong>Battery life</strong></td><td>During a brownout you should still have time to message the client and save your work</td><td class="spec">6+ hours real use</td></tr>
+      <tr><td><strong>Webcam + mic</strong></td><td>For interviews, "audio only" should never be your excuse</td><td class="spec">720p+ webcam, working mic</td></tr>
+      <tr><td><strong>Cooling + screen</strong></td><td>You will use it eight hours a day. A hot, cramped machine slows itself down and hurts your eyes.</td><td class="spec">13"+ screen, clear air vents</td></tr>
     </tbody>
   </table>
 
   <div class="callout sage">
     <div class="callout-label">Practical truth</div>
-    <p>You don't need the most expensive one. You need one that <strong>can run for a long period of time</strong> doing what your future client will ask. The cheapest laptop on <a href="https://www.lazada.com.ph" target="_blank" rel="noopener">Lazada</a> usually fails on RAM + SSD. A refurbished 2-year-old machine with 16 GB RAM almost always beats a brand-new ₱20K laptop with 4 GB.</p>
+    <p>You do not need the most expensive machine. You need one that <strong>runs the whole stack for a long stretch</strong> without giving up. The cheapest laptop on <a href="https://www.lazada.com.ph" target="_blank" rel="noopener">Lazada</a> almost always fails on RAM and storage. A refurbished two-year-old machine with 16 GB of RAM will beat a brand new ₱20K laptop with 8 GB, every single time. Before you buy, you can even check the official system requirements for <a href="https://www.canva.com/help/technical-requirements/" target="_blank" rel="noopener">Canva</a> and <a href="https://helpx.adobe.com/photoshop/desktop/get-started/technical-requirements-installation/adobe-photoshop-on-desktop-technical-requirements.html" target="_blank" rel="noopener">Photoshop</a> and match them.</p>
+  </div>
+</section>
+
+<section id="problems">
+  <h2>What actually breaks: the problems freelancers report</h2>
+  <p>I read the freelancer forums and the Zoom and Adobe help boards so you do not have to. These are the computer problems that genuinely cost people clients. Notice something: almost none of them are about the app you use. They are about the machine underneath it.</p>
+
+  <div class="problems">
+
+    <div class="problem">
+      <div class="p-title">1. "My whole computer freezes the second I join Zoom."</div>
+      <p class="p-line"><span class="p-tag">Why</span> The machine is already near its limit, and the call plus the microphone driver plus your open tabs push it over. On many laptops it is also heat: the chip gets hot, then deliberately slows itself down to cool off. That is called thermal throttling.</p>
+      <p class="p-line"><span class="p-tag">Fix</span> Close extra tabs before every call. Raise the laptop on a stand so the vents can breathe, and clean the fan every few months. If it still freezes on a clean, cool machine, you are simply out of RAM. That is your signal to move up the ladder.</p>
+    </div>
+
+    <div class="problem">
+      <div class="p-title">2. "It gets slower every single month."</div>
+      <p class="p-line"><span class="p-tag">Why</span> Your SSD is filling up. Once storage passes about 85% full, the system has no room for temporary files, so everything drags.</p>
+      <p class="p-line"><span class="p-tag">Fix</span> Keep 15 to 20% of the drive free at all times. Move finished client files to an external SSD or the cloud, do not hoard them on the laptop.</p>
+    </div>
+
+    <div class="problem">
+      <div class="p-title">3. "Canva or Photoshop lags and the tools delay."</div>
+      <p class="p-line"><span class="p-tag">Why</span> These are memory hungry. Adobe itself recommends 16 GB for Photoshop, and busy files want more. On 8 GB, filters and brushes stutter.</p>
+      <p class="p-line"><span class="p-tag">Fix</span> 16 GB is the real floor for design work. Until you upgrade, close other apps and turn on Canva's <a href="https://www.canva.com/help/technical-requirements/" target="_blank" rel="noopener">Memory Saver</a>.</p>
+    </div>
+
+    <div class="problem">
+      <div class="p-title">4. "The client says I keep cutting out on calls."</div>
+      <p class="p-line"><span class="p-tag">Why</span> This one is almost always the internet, not the computer. A 16 GB laptop on 5 Mbps still fails.</p>
+      <p class="p-line"><span class="p-tag">Fix</span> See the universal rule below. Test your line on <a href="https://www.speedtest.net" target="_blank" rel="noopener">Speedtest.net</a> and keep a mobile hotspot as backup.</p>
+    </div>
+
+    <div class="problem">
+      <div class="p-title">5. "My laptop broke and I lost a week of income."</div>
+      <p class="p-line"><span class="p-tag">Why</span> One machine, no backup. When it dies, so does your work and your pay for that week.</p>
+      <p class="p-line"><span class="p-tag">Fix</span> The moment you have two clients, buy a cheap second machine. A refurbished Chromebook is enough. A repair should never mean zero pesos.</p>
+    </div>
+
+  </div>
+
+  <div class="callout warn">
+    <div class="callout-label">Philippine reality: the brownout problem</div>
+    <p>An old or weak battery plus a power cut equals a dropped client call with no warning. Test your real battery life in the practice below, and keep a small UPS or a charged power bank that can run your router. In the Philippines, this is not optional, it is part of the job.</p>
+  </div>
+
+  <div class="callout lavender">
+    <div class="callout-label">The sources I checked for you</div>
+    <p>This lesson is not from memory. It is built from the 2026 digital marketing buyer guides, the official <a href="https://www.canva.com/help/technical-requirements/" target="_blank" rel="noopener">Canva</a> and <a href="https://helpx.adobe.com/photoshop/desktop/get-started/technical-requirements-installation/adobe-photoshop-on-desktop-technical-requirements.html" target="_blank" rel="noopener">Adobe Photoshop</a> requirements, the Zoom community lag threads, and the <a href="https://wise.com/ph/blog/best-laptop-for-virtual-assistant" target="_blank" rel="noopener">Wise Philippines VA laptop guide</a>. Every number above traces back to one of these.</p>
   </div>
 </section>
 
 <section id="real-example">
-  <h2>Example: an honest freelancer setup</h2>
-  <p>Not every "perfect setup" picture online is real. Most working freelancers have limitations too. Let's do honest math on what a solid setup looks like.</p>
+  <h2>An honest setup, with honest math</h2>
+  <p>Not every "perfect setup" photo online is real. Most working freelancers have limits too. Here is what a solid, honest setup actually looks like.</p>
 
   <div class="setup-card">
-    <h4>Example daily-driver pattern</h4>
-    <p style="margin-bottom:6px;color:var(--text-soft);font-size:14px"><em>A common solid pick: a mid-tier <a href="https://www.apple.com/shop/buy-mac/macbook-pro" target="_blank" rel="noopener">MacBook Pro</a> or Windows equivalent with Apple M-series / Intel i5+ / AMD Ryzen 5+</em></p>
+    <h4>A common solid daily driver</h4>
+    <p style="margin-bottom:6px;color:var(--text-soft);font-size:14px"><em>A mid-tier <a href="https://www.apple.com/shop/buy-mac/macbook-air" target="_blank" rel="noopener">MacBook Air</a> or a Windows equivalent with Apple M-series, Intel i5+, or AMD Ryzen 5+</em></p>
     <div class="grid">
       <div>
         <div class="spec-label">Memory</div>
-        <div>16 GB minimum for serious work · 32 GB recommended if budget allows</div>
+        <div>16 GB for serious work · 32 GB if budget allows and you touch video</div>
       </div>
       <div>
         <div class="spec-label">Storage</div>
-        <div>512 GB SSD target · 1 TB if you store client video / design files</div>
+        <div>512 GB SSD target · 1 TB if you store client video or design files</div>
       </div>
       <div>
-        <div class="spec-label">OS</div>
-        <div>Keep up to date for security + client-app compatibility</div>
+        <div class="spec-label">Keep it fresh</div>
+        <div>Update the OS for security and client-app compatibility</div>
       </div>
       <div>
-        <div class="spec-label">Watch for memory hogs</div>
+        <div class="spec-label">Watch the memory hogs</div>
         <div><a href="https://www.google.com/chrome/" target="_blank" rel="noopener">Chrome</a> with 30+ tabs · <a href="https://www.notion.so" target="_blank" rel="noopener">Notion</a> · video editors · multiple chat apps</div>
       </div>
     </div>
   </div>
 
-  <p>A common pattern: pair a portable laptop with an older but upgradeable desktop. Older Intel <a href="https://support.apple.com/en-us/111995" target="_blank" rel="noopener">iMacs</a> and many Windows desktops let you swap RAM via <a href="https://eshop.macsales.com" target="_blank" rel="noopener">OWC SO-DIMM</a>-style upgrades. Older hardware with upgradeable RAM often outlasts a brand-new cheap laptop with soldered 4 GB.</p>
+  <p>A smart pattern for tight budgets: pair a portable laptop with an older but upgradeable desktop. Many older Windows desktops and Intel <a href="https://support.apple.com/en-us/111995" target="_blank" rel="noopener">iMacs</a> let you swap in more RAM cheaply. Older hardware with upgradeable memory often outlasts a brand new laptop with soldered 8 GB.</p>
 
-  <div class="callout lavender">
-    <div class="callout-label">The honest moment</div>
-    <p>16 GB RAM feels like plenty until you're running a code editor + Chrome + 30 browser tabs + a chat app. Then you hit the ceiling, the machine swaps, everything slows. <strong>If you can reach 32 GB, choose it. Especially for Apple Silicon, because you cannot upgrade it later.</strong></p>
-  </div>
-</section>
-
-<section id="warning">
-  <h2>The warning I sometimes forgot to say</h2>
   <div class="callout warn">
-    <div class="callout-label">This is not drama</div>
-    <p>If you buy a laptop with too little RAM just because it is cheap, this is what can happen: you accept an interview. You join Zoom. The computer freezes. The audio cuts out. Later that night, the client tells you, "let's go with someone else, their setup is more stable." Your skill did not fail. Your tools did. <strong>That's the consequence we don't talk about enough.</strong></p>
+    <div class="callout-label">The consequence we do not talk about enough</div>
+    <p>If you buy a laptop with too little RAM just because it was cheap, this is what can happen: you accept an interview, you join Zoom, the computer freezes, the audio cuts out. That night the client says, "let's go with someone else, their setup is more stable." Your skill did not fail. Your tools did. If you save ₱5,000 today but lose a ₱30,000 per month client because of it, that is not savings. That is <em>expensive economy</em>.</p>
   </div>
-  <p>I am not saying money is the most important thing. I am saying that if you save ₱5,000 today but lose a ₱30,000/month client because of it, that is not savings. That is <em>expensive economy.</em></p>
 </section>
 
 <section id="practice">
   <div class="practice">
     <h3>Practice. Do this now, not tomorrow.</h3>
-    <p>Open the computer you are using right now. Follow this 5-step audit. It only takes 12 minutes.</p>
+    <p>Open the computer you are using right now and run this 6-step audit. It takes about 12 minutes.</p>
     <ol>
-      <li><strong>Check RAM.</strong> Mac: Apple menu → About This Mac. Windows: Settings → System → About. Remember how much RAM you have.</li>
-      <li><strong>Check storage.</strong> Mac: About This Mac → Storage. Windows: Settings → Storage. How much space is free?</li>
-      <li><strong>Check chip / processor.</strong> Same About screen. May "Intel Core i3" ba? "Apple M1"? "Ryzen 5"?</li>
-      <li><strong>Plug out the charger. Time your battery.</strong> Do this while browsing <a href="https://www.onlinejobs.ph" target="_blank" rel="noopener">OnlineJobs.ph</a>. If the battery drops 50% in less than 2 hours, it is already weak.</li>
-      <li><strong>Open a video call to yourself.</strong> Open <a href="https://meet.google.com/new" target="_blank" rel="noopener">Google Meet</a>. Check: does the mic work? Webcam? Are you too dark because the room light is poor?</li>
+      <li><strong>Check RAM.</strong> Mac: Apple menu, About This Mac. Windows: Settings, System, About. Write down how much you have.</li>
+      <li><strong>Check storage.</strong> Mac: About This Mac, Storage. Windows: Settings, Storage. How much free space, and is it under 15%?</li>
+      <li><strong>Check the chip.</strong> Same screen. May "Intel Core i3" ba? "Apple M1"? "Ryzen 5"?</li>
+      <li><strong>Time your battery.</strong> Unplug the charger and browse <a href="https://www.onlinejobs.ph" target="_blank" rel="noopener">OnlineJobs.ph</a>. If it drops 50% in under 2 hours, the battery is already weak.</li>
+      <li><strong>Test the call.</strong> Open <a href="https://meet.google.com/new" target="_blank" rel="noopener">Google Meet</a> to yourself. Does the mic work? The webcam? Are you too dark because the room light is poor?</li>
+      <li><strong>Stress it.</strong> Open Chrome with 15 tabs plus Canva plus your video call, all at once. Does it stay smooth, or does it start to stutter? That is your honest ceiling.</li>
     </ol>
-    <p style="margin-top:14px"><strong>The audit form:</strong> Write this in a notebook, yes, on paper:</p>
+    <p style="margin-top:14px"><strong>The audit form.</strong> Write this on paper, yes, on paper:</p>
     <ul class="checklist">
       <li>My RAM: ____ GB</li>
       <li>My storage: ____ GB free of ____ GB total</li>
       <li>My processor: ____</li>
-      <li>My battery: lasted ____ minutes out of unplugged</li>
-      <li>My webcam: ☐ works ☐ blurry ☐ broken</li>
-      <li>My mic: ☐ clear ☐ hissy ☐ broken</li>
+      <li>My battery: lasted ____ minutes unplugged</li>
+      <li>My webcam: works / blurry / broken</li>
+      <li>My mic: clear / hissy / broken</li>
+      <li>Under full load it stayed: smooth / stuttered / froze</li>
     </ul>
   </div>
 </section>
 
 <section id="archetypes">
-  <h2>Action items, based on your archetype</h2>
-  <p>Our journeys are not the same. A <a href="../resume-builder/index.html">Polished Freelancer</a> starts from a different baseline than a Fresh Starter. In the <a href="../resume-builder/index.html">Resume Builder</a>, there is a quiz that routes you to your archetype. If you do not know yours yet, take the Resume Builder quiz first, then come back here.</p>
-  <p>Here are the action items for this lesson by archetype:</p>
+  <h2>Your move, based on your archetype</h2>
+  <p>Our journeys are not the same. A <a href="../resume-builder/index.html">Polished Freelancer</a> starts from a different baseline than a Fresh Starter. The <a href="../resume-builder/index.html">Resume Builder</a> has a quiz that routes you to your archetype. If you do not know yours yet, take that quiz first, then come back here. Here is the action plan for this lesson, by archetype.</p>
 
   <div class="arch-grid">
 
@@ -455,14 +555,14 @@
         <span class="arch-name">🌟 The Polished Freelancer</span>
         <span class="arch-share">~25% · proceed ~80%</span>
       </div>
-      <p class="profile-line">Already running your own client roster. Multi-platform. Articulates pricing without flinching.</p>
+      <p class="profile-line">Already running your own client roster. Multi-platform. Talks pricing without flinching.</p>
       <div class="do-this">Do this week</div>
       <ol>
-        <li><strong>Audit your current machine against client-load math.</strong> If you already have 3+ active clients, 16 GB RAM should be your minimum. If you are still on 8 GB, plan an upgrade within 6 months.</li>
-        <li><strong>Add a backup machine.</strong> Buy a refurbished ChromeBook or older iMac from <a href="https://swappa.com" target="_blank" rel="noopener">Swappa</a> as failover. If your primary machine breaks, you will not lose income.</li>
-        <li><strong>Pre-claim the upgrade.</strong> Put this in your <a href="https://docs.google.com/spreadsheets" target="_blank" rel="noopener">Google Sheets</a> budget: "Q3 2026, 32 GB MacBook upgrade, paid from retainer #3." Make it a business expense, not personal spending.</li>
+        <li><strong>Audit against your client load.</strong> With 3+ active clients, 16 GB should be your minimum today. If you are still on 8 GB, plan the upgrade inside 6 months.</li>
+        <li><strong>Add a backup machine.</strong> A refurbished Chromebook or older iMac from <a href="https://swappa.com" target="_blank" rel="noopener">Swappa</a> as your failover, so a broken laptop never means lost income.</li>
+        <li><strong>Pre-claim the upgrade.</strong> Put it in your <a href="https://docs.google.com/spreadsheets" target="_blank" rel="noopener">budget sheet</a>: "Q4 2026, 32 GB MacBook, paid from retainer #3." Make it a business expense, not personal spending.</li>
       </ol>
-      <div class="pick"><strong>Recommended pick:</strong> Refurbished <a href="https://www.apple.com/shop/refurbished/mac" target="_blank" rel="noopener">Apple Certified Refurbished</a> 14" MacBook Pro M3 16 GB · 1 TB · ~₱90-110K. Pay with client money and record it in your books.</div>
+      <div class="pick"><strong>Recommended pick:</strong> <a href="https://www.apple.com/shop/refurbished/mac" target="_blank" rel="noopener">Apple Certified Refurbished</a> 14" MacBook Pro M-series, 16 GB or 32 GB, 1 TB. Pay with client money and record it in your books.</div>
     </div>
 
     <div class="arch-card" data-arch="transitioner">
@@ -473,11 +573,11 @@
       <p class="profile-line">BPO English plus office discipline. Strong from years of phone work. Needs the freelancing bridge.</p>
       <div class="do-this">Do this week</div>
       <ol>
-        <li><strong>Don't quit your job to buy a computer.</strong> Finish your notice period first. Use your 13th month pay plus leave conversion to buy the machine.</li>
-        <li><strong>Mid-range Windows or refurbished MacBook Air.</strong> You do not need top-tier yet. A 16 GB Windows laptop from the <a href="https://www.lenovo.com/ph" target="_blank" rel="noopener">Lenovo</a> ThinkPad refurbished line, ~₱35-45K, will last 4 years.</li>
-        <li><strong>Verify your home internet first.</strong> Run <a href="https://www.speedtest.net" target="_blank" rel="noopener">Speedtest</a>. If under 25 Mbps, get a backup mobile hotspot before you buy the laptop. The internet failure rate is 45% in the BFF candidate pool.</li>
+        <li><strong>Do not quit your job to buy a computer.</strong> Finish your notice period first. Use your 13th month pay plus leave conversion to fund the machine.</li>
+        <li><strong>Go mid-range.</strong> A 16 GB <a href="https://www.lenovo.com/ph" target="_blank" rel="noopener">Lenovo Yoga Slim 7i</a> or a refurbished ThinkPad, around ₱35,000 to ₱80,000, will last you four years.</li>
+        <li><strong>Verify home internet first.</strong> Run <a href="https://www.speedtest.net" target="_blank" rel="noopener">Speedtest</a>. If you are under 25 Mbps, get a backup mobile hotspot before you spend on the laptop.</li>
       </ol>
-      <div class="pick"><strong>Recommended pick:</strong> <a href="https://www.lenovo.com/ph/en/outletph/" target="_blank" rel="noopener">Lenovo ThinkPad T-series</a> refurb 16 GB · 512 GB SSD · i5, OR <a href="https://www.apple.com/shop/buy-mac/macbook-air" target="_blank" rel="noopener">MacBook Air M2</a> 16 GB · 256 GB if budget allows.</div>
+      <div class="pick"><strong>Recommended pick:</strong> <a href="https://www.lenovo.com/ph/en/outletph/" target="_blank" rel="noopener">Lenovo Yoga Slim 7i or ThinkPad T-series</a> 16 GB · 512 GB, or a <a href="https://www.apple.com/shop/buy-mac/macbook-air" target="_blank" rel="noopener">MacBook Air M4</a> 16 GB if budget allows.</div>
     </div>
 
     <div class="arch-card" data-arch="creative">
@@ -488,11 +588,11 @@
       <p class="profile-line">Photoshop, Premiere, video editing. Portfolio is your wedge. Admin tooling thin.</p>
       <div class="do-this">Do this week</div>
       <ol>
-        <li><strong>Your machine must run <a href="https://www.adobe.com/creativecloud.html" target="_blank" rel="noopener">Adobe Creative Cloud</a> + <a href="https://www.capcut.com" target="_blank" rel="noopener">CapCut</a> without choking.</strong> 16 GB RAM is the floor, not the target. Choose 32 GB if you do 4K video. 8 GB is not enough, period.</li>
-        <li><strong>External SSD non-negotiable.</strong> Add a <a href="https://www.sandisk.com/products/portable-ssd/extreme-portable-ssd" target="_blank" rel="noopener">SanDisk Extreme Portable SSD</a> 1 TB (~₱5,500). Put project files there, not on internal storage.</li>
-        <li><strong>Color-accurate display matters.</strong> If you do photo or video work, calibrate through <a href="https://www.displaycal.net" target="_blank" rel="noopener">DisplayCAL</a> and check <a href="https://support.apple.com/en-ph/guide/mac-help/mh35866/mac" target="_blank" rel="noopener">macOS Display settings</a> for the color profile. Broken colors lead to unprofessional renders.</li>
+        <li><strong>Your machine must run <a href="https://www.adobe.com/creativecloud.html" target="_blank" rel="noopener">Adobe Creative Cloud</a> and <a href="https://www.capcut.com" target="_blank" rel="noopener">CapCut</a> without choking.</strong> 16 GB is the floor, not the target. Choose 32 GB if you do 4K video. 8 GB is a no.</li>
+        <li><strong>External SSD, non-negotiable.</strong> Add a <a href="https://www.sandisk.com/products/portable-ssd/extreme-portable-ssd" target="_blank" rel="noopener">SanDisk Extreme Portable SSD</a> 1 TB (~₱5,500). Keep project files there, not on internal storage.</li>
+        <li><strong>Mind your colors.</strong> If you do photo or video, calibrate through <a href="https://www.displaycal.net" target="_blank" rel="noopener">DisplayCAL</a> or check your display color profile. Wrong colors mean unprofessional renders.</li>
       </ol>
-      <div class="pick"><strong>Recommended pick:</strong> <a href="https://www.apple.com/shop/buy-mac/macbook-pro" target="_blank" rel="noopener">MacBook Pro 14" M3</a> 16 GB · 512 GB (₱115-130K) OR refurbished M1 Max 32 GB · 1 TB from <a href="https://eshop.macsales.com" target="_blank" rel="noopener">OWC</a>.</div>
+      <div class="pick"><strong>Recommended pick:</strong> <a href="https://www.apple.com/shop/buy-mac/macbook-pro" target="_blank" rel="noopener">MacBook Pro M-series</a> 16 GB · 512 GB, or a refurbished 32 GB unit from <a href="https://eshop.macsales.com" target="_blank" rel="noopener">OWC</a> for 4K work.</div>
     </div>
 
     <div class="arch-card" data-arch="solo">
@@ -500,14 +600,14 @@
         <span class="arch-name">🛒 The Solo Entrepreneur</span>
         <span class="arch-share">~15% · proceed ~55%</span>
       </div>
-      <p class="profile-line">Ran your own ecom or store. Self-taught Canva + Shopify + Mailchimp. Often a mom with scheduling considerations.</p>
+      <p class="profile-line">Ran your own ecom or store. Self-taught Canva, Shopify, Mailchimp. Often a mom with a full schedule.</p>
       <div class="do-this">Do this week</div>
       <ol>
-        <li><strong>Treat it as a business expense.</strong> Keep the receipt and include it in your income tax filing. The laptop is depreciable equipment, not personal spending.</li>
-        <li><strong>Pick something the kids cannot break.</strong> Do not leave a MacBook Air on the coffee table. Store it in a locker or inside a cabinet when not in use. ChromeBook is the budget-friendly, sturdy option.</li>
-        <li><strong>Add scheduling tools to it day one.</strong> Install <a href="https://calendar.google.com" target="_blank" rel="noopener">Google Calendar</a>, <a href="https://trello.com" target="_blank" rel="noopener">Trello</a>, and <a href="https://toggl.com/track/" target="_blank" rel="noopener">Toggl Track</a> on the first day. Use the business-running skill you already have for client work.</li>
+        <li><strong>Treat it as a business expense.</strong> Keep the receipt for your tax filing. The laptop is depreciable equipment, not personal spending.</li>
+        <li><strong>Pick something the kids cannot break.</strong> Do not leave a MacBook Air on the coffee table. Store it in a cabinet when not in use. A Chromebook is the sturdy budget option.</li>
+        <li><strong>Load your tools day one.</strong> Install <a href="https://calendar.google.com" target="_blank" rel="noopener">Google Calendar</a>, <a href="https://trello.com" target="_blank" rel="noopener">Trello</a>, and <a href="https://toggl.com/track/" target="_blank" rel="noopener">Toggl Track</a> on the first day. Use the business skill you already have.</li>
       </ol>
-      <div class="pick"><strong>Recommended pick:</strong> <a href="https://www.acer.com/ph-en/chromebooks" target="_blank" rel="noopener">Acer ChromeBook Spin</a> 8 GB · 128 GB (~₱20-25K) for kid-proof daily, OR <a href="https://www.asus.com/ph/laptops/" target="_blank" rel="noopener">ASUS VivoBook</a> 16 GB if budget supports.</div>
+      <div class="pick"><strong>Recommended pick:</strong> <a href="https://www.acer.com/ph-en/chromebooks" target="_blank" rel="noopener">Acer Chromebook Spin</a> 8 GB (~₱20,000 to ₱25,000) for kid-proof daily use, or an <a href="https://www.asus.com/ph/laptops/" target="_blank" rel="noopener">ASUS VivoBook</a> 16 GB if budget supports.</div>
     </div>
 
     <div class="arch-card" data-arch="generalist">
@@ -518,11 +618,11 @@
       <p class="profile-line">Excel-fluent, calendar-disciplined. No specialty wedge yet.</p>
       <div class="do-this">Do this week</div>
       <ol>
-        <li><strong>Match the machine to a wedge.</strong> Bookkeeping VA needs <a href="https://quickbooks.intuit.com/" target="_blank" rel="noopener">QuickBooks</a> compatibility (Windows easier). Inbox-Zero VA needs reliable webcam + mic. Pick the wedge BEFORE the laptop.</li>
-        <li><strong>Mid-range Windows is fine.</strong> You do not need a MacBook. A <a href="https://www.dell.com/en-ph" target="_blank" rel="noopener">Dell Inspiron</a> 16 GB · 512 GB is enough for 95% of admin VA work.</li>
-        <li><strong>Add a second monitor.</strong> A ₱8K monitor from <a href="https://www.shopee.ph" target="_blank" rel="noopener">Shopee</a> is a productivity multiplier. You can work side by side: client email on the left, your work on the right.</li>
+        <li><strong>Match the machine to a wedge.</strong> A bookkeeping VA needs <a href="https://quickbooks.intuit.com/" target="_blank" rel="noopener">QuickBooks</a> compatibility (Windows is easier). An inbox VA needs a reliable webcam and mic. Pick the wedge before the laptop.</li>
+        <li><strong>Mid-range Windows is fine.</strong> You do not need a MacBook. A <a href="https://www.dell.com/en-ph" target="_blank" rel="noopener">Dell Inspiron</a> 16 GB · 512 GB covers 95% of admin VA work.</li>
+        <li><strong>Add a second monitor.</strong> An ₱8K monitor from <a href="https://www.shopee.ph" target="_blank" rel="noopener">Shopee</a> is a productivity multiplier: client email on the left, your work on the right.</li>
       </ol>
-      <div class="pick"><strong>Recommended pick:</strong> <a href="https://www.dell.com/en-ph/shop/laptops/sr/laptops/inspiron-laptops" target="_blank" rel="noopener">Dell Inspiron 15</a> 16 GB · 512 GB i5 (~₱40-50K) OR refurbished <a href="https://www.lenovo.com/ph/en/outletph/" target="_blank" rel="noopener">ThinkPad E-series</a>.</div>
+      <div class="pick"><strong>Recommended pick:</strong> <a href="https://www.dell.com/en-ph/shop/laptops/sr/laptops/inspiron-laptops" target="_blank" rel="noopener">Dell Inspiron 15</a> 16 GB · 512 GB i5 (~₱40,000 to ₱50,000), or a refurbished <a href="https://www.lenovo.com/ph/en/outletph/" target="_blank" rel="noopener">ThinkPad E-series</a>.</div>
     </div>
 
     <div class="arch-card" data-arch="fresh">
@@ -530,39 +630,55 @@
         <span class="arch-name">🌱 The Fresh Starter</span>
         <span class="arch-share">~5% · proceed ~30%</span>
       </div>
-      <p class="profile-line">Eager but unprepared. 0–2 tools. Weak English self-rating. Confidence gap is the bottleneck.</p>
+      <p class="profile-line">Eager but unprepared. 0 to 2 tools. Weak English self-rating. Confidence gap is the bottleneck.</p>
       <div class="do-this">Do this week</div>
       <ol>
-        <li><strong>You do not need to buy right away.</strong> Before spending ₱30K, complete <a href="../blueprint/index.html">Blueprint</a> stages 1-2 first. Once you are committed to the skill, that is when you buy.</li>
-        <li><strong>Borrow first if you can.</strong> Borrow a laptop from a sister or cousin for the first 30 days. Test whether you truly want freelance work. If you get accepted on <a href="https://www.onlinejobs.ph" target="_blank" rel="noopener">OnlineJobs.ph</a> and land a first client, use the first paycheck for the upgrade.</li>
-        <li><strong>If you must buy: 0% installment only.</strong> Do not cash out everything. Check Home Credit or <a href="https://www.lazada.com.ph/wallet/" target="_blank" rel="noopener">Lazada Wallet</a> 0% for 6 months. Let your first 3 client payments fund the amortization.</li>
+        <li><strong>You do not need to buy right away.</strong> Before spending ₱30K, finish <a href="../blueprint/index.html">Blueprint</a> stages 1 and 2. Buy once you are committed to the skill.</li>
+        <li><strong>Borrow first if you can.</strong> Borrow a laptop from a sister or cousin for your first 30 days. Test whether you truly want this. Land a first client on <a href="https://www.onlinejobs.ph" target="_blank" rel="noopener">OnlineJobs.ph</a>, then use that first paycheck for the upgrade.</li>
+        <li><strong>If you must buy, use 0% installment.</strong> Do not drain your savings. Check Home Credit or <a href="https://www.lazada.com.ph/wallet/" target="_blank" rel="noopener">Lazada</a> 0% for 6 months. Let your first 3 payments fund it.</li>
       </ol>
-      <div class="pick"><strong>Recommended pick:</strong> Refurbished <a href="https://www.acer.com/ph-en/laptops/aspire" target="_blank" rel="noopener">Acer Aspire</a> 8 GB · 256 GB (~₱18-25K) for first 12 months. Upgrade to 16 GB machine after Client #2.</div>
+      <div class="pick"><strong>Recommended pick:</strong> refurbished <a href="https://www.acer.com/ph-en/laptops/aspire" target="_blank" rel="noopener">Acer Aspire</a> 8 GB · 256 GB (~₱18,000 to ₱25,000) for the first 12 months. Upgrade to a 16 GB machine after Client #2.</div>
     </div>
 
   </div>
 
   <div class="callout sage" style="margin-top:24px">
-    <div class="callout-label">Universal rule</div>
-    <p>For every archetype: <strong>internet speed + backup are equally important as the laptop.</strong> 45% of the BFF candidate pool falls below 10 Mbps internet. If you have a 16 GB MacBook but only 5 Mbps internet, Zoom will still fail. Test via <a href="https://www.speedtest.net" target="_blank" rel="noopener">Speedtest.net</a> and include the result in your resume.</p>
+    <div class="callout-label">Universal rule for everyone</div>
+    <p>For every archetype: <strong>internet speed and a backup plan matter as much as the laptop.</strong> A large share of new freelancers sit below 10 Mbps. If you have a 16 GB MacBook but only 5 Mbps internet, Zoom will still fail. Test on <a href="https://www.speedtest.net" target="_blank" rel="noopener">Speedtest.net</a>, keep a mobile hotspot as backup, and put your result on your resume.</p>
   </div>
 </section>
 
 <section id="checkpoint">
-  <h2>Checkpoint. Show proof that you used the lesson.</h2>
+  <h2>Checkpoint. Show proof you used the lesson.</h2>
   <div class="callout">
     <div class="callout-label">Postable artifact</div>
     <p>Post one of these in the <a href="https://www.facebook.com/groups/workathomegeek" target="_blank" rel="noopener">BFF Facebook Group</a>:</p>
     <ol style="margin-top:8px">
-      <li><strong>The audit photo.</strong> A photo of your paper with the filled-out checklist. "Here is my audit. RAM: 8 GB. My next step is: ____."</li>
-      <li><strong>The decision post.</strong> "My archetype: _____. My chosen pick: _____. I will buy from _____ next month, after I finish Blueprint Box 2."</li>
+      <li><strong>The audit photo.</strong> A photo of your paper with the filled-out checklist. "Here is my audit. RAM: 8 GB. Under full load it stuttered. My next step is: ____."</li>
+      <li><strong>The decision post.</strong> "My archetype: _____. My chosen rung: _____. I will buy from _____ next month, after I finish Blueprint Box 2."</li>
     </ol>
-    <p style="margin-top:8px">Your batchmates will leave feedback. That is the community ladder, not a solo flight.</p>
+    <p style="margin-top:8px">Your batchmates will give feedback. That is the community ladder, not a solo flight.</p>
   </div>
 </section>
 
+<section id="job-ladder">
+  <h2>Job ladder. Which roles this opens.</h2>
+  <p>Source: <a href="../jobs/index.html">BFF Job List</a>, July 2026 snapshot. This lesson is the prerequisite for every box, because every role category needs a working machine.</p>
+  <table class="criteria">
+    <thead>
+      <tr><th>Role Category</th><th>PH-eligible listings</th><th>Why this lesson is required</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Customer Service</strong></td><td>58 jobs (24%)</td><td>Working webcam and mic are non-negotiable</td></tr>
+      <tr><td><strong>Social Media Manager</strong></td><td>43 jobs (18%)</td><td>Canva plus schedulers plus a call want 16 GB RAM</td></tr>
+      <tr><td><strong>Admin Assistant</strong></td><td>23 jobs (9%)</td><td>Spreadsheets and email need a baseline always-on machine</td></tr>
+      <tr><td><strong>Content Creator</strong></td><td>21 jobs (9%)</td><td>Adobe and CapCut need 16 GB+ RAM and an SSD</td></tr>
+    </tbody>
+  </table>
+</section>
+
 <section id="community">
-  <h2>Community + next step</h2>
+  <h2>Community and next step</h2>
   <div class="next-row">
     <a href="../lesson-email-address-expert-secrets/index.html">
       <div class="arrow-label">Next lesson →</div>
@@ -583,22 +699,6 @@
   </div>
 </section>
 
-<section id="job-ladder">
-  <h2>Job ladder. Which roles this can help you enter.</h2>
-  <p>Source: <a href="../jobs/index.html">BFF Job List</a>, May 2026 snapshot. This lesson is the prerequisite for every box, because every Role Category needs a working machine.</p>
-  <table class="criteria">
-    <thead>
-      <tr><th>Role Category</th><th>Current PH-eligible listings</th><th>Why this lesson is required</th></tr>
-    </thead>
-    <tbody>
-      <tr><td><strong>Customer Service</strong></td><td>58 jobs (24%)</td><td>Working webcam + mic non-negotiable</td></tr>
-      <tr><td><strong>Social Media Manager</strong></td><td>43 jobs (18%)</td><td>Canva + scheduling tools require 8 GB+ RAM</td></tr>
-      <tr><td><strong>Admin Assistant</strong></td><td>23 jobs (9%)</td><td>Spreadsheet + email = baseline always-on machine</td></tr>
-      <tr><td><strong>Content Creator</strong></td><td>21 jobs (9%)</td><td>Adobe / CapCut requires 16 GB+ RAM and SSD</td></tr>
-    </tbody>
-  </table>
-</section>
-
 <section class="signoff">
   <p>Hold steady, BFF Team. We keep going together.</p>
   <p class="name">– Lala</p>
@@ -614,7 +714,7 @@
     <a href="../curriculum/index.html">Curriculum</a>
     <a href="../" target="_blank" rel="noopener">BFF Home</a>
   </div>
-  <div class="credit">Lesson 01 · Choosing Your Computer · v2 · May 15, 2026 · Writings by Lala</div>
+  <div class="credit">Lesson 01 · Choosing Your Computer · v3 · July 16, 2026 · Writings by Lala</div>
 </footer>
 
 </body>
