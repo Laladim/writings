@@ -152,7 +152,7 @@ The
 SWAHG Resume Builder
 
 <!-- wbl-text:0047 -->
-is already built. Step-by-step. Archetype quiz Step 1. Auto-fill skills. Live job-match Step 3. Letterpress preview. Export PDF.
+is already built. Step-by-step. Start with a desired job, existing resume, or archetype. Auto-fill skills. Create an editable starter draft. Letterpress preview. Export PDF.
 
 <!-- wbl-text:0048 -->
 It is not wrong to use this instead of Canva.
@@ -185,7 +185,7 @@ Skills (4-8)
 Work-used, not aspirational. From
 
 <!-- wbl-text:0058 -->
-Resume Builder Step 2
+Resume Builder tool rating
 
 <!-- wbl-text:0059 -->
 .
@@ -245,7 +245,7 @@ open it
 .
 
 <!-- wbl-text:0078 -->
-5-step wizard.
+7-step wizard.
 
 <!-- wbl-text:0079 -->
 Fill in all sections honestly.
@@ -404,7 +404,7 @@ Direct →
 Resume Builder (Interactive)
 
 <!-- wbl-text:0131 -->
-5-step wizard
+7-step wizard
 
 <!-- wbl-text:0132 -->
 Apply →

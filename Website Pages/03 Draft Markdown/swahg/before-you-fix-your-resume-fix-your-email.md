@@ -15,7 +15,7 @@ swahgSourceTitle: "Email Address Expert Secrets"
 swahgSourceSlug: "email-address-is-gold"
 draftStatus: "ready-for-lala-review"
 writingProcessVersion: "wbl-source-first-v1"
-sourcePacketPath: "src/content/drafts/swahg/_briefs/before-you-fix-your-resume-fix-your-email.json"
+sourcePacketPath: "src/content/drafts/bonafide-filipino-freelancers/_briefs/before-you-fix-your-resume-fix-your-email.json"
 moveIds: ["O8", "S5", "C3", "E4", "L5", "F6", "K1", "A9", "T2"]
 criticVerdict: "SELF-PASS"
 ---

@@ -572,91 +572,127 @@ relationship over rate.
 The most important part of Account Management is not sales language. It is mutual respect. Without respect, there is no rate raise. With respect, every negotiation is easier. Respect is built through weekly cadence + clear scope + honest scope creep response.
 
 <!-- wbl-text:0187 -->
-Checkpoint. Show proof that you used the lesson.
+Copy-paste: holding your scope without losing the client
 
 <!-- wbl-text:0188 -->
-Postable artifact
+When the work quietly grows
 
 <!-- wbl-text:0189 -->
-Post this in
+Scope creep is when small extra tasks pile on until you are doing a bigger job for the old price. Hold the line warmly, not defensively:
 
 <!-- wbl-text:0190 -->
-BFF Facebook Group (Work At Home Geek)
+The gentle flag:
 
 <!-- wbl-text:0191 -->
-:
+"Happy to take this on. It is a bit outside our current scope, so let me send a quick note on timing and rate before I start."
 
 <!-- wbl-text:0192 -->
-Your 1-page proposal template
+The trade:
 
 <!-- wbl-text:0193 -->
-with placeholder text (no real client name), OR
+"I can do this, but something else this week would move. Which would you like me to prioritize?"
 
 <!-- wbl-text:0194 -->
-Your scope creep response
+The upgrade:
 
 <!-- wbl-text:0195 -->
-(the canned reply you'll use). Tag your archetype + how confident you feel using it.
+"This has grown into regular work. Let us update the scope so it is clear and fairly paid for both of us."
 
 <!-- wbl-text:0196 -->
-Community + next step
+Saying this is not rude. It is what a professional, long-term partner does, and good clients respect it. For the rate side of that conversation, see
 
 <!-- wbl-text:0197 -->
-Next lesson →
+Raising Your Rate
 
 <!-- wbl-text:0198 -->
-Building Your Own Brand or Agency
+.
 
 <!-- wbl-text:0199 -->
-Year-2 module: stop trading hours
+Checkpoint. Show proof that you used the lesson.
 
 <!-- wbl-text:0200 -->
-Prerequisite →
+Postable artifact
 
 <!-- wbl-text:0201 -->
-Choosing My Client
+Post this in
 
 <!-- wbl-text:0202 -->
-Four business types · pick the fit
+BFF Facebook Group (Work At Home Geek)
 
 <!-- wbl-text:0203 -->
-Zoom out →
+:
 
 <!-- wbl-text:0204 -->
-See the full Blueprint
+Your 1-page proposal template
 
 <!-- wbl-text:0205 -->
-Where Account Management fits
+with placeholder text (no real client name), OR
 
 <!-- wbl-text:0206 -->
-Apply →
+Your scope creep response
 
 <!-- wbl-text:0207 -->
-BFF Job Board
+(the canned reply you'll use). Tag your archetype + how confident you feel using it.
 
 <!-- wbl-text:0208 -->
-Filter by "Account Manager" · 32 active rows
+Community + next step
 
 <!-- wbl-text:0209 -->
-Hold steady, BFF Team. We keep going together.
+Next lesson →
 
 <!-- wbl-text:0210 -->
-– Lala
+Building Your Own Brand or Agency
 
 <!-- wbl-text:0211 -->
-BFF Home
+Year-2 module: stop trading hours
 
 <!-- wbl-text:0212 -->
-Blueprint
+Prerequisite →
 
 <!-- wbl-text:0213 -->
-Resume Builder
+Choosing My Client
 
 <!-- wbl-text:0214 -->
-Curriculum
+Four business types · pick the fit
 
 <!-- wbl-text:0215 -->
-Job Board
+Zoom out →
 
 <!-- wbl-text:0216 -->
+See the full Blueprint
+
+<!-- wbl-text:0217 -->
+Where Account Management fits
+
+<!-- wbl-text:0218 -->
+Apply →
+
+<!-- wbl-text:0219 -->
+BFF Job Board
+
+<!-- wbl-text:0220 -->
+Filter by "Account Manager" · 32 active rows
+
+<!-- wbl-text:0221 -->
+Hold steady, BFF Team. We keep going together.
+
+<!-- wbl-text:0222 -->
+– Lala
+
+<!-- wbl-text:0223 -->
+BFF Home
+
+<!-- wbl-text:0224 -->
+Blueprint
+
+<!-- wbl-text:0225 -->
+Resume Builder
+
+<!-- wbl-text:0226 -->
+Curriculum
+
+<!-- wbl-text:0227 -->
+Job Board
+
+<!-- wbl-text:0228 -->
 Account Management 101 · v1 · May 15, 2026 · Writings by Lala

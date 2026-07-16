@@ -15,7 +15,7 @@ swahgSourceTitle: "Organize your Work Files"
 swahgSourceSlug: "bonus-tips-1"
 draftStatus: "ready-for-lala-review"
 writingProcessVersion: "wbl-source-first-v1"
-sourcePacketPath: "src/content/drafts/swahg/_briefs/when-your-tools-are-too-many-your-work-feels-heavy.json"
+sourcePacketPath: "src/content/drafts/bonafide-filipino-freelancers/_briefs/when-your-tools-are-too-many-your-work-feels-heavy.json"
 moveIds: ["O8", "S6", "C3", "E4", "L5", "F6", "K1", "A9", "T2"]
 criticVerdict: "SELF-PASS"
 ---

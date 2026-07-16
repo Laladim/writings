@@ -491,91 +491,124 @@ Don't try to look senior.
 The "fresh learner" brand can be authentic + appealing. Lean into it.
 
 <!-- wbl-text:0160 -->
-Checkpoint. Show proof that you used the lesson.
+The application pack consistency check
 
 <!-- wbl-text:0161 -->
-Postable artifact
+Run this before you send anything
 
 <!-- wbl-text:0162 -->
-Post this in
+Your profile summary, your LinkedIn headline, and your pitch message get read together. They must agree. A 30-second check on every application:
 
 <!-- wbl-text:0163 -->
-BFF Facebook Group (Work At Home Geek)
+Same tool list everywhere.
 
 <!-- wbl-text:0164 -->
-:
+If your profile names Canva, Trello, and Slack, your pitch names the same three. A tool that shows up in one place but not another looks like a mistake.
 
 <!-- wbl-text:0165 -->
-Your 4-element brand summary.
+Vary your verbs.
 
 <!-- wbl-text:0166 -->
-1 sentence each. Archetype: ___. Identity: ___. Message: ___. Personality: ___. Culture: ___.
+Do not start every line with "Handled" or "Managed." Repetition reads like a template, not a person.
 
 <!-- wbl-text:0167 -->
-Tag a BFF friend for honest feedback.
+Kill the boilerplate.
 
 <!-- wbl-text:0168 -->
-"Does this sound like me?"
+If your "I do not overclaim" line is word-for-word identical on every application, it stops meaning anything. Make each one specific to the role.
 
 <!-- wbl-text:0169 -->
-Community + next step
+One name, one headline, one promise.
 
 <!-- wbl-text:0170 -->
-Next lesson →
+The lane you claim in your bio is the same lane you pitch.
 
 <!-- wbl-text:0171 -->
-Professional Online Presence
+Checkpoint. Show proof that you used the lesson.
 
 <!-- wbl-text:0172 -->
-Box 16 · Launch · Your 4 social surfaces
+Postable artifact
 
 <!-- wbl-text:0173 -->
-← Previous lesson
+Post this in
 
 <!-- wbl-text:0174 -->
-Getting Hired Fast
+BFF Facebook Group (Work At Home Geek)
 
 <!-- wbl-text:0175 -->
-Box 14 · Launch
+:
 
 <!-- wbl-text:0176 -->
-Zoom out →
+Your 4-element brand summary.
 
 <!-- wbl-text:0177 -->
-See the full Blueprint
+1 sentence each. Archetype: ___. Identity: ___. Message: ___. Personality: ___. Culture: ___.
 
 <!-- wbl-text:0178 -->
-All 30+ boxes · the growth loop
+Tag a BFF friend for honest feedback.
 
 <!-- wbl-text:0179 -->
-Start →
+"Does this sound like me?"
 
 <!-- wbl-text:0180 -->
-Archetype Finder
+Community + next step
 
 <!-- wbl-text:0181 -->
-Find your path first
+Next lesson →
 
 <!-- wbl-text:0182 -->
-Hold steady, BFF Team. We keep going together.
+Professional Online Presence
 
 <!-- wbl-text:0183 -->
-– Lala
+Box 16 · Launch · Your 4 social surfaces
 
 <!-- wbl-text:0184 -->
-BFF Home
+← Previous lesson
 
 <!-- wbl-text:0185 -->
-Blueprint
+Getting Hired Fast
 
 <!-- wbl-text:0186 -->
-Resume Builder
+Box 14 · Launch
 
 <!-- wbl-text:0187 -->
-Curriculum
+Zoom out →
 
 <!-- wbl-text:0188 -->
-BFF Home
+See the full Blueprint
 
 <!-- wbl-text:0189 -->
+All 30+ boxes · the growth loop
+
+<!-- wbl-text:0190 -->
+Start →
+
+<!-- wbl-text:0191 -->
+Archetype Finder
+
+<!-- wbl-text:0192 -->
+Find your path first
+
+<!-- wbl-text:0193 -->
+Hold steady, BFF Team. We keep going together.
+
+<!-- wbl-text:0194 -->
+– Lala
+
+<!-- wbl-text:0195 -->
+BFF Home
+
+<!-- wbl-text:0196 -->
+Blueprint
+
+<!-- wbl-text:0197 -->
+Resume Builder
+
+<!-- wbl-text:0198 -->
+Curriculum
+
+<!-- wbl-text:0199 -->
+BFF Home
+
+<!-- wbl-text:0200 -->
 Lesson 14 · Personal Branding · v2 · May 15, 2026 · Writings by Lala

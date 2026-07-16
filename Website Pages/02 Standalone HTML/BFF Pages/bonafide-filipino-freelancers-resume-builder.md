@@ -35,28 +35,31 @@ Archetype Finder
 Resume Builder
 
 <!-- wbl-text:0008 -->
-My Curriculum
+Personalized Guide
 
 <!-- wbl-text:0009 -->
-Job Board
+My Curriculum
 
 <!-- wbl-text:0010 -->
-Job-Match Resume Starter
+Job Board
 
 <!-- wbl-text:0011 -->
-one target job to editable draft
+Job-Match Resume Starter
 
 <!-- wbl-text:0012 -->
-unsaved
+one target job to editable draft
 
 <!-- wbl-text:0013 -->
-Reset
+unsaved
 
 <!-- wbl-text:0014 -->
-Built on the
+Reset
 
 <!-- wbl-text:0015 -->
-6-archetype
+Built on the
 
 <!-- wbl-text:0016 -->
+6-archetype
+
+<!-- wbl-text:0017 -->
 framework · Source: Filipino VA Categories analysis · Resume methodology infrastructure

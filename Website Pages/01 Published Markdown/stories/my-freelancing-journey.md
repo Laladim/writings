@@ -6,10 +6,10 @@ WBL_OBSIDIAN_SYNC_END -->
 ---
 title: "My Freelancing Journey"
 type: "story"
-topics: ["swahg-stories", "community", "filipino-professionals"]
+topics: ["bff-stories", "community", "filipino-professionals"]
 date: 2019-08-24
 description: "Claudz shares how she found her way home to the SWAHG community and kept growing as a freelancer."
-image: "/swahg-stories/my-freelancing-journey-claudz.webp"
+image: "/bonafide-filipino-freelancers/stories/my-freelancing-journey-claudz.webp"
 ---
 
 by: Claudine Ann Marie de Guzman

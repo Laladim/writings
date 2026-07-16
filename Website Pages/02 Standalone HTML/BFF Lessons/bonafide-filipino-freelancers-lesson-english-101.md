@@ -3,7 +3,7 @@ kind: html-text-map
 sourcePath: public/bonafide-filipino-freelancers/lesson-english-101/index.html
 url: /bonafide-filipino-freelancers/lesson-english-101/
 WBL_OBSIDIAN_SYNC_END -->
-# English Communications 101 · BFF Open University · Lesson 22
+# English Communications 101 · BFF Open University
 
 Source: `public/bonafide-filipino-freelancers/lesson-english-101/index.html`
 Live path: `/bonafide-filipino-freelancers/lesson-english-101/`
@@ -11,7 +11,7 @@ Live path: `/bonafide-filipino-freelancers/lesson-english-101/`
 Edit the text below each marker. Keep the markers in place.
 
 <!-- wbl-text:0000 -->
-English Communications 101 · BFF Open University · Lesson 22
+English Communications 101 · BFF Open University
 
 <!-- wbl-text:0001 -->
 BFF
@@ -32,7 +32,7 @@ Resume Builder
 My Curriculum
 
 <!-- wbl-text:0007 -->
-BFF Home
+Job Board
 
 <!-- wbl-text:0008 -->
 BFF
@@ -44,511 +44,814 @@ BFF
 Blueprint
 
 <!-- wbl-text:0011 -->
-· Skill Upgrade ·
+· Warming Up ·
 
 <!-- wbl-text:0012 -->
-Lesson 22
+English Communications 101
 
 <!-- wbl-text:0013 -->
-Skill Upgrade · Box 22 · Additional
+Warming Up · Basic Foundation · Core Skill
 
 <!-- wbl-text:0014 -->
 English Communications 101
 
 <!-- wbl-text:0015 -->
-"Just like any other language, English can be learned." This refresher is for building confidence, not pretending to be perfect.
+Speak with a free AI coach, one real story at a time, told twice, until clients understand you the first time.
 
 <!-- wbl-text:0016 -->
 Length:
 
 <!-- wbl-text:0017 -->
-25 minutes
+20 minutes to read, 30 for your first loop
 
 <!-- wbl-text:0018 -->
 For:
 
 <!-- wbl-text:0019 -->
-Anyone whose English self-rating is 3 or below
+Anyone not yet confident speaking English to a client
 
 <!-- wbl-text:0020 -->
 Updated:
 
 <!-- wbl-text:0021 -->
-2026-05-15 (v2)
+2026-06-08 (v3)
 
 <!-- wbl-text:0022 -->
-"I want to apply, but I am afraid to take client calls. I am not fluent."
+Prerequisite:
 
 <!-- wbl-text:0023 -->
-Common question from new BFF learners
+none
 
 <!-- wbl-text:0024 -->
-Friend, do not fret.
+"I want to apply, but I am afraid to take client calls. I am not fluent."
 
 <!-- wbl-text:0025 -->
-Just like any other language, English can be learned.
+The sentence we hear most from new BFF learners
 
 <!-- wbl-text:0026 -->
-In the BPO industry, people train first before they are assigned to project-specific work. That means improvement is achievable. You can do it too. This lesson covers the basics, plus a No-Calls strategy if Zoom calls are not realistic for you yet.
+Let me take that fear off your shoulders first. On our own
 
 <!-- wbl-text:0027 -->
-The wrong question vs the right question
+Job Board
 
 <!-- wbl-text:0028 -->
-Wrong question:
+,
 
 <!-- wbl-text:0029 -->
-"Do I need to be 100% fluent before applying?"
+161 of the 214 categorized jobs are No-Calls roles
 
 <!-- wbl-text:0030 -->
-Better question:
+. About 75 percent. Three out of four jobs will never ask you to speak on a call. You can be hired this month, in text-only work, with the English you have right now. So why does this lesson exist? Because of the other number below, and because there is now a practice partner inside the free ChatGPT or Gemini app that listens, talks back, never gets tired, and never laughs at you.
 
 <!-- wbl-text:0031 -->
-"What English level is enough for my target role category, and how do I reach it?"
+The wrong question vs the right question
 
 <!-- wbl-text:0032 -->
-The idea that you must be 100% fluent is a myth. Many clients are not 100% fluent either. What they need is clear communication. Learning is 70% practice and 30% reading. Today we will walk through that framework.
+Wrong question:
 
 <!-- wbl-text:0033 -->
-The 6-part English foundation curriculum
+"Do I need to be fluent before I apply?"
 
 <!-- wbl-text:0034 -->
-#
+Better question:
 
 <!-- wbl-text:0035 -->
-Topic
+"What daily habit moves my speaking while I am already applying, already working, already earning?"
 
 <!-- wbl-text:0036 -->
-Resource / practice
+Fluency is not a gate you wait behind. It is a habit you run beside your work. Learning is
 
 <!-- wbl-text:0037 -->
-1
+70 percent practice and 30 percent reading
 
 <!-- wbl-text:0038 -->
-Basic English Grammar Rules
+, so most of this lesson is one practice loop, taught completely, then run once in front of you.
 
 <!-- wbl-text:0039 -->
-basicenglishspeaking.com
+What the numbers say
 
 <!-- wbl-text:0040 -->
-refresher module
+The number
 
 <!-- wbl-text:0041 -->
-2
+What it means for you
 
 <!-- wbl-text:0042 -->
-Self-assessment
+161 of 214 jobs are No-Calls
 
 <!-- wbl-text:0043 -->
-Rate your speaking vs writing skills. Be honest: 1-10 each.
+About 75 percent of our Job Board never requires a call. The fluency excuse cannot survive this number. Apply now.
 
 <!-- wbl-text:0044 -->
-3
+Customer Service = 24%
 
 <!-- wbl-text:0045 -->
-Subject + Verb Agreement
+The single biggest role category on the board, and it talks. Text-only English gets your first job. Spoken English gets your bigger ones.
 
 <!-- wbl-text:0046 -->
-7esl.com
+~10 days of BPO English training
 
 <!-- wbl-text:0047 -->
-self-study module + exercises
+BPO companies train new hires in English communication for about ten days before project training even starts. They do not hire finished speakers. They build them. So can you.
 
 <!-- wbl-text:0048 -->
-4
+The real lesson in the numbers
 
 <!-- wbl-text:0049 -->
-Basic Pronunciation
+Speaking is not the gate. Speaking is the promotion. You apply with the English you have, and you practice daily for the roles you want next.
 
 <!-- wbl-text:0050 -->
-How to say P, F, B, V
+I thought my English was good enough
 
 <!-- wbl-text:0051 -->
-+
+Kwento muna ako, because I was not always the person teaching this.
 
 <!-- wbl-text:0052 -->
-T Pronunciation Rules
+"Akala ko magaling ako mag-English. Graduate ako ng computer engineering, may experience pa ako sa call center."
 
 <!-- wbl-text:0053 -->
-5
+On paper I looked ready. A degree, BPO experience, confidence. That is not what happened. I still faced rejections. I could not land the high-paying client I imagined. So I started from the bottom, as chat support, text-only work, and I climbed from there.
 
 <!-- wbl-text:0054 -->
-Pronunciation Practice
+What that season taught me
 
 <!-- wbl-text:0055 -->
-P
+Paper credentials do not speak. Practice speaks.
 
 <!-- wbl-text:0056 -->
-&
+Poor communication is a tongue gap between you and your client, and that gap can make or break a discovery call. Nobody checks your transcript on a call. They check how you carry a conversation.
 
 <!-- wbl-text:0057 -->
-F drills
+And I am not the only proof in this community. Liz, one of our Core Admins, wrote this in her own published story: the job description required fluent English, and
 
 <!-- wbl-text:0058 -->
-+
+"I'm not fluent in English but still, I gave it a shot... I got the position."
 
 <!-- wbl-text:0059 -->
-B
+Not fluent yet, plus courage, beat fluent someday.
 
 <!-- wbl-text:0060 -->
-&
+The Tell-It-Twice Loop
 
 <!-- wbl-text:0061 -->
-V drills
+Six steps. One loop takes about 30 minutes and costs nothing. The name is the instruction: you will tell every story twice, and the second telling is where your English actually moves.
 
 <!-- wbl-text:0062 -->
-6
+Step
 
 <!-- wbl-text:0063 -->
-Express yourself
+What you do
 
 <!-- wbl-text:0064 -->
-Talk about last week. Practice with BFF admin (30-minute session).
+Why it works
 
 <!-- wbl-text:0065 -->
-The English-learning timeline for BFF mentees
+1. Pick one real story
 
 <!-- wbl-text:0066 -->
-Realistic English-improvement timeline
+Something that happened to you this week. Work, family, a problem you fixed. The classic "express yourself" exercise: share what happened to you in the past week.
 
 <!-- wbl-text:0067 -->
-Month 1
+Textbook topics give textbook words. Your life gives you tomorrow's words.
 
 <!-- wbl-text:0068 -->
-Grammar review + pronunciation drills daily. Self-rate 30% better.
+2. Set up the coach
 
 <!-- wbl-text:0069 -->
-Month 2
+Open voice mode in the free ChatGPT or Gemini app and say: "I am practicing spoken English. I will tell you a story for five minutes. Do not interrupt me. When I finish, tell me the three biggest mistakes that made me hard to understand, and ignore my small mistakes. Then I will tell the same story again."
 
 <!-- wbl-text:0070 -->
-Practice sessions weekly. Self-rate 50% better.
+The last line turns a lecturer into a coach.
 
 <!-- wbl-text:0071 -->
-Month 3
+3. Talk for five minutes
 
 <!-- wbl-text:0072 -->
-First text-only client interactions. Apply to No Calls roles.
+Out loud, in English, no switching languages mid-story. Missing a word? Describe around it: "the thing for cooking rice." Keep going.
 
 <!-- wbl-text:0073 -->
-Month 6
+Describing around a gap is itself a client skill. You will use it forever.
 
 <!-- wbl-text:0074 -->
-First Zoom interview attempts. Anxiety down 70%.
+4. Take three corrections
 
 <!-- wbl-text:0075 -->
-Month 12
+Only the three that block understanding. Say each fixed sentence back once, out loud. The small mistakes wait for a future loop.
 
 <!-- wbl-text:0076 -->
-Comfortable taking calls. Apply to Customer Service or SDR roles.
+Your mouth has to feel the corrected sentence before the retell.
 
 <!-- wbl-text:0077 -->
-The honest moment
+5. Tell it again
 
 <!-- wbl-text:0078 -->
-Liz, one of the BFF success stories,
+Same story, from the start. Yes, it feels awkward. Do it anyway.
 
 <!-- wbl-text:0079 -->
-rated her English 2 out of 5 when she started.
+The first telling finds your mistakes. The second telling installs the fixes.
 
 <!-- wbl-text:0080 -->
-She was not perfect. But she applied to text-only roles and got accepted. After three years, she became comfortable on Zoom.
+6. Log one line
 
 <!-- wbl-text:0081 -->
-The only person who can limit you is yourself.
+Date, topic, the three corrections, one sentence about the retell. Under a minute, in English.
 
 <!-- wbl-text:0082 -->
-The warning about "I'll wait until I'm perfect"
+Skip the log and loops evaporate. Keep it and they stack.
 
 <!-- wbl-text:0083 -->
-The fluency paralysis
+Why "tell it twice" is the whole secret
 
 <!-- wbl-text:0084 -->
-"I will learn English first, then apply" can become a three-year delay.
+Most learners in the world do the first telling and stop. They collect corrections like notes for an exam that never comes.
 
 <!-- wbl-text:0085 -->
-Apply to No Calls, text-only roles while learning.
+The retell is the exam
 
 <!-- wbl-text:0086 -->
-Paid practice reduces fear faster than endless free YouTube study.
+, and it happens while the repaired sentences are still warm. This one habit separates people who study English from people who speak it.
 
 <!-- wbl-text:0087 -->
-Other warning:
+One full loop, start to finish
 
 <!-- wbl-text:0088 -->
-do not pay anyone for "English fluency courses" that promise $10K/month income.
+Here is what a first loop looks like, beat by beat. This is a sample loop you can borrow tonight, not a transcript.
 
 <!-- wbl-text:0089 -->
-Free resources like basicenglishspeaking.com, 7esl.com, and YouTube are enough to begin.
+Sample story: a brownout cut my internet during a deadline, and how I fixed it
 
 <!-- wbl-text:0090 -->
-Practice. 30-day English challenge. Start today.
+Why this story
 
 <!-- wbl-text:0091 -->
-Open
+A story like this is real, recent, and secretly a job interview answer, because every recruiter eventually asks about your setup and your backup plan. One story, two uses.
 
 <!-- wbl-text:0092 -->
-basicenglishspeaking.com
+The coach prompt
 
 <!-- wbl-text:0093 -->
-.
+"I am practicing spoken English. I will tell you a story for five minutes. Do not interrupt me. When I finish, tell me the three biggest mistakes that made me hard to understand, and ignore my small mistakes. Then I will tell the same story again."
 
 <!-- wbl-text:0094 -->
-Read 1 module.
+The talk, with the stumble
 
 <!-- wbl-text:0095 -->
-Self-rate communication skills.
+Thirty seconds in, the word "generator" is gone. The old habit says stop and apologize. Instead: "the machine that gives electricity when the power is out." And the story keeps moving.
 
 <!-- wbl-text:0096 -->
-Speaking ___/10. Writing ___/10. Reading ___/10.
+The three corrections
 
 <!-- wbl-text:0097 -->
-Identify problem area:
+Tense drift (the story slides from past to present), direct translation ("open the light" instead of "turn on the light"), and one endless sentence with five "and thens" that should be three short sentences.
 
 <!-- wbl-text:0098 -->
-Writing? Speaking? Pronunciation? Pick ONE.
+The retell
 
 <!-- wbl-text:0099 -->
-Daily practice for 30 days:
+Same story, told again. It comes out shorter, clearer, and calmer, because the speaker now knows where the potholes are. Better, not perfect. That is the honest outcome.
 
 <!-- wbl-text:0100 -->
-20 minutes.
+The log line
 
 <!-- wbl-text:0101 -->
-YouTube pronunciation videos
+"Day 1. Brownout story. Tenses, open vs turn on, shorter sentences. Retell felt easier." Done. About 30 minutes, zero pesos, two artifacts: a clearer interview story and one line of written proof.
 
 <!-- wbl-text:0102 -->
-+
+About those three corrections
 
 <!-- wbl-text:0103 -->
-7esl.com
+If you smiled reading them, kasi kilala natin lahat ito. Tense drift, direct translation, and the endless sentence are the standard first three corrections for a Tagalog speaker.
 
 <!-- wbl-text:0104 -->
-exercises.
+None of them are shameful.
 
 <!-- wbl-text:0105 -->
-Book a BFF practice session.
+They are checklist items now, not character flaws.
 
 <!-- wbl-text:0106 -->
-DM admins via
+Your daily twenty minutes and the repair kit
 
 <!-- wbl-text:0107 -->
-FB group
+Around the loop, touch English five ways a day. None of these need a schedule. They ride on the life you already have.
 
 <!-- wbl-text:0108 -->
-.
+Touch
 
 <!-- wbl-text:0109 -->
-Day 30 re-rate.
+How, for free
 
 <!-- wbl-text:0110 -->
-Improvement = data. Even +1 point matters.
+Listening
 
 <!-- wbl-text:0111 -->
-Action items, based on your archetype
+Podcasts in English while commuting or cooking.
 
 <!-- wbl-text:0112 -->
-🌟 Polished
+Reading
 
 <!-- wbl-text:0113 -->
-English likely 4-5/5. Maintenance + business vocabulary.
+Ten minutes of anything in English.
 
 <!-- wbl-text:0114 -->
-Do this week
+Speaking
 
 <!-- wbl-text:0115 -->
-Watch
+The loop. This one is non-negotiable.
 
 <!-- wbl-text:0116 -->
-Harvard Business Review
+Thinking
 
 <!-- wbl-text:0117 -->
-videos for business vocab.
+Narrate small tasks to yourself in English while you do them. Silent, private, available in any household.
 
 <!-- wbl-text:0118 -->
-Practice writing 1 LinkedIn post per week in English.
+Writing
 
 <!-- wbl-text:0119 -->
-💼 Transitioner
+Your messages and captions in English, with the
 
 <!-- wbl-text:0120 -->
-BPO English is often strong in workplace conversation. The gap may be asynchronous writing.
-
-<!-- wbl-text:0121 -->
-Do this week
-
-<!-- wbl-text:0122 -->
-Use
-
-<!-- wbl-text:0123 -->
 Grammarly
 
+<!-- wbl-text:0121 -->
+app or keyboard checking behind you.
+
+<!-- wbl-text:0122 -->
+The repair kit.
+
+<!-- wbl-text:0123 -->
+Grammar modules and pronunciation drills are part of this class too, but as your repair kit, not your starting point. When your log shows the same correction three loops in a row, open the kit:
+
 <!-- wbl-text:0124 -->
-on every email.
+Repeat offender
 
 <!-- wbl-text:0125 -->
-Watch documentaries with English subtitles for natural cadence.
+Open this
 
 <!-- wbl-text:0126 -->
-🎨 Creative
+Tense keeps drifting
 
 <!-- wbl-text:0127 -->
-You may be visually strong but less confident verbally. Build verbal skill through client briefs.
+Basic English grammar refresher
 
 <!-- wbl-text:0128 -->
-Do this week
+Subject-verb agreement keeps biting
 
 <!-- wbl-text:0129 -->
-Practice writing 3-paragraph client briefs in English.
+Subject + verb agreement module
 
 <!-- wbl-text:0130 -->
-Watch
+A sound pair blocked understanding
 
 <!-- wbl-text:0131 -->
-The Futur
+How to say P, F, B, V
 
 <!-- wbl-text:0132 -->
-for creative-industry vocabulary.
+·
 
 <!-- wbl-text:0133 -->
-🛒 Solo Entrepreneur
+Pronunciation rules for T
 
 <!-- wbl-text:0134 -->
-You may already have sales English. Now expand into business communication.
+On your accent
 
 <!-- wbl-text:0135 -->
-Do this week
+Your accent is not the enemy.
 
 <!-- wbl-text:0136 -->
-Translate your shop's Instagram captions into English.
+A clear Filipino accent with confident delivery wins client work every single day. Drill a sound pair only when the coach tells you it actually blocked understanding. Polish what blocks. Keep what is yours.
 
 <!-- wbl-text:0137 -->
-Practice writing investor-style emails to mock clients.
+Six ways people break the loop
 
 <!-- wbl-text:0138 -->
-📋 Generalist
+Waiting to feel fluent before applying.
 
 <!-- wbl-text:0139 -->
-Reading/writing decent. Speaking often weaker.
+Apply to No-Calls roles while you practice. Remember the 75 percent.
 
 <!-- wbl-text:0140 -->
-Do this week
+Studying about English instead of speaking it.
 
 <!-- wbl-text:0141 -->
-Book 2 BFF practice sessions per month.
+Watching grammar videos is watching, not speaking.
 
 <!-- wbl-text:0142 -->
-Watch
+Skipping the retell.
 
 <!-- wbl-text:0143 -->
-TED Talks
+One telling is exposure. Two tellings is training.
 
 <!-- wbl-text:0144 -->
-at 1.25x speed for spoken cadence.
+Letting AI write your sentences for you.
 
 <!-- wbl-text:0145 -->
-🌱 Fresh Starter
+The coach corrects your words. It does not replace them. Your messages to clients sound like you, always.
 
 <!-- wbl-text:0146 -->
-Likely lowest self-rating. Apply to No Calls roles while learning.
+Paying for fluency courses that promise income.
 
 <!-- wbl-text:0147 -->
-Do this week
+Your coach is free, the repair kit is free, your stories are free.
 
 <!-- wbl-text:0148 -->
-Start
+Practicing only with AI forever.
 
 <!-- wbl-text:0149 -->
-basicenglishspeaking.com
+The loop builds the muscle. People build the confidence. Get an accountability partner and let the community hear your voice.
 
 <!-- wbl-text:0150 -->
-daily.
+Practice. One full loop, tonight.
 
 <!-- wbl-text:0151 -->
-Apply to
+Pick this week's story.
 
 <!-- wbl-text:0152 -->
-No Calls
+Borrow ours if choosing freezes you: the brownout that cut your internet, and how you fixed it.
 
 <!-- wbl-text:0153 -->
-tab only this month.
+Open voice mode
 
 <!-- wbl-text:0154 -->
-Book monthly BFF practice session.
+in the free ChatGPT or Gemini app and give the coach prompt, including the "three biggest mistakes" and "then I will tell the same story again" lines.
 
 <!-- wbl-text:0155 -->
-Checkpoint.
+Talk for five minutes.
 
 <!-- wbl-text:0156 -->
-Postable artifact
+Out loud. When a word goes missing, describe around it and keep going.
 
 <!-- wbl-text:0157 -->
-Post this in
+Take your three corrections
 
 <!-- wbl-text:0158 -->
-BFF FB group
+and say each fixed sentence back once.
 
 <!-- wbl-text:0159 -->
-:
+Tell the same story again,
 
 <!-- wbl-text:0160 -->
-"Day 1 self-rating: Speaking ___/10, Writing ___/10. 30-day commitment: ___ minutes daily."
+from the start.
 
 <!-- wbl-text:0161 -->
-Day 30 re-post.
+Log one line:
 
 <!-- wbl-text:0162 -->
-Before/after rating. Tag a buddy.
+date, topic, the three corrections, one sentence about the retell.
 
 <!-- wbl-text:0163 -->
-Community + next step
+Audit checklist:
 
 <!-- wbl-text:0164 -->
-← Previous lesson
+One real story from your own week chosen
 
 <!-- wbl-text:0165 -->
-SMM Handbook
+Coach prompt used with the pacing and three-mistakes lines
 
 <!-- wbl-text:0166 -->
-Box 21
+Five minutes spoken out loud, no language switching
 
 <!-- wbl-text:0167 -->
-Zoom out →
+Three corrections echoed back out loud
 
 <!-- wbl-text:0168 -->
-See the full Blueprint
+The same story told a second time
 
 <!-- wbl-text:0169 -->
-All 30+ boxes
+One-line log entry written in English
 
 <!-- wbl-text:0170 -->
-Start →
+Data tip:
 
 <!-- wbl-text:0171 -->
-Archetype Finder
+run your loops on WiFi if mobile data is tight. The log needs no internet at all; any notebook works.
 
 <!-- wbl-text:0172 -->
-Find your path first
+Action items, based on your archetype
 
 <!-- wbl-text:0173 -->
-Hold steady, BFF Team. We keep going together.
+🌱 The Fresh Starter
 
 <!-- wbl-text:0174 -->
-- Lala
+~5% · this lesson was written for you
 
 <!-- wbl-text:0175 -->
-BFF Home
+Lowest self-rating, biggest fear of calls. The loop is your daily English class for the next three months, and the Job Board is open to you today.
 
 <!-- wbl-text:0176 -->
-Blueprint
+Do this week
 
 <!-- wbl-text:0177 -->
-Resume Builder
+Run the loop tonight exactly as written.
 
 <!-- wbl-text:0178 -->
-Curriculum
+Borrow the brownout story. Do not customize anything yet.
 
 <!-- wbl-text:0179 -->
-BFF Home
+Apply to one No-Calls role
 
 <!-- wbl-text:0180 -->
-Lesson 22 · English Communications 101 · v2 · May 15, 2026 · Writings by Lala
+from the
+
+<!-- wbl-text:0181 -->
+Job Board
+
+<!-- wbl-text:0182 -->
+this week, with the English you have.
+
+<!-- wbl-text:0183 -->
+Post your log line in the group.
+
+<!-- wbl-text:0184 -->
+Log posted means lesson passed.
+
+<!-- wbl-text:0185 -->
+Recommended pace:
+
+<!-- wbl-text:0186 -->
+one loop a day, five days a week. Small and daily beats long and rare.
+
+<!-- wbl-text:0187 -->
+💼 The Corporate Transitioner
+
+<!-- wbl-text:0188 -->
+~30% · spoken polish, async gap
+
+<!-- wbl-text:0189 -->
+BPO and office English is often strong in conversation. Your gap is usually written, async communication, and client-facing storytelling without a script.
+
+<!-- wbl-text:0190 -->
+Do this week
+
+<!-- wbl-text:0191 -->
+Loop on an unscripted story:
+
+<!-- wbl-text:0192 -->
+explain your current job to a stranger in five minutes, no jargon.
+
+<!-- wbl-text:0193 -->
+Ask the coach to flag corporate jargon
+
+<!-- wbl-text:0194 -->
+a small-business client would not understand.
+
+<!-- wbl-text:0195 -->
+Move one daily touch to writing:
+
+<!-- wbl-text:0196 -->
+draft your messages in English first, every time.
+
+<!-- wbl-text:0197 -->
+Recommended target:
+
+<!-- wbl-text:0198 -->
+the talking roles. Customer Service is the biggest category on the board, and your phone hours are a head start.
+
+<!-- wbl-text:0199 -->
+🌟 The Polished Freelancer
+
+<!-- wbl-text:0200 -->
+~25% · discovery-call sharpening
+
+<!-- wbl-text:0201 -->
+Your English already works. Use the loop to sharpen the highest-value ten minutes in freelancing: the discovery call.
+
+<!-- wbl-text:0202 -->
+Do this week
+
+<!-- wbl-text:0203 -->
+Loop on your own pitch:
+
+<!-- wbl-text:0204 -->
+who you help, what you do, one result you are proud of, five minutes.
+
+<!-- wbl-text:0205 -->
+Make the coach a harsher critic:
+
+<!-- wbl-text:0206 -->
+"You are a client comparing three freelancers. What made me forgettable?"
+
+<!-- wbl-text:0207 -->
+Retell until the pitch fits in two minutes
+
+<!-- wbl-text:0208 -->
+without losing warmth.
+
+<!-- wbl-text:0209 -->
+Recommended angle:
+
+<!-- wbl-text:0210 -->
+record your retell once a month. Hearing your own progress is the motivation nobody can give you.
+
+<!-- wbl-text:0211 -->
+🎨 The Creative Specialist
+
+<!-- wbl-text:0212 -->
+~15% · talk about the work
+
+<!-- wbl-text:0213 -->
+Your portfolio speaks, but clients also need you to talk them through it. Presenting work in English is your exact gap.
+
+<!-- wbl-text:0214 -->
+Do this week
+
+<!-- wbl-text:0215 -->
+Loop on one portfolio piece:
+
+<!-- wbl-text:0216 -->
+describe a design or reel you made, why you made those choices, five minutes.
+
+<!-- wbl-text:0217 -->
+Let the coach check clarity,
+
+<!-- wbl-text:0218 -->
+not beauty: could a client follow the explanation cold?
+
+<!-- wbl-text:0219 -->
+Reuse the retell
+
+<!-- wbl-text:0220 -->
+as the caption or case-study text for that piece.
+
+<!-- wbl-text:0221 -->
+Recommended pairing:
+
+<!-- wbl-text:0222 -->
+one work story and one life story per week. Range builds conversation, not just presentation.
+
+<!-- wbl-text:0223 -->
+🛒 The Solo Entrepreneur
+
+<!-- wbl-text:0224 -->
+~15% · your shop is the story
+
+<!-- wbl-text:0225 -->
+You already talk to customers every day. Every loop you run on a shop story improves your selling and your English at once.
+
+<!-- wbl-text:0226 -->
+Do this week
+
+<!-- wbl-text:0227 -->
+Loop on a customer story:
+
+<!-- wbl-text:0228 -->
+a difficult order, a happy buyer, a problem you solved this week.
+
+<!-- wbl-text:0229 -->
+Convert your shop captions to English
+
+<!-- wbl-text:0230 -->
+as your daily writing touch.
+
+<!-- wbl-text:0231 -->
+Retell your best product pitch
+
+<!-- wbl-text:0232 -->
+until it sounds like you talking, not an ad.
+
+<!-- wbl-text:0233 -->
+Recommended angle:
+
+<!-- wbl-text:0234 -->
+English unlocks buyers and clients outside your barangay. Every loop widens the market.
+
+<!-- wbl-text:0235 -->
+📋 The Generalist Admin
+
+<!-- wbl-text:0236 -->
+~10% · speaking is the weak leg
+
+<!-- wbl-text:0237 -->
+Reading and writing are usually fine. Speaking is the leg that wobbles. The loop targets exactly that leg, and your discipline is the advantage here.
+
+<!-- wbl-text:0238 -->
+Do this week
+
+<!-- wbl-text:0239 -->
+Run three loops this week
+
+<!-- wbl-text:0240 -->
+on three different work stories.
+
+<!-- wbl-text:0241 -->
+Track your log in a sheet.
+
+<!-- wbl-text:0242 -->
+Tracking is already your love language. Watch the corrections change over weeks.
+
+<!-- wbl-text:0243 -->
+Book one human conversation:
+
+<!-- wbl-text:0244 -->
+an accountability partner from the group, English only, fifteen minutes.
+
+<!-- wbl-text:0245 -->
+Recommended target:
+
+<!-- wbl-text:0246 -->
+Admin roles ladder into Account Manager work, and Account Managers talk. Practice for the ladder.
+
+<!-- wbl-text:0247 -->
+Universal rule
+
+<!-- wbl-text:0248 -->
+For every archetype:
+
+<!-- wbl-text:0249 -->
+the retell is the rep.
+
+<!-- wbl-text:0250 -->
+Apps change, coaches change, accents stay lovely. The habit of telling it once, fixing three things, and telling it again transfers to every conversation you will ever have in English.
+
+<!-- wbl-text:0251 -->
+Checkpoint. Show proof that you used the lesson.
+
+<!-- wbl-text:0252 -->
+Postable artifact
+
+<!-- wbl-text:0253 -->
+Post this in the
+
+<!-- wbl-text:0254 -->
+BFF Facebook Group (Work At Home Geek)
+
+<!-- wbl-text:0255 -->
+:
+
+<!-- wbl-text:0256 -->
+Your log line from one full loop:
+
+<!-- wbl-text:0257 -->
+topic, the three corrections, one sentence about the retell, OR
+
+<!-- wbl-text:0258 -->
+Your describe-around win:
+
+<!-- wbl-text:0259 -->
+the word you lost and the phrase you used to route around it.
+
+<!-- wbl-text:0260 -->
+Log posted means lesson passed. There is no quiz. The loop is the quiz.
+
+<!-- wbl-text:0261 -->
+Community + next step
+
+<!-- wbl-text:0262 -->
+Next lesson →
+
+<!-- wbl-text:0263 -->
+Customer Support Foundations
+
+<!-- wbl-text:0264 -->
+Where speaking practice becomes a paycheck
+
+<!-- wbl-text:0265 -->
+Same coach, other skills →
+
+<!-- wbl-text:0266 -->
+Master Tools Using AI
+
+<!-- wbl-text:0267 -->
+Run the honest-check loop on client tools
+
+<!-- wbl-text:0268 -->
+Zoom out →
+
+<!-- wbl-text:0269 -->
+See the full Blueprint
+
+<!-- wbl-text:0270 -->
+Where this lesson fits
+
+<!-- wbl-text:0271 -->
+Start →
+
+<!-- wbl-text:0272 -->
+Archetype Finder
+
+<!-- wbl-text:0273 -->
+Find your path first
+
+<!-- wbl-text:0274 -->
+Hold steady, BFF Team. We keep going together.
+
+<!-- wbl-text:0275 -->
+– Lala
+
+<!-- wbl-text:0276 -->
+BFF Home
+
+<!-- wbl-text:0277 -->
+Blueprint
+
+<!-- wbl-text:0278 -->
+Resume Builder
+
+<!-- wbl-text:0279 -->
+Curriculum
+
+<!-- wbl-text:0280 -->
+Job Board
+
+<!-- wbl-text:0281 -->
+English Communications 101 · v3 · June 8, 2026 · Writings by Lala

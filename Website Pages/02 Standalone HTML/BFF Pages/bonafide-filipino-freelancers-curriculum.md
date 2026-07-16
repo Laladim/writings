@@ -92,31 +92,55 @@ Higher Level
 Business Branch
 
 <!-- wbl-text:0027 -->
-Clear filters
+Biggest skill gap
 
 <!-- wbl-text:0028 -->
-No lessons match.
+English and client writing
 
 <!-- wbl-text:0029 -->
-Try clearing the archetype filter or pick a different stage.
+Portfolio or proof sample
 
 <!-- wbl-text:0030 -->
-Now you have the map.
+Tools and work systems
 
 <!-- wbl-text:0031 -->
-BFF Open University is free, faith-warm, and built for the Filipino freelancer who hasn't said "I made it" yet. The lessons are the steps. Take the next one today.
+Applications and interviews
 
 <!-- wbl-text:0032 -->
-The Blueprint
+Customer support basics
 
 <!-- wbl-text:0033 -->
-Resume Builder
+Content and social media
 
 <!-- wbl-text:0034 -->
-Job Board
+CRM and client follow-up
 
 <!-- wbl-text:0035 -->
-← Writings by Lala
+Clear filters
 
 <!-- wbl-text:0036 -->
+No lessons match.
+
+<!-- wbl-text:0037 -->
+Try clearing the archetype filter or pick a different stage.
+
+<!-- wbl-text:0038 -->
+Now you have the map.
+
+<!-- wbl-text:0039 -->
+BFF Open University is free, faith-warm, and built for the Filipino freelancer who hasn't said "I made it" yet. The lessons are the steps. Take the next one today.
+
+<!-- wbl-text:0040 -->
+The Blueprint
+
+<!-- wbl-text:0041 -->
+Resume Builder
+
+<!-- wbl-text:0042 -->
+Job Board
+
+<!-- wbl-text:0043 -->
+← Writings by Lala
+
+<!-- wbl-text:0044 -->
 My Curriculum · v2 · May 2026

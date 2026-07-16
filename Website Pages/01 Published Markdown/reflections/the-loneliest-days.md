@@ -46,7 +46,11 @@ Different faces of love. Different kinds of love.
 
 The joy we felt. The memories we will not let go.
 
-I hope you give yourself time to log out from a world that always compares and always preens. The world that always reminds you something is missing.
+I hope you give yourself time to log out from a world that always compares and always preens. The world that always whispers, "something is missing, you are not enough, you are alone."
+
+I have been there.
+
+I know that feeling of opening your phone and forgetting in an instant every kind thing anyone has ever done for you.
 
 I hope you do not forget the love you have experienced.
 
@@ -98,11 +102,19 @@ The Lord gives true and deep love.
 
 I do not know how I would continue a life this heavy without the love of God given to me through the people around me.
 
+The hand of AJ on the PGH floor was not just AJ's hand. It was the Lord reminding me, "I see you, daughter. You are not alone."
+
+The hugs of mama and papa were not just hugs. They were a small picture of a Father who never lets go.
+
+This is what intimacy with God looks like for me. Not a feeling I create. A truth I trace backward through every face that ever loved me.
+
 All the suffering of the world would have no meaning if we just die.
 
 We are given suffering so we can see the true love of God through the people He places in our life.
 
 Because this is not the end. The Lord has a beautiful promise waiting for us.
+
+Christ Himself was the loneliest on the cross, forsaken so we would never have to be. That is why we can sit in our hardest nights and still say, "I am loved."
 
 Let me say it again.
 
@@ -130,4 +142,4 @@ Thank you for understanding.
 
 I will see you all next Monday.
 
-— Lala
+\- Lala

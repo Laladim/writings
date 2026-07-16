@@ -572,91 +572,130 @@ For every archetype:
 You do not need to be legendary by Day 5. You need to be reliable by Day 30. Restraint, observation, and calm communication are the senior moves. Over-effort in the first week is the junior move. Slow down to retain.
 
 <!-- wbl-text:0187 -->
-Checkpoint. Proof that you used the lesson.
+Copy-paste: your availability and your weekly status
 
 <!-- wbl-text:0188 -->
-Postable artifact
+Your availability sentence
 
 <!-- wbl-text:0189 -->
-Post this in the
+Set this in week one so a client never wonders when you are around. Fill the blanks: "I am online ___ to ___, ___ time, Monday to Friday. I reply to messages within ___ hours. For anything urgent outside those hours, ___."
 
 <!-- wbl-text:0190 -->
-BFF Facebook Group (Work At Home Geek)
+Your weekly status update
 
 <!-- wbl-text:0191 -->
-:
+Send this every week, the same day, even when nothing is on fire. Four lines:
 
 <!-- wbl-text:0192 -->
-Screenshot of your Onboarding Folder structure
+Done this week:
 
 <!-- wbl-text:0193 -->
-in Google Drive, OR
+___.
 
 <!-- wbl-text:0194 -->
-Your Day 1 welcome reply template
+In progress:
 
 <!-- wbl-text:0195 -->
-(sanitized). Tag your archetype + which template was hardest to write.
+___.
 
 <!-- wbl-text:0196 -->
-Community + next step
+Blocked or need from you:
 
 <!-- wbl-text:0197 -->
-Next lesson →
+___.
 
 <!-- wbl-text:0198 -->
-Account Management 101
+Next week:
 
 <!-- wbl-text:0199 -->
-From kept-client to grown-account
+___. A client who gets this never has to chase you, and not being chased is a big part of what gets you renewed.
 
 <!-- wbl-text:0200 -->
-Companion →
+Checkpoint. Proof that you used the lesson.
 
 <!-- wbl-text:0201 -->
-Common Mistakes
+Postable artifact
 
 <!-- wbl-text:0202 -->
-The anti-patterns to avoid in onboarding
+Post this in the
 
 <!-- wbl-text:0203 -->
-Zoom out →
+BFF Facebook Group (Work At Home Geek)
 
 <!-- wbl-text:0204 -->
-See the full Blueprint
+:
 
 <!-- wbl-text:0205 -->
-Where Onboarding fits in Stage 1
+Screenshot of your Onboarding Folder structure
 
 <!-- wbl-text:0206 -->
-Build →
+in Google Drive, OR
 
 <!-- wbl-text:0207 -->
-Resume Builder
+Your Day 1 welcome reply template
 
 <!-- wbl-text:0208 -->
-Refresh your archetype before next application
+(sanitized). Tag your archetype + which template was hardest to write.
 
 <!-- wbl-text:0209 -->
-Keep going, BFF Team.
+Community + next step
 
 <!-- wbl-text:0210 -->
-- Lala
+Next lesson →
 
 <!-- wbl-text:0211 -->
-BFF Home
+Account Management 101
 
 <!-- wbl-text:0212 -->
-Blueprint
+From kept-client to grown-account
 
 <!-- wbl-text:0213 -->
-Resume Builder
+Companion →
 
 <!-- wbl-text:0214 -->
-Curriculum
+Common Mistakes
 
 <!-- wbl-text:0215 -->
-Job Board
+The anti-patterns to avoid in onboarding
 
 <!-- wbl-text:0216 -->
+Zoom out →
+
+<!-- wbl-text:0217 -->
+See the full Blueprint
+
+<!-- wbl-text:0218 -->
+Where Onboarding fits in Stage 1
+
+<!-- wbl-text:0219 -->
+Build →
+
+<!-- wbl-text:0220 -->
+Resume Builder
+
+<!-- wbl-text:0221 -->
+Refresh your archetype before next application
+
+<!-- wbl-text:0222 -->
+Keep going, BFF Team.
+
+<!-- wbl-text:0223 -->
+- Lala
+
+<!-- wbl-text:0224 -->
+BFF Home
+
+<!-- wbl-text:0225 -->
+Blueprint
+
+<!-- wbl-text:0226 -->
+Resume Builder
+
+<!-- wbl-text:0227 -->
+Curriculum
+
+<!-- wbl-text:0228 -->
+Job Board
+
+<!-- wbl-text:0229 -->
 Onboarding · First 30 Days · v1 · May 15, 2026 · Writings by Lala

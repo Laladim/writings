@@ -32,493 +32,490 @@ Archetype Finder
 Resume Builder
 
 <!-- wbl-text:0007 -->
-VA Resume Converter
-
-<!-- wbl-text:0008 -->
 My Curriculum
 
-<!-- wbl-text:0009 -->
+<!-- wbl-text:0008 -->
 Job Board
+
+<!-- wbl-text:0009 -->
+Bonafide Filipino Freelancers Blueprint
 
 <!-- wbl-text:0010 -->
 Bonafide Filipino Freelancers Blueprint
 
 <!-- wbl-text:0011 -->
-Bonafide Filipino Freelancers Blueprint
-
-<!-- wbl-text:0012 -->
 From
 
-<!-- wbl-text:0013 -->
+<!-- wbl-text:0012 -->
 "YOU"
 
-<!-- wbl-text:0014 -->
+<!-- wbl-text:0013 -->
 at the beginning to
 
-<!-- wbl-text:0015 -->
+<!-- wbl-text:0014 -->
 "Rockstar Portfolio"
 
-<!-- wbl-text:0016 -->
+<!-- wbl-text:0015 -->
 on the other end — and the loop that takes you around again.
 
-<!-- wbl-text:0017 -->
+<!-- wbl-text:0016 -->
 YOU
 
-<!-- wbl-text:0018 -->
+<!-- wbl-text:0017 -->
 →
 
-<!-- wbl-text:0019 -->
+<!-- wbl-text:0018 -->
 Preparation
 
-<!-- wbl-text:0020 -->
+<!-- wbl-text:0019 -->
 1
 
-<!-- wbl-text:0021 -->
+<!-- wbl-text:0020 -->
 Choosing your Computer
 
-<!-- wbl-text:0022 -->
+<!-- wbl-text:0021 -->
 The right specs without overspending
 
-<!-- wbl-text:0023 -->
+<!-- wbl-text:0022 -->
 2
 
-<!-- wbl-text:0024 -->
+<!-- wbl-text:0023 -->
 Creating Work Emails
 
-<!-- wbl-text:0025 -->
+<!-- wbl-text:0024 -->
 Rewriting
 
-<!-- wbl-text:0026 -->
+<!-- wbl-text:0025 -->
 A work email clients take seriously
 
-<!-- wbl-text:0027 -->
+<!-- wbl-text:0026 -->
 3
 
-<!-- wbl-text:0028 -->
+<!-- wbl-text:0027 -->
 Setting up Online Tools
 
-<!-- wbl-text:0029 -->
+<!-- wbl-text:0028 -->
 Set up the tools clients expect
 
-<!-- wbl-text:0030 -->
+<!-- wbl-text:0029 -->
 4
 
-<!-- wbl-text:0031 -->
+<!-- wbl-text:0030 -->
 Organizing Work Flow
 
-<!-- wbl-text:0032 -->
+<!-- wbl-text:0031 -->
 Run your day like a pro VA
 
-<!-- wbl-text:0033 -->
+<!-- wbl-text:0032 -->
 5
 
-<!-- wbl-text:0034 -->
+<!-- wbl-text:0033 -->
 Setting up Work Accessories
 
-<!-- wbl-text:0035 -->
+<!-- wbl-text:0034 -->
 New
 
-<!-- wbl-text:0036 -->
+<!-- wbl-text:0035 -->
 A workspace built for real client work
 
-<!-- wbl-text:0037 -->
+<!-- wbl-text:0036 -->
 Warming Up
 
-<!-- wbl-text:0038 -->
+<!-- wbl-text:0037 -->
 6
 
-<!-- wbl-text:0039 -->
+<!-- wbl-text:0038 -->
 Choose Career Path
 
-<!-- wbl-text:0040 -->
+<!-- wbl-text:0039 -->
 Remote job, VA, or specialist?
 
-<!-- wbl-text:0041 -->
+<!-- wbl-text:0040 -->
 7
 
-<!-- wbl-text:0042 -->
+<!-- wbl-text:0041 -->
 Planning
 
-<!-- wbl-text:0043 -->
+<!-- wbl-text:0042 -->
 Map your hours before you commit
 
-<!-- wbl-text:0044 -->
+<!-- wbl-text:0043 -->
 8
 
-<!-- wbl-text:0045 -->
+<!-- wbl-text:0044 -->
 Basic Foundation
 
-<!-- wbl-text:0046 -->
+<!-- wbl-text:0045 -->
 Build skills paid, free, or self-taught
 
-<!-- wbl-text:0047 -->
+<!-- wbl-text:0046 -->
 9
 
-<!-- wbl-text:0048 -->
+<!-- wbl-text:0047 -->
 Support Group
 
-<!-- wbl-text:0049 -->
+<!-- wbl-text:0048 -->
 Never job-hunt alone again
 
-<!-- wbl-text:0050 -->
+<!-- wbl-text:0049 -->
 10
 
-<!-- wbl-text:0051 -->
+<!-- wbl-text:0050 -->
 Ongoing Training
 
-<!-- wbl-text:0052 -->
+<!-- wbl-text:0051 -->
 Fresh trainings on the way
 
-<!-- wbl-text:0053 -->
+<!-- wbl-text:0052 -->
 Launch
 
-<!-- wbl-text:0054 -->
+<!-- wbl-text:0053 -->
 11
 
-<!-- wbl-text:0055 -->
+<!-- wbl-text:0054 -->
 Setting Up Accounts
 
-<!-- wbl-text:0056 -->
+<!-- wbl-text:0055 -->
 Stand out on OnlineJobs.ph and Upwork
 
-<!-- wbl-text:0057 -->
+<!-- wbl-text:0056 -->
 12
 
-<!-- wbl-text:0058 -->
+<!-- wbl-text:0057 -->
 Creating Powerful Resume
 
-<!-- wbl-text:0059 -->
+<!-- wbl-text:0058 -->
 Built
 
-<!-- wbl-text:0060 -->
+<!-- wbl-text:0059 -->
 A resume that survives the skim
 
-<!-- wbl-text:0061 -->
+<!-- wbl-text:0060 -->
 13
 
-<!-- wbl-text:0062 -->
+<!-- wbl-text:0061 -->
 Job Hunting
 
-<!-- wbl-text:0063 -->
+<!-- wbl-text:0062 -->
 Where the real jobs are posted
 
-<!-- wbl-text:0064 -->
+<!-- wbl-text:0063 -->
 14
 
-<!-- wbl-text:0065 -->
+<!-- wbl-text:0064 -->
 Join Groups and Forums
 
-<!-- wbl-text:0066 -->
+<!-- wbl-text:0065 -->
 Plug into the BFF community
 
-<!-- wbl-text:0067 -->
+<!-- wbl-text:0066 -->
 15
 
-<!-- wbl-text:0068 -->
+<!-- wbl-text:0067 -->
 Creating your Portfolio
 
-<!-- wbl-text:0069 -->
+<!-- wbl-text:0068 -->
 Show proof before they ask for it
 
-<!-- wbl-text:0070 -->
+<!-- wbl-text:0069 -->
 Working on it!
 
-<!-- wbl-text:0071 -->
+<!-- wbl-text:0070 -->
 16
 
-<!-- wbl-text:0072 -->
+<!-- wbl-text:0071 -->
 Interviews
 
-<!-- wbl-text:0073 -->
+<!-- wbl-text:0072 -->
 New
 
-<!-- wbl-text:0074 -->
+<!-- wbl-text:0073 -->
 Ace async and video interviews
 
-<!-- wbl-text:0075 -->
+<!-- wbl-text:0074 -->
 17
 
-<!-- wbl-text:0076 -->
+<!-- wbl-text:0075 -->
 Internship
 
-<!-- wbl-text:0077 -->
+<!-- wbl-text:0076 -->
 Earn experience inside BFF first
 
-<!-- wbl-text:0078 -->
+<!-- wbl-text:0077 -->
 18
 
-<!-- wbl-text:0079 -->
+<!-- wbl-text:0078 -->
 Skill Practice
 
-<!-- wbl-text:0080 -->
+<!-- wbl-text:0079 -->
 Sharpen your tools with AI drills
 
-<!-- wbl-text:0081 -->
+<!-- wbl-text:0080 -->
 19
 
-<!-- wbl-text:0082 -->
+<!-- wbl-text:0081 -->
 Creating Proposal
 
-<!-- wbl-text:0083 -->
+<!-- wbl-text:0082 -->
 Write proposals clients answer
 
-<!-- wbl-text:0084 -->
+<!-- wbl-text:0083 -->
 20
 
-<!-- wbl-text:0085 -->
+<!-- wbl-text:0084 -->
 Bidding
 
-<!-- wbl-text:0086 -->
+<!-- wbl-text:0085 -->
 Bid smart, not desperate
 
-<!-- wbl-text:0087 -->
+<!-- wbl-text:0086 -->
 ↓ After landing, the growth loop begins
 
-<!-- wbl-text:0088 -->
+<!-- wbl-text:0087 -->
 Stage 1
 
-<!-- wbl-text:0089 -->
+<!-- wbl-text:0088 -->
 21
 
-<!-- wbl-text:0090 -->
+<!-- wbl-text:0089 -->
 Onboarding
 
-<!-- wbl-text:0091 -->
+<!-- wbl-text:0090 -->
 New
 
-<!-- wbl-text:0092 -->
+<!-- wbl-text:0091 -->
 Win your first 30 days
 
-<!-- wbl-text:0093 -->
+<!-- wbl-text:0092 -->
 22
 
-<!-- wbl-text:0094 -->
+<!-- wbl-text:0093 -->
 Learn Business Tools
 
-<!-- wbl-text:0095 -->
+<!-- wbl-text:0094 -->
 Master your client's tech stack
 
-<!-- wbl-text:0096 -->
+<!-- wbl-text:0095 -->
 23
 
-<!-- wbl-text:0097 -->
+<!-- wbl-text:0096 -->
 Collaboration
 
-<!-- wbl-text:0098 -->
+<!-- wbl-text:0097 -->
 Work smoothly inside a team
 
-<!-- wbl-text:0099 -->
+<!-- wbl-text:0098 -->
 24
 
-<!-- wbl-text:0100 -->
+<!-- wbl-text:0099 -->
 Client Demands
 
-<!-- wbl-text:0101 -->
+<!-- wbl-text:0100 -->
 Spot red flags and dodge mistakes
 
-<!-- wbl-text:0102 -->
+<!-- wbl-text:0101 -->
 25
 
-<!-- wbl-text:0103 -->
+<!-- wbl-text:0102 -->
 Organization
 
-<!-- wbl-text:0104 -->
+<!-- wbl-text:0103 -->
 Stay reliable when work piles up
 
-<!-- wbl-text:0105 -->
+<!-- wbl-text:0104 -->
 Skill Upgrade
 
-<!-- wbl-text:0106 -->
+<!-- wbl-text:0105 -->
 26
 
-<!-- wbl-text:0107 -->
+<!-- wbl-text:0106 -->
 New or Upgraded Skill
 
-<!-- wbl-text:0108 -->
+<!-- wbl-text:0107 -->
 Stack a skill that raises your rate
 
-<!-- wbl-text:0109 -->
+<!-- wbl-text:0108 -->
 27
 
-<!-- wbl-text:0110 -->
+<!-- wbl-text:0109 -->
 More Training
 
-<!-- wbl-text:0111 -->
+<!-- wbl-text:0110 -->
 Go deeper with live sessions
 
-<!-- wbl-text:0112 -->
+<!-- wbl-text:0111 -->
 28
 
-<!-- wbl-text:0113 -->
+<!-- wbl-text:0112 -->
 More Value to Client
 
-<!-- wbl-text:0114 -->
+<!-- wbl-text:0113 -->
 New
 
-<!-- wbl-text:0115 -->
+<!-- wbl-text:0114 -->
 Become hard to replace
 
-<!-- wbl-text:0116 -->
+<!-- wbl-text:0115 -->
 29
 
-<!-- wbl-text:0119 -->
+<!-- wbl-text:0118 -->
 Grow beyond the task list
 
-<!-- wbl-text:0120 -->
+<!-- wbl-text:0119 -->
 Higher Level
 
-<!-- wbl-text:0121 -->
+<!-- wbl-text:0120 -->
 30
 
-<!-- wbl-text:0122 -->
+<!-- wbl-text:0121 -->
 More Clients
 
-<!-- wbl-text:0123 -->
+<!-- wbl-text:0122 -->
 Let clients come to you
 
-<!-- wbl-text:0124 -->
+<!-- wbl-text:0123 -->
 31
 
-<!-- wbl-text:0125 -->
+<!-- wbl-text:0124 -->
 Multiple Skills
 
-<!-- wbl-text:0126 -->
+<!-- wbl-text:0125 -->
 Stack roles, multiply income
 
-<!-- wbl-text:0127 -->
+<!-- wbl-text:0126 -->
 32
 
-<!-- wbl-text:0128 -->
+<!-- wbl-text:0127 -->
 Leadership
 
-<!-- wbl-text:0129 -->
+<!-- wbl-text:0128 -->
 New
 
-<!-- wbl-text:0130 -->
+<!-- wbl-text:0129 -->
 Lead a team, mentor newer VAs
 
-<!-- wbl-text:0131 -->
+<!-- wbl-text:0130 -->
 33
 
-<!-- wbl-text:0132 -->
+<!-- wbl-text:0131 -->
 Rockstar Portfolio
 
-<!-- wbl-text:0133 -->
+<!-- wbl-text:0132 -->
 Proof that commands higher rates
 
-<!-- wbl-text:0134 -->
+<!-- wbl-text:0133 -->
 Decision
 
-<!-- wbl-text:0135 -->
+<!-- wbl-text:0134 -->
 34
 
-<!-- wbl-text:0136 -->
+<!-- wbl-text:0135 -->
 Building your own Brand or Agency
 
-<!-- wbl-text:0137 -->
+<!-- wbl-text:0136 -->
 New
 
-<!-- wbl-text:0138 -->
+<!-- wbl-text:0137 -->
 From freelancer to founder
 
-<!-- wbl-text:0139 -->
+<!-- wbl-text:0138 -->
 ↻ Loop back: Freelancer
 
-<!-- wbl-text:0140 -->
+<!-- wbl-text:0139 -->
 After Higher Level, most community members loop back to Skill Upgrade — stack another skill, raise rates, expand into a new Role Category. Two or three loops is the typical BFF ladder.
 
-<!-- wbl-text:0141 -->
+<!-- wbl-text:0140 -->
 Freelancer →  back to Skill Upgrade
 
-<!-- wbl-text:0142 -->
+<!-- wbl-text:0141 -->
 Freelancer
 
-<!-- wbl-text:0143 -->
+<!-- wbl-text:0142 -->
 or
 
-<!-- wbl-text:0144 -->
+<!-- wbl-text:0143 -->
 Business?
 
-<!-- wbl-text:0145 -->
+<!-- wbl-text:0144 -->
 → Branch: Business
 
-<!-- wbl-text:0146 -->
+<!-- wbl-text:0145 -->
 The other path: stop trading hours for a paycheck and build your own brand or agency. Tier 4 module — currently queued; the deeper corpus has FB Group Plan + Market Research foundations to fold in.
 
-<!-- wbl-text:0147 -->
+<!-- wbl-text:0146 -->
 Business →  Brand or Agency
 
-<!-- wbl-text:0148 -->
+<!-- wbl-text:0147 -->
 Not sure what's next?
 
-<!-- wbl-text:0149 -->
+<!-- wbl-text:0148 -->
 Try a different door.
 
-<!-- wbl-text:0150 -->
+<!-- wbl-text:0149 -->
 DON'T KNOW WHERE TO START?
 
-<!-- wbl-text:0151 -->
+<!-- wbl-text:0150 -->
 Find my archetype →
 
-<!-- wbl-text:0152 -->
+<!-- wbl-text:0151 -->
 Take the quick finder, then choose lessons, jobs, or resume building.
 
-<!-- wbl-text:0153 -->
+<!-- wbl-text:0152 -->
 NEED A REAL PLAN?
 
-<!-- wbl-text:0154 -->
+<!-- wbl-text:0153 -->
 Build my curriculum →
 
-<!-- wbl-text:0155 -->
+<!-- wbl-text:0154 -->
 Get an ordered lesson plan with a finish-by date.
 
-<!-- wbl-text:0156 -->
+<!-- wbl-text:0155 -->
 READY TO PLAN SKILLS?
 
-<!-- wbl-text:0157 -->
+<!-- wbl-text:0156 -->
 Open Resume Builder →
 
-<!-- wbl-text:0158 -->
+<!-- wbl-text:0157 -->
 40 skills, live job-match, linked lessons.
 
-<!-- wbl-text:0159 -->
+<!-- wbl-text:0158 -->
 This is the map. The lessons are the steps.
 
-<!-- wbl-text:0160 -->
+<!-- wbl-text:0159 -->
 BFF Open University is free, faith-warm, and built for the Filipino freelancer who hasn't said "I made it" yet. Pick a box. Open a lesson. Take one step today.
 
-<!-- wbl-text:0161 -->
+<!-- wbl-text:0160 -->
 Archetype Finder
 
-<!-- wbl-text:0162 -->
+<!-- wbl-text:0161 -->
 Resume Builder
 
-<!-- wbl-text:0163 -->
+<!-- wbl-text:0162 -->
 My Curriculum
 
-<!-- wbl-text:0164 -->
+<!-- wbl-text:0163 -->
 Printable BFF Guide
 
-<!-- wbl-text:0165 -->
+<!-- wbl-text:0164 -->
 BFF Home
 
-<!-- wbl-text:0166 -->
+<!-- wbl-text:0165 -->
 ← Writings by Lala
 
-<!-- wbl-text:0167 -->
+<!-- wbl-text:0166 -->
 Bonafide Filipino Freelancer Simplified Blueprint · Rebuild v2 · May 2026
 
-<!-- wbl-text:0168 -->
+<!-- wbl-text:0167 -->
 Preparation
 
-<!-- wbl-text:0169 -->
+<!-- wbl-text:0168 -->
 Box title
 
-<!-- wbl-text:0170 -->
+<!-- wbl-text:0169 -->
 ×
 
-<!-- wbl-text:0171 -->
+<!-- wbl-text:0170 -->
 Open lesson
 
-<!-- wbl-text:0172 -->
+<!-- wbl-text:0171 -->
 Close

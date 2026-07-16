@@ -6,10 +6,10 @@ WBL_OBSIDIAN_SYNC_END -->
 ---
 title: "We All Have A Race To Run"
 type: "story"
-topics: ["swahg-stories", "faith-theology", "community"]
+topics: ["bff-stories", "faith-theology", "community"]
 date: 2020-09-09
 description: "Lala on obedience, healing, and continuing the race with the Lord as the one who sustains strength."
-image: "/swahg-stories/we-all-have-a-race-to-run-shela-heramis.webp"
+image: "/bonafide-filipino-freelancers/stories/we-all-have-a-race-to-run-shela-heramis.webp"
 ---
 
 by: Shela Heramis

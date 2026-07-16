@@ -12,24 +12,36 @@ description: "A short note on why the Lord's prayer says today and not year. Sev
 image: "https://res.cloudinary.com/dimapmlre/image/upload/v1777045740/state-heroes/writings-v5-not-yearly-bread.jpg"
 ---
 
-I wake up at 4 AM. My body knows it is three in the afternoon Central Standard Time, which means my team is already in the middle of their day, and the laptop already has emails waiting in it that I cannot see yet.
+I wake up at 4 AM.
+
+My body knows it is three in the afternoon Central Standard Time, which means my team is already in the middle of their day. The laptop has emails waiting in it that I cannot see yet.
 
 Before I open them, I close my eyes.
 
 "Lord, you take care of today."
 
-That is it. That is the whole prayer. And peace comes into my heart out of nowhere, the way it always does.
+That is the whole prayer. And peace comes into my heart out of nowhere, the way it always does.
 
 If you are checking your emails before you have said your first prayer, I have been there. I still do it on the days when I forget.
 
-Here is what has held me in place seven years into this work. The prayer the Lord taught us says, "Give us this day our daily bread." Not weekly. Not monthly. Not yearly. Day.
+Here is what has held me in place seven years into this work.
+
+The prayer the Lord taught us says, "Give us this day our daily bread." Not weekly. Not monthly. Not yearly. Day.
 
 The Lord wants us day by day. He wants us to ask Him every morning. He wants us to depend on Him for bread that has not yet been baked.
 
-You would think after seven years the fear would be gone. It is not. I still wake up nervous. I still have that quiet voice in the morning asking whether today will be too much. And the Lord never said I would stop being afraid. What He said was, give me your fears, child.
+I think that is on purpose. If He gave me the whole year at once, I would store it. I would stop coming to Him. I would trust the pantry instead of the Father. He keeps the bread daily because He wants me daily.
 
-So I give them. Then I open the laptop.
+You would think after seven years the fear would be gone. It is not. I still wake up nervous. There is still that quiet voice in the morning asking, "What if today is too much?"
 
-Tomorrow, before your emails, try one sentence. Lord, you take care of today. And see what comes.
+And the Lord never said I would stop being afraid. What He said was, give me your fears, child.
 
-— Lala
+So I give them.
+
+Then I open the laptop.
+
+Tomorrow, before your emails, try one sentence. Lord, you take care of today.
+
+And see what comes.
+
+\- Lala

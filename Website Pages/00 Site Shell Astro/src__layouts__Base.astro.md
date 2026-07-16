@@ -89,7 +89,7 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString();
         <nav class="nav-font main-nav">
           <a href="/">Home</a>
           <a href="/library/">Library</a>
-          <a href="/swahg/">SWAHG</a>
+          <a href="/bonafide-filipino-freelancers/">Bonafide Filipino Freelancers Open University</a>
           <a href="/ministry/">Ministry</a>
           <a href="/about/">About</a>
         </nav>

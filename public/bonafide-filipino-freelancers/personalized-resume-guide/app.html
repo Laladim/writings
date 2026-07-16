@@ -1129,6 +1129,110 @@ const ROLE_DATA = {
 
 const DEFAULT_ROLE = ROLE_DATA["data-entry-va"];
 
+const ROLE_EXTRAS = {
+  "executive-assistant": {
+    strongSignals: [/calendar/, /scheduling/, /inbox/, /meeting minutes?/, /vendor/, /travel/, /reports?/],
+    weakSignals: [/trello/, /notion/, /slack/, /zoom/],
+    scope: ["Admin Assistant", "Executive Assistant", "Operations Coordinator", "Operations Manager"],
+    proofColumns: ["Date", "Meeting or inbox item", "Priority", "Owner", "Next action", "Follow-up date", "Status"],
+    redFlags: ["EA title but operations manager scope", "unpaid calendar or inbox trial with real client data", "expecting 24/7 availability without a written schedule"],
+    lowerRisk: ["admin assistant", "calendar support assistant", "inbox support VA"],
+    wedge: "calendar, inbox, meeting notes, and follow-up coordination",
+    proofFocus: "mock executive week, inbox triage board, and follow-up tracker"
+  },
+  "customer-support-va": {
+    strongSignals: [/zendesk/, /ticket/, /refund/, /escalation/, /csat/, /chat/, /email support/, /bpo/],
+    weakSignals: [/slack/, /zoom/, /excel/],
+    scope: ["Support Admin", "Customer Support VA", "Customer Success Assistant", "Customer Success Manager"],
+    proofColumns: ["Ticket type", "Customer issue", "Priority", "Reply template", "Next action", "Escalation rule", "Status"],
+    redFlags: ["unpaid mock tickets with no QA rubric", "24/7 coverage hidden inside a part-time role", "refund or billing authority without escalation rules"],
+    lowerRisk: ["chat support VA", "email support VA", "ticket support assistant"],
+    wedge: "chat, email, ticket handling, escalation notes, and response templates",
+    proofFocus: "support ticket response kit with sanitized templates and a QA checklist"
+  },
+  "marketing-va": {
+    strongSignals: [/mailchimp/, /campaign/, /shopify/, /email list/, /ecommerce/, /content calendar/],
+    weakSignals: [/canva/, /trello/, /slack/],
+    scope: ["Marketing Admin", "Marketing VA", "Marketing Operations Assistant", "Growth Marketing Manager"],
+    proofColumns: ["Campaign task", "Channel", "Asset", "Owner", "Due date", "Tracking note", "Status"],
+    redFlags: ["growth strategy ownership at assistant pay", "vague campaign ownership without authority", "unpaid creative test with no scope limit"],
+    lowerRisk: ["ecommerce marketing assistant", "email marketing assistant", "content operations VA"],
+    wedge: "ecommerce marketing operations, email list support, content calendars, and campaign tracking",
+    proofFocus: "one-page client-safe case study or mini campaign operations board"
+  },
+  "social-media-assistant": {
+    strongSignals: [/instagram/, /reels/, /captions?/, /content calendar/, /meta business/, /scheduled posts?/, /social/],
+    weakSignals: [/canva/, /capcut/, /video/],
+    supportOnly: [/canva/],
+    scope: ["Content Support VA", "Social Media Assistant", "Social Media Coordinator", "Social Media Strategist"],
+    proofColumns: ["Date", "Platform", "Post type", "Goal", "Caption angle", "Asset status", "Scheduling status", "Notes"],
+    redFlags: ["strategist scope without analytics ownership", "unpaid asset pack with no sample limit", "posting access required before trust is established"],
+    lowerRisk: ["content calendar assistant", "caption assistant", "social media admin support"],
+    wedge: "content calendars, captions, asset coordination, and simple posting support",
+    proofFocus: "content calendar with sample captions, assets, and a simple weekly reporting note"
+  },
+  "content-assistant": {
+    strongSignals: [/blog/, /newsletter/, /publishing/, /repurpos/, /article/, /drafts?/, /captions?/],
+    weakSignals: [/wordpress/, /notion/, /mailchimp/, /canva/],
+    scope: ["Writing Assistant", "Content Assistant", "Publishing Assistant", "Content Strategist"],
+    proofColumns: ["Sample", "Source", "Format", "What I did", "Tools", "Before and after note", "Link"],
+    redFlags: ["content strategist scope without briefs or performance review", "unpaid long-form writing test", "publishing access without a checklist"],
+    lowerRisk: ["blog assistant", "newsletter assistant", "publishing assistant"],
+    wedge: "newsletter, blog, publishing, and repurposing support",
+    proofFocus: "organized sample table plus one repurposing sample pack"
+  },
+  "crm-assistant": {
+    strongSignals: [/hubspot/, /crm/, /pipeline/, /lead list/, /follow-up/, /sales admin/, /duplicate/],
+    weakSignals: [/excel/, /slack/, /zoom/],
+    scope: ["CRM Data Assistant", "Lead List Cleaner", "CRM Assistant", "Sales Operations Assistant"],
+    proofColumns: ["Lead ID", "Source", "Stage", "Owner", "Last contact", "Next action", "Duplicate flag", "Notes"],
+    redFlags: ["production CRM access during a trial", "unclear lead ownership", "no data privacy terms before sharing records"],
+    lowerRisk: ["CRM data assistant", "lead list cleaner", "sales admin VA"],
+    wedge: "lead records, pipeline hygiene, duplicate cleanup, and follow-up tracking",
+    proofFocus: "public-safe CRM cleanup tracker with fake lead records and anonymization rules"
+  },
+  "bookkeeping-va": {
+    strongSignals: [/quickbooks/, /bookkeeping/, /invoice/, /expense/, /receipt/, /shop records?/, /sales summaries?/, /inventory/],
+    weakSignals: [/excel/, /shopify/],
+    scope: ["Records Assistant", "Bookkeeping VA", "Accounting Assistant", "Accountant"],
+    proofColumns: ["Date", "Vendor or source", "Category", "Amount", "Receipt status", "Payment status", "Notes"],
+    redFlags: ["bank login requested during a trial", "tax advice expected without credentials", "unpaid reconciliation test with real records"],
+    lowerRisk: ["expense records assistant", "receipt tracking VA", "bookkeeping admin support"],
+    wedge: "sales, expense, supplier, receipt, and inventory record support",
+    proofFocus: "receipt and expense tracker with monthly summary and safe process note"
+  },
+  "project-coordinator": {
+    strongSignals: [/asana/, /coordinator/, /status sheet/, /approval/, /deliverable/, /handoff/, /blocker/, /weekly status/],
+    weakSignals: [/trello/, /notion/, /slack/, /zoom/],
+    scope: ["Admin Support", "Project Coordinator", "Project Manager", "Operations Manager"],
+    proofColumns: ["Task", "Owner", "Deadline", "Dependency", "Blocker", "Latest update", "Next action"],
+    redFlags: ["coordinator title but manager accountability", "no authority over people being chased", "vague deadlines with no escalation path"],
+    lowerRisk: ["task tracking assistant", "project admin VA", "status update assistant"],
+    wedge: "task tracking, approval follow-up, blocker notes, and weekly status updates",
+    proofFocus: "project tracker, blocker log, and weekly update template"
+  },
+  "seo-assistant": {
+    strongSignals: [/seo/, /keyword/, /broken-link/, /h2/, /alt text/, /content audit/, /publishing support/],
+    weakSignals: [/wordpress/, /excel/, /notion/],
+    scope: ["SEO Publishing Support", "SEO Assistant", "SEO Specialist", "SEO Strategist"],
+    proofColumns: ["Page", "Title", "H1", "H2 notes", "Meta description", "Internal links", "Image alt text", "Recommendation"],
+    redFlags: ["SEO strategy ownership at assistant pay", "audit scope not defined", "ranking promises required without authority"],
+    lowerRisk: ["SEO publishing assistant", "content update assistant", "WordPress SEO support"],
+    wedge: "WordPress publishing, content updates, link checks, and basic SEO notes",
+    proofFocus: "basic SEO content audit with a clear checklist and before-after recommendation"
+  },
+  "data-entry-va": {
+    strongSignals: [/record/, /tracking/, /tracker/, /registration/, /data entry/, /listing/, /spreadsheet/, /sales tracking/, /inventory/, /google sheets/],
+    weakSignals: [/excel/, /sheets/, /google workspace/],
+    scope: ["Data Entry Assistant", "Admin Records Assistant", "Data Entry VA", "Data Analyst"],
+    proofColumns: ["Date", "Item or record", "Quantity", "Amount", "Category", "Status", "Duplicate check"],
+    redFlags: ["data analyst expectations without analysis work", "unpaid large data-entry trial", "no instructions for accuracy checks"],
+    lowerRisk: ["data entry assistant", "admin records assistant", "product listing assistant", "registration support"],
+    wedge: "clean records, spreadsheet updates, registration lists, and accuracy checks",
+    proofFocus: "clean data tracker with validation rules and duplicate checks"
+  }
+};
+
 function esc(value) {
   return String(value || "").replace(/[&<>"']/g, ch => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
@@ -1143,12 +1247,8 @@ function checkedTools() {
   return Array.from(document.querySelectorAll("input[name='tool']:checked")).map(input => input.value);
 }
 
-function formData() {
-  const roleKey = document.getElementById("targetRole").value;
-  const role = roleKey && roleKey !== "not-sure" ? ROLE_DATA[roleKey] : pickRoleFromInputs();
+function baseFormData() {
   return {
-    leadId: activeLeadId || `BFF-${Date.now().toString(36).toUpperCase()}`,
-    createdAt: new Date().toISOString(),
     name: document.getElementById("name").value.trim(),
     email: document.getElementById("email").value.trim(),
     situation: document.getElementById("situation").value,
@@ -1156,9 +1256,7 @@ function formData() {
     tools: checkedTools(),
     english: document.getElementById("english").value,
     timeline: document.getElementById("timeline").value,
-    targetRoleKey: roleKey || "not-sure",
-    targetRole: role.title,
-    role,
+    targetRoleKey: document.getElementById("targetRole").value || "",
     resumeStatus: document.getElementById("resumeStatus").value,
     portfolioStatus: document.getElementById("portfolioStatus").value,
     struggle: document.getElementById("struggle").value.trim(),
@@ -1168,20 +1266,47 @@ function formData() {
   };
 }
 
-function pickRoleFromInputs() {
-  const situation = document.getElementById("situation").value.toLowerCase();
-  const tools = checkedTools().join(" ").toLowerCase();
-  const work = document.getElementById("workHistory").value.toLowerCase();
-  const combined = `${situation} ${tools} ${work}`;
-  if (/zendesk|support|bpo|ticket|customer|chat/.test(combined)) return ROLE_DATA["customer-support-va"];
-  if (/canva|capcut|instagram|social|meta|video|creative/.test(combined)) return ROLE_DATA["social-media-assistant"];
-  if (/mailchimp|marketing|campaign|content|wordpress/.test(combined)) return ROLE_DATA["marketing-va"];
-  if (/hubspot|crm|pipeline|lead/.test(combined)) return ROLE_DATA["crm-assistant"];
-  if (/quickbooks|bookkeeping|invoice|accounting/.test(combined)) return ROLE_DATA["bookkeeping-va"];
-  if (/trello|asana|project|coordinator|notion/.test(combined)) return ROLE_DATA["project-coordinator"];
-  if (/seo|keyword|wordpress|blog/.test(combined)) return ROLE_DATA["seo-assistant"];
-  if (/calendar|inbox|executive|admin/.test(combined)) return ROLE_DATA["executive-assistant"];
-  return DEFAULT_ROLE;
+function rankRoles(raw) {
+  const text = `${raw.situation} ${raw.workHistory} ${raw.struggle} ${raw.resumeText} ${raw.tools.join(" ")}`.toLowerCase();
+  return Object.entries(ROLE_EXTRAS).map(([key, extra]) => {
+    let score = 0;
+    const reasons = [];
+    (extra.strongSignals || []).forEach(rx => {
+      const hit = text.match(rx);
+      if (hit) { score += 3; reasons.push(hit[0]); }
+    });
+    (extra.weakSignals || []).forEach(rx => {
+      const hit = text.match(rx);
+      if (hit) { score += 1; reasons.push(hit[0]); }
+    });
+    (extra.supportOnly || []).forEach(rx => {
+      const hit = text.match(rx);
+      if (hit) score += 0.25;
+    });
+    return { key, score, reasons: [...new Set(reasons)].slice(0, 5) };
+  }).sort((a, b) => b.score - a.score);
+}
+
+function pickRoleFromInputs(raw) {
+  const ranked = rankRoles(raw);
+  return ROLE_DATA[(ranked[0] && ranked[0].score > 0) ? ranked[0].key : "data-entry-va"];
+}
+
+function formData() {
+  const raw = baseFormData();
+  const roleKey = raw.targetRoleKey;
+  const rankedRoles = rankRoles(raw);
+  const role = roleKey && roleKey !== "not-sure" ? ROLE_DATA[roleKey] : pickRoleFromInputs(raw);
+  return {
+    leadId: activeLeadId || `BFF-${Date.now().toString(36).toUpperCase()}`,
+    createdAt: new Date().toISOString(),
+    ...raw,
+    targetRoleKey: roleKey || "not-sure",
+    targetRole: role.title,
+    roleKeyResolved: Object.keys(ROLE_DATA).find(key => ROLE_DATA[key] === role) || "data-entry-va",
+    role,
+    rankedRoles
+  };
 }
 
 function validateStep(step) {
@@ -1244,6 +1369,13 @@ function prevStep() {
   showStep(currentStep - 1);
 }
 
+function maturity(data) {
+  const text = `${data.situation} ${data.workHistory} ${data.resumeText}`.toLowerCase();
+  if (/existing freelancer|freelance|client|paid project|onlinejobs|upwork|part-time wordpress|shopify product/.test(text)) return "freelancer";
+  if (/bpo|corporate|office|years|company|department|operations support|sales admin|customer support worker/.test(text)) return "transitioner";
+  return "starter";
+}
+
 function roleReadiness(data) {
   const toolCount = data.tools.length;
   const noPortfolio = /No portfolio/.test(data.portfolioStatus);
@@ -1251,25 +1383,72 @@ function roleReadiness(data) {
   if (toolCount < 3 || noPortfolio || noResume || data.english === "low") {
     return {
       label: "Preparing",
-      note: `Aim for ${data.role.title}, but apply first to lower-risk support tasks while building proof. Do not claim senior ownership yet.`
+      note: `Aim for ${data.role.title}, but apply first to ${roleExtra(data).lowerRisk.slice(0, 3).join(", ")} while building proof. Do not claim senior ownership yet.`
     };
   }
   if (toolCount < 5) {
     return {
       label: "Almost ready",
-      note: `You can prepare for ${data.role.title}, but your resume should lead with one clear proof project and a currently learning line.`
+      note: `You can prepare for ${data.role.title}, but your resume should lead with one clear proof project and a currently learning line tied to ${roleExtra(data).wedge}.`
     };
   }
   return {
     label: "Application ready",
-    note: `You have enough visible tools to start applying for ${data.role.title}, as long as every claim is tied to real work or a clear project.`
+    note: `You have enough visible tools to start applying for ${data.role.title}. Lead with real work first, then use proof projects only to fill gaps.`
   };
+}
+
+function roleExtra(data) {
+  return ROLE_EXTRAS[data.roleKeyResolved] || ROLE_EXTRAS["data-entry-va"];
+}
+
+function cleanSituation(s) {
+  const map = {
+    "fresh starter": "fresh starter practice and volunteer support",
+    "bpo or customer support worker": "BPO and customer support",
+    "corporate or office transitioner": "office administration and coordination",
+    "existing freelancer": "freelance project support",
+    "creative or social media learner": "creative and content support",
+    "business owner moving to remote work": "small business operations"
+  };
+  return map[String(s || "").toLowerCase()] || String(s || "").toLowerCase();
+}
+
+function articleFor(phrase) {
+  return /^[aeiou]/i.test(String(phrase || "").trim()) ? "an" : "a";
+}
+
+function sentenceCase(text) {
+  const s = String(text || "").trim();
+  return s ? s.charAt(0).toUpperCase() + s.slice(1) : "";
+}
+
+function splitEvidence(data) {
+  const text = `${data.workHistory}. ${data.resumeText}`.replace(/\s+/g, " ");
+  let parts = text.split(/[.;\n]/).map(s => s.trim()).filter(s => s.length > 12);
+  if (parts.length < 3) {
+    parts = text.split(/,/).map(s => s.trim()).filter(s => s.length > 12);
+  }
+  return [...new Set(parts)]
+    .map(s => s.replace(/\s+/g, " ").replace(/\.+$/, "").trim())
+    .filter(s => !/^generated from/i.test(s))
+    .slice(0, 8);
+}
+
+function strongestSignals(data) {
+  const evidence = splitEvidence(data);
+  const toolSignals = data.tools.slice(0, 4);
+  return [...evidence.slice(0, 3), ...toolSignals].slice(0, 5);
 }
 
 function summaryCopy(data, readiness) {
   const toolLine = data.tools.length ? data.tools.slice(0, 6).join(", ") : "remote-work tools";
-  const situation = data.situation.toLowerCase();
-  return `${data.role.headline}. Brings ${situation} experience with ${toolLine}. Focused on clear communication, organized execution, and honest proof of work.`;
+  const experience = cleanSituation(data.situation);
+  const extra = roleExtra(data);
+  if (readiness.label === "Application ready") {
+    return `${data.role.headline}. Brings ${experience} experience with ${toolLine}. Strongest fit: ${extra.wedge}.`;
+  }
+  return `${data.role.headline}. Brings ${experience} experience with ${toolLine}. Building proof around ${extra.proofFocus}.`;
 }
 
 function skillList(data) {
@@ -1289,11 +1468,75 @@ function skillList(data) {
   return [...new Set([...roleSkills, ...base])];
 }
 
+function deriveBullets(data) {
+  const type = maturity(data);
+  const action = { starter: "Practiced", transitioner: "Handled", freelancer: "Delivered" }[type];
+  const clauses = splitEvidence(data);
+  const extra = roleExtra(data);
+  const fallback = [
+    `${action} ${extra.wedge} using ${data.tools.slice(0, 3).join(", ") || "remote-work tools"}.`,
+    `Organized ${extra.proofFocus} into a public-safe sample that can be explained in interviews.`,
+    `Documented the workflow with clear steps, tool notes, and a short quality checklist.`
+  ];
+  const bullets = clauses.filter(clause => !/^graduated\b/i.test(clause)).slice(0, 4).map(clause => {
+    let cleaned = clause
+      .replace(/^(\d+\s+years?\s+in\s+)/i, "")
+      .replace(/^\d+\s+years?\s+/i, "")
+      .replace(/^and\s+/i, "")
+      .replace(/^helped\s+/i, "Supported ")
+      .replace(/^ran\s+/i, "Operated ")
+      .replace(/^managed\s+/i, "Managed ")
+      .replace(/\.\..*$/i, "")
+      .replace(/\.\s*School projects.*$/i, "")
+      .replace(/\.+$/, "")
+      .trim();
+    if (/^(part-time|operations support|office admin|sales admin|freelance admin)/i.test(cleaned)) {
+      cleaned = `Supported ${cleaned.charAt(0).toLowerCase()}${cleaned.slice(1)}`;
+    }
+    cleaned = sentenceCase(cleaned);
+    const hasAction = /^(handled|created|edited|updated|tracked|coordinated|prepared|maintained|processed|wrote|built|organized|supported|drafted|uploaded|checked|fixed|added|kept|used|escalated|operated|managed|volunteered|practiced|chased|formatted|repurposed)/i.test(cleaned);
+    const prefix = hasAction ? "" : `${action} `;
+    return `${prefix}${cleaned}.`;
+  });
+  return (bullets.length ? bullets : fallback).slice(0, 5);
+}
+
+function proofMode(data) {
+  const type = maturity(data);
+  if (type === "freelancer") return "package";
+  if (type === "transitioner") return "translate";
+  return "build";
+}
+
 function actionPlan(data) {
+  const mode = proofMode(data);
+  const extra = roleExtra(data);
+  if (mode === "package") {
+    return [
+      `Day 1: Choose ${data.role.title} as the visible role title and use this wedge: ${extra.wedge}.`,
+      "Day 2: Pick one real client-safe work sample and remove private names, numbers, and internal notes.",
+      "Day 3: Turn the sample into a one-page case study: problem, task, tools, workflow, output, result if known.",
+      "Day 4: Rewrite your resume summary and bullets around that wedge.",
+      "Day 5: Update OnlineJobs.ph and LinkedIn with the case-study language.",
+      "Day 6: Prepare one short pitch that leads with your strongest defended tool.",
+      "Day 7: Apply to 3 matched roles and ask BFF for feedback on whether the proof is specific enough."
+    ];
+  }
+  if (mode === "translate") {
+    return [
+      `Day 1: Keep ${data.role.title} as the target but mark the honest scope rung in the ladder.`,
+      "Day 2: Rewrite 3 old-role tasks into remote-role bullets using the bullets in this guide.",
+      `Day 3: Build or sanitize ${articleFor(data.role.proof)} ${data.role.proof} proof sample.`,
+      "Day 4: Add a short process note explaining what you did, which tools you used, and what you did not claim.",
+      "Day 5: Update your resume, OnlineJobs.ph profile, and LinkedIn About section.",
+      "Day 6: Prepare one pitch and one follow-up message.",
+      "Day 7: Apply to 3 lower-risk matched roles and ask for feedback on overclaim risk."
+    ];
+  }
   return [
     `Day 1: Finalize ${data.role.title} as your working target role and bookmark the BFF role links.`,
     "Day 2: Edit your resume headline, summary, and skills section.",
-    `Day 3: Outline the ${data.role.proof} proof project.`,
+    `Day 3: Create the ${data.role.proof} using these columns: ${extra.proofColumns.join(", ")}.`,
     "Day 4: Build the smallest complete proof output and take screenshots.",
     "Day 5: Add the project to your resume, OnlineJobs.ph profile, and LinkedIn About section.",
     "Day 6: Prepare the email pitch, short proposal, and follow-up message.",
@@ -1301,14 +1544,106 @@ function actionPlan(data) {
   ];
 }
 
+function routingExplainerHtml(data) {
+  if (data.targetRoleKey !== "not-sure") return "";
+  const ranked = data.rankedRoles.filter(r => r.score > 0).slice(0, 3);
+  if (!ranked.length) return `<p><strong>Why this role:</strong> The intake did not show a stronger role signal, so Data Entry VA is the safer starter path.</p>`;
+  const top = ranked[0];
+  const second = ranked[1];
+  const social = data.rankedRoles.find(r => r.key === "social-media-assistant");
+  return `
+    <p><strong>Why this role:</strong> ${esc(ROLE_DATA[top.key].title)} scored highest from these intake signals: ${esc(top.reasons.join(", ") || "your selected tools and work notes")}.</p>
+    ${second ? `<p><strong>Secondary path:</strong> ${esc(ROLE_DATA[second.key].title)} is also possible, but it scored lower.</p>` : ""}
+    ${social && top.key !== "social-media-assistant" ? `<p><strong>Why not Social Media Assistant:</strong> Canva or CapCut alone is only a supporting signal. Your stronger evidence points to ${esc(ROLE_DATA[top.key].title)}.</p>` : ""}
+  `;
+}
+
+function scopeLadderHtml(data) {
+  const extra = roleExtra(data);
+  return `
+    <div class="copy-box"><strong>Honest scope ladder:</strong><br>${extra.scope.map((r, i) => `${i + 1}. ${r}`).join("<br>")}</div>
+    <p><strong>Use this rule:</strong> Stop at the highest rung your real work can defend. For this guide, your safe working rung is ${esc(data.role.title)} unless your old resume proves the higher rung.</p>
+  `;
+}
+
+function proofSectionHtml(data) {
+  const extra = roleExtra(data);
+  const mode = proofMode(data);
+  const sensitive = ["crm-assistant", "bookkeeping-va", "customer-support-va"].includes(data.roleKeyResolved);
+  const columns = extra.proofColumns.map(c => `<li>${esc(c)}</li>`).join("");
+  const anonymize = sensitive ? `
+    <div class="copy-box"><strong>Public-safe proof rules:</strong>
+      <ul>
+        <li>Replace real names with Lead 01, Client A, Vendor A, or Customer 01.</li>
+        <li>Mask emails and phone numbers. Use sample@example.com for examples.</li>
+        <li>Remove internal notes, private amounts, bank data, customer issues, and company identifiers.</li>
+        <li>Use fake sample rows if the original data belongs to an employer or client.</li>
+      </ul>
+    </div>` : "";
+  if (mode === "package") {
+    return `
+      <section class="guide-section">
+        <h3>5. Package Your Existing Proof</h3>
+        <p><strong>Proof mode:</strong> You do not need a beginner project first. Package one real client-safe or public-safe work sample around ${esc(extra.wedge)}.</p>
+        <div class="copy-box"><strong>One-page case study structure:</strong><br>Problem, task, tools used, workflow, output, result if known, and what you can explain in an interview.</div>
+        <div class="copy-box"><strong>Portfolio table columns:</strong><ul>${columns}</ul></div>
+        ${anonymize}
+        <div class="copy-box"><strong>Resume bullet from this proof:</strong><br>Packaged ${esc(extra.proofFocus)} into a public-safe sample showing ${esc(data.role.title.toLowerCase())} readiness without claiming strategy ownership.</div>
+      </section>`;
+  }
+  if (mode === "translate") {
+    return `
+      <section class="guide-section">
+        <h3>5. Translate Your Experience Into Proof</h3>
+        <p><strong>Proof mode:</strong> Your old work is useful. The job is to translate it into ${esc(data.role.title)} language without overclaiming.</p>
+        <div class="copy-box"><strong>Build or sanitize this proof:</strong><br>${esc(data.role.proof)} focused on ${esc(extra.proofFocus)}.</div>
+        <div class="copy-box"><strong>Use these proof columns:</strong><ul>${columns}</ul></div>
+        ${anonymize}
+        <div class="copy-box"><strong>Resume bullet from this proof:</strong><br>Created ${articleFor(data.role.proof)} ${esc(data.role.proof.toLowerCase())} to show ${esc(extra.wedge)} with clear steps, tool notes, and a public-safe workflow.</div>
+      </section>`;
+  }
+  return `
+    <section class="guide-section">
+      <h3>5. Build Your First Proof Project</h3>
+      <p><strong>Project name:</strong> ${esc(data.role.proof)}.</p>
+      <ol>${data.role.project.map(item => `<li>${esc(item)}</li>`).join("")}</ol>
+      <div class="copy-box"><strong>Use these exact columns:</strong><ul>${columns}</ul></div>
+      <p><strong>Output checklist:</strong> one public-safe document or Google Sites page, one screenshot, one short process note, and one resume bullet.</p>
+      <div class="copy-box"><strong>Resume bullet from the project:</strong><br>Built ${articleFor(data.role.proof)} ${esc(data.role.proof.toLowerCase())} to demonstrate ${esc(data.role.title.toLowerCase())} readiness through ${esc(extra.wedge)}.</div>
+    </section>`;
+}
+
+function applicationPackHtml(data, resumeSummary, skills) {
+  const ready = roleReadiness(data).label === "Application ready";
+  const tools = data.tools.join(", ") || "remote-work tools";
+  const extra = roleExtra(data);
+  const taskSkills = skills.filter(skill => !data.tools.includes(skill)).slice(0, 4);
+  const skillPhrase = taskSkills.length ? taskSkills.join(", ") : extra.wedge;
+  const lead = ready
+    ? `I support ${data.role.title} work through ${extra.wedge}. My defended tools include ${tools}.`
+    : `I am preparing for ${data.role.title} work by building proof around ${extra.wedge}. My defended tools include ${tools}.`;
+  return `
+    <section class="guide-section">
+      <h3>6. Application Pack</h3>
+      <div class="copy-box"><strong>LinkedIn About:</strong><br>${esc(lead)} I avoid overclaiming the next scope rung and focus on work I can explain clearly.</div>
+      <div class="copy-box"><strong>OnlineJobs.ph profile summary:</strong><br>${esc(resumeSummary)} I can show ${esc(data.role.proof)} as proof during application.</div>
+      <div class="copy-box"><strong>Email pitch:</strong><br>Hello, I saw your opening for ${esc(data.role.title)}. I can help with ${esc(skillPhrase)} using ${esc(tools)}. My background includes ${esc(cleanSituation(data.situation))}, and I can share a public-safe sample if helpful. Thank you for considering my application.</div>
+      <div class="copy-box"><strong>Short proposal:</strong><br>I can support ${esc(data.role.title.toLowerCase())} tasks by handling ${esc(extra.wedge)}. I will keep claims tied to real work, visible samples, and tools I can defend in an interview.</div>
+      <div class="copy-box"><strong>Follow-up:</strong><br>Hello, I wanted to follow up on my application for the ${esc(data.role.title)} role. I can send a short ${esc(data.role.proof)} sample if useful.</div>
+    </section>`;
+}
+
 function guideHtml(data) {
   const readiness = roleReadiness(data);
   const skills = skillList(data);
   const resumeSummary = summaryCopy(data, readiness);
-  const lessonCards = data.role.lessons.map(([title, href, why]) => `
+  const extra = roleExtra(data);
+  const signals = strongestSignals(data);
+  const bullets = deriveBullets(data);
+  const lessonCards = data.role.lessons.map(([title, href, why], i) => `
     <div class="resource-card">
-      <a href="${esc(href)}" target="_blank" rel="noopener">${esc(title)}</a>
-      <small>${esc(why)}</small>
+      <a href="${esc(href)}" target="_blank" rel="noopener">${i + 1}. ${esc(title)}</a>
+      <small>${esc(why)} Artifact to produce: one note, sample, or profile edit tied to ${esc(extra.wedge)}.</small>
     </div>`).join("");
   const jobBoardHref = `../jobs/index.html?role=${encodeURIComponent(slugify(data.role.title))}`;
   const resumeBuilderHref = `../resume-builder/index.html?role=${encodeURIComponent(data.targetRoleKey)}&archetype=${encodeURIComponent(slugify(data.role.archetype))}`;
@@ -1336,7 +1671,7 @@ function guideHtml(data) {
       <section class="guide-section">
         <h3>1. Your Starting Point</h3>
         <p><strong>Current situation:</strong> ${esc(data.situation)}.</p>
-        <p><strong>Strengths visible from intake:</strong> ${esc(data.tools.slice(0, 5).join(", ") || "you have a starting point to build from")}.</p>
+        <p><strong>Strongest intake signals:</strong> ${esc(signals.join("; ") || "your selected role and tools")}.</p>
         <p><strong>Main constraint:</strong> ${esc(data.struggle)}.</p>
         <p><strong>Plain recommendation:</strong> ${esc(readiness.note)}</p>
       </section>
@@ -1344,57 +1679,40 @@ function guideHtml(data) {
       <section class="guide-section">
         <h3>2. Your Best-Fit Remote Role</h3>
         <p><strong>Primary role:</strong> ${esc(data.role.title)}.</p>
-        <p><strong>Why this fits:</strong> Your situation and tools point toward a role where honest execution, clean communication, and visible proof matter more than pretending to have senior experience.</p>
-        <p><strong>Employers will expect:</strong> role-matched tools, clear examples, reliable updates, and proof that you can finish the work.</p>
-        <p><strong>Do not claim:</strong> employers, dates, certifications, outcomes, metrics, or tools you did not provide.</p>
+        ${routingExplainerHtml(data)}
+        <p><strong>Why this fits:</strong> Your intake points to ${esc(extra.wedge)}. That is the evidence to make visible in your resume and proof work.</p>
         <p><strong>Secondary roles:</strong> ${esc(data.role.secondary.join(", "))}.</p>
         <p><strong>Avoid for now:</strong> ${esc(data.role.avoid)}</p>
+        <p><strong>Truth rule:</strong> Do not claim employers, dates, certifications, outcomes, metrics, or tools you did not provide.</p>
       </section>
 
       <section class="guide-section">
         <h3>3. Your Resume Strategy</h3>
+        ${scopeLadderHtml(data)}
         <div class="copy-box"><strong>Resume headline:</strong><br>${esc(data.role.headline)}</div>
         <div class="copy-box"><strong>Professional summary:</strong><br>${esc(resumeSummary)}</div>
         <p><strong>Core skills to show:</strong> ${esc(skills.join(", "))}.</p>
-        <p><strong>Experience positioning:</strong> Rewrite your work history around transferable tasks, tools used, volume handled, deadlines met, and proof you can explain.</p>
-        <p><strong>Remove or reduce:</strong> vague claims like hard-working, team player, detail-oriented, and anything that sounds senior without evidence.</p>
+        <p><strong>Experience positioning:</strong> Lead with ${esc(extra.wedge)}. Use the old-role tasks you can prove, then add proof projects only where experience is thin.</p>
       </section>
 
       <section class="guide-section">
         <h3>4. Resume Draft</h3>
-        <div class="copy-box"><strong>Contact header placeholders:</strong><br>${esc(data.name)} · ${esc(data.email)} · Philippines · OnlineJobs.ph link · LinkedIn link · Portfolio link</div>
+        <div class="copy-box"><strong>Contact header placeholders:</strong><br>${esc(data.name)}, ${esc(data.email)}, Philippines, OnlineJobs.ph link, LinkedIn link, Portfolio link</div>
         <div class="copy-box"><strong>Summary:</strong><br>${esc(resumeSummary)}</div>
-        <div class="copy-box"><strong>Skills:</strong><br>${esc(skills.join(" · "))}</div>
-        <div class="copy-box"><strong>Experience bullets:</strong>
-          <ul>
-            <li>Handled [volume] of [task] using ${esc(data.tools[0] || "[tool]")} while maintaining [quality signal].</li>
-            <li>Organized [workflow or records] so the team could track [status, customer, task, or deadline] clearly.</li>
-            <li>Created or improved [template, tracker, content, response, or process] based on the work you actually did.</li>
-          </ul>
+        <div class="copy-box"><strong>Skills:</strong><br>${esc(skills.join(", "))}</div>
+        <div class="copy-box"><strong>Experience bullets from your intake:</strong>
+          <ul>${bullets.map(b => `<li>${esc(b)}</li>`).join("")}</ul>
         </div>
-        <div class="copy-box"><strong>Projects or proof:</strong><br>Add the ${esc(data.role.proof)} project below as a Projects section if paid experience is thin.</div>
+        <p><strong>Editing note:</strong> Keep every bullet true. If a bullet asks for a number, add it only if you can defend it in an interview.</p>
       </section>
 
-      <section class="guide-section">
-        <h3>5. Portfolio or Proof Project</h3>
-        <p><strong>Project name:</strong> ${esc(data.role.proof)}.</p>
-        <ol>${data.role.project.map(item => `<li>${esc(item)}</li>`).join("")}</ol>
-        <p><strong>Output checklist:</strong> one public-safe document or Google Sites page, one screenshot, one short process note, and one resume bullet.</p>
-        <div class="copy-box"><strong>Resume bullet from the project:</strong><br>Built a ${esc(data.role.proof.toLowerCase())} to demonstrate ${esc(data.role.title.toLowerCase())} readiness, including clear steps, organized tracking, and a reusable workflow.</div>
-      </section>
+      ${proofSectionHtml(data)}
 
-      <section class="guide-section">
-        <h3>6. Application Pack</h3>
-        <div class="copy-box"><strong>LinkedIn About:</strong><br>I am building my path toward ${esc(data.role.title)} work. My focus is ${esc(data.role.headline.toLowerCase())}. I use ${esc(data.tools.slice(0, 5).join(", ") || "practical remote-work tools")} and I am building visible proof through a ${esc(data.role.proof.toLowerCase())}.</div>
-        <div class="copy-box"><strong>OnlineJobs.ph profile summary:</strong><br>${esc(resumeSummary)} I am currently preparing proof through a ${esc(data.role.proof.toLowerCase())} and can share samples during application.</div>
-        <div class="copy-box"><strong>Email pitch:</strong><br>Hello, I saw your opening for ${esc(data.role.title)} support. My background is ${esc(data.situation.toLowerCase())}, and I can help with ${esc(skills.slice(0, 4).join(", "))}. I attached my resume and can also share a small proof project if helpful. Thank you for considering my application.</div>
-        <div class="copy-box"><strong>Short proposal:</strong><br>I can help with ${esc(data.role.title.toLowerCase())} tasks by combining clear updates, organized execution, and tools like ${esc(data.tools.slice(0, 4).join(", ") || "[your tools]")}.</div>
-        <div class="copy-box"><strong>Follow-up:</strong><br>Hello, I wanted to follow up on my application for the ${esc(data.role.title)} role. I am still interested and can send a small sample related to your workflow if useful.</div>
-      </section>
+      ${applicationPackHtml(data, resumeSummary, skills)}
 
       <section class="guide-section">
         <h3>7. Your BFF Lesson Path</h3>
-        <p>Start with these lessons based on your role path. These links point to the live BFF curriculum, so the lesson list can improve over time.</p>
+        <p>Take these in order. After each lesson, produce one artifact you can attach to your resume, portfolio, or profile.</p>
         <div class="resource-grid">${lessonCards}</div>
         <p><a href="${esc(curriculumHref)}" target="_blank" rel="noopener">Open personalized curriculum path</a></p>
       </section>
@@ -1404,7 +1722,9 @@ function guideHtml(data) {
         <p><strong>Role category:</strong> ${esc(data.role.title)}.</p>
         <p><strong>Search terms:</strong> ${esc(data.role.terms)}.</p>
         <p><strong>Good-fit signals:</strong> clear task list, beginner-safe expectations, tools you know, and sample work accepted.</p>
-        <p><strong>Red flags:</strong> unpaid trial work, vague role scope, senior strategy expectations, or tools you cannot explain.</p>
+        <p><strong>Role-specific red flags:</strong></p>
+        <ul>${extra.redFlags.map(flag => `<li>${esc(flag)}</li>`).join("")}</ul>
+        <p><strong>Lower-risk first roles:</strong> ${esc(extra.lowerRisk.join(", "))}.</p>
         <p><a href="${esc(jobBoardHref)}" target="_blank" rel="noopener">Open BFF Job Board path</a></p>
       </section>
 
@@ -1416,7 +1736,7 @@ function guideHtml(data) {
           <div class="resource-card"><a href="../lesson-groups-and-forums/index.html" target="_blank" rel="noopener">Groups and forums</a><small>Ask for feedback where your role path fits.</small></div>
           <div class="resource-card"><a href="../resume-builder/index.html" target="_blank" rel="noopener">Resume Builder</a><small>Turn this guide into a printable resume pack.</small></div>
         </div>
-        <p><strong>Question to ask:</strong> I am targeting ${esc(data.role.title)}. Can someone review whether my proof project is enough for beginner applications?</p>
+        <p><strong>Question to ask:</strong> I am targeting ${esc(data.role.title)}. Does my wording show ${esc(extra.wedge)} without overclaiming the next scope rung?</p>
       </section>
 
       <section class="guide-section">
@@ -1427,14 +1747,14 @@ function guideHtml(data) {
       <section class="guide-section">
         <h3>11. Final Checklist</h3>
         <ul>
-          <li>Resume matches ${esc(data.role.title)}.</li>
-          <li>Portfolio proof exists and does not invent paid experience.</li>
-          <li>OnlineJobs.ph profile is updated.</li>
-          <li>LinkedIn About is updated.</li>
-          <li>Application pitch is ready.</li>
-          <li>BFF lessons started.</li>
-          <li>Job board filter bookmarked.</li>
-          <li>Community question prepared.</li>
+          <li>Resume headline and summary match ${esc(data.role.title)}.</li>
+          <li>Experience bullets use your real intake details and no fake metrics.</li>
+          <li>Proof shows ${esc(extra.proofFocus)}.</li>
+          <li>Portfolio or case study uses public-safe data only.</li>
+          <li>OnlineJobs.ph profile and LinkedIn About use the same role wedge.</li>
+          <li>Application pitch leads with tools and tasks you can defend.</li>
+          <li>Job board filter is bookmarked.</li>
+          <li>Community question asks about proof quality and overclaim risk.</li>
         </ul>
       </section>
     </div>

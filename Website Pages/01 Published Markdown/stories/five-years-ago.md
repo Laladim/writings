@@ -42,12 +42,12 @@ Looking back, the promise is true. Our sufferings are His blessings in disguise.
 
 Today I am a Certified Facebook Blueprint Creative Strategist, a Google Educator, and the founder of a community of thousands. None of that is the point of this story.
 
-The point is that five years ago, a broken woman who was changing her hair color every week was already being carried.
+The point is that five years ago, a broken woman who was changing her hair color every week was already being carried. I did not feel it then. I could not see it then. But the same hands that are holding me now were holding me when I had nothing to show for the day except getting through it.
 
-If this is where you are right now, please stay on the road. Just today. Just this one small step. Just the next honest thing.
+If this is where you are right now, please stay on the road. Just today. Just this one small step. Just the next honest thing. Open the laptop. Send the message. Drink the water. Say the prayer even if it is only one sentence long.
 
 It is not about perfection. It is about direction.
 
 For the glory of God.
 
-— Lala
+\- Lala
