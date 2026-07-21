@@ -740,21 +740,29 @@
     color: var(--muted); font-style: italic;
   }
   .cat-extras .other-row {
-    display: flex; align-items: center; gap: 8px;
+    display: grid;
+    grid-template-columns: minmax(180px, 1fr) 190px;
+    gap: 8px;
     margin-top: 4px;
     padding-top: 6px;
     border-top: 1px dotted var(--border);
   }
   .cat-extras .other-row .lbl-other {
-    white-space: nowrap;
+    grid-column: 1 / -1;
     color: var(--gold-deep);
     font-weight: 600;
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.08em;
   }
+  .cat-extras .other-row .other-help {
+    grid-column: 1 / -1;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.45;
+  }
   .q2-other-input {
-    flex: 1; min-width: 180px;
+    width: 100%; min-width: 180px;
     padding: 5px 9px;
     font-size: 12.5px;
     border: 1px dashed var(--border);
@@ -763,6 +771,20 @@
   }
   .q2-other-input:focus { outline:none; border-color: var(--purple); border-style: solid; background: #fff; }
   .q2-other-input:disabled { background: #f0ecea; color: #aaa; }
+  .q2-custom-badge {
+    display: inline-block;
+    margin-left: 5px;
+    color: var(--gold-deep);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+  }
+  @media (max-width: 640px) {
+    .cat-extras .other-row { grid-template-columns: 1fr; }
+    .cat-extras .other-row .lbl-other,
+    .cat-extras .other-row .other-help { grid-column: 1; }
+  }
   .tool-cat-q2 {
     padding: 8px 10px;
     border-radius: 8px;
@@ -783,6 +805,39 @@
     border-radius: 6px; background: #fdfcfb;
   }
   .q3-other-row textarea:focus { outline:none; border-color: var(--purple); border-style: solid; background: #fff; }
+
+  .custom-tool-add {
+    margin: 24px 0 8px;
+    padding: 18px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: var(--sand);
+  }
+  .custom-tool-add h3 { margin: 0 16px 4px; }
+  .custom-tool-add > p { margin: 0 16px 14px; color: var(--muted); font-size: 12.5px; }
+  .custom-tool-form {
+    display: grid;
+    grid-template-columns: minmax(180px, 1.35fr) minmax(170px, 1fr) minmax(160px, .9fr) auto;
+    gap: 10px;
+    align-items: end;
+    padding: 0 16px;
+  }
+  .custom-tool-form label { margin: 0; }
+  .custom-tool-form .btn { min-height: 39px; white-space: nowrap; }
+  .custom-tool-status {
+    min-height: 18px;
+    margin: 9px 16px 0;
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 600;
+  }
+  @media (max-width: 780px) {
+    .custom-tool-form { grid-template-columns: 1fr 1fr; }
+    .custom-tool-form .btn { width: 100%; }
+  }
+  @media (max-width: 520px) {
+    .custom-tool-form { grid-template-columns: 1fr; }
+  }
 
   /* Q2 tool tally bar */
   .q2-tally {
@@ -2046,7 +2101,13 @@ function q2Bucket(effective) {
 
 // Parse comma-separated "Other tools" input → de-duped array of tool names
 function parseExtras(s) {
-  return (s||'').split(',').map(x => x.trim()).filter(Boolean);
+  const seen = new Set();
+  return (s||'').split(',').map(x => x.trim()).filter(tool => {
+    const key = tool.toLowerCase();
+    if (!tool || seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
 }
 
 // Parse Q3 "Other creative tools" textarea: one entry per line, format "Tool Name — level" or "Tool Name - level" or "Tool Name : level"
@@ -3107,9 +3168,12 @@ function renderStep1() {
           Include a tool only when you can explain what you made or managed with it. Levels:<br>
           <strong>Basic</strong> = practiced once or in a tutorial · <strong>Confident</strong> = can complete a real task independently · <strong>Expert</strong> = used for paid or client work and can explain the result
         </div>
+        <div class="note" style="margin-bottom:12px;"><strong>Your tool is not listed?</strong> Every category has a clearly labeled add field. Choose the closest category and set the real experience level.</div>
         ${ QUICK_TOOLS_GROUPED.map(g => {
           const isNone = !!(q.q2_none||{})[g.key];
-          const tally = q2TalliedCount(Object.fromEntries(g.tools.map(t => [t, (q.q2_levels||{})[t]]).filter(([_,v])=>v)));
+          const extras = parseExtras((q.q2_other||{})[g.key]||'').filter(t => !g.tools.includes(t));
+          const toolsForGroup = [...g.tools, ...extras];
+          const tally = q2TalliedCount(Object.fromEntries(toolsForGroup.map(t => [t, (q.q2_levels||{})[t]]).filter(([_,v])=>v)));
           return `
           <div class="tool-cat-q2 ${isNone?'is-none':''}" style="margin-bottom:6px;">
             <div style="font-size:11px;font-weight:700;color:var(--purple);text-transform:uppercase;letter-spacing:.1em;margin-bottom:3px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
@@ -3118,11 +3182,11 @@ function renderStep1() {
               ${ tally.confident ? `<span style="font-size:10px;padding:2px 7px;border-radius:10px;background:#f0ecf5;color:var(--purple);border:1px solid #d7d1e0;font-weight:700;">${tally.confident} confident</span>` : '' }
             </div>
             <div class="q2-skill-list">
-              ${ g.tools.map(t => {
+              ${ toolsForGroup.map(t => {
                 const lvl = (q.q2_levels||{})[t] || '';
                 return `
                 <div class="q2-row">
-                  <div class="tool-name">${t}</div>
+                  <div class="tool-name">${esc(t)}${extras.includes(t) ? '<span class="q2-custom-badge">Added</span>' : ''}</div>
                   <select data-q2-tool="${esc(t)}" data-q2-cat="${esc(g.key)}" data-level="${lvl}" ${isNone?'disabled':''}>
                     <option value=""           ${!lvl?'selected':''}>None, never used</option>
                     <option value="basic"      ${lvl==='basic'?'selected':''}>Basic, tutorial or one practice</option>
@@ -3140,12 +3204,18 @@ function renderStep1() {
                 </label>
               </div>
               <div class="other-row">
-                <span class="lbl-other">+ Other:</span>
+                <span class="lbl-other">Can't find your tool? Add it here</span>
                 <input type="text" class="q2-other-input"
                        data-q2-other="${esc(g.key)}"
-                       placeholder="Tools we didn't list (comma-separated; assumed Expert, used at work)"
+                       placeholder="Tool name, or several separated by commas"
                        value="${esc((q.q2_other||{})[g.key]||'')}"
                        ${isNone?'disabled':''}>
+                <select data-q2-other-level="${esc(g.key)}" aria-label="Experience level for newly added ${esc(g.cat)} tools" ${isNone?'disabled':''}>
+                  <option value="basic">Basic, practice only</option>
+                  <option value="confident" selected>Confident, can work independently</option>
+                  <option value="expert">Expert, paid or client work</option>
+                </select>
+                <span class="other-help">New tools appear above after you finish typing. You can then change each tool's level separately.</span>
               </div>
             </div>
           </div>
@@ -3660,6 +3730,47 @@ function archetypeHint() {
 }
 
 /* ---------- STEP 5: Skills + Tools ---------- */
+let customToolNotice = '';
+
+function addCustomToolFromStep5() {
+  const nameInput = document.getElementById('customToolName');
+  const categoryInput = document.getElementById('customToolCategory');
+  const levelInput = document.getElementById('customToolLevel');
+  const status = document.getElementById('customToolStatus');
+  const rawName = nameInput ? nameInput.value.trim().replace(/\s+/g, ' ') : '';
+  if (!rawName) {
+    if (status) {
+      status.style.color = 'var(--red)';
+      status.textContent = 'Enter the tool name first.';
+    }
+    if (nameInput) nameInput.focus();
+    return;
+  }
+
+  const tool = normalizeToolName(rawName) || rawName;
+  const knownCategory = TOOL_TO_CATEGORY[tool];
+  const category = knownCategory || (categoryInput ? categoryInput.value : 'productivity');
+  const level = levelInput ? levelInput.value : 'confident';
+  state.skills[category] = state.skills[category] || [];
+  state.quiz.q2_levels = state.quiz.q2_levels || {};
+  state.quiz.q2_other = state.quiz.q2_other || {};
+  state.quiz.q2_levels[tool] = level;
+  if (!state.skills[category].includes(tool)) state.skills[category].push(tool);
+
+  const quickGroup = QUICK_TOOLS_GROUPED.find(group => group.key === category);
+  if (!quickGroup || !quickGroup.tools.includes(tool)) {
+    const extras = parseExtras(state.quiz.q2_other[category] || '');
+    if (!extras.some(extra => extra.toLowerCase() === tool.toLowerCase())) extras.push(tool);
+    state.quiz.q2_other[category] = extras.join(', ');
+  }
+  if (state.quiz.q2_none) delete state.quiz.q2_none[category];
+
+  const categoryName = (TOOL_CATEGORIES.find(item => item.key === category) || {}).name || category;
+  customToolNotice = `${tool} added under ${categoryName} as ${level}.`;
+  saveState();
+  render();
+}
+
 function renderStep5() {
   const skills = state.skills || {};
   return `
@@ -3667,6 +3778,32 @@ function renderStep5() {
       <div class="eyebrow">Step 5 of 7</div>
       <h1>Skills + tools</h1>
       <p class="lede">Check the tools you can use without step-by-step help. Office and communication apps show readiness. Specialist platforms show your role, workflow depth, and client value.</p>
+
+      <section class="custom-tool-add" aria-labelledby="custom-tool-title">
+        <h3 id="custom-tool-title">Can't find your tool?</h3>
+        <p>Add it directly to the correct resume section. Only add tools you can discuss in an interview.</p>
+        <form class="custom-tool-form" onsubmit="event.preventDefault(); addCustomToolFromStep5();">
+          <label class="field">
+            <span class="lbl">Tool name</span>
+            <input id="customToolName" type="text" autocomplete="off" placeholder="Example: Kajabi" aria-describedby="customToolStatus">
+          </label>
+          <label class="field">
+            <span class="lbl">Category</span>
+            <select id="customToolCategory">
+              ${TOOL_CATEGORIES.map(cat => `<option value="${esc(cat.key)}">${esc(cat.name)}</option>`).join('')}
+            </select>
+          </label>
+          <label class="field">
+            <span class="lbl">Experience</span>
+            <select id="customToolLevel">
+              <option value="confident">Confident, independent use</option>
+              <option value="expert">Expert, paid or client work</option>
+            </select>
+          </label>
+          <button class="btn btn-primary" type="submit">Add tool</button>
+        </form>
+        <div class="custom-tool-status" id="customToolStatus" role="status" aria-live="polite">${esc(customToolNotice)}</div>
+      </section>
 
       ${ TOOL_CATEGORIES.map(cat => {
         const userExtras = (skills[cat.key]||[]).filter(t => !cat.tools.includes(t));
@@ -4518,12 +4655,14 @@ function bindHandlers() {
     });
   });
 
-  // Q2 — per-category "Other" text input. Custom tools default to Expert (work-used).
+  // Q2: per-category custom tool input with an explicit level.
   document.querySelectorAll('[data-q2-other]').forEach(el => {
     let typingTimer;
+    const levelEl = document.querySelector(`[data-q2-other-level="${el.dataset.q2Other}"]`);
     const applyExtras = (rerender) => {
       const catKey = el.dataset.q2Other;
       const newExtras = parseExtras(el.value);
+      const chosenLevel = levelEl ? levelEl.value : 'confident';
       state.quiz.q2_other = state.quiz.q2_other || {};
       state.quiz.q2_levels = state.quiz.q2_levels || {};
       // remove previously-recorded extras from levels/skills
@@ -4536,11 +4675,13 @@ function bindHandlers() {
           }
         }
       });
-      // add new extras at Expert level (user took the trouble to type them in)
+      // New extras use the level the candidate chose. Basic tools stay out of the resume skills list.
       newExtras.forEach(t => {
-        if (!state.quiz.q2_levels[t]) state.quiz.q2_levels[t] = 'expert';
+        if (!prevExtras.includes(t) || !state.quiz.q2_levels[t]) state.quiz.q2_levels[t] = chosenLevel;
         state.skills[catKey] = state.skills[catKey] || [];
-        if (!state.skills[catKey].includes(t)) state.skills[catKey].push(t);
+        const listable = ['confident','expert'].includes(state.quiz.q2_levels[t]);
+        if (listable && !state.skills[catKey].includes(t)) state.skills[catKey].push(t);
+        if (!listable) state.skills[catKey] = state.skills[catKey].filter(x => x !== t);
       });
       state.quiz.q2_other[catKey] = el.value;
       if (quizFilled(state.quiz)) state.archetype = scoreArchetype(state.quiz).winner;
@@ -4551,13 +4692,14 @@ function bindHandlers() {
     el.addEventListener('input', () => {
       clearTimeout(typingTimer);
       typingTimer = setTimeout(() => applyExtras(false), 250);
-      // update tally only — recompute effective from current state + the typed extras (default expert)
+      // update tally only, without taking focus away from the custom field
       const catKey = el.dataset.q2Other;
       const prevExtras = parseExtras((state.quiz.q2_other||{})[catKey]||'');
       const newExtras = parseExtras(el.value);
+      const chosenLevel = levelEl ? levelEl.value : 'confident';
       const tempLevels = Object.assign({}, state.quiz.q2_levels||{});
       prevExtras.forEach(t => { if (!newExtras.includes(t)) delete tempLevels[t]; });
-      newExtras.forEach(t => { if (!tempLevels[t]) tempLevels[t] = 'expert'; });
+      newExtras.forEach(t => { if (!tempLevels[t]) tempLevels[t] = chosenLevel; });
       const eff = q2EffectiveCount(tempLevels);
       const t = q2TalliedCount(tempLevels);
       const tallyNum = document.querySelector('.q2-tally .num');
@@ -4571,7 +4713,27 @@ function bindHandlers() {
         chips[2].textContent = `Basic: ${t.basic}`;
       }
     });
-    el.addEventListener('blur', () => { clearTimeout(typingTimer); applyExtras(true); });
+    el.addEventListener('blur', event => {
+      clearTimeout(typingTimer);
+      const movingToLevel = event.relatedTarget && event.relatedTarget.dataset && event.relatedTarget.dataset.q2OtherLevel;
+      applyExtras(!movingToLevel);
+    });
+    if (levelEl) {
+      levelEl.addEventListener('change', () => {
+        const catKey = el.dataset.q2Other;
+        const extras = parseExtras(el.value);
+        state.quiz.q2_levels = state.quiz.q2_levels || {};
+        state.skills[catKey] = state.skills[catKey] || [];
+        extras.forEach(t => {
+          state.quiz.q2_levels[t] = levelEl.value;
+          const listable = ['confident','expert'].includes(levelEl.value);
+          if (listable && !state.skills[catKey].includes(t)) state.skills[catKey].push(t);
+          if (!listable) state.skills[catKey] = state.skills[catKey].filter(x => x !== t);
+        });
+        saveState();
+        render();
+      });
+    }
   });
 
   // Q3 — per-group "None" toggle
@@ -4689,9 +4851,26 @@ function bindHandlers() {
   document.querySelectorAll('[data-tool]').forEach(el => {
     el.addEventListener('change', () => {
       const [cat, tool] = el.dataset.tool.split('|');
+      const category = TOOL_CATEGORIES.find(item => item.key === cat);
+      const isCustom = !category || !category.tools.includes(tool);
       state.skills[cat] = state.skills[cat] || [];
-      if (el.checked) { if (!state.skills[cat].includes(tool)) state.skills[cat].push(tool); }
-      else { state.skills[cat] = state.skills[cat].filter(t => t !== tool); }
+      if (el.checked) {
+        if (!state.skills[cat].includes(tool)) state.skills[cat].push(tool);
+        if (isCustom) {
+          state.quiz.q2_levels = state.quiz.q2_levels || {};
+          state.quiz.q2_levels[tool] = state.quiz.q2_levels[tool] || 'confident';
+        }
+      } else {
+        state.skills[cat] = state.skills[cat].filter(t => t !== tool);
+        if (isCustom) {
+          if (state.quiz.q2_levels) delete state.quiz.q2_levels[tool];
+          const extras = parseExtras((state.quiz.q2_other||{})[cat]||'').filter(t => t !== tool);
+          if (state.quiz.q2_other) {
+            if (extras.length) state.quiz.q2_other[cat] = extras.join(', ');
+            else delete state.quiz.q2_other[cat];
+          }
+        }
+      }
       saveState();
       refreshStarterPreview();
       // re-render audit only
