@@ -1068,25 +1068,29 @@ const TOOL_CATEGORIES = [
   { key: 'productivity', name: 'Productivity', adoption: 93, gap: false,
     tools: ['MS Word','MS Excel','Google Docs','Google Sheets','MS PowerPoint','Google Slides','Notion','Evernote','OneNote'] },
   { key: 'communication', name: 'Communication', adoption: 32, gap: false,
-    tools: ['Gmail','Outlook','Slack','MS Teams','Zoom','Google Meet','Discord','WhatsApp Business'] },
-  { key: 'design', name: 'Design / Creative', adoption: 58, gap: false,
-    tools: ['Canva','Photoshop','Lightroom','Illustrator','Figma','Procreate','InDesign'] },
-  { key: 'video', name: 'Video Editing', adoption: 13, gap: true,
-    tools: ['CapCut','Canva Video','Premiere Pro','Final Cut Pro','DaVinci Resolve','iMovie','InShot'] },
-  { key: 'social', name: 'Social Media Tools', adoption: 7, gap: true,
-    tools: ['Buffer','Hootsuite','Later','Sprout Social','Meta Business Suite','TikTok Ads','LinkedIn Sales Navigator'] },
+    tools: ['Gmail','Outlook','Slack','MS Teams','Zoom','Google Meet','Discord','WhatsApp Business','Loom'] },
   { key: 'pm', name: 'Project Management', adoption: 23, gap: true,
     tools: ['Trello','Asana','ClickUp','Monday.com','Notion (PM)','Jira','Basecamp'] },
-  { key: 'crm', name: 'CRM / Sales', adoption: 14, gap: true,
-    tools: ['HubSpot CRM','Salesforce','Pipedrive','Close.com','Zoho CRM','Copper'] },
+  { key: 'automation', name: 'Automation / AI Workflows', adoption: null, gap: false,
+    tools: ['Zapier','Make','n8n','Airtable','ChatGPT','Claude','Gemini'] },
+  { key: 'crm', name: 'CRM / Funnels / Sales', adoption: 14, gap: true,
+    tools: ['GoHighLevel','HubSpot CRM','Salesforce','Pipedrive','Close.com','Zoho CRM','Copper','Apollo.io','Outreach','Salesloft'] },
+  { key: 'analytics', name: 'Analytics / SEO', adoption: null, gap: false,
+    tools: ['Google Analytics 4','Google Search Console','Looker Studio','Ahrefs','Semrush','Screaming Frog'] },
+  { key: 'design', name: 'Design / Creative', adoption: 58, gap: false,
+    tools: ['Canva','Photoshop','Lightroom','Illustrator','Figma','Procreate','InDesign'] },
+  { key: 'video', name: 'Video / Podcast / Live Production', adoption: 13, gap: true,
+    tools: ['Descript','Premiere Pro','After Effects','DaVinci Resolve','Final Cut Pro','CapCut','Frame.io','StreamYard','Riverside','OBS Studio','Canva Video','iMovie','InShot'] },
+  { key: 'social', name: 'Social Media Tools', adoption: 7, gap: true,
+    tools: ['Buffer','Hootsuite','Later','Sprout Social','Meta Business Suite','TikTok Ads','LinkedIn Sales Navigator','ManyChat'] },
   { key: 'email', name: 'Email Marketing', adoption: 4, gap: true,
     tools: ['Mailchimp','ConvertKit','Klaviyo','ActiveCampaign','Constant Contact','Beehiiv','Substack'] },
   { key: 'support', name: 'Customer Support', adoption: 10, gap: true,
-    tools: ['Zendesk','Intercom','Freshdesk','Help Scout','Front','LiveChat'] },
+    tools: ['Zendesk','Intercom','Freshdesk','Help Scout','Front','LiveChat','Gorgias'] },
   { key: 'accounting', name: 'Bookkeeping / Accounting', adoption: 19, gap: true,
     tools: ['QuickBooks','Xero','FreshBooks','Hubdoc','Wave','Bill.com'] },
   { key: 'ecom', name: 'E-commerce', adoption: 12, gap: true,
-    tools: ['Shopify','WooCommerce','Amazon Seller','Lazada Seller','Shopee Seller','BigCommerce','TikTok Shop'] },
+    tools: ['Shopify','WooCommerce','Amazon Seller','Lazada Seller','Shopee Seller','BigCommerce','TikTok Shop','ReCharge'] },
   { key: 'website', name: 'Website Builders', adoption: 16, gap: false,
     tools: ['Wix','Squarespace','Webflow','WordPress','Carrd','Framer'] },
   { key: 'storage', name: 'Cloud Storage', adoption: 44, gap: false,
@@ -1110,23 +1114,26 @@ const CLICHE_KILL = ['detail-oriented','team player','hard-working','results-dri
 
 // Step 1 quick-pick tools list (gap categories starred). `key` matches TOOL_CATEGORIES so picks auto-sync to Step 5.
 const QUICK_TOOLS_GROUPED = [
-  { key: 'productivity',  cat: 'Productivity & Docs',         tools: ['Google Docs','Google Sheets','MS Excel','MS Word','Notion'] },
-  { key: 'communication', cat: 'Communication',               tools: ['Gmail','Slack','Zoom','MS Teams'] },
+  { key: 'video',         cat: 'Video, Podcast & Live ⭐',    tools: ['Descript','Premiere Pro','After Effects','DaVinci Resolve','Frame.io','StreamYard','Riverside','OBS Studio','CapCut'] },
+  { key: 'crm',           cat: 'CRM, Funnels & Sales ⭐',      tools: ['GoHighLevel','HubSpot CRM','Salesforce','Pipedrive','Apollo.io'] },
+  { key: 'automation',    cat: 'Automation & AI Workflows',   tools: ['Zapier','Make','n8n','Airtable','ChatGPT','Claude'] },
   { key: 'pm',            cat: 'Project Management ⭐',       tools: ['Trello','Asana','ClickUp','Monday.com'] },
+  { key: 'analytics',     cat: 'Analytics & SEO',             tools: ['Google Analytics 4','Google Search Console','Looker Studio','Ahrefs','Semrush'] },
   { key: 'design',        cat: 'Design',                      tools: ['Canva','Photoshop','Figma'] },
-  { key: 'video',         cat: 'Video ⭐',                    tools: ['CapCut','Premiere Pro','iMovie'] },
   { key: 'social',        cat: 'Social Media Tools ⭐',       tools: ['Buffer','Hootsuite','Later','Meta Business Suite'] },
-  { key: 'crm',           cat: 'CRM / Sales ⭐',              tools: ['HubSpot CRM','Salesforce','Pipedrive'] },
   { key: 'email',         cat: 'Email Marketing ⭐',          tools: ['Mailchimp','Klaviyo','ConvertKit'] },
   { key: 'support',       cat: 'Customer Support ⭐',         tools: ['Zendesk','Intercom','Freshdesk'] },
   { key: 'accounting',    cat: 'Bookkeeping',                 tools: ['QuickBooks','Xero','Wave'] },
-  { key: 'ecom',          cat: 'E-commerce',                  tools: ['Shopify','WooCommerce','Amazon Seller','Shopee Seller','Lazada Seller'] }
+  { key: 'ecom',          cat: 'E-commerce',                  tools: ['Shopify','WooCommerce','Amazon Seller','Shopee Seller','Lazada Seller'] },
+  { key: 'productivity',  cat: 'Core Docs & Spreadsheets',    tools: ['Google Docs','Google Sheets','MS Excel','MS Word','Notion'] },
+  { key: 'communication', cat: 'Core Communication',          tools: ['Gmail','Slack','Zoom','MS Teams'] }
 ];
 
 // Step 1 Q3 — creative tools with savviness. Names also match TOOL_CATEGORIES.
 const CREATIVE_TOOLS_BY_GROUP = [
   { group: '📷 Photo / Design',     tools: ['Photoshop','Lightroom','Canva','Illustrator','Figma','Procreate'] },
-  { group: '🎬 Video',              tools: ['CapCut','Premiere Pro','Final Cut Pro','DaVinci Resolve','iMovie','InShot'] },
+  { group: '🎬 Video / Post',       tools: ['Descript','Premiere Pro','After Effects','DaVinci Resolve','Final Cut Pro','CapCut','Frame.io'] },
+  { group: 'Live / Podcast',        tools: ['StreamYard','Riverside','OBS Studio'] },
   { group: '📱 Social Media Tools', tools: ['Buffer','Hootsuite','Later','Meta Business Suite','TikTok Ads','Sprout Social'] }
 ];
 
@@ -2254,6 +2261,9 @@ function normalizeToolName(term) {
     'google workspace': 'Google Docs',
     'google calendar': 'Google Calendar',
     'hubspot': 'HubSpot CRM',
+    'gohighlevel': 'GoHighLevel',
+    'go high level': 'GoHighLevel',
+    'highlevel': 'GoHighLevel',
     'crm': 'HubSpot CRM',
     'customer service': 'Zendesk',
     'customer support': 'Zendesk',
@@ -2280,7 +2290,31 @@ function normalizeToolName(term) {
     'klaviyo': 'Klaviyo',
     'zendesk': 'Zendesk',
     'intercom': 'Intercom',
-    'freshdesk': 'Freshdesk'
+    'freshdesk': 'Freshdesk',
+    'descript': 'Descript',
+    'streamyard': 'StreamYard',
+    'frameio': 'Frame.io',
+    'frame.io': 'Frame.io',
+    'riverside': 'Riverside',
+    'obs': 'OBS Studio',
+    'adobe after effects': 'After Effects',
+    'ga4': 'Google Analytics 4',
+    'google analytics': 'Google Analytics 4',
+    'google search console': 'Google Search Console',
+    'search console': 'Google Search Console',
+    'looker studio': 'Looker Studio',
+    'zapier': 'Zapier',
+    'make.com': 'Make',
+    'n8n': 'n8n',
+    'airtable': 'Airtable',
+    'chatgpt': 'ChatGPT',
+    'claude': 'Claude',
+    'gemini': 'Gemini',
+    'apollo': 'Apollo.io',
+    'apollo.io': 'Apollo.io',
+    'outreach': 'Outreach',
+    'salesloft': 'Salesloft',
+    'gorgias': 'Gorgias'
   };
   if (aliases[clean]) return aliases[clean];
   return TOOL_CATEGORIES.flatMap(c => c.tools).find(t => t.toLowerCase() === clean) || '';
@@ -3049,7 +3083,7 @@ function renderStep1() {
     <div class="card">
       <div class="eyebrow">Step 1 of 7</div>
       <h1>Resume setup</h1>
-      <p class="lede">Start with the clearest source: a job you want, an existing resume, or an archetype. Then list only the tools strong enough to defend on a resume.</p>
+      <p class="lede">Start with the clearest source: a job you want, an existing resume, or an archetype. Core office apps are table stakes. Add the specialist platforms that show what you can actually deliver.</p>
 
       ${renderStartChooser()}
 
@@ -3070,8 +3104,8 @@ function renderStep1() {
       <div class="quiz-q">
         <div class="q-text">${state.startMode === 'archetype' ? '3' : '4'}. Rate the tools you can defend on a resume.</div>
         <div style="font-size:11.5px;color:var(--muted);margin-bottom:8px;line-height:1.55;">
-          Gap categories are high-leverage when you have real experience. Levels:<br>
-          <strong>Basic</strong> = heard of it, never used at work · <strong>Confident</strong> = explored on my own · <strong>Expert</strong> = used at work
+          Include a tool only when you can explain what you made or managed with it. Levels:<br>
+          <strong>Basic</strong> = practiced once or in a tutorial · <strong>Confident</strong> = can complete a real task independently · <strong>Expert</strong> = used for paid or client work and can explain the result
         </div>
         ${ QUICK_TOOLS_GROUPED.map(g => {
           const isNone = !!(q.q2_none||{})[g.key];
@@ -3090,10 +3124,10 @@ function renderStep1() {
                 <div class="q2-row">
                   <div class="tool-name">${t}</div>
                   <select data-q2-tool="${esc(t)}" data-q2-cat="${esc(g.key)}" data-level="${lvl}" ${isNone?'disabled':''}>
-                    <option value=""           ${!lvl?'selected':''}>None / Never heard</option>
-                    <option value="basic"      ${lvl==='basic'?'selected':''}>Basic, heard of it</option>
-                    <option value="confident"  ${lvl==='confident'?'selected':''}>Confident, self-taught</option>
-                    <option value="expert"     ${lvl==='expert'?'selected':''}>Expert, used at work</option>
+                    <option value=""           ${!lvl?'selected':''}>None, never used</option>
+                    <option value="basic"      ${lvl==='basic'?'selected':''}>Basic, tutorial or one practice</option>
+                    <option value="confident"  ${lvl==='confident'?'selected':''}>Confident, can complete a real task</option>
+                    <option value="expert"     ${lvl==='expert'?'selected':''}>Expert, paid or client work</option>
                   </select>
                 </div>`;
               }).join('') }
@@ -3632,7 +3666,7 @@ function renderStep5() {
     <div class="card">
       <div class="eyebrow">Step 5 of 7</div>
       <h1>Skills + tools</h1>
-      <p class="lede">Check every tool you <strong>use weekly</strong>. Tool count is the single strongest proceed-vs-reject predictor (5.3 vs 3.5 average). Gap-category tools (gold flag) are highest-leverage if you have them.</p>
+      <p class="lede">Check the tools you can use without step-by-step help. Office and communication apps show readiness. Specialist platforms show your role, workflow depth, and client value.</p>
 
       ${ TOOL_CATEGORIES.map(cat => {
         const userExtras = (skills[cat.key]||[]).filter(t => !cat.tools.includes(t));
@@ -3640,7 +3674,7 @@ function renderStep5() {
         <div class="tool-cat">
           <div class="cat-h">
             ${cat.name}
-            <span style="font-size:11px;color:var(--muted);font-weight:500;">(${cat.adoption}% of pool fluent)</span>
+            ${cat.adoption !== null ? `<span style="font-size:11px;color:var(--muted);font-weight:500;">(${cat.adoption}% of study pool fluent)</span>` : '<span style="font-size:11px;color:var(--muted);font-weight:500;">(specialist stack)</span>'}
             ${cat.gap ? '<span class="gap-flag">Gap → high leverage</span>' : ''}
           </div>
           <div class="tools-grid">
@@ -3715,11 +3749,16 @@ function renderSkillsAudit() {
   const total = Object.values(state.skills||{}).reduce((s, arr)=>s+(arr||[]).length, 0);
   const gapCats = TOOL_CATEGORIES.filter(c=>c.gap).map(c=>c.key);
   const gapHits = gapCats.filter(k => (state.skills||{})[k] && state.skills[k].length > 0).length;
+  const foundationKeys = new Set(['productivity','communication','storage','time']);
+  const specialistTotal = Object.entries(state.skills||{}).reduce((sum, [key, tools]) => {
+    return sum + (foundationKeys.has(key) ? 0 : (tools||[]).length);
+  }, 0);
 
   let msg = '', cls = '';
-  if (total >= 5 && gapHits >= 1) { msg = `Strong: ${total} tools, ${gapHits} from gap categories. You'll outscore most candidates.`; cls = 'good'; }
-  else if (total >= 5 && gapHits === 0) { msg = `OK: ${total} tools but zero from gap categories (PM / CRM / Social / Email Mkt). Add ONE for a major advantage.`; cls = 'warn'; }
-  else if (total < 5) { msg = `${total} tools listed. The data shows successful candidates have 5+. Add a few from categories above OR commit to learning one from each gap category.`; cls = 'alert'; }
+  if (total >= 5 && specialistTotal >= 2 && gapHits >= 1) { msg = `Strong: ${total} tools, including ${specialistTotal} specialist tools across your target workflow.`; cls = 'good'; }
+  else if (total >= 5 && specialistTotal < 2) { msg = `${total} tools listed, but the list leans on office and communication basics. Add specialist tools you have used for the target role.`; cls = 'warn'; }
+  else if (total >= 5) { msg = `${total} tools listed. Make sure at least one category directly matches the job description.`; cls = 'warn'; }
+  else { msg = `${total} tools listed. Add only tools you can demonstrate, then name the task or result beside each one in your experience bullets.`; cls = 'alert'; }
   return `<div class="note ${cls}"><strong>Tool audit:</strong> ${msg}</div>`;
 }
 
