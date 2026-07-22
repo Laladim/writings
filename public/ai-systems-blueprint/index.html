@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>AI Systems Blueprint for Beginners</title>
+<meta name="description" content="A staged learning map that takes a total AI beginner toward Shela-level AI systems work with Codex CLI and Claude CLI.">
+<link rel="icon" type="image/png" href="../brand/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650;9..144,750&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1f2724;
+    --ink-soft:#5c6761;
+    --paper:#f7f2ea;
+    --paper-deep:#eee4d5;
+    --surface:#fffdf8;
+    --line:#d8cab9;
+    --green:#335f4d;
+    --green-deep:#234638;
+    --mint:#cde4d6;
+    --gold:#c18f43;
+    --gold-soft:#f4d98d;
+    --rust:#a45737;
+    --rust-soft:#efc1ac;
+    --blue:#375a73;
+    --blue-soft:#c8ddea;
+    --rose:#8d4962;
+    --rose-soft:#e6bccb;
+    --violet:#5c527a;
+    --violet-soft:#d8d0ea;
+    --charcoal:#303735;
+    --shadow:0 18px 40px rgba(31,39,36,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;min-width:0}
+  html{scroll-behavior:smooth;scroll-padding-top:78px}
+  body{
+    min-height:100vh;
+    color:var(--ink);
+    font-family:"IBM Plex Sans",system-ui,sans-serif;
+    line-height:1.55;
+    background:
+      linear-gradient(rgba(51,95,77,.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(51,95,77,.045) 1px, transparent 1px),
+      radial-gradient(circle at 15% 8%, rgba(193,143,67,.18), transparent 28%),
+      radial-gradient(circle at 88% 4%, rgba(55,90,115,.16), transparent 24%),
+      var(--paper);
+    background-size:28px 28px,28px 28px,auto,auto,auto;
+    overflow-x:hidden;
+  }
+  a{color:inherit}
+  .topnav{
+    position:sticky;
+    top:0;
+    z-index:40;
+    border-bottom:1px solid rgba(31,39,36,.12);
+    background:rgba(255,253,248,.92);
+    backdrop-filter:blur(12px);
+  }
+  .topnav-inner{
+    max-width:1320px;
+    margin:0 auto;
+    padding:14px 24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    min-width:0;
+  }
+  .brand{
+    text-decoration:none;
+    color:var(--green-deep);
+    font-family:"Fraunces",serif;
+    font-weight:750;
+    font-size:21px;
+    line-height:1;
+  }
+  .brand span{
+    display:block;
+    margin-top:4px;
+    color:var(--gold);
+    font-family:"IBM Plex Sans",sans-serif;
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+  }
+  .nav-links{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    font-size:13px;
+    font-weight:600;
+    color:var(--ink-soft);
+    flex-wrap:wrap;
+    min-width:0;
+    max-width:100%;
+  }
+  .nav-links a{
+    text-decoration:none;
+    white-space:nowrap;
+    transition:color .16s ease, border-color .16s ease;
+  }
+  .nav-links a:hover{color:var(--green)}
+  .nav-links a[aria-current="page"]{
+    color:var(--green-deep);
+    border-bottom:2px solid var(--gold);
+    padding-bottom:3px;
+  }
+  .nav-links .pill{
+    border:1px solid var(--green);
+    border-radius:999px;
+    padding:7px 12px;
+    color:var(--green);
+  }
+  .wrap{max-width:1320px;margin:0 auto;padding:0 24px}
+  .narrow{max-width:820px;margin:0 auto}
+  .hero{
+    padding:64px 0 36px;
+    border-bottom:1px solid rgba(31,39,36,.1);
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 300px;
+    gap:36px;
+    align-items:end;
+  }
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    color:var(--rust);
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    margin-bottom:18px;
+  }
+  .eyebrow:before{
+    content:"";
+    width:34px;
+    height:1px;
+    background:var(--rust);
+  }
+  h1{
+    max-width:920px;
+    color:var(--green-deep);
+    font-family:"Fraunces",serif;
+    font-size:clamp(38px,6vw,78px);
+    font-weight:750;
+    line-height:.96;
+    letter-spacing:0;
+    overflow-wrap:break-word;
+  }
+  .hero-copy{
+    max-width:720px;
+    margin-top:18px;
+    color:var(--ink-soft);
+    font-size:18px;
+    overflow-wrap:break-word;
+  }
+  .compass{
+    min-height:230px;
+    border:1px solid rgba(51,95,77,.22);
+    background:
+      linear-gradient(135deg, transparent 0 48%, rgba(51,95,77,.16) 48% 52%, transparent 52%),
+      linear-gradient(45deg, transparent 0 48%, rgba(193,143,67,.28) 48% 52%, transparent 52%),
+      var(--surface);
+    box-shadow:var(--shadow);
+    border-radius:8px;
+    padding:24px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+  }
+  .compass .small{
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--rust);
+  }
+  .compass strong{
+    display:block;
+    color:var(--green-deep);
+    font-family:"Fraunces",serif;
+    font-size:29px;
+    line-height:1.05;
+    overflow-wrap:break-word;
+  }
+  .compass p{
+    color:var(--ink-soft);
+    font-size:13px;
+  }
+  .map-section{padding:34px 0 60px}
+  .entry-row{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin:0 0 16px 8px;
+  }
+  .entry-pill{
+    border:2px solid var(--charcoal);
+    background:var(--surface);
+    box-shadow:3px 3px 0 var(--charcoal);
+    border-radius:999px;
+    padding:9px 20px;
+    font-family:"Fraunces",serif;
+    font-weight:750;
+    letter-spacing:.04em;
+  }
+  .entry-arrow{
+    color:var(--charcoal);
+    font-size:25px;
+    font-weight:700;
+  }
+  .band{
+    border:1.5px solid rgba(31,39,36,.18);
+    border-radius:18px;
+    box-shadow:var(--shadow);
+    padding:24px;
+    position:relative;
+  }
+  .top-band{
+    background:
+      linear-gradient(90deg, rgba(205,228,214,.88), rgba(200,221,234,.88)),
+      var(--surface);
+  }
+  .growth-band{
+    background:
+      linear-gradient(90deg,
+        rgba(244,217,141,.74) 0 25%,
+        rgba(216,208,234,.82) 25% 50%,
+        rgba(230,188,203,.82) 50% 75%,
+        rgba(239,193,172,.82) 75% 100%),
+      var(--surface);
+  }
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:18px;
+  }
+  .stage{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    position:relative;
+  }
+  .stage:not(:last-child):after{
+    content:"->";
+    position:absolute;
+    right:-15px;
+    top:17px;
+    color:var(--charcoal);
+    font-weight:800;
+  }
+  .stage-label{
+    align-self:flex-start;
+    border-radius:8px;
+    padding:9px 15px;
+    color:var(--ink);
+    font-size:16px;
+    font-weight:800;
+    line-height:1.1;
+  }
+  .stage[data-tone="ground"] .stage-label{background:var(--mint)}
+  .stage[data-tone="talk"] .stage-label{background:var(--blue-soft)}
+  .stage[data-tone="cli"] .stage-label{background:var(--gold-soft)}
+  .stage[data-tone="guard"] .stage-label{background:var(--rust-soft)}
+  .stage[data-tone="research"] .stage-label{background:var(--gold-soft)}
+  .stage[data-tone="build"] .stage-label{background:var(--violet-soft)}
+  .stage[data-tone="ops"] .stage-label{background:var(--rose-soft)}
+  .stage[data-tone="architect"] .stage-label{background:var(--rust-soft)}
+  .lesson-btn{
+    width:100%;
+    min-height:78px;
+    border:1px solid rgba(31,39,36,.18);
+    border-radius:7px;
+    background:rgba(255,253,248,.9);
+    color:var(--ink);
+    padding:12px 13px 11px 39px;
+    text-align:left;
+    cursor:pointer;
+    font:inherit;
+    position:relative;
+    transition:transform .16s ease, border-color .16s ease, box-shadow .16s ease, background .16s ease;
+  }
+  .lesson-btn:hover,
+  .lesson-btn:focus-visible{
+    outline:none;
+    border-color:var(--green);
+    background:#fffefb;
+    transform:translateY(-2px);
+    box-shadow:0 10px 20px rgba(31,39,36,.1);
+  }
+  .num{
+    position:absolute;
+    top:12px;
+    left:11px;
+    width:20px;
+    height:20px;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    background:var(--green);
+    color:white;
+    font-size:11px;
+    font-weight:800;
+  }
+  .lesson-title{
+    display:block;
+    color:var(--green-deep);
+    font-weight:800;
+    line-height:1.15;
+    margin-bottom:4px;
+    overflow-wrap:break-word;
+  }
+  .hint{
+    display:block;
+    color:var(--ink-soft);
+    font-size:12px;
+    line-height:1.32;
+    overflow-wrap:break-word;
+  }
+  .badge{
+    display:inline-block;
+    margin-left:4px;
+    border-radius:999px;
+    padding:1px 7px;
+    background:#edf4ee;
+    color:var(--green);
+    font-size:9px;
+    font-weight:800;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    vertical-align:middle;
+  }
+  .connector{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    gap:12px;
+    margin:16px 30px;
+    color:var(--rust);
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+  }
+  .connector:after{
+    content:"";
+    width:2px;
+    height:34px;
+    background:var(--charcoal);
+  }
+  .decision-row{
+    margin-top:30px;
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 180px minmax(0,1fr);
+    gap:24px;
+    align-items:center;
+  }
+  .callout{
+    background:rgba(255,253,248,.9);
+    border:1.5px solid rgba(31,39,36,.16);
+    border-radius:12px;
+    padding:20px;
+  }
+  .callout.loop{border-left:5px solid var(--green)}
+  .callout.branch{border-left:5px solid var(--rust)}
+  .callout h3{
+    color:var(--green-deep);
+    font-family:"Fraunces",serif;
+    font-size:22px;
+    line-height:1.1;
+    margin-bottom:8px;
+  }
+  .callout p{
+    color:var(--ink-soft);
+    font-size:14px;
+  }
+  .callout .path{
+    display:block;
+    margin-top:11px;
+    color:var(--rust);
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+  }
+  .diamond{
+    width:154px;
+    height:154px;
+    border:0;
+    background:var(--green);
+    color:white;
+    transform:rotate(45deg);
+    display:grid;
+    place-items:center;
+    justify-self:center;
+    cursor:pointer;
+    box-shadow:0 16px 30px rgba(35,70,56,.26);
+    transition:transform .16s ease;
+  }
+  .diamond:hover,
+  .diamond:focus-visible{
+    outline:none;
+    transform:rotate(45deg) scale(1.04);
+  }
+  .diamond span{
+    transform:rotate(-45deg);
+    font-family:"Fraunces",serif;
+    font-size:20px;
+    font-weight:750;
+    line-height:1.08;
+    text-align:center;
+  }
+  .routes{
+    padding:50px 0;
+    background:rgba(255,253,248,.48);
+    border-top:1px solid rgba(31,39,36,.1);
+    border-bottom:1px solid rgba(31,39,36,.1);
+  }
+  .archetype-feedback{
+    padding:56px 0 62px;
+    background:
+      linear-gradient(rgba(247,242,234,.86), rgba(247,242,234,.86)),
+      linear-gradient(90deg, rgba(51,95,77,.07) 1px, transparent 1px),
+      linear-gradient(rgba(51,95,77,.07) 1px, transparent 1px);
+    background-size:auto,26px 26px,26px 26px;
+    border-bottom:1px solid rgba(31,39,36,.1);
+  }
+  .method-pathways{
+    padding:58px 0 64px;
+    background:rgba(255,253,248,.76);
+    border-bottom:1px solid rgba(31,39,36,.1);
+  }
+  .section-kicker{
+    color:var(--rust);
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:.18em;
+    text-align:center;
+    text-transform:uppercase;
+    margin-bottom:8px;
+  }
+  .routes h2,
+  .method-pathways h2,
+  .archetype-feedback h2,
+  footer h2{
+    color:var(--green-deep);
+    font-family:"Fraunces",serif;
+    font-size:clamp(26px,4vw,38px);
+    text-align:center;
+    line-height:1.08;
+    margin-bottom:22px;
+  }
+  .feedback-intro{
+    max-width:760px;
+    margin:0 auto 24px;
+    color:var(--ink-soft);
+    text-align:center;
+    font-size:15px;
+  }
+  .method-intro{
+    max-width:790px;
+    margin:0 auto 26px;
+    color:var(--ink-soft);
+    text-align:center;
+    font-size:15px;
+  }
+  .route-grid{
+    max-width:980px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:14px;
+  }
+  .route-card{
+    border:1.5px solid rgba(31,39,36,.14);
+    border-radius:9px;
+    background:var(--surface);
+    padding:18px;
+    text-decoration:none;
+    transition:transform .16s ease, border-color .16s ease, box-shadow .16s ease;
+  }
+  .route-card:hover{
+    transform:translateY(-2px);
+    border-color:var(--green);
+    box-shadow:0 12px 24px rgba(31,39,36,.1);
+  }
+  .route-card b{
+    display:block;
+    color:var(--green-deep);
+    font-family:"Fraunces",serif;
+    font-size:19px;
+    line-height:1.1;
+    margin-bottom:6px;
+  }
+  .route-card span{
+    display:block;
+    color:var(--ink-soft);
+    font-size:13px;
+    line-height:1.4;
+  }
+  .method-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:14px;
+  }
+  .method-card{
+    border:1.5px solid rgba(31,39,36,.14);
+    border-radius:10px;
+    background:var(--surface);
+    padding:18px;
+    box-shadow:0 10px 22px rgba(31,39,36,.07);
+  }
+  .method-card[data-tool="claude-web"]{border-top:5px solid var(--violet)}
+  .method-card[data-tool="claude-code"]{border-top:5px solid var(--blue)}
+  .method-card[data-tool="chatgpt-web"]{border-top:5px solid var(--green)}
+  .method-card[data-tool="codex"]{border-top:5px solid var(--gold)}
+  .method-card[data-tool="gemini-web"]{border-top:5px solid var(--rust)}
+  .method-card[data-tool="gemini-ai-mode"]{border-top:5px solid var(--rose)}
+  .method-card h3{
+    color:var(--green-deep);
+    font-family:"Fraunces",serif;
+    font-size:22px;
+    line-height:1.08;
+    margin-bottom:9px;
+  }
+  .method-card p{
+    color:var(--ink-soft);
+    font-size:13px;
+    line-height:1.45;
+    margin-bottom:10px;
+  }
+  .method-card p:last-child{margin-bottom:0}
+  .method-label{
+    display:block;
+    color:var(--rust);
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    margin-bottom:3px;
+  }
+  .starter{
+    display:block;
+    border:1px solid rgba(51,95,77,.18);
+    border-radius:8px;
+    background:#f8f0e5;
+    color:var(--green-deep);
+    font-size:12px;
+    line-height:1.4;
+    padding:10px 11px;
+    margin-top:8px;
+  }
+  .feedback-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:14px;
+  }
+  .feedback-card{
+    border:1.5px solid rgba(31,39,36,.14);
+    border-top:5px solid var(--green);
+    border-radius:10px;
+    background:rgba(255,253,248,.92);
+    padding:18px;
+    box-shadow:0 10px 22px rgba(31,39,36,.08);
+  }
+  .feedback-card[data-tone="polished"]{border-top-color:var(--green)}
+  .feedback-card[data-tone="transitioner"]{border-top-color:var(--blue)}
+  .feedback-card[data-tone="creative"]{border-top-color:var(--violet)}
+  .feedback-card[data-tone="solo"]{border-top-color:var(--rust)}
+  .feedback-card[data-tone="generalist"]{border-top-color:var(--gold)}
+  .feedback-card[data-tone="fresh"]{border-top-color:var(--rose)}
+  .feedback-card h3{
+    color:var(--green-deep);
+    font-family:"Fraunces",serif;
+    font-size:22px;
+    line-height:1.08;
+    margin-bottom:8px;
+  }
+  .feedback-card p{
+    color:var(--ink-soft);
+    font-size:13px;
+    line-height:1.45;
+    margin-bottom:10px;
+  }
+  .feedback-card p:last-child{margin-bottom:0}
+  .feedback-label{
+    display:block;
+    color:var(--rust);
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    margin-bottom:3px;
+  }
+  footer{
+    padding:52px 24px 68px;
+    color:white;
+    background:
+      linear-gradient(rgba(35,70,56,.92), rgba(35,70,56,.92)),
+      linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px),
+      linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px);
+    background-size:auto,26px 26px,26px 26px;
+    text-align:center;
+  }
+  footer h2{color:white;margin-bottom:10px}
+  footer p{
+    max-width:690px;
+    margin:0 auto 22px;
+    color:rgba(255,255,255,.82);
+  }
+  footer a{
+    display:inline-block;
+    margin:0 9px 8px;
+    color:white;
+    font-size:14px;
+  }
+  .credit{
+    margin-top:18px;
+    color:rgba(255,255,255,.56);
+    font-size:12px;
+  }
+  .modal-backdrop{
+    position:fixed;
+    inset:0;
+    z-index:100;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    background:rgba(31,39,36,.58);
+    backdrop-filter:blur(4px);
+  }
+  .modal-backdrop.open{display:flex}
+  .modal{
+    width:min(650px,100%);
+    max-height:86vh;
+    overflow:auto;
+    background:var(--surface);
+    border-radius:14px;
+    box-shadow:0 28px 70px rgba(31,39,36,.28);
+  }
+  .modal-head{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    padding:25px 28px 17px;
+    border-bottom:1px solid var(--line);
+  }
+  .stage-pill{
+    display:inline-block;
+    border-radius:999px;
+    padding:4px 10px;
+    background:var(--mint);
+    color:var(--green-deep);
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    margin-bottom:8px;
+  }
+  .modal h3{
+    color:var(--green-deep);
+    font-family:"Fraunces",serif;
+    font-size:29px;
+    line-height:1.08;
+  }
+  .modal-close{
+    width:34px;
+    height:34px;
+    border:1px solid var(--line);
+    border-radius:50%;
+    background:transparent;
+    color:var(--ink-soft);
+    cursor:pointer;
+    font-size:24px;
+    line-height:1;
+  }
+  .modal-close:hover{color:var(--green);border-color:var(--green)}
+  .modal-meta{
+    padding:12px 28px;
+    color:var(--ink-soft);
+    background:#f8f0e5;
+    border-bottom:1px solid var(--line);
+    font-size:13px;
+  }
+  .modal-body{
+    padding:22px 28px 24px;
+    color:var(--ink);
+  }
+  .modal-body p{margin-bottom:13px}
+  .modal-body ul{
+    padding-left:19px;
+    margin:8px 0 16px;
+  }
+  .modal-body li{margin-bottom:7px}
+  .modal-body strong{color:var(--green-deep)}
+  .modal-body h4{
+    font-family:"Fraunces",serif;
+    color:var(--green-deep);
+    font-size:17px;
+    margin:20px 0 8px;
+  }
+  .modal-body h4:first-child{margin-top:0}
+  .lesson-why{
+    color:var(--ink-soft);
+    font-size:15px;
+    border-left:3px solid var(--gold);
+    padding-left:12px;
+  }
+  .lesson-example{
+    background:var(--paper-deep);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:14px 16px;
+    margin:16px 0;
+  }
+  .lesson-example p:last-child{margin-bottom:0}
+  .example-label{
+    display:block;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--rust);
+    margin-bottom:8px;
+  }
+  .lesson-proof{margin-top:14px}
+  .modal-foot{
+    padding:16px 28px 26px;
+    border-top:1px solid var(--line);
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .btn{
+    border:1.5px solid var(--green);
+    border-radius:8px;
+    padding:10px 16px;
+    background:var(--green);
+    color:white;
+    font:inherit;
+    font-weight:700;
+    cursor:pointer;
+  }
+  .btn.secondary{
+    background:transparent;
+    color:var(--green);
+  }
+  @media (max-width:980px){
+    .hero-grid{grid-template-columns:1fr}
+    .compass{max-width:520px}
+    .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .stage:not(:last-child):after{display:none}
+    .decision-row{grid-template-columns:1fr}
+    .route-grid{grid-template-columns:1fr}
+    .method-grid{grid-template-columns:1fr 1fr}
+    .feedback-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:640px){
+    html,body,.topnav,.hero,.map-section,.routes,.method-pathways,.archetype-feedback,footer{max-width:100vw;overflow-x:hidden}
+    .topnav-inner{width:100%;max-width:100vw;align-items:flex-start;flex-direction:column;padding:12px 18px}
+    .brand{max-width:100%}
+    .nav-links{width:100%;display:grid;grid-template-columns:1fr;overflow-x:hidden;gap:8px;padding-bottom:0}
+    .nav-links a{white-space:normal;line-height:1.2}
+    .nav-links .pill{padding:6px 10px;text-align:center}
+    .wrap{width:100%;max-width:390px;margin-left:0;margin-right:0;padding:0 16px}
+    .hero{padding-top:42px}
+    .hero-grid{gap:24px}
+    h1{font-size:clamp(34px,13vw,48px)}
+    .hero-copy{font-size:16px}
+    .compass{width:100%;padding:22px}
+    .compass strong{font-size:27px}
+    .grid{grid-template-columns:1fr}
+    .band{padding:17px}
+    .connector{justify-content:flex-start;margin:14px 8px}
+    .diamond{width:136px;height:136px}
+    .modal{max-height:90vh}
+    .modal-head,.modal-meta,.modal-body,.modal-foot{padding-left:20px;padding-right:20px}
+    .hero-grid,
+    .hero-grid > div,
+    .hero-copy,
+    .compass,
+    .compass strong,
+    .compass p,
+    .band,
+    .route-grid,
+    .method-grid,
+    .feedback-grid,
+    .decision-row{
+      max-width:358px;
+    }
+    .method-grid{grid-template-columns:1fr}
+    .feedback-grid{grid-template-columns:1fr}
+    h1{max-width:358px}
+  }
+  @media (max-width:430px){
+    .topnav-inner{padding-left:16px;padding-right:16px}
+    .nav-links .pill{width:max-content;max-width:100%;text-align:left}
+  }
+</style>
+</head>
+<body>
+<nav class="topnav">
+  <div class="topnav-inner">
+    <a href="../" class="brand">Writings by Lala<span>AI Systems Blueprint</span></a>
+    <div class="nav-links">
+      <a href="#map" aria-current="page">Learning Map</a>
+      <a href="#routes">Fast Routes</a>
+      <a href="#method-pathways">First AI Conversation</a>
+      <a href="#archetype-feedback">Archetype Feedback</a>
+      <a href="https://writingsbylala.com/bonafide-filipino-freelancers/blueprint/index.html">BFF Blueprint</a>
+      <a href="../" class="pill">Writings Home</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Beginner to operator</div>
+      <h1>AI Systems Blueprint for beginners</h1>
+      <p class="hero-copy">From zero AI vocabulary to Shela-level working habits: clear prompts, CLI fluency, evidence-based research, careful publishing, and repeatable systems using Codex CLI and Claude CLI.</p>
+    </div>
+    <aside class="compass" aria-label="Blueprint summary">
+      <div class="small">North star</div>
+      <strong>Become the person who can ship with AI, verify the work, and improve the system.</strong>
+      <p>This is not a prompt list. It is a learning path for judgment, workflow, and proof.</p>
+    </aside>
+  </div>
+</header>
+
+<main id="map" class="map-section">
+  <div class="wrap">
+    <div class="entry-row">
+      <div class="entry-pill">NEWBIE</div>
+      <div class="entry-arrow">-></div>
+    </div>
+
+    <section class="band top-band" aria-label="Foundation path">
+      <div class="grid">
+        <div class="stage" data-tone="ground">
+          <div class="stage-label">Orientation</div>
+          <button class="lesson-btn" data-lesson="l1"><span class="num">1</span><span class="lesson-title">What AI Is Actually Doing</span><span class="hint">Tokens, models, context, limits, and why AI is not magic</span></button>
+          <button class="lesson-btn" data-lesson="l2"><span class="num">2</span><span class="lesson-title">The Human Job</span><span class="hint">Define outcomes, taste, constraints, and proof</span></button>
+          <button class="lesson-btn" data-lesson="l3"><span class="num">3</span><span class="lesson-title">AI Workstation Setup</span><span class="hint">Browser, files, terminal, accounts, and a clean workspace</span></button>
+          <button class="lesson-btn" data-lesson="l4"><span class="num">4</span><span class="lesson-title">Safe Files and Secrets</span><span class="hint">Know what never belongs in a prompt or public file</span></button>
+        </div>
+
+        <div class="stage" data-tone="talk">
+          <div class="stage-label">Prompt Craft</div>
+          <button class="lesson-btn" data-lesson="l5"><span class="num">5</span><span class="lesson-title">Ask for a Result, Not Vibes</span><span class="hint">Turn vague requests into scoped deliverables</span></button>
+          <button class="lesson-btn" data-lesson="l6"><span class="num">6</span><span class="lesson-title">Context Packets</span><span class="hint">Give source files, goals, constraints, and examples</span></button>
+          <button class="lesson-btn" data-lesson="l7"><span class="num">7</span><span class="lesson-title">Critique Before Copy</span><span class="hint">Use AI to find gaps before generating polished work</span></button>
+          <button class="lesson-btn" data-lesson="l8"><span class="num">8</span><span class="lesson-title">Reusable Prompt Recipes</span><span class="hint">Save patterns for research, writing, QA, and planning</span></button>
+        </div>
+
+        <div class="stage" data-tone="cli">
+          <div class="stage-label">CLI Basics</div>
+          <button class="lesson-btn" data-lesson="l9"><span class="num">9</span><span class="lesson-title">Terminal Confidence</span><span class="hint">Folders, paths, commands, output, and error reading</span></button>
+          <button class="lesson-btn" data-lesson="l10"><span class="num">10</span><span class="lesson-title">Codex CLI First Run <span class="badge">Core</span></span><span class="hint">Use Codex as the coding and file-work partner</span></button>
+          <button class="lesson-btn" data-lesson="l11"><span class="num">11</span><span class="lesson-title">Claude CLI First Run <span class="badge">Core</span></span><span class="hint">Use Claude for long prose, deep critique, and planning</span></button>
+          <button class="lesson-btn" data-lesson="l12"><span class="num">12</span><span class="lesson-title">Read Before Acting</span><span class="hint">Open files, inspect state, and avoid imaginary answers</span></button>
+        </div>
+
+        <div class="stage" data-tone="guard">
+          <div class="stage-label">Guardrails</div>
+          <button class="lesson-btn" data-lesson="l13"><span class="num">13</span><span class="lesson-title">Verification Habit</span><span class="hint">Every claim needs evidence from files, tests, or live checks</span></button>
+          <button class="lesson-btn" data-lesson="l14"><span class="num">14</span><span class="lesson-title">Source and URL Checks</span><span class="hint">Probe links, read primary sources, and cite carefully</span></button>
+          <button class="lesson-btn" data-lesson="l15"><span class="num">15</span><span class="lesson-title">Version Control Basics</span><span class="hint">Git status, diffs, commits, and dirty worktrees</span></button>
+          <button class="lesson-btn" data-lesson="l16"><span class="num">16</span><span class="lesson-title">Done Means Proved</span><span class="hint">Build a completion checklist before handoff</span></button>
+        </div>
+      </div>
+    </section>
+
+    <div class="connector">After foundations, the production loop begins</div>
+
+    <section class="band growth-band" aria-label="Production loop">
+      <div class="grid">
+        <div class="stage" data-tone="research">
+          <div class="stage-label">Research Loop</div>
+          <button class="lesson-btn" data-lesson="l17"><span class="num">17</span><span class="lesson-title">Question Design</span><span class="hint">Ask the question that reveals the real task</span></button>
+          <button class="lesson-btn" data-lesson="l18"><span class="num">18</span><span class="lesson-title">Evidence Mining</span><span class="hint">Pull facts from files, logs, sheets, docs, and the web</span></button>
+          <button class="lesson-btn" data-lesson="l19"><span class="num">19</span><span class="lesson-title">Synthesis Notes</span><span class="hint">Turn scattered material into decisions and briefs</span></button>
+          <button class="lesson-btn" data-lesson="l20"><span class="num">20</span><span class="lesson-title">Memory and Reuse</span><span class="hint">Convert repeated lessons into reusable instructions</span></button>
+        </div>
+
+        <div class="stage" data-tone="build">
+          <div class="stage-label">Build Loop</div>
+          <button class="lesson-btn" data-lesson="l21"><span class="num">21</span><span class="lesson-title">Small Shippable Tools</span><span class="hint">HTML pages, scripts, dashboards, and content utilities</span></button>
+          <button class="lesson-btn" data-lesson="l22"><span class="num">22</span><span class="lesson-title">Codex for Code Changes</span><span class="hint">Scope edits, run tests, inspect diffs, and avoid churn</span></button>
+          <button class="lesson-btn" data-lesson="l23"><span class="num">23</span><span class="lesson-title">Claude for Thought Work</span><span class="hint">Use Claude for drafting, critique, lesson prose, and strategy</span></button>
+          <button class="lesson-btn" data-lesson="l24"><span class="num">24</span><span class="lesson-title">Human Review Pass</span><span class="hint">Taste, ethics, audience fit, and final judgment</span></button>
+        </div>
+
+        <div class="stage" data-tone="ops">
+          <div class="stage-label">Operations Loop</div>
+          <button class="lesson-btn" data-lesson="l25"><span class="num">25</span><span class="lesson-title">Publishing Pipeline</span><span class="hint">Build, preview, link-check, deploy, and live-probe</span></button>
+          <button class="lesson-btn" data-lesson="l26"><span class="num">26</span><span class="lesson-title">Sheets and Databases</span><span class="hint">Read, write, verify ranges, and respect schemas</span></button>
+          <button class="lesson-btn" data-lesson="l27"><span class="num">27</span><span class="lesson-title">API Wrapper Testing</span><span class="hint">One real happy path before saying an app works</span></button>
+          <button class="lesson-btn" data-lesson="l28"><span class="num">28</span><span class="lesson-title">Session Save and Recovery</span><span class="hint">Leave enough evidence for the next assistant or future you</span></button>
+        </div>
+
+        <div class="stage" data-tone="architect">
+          <div class="stage-label">Architect Level</div>
+          <button class="lesson-btn" data-lesson="l29"><span class="num">29</span><span class="lesson-title">Workflow Design</span><span class="hint">Turn repeated work into SOPs, queues, and gates</span></button>
+          <button class="lesson-btn" data-lesson="l30"><span class="num">30</span><span class="lesson-title">Multi-Agent Judgment</span><span class="hint">Choose which model, tool, or agent should own each part</span></button>
+          <button class="lesson-btn" data-lesson="l31"><span class="num">31</span><span class="lesson-title">Quality Systems</span><span class="hint">Create verifiers, audits, rubrics, and failure logs</span></button>
+          <button class="lesson-btn" data-lesson="l32"><span class="num">32</span><span class="lesson-title">Portfolio of Proof</span><span class="hint">Show shipped systems, not certificates</span></button>
+        </div>
+      </div>
+    </section>
+
+    <div class="decision-row">
+      <aside class="callout loop">
+        <h3>Loop back: raise the floor</h3>
+        <p>Most learners should cycle through research, build, operations, and quality several times. Each loop should make the work more grounded, more verified, and easier to repeat.</p>
+        <span class="path">Architect -> Research Loop</span>
+      </aside>
+      <button class="diamond" id="decisionBtn" aria-label="Open decision point">
+        <span>Operator<br>or<br>Architect?</span>
+      </button>
+      <aside class="callout branch">
+        <h3>Branch: build your own system</h3>
+        <p>The advanced path is not more prompts. It is owning a workflow: source intake, decision rules, model routing, QA gates, publishing, logging, and continuous improvement.</p>
+        <span class="path">Architect -> Personal AI operating system</span>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<section id="routes" class="routes">
+  <div class="wrap">
+    <div class="section-kicker">Not sure where to start?</div>
+    <h2>Choose the door that matches your current fear.</h2>
+    <div class="route-grid">
+      <a class="route-card" href="#map" data-route="newbie">
+        <b>I do not understand AI yet</b>
+        <span>Start with lessons 1 to 4. Your first win is knowing what AI can and cannot be trusted to do.</span>
+      </a>
+      <a class="route-card" href="#map" data-route="cli">
+        <b>The terminal scares me</b>
+        <span>Start with lessons 9 to 12. Your first win is reading files and running a guided CLI session without panic.</span>
+      </a>
+      <a class="route-card" href="#map" data-route="shela">
+        <b>I want Shela-level systems</b>
+        <span>Start with lessons 25 to 32. Your first win is a real workflow with proof, not a pretty draft.</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="method-pathways" class="method-pathways">
+  <div class="wrap">
+    <div class="section-kicker">Choose your first AI conversation</div>
+    <h2>Same blueprint, different first doors.</h2>
+    <p class="method-intro">A beginner does not need to start with the terminal. The first win should match how they naturally communicate: chat, search, file work, code work, or research. Pick one method, finish one small proof, then move into the full blueprint.</p>
+    <div class="method-grid">
+      <article class="method-card" data-tool="claude-web">
+        <h3>Claude Web</h3>
+        <p><span class="method-label">Best first use</span>Thinking partner for messy ideas, lesson notes, self-reflection, long explanations, and critique before writing.</p>
+        <p><span class="method-label">First win</span>Turn one vague goal into a clear learning plan with outcome, constraints, next action, and proof.</p>
+        <p><span class="method-label">Suggested lessons</span>Take lessons 2, 5, 6, 7, and 23.</p>
+        <span class="starter">Starter message: I am new to AI. Help me turn this messy goal into a clear task, then ask me what source material you need before giving advice.</span>
+      </article>
+
+      <article class="method-card" data-tool="claude-code">
+        <h3>Claude Code</h3>
+        <p><span class="method-label">Best first use</span>Guided codebase reading, file-aware planning, documentation cleanup, and careful editing when the work lives inside a project folder.</p>
+        <p><span class="method-label">First win</span>Ask it to read a small project, explain the structure, and suggest one safe improvement without editing yet.</p>
+        <p><span class="method-label">Suggested lessons</span>Take lessons 9, 12, 15, 16, and 23.</p>
+        <span class="starter">Starter message: Read this folder first. Explain what each important file does, then suggest one small improvement and how we would verify it.</span>
+      </article>
+
+      <article class="method-card" data-tool="chatgpt-web">
+        <h3>ChatGPT Web</h3>
+        <p><span class="method-label">Best first use</span>Fast practice partner for beginner questions, drafts, roleplay, checklists, simpler rewrites, and confidence reps.</p>
+        <p><span class="method-label">First win</span>Create one reusable prompt recipe and test it on a small real task.</p>
+        <p><span class="method-label">Suggested lessons</span>Take lessons 1, 5, 8, 13, and 24.</p>
+        <span class="starter">Starter message: Teach me this like a beginner. Give me a simple example, then make me practice with one small task and check my answer.</span>
+      </article>
+
+      <article class="method-card" data-tool="codex">
+        <h3>Codex</h3>
+        <p><span class="method-label">Best first use</span>Implementation partner for files, scripts, HTML pages, tests, verification, and local tool building.</p>
+        <p><span class="method-label">First win</span>Build or edit one tiny local artifact, then inspect the diff and run the verifier before calling it done.</p>
+        <p><span class="method-label">Suggested lessons</span>Take lessons 9, 10, 12, 15, 16, 21, and 22.</p>
+        <span class="starter">Starter message: Inspect the current files first. Make the smallest useful change, run the relevant check, and tell me exactly what evidence proves it works.</span>
+      </article>
+
+      <article class="method-card" data-tool="gemini-web">
+        <h3>Gemini Web</h3>
+        <p><span class="method-label">Best first use</span>Broad brainstorming, Google-centered work habits, comparing options, and quick explanations when the learner is still exploring.</p>
+        <p><span class="method-label">First win</span>Compare three possible learning routes and choose one based on time, tools, and proof.</p>
+        <p><span class="method-label">Suggested lessons</span>Take lessons 1, 2, 5, 17, and 19.</p>
+        <span class="starter">Starter message: Compare these options for a beginner. Tell me which one is easiest to finish this week, what proof I should create, and what to avoid.</span>
+      </article>
+
+      <article class="method-card" data-tool="gemini-ai-mode">
+        <h3>Gemini AI Mode</h3>
+        <p><span class="method-label">Best first use</span>Search-first learning, current-topic exploration, source discovery, and follow-up questions that need web context.</p>
+        <p><span class="method-label">First win</span>Research one unfamiliar AI term, collect useful links, and turn them into a simple source-backed note.</p>
+        <p><span class="method-label">Suggested lessons</span>Take lessons 14, 17, 18, 19, and 20.</p>
+        <span class="starter">Starter message: Help me research this topic from current sources. Give me the useful links, explain what each source proves, and separate facts from assumptions.</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="archetype-feedback" class="archetype-feedback">
+  <div class="wrap">
+    <div class="section-kicker">Six BFF archetypes review the map</div>
+    <h2>What each learner would need before this blueprint feels usable.</h2>
+    <p class="feedback-intro">The map is strong because it teaches judgment, not tricks. The danger is that different beginners will get overwhelmed in different places. These notes show where each archetype should enter, what they will resist, and what proof they should build first.</p>
+    <div class="feedback-grid">
+      <article class="feedback-card" data-tone="polished">
+        <h3>The Polished Freelancer</h3>
+        <p><span class="feedback-label">What works</span>This learner will understand the production loop quickly. They already know client pressure, deadlines, and the need for proof.</p>
+        <p><span class="feedback-label">Risk</span>They may skip Orientation and Prompt Craft because they feel experienced. That would leave them using AI as a faster assistant instead of a system partner.</p>
+        <p><span class="feedback-label">First method</span>Start with Codex if the proof is a tool or page. Start with Claude Web if the proof is a case study or client process.</p>
+        <p><span class="feedback-label">First path</span>Start at lessons 13 to 16, then 25 to 32. Their goal is to turn existing freelance proof into verified AI-enabled workflows.</p>
+      </article>
+
+      <article class="feedback-card" data-tone="transitioner">
+        <h3>The Corporate Transitioner</h3>
+        <p><span class="feedback-label">What works</span>The guardrails section will feel familiar because corporate and BPO work already trains people to follow process, escalate issues, and document outcomes.</p>
+        <p><span class="feedback-label">Risk</span>The CLI section may feel intimidating. They may think terminal work is only for programmers, not for operations people.</p>
+        <p><span class="feedback-label">First method</span>Start with ChatGPT Web for confidence reps, then Claude Web for translating work history into remote-work tasks.</p>
+        <p><span class="feedback-label">First path</span>Start at lessons 1 to 4, then 9 to 12, then 13 to 16. Their first proof should be a simple documented workflow they can run twice.</p>
+      </article>
+
+      <article class="feedback-card" data-tone="creative">
+        <h3>The Creative Specialist</h3>
+        <p><span class="feedback-label">What works</span>Critique Before Copy, Claude for Thought Work, and Human Review Pass will make sense because creative output needs taste, audience fit, and revision.</p>
+        <p><span class="feedback-label">Risk</span>They may overfocus on prompts that make prettier content and underfocus on source checks, version control, and repeatable publishing.</p>
+        <p><span class="feedback-label">First method</span>Start with Claude Web for critique and ChatGPT Web for practice drafts. Move to Codex only when publishing the asset.</p>
+        <p><span class="feedback-label">First path</span>Start at lessons 5 to 8, then 21 to 24, then 13 to 16. Their first proof should be one content asset with source notes, revision notes, and final QA.</p>
+      </article>
+
+      <article class="feedback-card" data-tone="solo">
+        <h3>The Solo Entrepreneur</h3>
+        <p><span class="feedback-label">What works</span>This learner will like the Architect path because they already think in offers, customers, operations, and repeatable service delivery.</p>
+        <p><span class="feedback-label">Risk</span>They may jump to building a personal AI operating system before learning verification, safe files, and clean handoffs.</p>
+        <p><span class="feedback-label">First method</span>Start with Claude Web to map the process, then Codex or Claude Code when the process needs files, scripts, or a page.</p>
+        <p><span class="feedback-label">First path</span>Start at lessons 1 to 4, then 17 to 20, then 29 to 32. Their first proof should be one business process mapped into intake, output, and QA.</p>
+      </article>
+
+      <article class="feedback-card" data-tone="generalist">
+        <h3>The Generalist Admin</h3>
+        <p><span class="feedback-label">What works</span>The map gives them a lane. Instead of saying they can do anything, they can become the person who organizes messy work into verified outputs.</p>
+        <p><span class="feedback-label">Risk</span>They may try to take every lesson in order and stall. They need a narrower work promise first.</p>
+        <p><span class="feedback-label">First method</span>Start with Gemini Web or ChatGPT Web to compare lanes, then use Claude Web to turn one lane into an SOP.</p>
+        <p><span class="feedback-label">First path</span>Start at lessons 6, 12, 15, 18, 25, and 26. Their first proof should be a cleaned tracker, source log, or SOP that shows organized thinking.</p>
+      </article>
+
+      <article class="feedback-card" data-tone="fresh">
+        <h3>The Fresh Starter</h3>
+        <p><span class="feedback-label">What works</span>The blueprint is honest about the beginner stage. It does not ask them to pretend they are an AI expert on day one.</p>
+        <p><span class="feedback-label">Risk</span>The full 32-lesson map may feel too big. They need a tiny first win before they can believe the rest is possible.</p>
+        <p><span class="feedback-label">First method</span>Start with ChatGPT Web for practice or Gemini AI Mode for search-first learning. Avoid CLI tools until one small web-chat win is complete.</p>
+        <p><span class="feedback-label">First path</span>Start only with lessons 1, 2, 3, and 5. Their first proof should be one simple prompt recipe and one small finished project, clearly labeled as practice.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <h2>This is the map. The lessons are the reps.</h2>
+  <p>A beginner becomes dangerous with AI only when they learn to read evidence, ask precise questions, ship small artifacts, verify outcomes, and keep improving the workflow.</p>
+  <div>
+    <a href="#map">Learning Map</a>
+    <a href="#routes">Fast Routes</a>
+    <a href="#method-pathways">First AI Conversation</a>
+    <a href="#archetype-feedback">Archetype Feedback</a>
+    <a href="https://writingsbylala.com/bonafide-filipino-freelancers/blueprint/index.html">Reference Blueprint</a>
+    <a href="../">Writings by Lala</a>
+  </div>
+  <div class="credit">AI Systems Blueprint - Draft learning map - June 2026</div>
+</footer>
+
+<div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal">
+    <div class="modal-head">
+      <div>
+        <div class="stage-pill" id="modalStage">Orientation</div>
+        <h3 id="modalTitle">Lesson title</h3>
+      </div>
+      <button class="modal-close" id="modalClose" aria-label="Close">x</button>
+    </div>
+    <div class="modal-meta" id="modalMeta"></div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-foot">
+      <button class="btn" id="modalPrimary">Mark as next lesson</button>
+      <button class="btn secondary" id="modalDismiss">Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const lessons = {
+  l1:{
+    stage:"Orientation",
+    title:"What AI Is Actually Doing",
+    outcome:"Explain models, context, tokens, hallucinations, and tool access in plain English.",
+    why:"Every other lesson in this blueprint depends on this one. If you believe AI knows things the way a person knows things, you will trust it in exactly the wrong moments. Once you understand what it is actually doing, its strengths and its failures both stop being mysterious.",
+    sections:[
+      {h:"It predicts, it does not know",body:[
+        "A language model is a prediction machine. It has read an enormous amount of text, and when you ask it something, it produces the most likely next words based on everything it has seen. That is why the writing sounds so fluent: fluency is exactly what it was trained to produce.",
+        "Notice what is missing from that description: checking. The model does not look up an answer and then report it. It generates an answer that sounds like the answers it has seen. Most of the time that lands on something true. Sometimes it lands on something that only sounds true."
+      ]},
+      {h:"Context is its whole world",body:[
+        "The model can only work with what is in front of it right now: your message, any files or text you pasted in, and the conversation so far. This is called the context. If a fact is not in the context and not solidly in its training data, the model cannot use it, no matter how obvious it seems to you.",
+        "Context is also measured, in units called tokens (roughly word pieces). Long conversations eventually run out of room, and older details fall away. When an AI \"forgets\" something you said an hour ago, this is usually why."
+      ]},
+      {h:"Hallucination is built in, not a rare glitch",body:[
+        "When the model is missing information, it does not stop and say so by default. The same machinery that completes normal sentences will happily complete a fake citation, a wrong price, or a plausible but imaginary feature. This is called hallucination, and it comes from the same process that makes the model useful.",
+        "The practical rule: the confidence of the writing tells you nothing about the truth of the content. Facts that matter get checked against a real source, every time."
+      ]},
+      {h:"Tools change what it can touch",body:[
+        "A bare model can only generate text from memory. A model with tools can do more: search the web, open your files, run commands. When AI reads the actual document before answering, its answer is grounded in evidence instead of memory.",
+        "This is why the same question can get a flaky answer in one place and a reliable one in another. Always ask yourself: is this answer coming from memory, or did it actually look?"
+      ]}
+    ],
+    example:[
+      "You ask an AI, \"What does Upwork charge freelancers in fees?\" and it confidently answers with a tiered percentage structure. The writing is clean and specific. But Upwork changed its fee model, and the answer is from old training data.",
+      "Now you paste in the current Upwork pricing page and ask the same question. The answer changes, cites the exact lines you provided, and is now something you can safely repeat to a client. Same model, same question. The difference was what you put in the context."
+    ],
+    mistakes:[
+      "Treating a fluent, confident answer as a verified answer.",
+      "Assuming the AI remembers your last conversation, your files, or your business unless you gave it that context again.",
+      "Blaming the model for a bad answer when the real problem was that you never gave it the source material."
+    ],
+    practice:["Ask the same question three ways and compare answers.","Identify which parts are facts, guesses, or instructions.","Write a one-page AI vocabulary sheet."],
+    proof:"You can explain why a confident answer still needs checking."
+  },
+  l2:{
+    stage:"Orientation",
+    title:"The Human Job",
+    outcome:"Learn what the human owns: purpose, taste, judgment, constraints, and final accountability.",
+    why:"People fail with AI in two opposite ways: they either refuse to delegate anything, or they delegate everything including the parts only a human can own. This lesson draws the line. When you know your job, the AI's job becomes obvious.",
+    sections:[
+      {h:"You own the purpose",body:[
+        "AI can produce a thousand versions of anything, but it cannot tell you why the work matters, who it is really for, or what should happen after someone reads it. Before you open any AI tool, you should be able to finish this sentence: \"This work exists so that ___ can ___.\" If you cannot, no prompt will save you.",
+        "Purpose also decides scope. A model will happily expand any task into something bigger. You are the one who says: this is a two-paragraph email, not a strategy deck."
+      ]},
+      {h:"You own taste and judgment",body:[
+        "The model has read everyone's writing, which means its default output sounds like everyone. Taste is knowing what good looks like for your audience and your standards, and rejecting output that is merely acceptable. Judgment is knowing when the technically correct answer is still the wrong move for a real relationship, a real client, a real reputation.",
+        "This is why the review pass can never be delegated. AI can critique its own draft, and that is useful, but the final \"yes, this represents me\" only means something coming from you."
+      ]},
+      {h:"You own constraints and the final call",body:[
+        "Constraints are the fences you set before work starts: budget, deadline, tone, what must be included, what must never be said, what the AI is not allowed to decide alone. Stated upfront, they prevent an entire category of wasted drafts.",
+        "And accountability never transfers. If AI writes something wrong and you ship it, the client does not blame the model. The signature on the work is yours, which is exactly why the checking is yours too."
+      ]}
+    ],
+    example:[
+      "Vague version: \"Make my portfolio better.\" The AI responds with generic advice about headlines and testimonials, because it had nothing real to work with.",
+      "Human-job version: \"Rewrite my portfolio intro for hiring managers at small US e-commerce brands. Goal: they book a call. Keep it under 120 words, warm but direct, no buzzwords, and do not invent numbers or clients. I will verify every claim before publishing.\" Purpose, audience, constraints, and the verification path are all set by the human. Now the AI can actually do its part well."
+    ],
+    mistakes:[
+      "Letting the AI decide things that were yours to decide: the goal, the audience, the claims being made.",
+      "Accepting the first draft because it sounds professional, instead of judging it against your own standard.",
+      "Starting work with no definition of done, so neither you nor the AI knows when the task is actually finished."
+    ],
+    practice:["Rewrite a vague task into a clear output artifact.","Define what good, bad, and done mean for that task.","List what AI should not decide alone."],
+    proof:"Your prompt includes the goal, audience, constraints, and verification path."
+  },
+  l3:{
+    stage:"Orientation",
+    title:"AI Workstation Setup",
+    outcome:"Create a clean workspace for AI-assisted work across browser, files, terminal, and notes.",
+    why:"AI work multiplies files fast: drafts, versions, exports, source material. Without a home for each of those, your best work disappears into Downloads and Desktop chaos. A clean workspace is not about tidiness. It is about being able to hand AI the right file in ten seconds and find the final version a month later.",
+    sections:[
+      {h:"One project, one folder",body:[
+        "Every piece of client work or personal project gets its own folder with a clear name. Not \"stuff\" or \"new folder 2\", but something you could find by search: \"acme-shop-product-descriptions\" tells you the client and the job.",
+        "This matters more with AI than it did before, because AI tools that read files work at the folder level. A clean project folder means you can point a tool at it and say \"read everything here\" without leaking unrelated files into the context."
+      ]},
+      {h:"Input, work, output",body:[
+        "Inside each project, three areas. Input holds source material you received: briefs, client documents, reference files. You never edit these. Work holds drafts, experiments, and AI conversations in progress, and it is allowed to be messy. Output holds only finished, approved artifacts, the versions you would actually send.",
+        "The rule that makes this system work: nothing goes in output until it passed your review. When a client asks for the final file six weeks later, there is exactly one place to look and everything in it is safe to send."
+      ]},
+      {h:"Your tools in reach, your checklist on paper",body:[
+        "Know your regular set: the browser AI you think with, the notes app where prompts and decisions live, the file manager, and, later in this blueprint, the terminal. Open the same set the same way each time; a repeatable start beats a clever one.",
+        "Then write a short personal setup checklist: where projects live, how folders are named, what goes in each area, where finished work goes. Memory fades and habits drift. A checklist you can reread beats a system you have to reconstruct."
+      ]}
+    ],
+    example:[
+      "A freelancer lands a client report project. She creates \"meridian-q3-report\" with input, work, and output folders. The client's raw data export and brief go into input, untouched.",
+      "In work, she keeps her outline, two AI-assisted drafts, and a notes file of decisions. When the report is approved, the final PDF goes into output. Two months later the client asks for it again: ten seconds, one folder, no scrolling through Downloads, and no risk of sending the wrong draft."
+    ],
+    mistakes:[
+      "Using Desktop or Downloads as the working folder, so sources, drafts, and finals all pile into one unsearchable heap.",
+      "Editing the client's original file directly, leaving no clean copy of what they actually gave you.",
+      "Keeping ten files all named \"final\" because there was no output folder with one authoritative version."
+    ],
+    practice:["Create a simple project folder with input, work, and output areas.","Install or open the tools you will use regularly.","Write a personal workspace checklist."],
+    proof:"You can find your source file, working draft, and final artifact without searching everywhere."
+  },
+  l4:{
+    stage:"Orientation",
+    title:"Safe Files and Secrets",
+    outcome:"Understand what credentials, private notes, and client data require extra care.",
+    why:"One careless paste can end a client relationship. AI tools feel like private notebooks, but anything you type may travel to someone else's servers, and anything you commit to a shared repo may be visible forever. Handling sensitive information well is a professional skill clients quietly test you on.",
+    sections:[
+      {h:"Three buckets: public, private, secret",body:[
+        "Before sharing anything with an AI tool, sort it. Public: already published or harmless if published, like your own portfolio text or a public webpage. Private: not dangerous, but not yours to spread, like client names tied to internal plans, unreleased pricing, someone's contact details. Secret: causes direct damage if leaked, like passwords, API keys, banking details, access tokens.",
+        "The rules follow the buckets. Public flows freely. Private gets minimized or masked before it enters a prompt. Secret never enters a prompt, a chat, a screenshot, or a shared file. No exceptions, because there is no such thing as pasting a password a little bit."
+      ]},
+      {h:"Redact before you share",body:[
+        "Most AI tasks do not actually need the sensitive parts. The model can improve an email without the client's real name. It can analyze a spreadsheet structure with the amounts replaced. Build the habit: copy the material into a scratch file first, swap real identifiers for placeholders like [CLIENT] and [AMOUNT], then paste.",
+        "The habit has a second benefit: deciding what to redact forces you to notice what is sensitive at all. People rarely leak secrets on purpose. They leak them because they never paused to look."
+      ]},
+      {h:"Secrets live in special places, not in text",body:[
+        "Real credentials belong in purpose-built storage: a password manager, or for developers, environment files that are explicitly excluded from version control. The classic disaster is committing a config file with a live API key to a repo; even deleting it later does not fully remove it from history.",
+        "So the rule extends beyond prompts: no secrets in prompts, no secrets in repos, no secrets in screenshots or shared docs. If a secret does slip out, the fix is never deletion alone. You revoke and replace the credential, because you must assume it was seen."
+      ]}
+    ],
+    example:[
+      "A client asks you to get AI's help tightening a payment reminder email. The draft contains the client's business name, the customer's full name, the invoice amount, and a payment link.",
+      "Before pasting, you swap those for [BUSINESS], [CUSTOMER], [AMOUNT], and [LINK]. The AI improves the tone and structure just as well, because none of the redacted details mattered for the writing task. You restore the real values in your own file afterward. The work got the full benefit of AI, and the client's data never left your machine."
+    ],
+    mistakes:[
+      "Pasting an entire document into a prompt without reading it first to see what is inside.",
+      "Treating API keys or passwords as \"just text\" because a tutorial or an AI asked for them in a config example.",
+      "Assuming deleting a message or a commit undoes a leak, instead of revoking and replacing the exposed credential."
+    ],
+    practice:["Sort sample information into public, private, and secret categories.","Create a safe redaction habit before sharing context.","Write a no-secrets checklist for prompts and files."],
+    proof:"You can explain what should never be pasted into AI or committed to a repo."
+  },
+  l5:{stage:"Prompt Craft",title:"Ask for a Result, Not Vibes",outcome:"Turn unclear prompts into concrete assignments with a deliverable.",practice:["Convert five vague asks into artifact-based prompts.","Add audience, format, and acceptance criteria.","Ask AI to restate the task before doing it."],proof:"Your prompt makes it hard for the model to produce a pretty but useless answer."},
+  l6:{stage:"Prompt Craft",title:"Context Packets",outcome:"Package source material so AI can work from evidence instead of memory.",practice:["Attach or quote only the necessary source material.","Separate facts, preferences, examples, and constraints.","Ask for assumptions to be listed before output."],proof:"A stranger could read your context packet and understand the job."},
+  l7:{stage:"Prompt Craft",title:"Critique Before Copy",outcome:"Use AI to find missing strategy, weak structure, and risky claims before drafting.",practice:["Ask for a critique of a draft before a rewrite.","Create a scorecard with weighted criteria.","Revise based on the highest-risk issue first."],proof:"You can show what changed because of critique, not only that the wording improved."},
+  l8:{stage:"Prompt Craft",title:"Reusable Prompt Recipes",outcome:"Build a personal library of prompts for common workflows.",practice:["Save one prompt for research, one for writing, one for QA, and one for planning.","Add examples of good input and bad input.","Retest the recipe on a second task."],proof:"You can reuse the recipe without rebuilding the whole prompt from scratch."},
+  l9:{stage:"CLI Basics",title:"Terminal Confidence",outcome:"Learn paths, directories, command output, and error messages well enough to follow CLI work.",practice:["Navigate to a project folder.","List files and open a text file.","Copy the error message and identify the line that matters."],proof:"You can tell the difference between a failed command, a missing file, and a wrong folder."},
+  l10:{stage:"CLI Basics",title:"Codex CLI First Run",outcome:"Use Codex CLI for codebase reading, file edits, verification, and implementation.",practice:["Start a Codex session in a real project folder.","Ask it to inspect files before suggesting changes.","Review the diff and verification output before accepting the handoff."],proof:"You can use Codex as a careful implementation partner, not a blind autocomplete box."},
+  l11:{stage:"CLI Basics",title:"Claude CLI First Run",outcome:"Use Claude CLI for long-form reasoning, prose, critique, and planning work.",practice:["Start a Claude session with a scoped writing or critique task.","Provide source material and acceptance criteria.","Ask for a structured critique before a final draft."],proof:"You can choose Claude when the task needs depth, tone, or long synthesis."},
+  l12:{stage:"CLI Basics",title:"Read Before Acting",outcome:"Build the habit of opening files and inspecting current state before giving advice.",practice:["Find the config file before searching generated folders.","Ask AI to cite the exact file it used.","Compare a claim against the actual current file."],proof:"You stop trusting plausible answers unless they are grounded in current state."},
+  l13:{stage:"Guardrails",title:"Verification Habit",outcome:"Attach evidence to every important claim.",practice:["Map each requirement to a verifier.","Run a command, open a file, or probe a page for proof.","Write a handoff that separates verified from unverified."],proof:"Your final answer says what was checked and what remains uncertain."},
+  l14:{stage:"Guardrails",title:"Source and URL Checks",outcome:"Verify links, facts, and current information before repeating them.",practice:["Probe a URL before listing it.","Prefer official docs for technical claims.","Mark inference clearly when sources do not say it directly."],proof:"Your recommendations do not depend on stale or imaginary links."},
+  l15:{stage:"Guardrails",title:"Version Control Basics",outcome:"Use git status and diffs to protect your own work and other people's changes.",practice:["Read git status before editing.","Inspect a diff after editing.","Identify unrelated dirty files and leave them alone."],proof:"You can explain exactly which files you changed and which dirty files were preexisting."},
+  l16:{stage:"Guardrails",title:"Done Means Proved",outcome:"Create a completion standard before the final handoff.",practice:["Write the done checklist before implementation.","Run the checks after implementation.","Open the artifact if the work is visual."],proof:"Done means the requested outcome is present, tested, and inspectable."},
+  l17:{stage:"Research Loop",title:"Question Design",outcome:"Find the real question under a messy request.",practice:["Restate a request as decision, artifact, and verifier.","Ask what evidence would change the answer.","Separate curiosity from action."],proof:"Your research brief has a decision it can support."},
+  l18:{stage:"Research Loop",title:"Evidence Mining",outcome:"Collect useful facts from files, logs, docs, sheets, and live sources.",practice:["Start with known indexes and config files.","Pull only relevant excerpts.","Track source names and dates."],proof:"Your notes show where each key fact came from."},
+  l19:{stage:"Research Loop",title:"Synthesis Notes",outcome:"Turn raw evidence into a clear recommendation or plan.",practice:["Group evidence by decision point.","Name contradictions and gaps.","Write the smallest next action."],proof:"The summary helps someone act without rereading all the raw material."},
+  l20:{stage:"Research Loop",title:"Memory and Reuse",outcome:"Convert recurring mistakes and wins into future instructions.",practice:["Write one feedback note from a failure.","Turn a repeated workflow into a checklist.","Archive an example that future AI can reuse."],proof:"The next session starts smarter because the lesson was captured."},
+  l21:{stage:"Build Loop",title:"Small Shippable Tools",outcome:"Use AI to build practical artifacts, not only documents.",practice:["Create one local HTML tool or checklist page.","Test it with real input.","Improve one usability flaw after seeing it rendered."],proof:"There is a working artifact someone can open and use."},
+  l22:{stage:"Build Loop",title:"Codex for Code Changes",outcome:"Let Codex inspect, patch, and verify code while you keep scope and taste.",practice:["Ask Codex to read the relevant files first.","Approve a small implementation path.","Review tests, screenshots, or command output."],proof:"The changed code solves the request without unrelated churn."},
+  l23:{stage:"Build Loop",title:"Claude for Thought Work",outcome:"Route prose, teaching, critique, and strategic synthesis to Claude when it fits.",practice:["Give Claude a source packet and voice constraints.","Ask for a critique pass before final prose.","Use Codex to format, verify, or publish the result."],proof:"Each model is used for its strength instead of using one tool for everything."},
+  l24:{stage:"Build Loop",title:"Human Review Pass",outcome:"Protect audience fit, ethics, quality, and tone before shipping.",practice:["Read the output as the target user.","Flag overclaims, privacy issues, or confusing steps.","Make one final judgment call without outsourcing it."],proof:"The final artifact feels useful to a real person, not only acceptable to a model."},
+  l25:{stage:"Operations Loop",title:"Publishing Pipeline",outcome:"Move work from draft to live page with build, preview, deploy, and live verification.",practice:["Build locally.","Open the rendered page.","Probe the live URL after deploy."],proof:"The live page returns successfully and contains the expected marker."},
+  l26:{stage:"Operations Loop",title:"Sheets and Databases",outcome:"Handle structured data with exact ranges, schemas, and read-back checks.",practice:["Read the schema before writing.","Write one row or range.","Read back the exact cells you changed."],proof:"No required column is blank and the updated row matches the intended shape."},
+  l27:{stage:"Operations Loop",title:"API Wrapper Testing",outcome:"Verify third-party wrappers with one real successful operation.",practice:["Run the app locally.","Use valid input against the real service.","Record the response or output artifact."],proof:"You tested behavior, not only startup."},
+  l28:{stage:"Operations Loop",title:"Session Save and Recovery",outcome:"Leave enough context for another assistant or future you to continue safely.",practice:["Write what changed, what was verified, and what remains open.","List artifacts and exact paths.","Save decisions that should survive compaction."],proof:"A new session can resume without asking what happened."},
+  l29:{stage:"Architect Level",title:"Workflow Design",outcome:"Turn repeated work into a system with intake, steps, outputs, and gates.",practice:["Map a messy workflow as stages.","Add a start gate and done gate.","Name which parts are human-owned."],proof:"The workflow can be followed twice with similar quality."},
+  l30:{stage:"Architect Level",title:"Multi-Agent Judgment",outcome:"Choose the right model, tool, or agent for each part of the work.",practice:["Route research, code, prose, QA, and publishing separately.","Define handoff rules between tools.","Name when not to use AI."],proof:"Tool choice becomes deliberate, not habitual."},
+  l31:{stage:"Architect Level",title:"Quality Systems",outcome:"Create verifiers, audits, rubrics, and failure logs that raise the floor.",practice:["Build a rubric for a recurring artifact.","Write or run a verifier where possible.","Record one failure pattern and its fix."],proof:"Quality improves because the system catches errors before the user does."},
+  l32:{stage:"Architect Level",title:"Portfolio of Proof",outcome:"Show practical AI systems skill through shipped artifacts and evidence.",practice:["Collect three artifacts with before, after, and verification notes.","Write a case study for one workflow.","Explain your role in the human plus AI system."],proof:"Your proof is shipped work, documented judgment, and repeatable process."}
+};
+
+const stageTone = {
+  "Orientation":["var(--mint)","var(--green-deep)"],
+  "Prompt Craft":["var(--blue-soft)","var(--blue)"],
+  "CLI Basics":["var(--gold-soft)","var(--green-deep)"],
+  "Guardrails":["var(--rust-soft)","var(--rust)"],
+  "Research Loop":["var(--gold-soft)","var(--green-deep)"],
+  "Build Loop":["var(--violet-soft)","var(--violet)"],
+  "Operations Loop":["var(--rose-soft)","var(--rose)"],
+  "Architect Level":["var(--rust-soft)","var(--rust)"]
+};
+
+const backdrop = document.getElementById("modalBackdrop");
+const modalStage = document.getElementById("modalStage");
+const modalTitle = document.getElementById("modalTitle");
+const modalMeta = document.getElementById("modalMeta");
+const modalBody = document.getElementById("modalBody");
+
+function openLesson(key){
+  const lesson = lessons[key];
+  if(!lesson) return;
+  const tone = stageTone[lesson.stage] || ["var(--mint)","var(--green-deep)"];
+  modalStage.textContent = lesson.stage;
+  modalStage.style.background = tone[0];
+  modalStage.style.color = tone[1];
+  modalTitle.textContent = lesson.title;
+  modalMeta.innerHTML = `<strong>Learning outcome:</strong> ${lesson.outcome}`;
+  let html = "";
+  if(lesson.why){
+    html += `<p class="lesson-why">${lesson.why}</p>`;
+  }
+  (lesson.sections || []).forEach(section => {
+    html += `<h4>${section.h}</h4>`;
+    section.body.forEach(par => { html += `<p>${par}</p>`; });
+  });
+  if(lesson.example){
+    html += `<div class="lesson-example"><span class="example-label">Worked example</span>`;
+    lesson.example.forEach(par => { html += `<p>${par}</p>`; });
+    html += `</div>`;
+  }
+  if(lesson.mistakes){
+    html += `<h4>Common mistakes</h4><ul>${lesson.mistakes.map(item => `<li>${item}</li>`).join("")}</ul>`;
+  }
+  html += `<h4>Practice reps</h4><ul>${lesson.practice.map(item => `<li>${item}</li>`).join("")}</ul>`;
+  html += `<p class="lesson-proof"><strong>Proof of readiness:</strong> ${lesson.proof}</p>`;
+  modalBody.innerHTML = html;
+  backdrop.classList.add("open");
+  document.querySelector(".modal").scrollTop = 0;
+}
+
+function openDecision(){
+  modalStage.textContent = "Decision Point";
+  modalStage.style.background = "var(--green)";
+  modalStage.style.color = "white";
+  modalTitle.textContent = "Operator or Architect?";
+  modalMeta.innerHTML = "<strong>The fork:</strong> keep executing stronger workflows or start designing the system other people can follow.";
+  modalBody.innerHTML = `
+    <p><strong>Operator path:</strong> loop back through research, build, operations, and quality. Your goal is speed with evidence, not speed alone.</p>
+    <p><strong>Architect path:</strong> build the operating system around the work. Define intake, source rules, model routing, QA gates, publishing checks, recovery notes, and improvement logs.</p>
+    <p>Shela-level is not about knowing every AI trick. It is about owning the whole chain from question to verified output.</p>
+  `;
+  backdrop.classList.add("open");
+}
+
+function closeModal(){
+  backdrop.classList.remove("open");
+}
+
+document.querySelectorAll(".lesson-btn").forEach(button => {
+  button.addEventListener("click", () => openLesson(button.dataset.lesson));
+});
+document.getElementById("decisionBtn").addEventListener("click", openDecision);
+document.getElementById("modalClose").addEventListener("click", closeModal);
+document.getElementById("modalDismiss").addEventListener("click", closeModal);
+document.getElementById("modalPrimary").addEventListener("click", closeModal);
+backdrop.addEventListener("click", event => {
+  if(event.target === backdrop) closeModal();
+});
+document.addEventListener("keydown", event => {
+  if(event.key === "Escape") closeModal();
+});
+</script>
+</body>
+</html>

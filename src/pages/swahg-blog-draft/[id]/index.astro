@@ -1,0 +1,597 @@
+---
+import Base from '../../../layouts/Base.astro';
+import inventory from '../../../data/swahgBlogInventory.json';
+
+export function getStaticPaths() {
+  return inventory.items.map((item) => ({
+    params: { id: item.id },
+    props: { item },
+  }));
+}
+
+const { item } = Astro.props;
+const topicText = item.topicLabels.join(', ');
+---
+<Base title={`Edit Draft: ${item.draftTitle}`} description="Review, edit, and publish a WBL BFF blog draft.">
+  <section class="editor-head">
+    <div class="container">
+      <a href="/swahg-blog-database/" class="back-link nav-font">Back to database</a>
+      <p class="hand kicker">draft review</p>
+      <h1>{item.draftTitle}</h1>
+      <p class="subtitle">{item.angle}</p>
+    </div>
+  </section>
+
+  <section class="editor-shell container" data-editor-id={item.id}>
+    <aside class="brief-panel">
+      <h2>Blog brief</h2>
+      <dl class="brief-list nav-font">
+        <div>
+          <dt>Status</dt>
+          <dd>{item.publication.statusLabel}</dd>
+        </div>
+        <div>
+          <dt>Source</dt>
+          <dd>{item.sourceTitle}</dd>
+        </div>
+        <div>
+          <dt>Source category</dt>
+          <dd>{item.sourceCategory}</dd>
+        </div>
+        <div>
+          <dt>Blog category</dt>
+          <dd>{item.blogCategory}</dd>
+        </div>
+        <div>
+          <dt>Topics</dt>
+          <dd>{topicText}</dd>
+        </div>
+      </dl>
+      <div class="brief-copy">
+        <h3>Target audience</h3>
+        <p><strong>Ask first:</strong> Who is the target audience of this blog post?</p>
+        <p>Choose one primary WBL persona before writing. Use that persona to shape the pressure, examples, proof, and invitation. Do not name the persona machinery in the public draft unless this is a routing guide.</p>
+        <h3>Angle</h3>
+        <p>{item.angle}</p>
+        <h3>Source excerpt</h3>
+        <p>{item.excerpt}</p>
+      </div>
+    </aside>
+
+    <section class="draft-panel">
+      <div class="draft-toolbar nav-font">
+        <div class="status-stack">
+          <p id="draft-status">Loading draft...</p>
+          <div id="publish-progress" class="publish-progress" hidden>
+            <span></span>
+          </div>
+        </div>
+        <div class="button-row">
+          <button id="save-draft" class="secondary-button" type="button" disabled>Save changes</button>
+          <button id="publish-draft" class="primary-button" type="button" disabled>Publish</button>
+        </div>
+      </div>
+
+      <form class="draft-form" autocomplete="off">
+        <label>
+          <span class="nav-font">Title</span>
+          <input id="draft-title" type="text" />
+        </label>
+        <label>
+          <span class="nav-font">Description</span>
+          <textarea id="draft-description" rows="3"></textarea>
+        </label>
+        <div class="form-grid">
+          <label>
+            <span class="nav-font">Type</span>
+            <select id="draft-type">
+              <option value="guide">Guide</option>
+              <option value="story">Story</option>
+              <option value="note">Field note</option>
+              <option value="reflection">Reflection</option>
+              <option value="tool">Tool</option>
+            </select>
+          </label>
+          <label>
+            <span class="nav-font">Topics</span>
+            <input id="draft-topics" type="text" placeholder="freelancing, content-strategy" />
+          </label>
+          <label>
+            <span class="nav-font">Date</span>
+            <input id="draft-date" type="date" />
+          </label>
+        </div>
+        <label>
+          <span class="nav-font">Actual written blog</span>
+          <div class="format-toolbar nav-font" aria-label="Formatting tools">
+            <button type="button" data-format="h2">H2</button>
+            <button type="button" data-format="h3">H3</button>
+            <button type="button" data-format="bold">B</button>
+            <button type="button" data-format="italic">I</button>
+          </div>
+          <textarea id="draft-body" rows="26" spellcheck="true"></textarea>
+        </label>
+
+        <section class="image-uploader">
+          <h2>Insert image</h2>
+          <div class="upload-grid">
+            <label>
+              <span class="nav-font">Alt text</span>
+              <input id="image-alt" type="text" placeholder="Describe the image for readers" />
+            </label>
+            <label>
+              <span class="nav-font">Image file</span>
+              <input id="image-file" type="file" accept="image/png,image/jpeg,image/webp" />
+            </label>
+            <button id="upload-image" class="secondary-button upload-button" type="button">Optimize and insert</button>
+          </div>
+          <p id="image-status" class="image-status nav-font" aria-live="polite"></p>
+        </section>
+      </form>
+    </section>
+  </section>
+</Base>
+
+<script>
+  const shell = document.querySelector('[data-editor-id]') as HTMLElement | null;
+  const itemId = shell?.dataset.editorId ?? '';
+  const API_BASE = 'http://127.0.0.1:8792';
+
+  const statusEl = document.getElementById('draft-status');
+  const saveButton = document.getElementById('save-draft') as HTMLButtonElement | null;
+  const publishButton = document.getElementById('publish-draft') as HTMLButtonElement | null;
+  const titleInput = document.getElementById('draft-title') as HTMLInputElement | null;
+  const descriptionInput = document.getElementById('draft-description') as HTMLTextAreaElement | null;
+  const typeInput = document.getElementById('draft-type') as HTMLSelectElement | null;
+  const topicsInput = document.getElementById('draft-topics') as HTMLInputElement | null;
+  const dateInput = document.getElementById('draft-date') as HTMLInputElement | null;
+  const bodyInput = document.getElementById('draft-body') as HTMLTextAreaElement | null;
+  const progressEl = document.getElementById('publish-progress') as HTMLElement | null;
+  const imageAltInput = document.getElementById('image-alt') as HTMLInputElement | null;
+  const imageFileInput = document.getElementById('image-file') as HTMLInputElement | null;
+  const uploadImageButton = document.getElementById('upload-image') as HTMLButtonElement | null;
+  const imageStatus = document.getElementById('image-status');
+  let publishedUrl = '';
+
+  const setStatus = (message: string, tone = 'info') => {
+    if (!statusEl) return;
+    statusEl.textContent = message;
+    statusEl.dataset.tone = tone;
+  };
+
+  const setBusy = (busy: boolean) => {
+    if (progressEl) progressEl.hidden = !busy;
+    document.body.classList.toggle('is-publishing', busy);
+  };
+
+  const resetEditorFields = () => {
+    if (titleInput) titleInput.value = '';
+    if (descriptionInput) descriptionInput.value = '';
+    if (typeInput) typeInput.value = 'guide';
+    if (topicsInput) topicsInput.value = '';
+    if (dateInput) dateInput.value = '';
+    if (bodyInput) bodyInput.value = '';
+  };
+
+  const collectPayload = () => ({
+    id: itemId,
+    title: titleInput?.value ?? '',
+    description: descriptionInput?.value ?? '',
+    type: typeInput?.value ?? 'guide',
+    topics: (topicsInput?.value ?? '').split(',').map((topic) => topic.trim()).filter(Boolean),
+    date: dateInput?.value ?? '',
+    body: bodyInput?.value ?? '',
+  });
+
+  const setImageStatus = (message: string, tone = 'info') => {
+    if (!imageStatus) return;
+    imageStatus.textContent = message;
+    imageStatus.dataset.tone = tone;
+  };
+
+  const replaceSelection = (before: string, after = '', placeholder = 'text') => {
+    if (!bodyInput) return;
+    const start = bodyInput.selectionStart;
+    const end = bodyInput.selectionEnd;
+    const selected = bodyInput.value.slice(start, end) || placeholder;
+    const replacement = `${before}${selected}${after}`;
+    bodyInput.setRangeText(replacement, start, end, 'select');
+    bodyInput.focus();
+  };
+
+  const insertAtCursor = (text: string) => {
+    if (!bodyInput) return;
+    const start = bodyInput.selectionStart;
+    const prefix = start > 0 && !bodyInput.value.slice(0, start).endsWith('\n') ? '\n\n' : '';
+    bodyInput.setRangeText(`${prefix}${text}\n\n`, start, bodyInput.selectionEnd, 'end');
+    bodyInput.focus();
+  };
+
+  const loadDraft = async () => {
+    resetEditorFields();
+    if (saveButton) saveButton.disabled = true;
+    if (publishButton) publishButton.disabled = true;
+    setStatus(`Loading draft ${itemId}...`);
+    try {
+      const response = await fetch(`${API_BASE}/draft?id=${encodeURIComponent(itemId)}`, { cache: 'no-store' });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || 'Could not load this draft.');
+      if (String(data.item?.id ?? '') !== String(itemId)) {
+        throw new Error(`Draft mismatch. Expected ${itemId}, received ${data.item?.id ?? 'unknown'}.`);
+      }
+      publishedUrl = data.url ?? '';
+      const fm = data.frontmatter ?? {};
+      if (titleInput) titleInput.value = fm.title ?? '';
+      if (descriptionInput) descriptionInput.value = fm.description ?? '';
+      if (typeInput) typeInput.value = fm.type ?? 'guide';
+      if (topicsInput) topicsInput.value = Array.isArray(fm.topics) ? fm.topics.join(', ') : '';
+      if (dateInput) dateInput.value = fm.date ?? '';
+      if (bodyInput) bodyInput.value = data.body ?? '';
+      if (saveButton) saveButton.disabled = false;
+      if (publishButton) {
+        publishButton.disabled = false;
+        publishButton.textContent = data.published ? 'Save and open published blog' : 'Publish';
+      }
+      setStatus(data.published ? `Editing published blog: ${data.path}` : `Editing ${data.path}`, data.published ? 'success' : 'info');
+    } catch (error) {
+      setStatus(error instanceof Error ? error.message : 'Could not load this draft.', 'error');
+    }
+  };
+
+  const postDraft = async (endpoint: string) => {
+    const response = await fetch(`${API_BASE}/${endpoint}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(collectPayload()),
+    });
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.error || 'Request failed.');
+    return data;
+  };
+
+  saveButton?.addEventListener('click', async () => {
+    saveButton.disabled = true;
+    setStatus('Saving draft...');
+    try {
+      const data = await postDraft('save-draft');
+      if (data.url) publishedUrl = data.url;
+      setStatus(`Saved: ${data.path}`, 'success');
+    } catch (error) {
+      setStatus(error instanceof Error ? error.message : 'Could not save draft.', 'error');
+    } finally {
+      saveButton.disabled = false;
+    }
+  });
+
+  publishButton?.addEventListener('click', async () => {
+    publishButton.disabled = true;
+    if (saveButton) saveButton.disabled = true;
+    setBusy(true);
+    setStatus('Publishing draft...');
+    try {
+      const data = await postDraft('publish-draft');
+      setStatus(`${data.status === 'published' ? 'Saved' : 'Published'}: ${data.path}. Opening blog...`, 'success');
+      window.location.href = data.url || publishedUrl || '/swahg-blog-database/';
+    } catch (error) {
+      setBusy(false);
+      setStatus(error instanceof Error ? error.message : 'Could not publish draft.', 'error');
+      publishButton.disabled = false;
+      if (saveButton) saveButton.disabled = false;
+    }
+  });
+
+  document.querySelectorAll('[data-format]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const format = (button as HTMLElement).dataset.format;
+      if (format === 'h2') replaceSelection('## ', '', 'Heading');
+      if (format === 'h3') replaceSelection('### ', '', 'Heading');
+      if (format === 'bold') replaceSelection('**', '**', 'bold text');
+      if (format === 'italic') replaceSelection('*', '*', 'italic text');
+    });
+  });
+
+  uploadImageButton?.addEventListener('click', async () => {
+    const file = imageFileInput?.files?.[0];
+    const alt = imageAltInput?.value.trim() ?? '';
+    if (!file) {
+      setImageStatus('Choose an image file first.', 'error');
+      return;
+    }
+    if (!alt) {
+      setImageStatus('Alt text is required before upload.', 'error');
+      return;
+    }
+    uploadImageButton.disabled = true;
+    setImageStatus('Optimizing and uploading image...');
+    try {
+      const formData = new FormData();
+      formData.append('id', itemId);
+      formData.append('alt', alt);
+      formData.append('image', file);
+      const response = await fetch(`${API_BASE}/upload-image`, {
+        method: 'POST',
+        body: formData,
+      });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || 'Could not upload image.');
+      insertAtCursor(data.markdown);
+      setImageStatus(`Inserted image: ${data.url}`, 'success');
+      if (imageFileInput) imageFileInput.value = '';
+    } catch (error) {
+      setImageStatus(error instanceof Error ? error.message : 'Could not upload image.', 'error');
+    } finally {
+      uploadImageButton.disabled = false;
+    }
+  });
+
+  loadDraft();
+</script>
+
+<style>
+  .editor-head {
+    border-bottom: 1px solid var(--line);
+    background: var(--paper);
+    padding: clamp(2rem, 5vh, 4rem) 0 2rem;
+  }
+  .back-link {
+    color: var(--ink-faded);
+    display: inline-flex;
+    font-size: 0.82rem;
+    margin-bottom: 1.25rem;
+  }
+  .kicker {
+    color: var(--accent-soft);
+    font-size: 1.35rem;
+    margin: 0;
+  }
+  .subtitle {
+    color: var(--ink-soft);
+    max-width: 70ch;
+  }
+  .editor-shell {
+    display: grid;
+    grid-template-columns: minmax(260px, 340px) minmax(0, 1fr);
+    gap: clamp(1.5rem, 4vw, 3rem);
+    padding-top: 2rem;
+  }
+  .brief-panel,
+  .draft-panel {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+  }
+  .brief-panel {
+    align-self: start;
+    padding: 1.1rem;
+    position: sticky;
+    top: 84px;
+  }
+  .brief-panel h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.14em;
+    margin: 0 0 1rem;
+    text-transform: uppercase;
+  }
+  .brief-list {
+    display: grid;
+    gap: 0.75rem;
+    margin: 0 0 1.2rem;
+  }
+  .brief-list div {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 0.65rem;
+  }
+  .brief-list dt {
+    color: var(--ink-faded);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .brief-list dd {
+    color: var(--ink-soft);
+    font-size: 0.86rem;
+    line-height: 1.4;
+    margin: 0.15rem 0 0;
+  }
+  .brief-copy h3 {
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+    margin: 1rem 0 0.35rem;
+    text-transform: uppercase;
+  }
+  .brief-copy p {
+    color: var(--ink-faded);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+  .draft-panel {
+    padding: clamp(1rem, 2.5vw, 1.5rem);
+  }
+  .draft-toolbar {
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+  }
+  .draft-toolbar p {
+    color: var(--ink-faded);
+    font-size: 0.82rem;
+    margin: 0;
+  }
+  .status-stack {
+    display: grid;
+    gap: 0.45rem;
+    min-width: min(360px, 100%);
+  }
+  .publish-progress {
+    background: rgba(90, 74, 122, 0.1);
+    height: 6px;
+    overflow: hidden;
+    border-radius: 999px;
+  }
+  .publish-progress span {
+    animation: publishSlide 1s ease-in-out infinite;
+    background: var(--accent);
+    display: block;
+    height: 100%;
+    width: 42%;
+  }
+  @keyframes publishSlide {
+    0% { transform: translateX(-110%); }
+    100% { transform: translateX(260%); }
+  }
+  body.is-publishing {
+    cursor: progress;
+  }
+  .draft-toolbar p[data-tone="success"] { color: #4b6a39; }
+  .draft-toolbar p[data-tone="error"] { color: #9a5140; }
+  .button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .primary-button,
+  .secondary-button {
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.82rem;
+    min-height: 38px;
+    padding: 0.45rem 0.8rem;
+    border-radius: 2px;
+  }
+  .primary-button {
+    background: var(--accent);
+    border: 1px solid var(--accent);
+    color: var(--paper);
+  }
+  .secondary-button {
+    background: transparent;
+    border: 1px solid var(--line);
+    color: var(--ink-soft);
+  }
+  .primary-button:disabled,
+  .secondary-button:disabled {
+    cursor: wait;
+    opacity: 0.62;
+  }
+  .draft-form {
+    display: grid;
+    gap: 1rem;
+  }
+  .draft-form label {
+    display: grid;
+    gap: 0.35rem;
+  }
+  .draft-form label span {
+    color: var(--ink-faded);
+    font-size: 0.7rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+  .draft-form input,
+  .draft-form select,
+  .draft-form textarea {
+    border: 1px solid var(--line);
+    background: var(--bg);
+    color: var(--ink);
+    font: inherit;
+    padding: 0.65rem 0.75rem;
+    border-radius: 2px;
+    width: 100%;
+  }
+  .draft-form textarea {
+    font-family: 'Source Serif 4', Georgia, serif;
+    line-height: 1.55;
+    resize: vertical;
+  }
+  .draft-form input:focus,
+  .draft-form select:focus,
+  .draft-form textarea:focus {
+    border-color: var(--accent);
+    outline: 2px solid rgba(90, 74, 122, 0.18);
+    outline-offset: 2px;
+  }
+  .form-grid {
+    display: grid;
+    grid-template-columns: 160px minmax(0, 1fr) 170px;
+    gap: 0.75rem;
+  }
+  .format-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .format-toolbar button {
+    border: 1px solid var(--line);
+    background: var(--paper);
+    color: var(--ink-soft);
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.78rem;
+    min-height: 34px;
+    min-width: 42px;
+    padding: 0.35rem 0.55rem;
+    border-radius: 2px;
+  }
+  .format-toolbar button:hover {
+    border-color: var(--accent-soft);
+    color: var(--accent);
+  }
+  .image-uploader {
+    border-top: 1px solid var(--line);
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+  }
+  .image-uploader h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.13em;
+    margin: 0;
+    text-transform: uppercase;
+  }
+  .upload-grid {
+    align-items: end;
+    display: grid;
+    grid-template-columns: minmax(220px, 1fr) minmax(220px, 1fr) auto;
+    gap: 0.75rem;
+  }
+  .upload-button {
+    min-height: 45px;
+  }
+  .image-status {
+    color: var(--ink-faded);
+    font-size: 0.82rem;
+    margin: 0;
+  }
+  .image-status[data-tone="success"] { color: #4b6a39; }
+  .image-status[data-tone="error"] { color: #9a5140; }
+  @media (max-width: 900px) {
+    .editor-shell {
+      grid-template-columns: 1fr;
+    }
+    .brief-panel {
+      position: static;
+    }
+  }
+  @media (max-width: 620px) {
+    .draft-toolbar {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+    .form-grid {
+      grid-template-columns: 1fr;
+    }
+    .upload-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

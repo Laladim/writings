@@ -1,0 +1,63 @@
+{
+  "writingProcessVersion": "wbl-source-first-v1",
+  "draftStatus": "ready-for-lala-review",
+  "createdFor": "WBL Blog CMS writing process review",
+  "inventoryRow": {
+    "id": "13",
+    "sourceTitle": "Email Address Expert Secrets",
+    "sourceSlug": "email-address-is-gold",
+    "sourceCategory": "Courses / Freelancer Essentials",
+    "blogCategory": "Freelancing Foundations",
+    "topics": ["beginner-freelancing", "communication"],
+    "angle": "Use this topic to explain the communication habits that make remote work feel safer for clients and freelancers."
+  },
+  "sourcePacket": {
+    "sourcePath": "/Users/laladimalanta/writings/public/bonafide-filipino-freelancers/lesson-email-address-expert-secrets/index.html",
+    "sourceQuotes": [
+      "I have been applying but nobody replies. It has been three months.",
+      "I can look at your resume. But before we do that, can you show me the email address you are using to apply?",
+      "Sometimes the problem is not the resume. It is who the resume came from.",
+      "Wrong question: What is the easiest email password? Right question: When a hiring manager reads my email address, what is the first impression?",
+      "Use your real name.",
+      "Gmail only.",
+      "No numbers like birth year.",
+      "One email per identity.",
+      "You do not need to buy a domain at the beginning. That is a Tier 3 upgrade.",
+      "When someone comes inbound from a client, I know right away which hat I need to wear.",
+      "The email address is the first filter. If it fails, no resume enters."
+    ],
+    "thinSourceRisk": "Low. The source lesson contains a full framework, examples, warning, practice steps, and Lala's own email stack."
+  },
+  "readerTransformation": {
+    "before": "The beginner keeps rewriting the resume and wondering why no client replies.",
+    "after": "The beginner understands that professional communication starts before the resume is opened.",
+    "spine": "Before you fix your resume again, fix the identity that sends it."
+  },
+  "sevenBeatPlan": {
+    "vulnerability": "A beginner has been applying for three months with no replies.",
+    "scene": "Lala asks to see the email address before reviewing the resume.",
+    "innerCritic": "Maybe my resume is the problem. Maybe I need to rebuild everything again.",
+    "empathyPivot": "I understand why you keep fixing the resume first.",
+    "lesson": "The email address is a first filter, not a tiny setup detail.",
+    "faithAnchor": "Faithfulness in small things matters because work is worship, even in setup details.",
+    "warmInvitation": "Tonight, make one clean freelance Gmail and send yourself one test email."
+  },
+  "moveIds": {
+    "opener": "O8",
+    "scene": "S5",
+    "critic": "C3",
+    "empathy": "E4",
+    "lesson": "L5",
+    "anchor": "F6",
+    "close": "K1",
+    "aphorism": "A9",
+    "telos": "T2"
+  },
+  "gates": {
+    "sourceTraceability": "Every section maps to source lesson details: three-month no-reply question, resume-before-email diagnostic, five email rules, email stack, warning, and practice checklist.",
+    "antiDrift": "Plain sentences, single spine, no literary motif import.",
+    "moveRotation": "Avoids repeated E1, A1, and T1 patterns flagged in the May 15 move-ledger audit.",
+    "similarity": "Intended to differ from the older generic CMS draft by using a specific source scene, inner critic, five-rule framework, and warm setup invitation.",
+    "criticVerdict": "Self-reviewed against WBL critic rubric before save."
+  }
+}

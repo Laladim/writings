@@ -1,0 +1,679 @@
+---
+import Base from '../layouts/Base.astro';
+import inventory from '../data/swahgBlogInventory.json';
+
+type InventoryItem = typeof inventory.items[number];
+
+const slugify = (value: string) => value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const categories = inventory.metadata.categories;
+const topics = inventory.metadata.topics;
+const statuses = inventory.metadata.statuses;
+const items = inventory.items as InventoryItem[];
+const updated = new Date(inventory.metadata.generatedAt).toLocaleDateString('en-US', {
+  month: 'short',
+  day: 'numeric',
+  year: 'numeric',
+});
+const publishedCount = statuses.find((status) => status.slug === 'published')?.count ?? 0;
+const pendingCount = statuses.find((status) => status.slug === 'pending')?.count ?? 0;
+const draftCount = statuses.find((status) => status.slug === 'draft-started')?.count ?? 0;
+---
+<Base
+  title="WBL BFF Blog Database"
+  description="A filterable WBL blog planning database built from the BFF Open University Inventory."
+>
+  <section class="database-head">
+    <div class="container head-grid">
+      <div class="head-copy">
+        <p class="hand kicker">BFF inventory</p>
+        <h1>WBL Blog Database</h1>
+        <p class="subtitle">
+          A working table for turning BFF Open University lessons, stories, and program pages into Writings by Lala blog drafts.
+        </p>
+      </div>
+      <dl class="stats nav-font">
+        <div>
+          <dt>{inventory.metadata.itemCount}</dt>
+          <dd>Inventory items</dd>
+        </div>
+        <div>
+          <dt>{publishedCount}</dt>
+          <dd>Published</dd>
+        </div>
+        <div>
+          <dt>{pendingCount}</dt>
+          <dd>Not yet published</dd>
+        </div>
+        <div>
+          <dt>{draftCount}</dt>
+          <dd>Drafts started</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="database-controls">
+    <div class="container control-shell">
+      <label class="search-field nav-font">
+        <span>Search</span>
+        <input id="inventory-search" type="search" placeholder="Search titles, angles, topics" autocomplete="off" />
+      </label>
+
+      <div class="filter-block nav-font">
+        <span class="filter-label">Status</span>
+        <div class="chip-row">
+          <button class="chip active" data-status-filter="all">All</button>
+          {statuses.map((status) => (
+            <button class="chip" data-status-filter={status.slug}>
+              {status.label}
+              <span>{status.count}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div class="filter-block nav-font">
+        <span class="filter-label">Blog category</span>
+        <div class="chip-row">
+          <button class="chip active" data-category-filter="all">All</button>
+          {categories.map((category) => (
+            <button class="chip" data-category-filter={category.slug}>
+              {category.label}
+              <span>{category.count}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div class="filter-block nav-font">
+        <span class="filter-label">Topic</span>
+        <div class="chip-row">
+          <button class="chip active" data-topic-filter="all">All</button>
+          {topics.map((topic) => (
+            <button class="chip" data-topic-filter={topic.slug}>
+              {topic.label}
+              <span>{topic.count}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="database-results">
+    <div class="container results-bar nav-font">
+      <p><span id="result-count">{items.length}</span> items showing. Source refreshed {updated}.</p>
+      <button id="clear-filters" class="clear-button" type="button">Clear filters</button>
+    </div>
+
+    <div class="container">
+      <p id="action-message" class="action-message nav-font" aria-live="polite" hidden></p>
+      <div class="table-wrap">
+        <table id="inventory-table" class="inventory-table">
+          <thead class="nav-font">
+            <tr>
+              <th scope="col">Status</th>
+              <th scope="col">Blog title</th>
+              <th scope="col">Category</th>
+              <th scope="col">Topics</th>
+              <th scope="col">Source</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {items.map((item) => {
+              const categorySlug = slugify(item.blogCategory);
+              const searchText = [
+                item.sourceTitle,
+                item.sourceCategory,
+                item.blogCategory,
+                item.draftTitle,
+                item.angle,
+                item.excerpt,
+                item.publication.statusLabel,
+                ...item.topicLabels,
+              ].join(' ').toLowerCase();
+              const isPending = item.publication.status === 'pending';
+              const isDraft = item.publication.status === 'draft-started';
+              const isPublished = item.publication.status === 'published';
+
+              return (
+                <tr
+                  class="inventory-row"
+                  data-id={item.id}
+                  data-category={categorySlug}
+                  data-status={item.publication.status}
+                  data-topics={item.topics.join(',')}
+                  data-search={searchText}
+                >
+                  <td data-label="Status">
+                    <span class={`status-pill ${item.publication.status}`} data-status-label>
+                      {item.publication.statusLabel}
+                    </span>
+                  </td>
+                  <td data-label="Blog title" class="title-cell">
+                    <h2>{item.draftTitle}</h2>
+                    <p>{item.angle}</p>
+                  </td>
+                  <td data-label="Category" class="nav-font compact-cell">{item.blogCategory}</td>
+                  <td data-label="Topics" class="topic-cell nav-font">
+                    {item.topicLabels.map((label) => (
+                      <span>{label}</span>
+                    ))}
+                  </td>
+                  <td data-label="Source" class="source-cell nav-font">
+                    <strong>{item.sourceTitle}</strong>
+                    <span>{item.sourceCategory}</span>
+                    <span>{item.wordCount.toLocaleString()} source words</span>
+                  </td>
+                  <td data-label="Action" class="action-cell nav-font">
+                    {isPending && (
+                      <button class="create-button" type="button" data-create-id={item.id}>
+                        Create blog
+                      </button>
+                    )}
+                    {isDraft && (
+                      <a class="review-link" href={`/swahg-blog-draft/${item.id}/`}>
+                        Review or edit draft
+                      </a>
+                    )}
+                    {isPublished && (
+                      <a class="review-link" href={`/swahg-blog-draft/${item.id}/`}>
+                        Edit published
+                      </a>
+                    )}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+      <p id="empty-state" class="empty-state" hidden>No blog ideas match those filters yet.</p>
+    </div>
+  </section>
+</Base>
+
+<script>
+  const table = document.getElementById('inventory-table');
+  const searchInput = document.getElementById('inventory-search') as HTMLInputElement | null;
+  const countEl = document.getElementById('result-count');
+  const emptyState = document.getElementById('empty-state');
+  const clearButton = document.getElementById('clear-filters');
+  const actionMessage = document.getElementById('action-message');
+  const API_BASE = 'http://127.0.0.1:8792';
+
+  if (table) {
+    const rows = Array.from(table.querySelectorAll('.inventory-row')) as HTMLTableRowElement[];
+    let activeStatus = 'all';
+    let activeCategory = 'all';
+    let activeTopic = 'all';
+    let query = '';
+
+    const showMessage = (text: string, tone = 'info') => {
+      if (!actionMessage) return;
+      actionMessage.textContent = text;
+      actionMessage.dataset.tone = tone;
+      actionMessage.hidden = false;
+    };
+
+    const applyFilters = () => {
+      let shown = 0;
+      rows.forEach((row) => {
+        const statusOk = activeStatus === 'all' || row.dataset.status === activeStatus;
+        const categoryOk = activeCategory === 'all' || row.dataset.category === activeCategory;
+        const topics = (row.dataset.topics ?? '').split(',').filter(Boolean);
+        const topicOk = activeTopic === 'all' || topics.includes(activeTopic);
+        const searchOk = !query || (row.dataset.search ?? '').includes(query);
+        const visible = statusOk && categoryOk && topicOk && searchOk;
+        row.hidden = !visible;
+        if (visible) shown += 1;
+      });
+
+      if (countEl) countEl.textContent = String(shown);
+      if (emptyState) emptyState.hidden = shown > 0;
+    };
+
+    document.querySelectorAll('[data-status-filter]').forEach((button) => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('[data-status-filter]').forEach((b) => b.classList.remove('active'));
+        button.classList.add('active');
+        activeStatus = (button as HTMLElement).dataset.statusFilter ?? 'all';
+        applyFilters();
+      });
+    });
+
+    document.querySelectorAll('[data-category-filter]').forEach((button) => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('[data-category-filter]').forEach((b) => b.classList.remove('active'));
+        button.classList.add('active');
+        activeCategory = (button as HTMLElement).dataset.categoryFilter ?? 'all';
+        applyFilters();
+      });
+    });
+
+    document.querySelectorAll('[data-topic-filter]').forEach((button) => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('[data-topic-filter]').forEach((b) => b.classList.remove('active'));
+        button.classList.add('active');
+        activeTopic = (button as HTMLElement).dataset.topicFilter ?? 'all';
+        applyFilters();
+      });
+    });
+
+    searchInput?.addEventListener('input', () => {
+      query = searchInput.value.trim().toLowerCase();
+      applyFilters();
+    });
+
+    clearButton?.addEventListener('click', () => {
+      activeStatus = 'all';
+      activeCategory = 'all';
+      activeTopic = 'all';
+      query = '';
+      if (searchInput) searchInput.value = '';
+      document.querySelectorAll('[data-status-filter], [data-category-filter], [data-topic-filter]').forEach((button) => {
+        const el = button as HTMLElement;
+        const isAll = el.dataset.statusFilter === 'all' || el.dataset.categoryFilter === 'all' || el.dataset.topicFilter === 'all';
+        el.classList.toggle('active', isAll);
+      });
+      applyFilters();
+    });
+
+    document.querySelectorAll('[data-create-id]').forEach((button) => {
+      button.addEventListener('click', async () => {
+        const createButton = button as HTMLButtonElement;
+        const id = createButton.dataset.createId;
+        if (!id) return;
+        createButton.disabled = true;
+        createButton.textContent = 'Writing...';
+        try {
+          const response = await fetch(`${API_BASE}/create-blog`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id }),
+          });
+          const data = await response.json();
+          if (!response.ok) throw new Error(data.error || 'Could not create the draft.');
+
+          const row = createButton.closest('.inventory-row') as HTMLElement | null;
+          const statusLabel = row?.querySelector('[data-status-label]');
+          if (row) row.dataset.status = 'draft-started';
+          if (statusLabel) {
+            statusLabel.textContent = 'Draft started';
+            statusLabel.className = 'status-pill draft-started';
+          }
+          const link = document.createElement('a');
+          link.className = 'review-link';
+          link.href = `/swahg-blog-draft/${id}/`;
+          link.textContent = 'Review or edit draft';
+          createButton.replaceWith(link);
+          showMessage(`Draft created: ${data.path}`, 'success');
+          applyFilters();
+        } catch (error) {
+          createButton.disabled = false;
+          createButton.textContent = 'Create blog';
+          showMessage(error instanceof Error ? error.message : 'Could not create the draft.', 'error');
+        }
+      });
+    });
+
+    applyFilters();
+  }
+</script>
+
+<style>
+  .database-head {
+    border-bottom: 1px solid var(--line);
+    background: var(--paper);
+    padding: clamp(3rem, 7vh, 5rem) 0 clamp(2rem, 5vh, 3.5rem);
+  }
+  .head-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(240px, 360px);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: end;
+  }
+  .head-copy { max-width: 680px; }
+  .kicker {
+    color: var(--accent-soft);
+    font-size: 1.35rem;
+    margin: 0;
+  }
+  .subtitle {
+    color: var(--ink-soft);
+    max-width: 62ch;
+    margin: 1rem 0 0;
+  }
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .stats div {
+    background: var(--bg);
+    padding: 1rem;
+    min-height: 92px;
+  }
+  .stats dt {
+    color: var(--accent);
+    font-size: 1.45rem;
+    font-weight: 600;
+    line-height: 1.1;
+  }
+  .stats dd {
+    color: var(--ink-faded);
+    font-size: 0.78rem;
+    margin: 0.35rem 0 0;
+  }
+
+  .database-controls {
+    border-bottom: 1px solid var(--line);
+    padding: 1.5rem 0;
+  }
+  .control-shell {
+    display: grid;
+    gap: 1.25rem;
+  }
+  .search-field {
+    display: grid;
+    gap: 0.4rem;
+    max-width: 560px;
+  }
+  .search-field span,
+  .filter-label {
+    color: var(--ink-faded);
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .search-field input {
+    width: 100%;
+    min-height: 44px;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    color: var(--ink);
+    padding: 0.65rem 0.8rem;
+    font: inherit;
+    border-radius: 2px;
+  }
+  .search-field input:focus {
+    border-color: var(--accent);
+    outline: 2px solid rgba(90, 74, 122, 0.18);
+    outline-offset: 2px;
+  }
+  .filter-block {
+    display: grid;
+    gap: 0.55rem;
+  }
+  .chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+  }
+  .chip {
+    min-height: 38px;
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--ink-soft);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font: inherit;
+    font-size: 0.8rem;
+    letter-spacing: 0.01em;
+    padding: 0.45rem 0.75rem;
+    border-radius: 2px;
+  }
+  .chip span {
+    color: var(--ink-faded);
+    font-size: 0.72rem;
+  }
+  .chip:hover {
+    border-color: var(--accent-soft);
+    color: var(--accent);
+  }
+  .chip.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--paper);
+  }
+  .chip.active span { color: rgba(255, 253, 248, 0.78); }
+
+  .database-results {
+    padding: 1.2rem 0 clamp(4rem, 7vh, 6rem);
+  }
+  .results-bar {
+    color: var(--ink-faded);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 0.82rem;
+    margin-bottom: 1rem;
+  }
+  .results-bar p { margin: 0; }
+  .clear-button {
+    border: 0;
+    background: transparent;
+    color: var(--accent);
+    cursor: pointer;
+    font: inherit;
+    padding: 0.4rem 0;
+  }
+  .clear-button:hover { text-decoration: underline; }
+  .action-message {
+    border: 1px solid var(--line);
+    background: var(--paper);
+    color: var(--ink-soft);
+    font-size: 0.86rem;
+    margin: 0 0 1rem;
+    padding: 0.75rem 0.9rem;
+  }
+  .action-message[data-tone="success"] { border-color: rgba(90, 122, 74, 0.35); }
+  .action-message[data-tone="error"] { border-color: rgba(160, 80, 64, 0.4); }
+  .table-wrap {
+    border: 1px solid var(--line);
+    background: var(--paper);
+    overflow-x: auto;
+  }
+  .inventory-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 980px;
+  }
+  .inventory-table th {
+    border-bottom: 1px solid var(--line);
+    color: var(--ink-faded);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    padding: 0.75rem;
+    text-align: left;
+    text-transform: uppercase;
+    vertical-align: bottom;
+  }
+  .inventory-table td {
+    border-bottom: 1px solid var(--line);
+    color: var(--ink-soft);
+    padding: 0.9rem 0.75rem;
+    vertical-align: top;
+  }
+  .inventory-row:last-child td { border-bottom: 0; }
+  .inventory-row[hidden] { display: none; }
+  .status-pill {
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    display: inline-flex;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    line-height: 1.2;
+    padding: 0.25rem 0.55rem;
+    white-space: nowrap;
+  }
+  .status-pill.published {
+    background: rgba(90, 122, 74, 0.1);
+    border-color: rgba(90, 122, 74, 0.3);
+    color: #4b6a39;
+  }
+  .status-pill.pending {
+    background: rgba(160, 122, 58, 0.1);
+    border-color: rgba(160, 122, 58, 0.3);
+    color: var(--gold);
+  }
+  .status-pill.draft-started {
+    background: rgba(90, 74, 122, 0.1);
+    border-color: rgba(90, 74, 122, 0.25);
+    color: var(--accent);
+  }
+  .title-cell {
+    min-width: 320px;
+    max-width: 520px;
+  }
+  .title-cell h2 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.35;
+    margin: 0 0 0.35rem;
+  }
+  .title-cell p {
+    color: var(--ink-faded);
+    font-size: 0.88rem;
+    line-height: 1.45;
+    margin: 0;
+  }
+  .compact-cell {
+    font-size: 0.82rem;
+    min-width: 160px;
+  }
+  .topic-cell {
+    min-width: 190px;
+  }
+  .topic-cell span {
+    background: rgba(90, 74, 122, 0.08);
+    border-radius: 999px;
+    color: var(--accent);
+    display: inline-flex;
+    font-size: 0.72rem;
+    line-height: 1.25;
+    margin: 0 0.25rem 0.25rem 0;
+    padding: 0.25rem 0.5rem;
+  }
+  .source-cell {
+    font-size: 0.78rem;
+    min-width: 190px;
+  }
+  .source-cell strong,
+  .source-cell span {
+    display: block;
+  }
+  .source-cell strong {
+    color: var(--ink);
+    font-size: 0.86rem;
+    line-height: 1.35;
+    margin-bottom: 0.25rem;
+  }
+  .source-cell span {
+    color: var(--ink-faded);
+    line-height: 1.35;
+    margin-bottom: 0.2rem;
+  }
+  .action-cell {
+    min-width: 130px;
+  }
+  .create-button,
+  .review-link {
+    border: 1px solid var(--accent);
+    background: var(--accent);
+    color: var(--paper);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font: inherit;
+    font-size: 0.78rem;
+    min-height: 36px;
+    padding: 0.45rem 0.7rem;
+    border-radius: 2px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .create-button:hover,
+  .review-link:hover {
+    background: #4e406d;
+    text-decoration: none;
+  }
+  .create-button:disabled {
+    cursor: wait;
+    opacity: 0.7;
+  }
+  .path-note {
+    color: var(--ink-faded);
+    display: inline-block;
+    font-size: 0.78rem;
+    line-height: 1.35;
+  }
+  .empty-state {
+    color: var(--ink-faded);
+    font-style: italic;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  @media (max-width: 820px) {
+    .head-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 680px) {
+    .stats { grid-template-columns: 1fr; }
+    .results-bar { align-items: flex-start; flex-direction: column; }
+    .table-wrap {
+      border: 0;
+      background: transparent;
+      overflow: visible;
+    }
+    .inventory-table {
+      min-width: 0;
+    }
+    .inventory-table thead {
+      display: none;
+    }
+    .inventory-table,
+    .inventory-table tbody,
+    .inventory-table tr,
+    .inventory-table td {
+      display: block;
+      width: 100%;
+    }
+    .inventory-table tr {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      margin-bottom: 0.75rem;
+      padding: 0.75rem;
+    }
+    .inventory-table td {
+      border-bottom: 0;
+      display: grid;
+      gap: 0.25rem;
+      padding: 0.45rem 0;
+    }
+    .inventory-table td::before {
+      color: var(--ink-faded);
+      content: attr(data-label);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .title-cell {
+      min-width: 0;
+      max-width: none;
+    }
+  }
+</style>

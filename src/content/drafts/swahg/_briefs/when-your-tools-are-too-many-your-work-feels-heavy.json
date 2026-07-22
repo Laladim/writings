@@ -1,0 +1,62 @@
+{
+  "writingProcessVersion": "wbl-source-first-v1",
+  "draftStatus": "ready-for-lala-review",
+  "createdFor": "Second WBL Blog CMS writing process review",
+  "inventoryRow": {
+    "id": "19",
+    "sourceTitle": "Organize your Work Files",
+    "sourceSlug": "bonus-tips-1",
+    "sourceCategory": "Courses / Freelancing Journey",
+    "blogCategory": "Freelancing Foundations",
+    "topics": ["beginner-freelancing", "tools-and-systems"],
+    "angle": "Use this as a setup checklist that helps a new freelancer remove friction before paid work begins."
+  },
+  "sourcePacket": {
+    "sourcePath": "/Users/laladimalanta/writings/public/bonafide-filipino-freelancers/lesson-bonus-tips-1/index.html",
+    "sourceQuotes": [
+      "I already have a file system. But when I get overloaded, I lose the motivation to organize.",
+      "The problem is not motivation. There is no automation.",
+      "The three-rule bonus tip is files, browser, and tools.",
+      "When they become one system, you do not need motivation anymore. It becomes automatic.",
+      "Files should not be scattered and should be backed up.",
+      "Use one Google ecosystem: Drive, Docs, Sheets, Calendar, Tasks.",
+      "Stick to one ecosystem.",
+      "If you are using Google Workspace, Notion, ClickUp, Asana, Apple Notes, Bear, and Things, where is your file?",
+      "Pick one primary ecosystem. Add tools only when the ecosystem gap is real.",
+      "Set up a Friday 15-minute cleanup ritual."
+    ],
+    "thinSourceRisk": "Low. The source has a learner question, diagnosis, three-rule framework, tool-stack example, warning, practice steps, and archetype actions."
+  },
+  "readerTransformation": {
+    "before": "The beginner thinks organization fails because they lack motivation.",
+    "after": "The beginner sees that one primary system makes work lighter and repeatable.",
+    "spine": "When your tools are too many, your work feels heavier than it needs to be."
+  },
+  "sevenBeatPlan": {
+    "vulnerability": "A learner has a system, but overload makes organization feel heavy.",
+    "scene": "Files, browser tabs, tools, and client work are scattered across too many places.",
+    "innerCritic": "Maybe I am just not organized. Maybe I need another tool.",
+    "empathyPivot": "I understand why you keep downloading another app.",
+    "lesson": "The fix is not more tools. The fix is one primary ecosystem plus a weekly cleanup ritual.",
+    "faithAnchor": "Order is part of faithful work because small preparation protects the work God gives.",
+    "warmInvitation": "This Friday, spend fifteen minutes choosing one primary system and closing the duplicates."
+  },
+  "moveIds": {
+    "opener": "O8",
+    "scene": "S6",
+    "critic": "C3",
+    "empathy": "E4",
+    "lesson": "L5",
+    "anchor": "F6",
+    "close": "K1",
+    "aphorism": "A9",
+    "telos": "T2"
+  },
+  "gates": {
+    "sourceTraceability": "Draft maps to the learner overload quote, three-rule trifecta, one-ecosystem warning, tool list, and Friday cleanup practice.",
+    "antiDrift": "Plain WBL guide voice, one spine, no literary motif import.",
+    "moveRotation": "Avoids E1, A1, and T1. Uses the same guide-safe move family as the first test for consistency, but a different scene and source spine.",
+    "similarity": "Different from the email draft: tool overload and system consolidation rather than first-impression communication.",
+    "criticVerdict": "Self-reviewed against WBL critic rubric before save."
+  }
+}

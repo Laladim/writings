@@ -8,29 +8,39 @@ export interface Props {
   type: string;
   topics: string[];
   image?: string;
+  square?: boolean;
 }
-const { href, title, date, type, topics, image } = Astro.props;
-const optimizedImage = image ? optimizedImageUrl(image, 900) : undefined;
+const { href, title, date, type, topics, image, square = false } = Astro.props;
+const optimizedImage = image ? optimizedImageUrl(image, square ? 600 : 900) : undefined;
 const weekday = date.toLocaleDateString('en-US', { weekday: 'short' });
 const dateStr = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 ---
-<a class="entry" href={href} data-type={type.toLowerCase()} data-topics={topics.join(',')}>
+<a class:list={['entry', { 'entry-square': square }]} href={href} data-type={type.toLowerCase()} data-topics={topics.join(',')}>
   {image ? (
     <div class="thumb">
-      <img src={optimizedImage} alt="" loading="lazy" width="900" height="506" decoding="async" />
+      <img
+        src={optimizedImage}
+        alt=""
+        loading="lazy"
+        width={square ? 600 : 900}
+        height={square ? 600 : 506}
+        decoding="async"
+      />
     </div>
   ) : (
     <div class="thumb thumb-text" aria-hidden="true">
       <span class="hand-mark">{title.slice(0, 1)}</span>
     </div>
   )}
-  <div class="meta nav-font">
-    <span class="cap-type">{type}</span>
-    <span class="cap-sep">·</span>
-    <span class="cap-weekday">{weekday}</span>
-    <span class="cap-sep">·</span>
-    <span class="cap-date">{dateStr}</span>
-  </div>
+  {!square && (
+    <div class="meta nav-font">
+      <span class="cap-type">{type}</span>
+      <span class="cap-sep">·</span>
+      <span class="cap-weekday">{weekday}</span>
+      <span class="cap-sep">·</span>
+      <span class="cap-date">{dateStr}</span>
+    </div>
+  )}
   <h3 class="title">{title}</h3>
 </a>
 <style>
@@ -100,5 +110,12 @@ const dateStr = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric
     margin: 0;
     font-weight: 400;
     letter-spacing: 0;
+  }
+
+  .entry-square .thumb { aspect-ratio: 1 / 1; }
+  .entry-square .hand-mark { font-size: clamp(3rem, 6vw, 5rem); }
+  .entry-square .title {
+    margin-top: 0.75rem;
+    font-size: clamp(0.85rem, 0.8rem + 0.2vw, 1rem);
   }
 </style>

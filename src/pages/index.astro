@@ -14,6 +14,8 @@ for (const e of entries) {
     topicCounts.set(t, (topicCounts.get(t) ?? 0) + 1);
   }
 }
+
+const BATCH = 9;
 ---
 <Base title="Writings — Lala">
   <section class="hero">
@@ -27,18 +29,32 @@ for (const e of entries) {
 
   <section class="gallery-wrap">
     <div class="gallery">
-      {entries.map((entry) => (
-        <ContentCard
-          href={entryUrl(entry, base)}
-          title={entry.data.title}
-          date={entry.data.date}
-          type={entry.data.type}
-          topics={entry.data.topics}
-          image={entry.data.image}
-        />
+      {entries.map((entry, i) => (
+        <div class="tile" hidden={i >= BATCH}>
+          <ContentCard
+            href={entryUrl(entry, base)}
+            title={entry.data.title}
+            date={entry.data.date}
+            type={entry.data.type}
+            topics={entry.data.topics}
+            image={entry.data.image}
+            square
+          />
+        </div>
       ))}
       {entries.length === 0 && <p class="empty">The first entry is on its way.</p>}
     </div>
+    {entries.length > BATCH && (
+      <div class="load-more-row">
+        <button id="load-more" class="load-more nav-font" type="button">Load more</button>
+      </div>
+    )}
+    <noscript>
+      <style>
+        .gallery .tile[hidden] { display: block; }
+        .load-more-row { display: none; }
+      </style>
+    </noscript>
   </section>
 
   <section class="browse-wrap">
@@ -87,17 +103,32 @@ for (const e of entries) {
     padding: clamp(2rem, 5vh, 4rem) clamp(1rem, 3vw, 2rem) clamp(3rem, 8vh, 6rem);
   }
   .gallery {
-    max-width: 1100px;
+    max-width: 935px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: clamp(3rem, 7vh, 5.5rem) clamp(1rem, 2vw, 2rem);
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1.5rem, 4vh, 2.5rem) clamp(0.75rem, 2vw, 1.75rem);
   }
-  @media (max-width: 820px) {
-    .gallery { gap: 3.5rem 1rem; }
+  @media (max-width: 560px) {
+    .gallery { grid-template-columns: repeat(2, 1fr); gap: 1.5rem 0.75rem; }
   }
 
   .empty { grid-column: 1 / -1; color: var(--ink-faded); font-style: italic; text-align: center; }
+
+  .load-more-row { text-align: center; margin-top: clamp(2rem, 5vh, 3rem); }
+  .load-more {
+    padding: 0.7rem 2.4rem;
+    min-height: 44px;
+    background: transparent;
+    border: 1px solid var(--line);
+    color: var(--ink-soft);
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .load-more:hover, .load-more:focus-visible { border-color: var(--accent); color: var(--accent); }
 
   .browse-wrap {
     border-top: 1px solid var(--line);
@@ -147,17 +178,16 @@ for (const e of entries) {
   .see-all:hover { text-decoration: underline; }
 </style>
 
-<style is:global>
-  /* Grid positions live outside Astro scoping because ContentCard
-     renders its own scoped wrapper. These rules target the gallery's
-     direct children regardless of which component emitted them. */
-  .gallery > *:nth-child(6n+1) { grid-column: 3 / span 5; }
-  .gallery > *:nth-child(6n+2) { grid-column: 8 / span 5; }
-  .gallery > *:nth-child(6n+3) { grid-column: 1 / span 4; }
-  .gallery > *:nth-child(6n+4) { grid-column: 5 / span 6; }
-  .gallery > *:nth-child(6n+5) { grid-column: 4 / span 6; }
-  .gallery > *:nth-child(6n+0) { grid-column: 2 / span 5; }
-  @media (max-width: 820px) {
-    .gallery > * { grid-column: 1 / -1 !important; }
+<script>
+  const BATCH = 9;
+  const hiddenTiles = Array.from(document.querySelectorAll('.gallery .tile[hidden]'));
+  const btn = document.getElementById('load-more');
+  if (btn) {
+    btn.addEventListener('click', () => {
+      hiddenTiles.splice(0, BATCH).forEach((tile) => tile.removeAttribute('hidden'));
+      if (hiddenTiles.length === 0) {
+        btn.closest('.load-more-row')?.remove();
+      }
+    });
   }
-</style>
+</script>
