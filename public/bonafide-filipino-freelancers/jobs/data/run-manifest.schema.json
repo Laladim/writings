@@ -7,12 +7,16 @@
     "run_id",
     "generated_at",
     "job_count",
+    "direct_application_count",
+    "distinct_sources",
+    "source_caps",
     "newest_posting",
     "oldest_posting",
     "source_counts",
     "role_counts",
     "publish_status",
-    "refresh_mode"
+    "refresh_mode",
+    "eligibility_policy"
   ],
   "additionalProperties": true
 }

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Refresh the public BFF job board from no-secret remote job feeds."""
+"""Refresh the public BFF job board from vetted direct ATS job boards."""
 
 from __future__ import annotations
 
@@ -9,7 +9,6 @@ import html
 import json
 import re
 import shutil
-import sys
 import time
 import urllib.parse
 import urllib.request
@@ -26,7 +25,33 @@ DATA = BOARD / "data"
 MAX_POSTED_AGE_DAYS = 30
 MAX_JOBS = 40
 MIN_JOBS = 20
+MIN_DISTINCT_SOURCES = 3
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+# Every accepted row must end at the employer or staffing firm's public ATS
+# page. Aggregators are intentionally excluded because they hide or rewrite
+# eligibility, dates, and application destinations.
+ASHBY_BOARDS = (
+    {"slug": "multiplymii", "source": "MultiplyMii", "cap": 8, "staffing": True},
+    {"slug": "va4u", "source": "VA4U", "cap": 7, "staffing": True},
+    {"slug": "EYT", "source": "Extend Your Team", "cap": 4, "staffing": True, "team_is_client": True},
+    {"slug": "clickup", "source": "ClickUp", "cap": 2, "staffing": False},
+    {"slug": "clipboard", "source": "Clipboard Health", "cap": 1, "staffing": False},
+)
+SOURCE_CAPS = {board["source"]: int(board["cap"]) for board in ASHBY_BOARDS}
+ASHBY_BOARD_BY_SLUG = {
+    str(board["slug"]).casefold(): board for board in ASHBY_BOARDS
+}
+ASHBY_API_PREFIX = "https://api.ashbyhq.com/posting-api/job-board/"
+DIRECT_ATS_DOMAINS = {"jobs.ashbyhq.com"}
+AGGREGATOR_DOMAINS = {
+    "himalayas.app",
+    "jobicy.com",
+    "nodesk.co",
+    "remoteok.com",
+    "remotive.com",
+    "weworkremotely.com",
+}
 
 ROLE_LABELS = [
     "Customer Support",
@@ -35,6 +60,9 @@ ROLE_LABELS = [
     "SEO",
     "Virtual Assistant",
     "Executive Assistant",
+    "Accounting & Bookkeeping",
+    "E-commerce",
+    "Operations & Admin",
 ]
 
 SUMMARY_KEYS = [
@@ -202,9 +230,9 @@ TOOLS = [
 TITLE_KNOCKOUT = re.compile(
     r"\b(vp|vice president|director|head of|chief|cto|cmo|ceo|cfo|"
     r"software engineer|backend|frontend|full[- ]?stack|devops|sre|developer|programmer|"
-    r"account executive|account manager|sales representative|sales development|sdr|bdr|inside sales|cold call|telemarket|"
+    r"account executive|sales representative|sales development|sdr|bdr|inside sales|cold call|telemarket|appointment setter|"
     r"business development|team lead|engineering manager|growth lead|tax reviewer|benefits representative|"
-    r"horticulturalist|agronomist|cybersecurity|quality assurance engineer|dental lab technician)\b|(?<!community )\bmanager\b",
+    r"horticulturalist|agronomist|cybersecurity|quality assurance engineer|dental lab technician)\b",
     re.I,
 )
 TEXT_KNOCKOUT = re.compile(
@@ -222,11 +250,35 @@ US_LOCATION = re.compile(
 )
 NON_PH_LOCATION = re.compile(
     r"\b(europe|greece|canada|united kingdom|uk|australia|new zealand|india|hyderabad|"
+    r"germany|italy|chile|mexico|colombia|brazil|argentina|costa rica|nicaragua|"
     r"german[- ]speaking|french[- ]speaking|spanish[- ]speaking|italian[- ]speaking)\b",
     re.I,
 )
-PH_OK = re.compile(r"\b(worldwide|anywhere in the world|work from anywhere in the world|global remote|philippines|filipino|apac|asia[- ]?pacific|southeast asia)\b", re.I)
+PH_LOCATION = re.compile(
+    r"\b(philippines|filipino|metro manila|manila|national capital region|"
+    r"cebu|davao|luzon|visayas|mindanao)\b",
+    re.I,
+)
+PLACEHOLDER_COMPANY = re.compile(
+    r"^(company|confidential|employer|name|not listed|unknown|n/?a|test(?: abc)?)$",
+    re.I,
+)
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+ASHBY_JOB_ID_RE = re.compile(
+    r"^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+    re.I,
+)
+
+DATA_EXPORT_NAMES = {
+    "jobs.json",
+    "accepted-job.schema.json",
+    "resume-match-profiles.json",
+    "resume-match-profiles.schema.json",
+    "run-manifest.json",
+    "run-manifest.schema.json",
+    "source-health.json",
+    "source-health.schema.json",
+}
 
 
 def request(url: str, accept: str = "application/json", retries: int = 2) -> bytes:
@@ -297,7 +349,25 @@ def age_days(posted: str) -> int:
     return (datetime.now().date() - posted_date).days
 
 
-def normalize_job(title: str, company: str, description: str, location: str, tags: list[str], apply_url: str, source: str, posted: str, salary: str = "", job_type: str = "", industry: str = "") -> dict[str, Any] | None:
+def normalize_job(
+    title: str,
+    company: str,
+    description: str,
+    location: str,
+    tags: list[str],
+    apply_url: str,
+    source: str,
+    posted: str,
+    salary: str = "",
+    job_type: str = "",
+    industry: str = "",
+    *,
+    source_url: str = "",
+    source_mode: str = "automated",
+    ats_platform: str = "",
+    is_remote: bool | None = None,
+    workplace_type: str = "",
+) -> dict[str, Any] | None:
     title = str(title or "").strip()
     company = str(company or "").strip()
     if not title or not company:
@@ -314,6 +384,11 @@ def normalize_job(title: str, company: str, description: str, location: str, tag
         "salary": clean_text(salary).strip(),
         "job_type": clean_text(job_type).strip(),
         "industry": clean_text(industry).strip(),
+        "source_url": clean_text(source_url or apply_url).strip(),
+        "source_mode": clean_text(source_mode).strip(),
+        "ats_platform": clean_text(ats_platform or source).strip(),
+        "is_remote": is_remote if isinstance(is_remote, bool) else None,
+        "workplace_type": clean_text(workplace_type).strip(),
     }
 
 
@@ -446,35 +521,110 @@ def fetch_jobicy() -> tuple[list[dict[str, Any]], str]:
     return rows, ""
 
 
+def fetch_ashby_board(board: dict[str, Any]) -> tuple[list[dict[str, Any]], str]:
+    """Fetch one employer's published jobs from Ashby's public posting API."""
+    source = board["source"]
+    api_url = f"{ASHBY_API_PREFIX}{urllib.parse.quote(board['slug'], safe='')}"
+    board_url = f"https://jobs.ashbyhq.com/{urllib.parse.quote(board['slug'], safe='')}"
+    payload = fetch_json(api_url)
+    jobs = payload.get("jobs", []) if isinstance(payload, dict) else []
+    rows: list[dict[str, Any]] = []
+    for item in jobs:
+        if not isinstance(item, dict) or item.get("isListed") is False:
+            continue
+        tags = [
+            value
+            for value in (item.get("department"), item.get("team"))
+            if isinstance(value, str) and value.strip()
+        ]
+        company = source
+        if board.get("staffing"):
+            team = clean_text(item.get("team") or "").strip()
+            if board.get("team_is_client") and team:
+                company = f"{team} via {source}"
+            else:
+                company = f"Undisclosed client via {source}"
+        row = normalize_job(
+            item.get("title"),
+            company,
+            item.get("descriptionPlain") or item.get("descriptionHtml") or "",
+            item.get("location") or "",
+            tags,
+            item.get("jobUrl") or "",
+            source,
+            item.get("publishedAt"),
+            "",
+            item.get("employmentType") or "",
+            item.get("department") or "",
+            source_url=board_url,
+            source_mode="direct_ats",
+            ats_platform="Ashby",
+            is_remote=item.get("isRemote"),
+            workplace_type=item.get("workplaceType") or "",
+        )
+        if row:
+            rows.append(row)
+    return rows, ""
+
+
 FETCHERS = {
-    "RemoteOK": fetch_remoteok,
-    "Remotive": fetch_remotive,
-    "Himalayas": fetch_himalayas,
-    "WeWorkRemotely": lambda: fetch_rss_source(
-        "WeWorkRemotely",
-        [
-            "https://weworkremotely.com/categories/remote-customer-support-jobs.rss",
-            "https://weworkremotely.com/categories/remote-sales-and-marketing-jobs.rss",
-        ],
-    ),
-    "Jobicy": fetch_jobicy,
-    "NoDesk": lambda: fetch_rss_source("NoDesk", ["https://nodesk.co/remote-jobs/rss/"]),
+    board["source"]: (lambda board=board: fetch_ashby_board(board))
+    for board in ASHBY_BOARDS
 }
 
 
-def role_category(title: str, text: str) -> str:
-    blob = f"{title} {text}".lower()
-    if re.search(r"customer (service|support|experience|care)|client support|technical support", blob):
+def role_category(title: str, text: str = "") -> str:
+    """Classify from the title only; descriptions may not invent a role."""
+    del text
+    value = clean_text(title).lower()
+    if re.search(
+        r"customer (service|support|experience|care|success)|client support|"
+        r"technical support|support specialist|customer happiness|"
+        r"technical account manager|technical implementation manager",
+        value,
+    ):
         return "Customer Support"
-    if re.search(r"executive assistant|administrative assistant|admin assistant|scheduler|operations coordinator", blob):
+    if re.search(
+        r"accountant|accounting|bookkeeper|bookkeeping|billing representative|"
+        r"accounts? (?:receivable|payable)|\bap administrator\b|"
+        r"assistant controller|\bcontroller\b|finance & admin support",
+        value,
+    ):
+        return "Accounting & Bookkeeping"
+    if re.search(
+        r"e-?commerce|amazon (?:ppc|account|operations)|marketplace specialist",
+        value,
+    ):
+        return "E-commerce"
+    if re.search(
+        r"executive assistant|administrative assistant|admin assistant|"
+        r"personal assistant|project assistant|scheduler",
+        value,
+    ):
         return "Executive Assistant"
-    if re.search(r"virtual assistant|\bva\b|data entry|back office", blob):
+    if re.search(
+        r"virtual assistant|\bva\b|data entry|back office|"
+        r"\badmin(?:istrative)? support\b|\bsales admin\b|"
+        r"\boperations assistant\b",
+        value,
+    ):
         return "Virtual Assistant"
-    if re.search(r"community manager|community support|moderator", blob):
+    if re.search(
+        r"operations (?:lead|coordinator|specialist)|administration support|"
+        r"administrative coordinator|office coordinator|logistics administrator",
+        value,
+    ):
+        return "Operations & Admin"
+    if re.search(r"community manager|community support|moderator", value):
         return "Community Manager"
-    if re.search(r"\bseo\b|search engine", blob):
+    if re.search(r"\bseo\b|search engine", value):
         return "SEO"
-    if re.search(r"content|copywriter|writer|editor|social media|marketing coordinator", blob):
+    if re.search(
+        r"content|copywriter|writer|editor|social media|communications|"
+        r"marketing(?: [a-z&-]+){0,2} (?:coordinator|manager|administrator)|"
+        r"marketing specialist|ads creative strategist",
+        value,
+    ):
         return "Content Specialist"
     return ""
 
@@ -488,21 +638,31 @@ def seniority(title: str) -> str:
 
 
 def ph_eligibility(location: str, text: str, source: str) -> tuple[str, str, int]:
-    blob = f"{location} {text}"
-    explicit_global = re.search(r"\b(worldwide|anywhere in the world|global remote|philippines|filipino|apac|asia[- ]?pacific|southeast asia)\b", blob, re.I)
-    if (US_LOCATION.search(blob) or NON_PH_LOCATION.search(blob)) and not explicit_global:
-        return "Maybe", "Non-PH location or language requirement", 0
-    if PH_OK.search(blob):
-        return "Yes", "PH-friendly remote", 20
-    if source in {"Jobicy", "RemoteOK", "NoDesk", "Himalayas"} and not US_LOCATION.search(location):
-        return "Likely", "Unspecified remote", 14
-    if US_LOCATION.search(blob):
-        return "Maybe", "Check US restriction", 4
-    return "Likely", "Unspecified remote", 12
+    """Return Yes only when the structured location explicitly names the PH."""
+    del text, source
+    location_value = clean_text(location).strip()
+    if PH_LOCATION.search(location_value):
+        return "Yes", "Philippines explicitly listed", 20
+    if US_LOCATION.search(location_value) or NON_PH_LOCATION.search(location_value):
+        return "No", "Structured location excludes the Philippines", 0
+    return "Maybe", "Structured location does not prove Philippines eligibility", 0
 
 
 def contract_type(text: str, job_type: str) -> str:
-    blob = f"{job_type} {text}".lower()
+    structured = re.sub(r"[^a-z]", "", clean_text(job_type).lower())
+    structured_types = {
+        "fulltime": "Full-time",
+        "parttime": "Part-time",
+        "contract": "Contract",
+        "contractor": "Contract",
+        "freelance": "Contract",
+        "temporary": "Temporary",
+        "temp": "Temporary",
+    }
+    if structured in structured_types:
+        return structured_types[structured]
+
+    blob = clean_text(text).lower()
     if "part-time" in blob or "part time" in blob:
         return "Part-time"
     if "contract" in blob or "freelance" in blob:
@@ -520,10 +680,15 @@ def matched_tools(text: str, tags: list[str]) -> list[str]:
 
 
 def archetype_for(role: str, newbie: bool) -> tuple[str, str]:
-    if role in {"Virtual Assistant", "Executive Assistant"}:
+    if role in {
+        "Virtual Assistant",
+        "Executive Assistant",
+        "Accounting & Bookkeeping",
+        "Operations & Admin",
+    }:
         primary = "Generalist Admin"
         labels = "Generalist Admin, Corporate Transitioner, Fresh Starter"
-    elif role == "Content Specialist":
+    elif role in {"Content Specialist", "E-commerce"}:
         primary = "Creative Specialist"
         labels = "Creative Specialist, Solo Entrepreneur, Polished Freelancer"
     elif role == "Community Manager":
@@ -542,6 +707,124 @@ def stable_id(job: dict[str, Any]) -> str:
     return hashlib.sha1(key.encode("utf-8")).hexdigest()[:12]
 
 
+def hostname(url: str) -> str:
+    try:
+        return (urllib.parse.urlsplit(str(url)).hostname or "").rstrip(".").lower()
+    except ValueError:
+        return ""
+
+
+def domain_matches(host: str, domains: set[str]) -> bool:
+    return any(host == domain or host.endswith(f".{domain}") for domain in domains)
+
+
+def ashby_url_parts(url: str) -> list[str]:
+    try:
+        parsed = urllib.parse.urlsplit(str(url).strip())
+        port = parsed.port
+    except ValueError:
+        return []
+    host = (parsed.hostname or "").rstrip(".").lower()
+    if (
+        parsed.scheme.lower() != "https"
+        or host != "jobs.ashbyhq.com"
+        or parsed.username is not None
+        or parsed.password is not None
+        or port not in (None, 443)
+        or parsed.query
+        or parsed.fragment
+    ):
+        return []
+    return [urllib.parse.unquote(part) for part in parsed.path.split("/") if part]
+
+
+def vetted_ashby_slug(url: str, *, job_page: bool) -> str:
+    parts = ashby_url_parts(url)
+    expected_parts = 2 if job_page else 1
+    if len(parts) != expected_parts:
+        return ""
+    slug = parts[0].casefold()
+    if slug not in ASHBY_BOARD_BY_SLUG:
+        return ""
+    if job_page and not ASHBY_JOB_ID_RE.fullmatch(parts[1]):
+        return ""
+    return slug
+
+
+def is_direct_application_url(url: str) -> bool:
+    return bool(vetted_ashby_slug(url, job_page=True))
+
+
+def is_direct_source_url(url: str) -> bool:
+    return bool(vetted_ashby_slug(url, job_page=False))
+
+
+def semantic_text(value: str) -> str:
+    return re.sub(r"[^a-z0-9]+", " ", clean_text(value).lower()).strip()
+
+
+def semantic_job_key(job: dict[str, Any]) -> str:
+    return "|".join(
+        semantic_text(str(job.get(field, "")))
+        for field in ("company", "title", "job_location")
+    )
+
+
+def description_duplicate_key(job: dict[str, Any]) -> str:
+    description_hash = str(job.get("description_hash", "")).strip().lower()
+    if not description_hash:
+        return ""
+    return "|".join(
+        (
+            semantic_text(str(job.get("source", ""))),
+            semantic_text(str(job.get("job_location", ""))),
+            description_hash,
+        )
+    )
+
+
+def has_structured_remote_evidence(job: dict[str, Any]) -> bool:
+    """Require a positive ATS remote signal without a structured conflict."""
+    is_remote = job.get("is_remote")
+    workplace_type = re.sub(
+        r"[^a-z]", "", clean_text(job.get("workplace_type", "")).lower()
+    )
+    if is_remote is False or workplace_type in {"hybrid", "onsite"}:
+        return False
+    return is_remote is True or workplace_type == "remote"
+
+
+def detail_quality_key(job: dict[str, Any]) -> tuple[int, str, str]:
+    return (
+        int(job.get("fit_score", 0) or 0),
+        str(job.get("posted", "")),
+        str(job.get("title", "")).casefold(),
+    )
+
+
+def deduplicate_details(details: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Collapse title variants and identical same-source job descriptions."""
+    kept: list[dict[str, Any]] = []
+    for detail in details:
+        duplicates = [
+            existing
+            for existing in kept
+            if semantic_job_key(existing) == semantic_job_key(detail)
+            or (
+                description_duplicate_key(existing)
+                and description_duplicate_key(existing)
+                == description_duplicate_key(detail)
+            )
+        ]
+        if not duplicates:
+            kept.append(detail)
+            continue
+        winner = max([detail, *duplicates], key=detail_quality_key)
+        kept = [existing for existing in kept if existing not in duplicates]
+        kept.append(winner)
+    return kept
+
+
 def detail_record(job: dict[str, Any]) -> dict[str, Any] | None:
     if not job.get("posted") or not DATE_RE.match(job["posted"]):
         return None
@@ -553,6 +836,14 @@ def detail_record(job: dict[str, Any]) -> dict[str, Any] | None:
         return None
     text = job["description"]
     knockout_blob = f"{job['title']} {job['company']} {job['location']} {job['apply_url']} {text}"
+    if PLACEHOLDER_COMPANY.fullmatch(str(job.get("company", "")).strip()):
+        return None
+    if job.get("source_mode") != "direct_ats":
+        return None
+    if not is_direct_application_url(job.get("apply_url", "")):
+        return None
+    if not has_structured_remote_evidence(job):
+        return None
     if LOW_TRUST.search(knockout_blob):
         return None
     if SENSITIVE_INDUSTRY.search(knockout_blob):
@@ -565,7 +856,7 @@ def detail_record(job: dict[str, Any]) -> dict[str, Any] | None:
     tools = matched_tools(text, job["tags"])
     skill_count = len(tools)
     ph_status, timezone_required, geo_points = ph_eligibility(job["location"], text, job["source"])
-    if ph_status == "Maybe" and (US_LOCATION.search(knockout_blob) or NON_PH_LOCATION.search(knockout_blob)):
+    if ph_status != "Yes":
         return None
     contract = contract_type(text, job["job_type"])
     senior = seniority(job["title"])
@@ -625,7 +916,7 @@ def detail_record(job: dict[str, Any]) -> dict[str, Any] | None:
         "why_it_fits": ". ".join(why)[:300],
         "why_it_might_not": ". ".join(why_not)[:300],
         "apply_url": job["apply_url"],
-        "ats_platform": job["source"],
+        "ats_platform": job["ats_platform"],
         "industry": job["industry"][:80],
         "about_the_company": "",
         "position_overview": text[:2400],
@@ -647,8 +938,8 @@ def detail_record(job: dict[str, Any]) -> dict[str, Any] | None:
         "quality_reasons": "; ".join([ph_status.lower() + " PH signal", "clear posting details"]),
         "job_id": job_id,
         "source": job["source"],
-        "source_mode": "automated",
-        "source_url": job["apply_url"],
+        "source_mode": job["source_mode"],
+        "source_url": job["source_url"],
         "tier": "Tier 1",
         "raw_description": text,
         "clean_description": text,
@@ -714,6 +1005,57 @@ def resume_record(detail: dict[str, Any]) -> dict[str, Any]:
     return {key: raw.get(key, "") for key in RESUME_KEYS}
 
 
+def select_diverse_jobs(details: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Round-robin accepted roles so one staffing source cannot own the board."""
+    source_order = [board["source"] for board in ASHBY_BOARDS]
+    grouped: dict[str, list[dict[str, Any]]] = {
+        source: [] for source in source_order
+    }
+    for detail in details:
+        grouped.setdefault(detail["source"], []).append(detail)
+    for source, rows in list(grouped.items()):
+        by_role: dict[str, list[dict[str, Any]]] = {
+            role: [] for role in ROLE_LABELS
+        }
+        for row in rows:
+            by_role.setdefault(row["role_lala_category"], []).append(row)
+        for role_rows in by_role.values():
+            role_rows.sort(
+                key=lambda row: (
+                    int(row["fit_score"]),
+                    row["posted"],
+                    row["title"].casefold(),
+                ),
+                reverse=True,
+            )
+        balanced: list[dict[str, Any]] = []
+        while True:
+            added_role = False
+            for role in ROLE_LABELS:
+                if by_role.get(role):
+                    balanced.append(by_role[role].pop(0))
+                    added_role = True
+            if not added_role:
+                break
+        grouped[source] = balanced
+    selected: list[dict[str, Any]] = []
+    selected_counts: Counter[str] = Counter()
+    while len(selected) < MAX_JOBS:
+        added = False
+        for source in source_order:
+            rows = grouped.get(source, [])
+            if not rows or selected_counts[source] >= SOURCE_CAPS[source]:
+                continue
+            selected.append(rows.pop(0))
+            selected_counts[source] += 1
+            added = True
+            if len(selected) >= MAX_JOBS:
+                break
+        if not added:
+            break
+    return selected
+
+
 def schema(title: str, required: list[str]) -> dict[str, Any]:
     return {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
@@ -726,10 +1068,32 @@ def schema(title: str, required: list[str]) -> dict[str, Any]:
 
 def replace_embedded_json(index_path: Path, summaries: list[dict[str, Any]], details: dict[str, dict[str, Any]]) -> None:
     text = index_path.read_text()
+    role_json = json.dumps(ROLE_LABELS, ensure_ascii=False)
     summary_json = json.dumps(summaries, ensure_ascii=False)
     details_json = json.dumps(details, ensure_ascii=False)
-    text = re.sub(r"const EMBEDDED_JOBS = .*?;\nconst EMBEDDED_DETAILS =", f"const EMBEDDED_JOBS = {summary_json};\nconst EMBEDDED_DETAILS =", text, flags=re.S)
-    text = re.sub(r"const EMBEDDED_DETAILS = .*?;\nconst state =", f"const EMBEDDED_DETAILS = {details_json};\nconst state =", text, flags=re.S)
+    text, role_count = re.subn(
+        r"const ROLE_LABELS = .*?;",
+        f"const ROLE_LABELS = {role_json};",
+        text,
+        count=1,
+    )
+    text, jobs_count = re.subn(
+        r"const EMBEDDED_JOBS = .*?;\nconst EMBEDDED_DETAILS =",
+        f"const EMBEDDED_JOBS = {summary_json};\nconst EMBEDDED_DETAILS =",
+        text,
+        count=1,
+        flags=re.S,
+    )
+    text, details_count = re.subn(
+        r"const EMBEDDED_DETAILS = .*?;\nconst state =",
+        f"const EMBEDDED_DETAILS = {details_json};\nconst state =",
+        text,
+        count=1,
+        flags=re.S,
+    )
+    assert (role_count, jobs_count, details_count) == (1, 1, 1), (
+        "index embedded payload replacements did not each occur exactly once"
+    )
     index_path.write_text(text)
 
 
@@ -755,16 +1119,20 @@ def write_outputs(details: list[dict[str, Any]], health_rows: list[dict[str, Any
     (staging / "resume-match-profiles.schema.json").write_text(json.dumps(schema("BFF Resume Match Profiles Export", RESUME_KEYS), indent=2) + "\n")
     run_id = datetime.now().strftime("%Y%m%dT%H%M%S")
     manifest = {
-        "manifest_version": "1.0",
+        "manifest_version": "2.0",
         "run_id": run_id,
         "generated_at": datetime.now().isoformat(timespec="seconds"),
         "job_count": len(details),
+        "direct_application_count": len(details),
+        "distinct_sources": len({detail["source"] for detail in details}),
+        "source_caps": SOURCE_CAPS,
         "newest_posting": max(detail["posted"] for detail in details),
         "oldest_posting": min(detail["posted"] for detail in details),
         "source_counts": dict(Counter(detail["source"] for detail in details)),
         "role_counts": dict(Counter(detail["role_lala_category"] for detail in details)),
         "publish_status": "publishable",
-        "refresh_mode": "github-actions-no-secret",
+        "refresh_mode": "github-actions-direct-ats-no-secret",
+        "eligibility_policy": "explicit-ph-structured-location-v1",
     }
     (staging / "run-manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n")
     (staging / "run-manifest.schema.json").write_text(json.dumps(schema("BFF Job Board Run Manifest", list(manifest.keys())), indent=2) + "\n")
@@ -774,43 +1142,213 @@ def write_outputs(details: list[dict[str, Any]], health_rows: list[dict[str, Any
     }
     (staging / "source-health.json").write_text(json.dumps(source_health, ensure_ascii=False, indent=2) + "\n")
     (staging / "source-health.schema.json").write_text(json.dumps(schema("BFF Source Health Export", ["generated_at", "sources"]), indent=2) + "\n")
+    staged_index = BOARD / "index.next.html"
+    if staged_index.exists():
+        staged_index.unlink()
+    staged_index.write_text((BOARD / "index.html").read_text())
+    replace_embedded_json(staged_index, summaries, detail_map)
+    verify_generated_data(staging)
+    verify_embedded_board(staged_index, staging)
     previous = BOARD / "data.previous"
     if previous.exists():
         shutil.rmtree(previous)
-    if DATA.exists():
-        DATA.rename(previous)
-    staging.rename(DATA)
+    had_previous = DATA.exists()
+    try:
+        if had_previous:
+            DATA.rename(previous)
+        staging.rename(DATA)
+        staged_index.replace(BOARD / "index.html")
+    except Exception:
+        if previous.exists():
+            if DATA.exists():
+                shutil.rmtree(DATA)
+            previous.rename(DATA)
+        elif not had_previous and DATA.exists():
+            shutil.rmtree(DATA)
+        if staged_index.exists():
+            staged_index.unlink()
+        raise
     if previous.exists():
         shutil.rmtree(previous)
-    replace_embedded_json(BOARD / "index.html", summaries, detail_map)
 
 
-def verify() -> None:
-    jobs = json.loads((DATA / "jobs.json").read_text())
+def verify_generated_data(data_dir: Path) -> None:
+    jobs = json.loads((data_dir / "jobs.json").read_text())
     assert isinstance(jobs, list), "jobs.json must be an array"
     assert len(jobs) >= MIN_JOBS, f"expected at least {MIN_JOBS} jobs, found {len(jobs)}"
     ids = [job["id"] for job in jobs]
     assert len(ids) == len(set(ids)), "duplicate job ids"
     newest = max(job["posted"] for job in jobs)
     oldest = min(job["posted"] for job in jobs)
+    source_counts: Counter[str] = Counter()
+    role_counts: Counter[str] = Counter()
+    semantic_keys: dict[str, str] = {}
+    description_keys: dict[str, str] = {}
+    details_by_id: dict[str, dict[str, Any]] = {}
     for job in jobs:
+        assert list(job.keys()) == SUMMARY_KEYS, f"summary keys mismatch for {job['id']}"
         assert 0 <= age_days(job["posted"]) <= MAX_POSTED_AGE_DAYS, f"stale or future posting: {job['id']} {job['posted']}"
-        detail_path = DATA / f"{job['id']}.json"
+        detail_path = data_dir / f"{job['id']}.json"
         assert detail_path.exists(), f"missing detail {job['id']}"
         detail = json.loads(detail_path.read_text())
         assert list(detail.keys()) == DETAIL_KEYS, f"detail keys mismatch for {job['id']}"
-        assert detail["apply_url"], f"missing apply URL for {job['id']}"
+        for field in SUMMARY_KEYS:
+            assert detail.get(field) == job.get(field), f"summary/detail {field} mismatch for {job['id']}"
+        apply_slug = vetted_ashby_slug(detail["apply_url"], job_page=True)
+        source_slug = vetted_ashby_slug(detail["source_url"], job_page=False)
+        assert apply_slug, f"non-vetted application URL for {job['id']}"
+        assert source_slug, f"non-vetted source URL for {job['id']}"
+        assert apply_slug == source_slug, f"application/source board mismatch for {job['id']}"
+        expected_source = ASHBY_BOARD_BY_SLUG[apply_slug]["source"]
+        assert detail["source"] == expected_source, f"source/board mismatch for {job['id']}"
+        expected_id = stable_id(
+            {
+                "title": detail["title"],
+                "company": detail["company"],
+                "apply_url": detail["apply_url"],
+            }
+        )
+        assert job["id"] == expected_id, f"job id does not reproduce for {job['id']}"
+        assert detail["job_id"] == job["id"], f"detail job_id mismatch for {job['id']}"
+        assert not domain_matches(hostname(detail["apply_url"]), AGGREGATOR_DOMAINS), f"aggregator application URL for {job['id']}"
+        assert detail["source_mode"] == "direct_ats", f"non-direct source mode for {job['id']}"
+        assert detail["ats_platform"] == "Ashby", f"unexpected ATS for {job['id']}"
+        assert detail["ph_eligible"] == "Yes", f"unproven PH eligibility for {job['id']}"
+        assert detail["remote_type"] == "Remote", f"unproven remote type for {job['id']}"
+        assert detail["contract_type"] in {
+            "Full-time", "Part-time", "Contract", "Temporary", "Unspecified"
+        }, f"unexpected contract type for {job['id']}"
+        expected_ph, _, _ = ph_eligibility(detail["job_location"], "", detail["source"])
+        assert expected_ph == "Yes", f"PH eligibility does not reproduce for {job['id']}"
+        expected_role = role_category(detail["title"])
+        assert expected_role and expected_role == detail["role_lala_category"], f"role does not reproduce for {job['id']}"
+        assert not PLACEHOLDER_COMPANY.fullmatch(str(detail["company"]).strip()), f"placeholder company for {job['id']}"
         assert detail["archetype_primary"], f"missing archetype for {job['id']}"
-    manifest = json.loads((DATA / "run-manifest.json").read_text())
+        semantic_key = semantic_job_key(detail)
+        assert semantic_key not in semantic_keys, f"semantic duplicate {job['id']} and {semantic_keys.get(semantic_key)}"
+        semantic_keys[semantic_key] = job["id"]
+        description_hash = hashlib.sha1(
+            str(detail["clean_description"]).encode("utf-8")
+        ).hexdigest()[:16]
+        assert detail["description_hash"] == description_hash, f"description hash mismatch for {job['id']}"
+        duplicate_key = description_duplicate_key(detail)
+        assert duplicate_key not in description_keys, (
+            f"description duplicate {job['id']} and {description_keys.get(duplicate_key)}"
+        )
+        description_keys[duplicate_key] = job["id"]
+        source_counts[detail["source"]] += 1
+        role_counts[detail["role_lala_category"]] += 1
+        details_by_id[job["id"]] = detail
+    detail_file_ids = {
+        path.stem
+        for path in data_dir.glob("*.json")
+        if path.name not in DATA_EXPORT_NAMES
+    }
+    assert detail_file_ids == set(ids), "detail file set does not match jobs export"
+    assert len(source_counts) >= MIN_DISTINCT_SOURCES, f"expected at least {MIN_DISTINCT_SOURCES} distinct sources"
+    for source, count in source_counts.items():
+        assert count <= SOURCE_CAPS[source], f"source concentration cap exceeded for {source}"
+    manifest = json.loads((data_dir / "run-manifest.json").read_text())
+    assert manifest["manifest_version"] == "2.0", "manifest version mismatch"
     assert manifest["job_count"] == len(jobs), "manifest job count mismatch"
+    assert manifest["direct_application_count"] == len(jobs), "manifest direct count mismatch"
+    assert manifest["distinct_sources"] == len(source_counts), "manifest source diversity mismatch"
+    assert manifest["source_caps"] == SOURCE_CAPS, "manifest source caps mismatch"
     assert manifest["newest_posting"] == newest, "manifest newest mismatch"
     assert manifest["oldest_posting"] == oldest, "manifest oldest mismatch"
-    resume = json.loads((DATA / "resume-match-profiles.json").read_text())
+    assert manifest["source_counts"] == dict(source_counts), "manifest source counts mismatch"
+    assert manifest["role_counts"] == dict(role_counts), "manifest role counts mismatch"
+    assert manifest["publish_status"] == "publishable", "manifest is not publishable"
+    assert manifest["refresh_mode"] == "github-actions-direct-ats-no-secret", "manifest refresh mode mismatch"
+    assert manifest["eligibility_policy"] == "explicit-ph-structured-location-v1", "manifest eligibility policy mismatch"
+    resume = json.loads((data_dir / "resume-match-profiles.json").read_text())
+    assert list(resume.keys()) == ["profile_version", "generated_at", "job_count", "jobs"], "resume export keys mismatch"
     assert resume["job_count"] == len(jobs), "resume export count mismatch"
+    assert [item["job_id"] for item in resume["jobs"]] == ids, "resume export job ids mismatch"
+    expected_resume_jobs = [resume_record(details_by_id[job_id]) for job_id in ids]
+    assert resume["jobs"] == expected_resume_jobs, "resume export differs from detail records"
+    source_health = json.loads((data_dir / "source-health.json").read_text())
+    assert list(source_health.keys()) == ["generated_at", "sources"], "source health keys mismatch"
+    health_rows = source_health["sources"]
+    assert isinstance(health_rows, list), "source health rows must be a list"
+    assert len(health_rows) == len(ASHBY_BOARDS), "source health board count mismatch"
+    for board, row in zip(ASHBY_BOARDS, health_rows, strict=True):
+        assert list(row.keys()) == [
+            "source", "status", "fetched_count", "accepted_count", "last_error"
+        ], f"source health keys mismatch for {board['source']}"
+        assert row["source"] == board["source"], "source health board order mismatch"
+        assert row["status"] == "ok" and not row["last_error"], f"source health failure for {board['source']}"
+        assert isinstance(row["fetched_count"], int), f"source fetched count invalid for {board['source']}"
+        assert row["fetched_count"] >= source_counts[board["source"]], f"source fetched count too small for {board['source']}"
+        assert row["accepted_count"] == source_counts[board["source"]], f"source accepted count mismatch for {board['source']}"
+
+
+def embedded_board_payloads(index_path: Path) -> tuple[list[str], list[dict[str, Any]], dict[str, dict[str, Any]]]:
+    text = index_path.read_text()
+    patterns = (
+        r"const ROLE_LABELS = (.*?);\nconst ARCHETYPES =",
+        r"const EMBEDDED_JOBS = (.*?);\nconst EMBEDDED_DETAILS =",
+        r"const EMBEDDED_DETAILS = (.*?);\nconst state =",
+    )
+    values = []
+    for pattern in patterns:
+        match = re.search(pattern, text, flags=re.S)
+        assert match, f"index missing embedded payload matching {pattern}"
+        values.append(json.loads(match.group(1)))
+    return values[0], values[1], values[2]
+
+
+def verify_embedded_board(index_path: Path, data_dir: Path) -> None:
+    roles, jobs, details = embedded_board_payloads(index_path)
+    expected_jobs = json.loads((data_dir / "jobs.json").read_text())
+    expected_details = {
+        job["id"]: json.loads((data_dir / f"{job['id']}.json").read_text())
+        for job in expected_jobs
+    }
+    assert roles == ROLE_LABELS, "embedded role labels differ from generator"
+    assert jobs == expected_jobs, "embedded jobs differ from jobs export"
+    assert details == expected_details, "embedded details differ from detail exports"
+
+
+def verify() -> None:
+    verify_generated_data(DATA)
+    verify_embedded_board(BOARD / "index.html", DATA)
+    jobs = json.loads((DATA / "jobs.json").read_text())
+    newest = max(job["posted"] for job in jobs)
+    oldest = min(job["posted"] for job in jobs)
     index = (BOARD / "index.html").read_text()
     assert "const EMBEDDED_JOBS =" in index, "index missing embedded jobs"
     assert "Latest posting" in index, "index missing latest posting UI"
     print(f"OK jobs={len(jobs)} newest={newest} oldest={oldest}")
+
+
+def verify_live(base_url: str, attempts: int = 18, delay_seconds: int = 10) -> None:
+    """Wait for the deployed board to expose the exact locally generated run."""
+    expected_manifest = json.loads((DATA / "run-manifest.json").read_text())
+    expected_jobs = json.loads((DATA / "jobs.json").read_text())
+    expected_run_id = expected_manifest["run_id"]
+    base = str(base_url).rstrip("/")
+    last_error = ""
+    for attempt in range(attempts):
+        cache_key = urllib.parse.urlencode({"run": expected_run_id, "attempt": attempt})
+        try:
+            live_manifest = fetch_json(f"{base}/run-manifest.json?{cache_key}")
+            live_jobs = fetch_json(f"{base}/jobs.json?{cache_key}")
+            if live_manifest.get("run_id") != expected_run_id:
+                raise AssertionError(
+                    f"live run_id={live_manifest.get('run_id')} expected={expected_run_id}"
+                )
+            if live_jobs != expected_jobs:
+                raise AssertionError("live jobs.json does not match the generated board")
+            if live_manifest != expected_manifest:
+                raise AssertionError("live run-manifest.json does not match the generated board")
+            print(f"OK live run_id={expected_run_id} jobs={len(live_jobs)}")
+            return
+        except Exception as exc:  # noqa: BLE001
+            last_error = str(exc)
+            if attempt + 1 < attempts:
+                time.sleep(delay_seconds)
+    raise SystemExit(f"Live board did not reach run_id={expected_run_id}: {last_error}")
 
 
 def refresh() -> None:
@@ -834,7 +1372,7 @@ def refresh() -> None:
             }
         )
     existing = read_existing_details()
-    accepted_by_key: dict[str, dict[str, Any]] = {}
+    accepted_details: list[dict[str, Any]] = []
     for job in raw_jobs:
         detail = detail_record(job)
         if not detail:
@@ -844,14 +1382,15 @@ def refresh() -> None:
             for key in ("about_the_company", "key_responsibilities", "qualifications", "what_we_offer", "hours_schedule"):
                 if previous.get(key) and not detail.get(key):
                     detail[key] = previous[key]
-        dedupe_key = detail["apply_url"].lower() or f"{detail['title'].lower()}|{detail['company'].lower()}"
-        if dedupe_key not in accepted_by_key or detail["fit_score"] > accepted_by_key[dedupe_key]["fit_score"]:
-            accepted_by_key[dedupe_key] = detail
-    details = list(accepted_by_key.values())
-    details.sort(key=lambda row: (int(row["fit_score"]), row["posted"]), reverse=True)
-    details = details[:MAX_JOBS]
+        accepted_details.append(detail)
+    details = select_diverse_jobs(deduplicate_details(accepted_details))
     if len(details) < MIN_JOBS:
         raise SystemExit(f"Only {len(details)} publishable jobs found; refusing to overwrite board")
+    if len({detail["source"] for detail in details}) < MIN_DISTINCT_SOURCES:
+        raise SystemExit(
+            f"Only {len({detail['source'] for detail in details})} distinct sources found; "
+            "refusing to overwrite board"
+        )
     accepted_counts = Counter(detail["source"] for detail in details)
     for row in health:
         row["accepted_count"] = accepted_counts.get(row["source"], 0)
@@ -861,9 +1400,19 @@ def refresh() -> None:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Refresh or verify the BFF static job board.")
     parser.add_argument("--verify", action="store_true", help="Verify the current generated board and exit.")
+    parser.add_argument(
+        "--verify-live",
+        metavar="DATA_URL",
+        help="Verify that a deployed data directory matches the current local run.",
+    )
     args = parser.parse_args()
+    if args.verify and args.verify_live:
+        parser.error("--verify and --verify-live are mutually exclusive")
     if args.verify:
         verify()
+        return 0
+    if args.verify_live:
+        verify_live(args.verify_live)
         return 0
     refresh()
     verify()

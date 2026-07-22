@@ -8,10 +8,11 @@ Static job board for Filipino remote-work roles.
 23:17 UTC, which is 7:17 AM Philippine time. It also supports manual runs from
 GitHub Actions.
 
-The workflow runs `scripts/refresh-swahg-jobs.py`, commits changed files under
-`public/bonafide-filipino-freelancers/jobs`, builds the Astro site, and deploys GitHub Pages in the
-same run. The script uses public remote-job feeds only, so it does not require
-the Google Sheets service-account key.
+The workflow runs the focused job-board tests, refreshes and verifies the data,
+builds the Astro site, commits only verified generated files, deploys GitHub
+Pages, and confirms that the exact generated run ID is live. The script uses
+vetted public Ashby job-board APIs, so it does not require a secret or the
+Google Sheets service-account key.
 
 ## Regenerate Locally
 
@@ -22,11 +23,30 @@ python3 scripts/refresh-swahg-jobs.py
 bash public/bonafide-filipino-freelancers/jobs/verify.sh
 ```
 
-The refresher fetches public job feeds, keeps jobs posted in the last 30 days,
+The refresher fetches direct public ATS boards, keeps jobs last published by
+Ashby in the last 30 days,
 writes `data/jobs.json`, writes one `data/<id>.json` per job, writes
 `data/accepted-job.schema.json`, writes `data/resume-match-profiles.json`,
 writes `data/run-manifest.json`, writes `data/run-manifest.schema.json`, writes
 `data/source-health.json`, and writes `data/source-health.schema.json`.
+
+`posted` is the date portion of Ashby's `publishedAt` field. Ashby defines it
+as the time the job was last published. It is not a claim about when the job
+was first created.
+
+The publish gate requires all of the following:
+
+- At least 20 current roles across at least three source families.
+- An explicit Philippines value in the structured ATS location.
+- A positive Ashby `isRemote` or `workplaceType` signal with no structured
+  onsite or hybrid conflict.
+- A title that independently reproduces the stored role category.
+- A public HTTPS application page on the vetted ATS, never an aggregator.
+- No placeholder companies or semantic employer, title, and location duplicates.
+- The configured per-source cap, applied after every safety filter.
+
+If the gate does not pass, the refresher exits before replacing the last good
+board.
 
 ## Accepted Job Detail Contract
 
@@ -150,7 +170,10 @@ Consumer rule: use `job_id` as the stable lookup key, read `archetype_primary`, 
 
 ## Run Manifest
 
-`data/run-manifest.json` is the public machine-readable status file for the latest board run. It records job count, tier counts, source counts, contract file paths, HiringCafe status, and whether the strict Tier 5 completion gate is still blocked.
+`data/run-manifest.json` is the public machine-readable status file for the
+latest board run. It records the exact run ID, direct application count,
+distinct source count, source caps, source and role counts, publication date
+range, eligibility policy, and publish status.
 
 `data/run-manifest.schema.json` is the machine-readable contract for the run manifest.
 
@@ -164,11 +187,12 @@ Consumer rule: use `job_id` as the stable lookup key, read `archetype_primary`, 
 
 ```json
 {
-  "Customer Support": 19,
-  "Content Specialist": 4,
-  "Community Manager": 1,
-  "SEO": 1,
-  "Virtual Assistant": 3,
-  "Executive Assistant": 2
+  "Customer Support": 6,
+  "Content Specialist": 3,
+  "Accounting & Bookkeeping": 4,
+  "Virtual Assistant": 2,
+  "Operations & Admin": 2,
+  "Executive Assistant": 2,
+  "E-commerce": 1
 }
 ```

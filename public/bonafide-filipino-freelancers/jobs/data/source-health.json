@@ -1,47 +1,40 @@
 {
-  "generated_at": "2026-07-22T00:09:30",
+  "generated_at": "2026-07-22T21:31:46",
   "sources": [
     {
-      "source": "RemoteOK",
+      "source": "MultiplyMii",
       "status": "ok",
-      "fetched_count": 99,
-      "accepted_count": 13,
+      "fetched_count": 57,
+      "accepted_count": 8,
       "last_error": ""
     },
     {
-      "source": "Remotive",
+      "source": "VA4U",
       "status": "ok",
-      "fetched_count": 41,
-      "accepted_count": 2,
-      "last_error": ""
-    },
-    {
-      "source": "Himalayas",
-      "status": "ok",
-      "fetched_count": 60,
+      "fetched_count": 13,
       "accepted_count": 7,
       "last_error": ""
     },
     {
-      "source": "WeWorkRemotely",
+      "source": "Extend Your Team",
       "status": "ok",
-      "fetched_count": 82,
-      "accepted_count": 15,
+      "fetched_count": 33,
+      "accepted_count": 2,
       "last_error": ""
     },
     {
-      "source": "Jobicy",
+      "source": "ClickUp",
       "status": "ok",
-      "fetched_count": 100,
-      "accepted_count": 3,
+      "fetched_count": 66,
+      "accepted_count": 2,
       "last_error": ""
     },
     {
-      "source": "NoDesk",
-      "status": "error",
-      "fetched_count": 0,
-      "accepted_count": 0,
-      "last_error": "https://nodesk.co/remote-jobs/rss/: HTTP Error 404: Not Found"
+      "source": "Clipboard Health",
+      "status": "ok",
+      "fetched_count": 32,
+      "accepted_count": 1,
+      "last_error": ""
     }
   ]
 }
