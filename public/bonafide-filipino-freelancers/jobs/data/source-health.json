@@ -1,31 +1,31 @@
 {
-  "generated_at": "2026-07-24T00:12:37",
+  "generated_at": "2026-07-25T00:16:14",
   "sources": [
     {
       "source": "MultiplyMii",
       "status": "ok",
-      "fetched_count": 58,
+      "fetched_count": 61,
       "accepted_count": 8,
       "last_error": ""
     },
     {
       "source": "VA4U",
       "status": "ok",
-      "fetched_count": 14,
+      "fetched_count": 15,
       "accepted_count": 7,
       "last_error": ""
     },
     {
       "source": "Extend Your Team",
       "status": "ok",
-      "fetched_count": 33,
+      "fetched_count": 34,
       "accepted_count": 2,
       "last_error": ""
     },
     {
       "source": "ClickUp",
       "status": "ok",
-      "fetched_count": 66,
+      "fetched_count": 67,
       "accepted_count": 2,
       "last_error": ""
     },
