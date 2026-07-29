@@ -1,7 +1,7 @@
 {
   "manifest_version": "2.0",
-  "run_id": "20260728T001218",
-  "generated_at": "2026-07-28T00:12:18",
+  "run_id": "20260729T001034",
+  "generated_at": "2026-07-29T00:10:34",
   "job_count": 20,
   "direct_application_count": 20,
   "distinct_sources": 5,
@@ -12,7 +12,7 @@
     "ClickUp": 2,
     "Clipboard Health": 1
   },
-  "newest_posting": "2026-07-27",
+  "newest_posting": "2026-07-28",
   "oldest_posting": "2026-06-30",
   "source_counts": {
     "MultiplyMii": 8,
