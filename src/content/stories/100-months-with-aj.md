@@ -15,21 +15,19 @@ image: "https://res.cloudinary.com/dimapmlre/image/upload/v1777291925/state-hero
 # Rhetorical Pattern: Personal Story
 ---
 
-The first twenty years of my life was a dark empty room.
-
-It is late tonight. I am writing this with tears in my eyes and joy in my heart. Tonight is one hundred months with AJ.
-
-For the first twenty years of my life, the voice in my head asked the same questions on repeat. It kept saying things like:
-
 "Why did God give me this sickness?"
 
 "Did God make a mistake when He created me?"
 
 "Am I just a mistake?"
 
+For the first twenty years of my life, the voice in my head asked the same questions on repeat.
+
 "Am I supposed to live a difficult life and just die?"
 
 I grew up in a poor family. That was already hard. But living with yellow skin and a weak body on top of it made me really bitter. I was angry at God for two decades. I did not have the language to tell anyone. Not even Him.
+
+The first twenty years of my life was a dark empty room.
 
 If you have been angry at God for a long time, I have been there. I will not pretend I had a tidy testimony. I did not. I had questions I could not even speak out loud, and a body that kept reminding me of them.
 

@@ -1231,10 +1231,147 @@ const lessons = {
     practice:["Sort sample information into public, private, and secret categories.","Create a safe redaction habit before sharing context.","Write a no-secrets checklist for prompts and files."],
     proof:"You can explain what should never be pasted into AI or committed to a repo."
   },
-  l5:{stage:"Prompt Craft",title:"Ask for a Result, Not Vibes",outcome:"Turn unclear prompts into concrete assignments with a deliverable.",practice:["Convert five vague asks into artifact-based prompts.","Add audience, format, and acceptance criteria.","Ask AI to restate the task before doing it."],proof:"Your prompt makes it hard for the model to produce a pretty but useless answer."},
-  l6:{stage:"Prompt Craft",title:"Context Packets",outcome:"Package source material so AI can work from evidence instead of memory.",practice:["Attach or quote only the necessary source material.","Separate facts, preferences, examples, and constraints.","Ask for assumptions to be listed before output."],proof:"A stranger could read your context packet and understand the job."},
-  l7:{stage:"Prompt Craft",title:"Critique Before Copy",outcome:"Use AI to find missing strategy, weak structure, and risky claims before drafting.",practice:["Ask for a critique of a draft before a rewrite.","Create a scorecard with weighted criteria.","Revise based on the highest-risk issue first."],proof:"You can show what changed because of critique, not only that the wording improved."},
-  l8:{stage:"Prompt Craft",title:"Reusable Prompt Recipes",outcome:"Build a personal library of prompts for common workflows.",practice:["Save one prompt for research, one for writing, one for QA, and one for planning.","Add examples of good input and bad input.","Retest the recipe on a second task."],proof:"You can reuse the recipe without rebuilding the whole prompt from scratch."},
+  l5:{
+    stage:"Prompt Craft",
+    title:"Ask for a Result, Not Vibes",
+    outcome:"Turn unclear prompts into concrete assignments with a deliverable.",
+    why:"\"Make it better\" is the most typed prompt in the world and the weakest. Three skills carry all serious AI work: prepare the data, prompt the model, apply the output critically. This lesson is the middle skill, and it starts with one shift: stop asking for vibes, start giving assignments.",
+    sections:[
+      {h:"A vague ask gives the model nothing to aim at",body:[
+        "\"Make it better.\" \"Improve this.\" \"Help me with my resume.\" When the target is a feeling, the model fills the gap with the most average interpretation of \"better\" it has ever seen, and you get generic output that fits everyone and serves no one.",
+        "The fix is not magic wording. Every strong prompt makes the same single move: it replaces a vibe with a target."
+      ]},
+      {h:"Task, audience, format: the spine of an assignment",body:[
+        "A real assignment answers three questions before the model starts: what exactly is the task, who is the output for, and what shape should it come back in. \"Rewrite this resume bullet to be measurable and impact-focused, aligned with a data analyst role\" wins against \"make my resume better\" every single time, because the model now knows what winning looks like.",
+        "The same shift works on thinking tasks. \"What should I do?\" invites a horoscope. \"Here is my situation; break it into three options with the tradeoffs of each\" invites a decision aid."
+      ]},
+      {h:"Add acceptance criteria, then make it restate the job",body:[
+        "Acceptance criteria are the line between done and not done: under 120 words, keeps the apology, no invented numbers, ends with one question. Say them upfront and the first draft lands closer; leave them out and you pay for them in revision rounds.",
+        "For anything big, close the brief with one instruction: \"Restate the task and ask me questions before you start.\" If the restatement is wrong, you just saved the entire wasted draft that would have followed."
+      ]},
+      {h:"Ask for an artifact, not an improvement",body:[
+        "The strongest prompts name a deliverable that can be used the moment it arrives: a table comparing three tools, a seven-day learning plan with daily summaries, a rewritten bullet, an hour-by-hour checklist. If you cannot name the artifact, the request is not ready to send.",
+        "This is also how you spot a weak prompt in review: read it and ask, could two people disagree about whether the output satisfied it? If yes, tighten it."
+      ]}
+    ],
+    example:[
+      "Vague version: \"Make this sound better.\" The model returns polished corporate filler that could sit on any website.",
+      "Assignment version: \"Rewrite this in a clear, human tone that flows naturally and keeps readers engaged, for first-time freelance clients, as a 100-word portfolio intro. Keep every factual claim exactly as written.\" Same source text, same model. The second version comes back usable because task, audience, format, and one acceptance criterion were all stated before the model typed a word."
+    ],
+    mistakes:[
+      "Asking for feelings (better, stronger, nicer, more professional) instead of naming a target and a deliverable.",
+      "Stacking five tasks into one ask, so the model does all of them shallowly instead of one of them well.",
+      "Judging the model as \"not good at this\" when the brief it received was empty. Rerun the comparison with a real assignment before you conclude anything."
+    ],
+    practice:["Convert five vague asks into artifact-based prompts.","Add audience, format, and acceptance criteria.","Ask AI to restate the task before doing it."],
+    proof:"Your prompt makes it hard for the model to produce a pretty but useless answer."
+  },
+  l6:{
+    stage:"Prompt Craft",
+    title:"Context Packets",
+    outcome:"Package source material so AI can work from evidence instead of memory.",
+    why:"Prompting gets all the attention, but the skill that comes before it decides everything: collecting and preparing the material before the model ever sees it. A great brief pointed at nothing still produces nothing. This lesson is about building the packet of evidence the model works from, and it is where amateur prompting turns into operations.",
+    sections:[
+      {h:"Same prompt, different world",body:[
+        "Ask a bare chat to \"brainstorm Instagram posts for my multivitamin\" and you get generic filler, because the model knows nothing about the business, the product, or the voice. Ask the identical question inside a workspace loaded with brand guidelines, tone-of-voice notes, and product files, and the answers come back specific and usable.",
+        "Nothing about the model changed. The desk changed. What you place in front of the model is the single highest-leverage decision you make."
+      ]},
+      {h:"A packet is curated, not dumped",body:[
+        "A context packet is the deliberate version of pasting: only the material this task needs, with the parts labeled. Facts in one block, preferences and voice in another, examples of good output in a third, hard constraints last. Labeling matters because the model treats unlabeled text as one undifferentiated soup, and so will you when you try to check the output against it.",
+        "Curation is also protection. A packet built on purpose is where you catch the private data that should never have gone in, and where you notice the one missing document that the whole answer will secretly depend on."
+      ]},
+      {h:"Build the packet as its own step, before any drafting",body:[
+        "In a real pipeline, the packet is a stage with its own output. The Beyond Banks newsletter never drafts from a headline: each candidate story first gets an evidence pack built from the fetched article itself, with key facts and quotes, numbered citations, source URLs, and a note on why it matters for the lending audience. Only after that pack exists does any drafting prompt run, pointed straight at it.",
+        "The payoff comes downstream. Every claim in the draft can be traced to a line in the pack, which means the quality gate can actually check facts instead of vibes. Add one sentence to enforce it: \"Use only the sources I pasted, and tell me which source each claim came from.\""
+      ]},
+      {h:"Make the model show its assumptions",body:[
+        "Even a good packet has holes, so end the brief with: \"Before you write, list what you are assuming and what is missing.\" The model surfaces the gap while it is still cheap to fill, instead of papering over it with something invented.",
+        "The test for a finished packet is simple and worth memorizing: a stranger could read it and understand the job without asking you anything."
+      ]}
+    ],
+    example:[
+      "A newsletter edition covers a state regulators story. The lazy route: \"Write a section about the OnDeck news, make it insightful.\" The model has a months-old memory of the company and fills the rest with confident guesses. In front of an audience of professional lenders, one misattributed statistic gets the whole publication quietly blacklisted.",
+      "The pipeline route: fetch the actual article, extract the facts and quotes into the analysis pack with citations, then prompt: \"Draft the section from this pack only, for alternative lenders, in the newsletter's voice, and flag any claim you cannot trace to the pack.\" The draft comes back grounded, and checking it takes minutes because every number has an address."
+    ],
+    mistakes:[
+      "Dumping a 60-page document when the task needs two paragraphs, which buries the relevant lines and pushes earlier context off the desk.",
+      "Pasting a screenshot of a table when the real text was copyable. Blurry input at this stage becomes a wrong number at the checking stage.",
+      "Skipping the packet under deadline pressure. That is precisely when invented facts ship, because nobody built the thing to check the draft against."
+    ],
+    practice:["Attach or quote only the necessary source material.","Separate facts, preferences, examples, and constraints.","Ask for assumptions to be listed before output."],
+    proof:"A stranger could read your context packet and understand the job."
+  },
+  l7:{
+    stage:"Prompt Craft",
+    title:"Critique Before Copy",
+    outcome:"Use AI to find missing strategy, weak structure, and risky claims before drafting.",
+    why:"A first draft from AI sounds finished, and that finish is exactly what hides its problems. Left to its defaults, the model is an agreeable collaborator: it praises, it polishes, it does not volunteer what is broken. Critique-first flips it into the toughest editor you have ever worked with, and it is the cheapest quality gate in this entire blueprint.",
+    sections:[
+      {h:"Ask for the critique before the rewrite",body:[
+        "The order matters. \"Rewrite this\" produces a smoother version of the same weaknesses. \"Critique this before touching a word: what is missing, what is weak, what is risky?\" produces a map of the actual problems, and only then do you decide what gets fixed.",
+        "Always fix the highest-risk issue first. A wrong claim in paragraph two matters more than a clumsy sentence in paragraph five, and if you polish first you will run out of patience before you reach the thing that could actually hurt you."
+      ]},
+      {h:"Give the critic a persona and a scorecard",body:[
+        "\"Rate this please\" gets you a polite 8/10 from nobody in particular. A real quality gate names the reader. One production system uses an opinionated alternative-business-lender persona: a written file defining what this reader cares about (fraud prevention, underwriting speed, compliance), what makes them bounce (fluff, consultant-speak, generic advice), a 1-to-10 scale with meaning attached to each score, and one brutal standard: a single misattributed statistic and this reader questions everything else you have ever published.",
+        "Content must score 7 or higher with that persona before it ships. The persona lives in a file, so the bar is identical on a sharp Monday and an exhausted Friday. That is what turns taste into a system."
+      ]},
+      {h:"Use a critique prompt set, not one question",body:[
+        "\"Is this good?\" mixes every failure mode into one mushy answer. A real critique pass runs as a set of questions, each isolating one dimension: summarize the purpose in one sentence; name the action the reader is being asked to take; list the three most important points; judge whether the tone fits the audience; find missing facts or evidence that would add credibility; identify confusing sections and explain why; summarize structural issues; prioritize which edits come first; end with a checklist of required edits, each justified.",
+        "Run even four of those and you have a diagnosis instead of a compliment. Notice the last two are the operator's moves: not just what is wrong, but in what order it gets fixed."
+      ]},
+      {h:"Critique the research, not just the prose",body:[
+        "The same discipline applies before a single sentence exists. When you research with AI, do not accept the first synthesis: ask it to steel-man the opposing view, surface the strongest counterarguments, and name where the experts actually disagree. A one-sided answer that was never stress-tested is a critique failure too, just an earlier one.",
+        "Then close the loop from Lesson 6: ask where each key claim came from, and verify the primary sources with your own eyes before they enter a draft."
+      ]}
+    ],
+    example:[
+      "A draft article for lenders goes to the rater persona and scores 6: \"some useful info buried in generic content.\" The critique names three problems in priority order: an unsupported industry statistic (risk), no named companies or real numbers (credibility), and a generic intro any industry could wear (engagement).",
+      "The revision verifies the statistic against its original source, adds two named lenders with specific deal metrics, and rewrites the intro around an operational pain point. Rescored: 8. The visible before-and-after is the point: you can show exactly what changed because of critique, not merely that the wording got smoother."
+    ],
+    mistakes:[
+      "Treating \"make it better\" as critique. That is a rewrite request wearing a costume, and it skips the diagnosis entirely.",
+      "Accepting praise as evaluation. If the critique found nothing to fix, the critique failed; sharpen the persona or the prompt set and run it again.",
+      "Applying every critique note without judgment. The critic is an input; taste and the final call stayed yours in Lesson 2 and they are still yours here.",
+      "Polishing sentence rhythm while an unverified number sits in the draft. Risk first, always."
+    ],
+    practice:["Ask for a critique of a draft before a rewrite.","Create a scorecard with weighted criteria.","Revise based on the highest-risk issue first."],
+    proof:"You can show what changed because of critique, not only that the wording improved."
+  },
+  l8:{
+    stage:"Prompt Craft",
+    title:"Reusable Prompt Recipes",
+    outcome:"Build a personal library of prompts for common workflows.",
+    why:"The prompt that finally worked is worth real money, and most people lose it the moment the chat scrolls away. Operators do not keep prompts in their heads or their history. They keep recipes in files, because the second time you do a task should be cheaper than the first, and the twentieth time should be nearly free.",
+    sections:[
+      {h:"If you typed it twice, it wants to be a recipe",body:[
+        "The simplest working system: save the prompt as a template with placeholders like [TOPIC], and when you need it again, fill the blank and paste the assembled prompt. Whether it lives in a tool, a notes app, or a folder of text files is irrelevant. The principle is the system: template, placeholders, one home.",
+        "The trigger is mechanical, not inspirational: the second time you catch yourself reconstructing a prompt from memory, stop and save it properly instead."
+      ]},
+      {h:"A recipe is more than the prompt text",body:[
+        "A prompt alone produces different results in different hands. A recipe travels complete: when to use it, what inputs it expects (which context packet, in what shape), an example of good input and one of bad input, the output format, and the quality bar the output must clear.",
+        "The input examples are the part everyone skips and the part that matters most. They are what let the recipe work on a rushed day, or in someone else's hands, without you standing behind it explaining."
+      ]},
+      {h:"Recipes graduate into pipelines",body:[
+        "Watch what happens when recipes compound. The Beyond Banks newsletter began as one-off prompting; today it is a written pipeline file: staged steps from triage through research, drafting, quality gate, and packaging, where each stage has a mandatory format and its own checks. The per-story research step alone is a recipe: every story gets facts with numbered citations, source URLs, a rater score, and a relevance note, and no story advances with a field blank.",
+        "The recipe file even delegates: the triage stage spawns a specialized research assistant with its own written instructions, which reads the news sheet, deduplicates against the archive, and returns a ranked shortlist. That is the AI-ops end state: recipes so explicit the workflow runs the same way in any session, on any week, with or without you at your sharpest."
+      ]},
+      {h:"Retest, version, and feed corrections back in",body:[
+        "Recipes drift. A recipe that worked on one task gets retested on a second before it earns a place in the library, and when real feedback lands, the fix goes into the recipe file, not just into today's output. If you correct the same mistake twice, the recipe was the thing that needed editing.",
+        "This is the quiet compounding advantage: everyone else restarts from zero each morning. Your library gets smarter every time something goes wrong."
+      ]}
+    ],
+    example:[
+      "A new newsletter edition starts. Nobody re-explains what the newsletter is, what the analysis format looks like, or what the quality bar is; all of that lives in the pipeline file. The operator fills the placeholders for this edition, the rows of news candidates to review, and the recipe does the rest the same way it did last week.",
+      "Compare the pre-recipe era: every edition rebuilt the ask from scratch, results swung with the operator's energy, and a missed step surfaced as a reader-visible error. Same person, same model, same task. The recipe is the difference between a performance and a system."
+    ],
+    mistakes:[
+      "Hoarding fifty saved prompts with no when-to-use notes. That is a junk drawer, not a library, and you will rebuild from scratch anyway because finding beats rewriting only when finding is fast.",
+      "Saving the prompt but not its input requirements, so the recipe silently depends on context that exists only in your head.",
+      "Never editing recipes after corrections, which guarantees the same feedback arrives again next month."
+    ],
+    practice:["Save one prompt for research, one for writing, one for QA, and one for planning.","Add examples of good input and bad input.","Retest the recipe on a second task."],
+    proof:"You can reuse the recipe without rebuilding the whole prompt from scratch."
+  },
   l9:{stage:"CLI Basics",title:"Terminal Confidence",outcome:"Learn paths, directories, command output, and error messages well enough to follow CLI work.",practice:["Navigate to a project folder.","List files and open a text file.","Copy the error message and identify the line that matters."],proof:"You can tell the difference between a failed command, a missing file, and a wrong folder."},
   l10:{stage:"CLI Basics",title:"Codex CLI First Run",outcome:"Use Codex CLI for codebase reading, file edits, verification, and implementation.",practice:["Start a Codex session in a real project folder.","Ask it to inspect files before suggesting changes.","Review the diff and verification output before accepting the handoff."],proof:"You can use Codex as a careful implementation partner, not a blind autocomplete box."},
   l11:{stage:"CLI Basics",title:"Claude CLI First Run",outcome:"Use Claude CLI for long-form reasoning, prose, critique, and planning work.",practice:["Start a Claude session with a scoped writing or critique task.","Provide source material and acceptance criteria.","Ask for a structured critique before a final draft."],proof:"You can choose Claude when the task needs depth, tone, or long synthesis."},
