@@ -1,11 +1,13 @@
 ---
+import { GA_MEASUREMENT_ID } from '../../site.config.mjs';
+
 export interface Props {
   title: string;
   description?: string;
 }
 const { title, description = 'Writings by Lala — a content library for the long haul.' } = Astro.props;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString();
-const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
+const gaMeasurementId = GA_MEASUREMENT_ID;
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 ---
 <!doctype html>
