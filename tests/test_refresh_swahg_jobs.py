@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from collections import Counter
 import datetime
 import importlib.util
 import json
@@ -253,6 +254,38 @@ class DiversityAndDedupeTests(unittest.TestCase):
         expected = sum(jobs.SOURCE_CAPS[source] for source in sources)
         self.assertEqual(len(selected), expected)
         self.assertEqual(counts, {source: jobs.SOURCE_CAPS[source] for source in sources})
+
+    def test_current_four_source_mix_can_meet_release_floor(self):
+        available = {
+            "MultiplyMii": 30,
+            "VA4U": 9,
+            "Extend Your Team": 1,
+            "ClickUp": 3,
+        }
+        details = []
+        for source, count in available.items():
+            for index in range(count):
+                details.append({
+                    "source": source,
+                    "fit_score": 90 - index,
+                    "posted": "2026-08-12",
+                    "title": f"{source} Role {index}",
+                    "role_lala_category": jobs.ROLE_LABELS[index % len(jobs.ROLE_LABELS)],
+                })
+
+        selected = jobs.select_diverse_jobs(details)
+        counts = Counter(row["source"] for row in selected)
+
+        self.assertEqual(len(selected), jobs.MIN_JOBS)
+        self.assertEqual(
+            counts,
+            {
+                "MultiplyMii": 9,
+                "VA4U": 7,
+                "ClickUp": 3,
+                "Extend Your Team": 1,
+            },
+        )
 
 
 class VerifierRegressionTests(unittest.TestCase):

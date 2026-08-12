@@ -32,10 +32,10 @@ UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML,
 # page. Aggregators are intentionally excluded because they hide or rewrite
 # eligibility, dates, and application destinations.
 ASHBY_BOARDS = (
-    {"slug": "multiplymii", "source": "MultiplyMii", "cap": 8, "staffing": True},
+    {"slug": "multiplymii", "source": "MultiplyMii", "cap": 9, "staffing": True},
     {"slug": "va4u", "source": "VA4U", "cap": 7, "staffing": True},
     {"slug": "EYT", "source": "Extend Your Team", "cap": 4, "staffing": True, "team_is_client": True},
-    {"slug": "clickup", "source": "ClickUp", "cap": 2, "staffing": False},
+    {"slug": "clickup", "source": "ClickUp", "cap": 3, "staffing": False},
     {"slug": "clipboard", "source": "Clipboard Health", "cap": 1, "staffing": False},
 )
 SOURCE_CAPS = {board["source"]: int(board["cap"]) for board in ASHBY_BOARDS}
