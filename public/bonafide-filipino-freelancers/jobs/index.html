@@ -243,7 +243,7 @@ function renderCards(rows){
 async function showDetail(id){
   let job = EMBEDDED_DETAILS[id];
   try {
-    const res = await fetch(`data/${id}.json`);
+    const res = await fetch(`data/${id}.json`, {cache:'no-store'});
     if(res.ok) job = await res.json();
   } catch(e) {}
   if(!job) throw new Error('Job not found');
@@ -270,7 +270,7 @@ function clearAll(){state.selected.clear(); document.querySelectorAll('.chip,.ar
 async function init(){
   state.jobs = EMBEDDED_JOBS;
   try {
-    const res = await fetch('data/jobs.json');
+    const res = await fetch('data/jobs.json', {cache:'no-store'});
     if(res.ok) state.jobs = await res.json();
   } catch(e) {}
   archetypeOptions();
