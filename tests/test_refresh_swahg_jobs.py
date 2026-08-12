@@ -173,6 +173,16 @@ class DirectSourceTests(unittest.TestCase):
         self.assertIsNone(jobs.detail_record(placeholder))
         non_ph = dict(base, location="United States")
         self.assertIsNone(jobs.detail_record(non_ph))
+        boundary = dict(
+            base,
+            posted=(datetime.date.today() - datetime.timedelta(days=5)).isoformat(),
+        )
+        self.assertIsNotNone(jobs.detail_record(boundary))
+        stale = dict(
+            base,
+            posted=(datetime.date.today() - datetime.timedelta(days=6)).isoformat(),
+        )
+        self.assertIsNone(jobs.detail_record(stale))
 
     def test_detail_gate_requires_positive_structured_remote_evidence(self):
         job_id = "11111111-1111-4111-8111-111111111111"
@@ -276,7 +286,10 @@ class DiversityAndDedupeTests(unittest.TestCase):
         selected = jobs.select_diverse_jobs(details)
         counts = Counter(row["source"] for row in selected)
 
-        self.assertEqual(len(selected), jobs.MIN_JOBS)
+        self.assertEqual(
+            len(selected),
+            sum(min(count, jobs.SOURCE_CAPS[source]) for source, count in available.items()),
+        )
         self.assertEqual(
             counts,
             {

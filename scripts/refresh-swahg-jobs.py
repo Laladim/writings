@@ -22,10 +22,12 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 BOARD = ROOT / "public" / "bonafide-filipino-freelancers" / "jobs"
 DATA = BOARD / "data"
-MAX_POSTED_AGE_DAYS = 30
+MAX_POSTED_AGE_DAYS = 5
 MAX_JOBS = 40
-MIN_JOBS = 20
-MIN_DISTINCT_SOURCES = 3
+# Freshness is the publication rule. Healthy sources may legitimately produce
+# only a few matching roles inside a five-day window.
+MIN_JOBS = 1
+MIN_DISTINCT_SOURCES = 1
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
 
 # Every accepted row must end at the employer or staffing firm's public ATS
@@ -1325,6 +1327,7 @@ def verify() -> None:
     assert "fetch(`data/${id}.json`" not in index, (
         "job details must render from the matching embedded payload"
     )
+    assert "age <= 5" in index, "index must hide jobs after the five-day cutoff"
     print(f"OK jobs={len(jobs)} newest={newest} oldest={oldest}")
 
 

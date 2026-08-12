@@ -1,10 +1,10 @@
 {
   "manifest_version": "2.0",
-  "run_id": "20260812T213835",
-  "generated_at": "2026-08-12T21:38:35",
-  "job_count": 20,
-  "direct_application_count": 20,
-  "distinct_sources": 4,
+  "run_id": "20260812T215919",
+  "generated_at": "2026-08-12T21:59:19",
+  "job_count": 3,
+  "direct_application_count": 3,
+  "distinct_sources": 1,
   "source_caps": {
     "MultiplyMii": 9,
     "VA4U": 7,
@@ -13,21 +13,13 @@
     "Clipboard Health": 1
   },
   "newest_posting": "2026-08-11",
-  "oldest_posting": "2026-07-15",
+  "oldest_posting": "2026-08-07",
   "source_counts": {
-    "MultiplyMii": 9,
-    "VA4U": 7,
-    "Extend Your Team": 1,
-    "ClickUp": 3
+    "MultiplyMii": 3
   },
   "role_counts": {
-    "Customer Support": 5,
-    "Content Specialist": 4,
-    "Accounting & Bookkeeping": 4,
-    "Virtual Assistant": 1,
-    "Executive Assistant": 3,
-    "E-commerce": 1,
-    "Operations & Admin": 2
+    "Customer Support": 2,
+    "Content Specialist": 1
   },
   "publish_status": "publishable",
   "refresh_mode": "github-actions-direct-ats-no-secret",
