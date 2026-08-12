@@ -1319,11 +1319,11 @@ def verify() -> None:
     index = (BOARD / "index.html").read_text()
     assert "const EMBEDDED_JOBS =" in index, "index missing embedded jobs"
     assert "Latest posting" in index, "index missing latest posting UI"
-    assert "fetch('data/jobs.json', {cache:'no-store'})" in index, (
-        "index jobs fetch must bypass stale browser cache"
+    assert "fetch('data/jobs.json'" not in index, (
+        "index must render its matching embedded job payload"
     )
-    assert "fetch(`data/${id}.json`, {cache:'no-store'})" in index, (
-        "index detail fetch must bypass stale browser cache"
+    assert "fetch(`data/${id}.json`" not in index, (
+        "job details must render from the matching embedded payload"
     )
     print(f"OK jobs={len(jobs)} newest={newest} oldest={oldest}")
 

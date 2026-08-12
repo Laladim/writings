@@ -241,11 +241,7 @@ function renderCards(rows){
   document.getElementById('cards').innerHTML = rows.map(job => `<a class="card" href="#job/${esc(job.id)}"><div class="pillrow"><span class="pill">${esc(job.role_lala_category)}</span><span class="pill ${job.ph_eligible === 'Maybe' ? 'warn' : 'ok'}">${esc(job.ph_eligible || 'Likely')} PH</span><span class="pill">${tierLabel(job)}</span></div><h3>${esc(job.title)}</h3><div class="company">${esc(job.company)}</div><div class="quality">${esc(job.quality_label || 'Good match')}</div><p>${daysAgo(job.posted)} · ${esc(job.job_location || 'Remote')}${job.salary_range ? ' · ' + esc(job.salary_range) : ''}</p><div class="why">${esc(job.archetype_labels || 'Generalist Admin')}</div><div class="why">${esc(sourceLabel(job))} · ${esc(sourceModeLabel(job))}</div><span class="link">View details</span></a>`).join('');
 }
 async function showDetail(id){
-  let job = EMBEDDED_DETAILS[id];
-  try {
-    const res = await fetch(`data/${id}.json`, {cache:'no-store'});
-    if(res.ok) job = await res.json();
-  } catch(e) {}
+  const job = EMBEDDED_DETAILS[id];
   if(!job) throw new Error('Job not found');
   saveSelectedJob(job);
   document.getElementById('indexHero').style.display = 'none';
@@ -269,10 +265,6 @@ function route(){
 function clearAll(){state.selected.clear(); document.querySelectorAll('.chip,.archetype-card').forEach(c => c.classList.remove('active')); ['search','archetype','source','tier','eligibility','contract'].forEach(id => document.getElementById(id).value=''); document.getElementById('sort').value='fit'; if(window.BFF) window.BFF.writeState({lastNextAction:'browse-jobs'}); applyFilters();}
 async function init(){
   state.jobs = EMBEDDED_JOBS;
-  try {
-    const res = await fetch('data/jobs.json', {cache:'no-store'});
-    if(res.ok) state.jobs = await res.json();
-  } catch(e) {}
   archetypeOptions();
   roleChips();
   sourceOptions();
