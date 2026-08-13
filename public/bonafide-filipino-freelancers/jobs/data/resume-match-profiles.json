@@ -1,7 +1,7 @@
 {
   "profile_version": "1.0",
-  "generated_at": "2026-08-13T16:26:47",
-  "job_count": 2,
+  "generated_at": "2026-08-13T18:21:24",
+  "job_count": 22,
   "jobs": [
     {
       "profile_version": "1.0",
@@ -45,6 +45,46 @@
     },
     {
       "profile_version": "1.0",
+      "job_id": "75e7ce42297c",
+      "title": "Customer Support Representative",
+      "company": "Fiscal.ai",
+      "source": "Workable",
+      "source_mode": "direct_ats",
+      "tier": "Tier 1",
+      "source_url": "https://jobs.workable.com/company/upohitRDkZUqEnNiBRXZ9Z/jobs-at-fiscal.ai",
+      "apply_url": "https://jobs.workable.com/view/7afqSZNeWMbU3yWRjUnJxD/remote-customer-support-representative-in-philippines-at-fiscal.ai",
+      "posted_at": "2026-08-11",
+      "discovered_at": "2026-08-13",
+      "role_family": "Customer Support",
+      "archetype_primary": "Corporate Transitioner",
+      "archetype_secondary": "Corporate Transitioner, Fresh Starter, Generalist Admin",
+      "resume_keywords": "Customer Support, slack, customer support, saas, Workable",
+      "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with slack, customer support, saas.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "slack; customer support; saas",
+      "quality_label": "Good match",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Corporate Transitioner",
+          "Fresh Starter",
+          "Generalist Admin"
+        ],
+        "primary_archetype": "Corporate Transitioner",
+        "resume_keywords": "Customer Support, slack, customer support, saas, Workable",
+        "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with slack, customer support, saas.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
       "job_id": "b50257496846",
       "title": "Designer / Content Producer (Day Shift)",
       "company": "Undisclosed client via MultiplyMii",
@@ -77,6 +117,766 @@
         "primary_archetype": "Creative Specialist",
         "resume_keywords": "Content Specialist, canva, facebook, instagram, tiktok, social media, copywriting, MultiplyMii",
         "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with canva, facebook, instagram.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "1d596b4a8f30",
+      "title": "Senior Digital Video Editor- Launch With Us",
+      "company": "Soar With Us",
+      "source": "Workable",
+      "source_mode": "direct_ats",
+      "tier": "Tier 1",
+      "source_url": "https://jobs.workable.com/company/h5HCimNapUCX3anZpCGXyy/jobs-at-soar-with-us",
+      "apply_url": "https://jobs.workable.com/view/dYwbD5kpk4hn9YtKiUHrgC/remote-senior-digital-video-editor--launch-with-us-in-philippines-at-soar-with-us",
+      "posted_at": "2026-08-12",
+      "discovered_at": "2026-08-13",
+      "role_family": "Content Specialist",
+      "archetype_primary": "Creative Specialist",
+      "archetype_secondary": "Creative Specialist, Solo Entrepreneur, Polished Freelancer",
+      "resume_keywords": "Content Specialist, facebook, instagram, tiktok, excel, social media, Workable",
+      "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with facebook, instagram, tiktok.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "facebook; instagram; tiktok; excel; social media",
+      "quality_label": "Good match",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Creative Specialist",
+          "Solo Entrepreneur",
+          "Polished Freelancer"
+        ],
+        "primary_archetype": "Creative Specialist",
+        "resume_keywords": "Content Specialist, facebook, instagram, tiktok, excel, social media, Workable",
+        "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with facebook, instagram, tiktok.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "551c53a83757",
+      "title": "Amazon & TikTok Shop Operations Assistant",
+      "company": "AUGO",
+      "source": "Workable",
+      "source_mode": "direct_ats",
+      "tier": "Tier 1",
+      "source_url": "https://jobs.workable.com/company/x4jQyqfz9mHFYwcpSZvM3s/jobs-at-augo",
+      "apply_url": "https://jobs.workable.com/view/gsUbQd8LkevaARaRPgu9Sa/remote-amazon-%26-tiktok-shop-operations-assistant-in-philippines-at-augo",
+      "posted_at": "2026-08-11",
+      "discovered_at": "2026-08-13",
+      "role_family": "Virtual Assistant",
+      "archetype_primary": "Generalist Admin",
+      "archetype_secondary": "Generalist Admin, Corporate Transitioner, Fresh Starter",
+      "resume_keywords": "Virtual Assistant, canva, tiktok, google workspace, google sheets, word, customer service, Workable",
+      "resume_angle": "Position your resume around virtual assistant reliability, written remote work, and proof with canva, tiktok, google workspace.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "canva; tiktok; google workspace; google sheets; word; customer service; data entry; admin",
+      "quality_label": "Good match",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Generalist Admin",
+          "Corporate Transitioner",
+          "Fresh Starter"
+        ],
+        "primary_archetype": "Generalist Admin",
+        "resume_keywords": "Virtual Assistant, canva, tiktok, google workspace, google sheets, word, customer service, Workable",
+        "resume_angle": "Position your resume around virtual assistant reliability, written remote work, and proof with canva, tiktok, google workspace.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "614e7b6b583b",
+      "title": "Executive Assistant (025-1062)",
+      "company": "Hunt St",
+      "source": "Workable",
+      "source_mode": "direct_ats",
+      "tier": "Tier 1",
+      "source_url": "https://jobs.workable.com/company/di1bo3LVzjhxpvRWdcoroy/jobs-at-hunt-st",
+      "apply_url": "https://jobs.workable.com/view/64cDmsJCRh199FD5FKa5oD/remote-executive-assistant-(025-1062)-in-philippines-at-hunt-st",
+      "posted_at": "2026-08-10",
+      "discovered_at": "2026-08-13",
+      "role_family": "Executive Assistant",
+      "archetype_primary": "Generalist Admin",
+      "archetype_secondary": "Generalist Admin, Corporate Transitioner, Fresh Starter",
+      "resume_keywords": "Executive Assistant, canva, linkedin, google workspace, microsoft office, excel, outlook, Workable",
+      "resume_angle": "Position your resume around executive assistant reliability, written remote work, and proof with canva, linkedin, google workspace.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "canva; linkedin; google workspace; microsoft office; excel; outlook; slack; social media",
+      "quality_label": "Good match",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Generalist Admin",
+          "Corporate Transitioner",
+          "Fresh Starter"
+        ],
+        "primary_archetype": "Generalist Admin",
+        "resume_keywords": "Executive Assistant, canva, linkedin, google workspace, microsoft office, excel, outlook, Workable",
+        "resume_angle": "Position your resume around executive assistant reliability, written remote work, and proof with canva, linkedin, google workspace.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "9da35a0aab4f",
+      "title": "DTC E-commerce Copywriter (US Market Experience) - SEA Applicants",
+      "company": "UMAEZ LLC",
+      "source": "Workable",
+      "source_mode": "direct_ats",
+      "tier": "Tier 1",
+      "source_url": "https://jobs.workable.com/company/hS1Fg6yA2YGb3vBeEZy9fP/jobs-at-umaez-llc",
+      "apply_url": "https://jobs.workable.com/view/iE7Kbyr4sMSn7FtaruZ8jB/remote-dtc-e-commerce-copywriter-(us-market-experience)---sea-applicants-in-philippines-at-umaez-llc",
+      "posted_at": "2026-08-13",
+      "discovered_at": "2026-08-13",
+      "role_family": "E-commerce",
+      "archetype_primary": "Creative Specialist",
+      "archetype_secondary": "Creative Specialist, Solo Entrepreneur, Polished Freelancer",
+      "resume_keywords": "E-commerce, word, copywriting, Workable",
+      "resume_angle": "Position your resume around e-commerce reliability, written remote work, and proof with word, copywriting.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "word; copywriting",
+      "quality_label": "Review carefully",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Creative Specialist",
+          "Solo Entrepreneur",
+          "Polished Freelancer"
+        ],
+        "primary_archetype": "Creative Specialist",
+        "resume_keywords": "E-commerce, word, copywriting, Workable",
+        "resume_angle": "Position your resume around e-commerce reliability, written remote work, and proof with word, copywriting.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "233c37bd5f5d",
+      "title": "Product Support Specialist (Customer-Facing) | Remote - PH",
+      "company": "Smart Apartment Data",
+      "source": "Workable",
+      "source_mode": "direct_ats",
+      "tier": "Tier 1",
+      "source_url": "https://jobs.workable.com/company/h7kwj7a7A6xnjpVG4Mq9WZ/jobs-at-smart-apartment-data",
+      "apply_url": "https://jobs.workable.com/view/dtZmjVUynTUZ1iXbscHkyF/product-support-specialist-(customer-facing)-%7C-remote---ph-in-davao-at-smart-apartment-data",
+      "posted_at": "2026-08-09",
+      "discovered_at": "2026-08-13",
+      "role_family": "Customer Support",
+      "archetype_primary": "Corporate Transitioner",
+      "archetype_secondary": "Corporate Transitioner, Fresh Starter, Generalist Admin",
+      "resume_keywords": "Customer Support, excel, customer support, saas, Workable",
+      "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with excel, customer support, saas.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "excel; customer support; saas",
+      "quality_label": "Good match",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Corporate Transitioner",
+          "Fresh Starter",
+          "Generalist Admin"
+        ],
+        "primary_archetype": "Corporate Transitioner",
+        "resume_keywords": "Customer Support, excel, customer support, saas, Workable",
+        "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with excel, customer support, saas.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "309a5ff3bc40",
+      "title": "Email Designer",
+      "company": "The Cruise Globe",
+      "source": "Workable",
+      "source_mode": "direct_ats",
+      "tier": "Tier 1",
+      "source_url": "https://jobs.workable.com/company/kkPNrU9rrUVL11w6k6JmuD/jobs-at-the-cruise-globe",
+      "apply_url": "https://jobs.workable.com/view/ou3kA1yX677WvD7SpFgWyx/remote-email-designer-in-philippines-at-the-cruise-globe",
+      "posted_at": "2026-08-13",
+      "discovered_at": "2026-08-13",
+      "role_family": "Content Specialist",
+      "archetype_primary": "Creative Specialist",
+      "archetype_secondary": "Creative Specialist, Solo Entrepreneur, Polished Freelancer",
+      "resume_keywords": "Content Specialist, canva, youtube, hubspot, word, Workable",
+      "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with canva, youtube, hubspot.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "canva; youtube; hubspot; word",
+      "quality_label": "Good match",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Creative Specialist",
+          "Solo Entrepreneur",
+          "Polished Freelancer"
+        ],
+        "primary_archetype": "Creative Specialist",
+        "resume_keywords": "Content Specialist, canva, youtube, hubspot, word, Workable",
+        "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with canva, youtube, hubspot.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "7e4681117471",
+      "title": "Virtual Assistant",
+      "company": "Pavago",
+      "source": "Workable",
+      "source_mode": "direct_ats",
+      "tier": "Tier 1",
+      "source_url": "https://jobs.workable.com/company/oLah2TugS95w5whXCdpTG3/jobs-at-pavago",
+      "apply_url": "https://jobs.workable.com/view/87mrYgg9ZSfo1a52aYU7ar/remote-virtual-assistant-in-philippines-at-pavago",
+      "posted_at": "2026-08-09",
+      "discovered_at": "2026-08-13",
+      "role_family": "Virtual Assistant",
+      "archetype_primary": "Generalist Admin",
+      "archetype_secondary": "Generalist Admin, Corporate Transitioner, Fresh Starter",
+      "resume_keywords": "Virtual Assistant, google workspace, google sheets, crm, hubspot, salesforce, zoho, Workable",
+      "resume_angle": "Position your resume around virtual assistant reliability, written remote work, and proof with google workspace, google sheets, crm.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "google workspace; google sheets; crm; hubspot; salesforce; zoho; microsoft office; excel",
+      "quality_label": "Good match",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Generalist Admin",
+          "Corporate Transitioner",
+          "Fresh Starter"
+        ],
+        "primary_archetype": "Generalist Admin",
+        "resume_keywords": "Virtual Assistant, google workspace, google sheets, crm, hubspot, salesforce, zoho, Workable",
+        "resume_angle": "Position your resume around virtual assistant reliability, written remote work, and proof with google workspace, google sheets, crm.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "b993afa2eee4",
+      "title": "Executive Assistant (028-1044)",
+      "company": "Hunt St",
+      "source": "Workable",
+      "source_mode": "direct_ats",
+      "tier": "Tier 1",
+      "source_url": "https://jobs.workable.com/company/di1bo3LVzjhxpvRWdcoroy/jobs-at-hunt-st",
+      "apply_url": "https://jobs.workable.com/view/ugS87BSUXnYVtyHot5kzr4/remote-executive-assistant-(028-1044)-in-philippines-at-hunt-st",
+      "posted_at": "2026-08-12",
+      "discovered_at": "2026-08-13",
+      "role_family": "Executive Assistant",
+      "archetype_primary": "Generalist Admin",
+      "archetype_secondary": "Generalist Admin, Corporate Transitioner, Fresh Starter",
+      "resume_keywords": "Executive Assistant, linkedin, excel, outlook, word, admin, Workable",
+      "resume_angle": "Position your resume around executive assistant reliability, written remote work, and proof with linkedin, excel, outlook.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "linkedin; excel; outlook; word; admin",
+      "quality_label": "Good match",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Generalist Admin",
+          "Corporate Transitioner",
+          "Fresh Starter"
+        ],
+        "primary_archetype": "Generalist Admin",
+        "resume_keywords": "Executive Assistant, linkedin, excel, outlook, word, admin, Workable",
+        "resume_angle": "Position your resume around executive assistant reliability, written remote work, and proof with linkedin, excel, outlook.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "4705c2a96356",
+      "title": "Jr. Graphic Artist",
+      "company": "iSupport Worldwide",
+      "source": "Workable",
+      "source_mode": "direct_ats",
+      "tier": "Tier 1",
+      "source_url": "https://jobs.workable.com/company/1aXDcgEyBCe8D926xEv7SH/jobs-at-isupport-worldwide",
+      "apply_url": "https://jobs.workable.com/view/dsxAP9zLdwSJfCLKjCrzhK/remote-jr.-graphic-artist-in-pasig-city-at-isupport-worldwide",
+      "posted_at": "2026-08-13",
+      "discovered_at": "2026-08-13",
+      "role_family": "Content Specialist",
+      "archetype_primary": "Creative Specialist",
+      "archetype_secondary": "Creative Specialist, Solo Entrepreneur, Polished Freelancer",
+      "resume_keywords": "Content Specialist, excel, social media, Workable",
+      "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with excel, social media.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "excel; social media",
+      "quality_label": "Good match",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Creative Specialist",
+          "Solo Entrepreneur",
+          "Polished Freelancer"
+        ],
+        "primary_archetype": "Creative Specialist",
+        "resume_keywords": "Content Specialist, excel, social media, Workable",
+        "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with excel, social media.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "ce3fbe2abcee",
+      "title": "Patient Care Coordinator Virtual Assistant",
+      "company": "Winning Assistants",
+      "source": "Workable",
+      "source_mode": "direct_ats",
+      "tier": "Tier 1",
+      "source_url": "https://jobs.workable.com/company/wrCHRawtCjDH2QcsHD7Vpp/jobs-at-winning-assistants",
+      "apply_url": "https://jobs.workable.com/view/s5GnLdxXaFLMSR442PVuAJ/remote-patient-care-coordinator-virtual-assistant-in-philippines-at-winning-assistants",
+      "posted_at": "2026-08-12",
+      "discovered_at": "2026-08-13",
+      "role_family": "Virtual Assistant",
+      "archetype_primary": "Generalist Admin",
+      "archetype_secondary": "Generalist Admin, Corporate Transitioner, Fresh Starter",
+      "resume_keywords": "Virtual Assistant, google workspace, crm, microsoft office, excel, admin, Workable",
+      "resume_angle": "Position your resume around virtual assistant reliability, written remote work, and proof with google workspace, crm, microsoft office.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "google workspace; crm; microsoft office; excel; admin",
+      "quality_label": "Good match",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Generalist Admin",
+          "Corporate Transitioner",
+          "Fresh Starter"
+        ],
+        "primary_archetype": "Generalist Admin",
+        "resume_keywords": "Virtual Assistant, google workspace, crm, microsoft office, excel, admin, Workable",
+        "resume_angle": "Position your resume around virtual assistant reliability, written remote work, and proof with google workspace, crm, microsoft office.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "b9d07b5e4db5",
+      "title": "Executive Assistant & Investor Relations Coordinator",
+      "company": "Trident",
+      "source": "Workable",
+      "source_mode": "direct_ats",
+      "tier": "Tier 1",
+      "source_url": "https://jobs.workable.com/company/vfPRAdgDhHTiDaoFdMPCww/jobs-at-trident",
+      "apply_url": "https://jobs.workable.com/view/v2akKjrtcZtzrTYUZiBMX4/remote-executive-assistant-%26-investor-relations-coordinator-in-philippines-at-trident",
+      "posted_at": "2026-08-10",
+      "discovered_at": "2026-08-13",
+      "role_family": "Executive Assistant",
+      "archetype_primary": "Generalist Admin",
+      "archetype_secondary": "Generalist Admin, Corporate Transitioner, Fresh Starter",
+      "resume_keywords": "Executive Assistant, google workspace, crm, salesforce, microsoft office, admin, Workable",
+      "resume_angle": "Position your resume around executive assistant reliability, written remote work, and proof with google workspace, crm, salesforce.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "google workspace; crm; salesforce; microsoft office; admin",
+      "quality_label": "Good match",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Generalist Admin",
+          "Corporate Transitioner",
+          "Fresh Starter"
+        ],
+        "primary_archetype": "Generalist Admin",
+        "resume_keywords": "Executive Assistant, google workspace, crm, salesforce, microsoft office, admin, Workable",
+        "resume_angle": "Position your resume around executive assistant reliability, written remote work, and proof with google workspace, crm, salesforce.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "fbeaf6db4656",
+      "title": "Creative Quality Assurance Specialist",
+      "company": "iSupport Worldwide",
+      "source": "Workable",
+      "source_mode": "direct_ats",
+      "tier": "Tier 1",
+      "source_url": "https://jobs.workable.com/company/1aXDcgEyBCe8D926xEv7SH/jobs-at-isupport-worldwide",
+      "apply_url": "https://jobs.workable.com/view/gyMfUZ6nZ6iYuB7H4gJQKm/remote-creative-quality-assurance-specialist-in-pasig-city-at-isupport-worldwide",
+      "posted_at": "2026-08-13",
+      "discovered_at": "2026-08-13",
+      "role_family": "Content Specialist",
+      "archetype_primary": "Creative Specialist",
+      "archetype_secondary": "Creative Specialist, Solo Entrepreneur, Polished Freelancer",
+      "resume_keywords": "Content Specialist, excel, social media, Workable",
+      "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with excel, social media.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "excel; social media",
+      "quality_label": "Review carefully",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Creative Specialist",
+          "Solo Entrepreneur",
+          "Polished Freelancer"
+        ],
+        "primary_archetype": "Creative Specialist",
+        "resume_keywords": "Content Specialist, excel, social media, Workable",
+        "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with excel, social media.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "a39b21babbc1",
+      "title": "Virtual Assistant (Salesforce)",
+      "company": "NeoWork",
+      "source": "Workable",
+      "source_mode": "direct_ats",
+      "tier": "Tier 1",
+      "source_url": "https://jobs.workable.com/company/oN71QKsbE2zGpjrtMrw8SD/jobs-at-neowork",
+      "apply_url": "https://jobs.workable.com/view/teiR2StfS4bJXoqDhFGHsy/remote-virtual-assistant-(salesforce)-in-philippines-at-neowork",
+      "posted_at": "2026-08-12",
+      "discovered_at": "2026-08-13",
+      "role_family": "Virtual Assistant",
+      "archetype_primary": "Generalist Admin",
+      "archetype_secondary": "Generalist Admin, Corporate Transitioner, Fresh Starter",
+      "resume_keywords": "Virtual Assistant, salesforce, admin, Workable",
+      "resume_angle": "Position your resume around virtual assistant reliability, written remote work, and proof with salesforce, admin.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "salesforce; admin",
+      "quality_label": "Good match",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Generalist Admin",
+          "Corporate Transitioner",
+          "Fresh Starter"
+        ],
+        "primary_archetype": "Generalist Admin",
+        "resume_keywords": "Virtual Assistant, salesforce, admin, Workable",
+        "resume_angle": "Position your resume around virtual assistant reliability, written remote work, and proof with salesforce, admin.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "88889cf83d69",
+      "title": "Executive Assistant /Admin Assistant (028 - 1210)",
+      "company": "Hunt St",
+      "source": "Workable",
+      "source_mode": "direct_ats",
+      "tier": "Tier 1",
+      "source_url": "https://jobs.workable.com/company/di1bo3LVzjhxpvRWdcoroy/jobs-at-hunt-st",
+      "apply_url": "https://jobs.workable.com/view/fuUqoziKY6XhJBfE78jC7p/remote-executive-assistant-%2Fadmin-assistant-(028---1210)-in-philippines-at-hunt-st",
+      "posted_at": "2026-08-12",
+      "discovered_at": "2026-08-13",
+      "role_family": "Executive Assistant",
+      "archetype_primary": "Generalist Admin",
+      "archetype_secondary": "Generalist Admin, Corporate Transitioner, Fresh Starter",
+      "resume_keywords": "Executive Assistant, linkedin, google workspace, social media, admin, Workable",
+      "resume_angle": "Position your resume around executive assistant reliability, written remote work, and proof with linkedin, google workspace, social media.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "linkedin; google workspace; social media; admin",
+      "quality_label": "Good match",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Generalist Admin",
+          "Corporate Transitioner",
+          "Fresh Starter"
+        ],
+        "primary_archetype": "Generalist Admin",
+        "resume_keywords": "Executive Assistant, linkedin, google workspace, social media, admin, Workable",
+        "resume_angle": "Position your resume around executive assistant reliability, written remote work, and proof with linkedin, google workspace, social media.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "8892ee6fba43",
+      "title": "Conversion Funnel Designer (Figma)",
+      "company": "Primal Storm",
+      "source": "Workable",
+      "source_mode": "direct_ats",
+      "tier": "Tier 1",
+      "source_url": "https://jobs.workable.com/company/6NDhUjx6gTq3wNiWDxre9C/jobs-at-primal-storm",
+      "apply_url": "https://jobs.workable.com/view/gNEok9eyz8hotvBHmMUPEi/remote-conversion-funnel-designer-(figma)-in-philippines-at-primal-storm",
+      "posted_at": "2026-08-12",
+      "discovered_at": "2026-08-13",
+      "role_family": "Content Specialist",
+      "archetype_primary": "Creative Specialist",
+      "archetype_secondary": "Creative Specialist, Solo Entrepreneur, Polished Freelancer",
+      "resume_keywords": "Content Specialist, Workable",
+      "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with relevant tools.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "",
+      "quality_label": "Review carefully",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Creative Specialist",
+          "Solo Entrepreneur",
+          "Polished Freelancer"
+        ],
+        "primary_archetype": "Creative Specialist",
+        "resume_keywords": "Content Specialist, Workable",
+        "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with relevant tools.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "8f08cbaae0d5",
+      "title": "Medical Virtual Assistant",
+      "company": "Winning Assistants",
+      "source": "Workable",
+      "source_mode": "direct_ats",
+      "tier": "Tier 1",
+      "source_url": "https://jobs.workable.com/company/wrCHRawtCjDH2QcsHD7Vpp/jobs-at-winning-assistants",
+      "apply_url": "https://jobs.workable.com/view/gJojKLD9RW4DQo34gSvcyb/remote-medical-virtual-assistant-in-philippines-at-winning-assistants",
+      "posted_at": "2026-08-12",
+      "discovered_at": "2026-08-13",
+      "role_family": "Virtual Assistant",
+      "archetype_primary": "Generalist Admin",
+      "archetype_secondary": "Generalist Admin, Corporate Transitioner, Fresh Starter",
+      "resume_keywords": "Virtual Assistant, admin, Workable",
+      "resume_angle": "Position your resume around virtual assistant reliability, written remote work, and proof with admin.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "admin",
+      "quality_label": "Review carefully",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Generalist Admin",
+          "Corporate Transitioner",
+          "Fresh Starter"
+        ],
+        "primary_archetype": "Generalist Admin",
+        "resume_keywords": "Virtual Assistant, admin, Workable",
+        "resume_angle": "Position your resume around virtual assistant reliability, written remote work, and proof with admin.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "28bd414a6095",
+      "title": "Executive Assistant - Group Marketing and Systems Support",
+      "company": "D2B",
+      "source": "Workable",
+      "source_mode": "direct_ats",
+      "tier": "Tier 1",
+      "source_url": "https://jobs.workable.com/company/dcaVtKQqXr9FwBNppNCBH9/jobs-at-d2b",
+      "apply_url": "https://jobs.workable.com/view/sWGeTAdGA2G8cLWTXYKvR1/remote-executive-assistant---group-marketing-and-systems-support-in-metro-manila-at-d2b",
+      "posted_at": "2026-08-12",
+      "discovered_at": "2026-08-13",
+      "role_family": "Executive Assistant",
+      "archetype_primary": "Generalist Admin",
+      "archetype_secondary": "Generalist Admin, Corporate Transitioner, Fresh Starter",
+      "resume_keywords": "Executive Assistant, google workspace, microsoft office, excel, admin, Workable",
+      "resume_angle": "Position your resume around executive assistant reliability, written remote work, and proof with google workspace, microsoft office, excel.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "google workspace; microsoft office; excel; admin",
+      "quality_label": "Good match",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Generalist Admin",
+          "Corporate Transitioner",
+          "Fresh Starter"
+        ],
+        "primary_archetype": "Generalist Admin",
+        "resume_keywords": "Executive Assistant, google workspace, microsoft office, excel, admin, Workable",
+        "resume_angle": "Position your resume around executive assistant reliability, written remote work, and proof with google workspace, microsoft office, excel.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "5f68fafa9c6a",
+      "title": "CG: Recruitment Support & Executive Assistant - (022-899)",
+      "company": "Hunt St",
+      "source": "Workable",
+      "source_mode": "direct_ats",
+      "tier": "Tier 1",
+      "source_url": "https://jobs.workable.com/company/di1bo3LVzjhxpvRWdcoroy/jobs-at-hunt-st",
+      "apply_url": "https://jobs.workable.com/view/9DoF2g3mjMHZaNa91Vad4j/remote-cg%3A-recruitment-support-%26-executive-assistant---(022-899)-in-philippines-at-hunt-st",
+      "posted_at": "2026-08-11",
+      "discovered_at": "2026-08-13",
+      "role_family": "Executive Assistant",
+      "archetype_primary": "Generalist Admin",
+      "archetype_secondary": "Generalist Admin, Corporate Transitioner, Fresh Starter",
+      "resume_keywords": "Executive Assistant, linkedin, crm, excel, admin, Workable",
+      "resume_angle": "Position your resume around executive assistant reliability, written remote work, and proof with linkedin, crm, excel.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "linkedin; crm; excel; admin",
+      "quality_label": "Good match",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Generalist Admin",
+          "Corporate Transitioner",
+          "Fresh Starter"
+        ],
+        "primary_archetype": "Generalist Admin",
+        "resume_keywords": "Executive Assistant, linkedin, crm, excel, admin, Workable",
+        "resume_angle": "Position your resume around executive assistant reliability, written remote work, and proof with linkedin, crm, excel.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "0232836c408d",
+      "title": "Virtual Assistant - Executive/Administrative Assistant",
+      "company": "We Clone You",
+      "source": "Workable",
+      "source_mode": "direct_ats",
+      "tier": "Tier 1",
+      "source_url": "https://jobs.workable.com/company/8gy8gCjdMPufrCHM9JqYBS/jobs-at-we-clone-you",
+      "apply_url": "https://jobs.workable.com/view/dSjmfrHmUMAXdZtgkFjgLY/remote-virtual-assistant---executive%2Fadministrative-assistant-in-philippines-at-we-clone-you",
+      "posted_at": "2026-08-12",
+      "discovered_at": "2026-08-13",
+      "role_family": "Executive Assistant",
+      "archetype_primary": "Generalist Admin",
+      "archetype_secondary": "Generalist Admin, Corporate Transitioner, Fresh Starter",
+      "resume_keywords": "Executive Assistant, crm, excel, admin, Workable",
+      "resume_angle": "Position your resume around executive assistant reliability, written remote work, and proof with crm, excel, admin.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "crm; excel; admin",
+      "quality_label": "Good match",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Generalist Admin",
+          "Corporate Transitioner",
+          "Fresh Starter"
+        ],
+        "primary_archetype": "Generalist Admin",
+        "resume_keywords": "Executive Assistant, crm, excel, admin, Workable",
+        "resume_angle": "Position your resume around executive assistant reliability, written remote work, and proof with crm, excel, admin.",
         "missing_skill_suggestions": [
           "Prepare one relevant work sample",
           "Mirror the job title and tools in the resume"
