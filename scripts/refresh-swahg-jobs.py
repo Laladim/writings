@@ -40,12 +40,24 @@ ASHBY_BOARDS = (
     {"slug": "clickup", "source": "ClickUp", "cap": 3, "staffing": False},
     {"slug": "clipboard", "source": "Clipboard Health", "cap": 1, "staffing": False},
 )
-SOURCE_CAPS = {board["source"]: int(board["cap"]) for board in ASHBY_BOARDS}
+WORKABLE_SOURCE = "Workable"
+WORKABLE_CAP = 20
+WORKABLE_SEARCH_URLS = (
+    "https://jobs.workable.com/search/philippines/remote-jobs",
+    "https://jobs.workable.com/search/philippines/remote-customer-support-jobs",
+    "https://jobs.workable.com/search/philippines/remote-executive-assistant-jobs",
+    "https://jobs.workable.com/search/philippines/remote-operations-jobs",
+    "https://jobs.workable.com/search/philippines/remote-virtual-assistant-jobs",
+)
+SOURCE_CAPS = {
+    **{board["source"]: int(board["cap"]) for board in ASHBY_BOARDS},
+    WORKABLE_SOURCE: WORKABLE_CAP,
+}
 ASHBY_BOARD_BY_SLUG = {
     str(board["slug"]).casefold(): board for board in ASHBY_BOARDS
 }
 ASHBY_API_PREFIX = "https://api.ashbyhq.com/posting-api/job-board/"
-DIRECT_ATS_DOMAINS = {"jobs.ashbyhq.com"}
+DIRECT_ATS_DOMAINS = {"jobs.ashbyhq.com", "jobs.workable.com"}
 AGGREGATOR_DOMAINS = {
     "himalayas.app",
     "jobicy.com",
@@ -268,6 +280,20 @@ PLACEHOLDER_COMPANY = re.compile(
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 ASHBY_JOB_ID_RE = re.compile(
     r"^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+    re.I,
+)
+WORKABLE_ID_RE = re.compile(r"^[A-Za-z0-9]{22}$")
+WORKABLE_CANDIDATE_URL_RE = re.compile(
+    r"(?:customer-(?:service|support|success|experience)|support-|"
+    r"executive-assistant|administrative-assistant|virtual-assistant|"
+    r"operations-(?:assistant|coordinator|specialist|associate)|"
+    r"bookkeep|accounting|accounts?-|designer|graphic-|copywriter|"
+    r"content-|social-media|video-editor|community-|\bseo\b)",
+    re.I,
+)
+APPLICANT_COST_RE = re.compile(
+    r"\b(?:application|candidate|registration|placement|processing) fee\b|"
+    r"\bpay (?:money |a fee )?to (?:apply|interview|be hired)\b",
     re.I,
 )
 
@@ -639,10 +665,133 @@ def fetch_ashby_board(board: dict[str, Any]) -> tuple[list[dict[str, Any]], str]
     return rows, ""
 
 
+def ld_json_objects(document: str) -> list[dict[str, Any]]:
+    """Decode public schema.org payloads embedded in an ATS page."""
+    objects: list[dict[str, Any]] = []
+    pattern = re.compile(
+        r"<script\b[^>]*type=[\"']application/ld\+json[\"'][^>]*>"
+        r"(.*?)</script>",
+        re.I | re.S,
+    )
+    for match in pattern.finditer(document or ""):
+        try:
+            payload = json.loads(match.group(1))
+        except (json.JSONDecodeError, TypeError):
+            continue
+        candidates = payload if isinstance(payload, list) else [payload]
+        objects.extend(item for item in candidates if isinstance(item, dict))
+    return objects
+
+
+def workable_location_names(value: Any) -> list[str]:
+    values = value if isinstance(value, list) else [value]
+    names: list[str] = []
+    for item in values:
+        if isinstance(item, dict):
+            name = clean_text(item.get("name") or "").strip()
+            if name:
+                names.append(name)
+    return names
+
+
+def workable_search_job_urls(document: str) -> list[str]:
+    """Read the first public Workable result page without hidden APIs."""
+    urls: list[str] = []
+    for payload in ld_json_objects(document):
+        if payload.get("@type") != "ItemList":
+            continue
+        for item in payload.get("itemListElement") or []:
+            if not isinstance(item, dict):
+                continue
+            url = clean_text(item.get("url") or "").strip()
+            if (
+                vetted_workable_job_id(url)
+                and WORKABLE_CANDIDATE_URL_RE.search(
+                    urllib.parse.unquote(url)
+                )
+                and url not in urls
+            ):
+                urls.append(url)
+    return urls
+
+
+def fetch_workable() -> tuple[list[dict[str, Any]], str]:
+    """Fetch current direct PH-remote listings from Workable public pages."""
+    candidate_urls: list[str] = []
+    for search_url in WORKABLE_SEARCH_URLS:
+        for url in workable_search_job_urls(fetch_text(search_url)):
+            if url not in candidate_urls:
+                candidate_urls.append(url)
+
+    rows: list[dict[str, Any]] = []
+    seen_roles: set[tuple[str, str]] = set()
+    for candidate_url in candidate_urls:
+        try:
+            candidate_document = fetch_text(candidate_url)
+        except Exception:  # noqa: BLE001
+            # A result may close between the search read and the detail read.
+            continue
+        postings = [
+            payload
+            for payload in ld_json_objects(candidate_document)
+            if payload.get("@type") == "JobPosting"
+        ]
+        if len(postings) != 1:
+            continue
+        posting = postings[0]
+        apply_url = clean_text(posting.get("url") or candidate_url).strip()
+        organization = posting.get("hiringOrganization")
+        if not isinstance(organization, dict):
+            continue
+        company = clean_text(organization.get("name") or "").strip()
+        source_url = clean_text(organization.get("sameAs") or "").strip()
+        locations = workable_location_names(
+            posting.get("applicantLocationRequirements")
+        )
+        location = ", ".join(locations)
+        role_key = (
+            semantic_text(company),
+            semantic_text(clean_text(posting.get("title") or "")),
+        )
+        if (
+            posting.get("directApply") is not True
+            or posting.get("jobLocationType") != "TELECOMMUTE"
+            or not PH_LOCATION.search(location)
+            or not vetted_workable_job_id(apply_url)
+            or not vetted_workable_company_id(source_url)
+            or apply_url != candidate_url
+            or role_key in seen_roles
+        ):
+            continue
+        seen_roles.add(role_key)
+        row = normalize_job(
+            posting.get("title"),
+            company,
+            posting.get("description") or "",
+            f"Remote {location}",
+            [],
+            apply_url,
+            WORKABLE_SOURCE,
+            posting.get("datePosted"),
+            "",
+            posting.get("employmentType") or "",
+            "",
+            source_url=source_url,
+            source_mode="direct_ats",
+            ats_platform="Workable",
+            is_remote=True,
+            workplace_type="Remote",
+        )
+        if row:
+            rows.append(row)
+    return rows, ""
+
+
 FETCHERS = {
     board["source"]: (lambda board=board: fetch_ashby_board(board))
     for board in ASHBY_BOARDS
 }
+FETCHERS[WORKABLE_SOURCE] = fetch_workable
 
 
 def role_category(title: str, text: str = "") -> str:
@@ -682,7 +831,7 @@ def role_category(title: str, text: str = "") -> str:
     ):
         return "Virtual Assistant"
     if re.search(
-        r"operations (?:lead|coordinator|specialist)|administration support|"
+        r"operations (?:lead|coordinator|specialist|associate)|administration support|"
         r"administrative coordinator|office coordinator|logistics administrator",
         value,
     ):
@@ -692,7 +841,8 @@ def role_category(title: str, text: str = "") -> str:
     if re.search(r"\bseo\b|search engine", value):
         return "SEO"
     if re.search(
-        r"content|copywriter|writer|editor|social media|communications|"
+        r"content|copywriter|writer|editor|designer|graphic artist|"
+        r"creative quality|social media|communications|"
         r"marketing(?: [a-z&-]+){0,2} (?:coordinator|manager|administrator)|"
         r"marketing specialist|ads creative strategist",
         value,
@@ -823,12 +973,56 @@ def vetted_ashby_slug(url: str, *, job_page: bool) -> str:
     return slug
 
 
+def workable_url_parts(url: str) -> list[str]:
+    try:
+        parsed = urllib.parse.urlsplit(str(url).strip())
+        port = parsed.port
+    except ValueError:
+        return []
+    host = (parsed.hostname or "").rstrip(".").lower()
+    if (
+        parsed.scheme.lower() != "https"
+        or host != "jobs.workable.com"
+        or parsed.username is not None
+        or parsed.password is not None
+        or port not in (None, 443)
+        or parsed.query
+        or parsed.fragment
+    ):
+        return []
+    return [urllib.parse.unquote(part) for part in parsed.path.split("/") if part]
+
+
+def vetted_workable_job_id(url: str) -> str:
+    parts = workable_url_parts(url)
+    if len(parts) != 3 or parts[0] != "view":
+        return ""
+    return parts[1] if WORKABLE_ID_RE.fullmatch(parts[1]) else ""
+
+
+def vetted_workable_company_id(url: str) -> str:
+    parts = workable_url_parts(url)
+    if (
+        len(parts) != 3
+        or parts[0] != "company"
+        or not parts[2].startswith("jobs-at-")
+    ):
+        return ""
+    return parts[1] if WORKABLE_ID_RE.fullmatch(parts[1]) else ""
+
+
 def is_direct_application_url(url: str) -> bool:
-    return bool(vetted_ashby_slug(url, job_page=True))
+    return bool(
+        vetted_ashby_slug(url, job_page=True)
+        or vetted_workable_job_id(url)
+    )
 
 
 def is_direct_source_url(url: str) -> bool:
-    return bool(vetted_ashby_slug(url, job_page=False))
+    return bool(
+        vetted_ashby_slug(url, job_page=False)
+        or vetted_workable_company_id(url)
+    )
 
 
 def semantic_text(value: str) -> str:
@@ -920,12 +1114,16 @@ def detail_record(job: dict[str, Any]) -> dict[str, Any] | None:
         return None
     if SENSITIVE_INDUSTRY.search(knockout_blob):
         return None
+    if APPLICANT_COST_RE.search(knockout_blob):
+        return None
     if TITLE_KNOCKOUT.search(job["title"]) or TEXT_KNOCKOUT.search(knockout_blob):
         return None
     role = role_category(job["title"], text)
     if not role:
         return None
     sections = extract_description_sections(text)
+    if not sections["position_overview"]:
+        sections["position_overview"] = readable_section(text, 2400)
     salary_range = job["salary"] or sections["salary_range"]
     tools = matched_tools(text, job["tags"])
     skill_count = len(tools)
@@ -1081,7 +1279,7 @@ def resume_record(detail: dict[str, Any]) -> dict[str, Any]:
 
 def select_diverse_jobs(details: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """Round-robin accepted roles so one staffing source cannot own the board."""
-    source_order = [board["source"] for board in ASHBY_BOARDS]
+    source_order = list(FETCHERS)
     grouped: dict[str, list[dict[str, Any]]] = {
         source: [] for source in source_order
     }
@@ -1270,11 +1468,29 @@ def verify_generated_data(data_dir: Path) -> None:
             assert detail.get(field) == job.get(field), f"summary/detail {field} mismatch for {job['id']}"
         apply_slug = vetted_ashby_slug(detail["apply_url"], job_page=True)
         source_slug = vetted_ashby_slug(detail["source_url"], job_page=False)
-        assert apply_slug, f"non-vetted application URL for {job['id']}"
-        assert source_slug, f"non-vetted source URL for {job['id']}"
-        assert apply_slug == source_slug, f"application/source board mismatch for {job['id']}"
-        expected_source = ASHBY_BOARD_BY_SLUG[apply_slug]["source"]
-        assert detail["source"] == expected_source, f"source/board mismatch for {job['id']}"
+        workable_job_id = vetted_workable_job_id(detail["apply_url"])
+        workable_company_id = vetted_workable_company_id(detail["source_url"])
+        assert apply_slug or workable_job_id, (
+            f"non-vetted application URL for {job['id']}"
+        )
+        assert source_slug or workable_company_id, (
+            f"non-vetted source URL for {job['id']}"
+        )
+        if apply_slug:
+            assert source_slug == apply_slug, (
+                f"application/source board mismatch for {job['id']}"
+            )
+            expected_source = ASHBY_BOARD_BY_SLUG[apply_slug]["source"]
+            expected_platform = "Ashby"
+        else:
+            assert workable_company_id, (
+                f"application/source board mismatch for {job['id']}"
+            )
+            expected_source = WORKABLE_SOURCE
+            expected_platform = "Workable"
+        assert detail["source"] == expected_source, (
+            f"source/board mismatch for {job['id']}"
+        )
         expected_id = stable_id(
             {
                 "title": detail["title"],
@@ -1286,7 +1502,9 @@ def verify_generated_data(data_dir: Path) -> None:
         assert detail["job_id"] == job["id"], f"detail job_id mismatch for {job['id']}"
         assert not domain_matches(hostname(detail["apply_url"]), AGGREGATOR_DOMAINS), f"aggregator application URL for {job['id']}"
         assert detail["source_mode"] == "direct_ats", f"non-direct source mode for {job['id']}"
-        assert detail["ats_platform"] == "Ashby", f"unexpected ATS for {job['id']}"
+        assert detail["ats_platform"] == expected_platform, (
+            f"unexpected ATS for {job['id']}"
+        )
         assert detail["ph_eligible"] == "Yes", f"unproven PH eligibility for {job['id']}"
         assert detail["remote_type"] == "Remote", f"unproven remote type for {job['id']}"
         assert detail["position_overview"], f"missing standardized role overview for {job['id']}"
@@ -1346,16 +1564,27 @@ def verify_generated_data(data_dir: Path) -> None:
     assert list(source_health.keys()) == ["generated_at", "sources"], "source health keys mismatch"
     health_rows = source_health["sources"]
     assert isinstance(health_rows, list), "source health rows must be a list"
-    assert len(health_rows) == len(ASHBY_BOARDS), "source health board count mismatch"
-    for board, row in zip(ASHBY_BOARDS, health_rows, strict=True):
+    expected_sources = list(FETCHERS)
+    assert len(health_rows) == len(expected_sources), (
+        "source health board count mismatch"
+    )
+    for source, row in zip(expected_sources, health_rows, strict=True):
         assert list(row.keys()) == [
             "source", "status", "fetched_count", "accepted_count", "last_error"
-        ], f"source health keys mismatch for {board['source']}"
-        assert row["source"] == board["source"], "source health board order mismatch"
-        assert row["status"] == "ok" and not row["last_error"], f"source health failure for {board['source']}"
-        assert isinstance(row["fetched_count"], int), f"source fetched count invalid for {board['source']}"
-        assert row["fetched_count"] >= source_counts[board["source"]], f"source fetched count too small for {board['source']}"
-        assert row["accepted_count"] == source_counts[board["source"]], f"source accepted count mismatch for {board['source']}"
+        ], f"source health keys mismatch for {source}"
+        assert row["source"] == source, "source health board order mismatch"
+        assert row["status"] == "ok" and not row["last_error"], (
+            f"source health failure for {source}"
+        )
+        assert isinstance(row["fetched_count"], int), (
+            f"source fetched count invalid for {source}"
+        )
+        assert row["fetched_count"] >= source_counts[source], (
+            f"source fetched count too small for {source}"
+        )
+        assert row["accepted_count"] == source_counts[source], (
+            f"source accepted count mismatch for {source}"
+        )
 
 
 def embedded_board_payloads(index_path: Path) -> tuple[list[str], list[dict[str, Any]], dict[str, dict[str, Any]]]:

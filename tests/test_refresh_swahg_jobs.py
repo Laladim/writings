@@ -59,6 +59,9 @@ class ClassificationTests(unittest.TestCase):
             "eCommerce Coordinator": "E-commerce",
             "Operations Lead (Card Services)": "Operations & Admin",
             "Technical Account Manager": "Customer Support",
+            "Email Designer": "Content Specialist",
+            "Jr. Graphic Artist": "Content Specialist",
+            "Conversion Funnel Designer (Figma)": "Content Specialist",
         }
         for title, expected in cases.items():
             with self.subTest(title=title):
@@ -111,11 +114,22 @@ class ClassificationTests(unittest.TestCase):
 
 
 class DirectSourceTests(unittest.TestCase):
-    def test_only_https_direct_ats_urls_are_accepted(self):
+    def test_only_vetted_https_direct_ats_urls_are_accepted(self):
         job_id = "11111111-1111-4111-8111-111111111111"
+        workable_id = "ou3kA1yX677WvD7SpFgWyx"
         self.assertTrue(
             jobs.is_direct_application_url(
                 f"https://jobs.ashbyhq.com/multiplymii/{job_id}"
+            )
+        )
+        self.assertTrue(
+            jobs.is_direct_application_url(
+                f"https://jobs.workable.com/view/{workable_id}/remote-email-designer-in-philippines"
+            )
+        )
+        self.assertTrue(
+            jobs.is_direct_source_url(
+                "https://jobs.workable.com/company/kkPNrU9rrUVL11w6k6JmuD/jobs-at-the-cruise-globe"
             )
         )
         for url in (
@@ -126,6 +140,9 @@ class DirectSourceTests(unittest.TestCase):
             "https://jobs.ashbyhq.com/multiplymii/1234",
             f"https://jobs.ashbyhq.com/multiplymii/{job_id}?ref=aggregator",
             f"https://jobs.ashbyhq.com:not-a-port/multiplymii/{job_id}",
+            f"http://jobs.workable.com/view/{workable_id}/remote-email-designer",
+            f"https://jobs.workable.com/view/{workable_id}/remote-email-designer?ref=bad",
+            "https://jobs.workable.com/view/too-short/remote-email-designer",
             "https://example.com/jobs/1234",
             "",
         ):
@@ -165,6 +182,63 @@ class DirectSourceTests(unittest.TestCase):
             rows[0]["apply_url"],
             "https://jobs.ashbyhq.com/example/abc",
         )
+
+    def test_workable_adapter_uses_public_direct_apply_schema(self):
+        apply_url = (
+            "https://jobs.workable.com/view/ou3kA1yX677WvD7SpFgWyx/"
+            "remote-email-designer-in-philippines-at-the-cruise-globe"
+        )
+        company_url = (
+            "https://jobs.workable.com/company/kkPNrU9rrUVL11w6k6JmuD/"
+            "jobs-at-the-cruise-globe"
+        )
+        search_html = (
+            '<script type="application/ld+json">'
+            + json.dumps({
+                "@type": "ItemList",
+                "itemListElement": [{"url": apply_url}],
+            })
+            + "</script>"
+        )
+        detail_html = (
+            '<script type="application/ld+json">'
+            + json.dumps({
+                "@type": "JobPosting",
+                "title": "Email Designer",
+                "description": "Design email campaigns in Figma and Canva.",
+                "datePosted": "2026-08-13T10:05:22.713Z",
+                "employmentType": "FULL_TIME",
+                "hiringOrganization": {
+                    "name": "The Cruise Globe",
+                    "sameAs": company_url,
+                },
+                "jobLocationType": "TELECOMMUTE",
+                "applicantLocationRequirements": {
+                    "@type": "Country",
+                    "name": "Philippines",
+                },
+                "directApply": True,
+                "url": apply_url,
+            })
+            + "</script>"
+        )
+
+        def fake_fetch_text(url):
+            return detail_html if url == apply_url else search_html
+
+        with patch.object(jobs, "fetch_text", side_effect=fake_fetch_text):
+            rows, error = jobs.fetch_workable()
+
+        self.assertEqual(error, "")
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0]["company"], "The Cruise Globe")
+        self.assertEqual(rows[0]["location"], "Remote Philippines")
+        self.assertEqual(rows[0]["source"], "Workable")
+        self.assertEqual(rows[0]["source_mode"], "direct_ats")
+        self.assertEqual(rows[0]["ats_platform"], "Workable")
+        self.assertEqual(rows[0]["source_url"], company_url)
+        self.assertEqual(rows[0]["apply_url"], apply_url)
+        self.assertIs(rows[0]["is_remote"], True)
 
     def test_detail_gate_rejects_aggregator_placeholder_and_non_ph_rows(self):
         job_id = "11111111-1111-4111-8111-111111111111"
@@ -206,6 +280,21 @@ class DirectSourceTests(unittest.TestCase):
             posted=(datetime.date.today() - datetime.timedelta(days=6)).isoformat(),
         )
         self.assertIsNone(jobs.detail_record(stale))
+
+        workable = dict(
+            base,
+            apply_url=(
+                "https://jobs.workable.com/view/ou3kA1yX677WvD7SpFgWyx/"
+                "remote-executive-assistant-in-philippines"
+            ),
+            source="Workable",
+            source_url=(
+                "https://jobs.workable.com/company/kkPNrU9rrUVL11w6k6JmuD/"
+                "jobs-at-example"
+            ),
+            ats_platform="Workable",
+        )
+        self.assertIsNotNone(jobs.detail_record(workable))
 
     def test_detail_gate_requires_positive_structured_remote_evidence(self):
         job_id = "11111111-1111-4111-8111-111111111111"
@@ -328,6 +417,24 @@ class VerifierRegressionTests(unittest.TestCase):
     def copy_generated_data(self, temp_root: str) -> Path:
         copied = Path(temp_root) / "data"
         shutil.copytree(jobs.DATA, copied)
+        manifest_path = copied / "run-manifest.json"
+        manifest = json.loads(manifest_path.read_text())
+        manifest["source_caps"] = jobs.SOURCE_CAPS
+        manifest_path.write_text(json.dumps(manifest))
+        health_path = copied / "source-health.json"
+        health = json.loads(health_path.read_text())
+        current = {row["source"]: row for row in health["sources"]}
+        health["sources"] = [
+            current.get(source, {
+                "source": source,
+                "status": "ok",
+                "fetched_count": 0,
+                "accepted_count": 0,
+                "last_error": "",
+            })
+            for source in jobs.FETCHERS
+        ]
+        health_path.write_text(json.dumps(health))
         return copied
 
     def assert_generated_rejected(self, data_dir: Path, message: str) -> None:
