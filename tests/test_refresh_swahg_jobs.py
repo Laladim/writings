@@ -19,6 +19,29 @@ SPEC.loader.exec_module(jobs)
 
 
 class ClassificationTests(unittest.TestCase):
+    def test_description_sections_are_standardized(self):
+        text = (
+            "Position Type: Full Time Location: Philippines (Remote) "
+            "Schedule: Monday to Friday, 9 AM to 5 PM Sydney time "
+            "Total Monthly Cost: Php 55,000 - 80,000 per month "
+            "ABOUT THE COMPANY A healthcare software company. "
+            "ABOUT THE ROLE Support clinicians using its AI tools. "
+            "RESPONSIBILITIES - Answer questions. - Improve templates. "
+            "COMPETENCIES AND QUALIFICATIONS - Clinical background. - Clear writing. "
+            "WHAT WE OFFER - Remote training. - Comprehensive Fringe Benefits package. "
+            "APPLICATION PROCESS Two interviews."
+        )
+
+        sections = jobs.extract_description_sections(text)
+
+        self.assertEqual(sections["hours_schedule"], "Monday to Friday, 9 AM to 5 PM Sydney time")
+        self.assertEqual(sections["salary_range"], "Php 55,000 - 80,000 per month")
+        self.assertEqual(sections["about_the_company"], "A healthcare software company.")
+        self.assertTrue(sections["key_responsibilities"].startswith("- Answer questions."))
+        self.assertIn("Clinical background", sections["qualifications"])
+        self.assertIn("Comprehensive Fringe Benefits package.", sections["what_we_offer"])
+        self.assertEqual(sections["application_process"], "Two interviews.")
+
     def test_role_classification_uses_title_not_description(self):
         self.assertEqual(
             jobs.role_category("Plumber", "customer support executive assistant"),
@@ -388,6 +411,24 @@ class VerifierRegressionTests(unittest.TestCase):
                 AssertionError, "embedded jobs differ from jobs export"
             ):
                 jobs.verify_embedded_board(index_path, jobs.DATA)
+
+    def test_embedded_replacement_preserves_structured_newlines(self):
+        with tempfile.TemporaryDirectory() as temp_root:
+            index_path = Path(temp_root) / "index.html"
+            shutil.copy2(jobs.BOARD / "index.html", index_path)
+            summaries = [{"id": "example"}]
+            details = {
+                "example": {
+                    "id": "example",
+                    "key_responsibilities": "- First task\n- Second task",
+                }
+            }
+
+            jobs.replace_embedded_json(index_path, summaries, details)
+            _, embedded_jobs, embedded_details = jobs.embedded_board_payloads(index_path)
+
+            self.assertEqual(embedded_jobs, summaries)
+            self.assertEqual(embedded_details, details)
 
 
 if __name__ == "__main__":

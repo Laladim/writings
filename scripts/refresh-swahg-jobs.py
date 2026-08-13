@@ -327,6 +327,76 @@ def strip_html(value: str) -> str:
     return re.sub(r"\s+", " ", clean_text(text)).strip()[:12000]
 
 
+DESCRIPTION_HEADINGS = (
+    ("about_the_company", re.compile(r"\babout the company\b", re.I)),
+    ("position_overview", re.compile(r"\babout the role\b", re.I)),
+    ("key_responsibilities", re.compile(r"\b(?:key )?responsibilities\b", re.I)),
+    (
+        "qualifications",
+        re.compile(r"\b(?:competencies and qualifications|qualifications)\b", re.I),
+    ),
+    ("what_we_offer", re.compile(r"\bwhat we offer\b", re.I)),
+    ("what_we_offer", re.compile(r"\bbenefits\b(?=\s+-)", re.I)),
+    ("application_process", re.compile(r"\bapplication process\b", re.I)),
+)
+
+
+def readable_section(value: str, limit: int = 5000) -> str:
+    """Restore list rhythm after the ATS HTML has been flattened."""
+    text = str(value or "").strip()
+    text = re.sub(
+        r"(?<=[.!?])\s+(?=(?:Must-Have|Nice-to-Have|Daily Rhythm|Characteristics|Proactive customer success|Customer support and order entry)\b)",
+        "\n\n",
+        text,
+        flags=re.I,
+    )
+    text = re.sub(r"\s+-\s+(?=[A-Z0-9])", "\n- ", text)
+    return text[:limit].strip()
+
+
+def extract_description_sections(text: str) -> dict[str, str]:
+    """Map common ATS headings into the board's standard detail sections."""
+    matches: list[tuple[int, int, str]] = []
+    for key, pattern in DESCRIPTION_HEADINGS:
+        matches.extend((match.start(), match.end(), key) for match in pattern.finditer(text))
+    matches.sort(key=lambda item: item[0])
+    sections = {
+        "about_the_company": "",
+        "position_overview": "",
+        "key_responsibilities": "",
+        "qualifications": "",
+        "what_we_offer": "",
+        "application_process": "",
+        "hours_schedule": "",
+        "salary_range": "",
+    }
+    if matches:
+        for index, (_, end, key) in enumerate(matches):
+            next_start = matches[index + 1][0] if index + 1 < len(matches) else len(text)
+            value = readable_section(text[end:next_start])
+            if value:
+                sections[key] = "\n\n".join(
+                    part for part in (sections[key], value) if part
+                )
+        preamble = text[: matches[0][0]]
+    else:
+        preamble = text
+        sections["position_overview"] = readable_section(text, 2400)
+    schedule = re.search(
+        r"\bSchedule:\s*(.+?)(?=\s+(?:Total Monthly Cost|Salary|Compensation|About the Company)\b|$)",
+        preamble,
+        re.I,
+    )
+    compensation = re.search(
+        r"\b(?:Total Monthly Cost|Salary|Compensation):\s*(.+?)(?=\s+About the Company\b|$)",
+        preamble,
+        re.I,
+    )
+    sections["hours_schedule"] = clean_text(schedule.group(1)).strip() if schedule else ""
+    sections["salary_range"] = clean_text(compensation.group(1)).strip() if compensation else ""
+    return sections
+
+
 def parse_date(value: Any) -> str:
     if value is None:
         return ""
@@ -855,6 +925,8 @@ def detail_record(job: dict[str, Any]) -> dict[str, Any] | None:
     role = role_category(job["title"], text)
     if not role:
         return None
+    sections = extract_description_sections(text)
+    salary_range = job["salary"] or sections["salary_range"]
     tools = matched_tools(text, job["tags"])
     skill_count = len(tools)
     ph_status, timezone_required, geo_points = ph_eligibility(job["location"], text, job["source"])
@@ -878,7 +950,7 @@ def detail_record(job: dict[str, Any]) -> dict[str, Any] | None:
         why_not.append("Confirm Philippines eligibility before applying")
     if senior == "Senior":
         why_not.append("Senior level may require stronger proof")
-    if not job["salary"]:
+    if not salary_range:
         why_not.append("Salary not disclosed")
     job_id = stable_id(job)
     description_hash = hashlib.sha1(text.encode("utf-8")).hexdigest()[:16]
@@ -906,8 +978,8 @@ def detail_record(job: dict[str, Any]) -> dict[str, Any] | None:
         "timezone_required": timezone_required,
         "ph_eligible": ph_status,
         "contract_type": contract,
-        "salary_range": job["salary"],
-        "pay_type": "Listed" if job["salary"] else "",
+        "salary_range": salary_range,
+        "pay_type": "Listed" if salary_range else "",
         "tools_required": "; ".join(tools[:8]),
         "skill_match_count": skill_count,
         "hard_knockouts": "",
@@ -920,14 +992,14 @@ def detail_record(job: dict[str, Any]) -> dict[str, Any] | None:
         "apply_url": job["apply_url"],
         "ats_platform": job["ats_platform"],
         "industry": job["industry"][:80],
-        "about_the_company": "",
-        "position_overview": text[:2400],
-        "key_responsibilities": "",
-        "qualifications": "",
-        "what_we_offer": "",
+        "about_the_company": sections["about_the_company"],
+        "position_overview": sections["position_overview"],
+        "key_responsibilities": sections["key_responsibilities"],
+        "qualifications": sections["qualifications"],
+        "what_we_offer": sections["what_we_offer"],
         "location_work_setup": job["location"],
-        "hours_schedule": "",
-        "application_process": "",
+        "hours_schedule": sections["hours_schedule"],
+        "application_process": sections["application_process"],
         "archetype_labels": labels,
         "archetype_primary": primary,
         "archetype_reasons": f"{primary} is the closest fit based on role category and tools.",
@@ -1075,20 +1147,20 @@ def replace_embedded_json(index_path: Path, summaries: list[dict[str, Any]], det
     details_json = json.dumps(details, ensure_ascii=False)
     text, role_count = re.subn(
         r"const ROLE_LABELS = .*?;",
-        f"const ROLE_LABELS = {role_json};",
+        lambda _: f"const ROLE_LABELS = {role_json};",
         text,
         count=1,
     )
     text, jobs_count = re.subn(
         r"const EMBEDDED_JOBS = .*?;\nconst EMBEDDED_DETAILS =",
-        f"const EMBEDDED_JOBS = {summary_json};\nconst EMBEDDED_DETAILS =",
+        lambda _: f"const EMBEDDED_JOBS = {summary_json};\nconst EMBEDDED_DETAILS =",
         text,
         count=1,
         flags=re.S,
     )
     text, details_count = re.subn(
         r"const EMBEDDED_DETAILS = .*?;\nconst state =",
-        f"const EMBEDDED_DETAILS = {details_json};\nconst state =",
+        lambda _: f"const EMBEDDED_DETAILS = {details_json};\nconst state =",
         text,
         count=1,
         flags=re.S,
@@ -1217,6 +1289,7 @@ def verify_generated_data(data_dir: Path) -> None:
         assert detail["ats_platform"] == "Ashby", f"unexpected ATS for {job['id']}"
         assert detail["ph_eligible"] == "Yes", f"unproven PH eligibility for {job['id']}"
         assert detail["remote_type"] == "Remote", f"unproven remote type for {job['id']}"
+        assert detail["position_overview"], f"missing standardized role overview for {job['id']}"
         assert detail["contract_type"] in {
             "Full-time", "Part-time", "Contract", "Temporary", "Unspecified"
         }, f"unexpected contract type for {job['id']}"
@@ -1328,6 +1401,11 @@ def verify() -> None:
         "job details must render from the matching embedded payload"
     )
     assert "age <= 5" in index, "index must hide jobs after the five-day cutoff"
+    assert 'class="detail-facts"' in index, "index missing standard job facts"
+    assert "BFF fit guide" in index, "index missing standard BFF fit section"
+    assert "application_process:'Application Process'" in index, (
+        "index missing standard application process section"
+    )
     print(f"OK jobs={len(jobs)} newest={newest} oldest={oldest}")
 
 
