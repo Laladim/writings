@@ -19,6 +19,28 @@ SPEC.loader.exec_module(jobs)
 
 
 class ClassificationTests(unittest.TestCase):
+    def test_html_description_preserves_paragraphs_lists_and_headings(self):
+        source = (
+            "<p>Remote Freelance</p>"
+            "<p>We are looking for a Performance Funnel Designer.</p>"
+            "<p>Who we are:</p>"
+            "<ul><li>A fully remote team.</li><li>Founders who support growth.</li></ul>"
+            "<p>What you'll actually do:</p>"
+            "<ul><li>Design funnels in Figma.</li><li>Build mobile-first layouts.</li></ul>"
+            "<p>Who we ARE looking for:</p>"
+            "<ul><li>Strong Figma experience.</li><li>Open to feedback.</li></ul>"
+        )
+
+        text = jobs.strip_html(source)
+        sections = jobs.extract_description_sections(text)
+
+        self.assertIn("Remote Freelance\n\nWe are looking", text)
+        self.assertIn("\n- A fully remote team.\n- Founders", text)
+        self.assertIn("Remote Freelance", sections["position_overview"])
+        self.assertIn("A fully remote team", sections["about_the_company"])
+        self.assertIn("- Design funnels in Figma.", sections["key_responsibilities"])
+        self.assertIn("- Strong Figma experience.", sections["qualifications"])
+
     def test_description_sections_are_standardized(self):
         text = (
             "Position Type: Full Time Location: Philippines (Remote) "

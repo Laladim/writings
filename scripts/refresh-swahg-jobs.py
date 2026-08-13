@@ -15,6 +15,7 @@ import urllib.request
 from collections import Counter
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
+from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any
 
@@ -347,19 +348,77 @@ def clean_text(value: str) -> str:
     return text.encode("ascii", "ignore").decode("ascii")
 
 
+class StructuredHTMLTextParser(HTMLParser):
+    """Convert ATS HTML to readable text without discarding its hierarchy."""
+
+    BLOCK_TAGS = {
+        "article", "blockquote", "div", "h1", "h2", "h3", "h4", "h5",
+        "h6", "ol", "p", "section", "table", "tbody", "td", "th", "tr",
+        "ul",
+    }
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.parts: list[str] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        del attrs
+        if tag == "br":
+            self.parts.append("\n")
+        elif tag == "li":
+            prefix = "" if self.parts and self.parts[-1].endswith("\n") else "\n"
+            self.parts.append(f"{prefix}- ")
+        elif tag in self.BLOCK_TAGS:
+            self.parts.append("\n\n")
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag == "li":
+            self.parts.append("\n")
+        elif tag in self.BLOCK_TAGS:
+            self.parts.append("\n\n")
+
+    def handle_data(self, data: str) -> None:
+        self.parts.append(data)
+
+
 def strip_html(value: str) -> str:
-    text = re.sub(r"<[^>]+>", " ", value or "")
-    text = html.unescape(text)
-    return re.sub(r"\s+", " ", clean_text(text)).strip()[:12000]
+    """Preserve ATS paragraphs and lists as normalized plain-text structure."""
+    parser = StructuredHTMLTextParser()
+    parser.feed(str(value or ""))
+    parser.close()
+    text = clean_text(html.unescape("".join(parser.parts))).replace("\r", "\n")
+    normalized: list[str] = []
+    for raw_line in text.split("\n"):
+        line = re.sub(r"[ \t\f\v]+", " ", raw_line).strip()
+        if line:
+            normalized.append(line)
+        elif normalized and normalized[-1] != "":
+            normalized.append("")
+    return "\n".join(normalized).strip()[:12000]
 
 
 DESCRIPTION_HEADINGS = (
     ("about_the_company", re.compile(r"\babout the company\b", re.I)),
+    (
+        "about_the_company",
+        re.compile(r"\b(?:who we are(?!\s+(?:not\s+)?looking for)|why we exist)\b", re.I),
+    ),
     ("position_overview", re.compile(r"\babout the role\b", re.I)),
-    ("key_responsibilities", re.compile(r"\b(?:key )?responsibilities\b", re.I)),
+    (
+        "key_responsibilities",
+        re.compile(
+            r"\b(?:key )?responsibilities\b|\bwhat you(?:'| wi)ll "
+            r"(?:actually )?(?:do|own)\b",
+            re.I,
+        ),
+    ),
     (
         "qualifications",
-        re.compile(r"\b(?:competencies and qualifications|qualifications)\b", re.I),
+        re.compile(
+            r"\b(?:competencies and qualifications|qualifications|requirements|"
+            r"who we(?:'| a)re (?:not )?looking for|what we(?:'| a)re looking for)\b",
+            re.I,
+        ),
     ),
     ("what_we_offer", re.compile(r"\bwhat we offer\b", re.I)),
     ("what_we_offer", re.compile(r"\bbenefits\b(?=\s+-)", re.I)),
@@ -367,9 +426,9 @@ DESCRIPTION_HEADINGS = (
 )
 
 
-def readable_section(value: str, limit: int = 5000) -> str:
+def readable_section(value: str, limit: int = 10000) -> str:
     """Restore list rhythm after the ATS HTML has been flattened."""
-    text = str(value or "").strip()
+    text = re.sub(r"^\s*:\s*", "", str(value or "").strip())
     text = re.sub(
         r"(?<=[.!?])\s+(?=(?:Must-Have|Nice-to-Have|Daily Rhythm|Characteristics|Proactive customer success|Customer support and order entry)\b)",
         "\n\n",
@@ -382,9 +441,12 @@ def readable_section(value: str, limit: int = 5000) -> str:
 
 def extract_description_sections(text: str) -> dict[str, str]:
     """Map common ATS headings into the board's standard detail sections."""
-    matches: list[tuple[int, int, str]] = []
+    matches: list[tuple[int, int, str, str]] = []
     for key, pattern in DESCRIPTION_HEADINGS:
-        matches.extend((match.start(), match.end(), key) for match in pattern.finditer(text))
+        matches.extend(
+            (match.start(), match.end(), key, match.group(0))
+            for match in pattern.finditer(text)
+        )
     matches.sort(key=lambda item: item[0])
     sections = {
         "about_the_company": "",
@@ -397,17 +459,27 @@ def extract_description_sections(text: str) -> dict[str, str]:
         "salary_range": "",
     }
     if matches:
-        for index, (_, end, key) in enumerate(matches):
+        canonical_headings = {
+            "about the company", "about the role", "responsibilities",
+            "key responsibilities", "competencies and qualifications",
+            "qualifications", "requirements", "what we offer", "benefits",
+            "application process",
+        }
+        for index, (_, end, key, heading) in enumerate(matches):
             next_start = matches[index + 1][0] if index + 1 < len(matches) else len(text)
             value = readable_section(text[end:next_start])
             if value:
+                if heading.casefold().strip() not in canonical_headings:
+                    value = f"{heading.strip()}:\n{value}"
                 sections[key] = "\n\n".join(
                     part for part in (sections[key], value) if part
                 )
         preamble = text[: matches[0][0]]
+        if preamble.strip() and not sections["position_overview"]:
+            sections["position_overview"] = readable_section(preamble, 10000)
     else:
         preamble = text
-        sections["position_overview"] = readable_section(text, 2400)
+        sections["position_overview"] = readable_section(text, 10000)
     schedule = re.search(
         r"\bSchedule:\s*(.+?)(?=\s+(?:Total Monthly Cost|Salary|Compensation|About the Company)\b|$)",
         preamble,
@@ -1123,7 +1195,7 @@ def detail_record(job: dict[str, Any]) -> dict[str, Any] | None:
         return None
     sections = extract_description_sections(text)
     if not sections["position_overview"]:
-        sections["position_overview"] = readable_section(text, 2400)
+        sections["position_overview"] = readable_section(text, 10000)
     salary_range = job["salary"] or sections["salary_range"]
     tools = matched_tools(text, job["tags"])
     skill_count = len(tools)
