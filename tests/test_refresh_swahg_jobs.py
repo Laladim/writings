@@ -24,7 +24,8 @@ class ClassificationTests(unittest.TestCase):
             "<p>Remote Freelance</p>"
             "<p>We are looking for a Performance Funnel Designer.</p>"
             "<p>Who we are:</p>"
-            "<ul><li>A fully remote team.</li><li>Founders who support growth.</li></ul>"
+            "<ul><li><p>A fully remote team.</p></li>"
+            "<li><p>Founders who support growth.</p></li></ul>"
             "<p>What you'll actually do:</p>"
             "<ul><li>Design funnels in Figma.</li><li>Build mobile-first layouts.</li></ul>"
             "<p>Who we ARE looking for:</p>"
@@ -63,6 +64,48 @@ class ClassificationTests(unittest.TestCase):
         self.assertIn("Clinical background", sections["qualifications"])
         self.assertIn("Comprehensive Fringe Benefits package.", sections["what_we_offer"])
         self.assertEqual(sections["application_process"], "Two interviews.")
+
+    def test_freshteam_role_headings_map_to_standard_sections(self):
+        text = (
+            "Role Overview\n\nSupport the people operations team.\n\n"
+            "Responsibilities\n\n- Maintain statutory requirements.\n"
+            "- Prepare compliance reports.\n\n"
+            "Minimum Qualifications\n\n- Strong Excel skills.\n\n"
+            "Work Schedule\n\nFlexible hours with a PH overlap.\n\n"
+            "Perks and Benefits\n\n- HMO\n- Paid leave"
+        )
+
+        sections = jobs.extract_description_sections(text)
+
+        self.assertEqual(
+            sections["position_overview"],
+            "Support the people operations team.",
+        )
+        self.assertIn(
+            "- Maintain statutory requirements.",
+            sections["key_responsibilities"],
+        )
+        self.assertNotIn(
+            "Maintain statutory requirements", sections["qualifications"]
+        )
+        self.assertIn("Strong Excel skills", sections["qualifications"])
+        self.assertEqual(
+            sections["hours_schedule"], "Flexible hours with a PH overlap."
+        )
+        self.assertIn("- HMO", sections["what_we_offer"])
+
+    def test_inline_freshteam_schedule_is_not_repeated_in_qualifications(self):
+        text = (
+            "About the Role\n\nSupport finance operations.\n\n"
+            "Qualifications\n\n- Strong Excel skills.\n\n"
+            "Work Schedule:10 to 15 hours per week\n\n"
+            "Engagement:Part-Time Contractor"
+        )
+
+        sections = jobs.extract_description_sections(text)
+
+        self.assertEqual(sections["hours_schedule"], "10 to 15 hours per week")
+        self.assertEqual(sections["qualifications"], "- Strong Excel skills.")
 
     def test_role_classification_uses_title_not_description(self):
         self.assertEqual(
@@ -154,6 +197,16 @@ class DirectSourceTests(unittest.TestCase):
                 "https://jobs.workable.com/company/kkPNrU9rrUVL11w6k6JmuD/jobs-at-the-cruise-globe"
             )
         )
+        self.assertTrue(
+            jobs.is_direct_application_url(
+                "https://spectrumone.freshteam.com/jobs/wXFX7tHNeQwm/accountant-part-time-remote"
+            )
+        )
+        self.assertTrue(
+            jobs.is_direct_source_url(
+                "https://spectrumone.freshteam.com/jobs"
+            )
+        )
         for url in (
             "https://remoteok.com/remote-jobs/1234",
             "https://remotive.com/remote-jobs/1234",
@@ -165,6 +218,10 @@ class DirectSourceTests(unittest.TestCase):
             f"http://jobs.workable.com/view/{workable_id}/remote-email-designer",
             f"https://jobs.workable.com/view/{workable_id}/remote-email-designer?ref=bad",
             "https://jobs.workable.com/view/too-short/remote-email-designer",
+            "http://spectrumone.freshteam.com/jobs/wXFX7tHNeQwm/accountant-part-time-remote",
+            "https://other.freshteam.com/jobs/wXFX7tHNeQwm/accountant-part-time-remote",
+            "https://spectrumone.freshteam.com/jobs/too-short/accountant-part-time-remote",
+            "https://spectrumone.freshteam.com/jobs/wXFX7tHNeQwm/accountant-part-time-remote?ref=bad",
             "https://example.com/jobs/1234",
             "",
         ):
@@ -262,6 +319,65 @@ class DirectSourceTests(unittest.TestCase):
         self.assertEqual(rows[0]["apply_url"], apply_url)
         self.assertIs(rows[0]["is_remote"], True)
 
+    def test_freshteam_adapter_uses_public_job_schema_and_application_form(self):
+        apply_url = (
+            "https://spectrumone.freshteam.com/jobs/wXFX7tHNeQwm/"
+            "accountant-part-time-remote"
+        )
+        board_url = "https://spectrumone.freshteam.com/jobs"
+        board_html = f'<a href="{apply_url}">Accountant</a>'
+        detail_html = (
+            '<script type="application/ld+json">'
+            + json.dumps({
+                "@type": "JobPosting",
+                "title": "Accountant (Part-time)(Remote)",
+                "description": (
+                    "&lt;h2&gt;About the Role&lt;/h2&gt;"
+                    "&lt;p&gt;Manage Philippine payroll and tax compliance.&lt;/p&gt;"
+                    "&lt;h2&gt;Responsibilities&lt;/h2&gt;"
+                    "&lt;ul&gt;&lt;li&gt;Prepare reports.&lt;/li&gt;&lt;/ul&gt;"
+                    "&lt;h2&gt;Qualifications&lt;/h2&gt;"
+                    "&lt;ul&gt;&lt;li&gt;Strong Excel skills.&lt;/li&gt;&lt;/ul&gt;"
+                ),
+                "datePosted": datetime.date.today().isoformat(),
+                "employmentType": "PART_TIME",
+                "remote": "true",
+                "hiringOrganization": {
+                    "@type": "Organization",
+                    "name": "Spectrum One",
+                },
+                "jobLocation": {
+                    "@type": "Place",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressRegion": "Quezon City",
+                        "addressCountry": "Philippines",
+                    },
+                },
+            })
+            + "</script>"
+            '<form action="/jobs/wXFX7tHNeQwm/applicants"></form>'
+        )
+
+        def fake_fetch_text(url):
+            return detail_html if url == apply_url else board_html
+
+        with patch.object(jobs, "fetch_text", side_effect=fake_fetch_text):
+            rows, error = jobs.fetch_freshteam()
+
+        self.assertEqual(error, "")
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0]["title"], "Accountant (Part-time)")
+        self.assertEqual(rows[0]["company"], "Spectrum One")
+        self.assertEqual(rows[0]["location"], "Remote Philippines, Quezon City")
+        self.assertEqual(rows[0]["source"], "Freshteam")
+        self.assertEqual(rows[0]["source_mode"], "direct_ats")
+        self.assertEqual(rows[0]["ats_platform"], "Freshteam")
+        self.assertEqual(rows[0]["source_url"], board_url)
+        self.assertEqual(rows[0]["apply_url"], apply_url)
+        self.assertIn("- Prepare reports.", rows[0]["description"])
+        self.assertIs(rows[0]["is_remote"], True)
+
     def test_detail_gate_rejects_aggregator_placeholder_and_non_ph_rows(self):
         job_id = "11111111-1111-4111-8111-111111111111"
         base = {
@@ -318,6 +434,20 @@ class DirectSourceTests(unittest.TestCase):
         )
         self.assertIsNotNone(jobs.detail_record(workable))
 
+        freshteam = dict(
+            base,
+            title="Accountant (Part-time)",
+            company="Spectrum One",
+            apply_url=(
+                "https://spectrumone.freshteam.com/jobs/wXFX7tHNeQwm/"
+                "accountant-part-time-remote"
+            ),
+            source="Freshteam",
+            source_url="https://spectrumone.freshteam.com/jobs",
+            ats_platform="Freshteam",
+        )
+        self.assertIsNotNone(jobs.detail_record(freshteam))
+
     def test_detail_gate_requires_positive_structured_remote_evidence(self):
         job_id = "11111111-1111-4111-8111-111111111111"
         base = {
@@ -348,6 +478,98 @@ class DirectSourceTests(unittest.TestCase):
         self.assertIsNotNone(
             jobs.detail_record(dict(base, is_remote=None, workplace_type="Remote"))
         )
+
+
+class DiscoverySourceTests(unittest.TestCase):
+    def test_remote_ok_adapter_preserves_discovery_only_route(self):
+        payload = [
+            {"legal": "notice"},
+            {
+                "id": "1",
+                "position": "Customer Support Specialist",
+                "company": "Example",
+                "description": "Support customers.",
+                "location": "Worldwide",
+                "tags": ["support"],
+                "url": "https://remoteok.com/remote-jobs/1",
+                "date": datetime.date.today().isoformat(),
+            },
+        ]
+        with patch.object(jobs, "fetch_json", return_value=payload):
+            rows, error = jobs.fetch_remoteok()
+        self.assertEqual(error, "")
+        self.assertEqual(rows[0]["source"], "Remote OK")
+        self.assertEqual(rows[0]["source_mode"], "automated")
+        self.assertEqual(rows[0]["apply_url"], payload[1]["url"])
+
+    def test_remotive_adapter_preserves_discovery_only_route(self):
+        payload = {
+            "jobs": [{
+                "id": 2,
+                "title": "Remote Office Assistant",
+                "company_name": "Example",
+                "description": "<p>Organize records.</p>",
+                "candidate_required_location": "Worldwide",
+                "tags": ["admin"],
+                "url": "https://remotive.com/remote-jobs/2",
+                "publication_date": datetime.date.today().isoformat(),
+                "salary": "$1,000",
+                "job_type": "full_time",
+                "category": "All Others",
+            }]
+        }
+        with patch.object(jobs, "fetch_json", return_value=payload):
+            rows, error = jobs.fetch_remotive()
+        self.assertEqual(error, "")
+        self.assertEqual(rows[0]["source"], "Remotive")
+        self.assertEqual(rows[0]["source_mode"], "automated")
+        self.assertEqual(rows[0]["apply_url"], payload["jobs"][0]["url"])
+
+    def test_himalayas_adapter_uses_approved_ph_search(self):
+        payloads = [
+            {
+                "jobs": [{
+                    "guid": "one",
+                    "title": "Executive Assistant",
+                    "companyName": "Example",
+                    "description": "<p>Manage calendars.</p>",
+                    "locationRestrictions": ["Philippines"],
+                    "categories": ["Admin"],
+                    "applicationLink": "https://himalayas.app/jobs/one",
+                    "pubDate": datetime.date.today().isoformat(),
+                    "employmentType": "Full Time",
+                }]
+            },
+            {"jobs": []},
+        ]
+        with (
+            patch.object(jobs, "fetch_json", side_effect=payloads) as fetch,
+            patch.object(jobs.time, "sleep"),
+        ):
+            rows, error = jobs.fetch_himalayas()
+        self.assertEqual(error, "")
+        self.assertEqual(rows[0]["source"], "Himalayas")
+        self.assertIn("country=PH", fetch.call_args_list[0].args[0])
+        self.assertIn("sort=recent", fetch.call_args_list[0].args[0])
+
+    def test_jobicy_adapter_uses_philippines_query(self):
+        payload = {
+            "jobs": [{
+                "jobTitle": "Accountant",
+                "companyName": "Example",
+                "jobDescription": "<p>Prepare reports.</p>",
+                "jobGeo": "Philippines",
+                "jobIndustry": ["Accounting"],
+                "url": "https://jobicy.com/jobs/3",
+                "pubDate": datetime.date.today().isoformat(),
+                "jobType": "Part Time",
+            }]
+        }
+        with patch.object(jobs, "fetch_json", return_value=payload) as fetch:
+            rows, error = jobs.fetch_jobicy()
+        self.assertEqual(error, "")
+        self.assertEqual(rows[0]["source"], "Jobicy")
+        self.assertIn("geo=philippines", fetch.call_args.args[0])
 
 
 class DiversityAndDedupeTests(unittest.TestCase):

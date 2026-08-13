@@ -43,6 +43,19 @@ ASHBY_BOARDS = (
 )
 WORKABLE_SOURCE = "Workable"
 WORKABLE_CAP = 20
+FRESHTEAM_SOURCE = "Freshteam"
+FRESHTEAM_CAP = 5
+FRESHTEAM_BOARDS = (
+    {
+        "host": "spectrumone.freshteam.com",
+        "company": "Spectrum One",
+        "url": "https://spectrumone.freshteam.com/jobs",
+    },
+)
+REMOTEOK_SOURCE = "Remote OK"
+REMOTIVE_SOURCE = "Remotive"
+HIMALAYAS_SOURCE = "Himalayas"
+JOBICY_SOURCE = "Jobicy"
 WORKABLE_SEARCH_URLS = (
     "https://jobs.workable.com/search/philippines/remote-jobs",
     "https://jobs.workable.com/search/philippines/remote-customer-support-jobs",
@@ -53,12 +66,21 @@ WORKABLE_SEARCH_URLS = (
 SOURCE_CAPS = {
     **{board["source"]: int(board["cap"]) for board in ASHBY_BOARDS},
     WORKABLE_SOURCE: WORKABLE_CAP,
+    FRESHTEAM_SOURCE: FRESHTEAM_CAP,
+    REMOTEOK_SOURCE: 0,
+    REMOTIVE_SOURCE: 0,
+    HIMALAYAS_SOURCE: 0,
+    JOBICY_SOURCE: 0,
 }
 ASHBY_BOARD_BY_SLUG = {
     str(board["slug"]).casefold(): board for board in ASHBY_BOARDS
 }
 ASHBY_API_PREFIX = "https://api.ashbyhq.com/posting-api/job-board/"
-DIRECT_ATS_DOMAINS = {"jobs.ashbyhq.com", "jobs.workable.com"}
+DIRECT_ATS_DOMAINS = {
+    "jobs.ashbyhq.com",
+    "jobs.workable.com",
+    "spectrumone.freshteam.com",
+}
 AGGREGATOR_DOMAINS = {
     "himalayas.app",
     "jobicy.com",
@@ -284,6 +306,7 @@ ASHBY_JOB_ID_RE = re.compile(
     re.I,
 )
 WORKABLE_ID_RE = re.compile(r"^[A-Za-z0-9]{22}$")
+FRESHTEAM_ID_RE = re.compile(r"^[A-Za-z0-9_-]{12}$")
 WORKABLE_CANDIDATE_URL_RE = re.compile(
     r"(?:customer-(?:service|support|success|experience)|support-|"
     r"executive-assistant|administrative-assistant|virtual-assistant|"
@@ -387,6 +410,7 @@ def strip_html(value: str) -> str:
     parser.feed(str(value or ""))
     parser.close()
     text = clean_text(html.unescape("".join(parser.parts))).replace("\r", "\n")
+    text = re.sub(r"(?m)^-\s*\n(?:\s*\n)*", "- ", text)
     normalized: list[str] = []
     for raw_line in text.split("\n"):
         line = re.sub(r"[ \t\f\v]+", " ", raw_line).strip()
@@ -394,7 +418,9 @@ def strip_html(value: str) -> str:
             normalized.append(line)
         elif normalized and normalized[-1] != "":
             normalized.append("")
-    return "\n".join(normalized).strip()[:12000]
+    result = "\n".join(normalized).strip()
+    result = re.sub(r"(?m)(^- [^\n]+)\n\n(?=- )", r"\1\n", result)
+    return result[:12000]
 
 
 DESCRIPTION_HEADINGS = (
@@ -403,26 +429,46 @@ DESCRIPTION_HEADINGS = (
         "about_the_company",
         re.compile(r"\b(?:who we are(?!\s+(?:not\s+)?looking for)|why we exist)\b", re.I),
     ),
-    ("position_overview", re.compile(r"\babout the role\b", re.I)),
+    (
+        "position_overview",
+        re.compile(
+            r"\babout the role\b|^\s*(?:role overview|position overview)\s*$",
+            re.I | re.M,
+        ),
+    ),
     (
         "key_responsibilities",
         re.compile(
             r"\b(?:key )?responsibilities\b|\bwhat you(?:'| wi)ll "
-            r"(?:actually )?(?:do|own)\b",
-            re.I,
+            r"(?:actually )?(?:do|own)\b|^\s*(?:"
+            r"payroll & employee tax compliance|"
+            r"bir tax compliance & government filings|accounting & financial "
+            r"administration|corporate & regulatory compliance)\s*$",
+            re.I | re.M,
         ),
     ),
     (
         "qualifications",
         re.compile(
-            r"\b(?:competencies and qualifications|qualifications|requirements|"
-            r"who we(?:'| a)re (?:not )?looking for|what we(?:'| a)re looking for)\b",
-            re.I,
+            r"\bcompetencies and qualifications\b|"
+            r"\bwho we(?:'| a)re (?:not )?looking for\b|"
+            r"\bwhat we(?:'| a)re looking for\b|"
+            r"^\s*(?:qualifications|minimum qualifications|requirements|"
+            r"required skills and qualifications)\s*$",
+            re.I | re.M,
         ),
     ),
-    ("what_we_offer", re.compile(r"\bwhat we offer\b", re.I)),
+    (
+        "what_we_offer",
+        re.compile(
+            r"\bwhat we offer\b|^\s*(?:perks and benefits|why choose us|"
+            r"why top talent chooses us|why join [^\n?]+\??)\s*$",
+            re.I | re.M,
+        ),
+    ),
     ("what_we_offer", re.compile(r"\bbenefits\b(?=\s+-)", re.I)),
     ("application_process", re.compile(r"\bapplication process\b", re.I)),
+    ("hours_schedule", re.compile(r"(?m)^\s*work schedule\s*$", re.I)),
 )
 
 
@@ -463,7 +509,8 @@ def extract_description_sections(text: str) -> dict[str, str]:
             "about the company", "about the role", "responsibilities",
             "key responsibilities", "competencies and qualifications",
             "qualifications", "requirements", "what we offer", "benefits",
-            "application process",
+            "application process", "role overview", "position overview",
+            "perks and benefits", "work schedule",
         }
         for index, (_, end, key, heading) in enumerate(matches):
             next_start = matches[index + 1][0] if index + 1 < len(matches) else len(text)
@@ -481,17 +528,32 @@ def extract_description_sections(text: str) -> dict[str, str]:
         preamble = text
         sections["position_overview"] = readable_section(text, 10000)
     schedule = re.search(
-        r"\bSchedule:\s*(.+?)(?=\s+(?:Total Monthly Cost|Salary|Compensation|About the Company)\b|$)",
-        preamble,
+        r"\bSchedule:\s*(.+?)(?=\s+(?:Engagement|Total Monthly Cost|Salary|Compensation|About the Company)\b|$)",
+        text,
         re.I,
     )
     compensation = re.search(
         r"\b(?:Total Monthly Cost|Salary|Compensation):\s*(.+?)(?=\s+About the Company\b|$)",
-        preamble,
+        text,
         re.I,
     )
-    sections["hours_schedule"] = clean_text(schedule.group(1)).strip() if schedule else ""
-    sections["salary_range"] = clean_text(compensation.group(1)).strip() if compensation else ""
+    for key in (
+        "about_the_company",
+        "position_overview",
+        "key_responsibilities",
+        "qualifications",
+        "what_we_offer",
+        "application_process",
+    ):
+        sections[key] = re.split(
+            r"(?im)^\s*Work Schedule\s*:",
+            sections[key],
+            maxsplit=1,
+        )[0].rstrip()
+    if schedule and not sections["hours_schedule"]:
+        sections["hours_schedule"] = clean_text(schedule.group(1)).strip()
+    if compensation and not sections["salary_range"]:
+        sections["salary_range"] = clean_text(compensation.group(1)).strip()
     return sections
 
 
@@ -573,7 +635,7 @@ def fetch_remoteok() -> tuple[list[dict[str, Any]], str]:
             item.get("location"),
             item.get("tags") or [],
             item.get("url") or item.get("apply_url"),
-            "RemoteOK",
+            REMOTEOK_SOURCE,
             item.get("date"),
             "",
             "",
@@ -595,7 +657,7 @@ def fetch_remotive() -> tuple[list[dict[str, Any]], str]:
             item.get("candidate_required_location"),
             item.get("tags") or [],
             item.get("url"),
-            "Remotive",
+            REMOTIVE_SOURCE,
             item.get("publication_date"),
             item.get("salary") or "",
             item.get("job_type") or "",
@@ -608,8 +670,11 @@ def fetch_remotive() -> tuple[list[dict[str, Any]], str]:
 
 def fetch_himalayas() -> tuple[list[dict[str, Any]], str]:
     rows = []
-    for page in range(3):
-        data = fetch_json(f"https://himalayas.app/jobs/api?limit=100&offset={page * 100}")
+    for page in range(1, 4):
+        query = urllib.parse.urlencode(
+            {"country": "PH", "sort": "recent", "page": page}
+        )
+        data = fetch_json(f"https://himalayas.app/jobs/api/search?{query}")
         jobs = (data or {}).get("jobs") or []
         if not jobs:
             break
@@ -622,7 +687,7 @@ def fetch_himalayas() -> tuple[list[dict[str, Any]], str]:
                 ", ".join(locations) if isinstance(locations, list) else str(locations),
                 item.get("categories") or [],
                 item.get("applicationLink") or "",
-                "Himalayas",
+                HIMALAYAS_SOURCE,
                 item.get("pubDate") or item.get("createdAt") or item.get("publishedAt"),
                 "",
                 item.get("employmentType") or "",
@@ -666,7 +731,9 @@ def fetch_rss_source(source: str, urls: list[str]) -> tuple[list[dict[str, Any]]
 
 def fetch_jobicy() -> tuple[list[dict[str, Any]], str]:
     rows = []
-    data = fetch_json("https://jobicy.com/api/v2/remote-jobs?count=100")
+    data = fetch_json(
+        "https://jobicy.com/api/v2/remote-jobs?count=100&geo=philippines"
+    )
     for item in (data or {}).get("jobs", []):
         tags = item.get("jobIndustry") or item.get("jobType") or []
         if isinstance(tags, str):
@@ -680,7 +747,7 @@ def fetch_jobicy() -> tuple[list[dict[str, Any]], str]:
             item.get("jobGeo") or "Remote",
             tags,
             item.get("url") or item.get("jobUrl"),
-            "Jobicy",
+            JOBICY_SOURCE,
             item.get("pubDate") or item.get("datePosted"),
             salary,
             item.get("jobType") or "",
@@ -859,11 +926,143 @@ def fetch_workable() -> tuple[list[dict[str, Any]], str]:
     return rows, ""
 
 
+def freshteam_url_parts(url: str) -> tuple[str, list[str]]:
+    try:
+        parsed = urllib.parse.urlsplit(str(url).strip())
+        port = parsed.port
+    except ValueError:
+        return "", []
+    host = (parsed.hostname or "").rstrip(".").lower()
+    approved_hosts = {str(board["host"]) for board in FRESHTEAM_BOARDS}
+    if (
+        parsed.scheme.lower() != "https"
+        or host not in approved_hosts
+        or parsed.username is not None
+        or parsed.password is not None
+        or port not in (None, 443)
+        or parsed.query
+        or parsed.fragment
+    ):
+        return "", []
+    parts = [
+        urllib.parse.unquote(part)
+        for part in parsed.path.split("/")
+        if part
+    ]
+    return host, parts
+
+
+def vetted_freshteam_job_id(url: str) -> str:
+    _, parts = freshteam_url_parts(url)
+    if len(parts) != 3 or parts[0] != "jobs":
+        return ""
+    return parts[1] if FRESHTEAM_ID_RE.fullmatch(parts[1]) else ""
+
+
+def vetted_freshteam_board(url: str) -> str:
+    host, parts = freshteam_url_parts(url)
+    return host if parts == ["jobs"] else ""
+
+
+def freshteam_job_urls(document: str, board_url: str) -> list[str]:
+    urls: list[str] = []
+    for href in re.findall(r"<a\b[^>]*href=[\"']([^\"']+)", document, re.I):
+        candidate = urllib.parse.urljoin(board_url, html.unescape(href))
+        if vetted_freshteam_job_id(candidate) and candidate not in urls:
+            urls.append(candidate)
+    return urls
+
+
+def freshteam_location(posting: dict[str, Any]) -> str:
+    location = posting.get("jobLocation")
+    locations = location if isinstance(location, list) else [location]
+    values: list[str] = []
+    for item in locations:
+        if not isinstance(item, dict):
+            continue
+        address = item.get("address")
+        if not isinstance(address, dict):
+            continue
+        for key in ("addressCountry", "addressRegion", "addressLocality"):
+            value = clean_text(address.get(key) or "").strip()
+            if value and value not in values:
+                values.append(value)
+    return ", ".join(values)
+
+
+def fetch_freshteam() -> tuple[list[dict[str, Any]], str]:
+    """Fetch current PH-remote listings from approved Freshteam boards."""
+    rows: list[dict[str, Any]] = []
+    for board in FRESHTEAM_BOARDS:
+        board_url = str(board["url"])
+        for candidate_url in freshteam_job_urls(fetch_text(board_url), board_url):
+            document = fetch_text(candidate_url)
+            postings = [
+                payload
+                for payload in ld_json_objects(document)
+                if payload.get("@type") == "JobPosting"
+            ]
+            if len(postings) != 1:
+                continue
+            posting = postings[0]
+            organization = posting.get("hiringOrganization")
+            company = (
+                clean_text(organization.get("name") or "").strip()
+                if isinstance(organization, dict)
+                else ""
+            )
+            location = freshteam_location(posting)
+            job_id = vetted_freshteam_job_id(candidate_url)
+            form_pattern = re.compile(
+                rf"<form\b[^>]*action=[\"']/jobs/{re.escape(job_id)}/applicants[\"']",
+                re.I,
+            )
+            if (
+                company != board["company"]
+                or str(posting.get("remote") or "").lower() != "true"
+                or not PH_LOCATION.search(location)
+                or not form_pattern.search(document)
+            ):
+                continue
+            title = re.sub(
+                r"\s*\(remote\)\s*$",
+                "",
+                clean_text(posting.get("title") or "").strip(),
+                flags=re.I,
+            )
+            row = normalize_job(
+                title,
+                company,
+                html.unescape(str(posting.get("description") or "")),
+                f"Remote {location}",
+                [],
+                candidate_url,
+                FRESHTEAM_SOURCE,
+                posting.get("datePosted"),
+                "",
+                posting.get("employmentType") or "",
+                "",
+                source_url=board_url,
+                source_mode="direct_ats",
+                ats_platform="Freshteam",
+                is_remote=True,
+                workplace_type="Remote",
+            )
+            if row:
+                rows.append(row)
+    return rows, ""
+
+
 FETCHERS = {
     board["source"]: (lambda board=board: fetch_ashby_board(board))
     for board in ASHBY_BOARDS
 }
 FETCHERS[WORKABLE_SOURCE] = fetch_workable
+FETCHERS[FRESHTEAM_SOURCE] = fetch_freshteam
+FETCHERS[HIMALAYAS_SOURCE] = fetch_himalayas
+FETCHERS[REMOTEOK_SOURCE] = fetch_remoteok
+FETCHERS[REMOTIVE_SOURCE] = fetch_remotive
+FETCHERS[JOBICY_SOURCE] = fetch_jobicy
 
 
 def role_category(title: str, text: str = "") -> str:
@@ -1087,6 +1286,7 @@ def is_direct_application_url(url: str) -> bool:
     return bool(
         vetted_ashby_slug(url, job_page=True)
         or vetted_workable_job_id(url)
+        or vetted_freshteam_job_id(url)
     )
 
 
@@ -1094,6 +1294,7 @@ def is_direct_source_url(url: str) -> bool:
     return bool(
         vetted_ashby_slug(url, job_page=False)
         or vetted_workable_company_id(url)
+        or vetted_freshteam_board(url)
     )
 
 
@@ -1542,10 +1743,12 @@ def verify_generated_data(data_dir: Path) -> None:
         source_slug = vetted_ashby_slug(detail["source_url"], job_page=False)
         workable_job_id = vetted_workable_job_id(detail["apply_url"])
         workable_company_id = vetted_workable_company_id(detail["source_url"])
-        assert apply_slug or workable_job_id, (
+        freshteam_job_id = vetted_freshteam_job_id(detail["apply_url"])
+        freshteam_board = vetted_freshteam_board(detail["source_url"])
+        assert apply_slug or workable_job_id or freshteam_job_id, (
             f"non-vetted application URL for {job['id']}"
         )
-        assert source_slug or workable_company_id, (
+        assert source_slug or workable_company_id or freshteam_board, (
             f"non-vetted source URL for {job['id']}"
         )
         if apply_slug:
@@ -1554,12 +1757,18 @@ def verify_generated_data(data_dir: Path) -> None:
             )
             expected_source = ASHBY_BOARD_BY_SLUG[apply_slug]["source"]
             expected_platform = "Ashby"
-        else:
+        elif workable_job_id:
             assert workable_company_id, (
                 f"application/source board mismatch for {job['id']}"
             )
             expected_source = WORKABLE_SOURCE
             expected_platform = "Workable"
+        else:
+            assert freshteam_board, (
+                f"application/source board mismatch for {job['id']}"
+            )
+            expected_source = FRESHTEAM_SOURCE
+            expected_platform = "Freshteam"
         assert detail["source"] == expected_source, (
             f"source/board mismatch for {job['id']}"
         )
@@ -1753,7 +1962,7 @@ def refresh() -> None:
         health.append(
             {
                 "source": source,
-                "status": "ok" if fetched else "error",
+                "status": "error" if error else "ok",
                 "fetched_count": len(fetched),
                 "accepted_count": 0,
                 "last_error": error,
