@@ -1,88 +1,8 @@
 {
   "profile_version": "1.0",
-  "generated_at": "2026-08-12T21:59:19",
-  "job_count": 3,
+  "generated_at": "2026-08-13T00:00:28",
+  "job_count": 2,
   "jobs": [
-    {
-      "profile_version": "1.0",
-      "job_id": "c10889a06e5b",
-      "title": "Customer Success & Support Representative",
-      "company": "Undisclosed client via MultiplyMii",
-      "source": "MultiplyMii",
-      "source_mode": "direct_ats",
-      "tier": "Tier 1",
-      "source_url": "https://jobs.ashbyhq.com/multiplymii",
-      "apply_url": "https://jobs.ashbyhq.com/multiplymii/341ac98f-f310-4655-8beb-4e20ffcc78d2",
-      "posted_at": "2026-08-07",
-      "discovered_at": "2026-08-12",
-      "role_family": "Customer Support",
-      "archetype_primary": "Corporate Transitioner",
-      "archetype_secondary": "Corporate Transitioner, Fresh Starter, Generalist Admin",
-      "resume_keywords": "Customer Support, crm, hubspot, customer service, customer support, MultiplyMii",
-      "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with crm, hubspot, customer service.",
-      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
-      "match_confidence": "Medium",
-      "risk_flags": "",
-      "ph_eligibility": "Yes",
-      "tools": "crm; hubspot; customer service; customer support",
-      "quality_label": "Good match",
-      "quality_reasons": "yes PH signal; clear posting details",
-      "resume_match_profile": {
-        "profile_version": "1.0",
-        "best_archetypes": [
-          "Corporate Transitioner",
-          "Fresh Starter",
-          "Generalist Admin"
-        ],
-        "primary_archetype": "Corporate Transitioner",
-        "resume_keywords": "Customer Support, crm, hubspot, customer service, customer support, MultiplyMii",
-        "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with crm, hubspot, customer service.",
-        "missing_skill_suggestions": [
-          "Prepare one relevant work sample",
-          "Mirror the job title and tools in the resume"
-        ]
-      }
-    },
-    {
-      "profile_version": "1.0",
-      "job_id": "b50257496846",
-      "title": "Designer / Content Producer (Day Shift)",
-      "company": "Undisclosed client via MultiplyMii",
-      "source": "MultiplyMii",
-      "source_mode": "direct_ats",
-      "tier": "Tier 1",
-      "source_url": "https://jobs.ashbyhq.com/multiplymii",
-      "apply_url": "https://jobs.ashbyhq.com/multiplymii/8ec24d0d-3587-44ce-91ef-4fa4a26f6848",
-      "posted_at": "2026-08-11",
-      "discovered_at": "2026-08-12",
-      "role_family": "Content Specialist",
-      "archetype_primary": "Creative Specialist",
-      "archetype_secondary": "Creative Specialist, Solo Entrepreneur, Polished Freelancer",
-      "resume_keywords": "Content Specialist, canva, facebook, instagram, tiktok, social media, copywriting, MultiplyMii",
-      "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with canva, facebook, instagram.",
-      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
-      "match_confidence": "Medium",
-      "risk_flags": "",
-      "ph_eligibility": "Yes",
-      "tools": "canva; facebook; instagram; tiktok; social media; copywriting; content calendar",
-      "quality_label": "Good match",
-      "quality_reasons": "yes PH signal; clear posting details",
-      "resume_match_profile": {
-        "profile_version": "1.0",
-        "best_archetypes": [
-          "Creative Specialist",
-          "Solo Entrepreneur",
-          "Polished Freelancer"
-        ],
-        "primary_archetype": "Creative Specialist",
-        "resume_keywords": "Content Specialist, canva, facebook, instagram, tiktok, social media, copywriting, MultiplyMii",
-        "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with canva, facebook, instagram.",
-        "missing_skill_suggestions": [
-          "Prepare one relevant work sample",
-          "Mirror the job title and tools in the resume"
-        ]
-      }
-    },
     {
       "profile_version": "1.0",
       "job_id": "6a64093f369e",
@@ -94,7 +14,7 @@
       "source_url": "https://jobs.ashbyhq.com/multiplymii",
       "apply_url": "https://jobs.ashbyhq.com/multiplymii/d9604175-88a9-4ca5-8ba4-98496578529e",
       "posted_at": "2026-08-10",
-      "discovered_at": "2026-08-12",
+      "discovered_at": "2026-08-13",
       "role_family": "Customer Support",
       "archetype_primary": "Corporate Transitioner",
       "archetype_secondary": "Corporate Transitioner, Fresh Starter, Generalist Admin",
@@ -117,6 +37,46 @@
         "primary_archetype": "Corporate Transitioner",
         "resume_keywords": "Customer Support, excel, customer support, MultiplyMii",
         "resume_angle": "Position your resume around customer support reliability, written remote work, and proof with excel, customer support.",
+        "missing_skill_suggestions": [
+          "Prepare one relevant work sample",
+          "Mirror the job title and tools in the resume"
+        ]
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "job_id": "b50257496846",
+      "title": "Designer / Content Producer (Day Shift)",
+      "company": "Undisclosed client via MultiplyMii",
+      "source": "MultiplyMii",
+      "source_mode": "direct_ats",
+      "tier": "Tier 1",
+      "source_url": "https://jobs.ashbyhq.com/multiplymii",
+      "apply_url": "https://jobs.ashbyhq.com/multiplymii/8ec24d0d-3587-44ce-91ef-4fa4a26f6848",
+      "posted_at": "2026-08-11",
+      "discovered_at": "2026-08-13",
+      "role_family": "Content Specialist",
+      "archetype_primary": "Creative Specialist",
+      "archetype_secondary": "Creative Specialist, Solo Entrepreneur, Polished Freelancer",
+      "resume_keywords": "Content Specialist, canva, facebook, instagram, tiktok, social media, copywriting, MultiplyMii",
+      "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with canva, facebook, instagram.",
+      "missing_skill_suggestions": "[\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]",
+      "match_confidence": "Medium",
+      "risk_flags": "",
+      "ph_eligibility": "Yes",
+      "tools": "canva; facebook; instagram; tiktok; social media; copywriting; content calendar",
+      "quality_label": "Good match",
+      "quality_reasons": "yes PH signal; clear posting details",
+      "resume_match_profile": {
+        "profile_version": "1.0",
+        "best_archetypes": [
+          "Creative Specialist",
+          "Solo Entrepreneur",
+          "Polished Freelancer"
+        ],
+        "primary_archetype": "Creative Specialist",
+        "resume_keywords": "Content Specialist, canva, facebook, instagram, tiktok, social media, copywriting, MultiplyMii",
+        "resume_angle": "Position your resume around content specialist reliability, written remote work, and proof with canva, facebook, instagram.",
         "missing_skill_suggestions": [
           "Prepare one relevant work sample",
           "Mirror the job title and tools in the resume"
