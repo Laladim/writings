@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-15T23:36:11",
+  "generated_at": "2026-08-16T23:35:56",
   "sources": [
     {
       "source": "MultiplyMii",
@@ -39,8 +39,8 @@
     {
       "source": "Workable",
       "status": "ok",
-      "fetched_count": 65,
-      "accepted_count": 20,
+      "fetched_count": 63,
+      "accepted_count": 18,
       "last_error": ""
     },
     {
@@ -67,7 +67,7 @@
     {
       "source": "Remotive",
       "status": "ok",
-      "fetched_count": 16,
+      "fetched_count": 14,
       "accepted_count": 0,
       "last_error": ""
     },
