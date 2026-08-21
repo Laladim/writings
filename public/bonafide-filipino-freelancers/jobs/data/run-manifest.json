@@ -1,10 +1,10 @@
 {
   "manifest_version": "2.0",
-  "run_id": "20260820T234252",
-  "generated_at": "2026-08-20T23:42:52",
-  "job_count": 18,
-  "direct_application_count": 18,
-  "distinct_sources": 3,
+  "run_id": "20260821T234144",
+  "generated_at": "2026-08-21T23:41:44",
+  "job_count": 20,
+  "direct_application_count": 20,
+  "distinct_sources": 4,
   "source_caps": {
     "MultiplyMii": 9,
     "VA4U": 7,
@@ -18,20 +18,22 @@
     "Himalayas": 0,
     "Jobicy": 0
   },
-  "newest_posting": "2026-08-20",
-  "oldest_posting": "2026-08-15",
+  "newest_posting": "2026-08-21",
+  "oldest_posting": "2026-08-17",
   "source_counts": {
-    "MultiplyMii": 5,
+    "MultiplyMii": 6,
+    "Clipboard Health": 1,
     "Workable": 12,
     "Freshteam": 1
   },
   "role_counts": {
-    "Customer Support": 7,
-    "Operations & Admin": 3,
+    "Customer Support": 5,
+    "Accounting & Bookkeeping": 1,
+    "Operations & Admin": 4,
     "Content Specialist": 2,
-    "E-commerce": 2,
+    "E-commerce": 3,
     "Virtual Assistant": 2,
-    "Executive Assistant": 2
+    "Executive Assistant": 3
   },
   "publish_status": "publishable",
   "refresh_mode": "github-actions-direct-ats-no-secret",
