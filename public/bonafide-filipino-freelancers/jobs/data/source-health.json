@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-08-22T23:37:47",
+  "generated_at": "2026-08-23T23:37:38",
   "sources": [
     {
       "source": "MultiplyMii",
       "status": "ok",
       "fetched_count": 51,
-      "accepted_count": 5,
+      "accepted_count": 4,
       "last_error": ""
     },
     {
@@ -40,7 +40,7 @@
       "source": "Workable",
       "status": "ok",
       "fetched_count": 63,
-      "accepted_count": 12,
+      "accepted_count": 9,
       "last_error": ""
     },
     {
@@ -60,7 +60,7 @@
     {
       "source": "Remote OK",
       "status": "ok",
-      "fetched_count": 100,
+      "fetched_count": 99,
       "accepted_count": 0,
       "last_error": ""
     },
