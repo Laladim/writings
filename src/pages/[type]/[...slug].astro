@@ -149,6 +149,34 @@ const sameTopicAuto = all
   .prose pre code { background: transparent; padding: 0; color: inherit; }
   .prose ul, .prose ol { padding-left: 1.4rem; margin: 0 0 1.4rem; }
   .prose li { margin-bottom: 0.4rem; }
+  :global(.prose table) {
+    display: block;
+    width: 100%;
+    margin: 1.75rem 0 2rem;
+    overflow-x: auto;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    line-height: 1.45;
+  }
+  :global(.prose th), :global(.prose td) {
+    padding: 0.7rem 0.8rem;
+    border: 1px solid var(--line);
+    text-align: left;
+    vertical-align: top;
+  }
+  :global(.prose th) {
+    background: rgba(90, 74, 122, 0.08);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  :global(.prose tbody tr:nth-child(even)) { background: rgba(90, 74, 122, 0.03); }
+  :global(.prose th:nth-child(1)), :global(.prose td:nth-child(1)) { min-width: 3rem; text-align: right; }
+  :global(.prose th:nth-child(2)), :global(.prose td:nth-child(2)) { min-width: 12rem; }
+  :global(.prose th:nth-child(3)), :global(.prose td:nth-child(3)) { min-width: 9rem; }
+  :global(.prose th:nth-child(4)), :global(.prose td:nth-child(4)) { min-width: 22rem; }
   .prose img { max-width: 100%; height: auto; border-radius: 3px; }
   .prose hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
   .related { border-top: 1px solid var(--line); margin-top: 4rem; padding-top: 2rem; }
