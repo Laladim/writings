@@ -4,7 +4,7 @@ type: "guide"
 topics: ["freelancing", "filipino-professionals", "community"]
 date: 2026-08-27
 description: "A carefully organized guide to 106 remote-job sites, freelance marketplaces, staffing agencies, employer boards, and other work-from-home channels for Filipino job seekers."
-image: "https://res.cloudinary.com/dimapmlre/image/upload/v1787809222/state-heroes/writings-v4-remote-job-sites-for-filipinos.jpg"
+image: "https://res.cloudinary.com/dimapmlre/image/upload/v1787917597/state-heroes/writings-v9-remote-job-sites-for-filipinos.jpg"
 ---
 
 ## Quick directory of remote-work platforms
