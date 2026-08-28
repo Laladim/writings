@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-27T04:32:39",
+  "generated_at": "2026-08-28T06:57:01",
   "sources": [
     {
       "source": "MultiplyMii",
@@ -18,14 +18,14 @@
     {
       "source": "Extend Your Team",
       "status": "ok",
-      "fetched_count": 39,
+      "fetched_count": 40,
       "accepted_count": 0,
       "last_error": ""
     },
     {
       "source": "ClickUp",
       "status": "ok",
-      "fetched_count": 68,
+      "fetched_count": 67,
       "accepted_count": 0,
       "last_error": ""
     },
@@ -39,8 +39,8 @@
     {
       "source": "Workable",
       "status": "ok",
-      "fetched_count": 66,
-      "accepted_count": 14,
+      "fetched_count": 60,
+      "accepted_count": 18,
       "last_error": ""
     },
     {
@@ -53,7 +53,7 @@
     {
       "source": "Himalayas",
       "status": "ok",
-      "fetched_count": 59,
+      "fetched_count": 60,
       "accepted_count": 0,
       "last_error": ""
     },
