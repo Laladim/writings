@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-08-28T06:57:01",
+  "generated_at": "2026-08-29T04:11:17",
   "sources": [
     {
       "source": "MultiplyMii",
       "status": "ok",
-      "fetched_count": 55,
-      "accepted_count": 4,
+      "fetched_count": 57,
+      "accepted_count": 6,
       "last_error": ""
     },
     {
@@ -32,15 +32,15 @@
     {
       "source": "Clipboard Health",
       "status": "ok",
-      "fetched_count": 35,
+      "fetched_count": 34,
       "accepted_count": 0,
       "last_error": ""
     },
     {
       "source": "Workable",
       "status": "ok",
-      "fetched_count": 60,
-      "accepted_count": 18,
+      "fetched_count": 67,
+      "accepted_count": 20,
       "last_error": ""
     },
     {
@@ -53,21 +53,21 @@
     {
       "source": "Himalayas",
       "status": "ok",
-      "fetched_count": 60,
+      "fetched_count": 59,
       "accepted_count": 0,
       "last_error": ""
     },
     {
       "source": "Remote OK",
       "status": "ok",
-      "fetched_count": 99,
+      "fetched_count": 100,
       "accepted_count": 0,
       "last_error": ""
     },
     {
       "source": "Remotive",
       "status": "ok",
-      "fetched_count": 18,
+      "fetched_count": 19,
       "accepted_count": 0,
       "last_error": ""
     },

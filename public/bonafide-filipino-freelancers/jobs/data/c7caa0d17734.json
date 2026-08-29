@@ -1,8 +1,8 @@
 {
-  "id": "12c355617e2e",
-  "date_added": "2026-08-28",
+  "id": "c7caa0d17734",
+  "date_added": "2026-08-29",
   "status": "New",
-  "title": "Operations Manager (with high-level Executive Assistant function)",
+  "title": "Operations Manager (Senior Executive Assistant)",
   "company": "Undisclosed client via MultiplyMii",
   "posted": "2026-08-28",
   "role_lala_category": "Executive Assistant",
@@ -44,7 +44,7 @@
   "resume_match_profile": "{\"profile_version\": \"1.0\", \"best_archetypes\": [\"Generalist Admin\", \"Corporate Transitioner\", \"Fresh Starter\"], \"primary_archetype\": \"Generalist Admin\", \"resume_keywords\": \"Executive Assistant, youtube, google workspace, admin, MultiplyMii\", \"resume_angle\": \"Position your resume around executive assistant reliability, written remote work, and proof with youtube, google workspace, admin.\", \"missing_skill_suggestions\": [\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]}",
   "quality_label": "Good match",
   "quality_reasons": "yes PH signal; clear posting details",
-  "job_id": "12c355617e2e",
+  "job_id": "c7caa0d17734",
   "source": "MultiplyMii",
   "source_mode": "direct_ats",
   "source_url": "https://jobs.ashbyhq.com/multiplymii",
@@ -57,6 +57,6 @@
   "quality_status": "accepted",
   "reject_reasons": "",
   "description_hash": "a54b20ab86b606b6",
-  "duplicate_keys": "[\"12c355617e2e\"]",
+  "duplicate_keys": "[\"c7caa0d17734\"]",
   "duplicate_sources": "[{\"source\": \"MultiplyMii\", \"url\": \"https://jobs.ashbyhq.com/multiplymii/97fabaca-668b-41a4-9676-046b069efe7e\"}]"
 }
