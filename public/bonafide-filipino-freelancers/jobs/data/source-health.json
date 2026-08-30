@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-08-29T04:11:17",
+  "generated_at": "2026-08-30T01:17:27",
   "sources": [
     {
       "source": "MultiplyMii",
       "status": "ok",
       "fetched_count": 57,
-      "accepted_count": 6,
+      "accepted_count": 4,
       "last_error": ""
     },
     {
@@ -40,7 +40,7 @@
       "source": "Workable",
       "status": "ok",
       "fetched_count": 67,
-      "accepted_count": 20,
+      "accepted_count": 18,
       "last_error": ""
     },
     {
@@ -53,7 +53,7 @@
     {
       "source": "Himalayas",
       "status": "ok",
-      "fetched_count": 59,
+      "fetched_count": 60,
       "accepted_count": 0,
       "last_error": ""
     },
