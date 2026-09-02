@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<script>document.documentElement.className+=" js"</script>
 <title>Free Virtual Assistant Resume Converter, No VA Experience Needed</title>
 <meta name="description" content="Free virtual assistant resume converter for applicants in any country, no VA experience needed. One target role, nothing invented, six documents in one email.">
 <link rel="canonical" href="https://writingsbylala.com/bonafide-filipino-freelancers/va-resume-converter/">
@@ -50,14 +51,6 @@ h1{font-family:'Cormorant Garamond',serif;font-size:46px;line-height:1.05;font-w
 .community{margin-top:8px;font-size:13px;color:var(--text-soft)}
 .community a{color:var(--primary);font-weight:600}
 
-/* Before and after strip */
-.strip{background:var(--surface);border-bottom:1px solid var(--border);padding:26px 0}
-.ba{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.ba-row{border:1px solid var(--border);border-radius:8px;padding:14px 16px;font-size:15px;line-height:1.5}
-.ba-row.before{background:var(--bg);color:var(--text-soft)}
-.ba-row.after{background:var(--primary-soft);color:var(--primary-deep);border-color:#d8cbe6}
-.ba-label{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--accent-deep);margin-bottom:4px}
-.ba-caption{margin-top:12px;font-size:13.5px;color:var(--text-soft);max-width:720px}
 mark{background:#fff3c4;color:#5a4400;padding:0 3px;border-radius:2px;font-weight:600}
 
 /* Sections */
@@ -66,54 +59,60 @@ section{padding:44px 0;border-bottom:1px solid var(--border)}
 h2{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--primary);font-weight:600;margin-bottom:8px}
 .section-sub{color:var(--text-soft);max-width:640px;margin-bottom:24px}
 
-/* Paper sample */
-.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:26px;align-items:start}
+/* Six-document viewer */
+.docs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin-top:4px}
+.doc-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 12px 12px;text-align:left;cursor:pointer;font:inherit;color:var(--text);display:flex;flex-direction:column;align-items:flex-start;gap:9px;min-width:0;transition:border-color .15s,box-shadow .15s}
+.doc-card:hover{border-color:var(--accent)}
+.doc-card:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+.doc-card[aria-selected=true]{border-color:var(--accent);box-shadow:0 0 0 2px rgba(200,152,95,.28),0 8px 20px rgba(74,58,106,.10)}
+.doc-icon{position:relative;flex:none;width:30px;height:38px;background:#fff;border:1.5px solid var(--primary);border-radius:3px}
+.doc-icon::before{content:"";position:absolute;top:-1.5px;right:-1.5px;width:10px;height:10px;background:var(--primary-soft);border-left:1.5px solid var(--primary);border-bottom:1.5px solid var(--primary);border-bottom-left-radius:2px}
+.doc-icon::after{content:"";position:absolute;left:6px;right:6px;top:15px;height:15px;background:repeating-linear-gradient(to bottom,var(--border) 0 1.5px,transparent 1.5px 5px)}
+.doc-card[aria-selected=true] .doc-icon{border-color:var(--accent)}
+.doc-card[aria-selected=true] .doc-icon::before{border-color:var(--accent);background:#fbf1e3}
+.doc-name{font-weight:700;color:var(--primary);font-size:14px;line-height:1.25}
+.doc-n{font-size:11.5px;color:var(--text-soft);letter-spacing:.03em}
+.viewer{max-width:860px;margin:22px auto 0}
 .paper{background:#fff;border:1px solid var(--border);border-radius:4px;padding:28px 26px 24px;box-shadow:0 12px 32px rgba(74,58,106,.10);position:relative;font-size:clamp(11px,3.2vw,14px);line-height:1.5;color:var(--text);max-width:100%;overflow-wrap:anywhere}
-.stamp{position:absolute;top:14px;right:14px;border:2px solid var(--accent);color:var(--accent-deep);font-size:10px;letter-spacing:.18em;font-weight:700;text-transform:uppercase;padding:4px 8px;border-radius:3px;transform:rotate(-4deg);background:#fff}
-.paper-name{font-family:'Cormorant Garamond',serif;font-size:2.1em;font-weight:700;color:var(--primary);letter-spacing:.02em;line-height:1.05;margin-bottom:2px;padding-right:120px}
+.doc-bar{display:flex;align-items:center;gap:10px;margin:-28px -26px 22px;padding:10px 26px;background:var(--primary-soft);border-bottom:1px solid var(--border);font-size:.92em;color:var(--primary-deep)}
+.doc-bar .doc-icon{width:15px;height:19px;border-width:1px;border-radius:2px}
+.doc-bar .doc-icon::before{width:6px;height:6px;top:-1px;right:-1px;border-width:1px}
+.doc-bar .doc-icon::after{left:3px;right:3px;top:8px;height:8px;background:repeating-linear-gradient(to bottom,var(--border) 0 1px,transparent 1px 3px)}
+.doc-bar b{font-weight:600;color:var(--primary);flex:1;min-width:0}
+.doc-kind{color:var(--text-soft);white-space:nowrap;font-size:.9em}
+.stamp{position:absolute;top:60px;right:16px;border:2px solid var(--accent);color:var(--accent-deep);font-size:10px;letter-spacing:.18em;font-weight:700;text-transform:uppercase;padding:4px 8px;border-radius:3px;transform:rotate(-4deg);background:#fff;z-index:1}
+.draft-bar{background:#fff3c4;color:#5a4400;border:1px solid #f0dc8a;border-radius:4px;padding:8px 130px 8px 12px;font-size:.9em;font-weight:600;margin:0 0 16px}
+.doc-title{font-family:'Cormorant Garamond',serif;font-size:1.6em;font-weight:700;color:var(--primary);line-height:1.15;margin:0 0 12px;padding-right:130px}
+.paper-name{font-family:'Cormorant Garamond',serif;font-size:1.9em;font-weight:700;color:var(--primary);letter-spacing:.02em;line-height:1.05;margin-bottom:2px;padding-right:130px}
 .paper-role{font-weight:600;color:var(--primary-deep)}
 .paper-meta,.paper-track{color:var(--text-soft);font-size:.92em}
 .paper-track{margin-top:8px;padding-top:8px;border-top:1px solid var(--border)}
-.paper h3{font-size:.82em;letter-spacing:.14em;text-transform:uppercase;color:var(--primary);margin:16px 0 6px;border-bottom:1px solid var(--border);padding-bottom:3px;font-family:'Inter',sans-serif;font-weight:700}
-.paper ul{padding-left:1.1em}
-.paper li{margin-bottom:3px}
-.paper .job{font-weight:600;color:var(--primary-deep);margin-bottom:4px}
+.paper p{margin:0 0 10px}
+.paper h4{font-size:.82em;letter-spacing:.14em;text-transform:uppercase;color:var(--primary);margin:18px 0 8px;border-bottom:1px solid var(--border);padding-bottom:3px;font-weight:700}
+.paper h5{font-size:1em;font-weight:700;color:var(--primary-deep);margin:12px 0 5px}
+.paper ul,.paper ol{padding-left:1.2em;margin:0 0 10px}
+.paper li{margin-bottom:4px}
+.paper code{font-family:inherit;background:var(--bg);border:1px solid var(--border);border-radius:3px;padding:0 4px}
+.paper .job{font-weight:600;color:var(--primary-deep);margin:10px 0 4px}
 .paper .job i{display:block;font-weight:400;font-style:normal;color:var(--text-soft);font-size:.92em}
 .paper .more{margin-top:14px;font-size:.9em;color:var(--text-soft);font-style:italic}
-.docstack{display:grid;gap:16px}
-.mini{background:#fff;border:1px solid var(--border);border-radius:4px;box-shadow:0 8px 24px rgba(74,58,106,.08);font-size:12.5px;line-height:1.5;color:var(--text);overflow:hidden}
-.mini-head{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:9px 14px;background:var(--primary-soft);border-bottom:1px solid var(--border);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--primary)}
-.mini-head span{font-weight:600;letter-spacing:0;text-transform:none;color:var(--text-soft);font-size:11.5px;white-space:nowrap}
-.mini-body{padding:14px 16px 15px}
-.mini h4{font-size:13.5px;font-weight:700;color:var(--primary-deep);margin:0 0 7px}
-.mini p{margin:0 0 8px;color:var(--text-soft)}
-.mini p:last-child{margin-bottom:0}
-.mini b{color:var(--text);font-weight:600}
-.tagrow{display:grid;gap:7px;margin-bottom:10px}
-.tagrow>div{display:grid;grid-template-columns:82px 1fr;gap:10px;align-items:start;color:var(--text-soft)}
-.tag{display:inline-block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;padding:3px 7px;border-radius:999px;white-space:nowrap;line-height:1.2}
-.tag-go{background:#e6f1ea;color:var(--sage)}
-.tag-next{background:#fbf1e3;color:var(--accent-deep)}
-.tag-wait{background:#ecebea;color:var(--text-soft)}
-.tag-stop{background:#f6e6e3;color:#8a3f33}
-.jobcard{border:1px solid var(--border);border-radius:6px;padding:10px 12px;margin-bottom:9px;background:var(--bg)}
-.jobcard strong{display:block;color:var(--primary-deep);font-size:13px;margin-bottom:5px}
-.jobcard strong i{display:block;font-style:normal;font-weight:400;color:var(--text-soft);font-size:12px}
-.jobcard .tag{margin:0 4px 8px 0}
-.chat{display:grid;gap:8px;margin:10px 0}
-.bubble{padding:8px 11px;border-radius:10px;max-width:92%}
-.bubble small{display:block;font-size:9.5px;opacity:.7;margin-bottom:2px;text-transform:uppercase;letter-spacing:.08em}
-.bubble.you{background:var(--primary);color:#fff;justify-self:end;border-bottom-right-radius:3px}
-.bubble.ai{background:var(--bg);color:var(--text);justify-self:start;border-bottom-left-radius:3px;border:1px solid var(--border)}
-
-/* Six documents */
-.doclist{margin-top:34px}
-.doclist h3{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--primary);font-weight:600;margin-bottom:12px}
-.doclist ol{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 18px;counter-reset:doc 1}
-.doclist li{counter-increment:doc;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 14px 12px 46px;position:relative;font-size:13.5px;line-height:1.5;color:var(--text-soft)}
-.doclist li::before{content:counter(doc);position:absolute;left:12px;top:12px;width:24px;height:24px;border-radius:999px;background:var(--primary-soft);color:var(--primary);font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center}
-.doclist strong{display:block;color:var(--primary);font-size:14.5px;margin-bottom:2px}
-.inline-cta{margin-top:22px;font-size:14.5px;color:var(--text-soft)}
+.paper .skip{font-size:.9em;color:var(--text-soft);font-style:italic;margin:14px 0}
+.checklist{list-style:none;padding-left:0}
+.checklist li{position:relative;padding-left:22px}
+.cb{position:absolute;left:0;top:.3em;width:12px;height:12px;border:1.5px solid var(--primary);border-radius:2px;background:#fff}
+.copybox{border:1.5px dashed var(--primary);border-radius:6px;padding:14px 16px 8px;margin:6px 0 14px;background:#fbfafc}
+.copy-rule{display:flex;align-items:center;gap:10px;font-size:.78em;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--accent-deep);margin:0 0 12px}
+.copy-rule.end{margin:4px 0 6px}
+.copy-rule::before,.copy-rule::after{content:"";flex:1;border-top:1px solid var(--accent)}
+.faded{color:var(--text-soft);font-style:italic}
+.cmd{background:var(--primary-soft);border-left:3px solid var(--primary);padding:10px 12px;border-radius:0 4px 4px 0;color:var(--primary-deep);font-weight:600;margin:4px 0 12px}
+.expand{display:none}
+html.js .viewer .doc:not(.active){display:none}
+html.js .clamped{max-height:680px;overflow:hidden}
+html.js .clamped::after{content:"";position:absolute;left:0;right:0;bottom:0;height:150px;background:linear-gradient(to bottom,rgba(255,255,255,0),#fff 72%);z-index:1}
+html.js .clamped .expand{display:inline-block;position:absolute;left:50%;bottom:24px;transform:translateX(-50%);z-index:2;background:var(--primary);color:#fff;border:0;border-radius:8px;padding:11px 20px;font:inherit;font-weight:700;font-size:14px;cursor:pointer;box-shadow:0 6px 16px rgba(74,58,106,.25);white-space:nowrap}
+html.js .clamped .expand:hover{background:var(--primary-deep)}
+.inline-cta{margin-top:22px;font-size:14.5px;color:var(--text-soft);text-align:center}
 .inline-cta a{color:var(--primary);font-weight:700}
 
 /* How it works */
@@ -151,20 +150,24 @@ footer{padding:34px 0 46px;color:var(--text-soft);font-size:13px}
 .sticky-cta{display:none}
 @media(max-width:860px){
   body{padding-bottom:72px}
-  .grid2,.ba,.doclist ol{grid-template-columns:1fr}
+  .docs{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;margin:4px -24px 0;padding:4px 24px 10px;scrollbar-width:thin}
+  .doc-card{flex:0 0 150px;scroll-snap-align:start}
+  .doc-bar{margin:-22px -18px 18px;padding:9px 18px}
+  .doc-kind{display:none}
   .flow-steps{grid-template-columns:1fr 1fr}
   .flow-step::after{display:none}
   h1{font-size:34px}
   .band h2{font-size:30px}
   .cta,.cta-inverse{width:100%}
   .paper{padding:22px 18px 20px}
-  .paper-name{padding-right:100px}
+  .paper-name,.doc-title{padding-right:110px}
+  .draft-bar{padding-right:110px}
   .sticky-cta{display:block;position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(255,255,255,.97);border-top:1px solid var(--border);padding:8px 16px calc(8px + env(safe-area-inset-bottom));transform:translateY(110%);transition:transform .25s ease}
   .sticky-cta.show{transform:translateY(0)}
   .sticky-cta a{display:flex;align-items:center;justify-content:center;gap:10px;min-height:44px;background:var(--primary);color:#fff;text-decoration:none;font-weight:700;font-size:15px;border-radius:8px}
   .sticky-cta a small{font-weight:500;font-size:12px;opacity:.85}
 }
-@media(max-width:560px){.flow-steps{grid-template-columns:1fr}.stamp{position:static;display:inline-block;transform:rotate(-2deg);margin:0 0 14px 2px}.paper-name{padding-right:0}}
+@media(max-width:560px){.flow-steps{grid-template-columns:1fr}.stamp{position:static;display:inline-block;transform:rotate(-2deg);margin:0 0 14px 2px}.paper-name,.doc-title{padding-right:0}.draft-bar{padding-right:12px}html.js .clamped{max-height:560px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.sticky-cta{transition:none}}
 </style>
 </head>
@@ -187,102 +190,371 @@ footer{padding:34px 0 46px;color:var(--text-soft);font-size:13px}
   <p class="community">Built inside the <a href="https://facebook.com/groups/workathomegeek" target="_blank" rel="noopener">Bonafide Filipino Freelancers</a> community, free since 2017 with 27,000+ members. The converter is open to applicants from any country.</p>
 </div></header>
 
-<div class="strip"><div class="wrap">
-  <div class="ba">
-    <div class="ba-row before"><span class="ba-label">Before</span>Collections Officer. Handled accounts and followed up with clients.</div>
-    <div class="ba-row after"><span class="ba-label">After</span>Handled difficult customer conversations under policy pressure, <mark>[CONFIRM: how many]</mark> accounts a day.</div>
-  </div>
-  <p class="ba-caption">Same job. Same facts. The words a US client searches for, and a marker where only you know the number.</p>
-</div></div>
-
 <section id="sample"><div class="wrap">
   <h2>See what comes back</h2>
-  <p class="section-sub">Six Google Docs, shown here for a fictional applicant. The resume is document 1. Beside it, three of the five documents that arrive with it.</p>
-  <div class="grid2">
-    <div class="paper" aria-label="Sample resume, fictional example">
+  <p class="section-sub">One email, six Google Docs. These are the real documents for a fictional applicant, Maria Luz Santos. Open any of them.</p>
+  <div class="docs" role="tablist" aria-label="The six documents">
+    <button class="doc-card" role="tab" id="tab-1" aria-selected="true" aria-controls="doc-1" type="button"><span class="doc-icon" aria-hidden="true"></span><span class="doc-name">Resume Draft</span><span class="doc-n">Doc 1 of 6</span></button>
+    <button class="doc-card" role="tab" id="tab-2" aria-selected="false" aria-controls="doc-2" type="button" tabindex="-1"><span class="doc-icon" aria-hidden="true"></span><span class="doc-name">Review Checklist</span><span class="doc-n">Doc 2 of 6</span></button>
+    <button class="doc-card" role="tab" id="tab-3" aria-selected="false" aria-controls="doc-3" type="button" tabindex="-1"><span class="doc-icon" aria-hidden="true"></span><span class="doc-name">Rockstar Example</span><span class="doc-n">Doc 3 of 6</span></button>
+    <button class="doc-card" role="tab" id="tab-4" aria-selected="false" aria-controls="doc-4" type="button" tabindex="-1"><span class="doc-icon" aria-hidden="true"></span><span class="doc-name">Learning Path</span><span class="doc-n">Doc 4 of 6</span></button>
+    <button class="doc-card" role="tab" id="tab-5" aria-selected="false" aria-controls="doc-5" type="button" tabindex="-1"><span class="doc-icon" aria-hidden="true"></span><span class="doc-name">Matched Jobs</span><span class="doc-n">Doc 5 of 6</span></button>
+    <button class="doc-card" role="tab" id="tab-6" aria-selected="false" aria-controls="doc-6" type="button" tabindex="-1"><span class="doc-icon" aria-hidden="true"></span><span class="doc-name">AI Career Coach</span><span class="doc-n">Doc 6 of 6</span></button>
+  </div>
+  <div class="viewer">
+
+    <article class="paper doc clamped active" id="doc-1" role="tabpanel" aria-labelledby="tab-1">
+      <div class="doc-bar"><span class="doc-icon" aria-hidden="true"></span><b>General Admin VA Resume Draft</b><span class="doc-kind">Google Doc · yours to edit</span></div>
       <div class="stamp">Fictional example</div>
+      <div class="draft-bar">WORKING DRAFT: Complete and delete every bracketed action before sending this resume to a client.</div>
       <div class="paper-name">Maria Luz Santos</div>
       <div class="paper-role">General Admin VA</div>
-      <div class="paper-meta">Cebu City, Philippines · maria.santos@example.com</div>
+      <div class="paper-meta">Cebu City, Philippines | maria.santos@example.com</div>
+      <div class="paper-meta"><mark>[REPLACE: Add the phone number you want clients to use. If you do not want a phone number on the resume, delete this whole bracket.]</mark></div>
       <div class="paper-track">7 yrs administrative support | 4 yrs coordinating schedules and records in Google Workspace | Full-time, 9 AM to 6 PM US Eastern</div>
-      <h3>Core skills</h3>
+      <h4>Core skills</h4>
       <ul>
         <li>Multi-channel client inquiry handling through Gmail and Facebook Messenger</li>
         <li>Calendar and appointment coordination with confirmations and schedule changes</li>
         <li>Student, appointment, supply and payment-status record maintenance</li>
         <li>Weekly attendance and payment follow-up reporting for an owner</li>
+        <li>Phone and email appointment coordination</li>
         <li>Google Sheets and Microsoft Excel tracking and recurring summaries</li>
+        <li>Google Drive folder organization by person, year and document type</li>
         <li>Procedure writing and training for new coordinators</li>
+        <li>Purchase-summary preparation and receipt filing</li>
+        <li>Volunteer registration, attendance tracking and reminder emails</li>
       </ul>
-      <h3>Experience</h3>
-      <div class="job">Operations Assistant, Sunrise Learning Hub (fictional)<i>Cebu City, Philippines | Jan 2022 to present</i></div>
+      <h4>Learning next - skills I already use, in tools I have not used yet</h4>
       <ul>
-        <li>Respond to 25 to 35 parent and student inquiries each week through Gmail and Facebook Messenger. <mark>[CONFIRM: If you track a normal response-time target, add it to this line. If you do not, delete this bracket and keep the sentence.]</mark></li>
-        <li>Coordinate 18 to 25 tutoring sessions each week in Google Calendar and confirm schedule changes.</li>
-        <li>Maintain more than 200 active student records in Google Sheets and update attendance after each session.</li>
+        <li>Payment-status tracking and follow-up support, which I do today in spreadsheets and owner reports. Eager to learn the same workflow in QuickBooks Online after completing a supervised practice project.</li>
+        <li>Inquiry handling and status updates, which I do today in Gmail, Messenger, Sheets and Excel. Eager to learn the same work in a CRM after completing a practice project.</li>
       </ul>
-      <h3>Work setup</h3>
+      <h4>Experience</h4>
+      <div class="job">Operations Assistant, Sunrise Learning Hub (fictional)<i>Cebu City, Philippines | Jan 2022 - Present</i></div>
+      <ul>
+        <li>Respond to 25-35 parent and student inquiries each week through Gmail and Facebook Messenger. <mark>[CONFIRM: If you track a normal response-time target, add it to this line. If you do not track one, delete this whole bracket and keep the sentence as it is.]</mark></li>
+        <li>Coordinate 18-25 tutoring sessions each week in Google Calendar and confirm schedule changes.</li>
+        <li>Maintain more than 200 active student records in Google Sheets and update attendance after each session.</li>
+        <li>Prepare a Friday attendance and payment follow-up list for the owner.</li>
+        <li>Reorganized shared Google Drive folders by student, school year and document type.</li>
+        <li>Created a one-page procedure for rescheduling lessons and trained two new coordinators to use it.</li>
+      </ul>
+      <div class="job">Office Assistant, Harborview Dental Clinic (fictional)<i>Cebu City, Philippines | Jun 2019 - Dec 2021</i></div>
+      <ul>
+        <li>Scheduled 30-40 patient appointments each week by phone and email.</li>
+        <li>Updated appointment, supply and payment status records in Microsoft Excel.</li>
+        <li>Followed up missing intake forms before scheduled visits and flagged incomplete files to the clinic manager.</li>
+        <li>Prepared a monthly summary of office supply purchases and filed supporting receipts.</li>
+      </ul>
+      <div class="job">Volunteer Administrative Assistant, Community Reading Circle (fictional) - volunteer<i>Mar 2020 - Nov 2020 | 4 hrs/week</i></div>
+      <ul>
+        <li>Tracked 35 learner registrations and weekly attendance in Google Sheets.</li>
+        <li>Scheduled volunteer reading sessions and sent reminder emails to parents.</li>
+      </ul>
+      <h4>Tools</h4>
+      <ul>
+        <li>Google Workspace: Gmail, Calendar, Sheets, Docs, Drive</li>
+        <li>Microsoft Word, Excel, PowerPoint</li>
+        <li>Facebook Messenger, Trello</li>
+      </ul>
+      <h4>Education</h4>
+      <p>Bachelor of Science in Business Administration, Cebu Metropolitan College (fictional), 2019</p>
+      <h4>Work setup</h4>
       <ul>
         <li>Internet: Converge Fiber 100 Mbps</li>
         <li>Backup internet: Smart mobile data</li>
         <li>Equipment: Windows laptop, 16 GB RAM, headset</li>
       </ul>
-      <h3>Learning next: skills I already use, in tools I have not used yet</h3>
+      <p class="more">The real document also opens with links to the other five documents in this package.</p>
+      <button type="button" class="expand">Read the whole document</button>
+    </article>
+
+    <article class="paper doc clamped" id="doc-2" role="tabpanel" aria-labelledby="tab-2">
+      <div class="doc-bar"><span class="doc-icon" aria-hidden="true"></span><b>Resume Review Checklist</b><span class="doc-kind">Google Doc · yours to edit</span></div>
+      <div class="stamp">Fictional example</div>
+      <h3 class="doc-title">Maria Luz Santos - General Admin VA Resume Review Checklist</h3>
+      <h4>Read this before editing</h4>
+      <p>You are finishing this resume yourself. Nobody edits it after you.</p>
+      <p>The examples below come from completely different jobs on purpose. Do not copy their numbers. They show how much detail a strong answer needs, not what your answer should say. A rough number you are sure of is better than a precise number you are not sure of. If you cannot answer an action, delete its entire bracket from the resume. Never leave a bracket for a client to see, and never guess.</p>
+      <h4>Two answer patterns you need</h4>
+      <h5>Pattern 1 - Logistics: your contact details and work setup</h5>
       <ul>
-        <li>Payment-status tracking and follow-up, which I do today in spreadsheets and owner reports. Eager to learn the same workflow in QuickBooks Online after a supervised practice project.</li>
-        <li>Inquiry handling and status updates, which I do today in Gmail, Messenger and Sheets. Eager to learn the same work in a CRM after a practice project.</li>
+        <li>Weak: Flexible or Any time.</li>
+        <li>Strong example from a dispatch office: 9 PM to 6 AM Philippine time, which is 9 AM to 6 PM US Eastern. I worked overnight before and prefer fixed hours.</li>
+        <li>Why it works: it gives both time zones and proves the person understands the schedule.</li>
+        <li>Your answer must use your own phone number, hours and setup. Do not copy the example.</li>
       </ul>
-      <p class="more">The full page continues with two more jobs, Tools and Education.</p>
-    </div>
-    <div class="docstack">
-      <article class="mini" aria-label="Sample learning path, fictional example">
-        <div class="mini-head">Learning path <span>Doc 4 of 6</span></div>
-        <div class="mini-body">
-          <h4>Your role expansion map</h4>
-          <div class="tagrow">
-            <div><span class="tag tag-go">Start now</span><div><b>General Admin VA.</b> Calendars, records, follow-up, spreadsheets and procedure writing are already proven.</div></div>
-            <div><span class="tag tag-next">Build next</span><div><b>Customer Support VA.</b> Still missing: ticket or CRM cases, escalation ownership, response targets.</div></div>
-            <div><span class="tag tag-wait">Wait</span><div><b>Social Media VA.</b> Messenger use is a communication channel, not proof of content work.</div></div>
-          </div>
-          <p><b>Project A, General Admin back-office reset.</b> Two weeks, six files a client can inspect, written permission first. Label it by what really happened: Pro Bono, Volunteer, Freelance or Portfolio Simulation.</p>
-        </div>
-      </article>
-      <article class="mini" aria-label="Sample matched jobs guide, fictional example">
-        <div class="mini-head">Matched jobs <span>Doc 5 of 6</span></div>
-        <div class="mini-body">
-          <h4>Current General Admin result: coverage gap</h4>
-          <p>The board has no General Admin role this resume can honestly recommend today. The guide says so instead of forcing one.</p>
-          <div class="jobcard">
-            <strong>Email Customer Service Representative <i>Remote, e-commerce store</i></strong>
-            <span class="tag tag-stop">Do not apply yet</span><span class="tag tag-wait">A role to study</span>
-            <p><b>Why it is worth studying:</b> 25 to 35 weekly Gmail and Messenger inquiries are a real foundation for written support.</p>
-            <p><b>Hard blockers:</b> no e-commerce email support, no CRM or help desk, and one of three Shanghai-time shifts.</p>
-          </div>
-          <p>Every listing gets one decision: Apply now, Check first, or Do not apply yet. Recheck the live posting before you apply.</p>
-        </div>
-      </article>
-      <article class="mini" aria-label="Sample AI career coach guide, fictional example">
-        <div class="mini-head">AI career coach guide <span>Doc 6 of 6</span></div>
-        <div class="mini-body">
-          <h4>Set it up once in ChatGPT or Claude</h4>
-          <p>Upload the five documents, paste the instructions, type the start command. After that it asks one question at a time.</p>
-          <div class="chat">
-            <div class="bubble you"><small>You</small>Start my career plan. Check my Resume Draft and Review Checklist, then ask me only the first question.</div>
-            <div class="bubble ai"><small>AI coach</small>Both working files are here. Your draft has 2 unresolved markers. First question: which phone number should a client use? If you would rather leave it off, say so and I will remove the bracket.</div>
-          </div>
-          <p>Its truth rule is written in: it may use only what your files or your answers prove. If it ever invents something, one pasted line resets it.</p>
-        </div>
-      </article>
-    </div>
+      <h5>Pattern 2 - Cadence: how often and to what deadline</h5>
+      <ul>
+        <li>Weak: Regularly or Fast replies.</li>
+        <li>Strong example from a school registrar: One report every Monday before 9 AM, covering 6 branches, because the area manager read it before branch visits.</li>
+        <li>Why it works: it gives the frequency, deadline, scale and reader.</li>
+        <li>If no reply target was tracked, that is acceptable. Delete the bracket and keep the truthful weekly inquiry volume already in the sentence.</li>
+      </ul>
+      <h4>Priority 1 - complete the two resume actions</h4>
+      <ul class="checklist">
+        <li><span class="cb" aria-hidden="true"></span>Phone number - Pattern 1, Logistics. Add the phone number you want a client to use. Check every digit. If you do not want a phone number on the resume, delete the full red bracket and leave the email address only.</li>
+        <li><span class="cb" aria-hidden="true"></span>Inquiry response target - Pattern 2, Cadence. Check whether Sunrise Learning Hub used a normal first-response target for Gmail or Messenger. If yes, add the real target and say whether it was your target or the team's. If no target was tracked or you cannot check it, delete the full red bracket and keep the sentence as it is.</li>
+      </ul>
+      <h4>Check every other line</h4>
+      <ul class="checklist">
+        <li><span class="cb" aria-hidden="true"></span>Confirm that every employer, title, date and number matches your own records.</li>
+        <li><span class="cb" aria-hidden="true"></span>Be ready to explain the 25-35 weekly inquiries, 18-25 tutoring sessions, 200+ student records and 30-40 appointments using your own source records.</li>
+        <li><span class="cb" aria-hidden="true"></span>Keep QuickBooks Online and CRM under Learning Next. Do not move either tool into Core Skills until completed work proves use.</li>
+        <li><span class="cb" aria-hidden="true"></span>Keep the Community Reading Circle entry labelled volunteer.</li>
+        <li><span class="cb" aria-hidden="true"></span>Do not add research, invoicing, shared-inbox ownership, escalation ownership or a service result unless real evidence proves it.</li>
+      </ul>
+      <h4>Final check before applying</h4>
+      <ul class="checklist">
+        <li><span class="cb" aria-hidden="true"></span>Make a copy of the resume. Keep the working version as your editable master.</li>
+        <li><span class="cb" aria-hidden="true"></span>Complete or delete both action markers in the application copy.</li>
+        <li><span class="cb" aria-hidden="true"></span>Delete the full WORKING DRAFT warning and the entire Success Package panel from the application copy.</li>
+        <li><span class="cb" aria-hidden="true"></span>Search the application copy for <code>[</code>, <code>]</code>, <code>CONFIRM</code>, <code>ASSUMED</code> and <code>REPLACE</code>. The search must find none of these notes.</li>
+        <li><span class="cb" aria-hidden="true"></span>Save the application copy as a PDF and read every page. Check that no heading is stranded, no bullet is cut off and the resume is no more than two pages.</li>
+        <li><span class="cb" aria-hidden="true"></span>Never add a claim only because it appears in the Rockstar Resume, Learning Path or Matched Jobs guide. Those documents teach; they do not prove your experience.</li>
+      </ul>
+      <button type="button" class="expand">Read the whole document</button>
+    </article>
+
+    <article class="paper doc clamped" id="doc-3" role="tabpanel" aria-labelledby="tab-3">
+      <div class="doc-bar"><span class="doc-icon" aria-hidden="true"></span><b>50-Bullet Rockstar General Admin VA Resume</b><span class="doc-kind">Google Doc · yours to edit</span></div>
+      <div class="stamp">Fictional example</div>
+      <h3 class="doc-title">50-Bullet Rockstar General Admin VA Resume</h3>
+      <p><strong>FICTIONAL COMPOSITE - FOR LEARNING ONLY.</strong> This is not a real person. None of these employers, tools, numbers or claims belongs to Maria Luz Santos. Use this document to study structure and proof. Copying a claim would make Maria's resume false.</p>
+      <p>This teaching version has five jobs with ten bullets each, for 50 bullets in total. It is a master skill library, not a recommended submission length. A real applicant keeps only the strongest truthful bullets that match the job.</p>
+      <h4>Four important rules</h4>
+      <ol>
+        <li>This is a fictional composite, not a real applicant.</li>
+        <li>Its employers, tools, numbers and results do not belong to Maria Luz Santos.</li>
+        <li>Study how each bullet shows a channel, system, volume, cadence, authority boundary or result.</li>
+        <li>Never copy a fact. Use only your own work that you can explain and prove.</li>
+      </ol>
+      <div class="paper-name" style="margin-top:20px">Maria Santos</div>
+      <div class="paper-role">General Admin VA</div>
+      <div class="paper-meta">Cebu City, Philippines | maria.santos@example.com | fictional composite</div>
+      <div class="paper-track">13 yrs admin and customer service | 5 yrs remote with US clients | Full-time, 9 AM to 6 PM US Eastern</div>
+      <h4>Core skills</h4>
+      <ul>
+        <li>Shared inbox triage and same-day routing across Gmail and Outlook</li>
+        <li>Calendar and appointment coordination across time zones, with confirmations and rescheduling</li>
+        <li>CRM record accuracy in GoHighLevel: contact updates, pipeline stages and note logging</li>
+        <li>Invoicing and receivables follow-up through a client billing portal</li>
+        <li>Follow-up to closure on a 48-hour check-in cycle</li>
+        <li>Inbound and outbound client calls for a US client base, logged in the CRM</li>
+        <li>Google Sheets reporting: weekly summaries, formulas and month-end reconciliation</li>
+        <li>Drive and folder structure so documents are findable without asking</li>
+        <li>SOP writing and updating, with training handover</li>
+        <li>Supplier and competitor research summarized into weekly one-pagers</li>
+      </ul>
+      <h4>Learning next - skills I already use, in tools I have not used yet</h4>
+      <ul>
+        <li>Invoicing, receivables follow-up and expense records, which I do today in spreadsheets and a client billing portal. Eager to learn the same workflows in QuickBooks Online after supervised practice.</li>
+      </ul>
+      <h4>Experience</h4>
+      <div class="job">Virtual Assistant, Harborline Property Services - freelance<i>Remote, US client | Jan 2021 - Present | part-time, 20 hrs/week</i></div>
+      <ul>
+        <li>Cleared 60+ emails a day from a shared inbox, drafted replies for the owner's approval and routed the rest within two hours.</li>
+        <li>Coordinated 18-25 weekly appointments across three US time zones, sent confirmations and resolved conflicts before they reached the owner.</li>
+        <li>Issued 40-50 invoices a month from the client billing portal and followed overdue balances to payment.</li>
+        <li>Tracked every pending document to closure on a 48-hour check-in cycle.</li>
+        <li>Updated 300+ GoHighLevel contact records and pipeline stages, with the latest action logged so sales follow-up never depended on memory.</li>
+        <li>Reorganized the client's Drive into five owner-approved folders and a date-first naming system, reducing repeated file-location questions from several each week to fewer than one.</li>
+        <li>Wrote the SOP for weekly owner reporting after a missed deadline, then trained the incoming VA on it.</li>
+        <li>Produced a Friday operations dashboard in Google Sheets covering leads, appointments, unpaid invoices and overdue follow-ups for Monday planning.</li>
+        <li>Compared four maintenance vendors by price, availability, insurance and response time in a one-page recommendation the owner approved.</li>
+        <li>Handled 10-15 weekly tenant and supplier calls, recorded the outcome in GoHighLevel and escalated safety or payment issues within 15 minutes.</li>
+      </ul>
+      <div class="job">Administrative Officer, FirstCredit Lending Corporation<i>Cebu City | Mar 2019 - Present</i></div>
+      <ul>
+        <li>Logged 30-40 client inquiries a day across phone, email and Facebook in the branch system on the same day.</li>
+        <li>Kept more than 800 active loan files current in physical and digital form.</li>
+        <li>Built a checking template that took reporting errors to zero across six consecutive audits.</li>
+        <li>Sent a daily collection report in Excel to a 10 AM head-office cutoff.</li>
+      </ul>
+      <p class="more">The document continues with the rest of this job and three more, 50 bullets in total, then Tools and Education.</p>
+      <button type="button" class="expand">Read the whole document</button>
+    </article>
+
+    <article class="paper doc clamped" id="doc-4" role="tabpanel" aria-labelledby="tab-4">
+      <div class="doc-bar"><span class="doc-icon" aria-hidden="true"></span><b>Remote VA Portfolio and Role Expansion Path</b><span class="doc-kind">Google Doc · yours to edit</span></div>
+      <div class="stamp">Fictional example</div>
+      <h3 class="doc-title">Maria Luz Santos - Remote VA Portfolio and Role Expansion Path</h3>
+      <p>This plan uses General Admin VA as your strongest starting point. It also prepares you for Customer Support VA. Social Media VA is not ready to plan yet because Messenger use alone does not prove content work.</p>
+      <p>Real work is the first choice. A simulation is the last safe fallback. Never invent a client, permission, access, result or testimonial.</p>
+      <h4>1. Your starting point</h4>
+      <p>Your current resume already proves:</p>
+      <ul>
+        <li>25-35 weekly inquiries through Gmail and Facebook Messenger</li>
+        <li>18-25 weekly tutoring sessions coordinated in Google Calendar</li>
+        <li>more than 200 active student records maintained in Google Sheets</li>
+        <li>weekly attendance and payment follow-up reporting for an owner</li>
+        <li>30-40 weekly appointments coordinated by phone and email</li>
+        <li>Excel records, monthly purchase summaries and receipt filing</li>
+        <li>Drive folder organization and a one-page procedure used to train two people</li>
+      </ul>
+      <p>These are real administrative foundations. They do not yet prove shared-inbox triage, invoicing ownership, CRM work, research recommendations, ticketing, service targets or customer outcomes.</p>
+      <h4>2. Your role expansion map</h4>
+      <h5>Start now: General Admin VA</h5>
+      <p>Transferable proof: calendars, records, follow-up, phone, email, spreadsheets, Drive organization, reports and procedure writing.</p>
+      <p>Proof still missing or thin: supplier research and recommendation writing, shared-inbox priority rules and invoicing authority.</p>
+      <h5>Build next: Customer Support VA</h5>
+      <p>Transferable proof: inquiry handling, appointment calls, accurate records, follow-up lists, clear procedures and multi-channel communication.</p>
+      <p>Proof still missing: ticketing or CRM cases, escalation ownership, first-reply or resolution targets, difficult-conversation outcomes, order or refund support and issue-pattern reporting.</p>
+      <h5>Wait: Social Media VA</h5>
+      <p>Do not build a Social Media resume yet. First complete real content-planning, publishing and analytics work with permission. Messenger use remains a communication channel, not evidence of social media operations.</p>
+      <h4>3. Recover proof first</h4>
+      <p>Before starting new work, build one private evidence sheet with these columns: date or period, situation, work completed, tool, approximate volume, approval boundary, outcome, source record and public-use permission.</p>
+      <p>Recover these examples from your existing work:</p>
+      <ol>
+        <li>One schedule change that could have caused a conflict. Record the number of sessions involved, what you checked and who approved any exception.</li>
+        <li>One incomplete student or patient record that you followed to closure. Record the follow-up steps and final status without copying private data.</li>
+        <li>The Drive reorganization. Save a redacted before-and-after folder map and the naming rule, not real student files.</li>
+        <li>The rescheduling procedure. Keep a redacted copy and record how the two new coordinators used it.</li>
+        <li>The weekly attendance and payment follow-up report. Recreate its structure with safe sample data and label the sample clearly.</li>
+      </ol>
+      <p>Ask the real owner before showing any redacted work publicly. Redaction does not replace permission.</p>
+      <p class="skip">Sections 4 and 5 are in the full document: your freelancer foundation and your Real Experience Route.</p>
+      <h4>6. Project A - General Admin back-office reset</h4>
+      <h5>Why this helps</h5>
+      <p>This project turns your existing calendar, records, files, follow-up and SOP skills into one client-ready workflow. It also builds the missing research and summary proof.</p>
+      <h5>Bounded scope</h5>
+      <p>Complete one two-week reset covering:</p>
+      <ul>
+        <li>one inquiry list or shared inbox triage map</li>
+        <li>one task and follow-up tracker</li>
+        <li>one Drive folder and naming structure</li>
+        <li>one weekly owner update</li>
+        <li>one short SOP</li>
+        <li>one supplier comparison and recommendation</li>
+      </ul>
+      <p class="more">The document continues with the rest of Project A, Project B for Customer Support, turning completed work into proof, and the recommended order. 10 sections in total.</p>
+      <button type="button" class="expand">Read the whole document</button>
+    </article>
+
+    <article class="paper doc clamped" id="doc-5" role="tabpanel" aria-labelledby="tab-5">
+      <div class="doc-bar"><span class="doc-icon" aria-hidden="true"></span><b>Matched Jobs Success Guide</b><span class="doc-kind">Google Doc · yours to edit</span></div>
+      <div class="stamp">Fictional example</div>
+      <h3 class="doc-title">Maria Luz Santos - Matched Jobs Success Guide</h3>
+      <h4>Your target direction</h4>
+      <p>Your strongest starting direction is General Admin VA. Your current resume already proves calendar coordination, record maintenance, follow-up reporting, phone and email appointments, spreadsheets, file organization and procedure writing.</p>
+      <p>Customer Support VA is a realistic future direction. Social Media VA is not ready to plan yet because Messenger use does not prove content planning, publishing, analytics or campaign work.</p>
+      <h4>Important snapshot warning</h4>
+      <p>Job listings can close or change without notice. Open the application page immediately before applying and check the location, schedule, compensation, contract type and required experience again.</p>
+      <h4>Current General Admin result: coverage gap</h4>
+      <p>The current approved board does not contain a General Admin role that this resume can honestly recommend for application.</p>
+      <h4>Priority recommendation</h4>
+      <p>Finish the two resume actions, recover existing administrative proof and complete the General Admin project before the next board review. Treat the Email Customer Service listing below as a future role to study, not an application recommendation.</p>
+      <h5>What to do instead</h5>
+      <ol>
+        <li>Finish the two resume actions.</li>
+        <li>Complete the research-summary project in your Learning Path.</li>
+        <li>Build one real, bounded General Admin project with written permission.</li>
+        <li>Keep checking the live board for General Admin or junior operations roles that accept candidates in Cebu and do not require direct industry systems.</li>
+      </ol>
+      <h4>Role to study and prepare for: Email Customer Service Representative</h4>
+      <p>Organization: <i>online eyewear retailer, remote (the name and application link are in the real document)</i></p>
+      <p>Decision: <strong>DO NOT APPLY YET.</strong> Use this as a Customer Support role to study.</p>
+      <h5>Why this future role is worth studying</h5>
+      <p>Your resume already shows 25-35 weekly Gmail and Messenger inquiries, phone and email appointment coordination, accurate records, follow-up lists and cross-channel communication. Those are useful foundations for written support.</p>
+      <p>The role could advance you from administrative inquiry handling into a measured email-support workflow with case records, response targets, escalations and cross-team resolution.</p>
+      <h5>Hard blockers before any application</h5>
+      <ul>
+        <li>Your resume does not prove e-commerce or retail email support.</li>
+        <li>It does not prove high email volume against a service-level target.</li>
+        <li>It does not prove order, shipping, refund or product-issue resolution.</li>
+        <li>It does not prove a CRM or help-desk platform.</li>
+        <li>It does not prove escalation work with logistics teams across markets.</li>
+        <li>The role requires one of three Shanghai-time shifts. Confirm that a specific shift is sustainable before considering a future application.</li>
+      </ul>
+      <h5>What a successful workday looks like</h5>
+      <p>A strong representative reads the complete email, checks the customer and order record, identifies the real question, writes a clear reply, records the interaction and keeps the case open until the shipment, refund, product or logistics action is resolved. Complex cases are handed off with complete notes instead of a vague escalation.</p>
+      <h5>Worked task scenario: delayed order email</h5>
+      <ol>
+        <li>Read the full customer message and identify the promised delivery date, order reference and requested outcome.</li>
+        <li>Verify the order and shipping record in the approved system. Do not ask for payment details or copy private customer data into a public tool.</li>
+        <li>Check the latest carrier or logistics status and the company's approved response rule.</li>
+        <li>Reply with the verified status, the next action and a realistic update time.</li>
+        <li>Record the reason, evidence checked, reply sent and next owner in the case.</li>
+        <li>Escalate only the exception, with the complete timeline and requested decision.</li>
+        <li>Keep the case open until the promised update or resolution is recorded.</li>
+      </ol>
+      <p class="more">The document continues with subtle mistakes to avoid, the truthful application preparation sequence, when to skip a listing, and truthful tailoring and follow-up.</p>
+      <button type="button" class="expand">Read the whole document</button>
+    </article>
+
+    <article class="paper doc clamped" id="doc-6" role="tabpanel" aria-labelledby="tab-6">
+      <div class="doc-bar"><span class="doc-icon" aria-hidden="true"></span><b>AI Career Coach Project Starter Guide</b><span class="doc-kind">Google Doc · yours to edit</span></div>
+      <div class="stamp">Fictional example</div>
+      <h3 class="doc-title">Maria Luz Santos - AI Career Coach Project Starter Guide</h3>
+      <p>Set this up once in ChatGPT or Claude. After that, the AI guides you by asking one question at a time. You remain responsible for what is true and what is sent.</p>
+      <h4>Set it up in six simple steps</h4>
+      <ol>
+        <li>Create one private Project named <code>Maria Santos - AI Career Coach</code>.</li>
+        <li>Download the five documents below as PDFs and upload all five PDFs to the Project.</li>
+        <li>Copy everything between START COPYING HERE and STOP COPYING HERE into the Project Instructions box.</li>
+        <li>Start one new chat inside the Project.</li>
+        <li>Type the start command shown below.</li>
+        <li>Answer one question at a time in that chat until the current stage is done.</li>
+      </ol>
+      <h4>Upload these five files</h4>
+      <ol>
+        <li>Resume Draft - working file.</li>
+        <li>Resume Review Checklist - working file.</li>
+        <li>50-Bullet Rockstar General Admin VA Resume - fictional reference only.</li>
+        <li>Remote VA Portfolio and Role Expansion Path - reference plan.</li>
+        <li>Matched Jobs Success Guide - current snapshot and preparation guide.</li>
+      </ol>
+      <p>The first two are working files. The other three are references. The Rockstar Resume is fictional. Its employers, tools, numbers and results do not belong to you.</p>
+      <h4>Project Instructions</h4>
+      <div class="copybox">
+        <div class="copy-rule">Start copying here</div>
+        <p>You are Maria Luz Santos's evidence-safe AI Career Coach. Guide Maria through job search, work readiness and skill growth by asking one clear question at a time. Keep replies brief and practical. Do not show the whole roadmap unless Maria asks for it.</p>
+        <p>Use the Project files this way:</p>
+        <ul>
+          <li>Resume Draft: Maria's current resume. Any unresolved marker is not yet a fact.</li>
+          <li>Resume Review Checklist: the instructions for completing or deleting each resume marker.</li>
+          <li>Rockstar Resume: a fictional writing example only. Never transfer its employers, tools, numbers, duties or results to Maria.</li>
+          <li>Learning Path: the plan for building real proof and future skills. Training and simulations are practice, not employment.</li>
+          <li>Matched Jobs Guide: job examples and preparation guidance. Recheck the original live listing before recommending an application.</li>
+        </ul>
+        <p>When Maria types <code>Start my career plan</code>:</p>
+        <ol>
+          <li>Confirm that all five Project files are available. If one is missing, ask for only that file.</li>
+          <li>Begin with the Resume Draft and Resume Review Checklist.</li>
+          <li>Count the unresolved resume markers. The approved working draft currently has 2 unresolved markers.</li>
+          <li>Ask the first checklist question and wait for the answer.</li>
+          <li>Classify the answer as VERIFIED, CONFIRM or DELETE.</li>
+          <li>Do not rewrite the complete resume until every marker has been answered or deleted.</li>
+          <li>When the resume is finished, give a final check and a short Career Progress Summary to save.</li>
+        </ol>
+        <p>Truth rules:</p>
+        <ul>
+          <li>Use only facts supported by Maria's files or confirmed directly by Maria.</li>
+          <li>Never invent experience, clients, tools, channels, workload, numbers, results, schedules, credentials, job requirements or permission.</li>
+          <li>A job listing proves what the employer wants. It does not prove Maria has it.</li>
+          <li>If a claim cannot be verified, help remove it or use modest wording.</li>
+          <li>Keep training, simulations and portfolio exercises clearly labelled as practice.</li>
+          <li>New resume evidence must come from real completed work, a checkable measure or genuine feedback.</li>
+        </ul>
+        <p class="faded">The instruction block continues with the stage order, privacy and authority rules, the SAVE THIS block, and the three job decisions: APPLY NOW, CHECK FIRST, DO NOT APPLY YET.</p>
+        <div class="copy-rule end">Stop copying here</div>
+      </div>
+      <h4>Start your first chat</h4>
+      <div class="cmd">Start my career plan. Check my uploaded Resume Draft and Resume Review Checklist, then ask me only the first question.</div>
+      <h4>The correct first response</h4>
+      <p>The AI should confirm that both working files are present, count 2 unresolved resume markers, ask only the phone-number checklist question and wait. It must not use the Rockstar example as evidence about you.</p>
+      <p>If it gives a long plan, paste:</p>
+      <div class="cmd">One question only. Use my checklist and ask the first unresolved resume question.</div>
+      <h4>Quick safety repair</h4>
+      <p>If the AI invents something or asks you to guess, paste:</p>
+      <div class="cmd">Stop. Show which uploaded file or confirmed answer supports each claim. Remove anything unsupported, keep practice separate from employment, and ask me only the next question.</div>
+      <p class="more">The full document also lists useful later commands and how to save your progress between stages.</p>
+      <button type="button" class="expand">Read the whole document</button>
+    </article>
+
   </div>
-  <div class="doclist">
-    <h3>Also in the same email</h3>
-    <ol>
-      <li><strong>Review checklist</strong>Tells you how to fill every marker in your own words, without guessing.</li>
-      <li><strong>Rockstar example</strong>A strong resume in your target role, written as an example to study. Not yours, and not a template to copy.</li>
-    </ol>
-    <p class="inline-cta">All six arrive in one email, and all six are yours to edit. <a href="https://tally.so/r/ODyPJ8" data-cta="sample">Submit your resume</a></p>
-  </div>
+  <p class="inline-cta">All six arrive in one email, and all six are yours to edit. <a href="https://tally.so/r/ODyPJ8" data-cta="sample">Submit your resume</a></p>
 </div></section>
 
 <section><div class="wrap">
@@ -344,6 +616,26 @@ footer{padding:34px 0 46px;color:var(--text-soft);font-size:13px}
   document.addEventListener('click',function(ev){
     var a=ev.target.closest&&ev.target.closest('a[data-cta]');
     if(a&&typeof gtag==='function'){gtag('event','cta_click',{cta_location:a.getAttribute('data-cta'),transport_type:'beacon'})}
+  });
+  var tabs=[].slice.call(document.querySelectorAll('.doc-card[role="tab"]'));
+  var panels=[].slice.call(document.querySelectorAll('.viewer .doc'));
+  var select=function(i){
+    tabs.forEach(function(t,j){var on=j===i;t.setAttribute('aria-selected',on?'true':'false');t.tabIndex=on?0:-1});
+    panels.forEach(function(p,j){p.classList.toggle('active',j===i)});
+  };
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){select(i)});
+    t.addEventListener('keydown',function(e){
+      var n=null;
+      if(e.key==='ArrowRight'||e.key==='ArrowDown')n=(i+1)%tabs.length;
+      else if(e.key==='ArrowLeft'||e.key==='ArrowUp')n=(i-1+tabs.length)%tabs.length;
+      else if(e.key==='Home')n=0;else if(e.key==='End')n=tabs.length-1;
+      if(n!==null){e.preventDefault();select(n);tabs[n].focus()}
+    });
+  });
+  document.addEventListener('click',function(ev){
+    var b=ev.target.closest&&ev.target.closest('.expand');
+    if(b){var p=b.closest('.doc');if(p){p.classList.remove('clamped')}b.remove()}
   });
 })();
 </script>
