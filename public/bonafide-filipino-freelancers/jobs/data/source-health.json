@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-01T01:51:00",
+  "generated_at": "2026-09-02T01:03:27",
   "sources": [
     {
       "source": "MultiplyMii",
       "status": "ok",
-      "fetched_count": 55,
-      "accepted_count": 2,
+      "fetched_count": 54,
+      "accepted_count": 4,
       "last_error": ""
     },
     {
@@ -18,8 +18,8 @@
     {
       "source": "Extend Your Team",
       "status": "ok",
-      "fetched_count": 40,
-      "accepted_count": 0,
+      "fetched_count": 41,
+      "accepted_count": 1,
       "last_error": ""
     },
     {
@@ -32,15 +32,15 @@
     {
       "source": "Clipboard Health",
       "status": "ok",
-      "fetched_count": 34,
+      "fetched_count": 35,
       "accepted_count": 0,
       "last_error": ""
     },
     {
       "source": "Workable",
       "status": "ok",
-      "fetched_count": 60,
-      "accepted_count": 14,
+      "fetched_count": 55,
+      "accepted_count": 12,
       "last_error": ""
     },
     {
@@ -67,7 +67,7 @@
     {
       "source": "Remotive",
       "status": "ok",
-      "fetched_count": 19,
+      "fetched_count": 18,
       "accepted_count": 0,
       "last_error": ""
     },
