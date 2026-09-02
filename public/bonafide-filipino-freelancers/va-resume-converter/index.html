@@ -67,7 +67,7 @@ h2{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--primary);fo
 .section-sub{color:var(--text-soft);max-width:640px;margin-bottom:24px}
 
 /* Paper sample */
-.grid2{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:28px;align-items:start}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:26px;align-items:start}
 .paper{background:#fff;border:1px solid var(--border);border-radius:4px;padding:28px 26px 24px;box-shadow:0 12px 32px rgba(74,58,106,.10);position:relative;font-size:clamp(11px,3.2vw,14px);line-height:1.5;color:var(--text);max-width:100%;overflow-wrap:anywhere}
 .stamp{position:absolute;top:14px;right:14px;border:2px solid var(--accent);color:var(--accent-deep);font-size:10px;letter-spacing:.18em;font-weight:700;text-transform:uppercase;padding:4px 8px;border-radius:3px;transform:rotate(-4deg);background:#fff}
 .paper-name{font-family:'Cormorant Garamond',serif;font-size:2.1em;font-weight:700;color:var(--primary);letter-spacing:.02em;line-height:1.05;margin-bottom:2px;padding-right:120px}
@@ -80,15 +80,36 @@ h2{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--primary);fo
 .paper .job{font-weight:600;color:var(--primary-deep);margin-bottom:4px}
 .paper .job i{display:block;font-weight:400;font-style:normal;color:var(--text-soft);font-size:.92em}
 .paper .more{margin-top:14px;font-size:.9em;color:var(--text-soft);font-style:italic}
-.callouts{list-style:none;display:grid;gap:14px;position:sticky;top:96px}
-.callouts li{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px 18px;font-size:14.5px;line-height:1.55;color:var(--text-soft);display:grid;grid-template-columns:28px 1fr;gap:12px}
-.callouts .n{width:28px;height:28px;border-radius:999px;background:var(--primary-soft);color:var(--primary);font-weight:700;font-size:13px;display:inline-flex;align-items:center;justify-content:center}
-.callouts strong{display:block;color:var(--primary);margin-bottom:3px;font-size:15px}
+.docstack{display:grid;gap:16px}
+.mini{background:#fff;border:1px solid var(--border);border-radius:4px;box-shadow:0 8px 24px rgba(74,58,106,.08);font-size:12.5px;line-height:1.5;color:var(--text);overflow:hidden}
+.mini-head{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:9px 14px;background:var(--primary-soft);border-bottom:1px solid var(--border);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--primary)}
+.mini-head span{font-weight:600;letter-spacing:0;text-transform:none;color:var(--text-soft);font-size:11.5px;white-space:nowrap}
+.mini-body{padding:14px 16px 15px}
+.mini h4{font-size:13.5px;font-weight:700;color:var(--primary-deep);margin:0 0 7px}
+.mini p{margin:0 0 8px;color:var(--text-soft)}
+.mini p:last-child{margin-bottom:0}
+.mini b{color:var(--text);font-weight:600}
+.tagrow{display:grid;gap:7px;margin-bottom:10px}
+.tagrow>div{display:grid;grid-template-columns:82px 1fr;gap:10px;align-items:start;color:var(--text-soft)}
+.tag{display:inline-block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;padding:3px 7px;border-radius:999px;white-space:nowrap;line-height:1.2}
+.tag-go{background:#e6f1ea;color:var(--sage)}
+.tag-next{background:#fbf1e3;color:var(--accent-deep)}
+.tag-wait{background:#ecebea;color:var(--text-soft)}
+.tag-stop{background:#f6e6e3;color:#8a3f33}
+.jobcard{border:1px solid var(--border);border-radius:6px;padding:10px 12px;margin-bottom:9px;background:var(--bg)}
+.jobcard strong{display:block;color:var(--primary-deep);font-size:13px;margin-bottom:5px}
+.jobcard strong i{display:block;font-style:normal;font-weight:400;color:var(--text-soft);font-size:12px}
+.jobcard .tag{margin:0 4px 8px 0}
+.chat{display:grid;gap:8px;margin:10px 0}
+.bubble{padding:8px 11px;border-radius:10px;max-width:92%}
+.bubble small{display:block;font-size:9.5px;opacity:.7;margin-bottom:2px;text-transform:uppercase;letter-spacing:.08em}
+.bubble.you{background:var(--primary);color:#fff;justify-self:end;border-bottom-right-radius:3px}
+.bubble.ai{background:var(--bg);color:var(--text);justify-self:start;border-bottom-left-radius:3px;border:1px solid var(--border)}
 
 /* Six documents */
 .doclist{margin-top:34px}
 .doclist h3{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--primary);font-weight:600;margin-bottom:12px}
-.doclist ol{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 18px;counter-reset:doc}
+.doclist ol{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 18px;counter-reset:doc 1}
 .doclist li{counter-increment:doc;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 14px 12px 46px;position:relative;font-size:13.5px;line-height:1.5;color:var(--text-soft)}
 .doclist li::before{content:counter(doc);position:absolute;left:12px;top:12px;width:24px;height:24px;border-radius:999px;background:var(--primary-soft);color:var(--primary);font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center}
 .doclist strong{display:block;color:var(--primary);font-size:14.5px;margin-bottom:2px}
@@ -131,7 +152,6 @@ footer{padding:34px 0 46px;color:var(--text-soft);font-size:13px}
 @media(max-width:860px){
   body{padding-bottom:72px}
   .grid2,.ba,.doclist ol{grid-template-columns:1fr}
-  .callouts{position:static}
   .flow-steps{grid-template-columns:1fr 1fr}
   .flow-step::after{display:none}
   h1{font-size:34px}
@@ -177,7 +197,7 @@ footer{padding:34px 0 46px;color:var(--text-soft);font-size:13px}
 
 <section id="sample"><div class="wrap">
   <h2>See what comes back</h2>
-  <p class="section-sub">This is document 1 of 6, shown on a fictional applicant. Every line on it traces to something she said she did.</p>
+  <p class="section-sub">Six Google Docs, shown here for a fictional applicant. The resume is document 1. Beside it, three of the five documents that arrive with it.</p>
   <div class="grid2">
     <div class="paper" aria-label="Sample resume, fictional example">
       <div class="stamp">Fictional example</div>
@@ -207,23 +227,59 @@ footer{padding:34px 0 46px;color:var(--text-soft);font-size:13px}
         <li>Backup internet: Smart mobile data</li>
         <li>Equipment: Windows laptop, 16 GB RAM, headset</li>
       </ul>
-      <p class="more">The full page continues with two more jobs, a Learning Next block, Tools and Education.</p>
+      <h3>Learning next: skills I already use, in tools I have not used yet</h3>
+      <ul>
+        <li>Payment-status tracking and follow-up, which I do today in spreadsheets and owner reports. Eager to learn the same workflow in QuickBooks Online after a supervised practice project.</li>
+        <li>Inquiry handling and status updates, which I do today in Gmail, Messenger and Sheets. Eager to learn the same work in a CRM after a practice project.</li>
+      </ul>
+      <p class="more">The full page continues with two more jobs, Tools and Education.</p>
     </div>
-    <ol class="callouts">
-      <li><span class="n">1</span><div><strong>Core Skills come first.</strong>The summary paragraph is gone. Every applicant's summary reads the same, and it costs the best inches on the page.</div></li>
-      <li><span class="n">2</span><div><strong>Markers where only you know the number.</strong>The draft asks instead of inventing a plausible figure. You fill it in, or you delete the bracket.</div></li>
-      <li><span class="n">3</span><div><strong>Work Setup is added.</strong>Of the 48 resumes we studied to build this, only 5 mentioned internet or computer. VA job posts always ask.</div></li>
-    </ol>
+    <div class="docstack">
+      <article class="mini" aria-label="Sample learning path, fictional example">
+        <div class="mini-head">Learning path <span>Doc 4 of 6</span></div>
+        <div class="mini-body">
+          <h4>Your role expansion map</h4>
+          <div class="tagrow">
+            <div><span class="tag tag-go">Start now</span><div><b>General Admin VA.</b> Calendars, records, follow-up, spreadsheets and procedure writing are already proven.</div></div>
+            <div><span class="tag tag-next">Build next</span><div><b>Customer Support VA.</b> Still missing: ticket or CRM cases, escalation ownership, response targets.</div></div>
+            <div><span class="tag tag-wait">Wait</span><div><b>Social Media VA.</b> Messenger use is a communication channel, not proof of content work.</div></div>
+          </div>
+          <p><b>Project A, General Admin back-office reset.</b> Two weeks, six files a client can inspect, written permission first. Label it by what really happened: Pro Bono, Volunteer, Freelance or Portfolio Simulation.</p>
+        </div>
+      </article>
+      <article class="mini" aria-label="Sample matched jobs guide, fictional example">
+        <div class="mini-head">Matched jobs <span>Doc 5 of 6</span></div>
+        <div class="mini-body">
+          <h4>Current General Admin result: coverage gap</h4>
+          <p>The board has no General Admin role this resume can honestly recommend today. The guide says so instead of forcing one.</p>
+          <div class="jobcard">
+            <strong>Email Customer Service Representative <i>Remote, e-commerce store</i></strong>
+            <span class="tag tag-stop">Do not apply yet</span><span class="tag tag-wait">A role to study</span>
+            <p><b>Why it is worth studying:</b> 25 to 35 weekly Gmail and Messenger inquiries are a real foundation for written support.</p>
+            <p><b>Hard blockers:</b> no e-commerce email support, no CRM or help desk, and one of three Shanghai-time shifts.</p>
+          </div>
+          <p>Every listing gets one decision: Apply now, Check first, or Do not apply yet. Recheck the live posting before you apply.</p>
+        </div>
+      </article>
+      <article class="mini" aria-label="Sample AI career coach guide, fictional example">
+        <div class="mini-head">AI career coach guide <span>Doc 6 of 6</span></div>
+        <div class="mini-body">
+          <h4>Set it up once in ChatGPT or Claude</h4>
+          <p>Upload the five documents, paste the instructions, type the start command. After that it asks one question at a time.</p>
+          <div class="chat">
+            <div class="bubble you"><small>You</small>Start my career plan. Check my Resume Draft and Review Checklist, then ask me only the first question.</div>
+            <div class="bubble ai"><small>AI coach</small>Both working files are here. Your draft has 2 unresolved markers. First question: which phone number should a client use? If you would rather leave it off, say so and I will remove the bracket.</div>
+          </div>
+          <p>Its truth rule is written in: it may use only what your files or your answers prove. If it ever invents something, one pasted line resets it.</p>
+        </div>
+      </article>
+    </div>
   </div>
   <div class="doclist">
-    <h3>That is document 1 of 6</h3>
+    <h3>Also in the same email</h3>
     <ol>
-      <li><strong>Your resume</strong>Rebuilt for one role. One page when it fits, two at most. Edit it, then download it as PDF or Word.</li>
       <li><strong>Review checklist</strong>Tells you how to fill every marker in your own words, without guessing.</li>
       <li><strong>Rockstar example</strong>A strong resume in your target role, written as an example to study. Not yours, and not a template to copy.</li>
-      <li><strong>Learning path</strong>Practice tasks that build proof you can show a client, and the exact line you may add the day you finish each one.</li>
-      <li><strong>Matched jobs</strong>Current remote positions from our job board, with a plain note on where your evidence fits and where it does not yet. If no safe match exists, it says so.</li>
-      <li><strong>AI career coach guide</strong>Turns the five documents above into your own private ChatGPT or Claude project, so you can finish the resume one question at a time.</li>
     </ol>
     <p class="inline-cta">All six arrive in one email, and all six are yours to edit. <a href="https://tally.so/r/ODyPJ8" data-cta="sample">Submit your resume</a></p>
   </div>
