@@ -9,7 +9,8 @@ type: "note"
 topics: ["health", "faith-theology", "learning-in-public"]
 date: 2024-05-09
 description: "My spine decided to act abnormally for two days. Severe nerve pain, helplessness, prayers, and a small reminder that Christ meets us even when all we can do is wait."
-image: "https://res.cloudinary.com/dimapmlre/image/upload/v1778784394/state-heroes/writings-v1-the-day-my-spine-acted-abnormally.jpg"
+image: "/state-heroes/writings-v2-the-day-my-spine-acted-abnormally.webp"
+thumbnailTreatment: "blur-contain"
 ---
 
 For two days, my spine decided to act abnormally.

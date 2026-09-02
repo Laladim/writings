@@ -4,7 +4,8 @@ type: "reflection"
 topics: ["health", "faith-theology"]
 date: 2024-03-20
 description: "This is personal. It is scary to go public and tell people that I am a rare-disease survivor. These sicknesses do not define me. My mission is to bring the hope that comes from God alone."
-image: "https://res.cloudinary.com/dimapmlre/image/upload/v1778784048/state-heroes/writings-v1-i-am-a-rare-disease-survivor.jpg"
+image: "/state-heroes/writings-v2-i-am-a-rare-disease-survivor.webp"
+thumbnailTreatment: "blur-contain"
 ---
 
 This is personal.
