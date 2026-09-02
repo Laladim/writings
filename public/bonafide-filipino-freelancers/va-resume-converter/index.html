@@ -3,26 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Free Virtual Assistant Resume Converter for Filipinos</title>
-<meta name="description" content="A free virtual assistant resume converter for Filipino applicants, including those with no VA experience yet. Get a resume rebuilt for one target role, a worked example, matched VA jobs, and a learning path. Every claim traces to real experience.">
+<title>Free Virtual Assistant Resume Converter, No VA Experience Needed</title>
+<meta name="description" content="Free virtual assistant resume converter for applicants in any country, no VA experience needed. One target role, nothing invented, six documents in one email.">
 <link rel="canonical" href="https://writingsbylala.com/bonafide-filipino-freelancers/va-resume-converter/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://writingsbylala.com/bonafide-filipino-freelancers/va-resume-converter/">
-<meta property="og:title" content="Free Virtual Assistant Resume Converter for Filipinos">
-<meta property="og:description" content="A free virtual assistant resume converter for Filipino applicants, including those with no VA experience yet. One target role, a worked example, matched jobs, and a learning path.">
-<meta property="og:image" content="https://writingsbylala.com/bonafide-filipino-freelancers/og-image.png">
+<meta property="og:title" content="Free Virtual Assistant Resume Converter, No VA Experience Needed">
+<meta property="og:description" content="Send the resume you have today, from any country. It comes back rebuilt for one virtual assistant role, in the words a US client searches for, with nothing invented.">
+<meta property="og:image" content="https://writingsbylala.com/bonafide-filipino-freelancers/va-resume-converter/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Free Virtual Assistant Resume Converter. No VA experience needed. Nothing invented.">
 <meta property="og:site_name" content="Bonafide Filipino Freelancers">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Free Virtual Assistant Resume Converter for Filipinos">
-<meta name="twitter:description" content="A free virtual assistant resume converter for Filipino applicants, including those with no VA experience yet. One target role, a worked example, matched jobs, and a learning path.">
-<meta name="twitter:image" content="https://writingsbylala.com/bonafide-filipino-freelancers/og-image.png">
+<meta name="twitter:title" content="Free Virtual Assistant Resume Converter, No VA Experience Needed">
+<meta name="twitter:description" content="Send the resume you have today, from any country. It comes back rebuilt for one virtual assistant role, in the words a US client searches for, with nothing invented.">
+<meta name="twitter:image" content="https://writingsbylala.com/bonafide-filipino-freelancers/va-resume-converter/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--primary:#5a4a7a;--primary-deep:#4a3a6a;--primary-soft:#f3eef7;--accent:#c8985f;--accent-deep:#a88d5e;--bg:#f5f1f0;--surface:#ffffff;--text:#3a3a3a;--text-soft:#6b6565;--border:#e0dbd8;--sage:#5a8a72}
 *{box-sizing:border-box;margin:0;padding:0}
-html{overflow-x:hidden}
+html{overflow-x:hidden;scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.55}
 a{color:inherit}
 .topnav{position:sticky;top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);z-index:50}
@@ -33,29 +36,116 @@ a{color:inherit}
 .nav-links a{color:var(--text-soft);text-decoration:none;white-space:nowrap}
 .nav-links a:hover{color:var(--primary)}
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* Hero */
 .hero{padding:56px 0 40px;border-bottom:1px solid var(--border);background:linear-gradient(180deg,#fdfbfa 0%,var(--bg) 100%)}
 .eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-deep);font-weight:700;margin-bottom:10px}
 h1{font-family:'Cormorant Garamond',serif;font-size:46px;line-height:1.05;font-weight:600;color:var(--primary);margin-bottom:14px}
-.hero p.lead{max-width:660px;color:var(--text-soft);font-size:18px}
-.cta{display:inline-block;margin-top:26px;background:var(--primary);color:#fff;text-decoration:none;font-weight:700;font-size:15px;border-radius:8px;padding:14px 26px}
+.hero p.lead{max-width:640px;color:var(--text-soft);font-size:18px}
+.cta{display:inline-flex;flex-direction:column;align-items:center;gap:2px;margin-top:26px;background:var(--primary);color:#fff;text-decoration:none;font-weight:700;font-size:16px;line-height:1.2;border-radius:8px;padding:14px 28px}
 .cta:hover{background:var(--primary-deep)}
-.window-note{margin-top:14px;font-size:13px;color:var(--text-soft)}
+.btn-note{font-size:12px;font-weight:500;opacity:.85;letter-spacing:.02em}
+.hero-sub{display:block;margin-top:14px;font-size:14.5px;font-weight:600;color:var(--primary)}
+.window-note{margin-top:16px;font-size:13.5px;color:var(--text-soft)}
+.community{margin-top:8px;font-size:13px;color:var(--text-soft)}
+.community a{color:var(--primary);font-weight:600}
+
+/* Before and after strip */
+.strip{background:var(--surface);border-bottom:1px solid var(--border);padding:26px 0}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ba-row{border:1px solid var(--border);border-radius:8px;padding:14px 16px;font-size:15px;line-height:1.5}
+.ba-row.before{background:var(--bg);color:var(--text-soft)}
+.ba-row.after{background:var(--primary-soft);color:var(--primary-deep);border-color:#d8cbe6}
+.ba-label{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--accent-deep);margin-bottom:4px}
+.ba-caption{margin-top:12px;font-size:13.5px;color:var(--text-soft);max-width:720px}
+mark{background:#fff3c4;color:#5a4400;padding:0 3px;border-radius:2px;font-weight:600}
+
+/* Sections */
 section{padding:44px 0;border-bottom:1px solid var(--border)}
+#sample{scroll-margin-top:72px}
 h2{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--primary);font-weight:600;margin-bottom:8px}
 .section-sub{color:var(--text-soft);max-width:640px;margin-bottom:24px}
-.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:18px}
-.card strong{display:block;color:var(--primary);font-size:15px;margin-bottom:7px}
-.card span{display:block;color:var(--text-soft);font-size:13.5px;line-height:1.5}
-.step-num{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:999px;background:var(--primary-soft);color:var(--primary);font-weight:700;font-size:13px;margin-bottom:9px}
+
+/* Paper sample */
+.grid2{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:28px;align-items:start}
+.paper{background:#fff;border:1px solid var(--border);border-radius:4px;padding:28px 26px 24px;box-shadow:0 12px 32px rgba(74,58,106,.10);position:relative;font-size:clamp(11px,3.2vw,14px);line-height:1.5;color:var(--text);max-width:100%;overflow-wrap:anywhere}
+.stamp{position:absolute;top:14px;right:14px;border:2px solid var(--accent);color:var(--accent-deep);font-size:10px;letter-spacing:.18em;font-weight:700;text-transform:uppercase;padding:4px 8px;border-radius:3px;transform:rotate(-4deg);background:#fff}
+.paper-name{font-family:'Cormorant Garamond',serif;font-size:2.1em;font-weight:700;color:var(--primary);letter-spacing:.02em;line-height:1.05;margin-bottom:2px;padding-right:120px}
+.paper-role{font-weight:600;color:var(--primary-deep)}
+.paper-meta,.paper-track{color:var(--text-soft);font-size:.92em}
+.paper-track{margin-top:8px;padding-top:8px;border-top:1px solid var(--border)}
+.paper h3{font-size:.82em;letter-spacing:.14em;text-transform:uppercase;color:var(--primary);margin:16px 0 6px;border-bottom:1px solid var(--border);padding-bottom:3px;font-family:'Inter',sans-serif;font-weight:700}
+.paper ul{padding-left:1.1em}
+.paper li{margin-bottom:3px}
+.paper .job{font-weight:600;color:var(--primary-deep);margin-bottom:4px}
+.paper .job i{display:block;font-weight:400;font-style:normal;color:var(--text-soft);font-size:.92em}
+.paper .more{margin-top:14px;font-size:.9em;color:var(--text-soft);font-style:italic}
+.callouts{list-style:none;display:grid;gap:14px;position:sticky;top:96px}
+.callouts li{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px 18px;font-size:14.5px;line-height:1.55;color:var(--text-soft);display:grid;grid-template-columns:28px 1fr;gap:12px}
+.callouts .n{width:28px;height:28px;border-radius:999px;background:var(--primary-soft);color:var(--primary);font-weight:700;font-size:13px;display:inline-flex;align-items:center;justify-content:center}
+.callouts strong{display:block;color:var(--primary);margin-bottom:3px;font-size:15px}
+
+/* Six documents */
+.doclist{margin-top:34px}
+.doclist h3{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--primary);font-weight:600;margin-bottom:12px}
+.doclist ol{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 18px;counter-reset:doc}
+.doclist li{counter-increment:doc;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 14px 12px 46px;position:relative;font-size:13.5px;line-height:1.5;color:var(--text-soft)}
+.doclist li::before{content:counter(doc);position:absolute;left:12px;top:12px;width:24px;height:24px;border-radius:999px;background:var(--primary-soft);color:var(--primary);font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center}
+.doclist strong{display:block;color:var(--primary);font-size:14.5px;margin-bottom:2px}
+.inline-cta{margin-top:22px;font-size:14.5px;color:var(--text-soft)}
+.inline-cta a{color:var(--primary);font-weight:700}
+
+/* How it works */
+.flow-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:8px;position:relative}
+.flow-step{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 16px;position:relative;border-top:3px solid var(--accent)}
+.flow-step .n{font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--accent);font-weight:700;letter-spacing:.15em;margin-bottom:6px;display:block}
+.flow-step h3{font-family:'Cormorant Garamond',serif;color:var(--primary);font-size:20px;font-weight:600;margin-bottom:6px;line-height:1.2}
+.flow-step p{font-size:13.5px;color:var(--text-soft);margin:0;line-height:1.5}
+.flow-step::after{content:"→";position:absolute;right:-14px;top:50%;transform:translateY(-50%);font-size:24px;color:var(--accent);font-weight:700;background:var(--bg);width:24px;text-align:center}
+.flow-step:last-child::after{display:none}
+.chips{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:14px}
+.chips-label{font-size:13.5px;color:var(--text-soft);margin-right:4px}
+.chip{font-size:12px;background:var(--primary-soft);color:var(--primary);padding:4px 10px;border-radius:999px;font-weight:600}
+
+/* Honesty and FAQ */
 .truth{background:#fffaf4;border:1px solid #eadbc4;border-radius:8px;padding:16px 18px;color:var(--primary-deep);font-size:14.5px;line-height:1.6;max-width:820px}
 .truth strong{color:var(--primary)}
 .faq details{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px 18px;margin-bottom:10px}
 .faq summary{cursor:pointer;font-weight:600;color:var(--primary);font-size:15px}
 .faq p{margin-top:10px;color:var(--text-soft);font-size:14px;line-height:1.6}
+
+/* Final band */
+.band{background:var(--primary);color:#fff;text-align:center;padding:64px 0;border-bottom:none}
+.band h2{color:#fff;font-size:36px}
+.band p{color:rgba(255,255,255,.88);max-width:600px;margin:0 auto}
+.cta-inverse{display:inline-flex;flex-direction:column;align-items:center;gap:2px;margin-top:22px;background:#fff;color:var(--primary);text-decoration:none;font-weight:700;font-size:16px;line-height:1.2;border-radius:8px;padding:14px 30px}
+.cta-inverse .btn-note{color:var(--primary-deep)}
+.cta-inverse:hover{background:var(--primary-soft)}
+.band .trust{margin-top:18px;font-size:14px}
+.band .join{margin-top:10px;font-size:14px}
+.band .join a{color:#fff;font-weight:700}
 footer{padding:34px 0 46px;color:var(--text-soft);font-size:13px}
-@media(max-width:860px){.grid3,.grid4{grid-template-columns:1fr}h1{font-size:34px}}
+
+/* Mobile sticky button */
+.sticky-cta{display:none}
+@media(max-width:860px){
+  body{padding-bottom:72px}
+  .grid2,.ba,.doclist ol{grid-template-columns:1fr}
+  .callouts{position:static}
+  .flow-steps{grid-template-columns:1fr 1fr}
+  .flow-step::after{display:none}
+  h1{font-size:34px}
+  .band h2{font-size:30px}
+  .cta,.cta-inverse{width:100%}
+  .paper{padding:22px 18px 20px}
+  .paper-name{padding-right:100px}
+  .sticky-cta{display:block;position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(255,255,255,.97);border-top:1px solid var(--border);padding:8px 16px calc(8px + env(safe-area-inset-bottom));transform:translateY(110%);transition:transform .25s ease}
+  .sticky-cta.show{transform:translateY(0)}
+  .sticky-cta a{display:flex;align-items:center;justify-content:center;gap:10px;min-height:44px;background:var(--primary);color:#fff;text-decoration:none;font-weight:700;font-size:15px;border-radius:8px}
+  .sticky-cta a small{font-weight:500;font-size:12px;opacity:.85}
+}
+@media(max-width:560px){.flow-steps{grid-template-columns:1fr}.stamp{position:static;display:inline-block;transform:rotate(-2deg);margin:0 0 14px 2px}.paper-name{padding-right:0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.sticky-cta{transition:none}}
 </style>
 </head>
 <body>
@@ -68,65 +158,143 @@ footer{padding:34px 0 46px;color:var(--text-soft);font-size:13px}
 </div></nav>
 
 <header class="hero"><div class="wrap">
-  <div class="eyebrow">For Filipino professionals going remote</div>
+  <div class="eyebrow">Free · No VA experience needed</div>
   <h1>Start using our free<br>Virtual Assistant Resume Converter</h1>
-  <p class="lead">Free for Filipino applicants, including those with no virtual assistant experience yet. Send the resume you have today. It comes back rebuilt around one target VA role, in the words a US client actually searches for. Every claim traces to something you really did, and anything you have not done yet is labelled as exactly that, with a practice task that earns you the line.</p>
-  <a class="cta" href="https://tally.so/r/ODyPJ8">Submit your resume</a>
+  <p class="lead">Send the resume you have today, from any country. It comes back rebuilt for one virtual assistant role, in the words a US client searches for, with nothing invented.</p>
+  <a class="cta" href="https://tally.so/r/ODyPJ8" data-cta="hero">Submit your resume<span class="btn-note">Free · 7 questions · opens on tally.so</span></a>
+  <a class="hero-sub" href="#sample">See what comes back ↓</a>
   <p class="window-note">Nothing is sent to an employer. You finish your own resume and you apply yourself.</p>
+  <p class="community">Built inside the <a href="https://facebook.com/groups/workathomegeek" target="_blank" rel="noopener">Bonafide Filipino Freelancers</a> community, free since 2017 with 27,000+ members. The converter is open to applicants from any country.</p>
 </div></header>
 
-<section><div class="wrap">
-  <h2>What arrives in your inbox</h2>
-  <p class="section-sub">One email. Six documents inside, all of them yours to edit.</p>
-  <div class="grid3">
-    <div class="card"><strong>1. Your resume</strong><span>Rebuilt around one target role, in the shape a US client scans in about twenty seconds. One page when it fits, two at most. Delivered as a document you can edit and download as PDF or Word.</span></div>
-    <div class="card"><strong>2. A review checklist</strong><span>The draft arrives with markers where only you know the answer, like how many customers you handled in a day. The checklist tells you how to fill each one in your own words.</span></div>
-    <div class="card"><strong>3. A rockstar example</strong><span>A strong resume in your exact target role, written as an example. Not yours, and not a template to copy. It shows you what convincing evidence looks like all together on one page.</span></div>
-    <div class="card"><strong>4. A learning path</strong><span>Real practice tasks that build proof you can show a client, and the exact resume line you are allowed to add the day you finish each one.</span></div>
-    <div class="card"><strong>5. Matched jobs</strong><span>Current positions from our job board that welcome Filipino applicants, each with a plain note on where your evidence fits and where it does not fit yet. If no safe current match exists, we say so.</span></div>
-    <div class="card"><strong>6. An AI career coach guide</strong><span>A setup guide that turns the five documents above into your own private ChatGPT or Claude project, so you can finish the resume with help, one question at a time.</span></div>
+<div class="strip"><div class="wrap">
+  <div class="ba">
+    <div class="ba-row before"><span class="ba-label">Before</span>Collections Officer. Handled accounts and followed up with clients.</div>
+    <div class="ba-row after"><span class="ba-label">After</span>Handled difficult customer conversations under policy pressure, <mark>[CONFIRM: how many]</mark> accounts a day.</div>
   </div>
-</div></section>
+  <p class="ba-caption">Same job. Same facts. The words a US client searches for, and a marker where only you know the number.</p>
+</div></div>
 
-<section><div class="wrap">
-  <h2>The four things we are allowed to do</h2>
-  <p class="section-sub">Your resume gets rewritten. That is the point. But only four moves are permitted, and every one of them stays true.</p>
-  <div class="grid4">
-    <div class="card"><span class="step-num">1</span><strong>Reframe what you already did</strong><span>Collections officer at a bank? You handled difficult customer conversations under policy pressure. That is real, and US clients pay for it. It only needed the right words.</span></div>
-    <div class="card"><span class="step-num">2</span><strong>Write a gap as a gap</strong><span>Not "eager to learn QuickBooks", which wastes the line. Instead: the invoicing and expense records you already do in spreadsheets, then the same workflows named inside the tool you have not used yet.</span></div>
-    <div class="card"><span class="step-num">3</span><strong>Earn the line</strong><span>Every gap comes with a practice task and the exact sentence you may add to your resume the day you finish it. Never before you have done the work.</span></div>
-    <div class="card"><span class="step-num">4</span><strong>Narrow a title that reads too big</strong><span>If your job title carries a clinical, financial or legal word that your actual tasks did not include, one plain line says so, so you are not caught explaining it in the interview.</span></div>
+<section id="sample"><div class="wrap">
+  <h2>See what comes back</h2>
+  <p class="section-sub">This is document 1 of 6, shown on a fictional applicant. Every line on it traces to something she said she did.</p>
+  <div class="grid2">
+    <div class="paper" aria-label="Sample resume, fictional example">
+      <div class="stamp">Fictional example</div>
+      <div class="paper-name">Maria Luz Santos</div>
+      <div class="paper-role">General Admin VA</div>
+      <div class="paper-meta">Cebu City, Philippines · maria.santos@example.com</div>
+      <div class="paper-track">7 yrs administrative support | 4 yrs coordinating schedules and records in Google Workspace | Full-time, 9 AM to 6 PM US Eastern</div>
+      <h3>Core skills</h3>
+      <ul>
+        <li>Multi-channel client inquiry handling through Gmail and Facebook Messenger</li>
+        <li>Calendar and appointment coordination with confirmations and schedule changes</li>
+        <li>Student, appointment, supply and payment-status record maintenance</li>
+        <li>Weekly attendance and payment follow-up reporting for an owner</li>
+        <li>Google Sheets and Microsoft Excel tracking and recurring summaries</li>
+        <li>Procedure writing and training for new coordinators</li>
+      </ul>
+      <h3>Experience</h3>
+      <div class="job">Operations Assistant, Sunrise Learning Hub (fictional)<i>Cebu City, Philippines | Jan 2022 to present</i></div>
+      <ul>
+        <li>Respond to 25 to 35 parent and student inquiries each week through Gmail and Facebook Messenger. <mark>[CONFIRM: If you track a normal response-time target, add it to this line. If you do not, delete this bracket and keep the sentence.]</mark></li>
+        <li>Coordinate 18 to 25 tutoring sessions each week in Google Calendar and confirm schedule changes.</li>
+        <li>Maintain more than 200 active student records in Google Sheets and update attendance after each session.</li>
+      </ul>
+      <h3>Work setup</h3>
+      <ul>
+        <li>Internet: Converge Fiber 100 Mbps</li>
+        <li>Backup internet: Smart mobile data</li>
+        <li>Equipment: Windows laptop, 16 GB RAM, headset</li>
+      </ul>
+      <p class="more">The full page continues with two more jobs, a Learning Next block, Tools and Education.</p>
+    </div>
+    <ol class="callouts">
+      <li><span class="n">1</span><div><strong>Core Skills come first.</strong>The summary paragraph is gone. Every applicant's summary reads the same, and it costs the best inches on the page.</div></li>
+      <li><span class="n">2</span><div><strong>Markers where only you know the number.</strong>The draft asks instead of inventing a plausible figure. You fill it in, or you delete the bracket.</div></li>
+      <li><span class="n">3</span><div><strong>Work Setup is added.</strong>Of the 48 resumes we studied to build this, only 5 mentioned internet or computer. VA job posts always ask.</div></li>
+    </ol>
   </div>
-  <div class="truth" style="margin-top:22px"><strong>What is never permitted:</strong> invented roles, employers, tools, dates, numbers, or competence. These words are banned from your resume outright, because every one of them reads as "I can do this now": currently building, actively learning, familiar with, working knowledge of, exposure to. A client finds out in the trial task, and you carry that, not us. A resume you cannot defend is worse than no resume.</div>
+  <div class="doclist">
+    <h3>That is document 1 of 6</h3>
+    <ol>
+      <li><strong>Your resume</strong>Rebuilt for one role. One page when it fits, two at most. Edit it, then download it as PDF or Word.</li>
+      <li><strong>Review checklist</strong>Tells you how to fill every marker in your own words, without guessing.</li>
+      <li><strong>Rockstar example</strong>A strong resume in your target role, written as an example to study. Not yours, and not a template to copy.</li>
+      <li><strong>Learning path</strong>Practice tasks that build proof you can show a client, and the exact line you may add the day you finish each one.</li>
+      <li><strong>Matched jobs</strong>Current remote positions from our job board, with a plain note on where your evidence fits and where it does not yet. If no safe match exists, it says so.</li>
+      <li><strong>AI career coach guide</strong>Turns the five documents above into your own private ChatGPT or Claude project, so you can finish the resume one question at a time.</li>
+    </ol>
+    <p class="inline-cta">All six arrive in one email, and all six are yours to edit. <a href="https://tally.so/r/ODyPJ8" data-cta="sample">Submit your resume</a></p>
+  </div>
 </div></section>
 
 <section><div class="wrap">
   <h2>How it works</h2>
-  <div class="grid4">
-    <div class="card"><span class="step-num">1</span><strong>Fill out one form</strong><span>Upload your current resume and answer a few questions about your work and your home setup. Each question explains why VA employers care. Sensitive personal details are deleted before anything is written.</span></div>
-    <div class="card"><span class="step-num">2</span><strong>One role is chosen</strong><span>Most people tick three roles they are interested in. A resume aimed at three roles convinces nobody, so your evidence decides which single role the page targets. The rest are carried forward as future roles in your learning path.</span></div>
-    <div class="card"><span class="step-num">3</span><strong>Your evidence is checked</strong><span>Your background is compared against what that role actually asks for: what you have, what is close, and what is missing. That honest read shapes both the resume and the plan.</span></div>
-    <div class="card"><span class="step-num">4</span><strong>You finish it and apply</strong><span>The draft arrives with markers where only you know the answer. You fill them in, you edit your own page, you send it. Nobody here does that part, and that is on purpose.</span></div>
+  <p class="section-sub">One form. One role. One email. You do the last step yourself.</p>
+  <div class="flow-steps">
+    <div class="flow-step"><span class="n">STEP 1</span><h3>Fill one form on tally.so</h3><p>7 questions, plus your resume file if you have one. No file yet? The seven answers are enough to start. Works on a phone. It never asks for payment, bank details, IDs or passwords.</p></div>
+    <div class="flow-step"><span class="n">STEP 2</span><h3>One role is chosen from your evidence</h3><p>Most people tick three roles. A resume aimed at three convinces nobody, so your evidence decides which one the page targets. The others become future roles in your learning path.</p></div>
+    <div class="flow-step"><span class="n">STEP 3</span><h3>Your evidence is checked</h3><p>Your background is compared against what that role actually asks for: what you have, what is close, and what is missing. That honest read shapes both the resume and the plan.</p></div>
+    <div class="flow-step"><span class="n">STEP 4</span><h3>One email, six Google Docs links</h3><p>From Lala, with no attachments. Read and download them without a Google account; to edit, make your own copy. Packages are built in batches. When yours is built it is sent the same day. You finish the draft and apply yourself.</p></div>
   </div>
+  <div class="chips"><span class="chips-label">Roles it can aim at:</span><span class="chip">General Admin</span><span class="chip">Customer Support</span><span class="chip">Social Media</span><span class="chip">Executive Assistant</span><span class="chip">Bookkeeping</span><span class="chip">Real Estate</span><span class="chip">E-commerce</span></div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>What changes, and what never changes</h2>
+  <div class="truth"><strong>We change the words, the order and the sections.</strong> We never touch roles, employers, dates, tools, numbers or what you can actually do. A gap is written as a gap, with a practice task and the exact line you may add the day you finish it. A title that reads bigger than the work gets one plain line, so you are not caught out when a client asks. <strong>Banned outright,</strong> because each one reads as "I can do this now": currently building, actively learning, familiar with, working knowledge of, exposure to. A resume you cannot defend is worse than no resume.</div>
 </div></section>
 
 <section><div class="wrap">
   <h2>New to the VA world? Start here.</h2>
-  <div class="truth" style="margin-bottom:22px"><strong>The short version:</strong> a virtual assistant is someone who does office work remotely for a client, usually overseas. Calendar management, inbox cleanup, customer replies, data entry, bookkeeping, social media, order processing. If you have done office work in the Philippines, you have almost certainly done VA work already. You just called it your job.</div>
+  <div class="truth" style="margin-bottom:22px"><strong>The short version:</strong> a virtual assistant is someone who does office work remotely for a client, usually in another country. Calendar management, inbox cleanup, customer replies, data entry, bookkeeping, social media, order processing. If you have done office work anywhere, you have almost certainly done VA work already. You just called it your job.</div>
   <div class="faq">
     <details><summary>I have no VA experience. Is this really for me?</summary><p>Yes, that is exactly who this is for. Almost nobody arrives with VA experience on the page. What you arrive with is office work, customer work, or coordination work done under a different job title, and the rewrite is what makes that visible to a client who has never heard of your employer.</p></details>
+    <details><summary>I am not in the Philippines. Can I still use this?</summary><p>Yes. The converter reads your experience, not your passport, and every rule is the same for everyone: one role, nothing invented, markers where only you know the answer. One caution: the matched-jobs guide draws on our job board, which was built for applicants in the Philippines, so check each posting's location rule before you apply.</p></details>
     <details><summary>Will you invent experience to make me look good?</summary><p>Never. But we do rewrite, and that distinction matters. The words change so a US client understands what you did and so your resume shows up when they search. The facts never change. Nothing is added that you did not do, and anything you have not done yet is labelled rather than hidden.</p></details>
     <details><summary>Why only one role?</summary><p>Because a resume aimed at three roles convinces nobody. Most people tick three roles on the form, and that is normal, but the page has to pick one. Your evidence decides which. The other roles do not disappear, they become the future roles your learning path prepares you for.</p></details>
-    <details><summary>Do I get a finished resume?</summary><p>You get a finished draft with markers in it. Some lines only you can write, like how many customers you handled per day or the name of the system you used. Rather than invent a plausible number, the draft asks you for it. You answer, you edit, you send. It has to be yours, in your words, defensible by you in front of a client.</p></details>
+    <details><summary>Do I get a finished resume?</summary><p>You get a complete draft with markers in it. Some lines only you can write, like how many customers you handled per day or the name of the system you used. Rather than invent a plausible number, the draft asks you for it. You answer, you edit, you send. It has to be yours, in your words, defensible by you in front of a client.</p></details>
+    <details><summary>Is it really free? What is the catch?</summary><p>Yes, free, with no paid course, no upsell and no payment step at the end. Nobody asks you for money at any point, and the form never asks for bank details, IDs or passwords. The catch is the honest one: the draft arrives with markers only you can fill, and you finish it and apply yourself.</p></details>
+    <details><summary>When will it arrive, and how do I know the email is really from you?</summary><p>Packages are built in batches. When yours is built it is sent the same day. It arrives as one email from Lala with six Google Docs links and no attachments. It never asks you to pay, to log in, or to open an attachment. If an email about your resume asks for any of those, it is not from us.</p></details>
+    <details><summary>Can I do this on my phone?</summary><p>Yes. The form works on a phone, and the six documents open on a phone. If the resume upload fails inside the Facebook app, open the link in Chrome or Safari instead. Editing the final draft is easier on a laptop, but it is not required.</p></details>
     <details><summary>Why do you ask about my internet and laptop?</summary><p>Because VA employers always do. Most job posts require a minimum connection speed and a backup plan for outages. Putting your real setup on your resume answers the question before it is asked, and if your setup needs an upgrade, your plan will say so honestly.</p></details>
-    <details><summary>What happens to my resume and my information?</summary><p>Sensitive personal details are deleted at intake, before any document is written. What remains is stored privately and used only to build your package. Nothing is posted publicly, and nothing is sent to any employer. You apply to jobs yourself.</p></details>
+    <details><summary>What happens to my resume and my information?</summary><p>Sensitive personal details are deleted at intake, before any document is written. The rest is exactly what the form's consent line says: "my resume and answers will be stored privately and used only to create my VA resume package." Nothing is posted publicly, and nothing is sent to any employer. You apply to jobs yourself.</p></details>
     <details><summary>Why is the form sometimes closed?</summary><p>Intake closes whenever processing or delivery needs a safety check. That prevents new submissions from entering an uncertain system. It reopens only after the full converter path passes its verification checks.</p></details>
   </div>
+</div></section>
+
+<section class="band" id="go"><div class="wrap">
+  <h2>Send the resume you have today.</h2>
+  <p>It comes back rebuilt for one role, with markers where only you know the answer, and nothing invented.</p>
+  <a class="cta-inverse" href="https://tally.so/r/ODyPJ8" data-cta="final">Submit your resume<span class="btn-note">Free · 7 questions · opens on tally.so</span></a>
+  <p class="trust">Nothing is sent to an employer. You finish your own resume and you apply yourself.</p>
+  <p class="join"><a href="https://facebook.com/groups/workathomegeek" target="_blank" rel="noopener">Join 27,000 members of this community</a></p>
 </div></section>
 
 <footer><div class="wrap">
   Part of the Bonafide Filipino Freelancers project · <a href="/bonafide-filipino-freelancers/jobs/">Browse the live job board</a>
 </div></footer>
+
+<div class="sticky-cta" id="sticky-cta"><a href="https://tally.so/r/ODyPJ8" data-cta="sticky">Submit your resume <small>Free · 7 questions</small></a></div>
+
+<script>
+(function(){
+  var bar=document.getElementById('sticky-cta');
+  var hero=document.querySelector('a[data-cta="hero"]');
+  var band=document.getElementById('go');
+  if(bar&&hero&&band&&'IntersectionObserver' in window){
+    var heroOut=false,bandIn=false;
+    var update=function(){bar.classList.toggle('show',heroOut&&!bandIn)};
+    new IntersectionObserver(function(e){heroOut=!e[0].isIntersecting;update()}).observe(hero);
+    new IntersectionObserver(function(e){bandIn=e[0].isIntersecting;update()}).observe(band);
+  }
+  document.addEventListener('click',function(ev){
+    var a=ev.target.closest&&ev.target.closest('a[data-cta]');
+    if(a&&typeof gtag==='function'){gtag('event','cta_click',{cta_location:a.getAttribute('data-cta'),transport_type:'beacon'})}
+  });
+})();
+</script>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -139,20 +307,16 @@ footer{padding:34px 0 46px;color:var(--text-soft);font-size:13px}
    "url": "https://writingsbylala.com/bonafide-filipino-freelancers/va-resume-converter/",
    "applicationCategory": "BusinessApplication",
    "operatingSystem": "Web",
-   "description": "A free virtual assistant resume converter for Filipino applicants, including those with no VA experience yet. One target role, a worked example, matched jobs, and a learning path.",
+   "isAccessibleForFree": true,
+   "description": "Free virtual assistant resume converter for applicants in any country, no VA experience needed. One target role, nothing invented, six documents in one email.",
    "offers": {
     "@type": "Offer",
     "price": "0",
-    "priceCurrency": "PHP",
-    "availability": "https://schema.org/InStock"
+    "priceCurrency": "USD"
    },
    "audience": {
     "@type": "Audience",
-    "audienceType": "Filipino virtual assistant applicants",
-    "geographicArea": {
-     "@type": "Country",
-     "name": "Philippines"
-    }
+    "audienceType": "Virtual assistant applicants in any country, including those with no VA experience yet"
    },
    "provider": {
     "@type": "Organization",
@@ -170,6 +334,14 @@ footer{padding:34px 0 46px;color:var(--text-soft);font-size:13px}
      "acceptedAnswer": {
       "@type": "Answer",
       "text": "Yes, that is exactly who this is for. Almost nobody arrives with VA experience on the page. What you arrive with is office work, customer work, or coordination work done under a different job title, and the rewrite is what makes that visible to a client who has never heard of your employer."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "I am not in the Philippines. Can I still use this?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. The converter reads your experience, not your passport, and every rule is the same for everyone: one role, nothing invented, markers where only you know the answer. One caution: the matched-jobs guide draws on our job board, which was built for applicants in the Philippines, so check each posting's location rule before you apply."
      }
     },
     {
@@ -193,7 +365,31 @@ footer{padding:34px 0 46px;color:var(--text-soft);font-size:13px}
      "name": "Do I get a finished resume?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "You get a finished draft with markers in it. Some lines only you can write, like how many customers you handled per day or the name of the system you used. Rather than invent a plausible number, the draft asks you for it. You answer, you edit, you send. It has to be yours, in your words, defensible by you in front of a client."
+      "text": "You get a complete draft with markers in it. Some lines only you can write, like how many customers you handled per day or the name of the system you used. Rather than invent a plausible number, the draft asks you for it. You answer, you edit, you send. It has to be yours, in your words, defensible by you in front of a client."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is it really free? What is the catch?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes, free, with no paid course, no upsell and no payment step at the end. Nobody asks you for money at any point, and the form never asks for bank details, IDs or passwords. The catch is the honest one: the draft arrives with markers only you can fill, and you finish it and apply yourself."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "When will it arrive, and how do I know the email is really from you?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Packages are built in batches. When yours is built it is sent the same day. It arrives as one email from Lala with six Google Docs links and no attachments. It never asks you to pay, to log in, or to open an attachment. If an email about your resume asks for any of those, it is not from us."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can I do this on my phone?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. The form works on a phone, and the six documents open on a phone. If the resume upload fails inside the Facebook app, open the link in Chrome or Safari instead. Editing the final draft is easier on a laptop, but it is not required."
      }
     },
     {
@@ -209,7 +405,7 @@ footer{padding:34px 0 46px;color:var(--text-soft);font-size:13px}
      "name": "What happens to my resume and my information?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Sensitive personal details are deleted at intake, before any document is written. What remains is stored privately and used only to build your package. Nothing is posted publicly, and nothing is sent to any employer. You apply to jobs yourself."
+      "text": "Sensitive personal details are deleted at intake, before any document is written. The rest is exactly what the form's consent line says: \"my resume and answers will be stored privately and used only to create my VA resume package.\" Nothing is posted publicly, and nothing is sent to any employer. You apply to jobs yourself."
      }
     },
     {
