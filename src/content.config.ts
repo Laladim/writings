@@ -9,6 +9,7 @@ const contentSchema = z.object({
   description: z.string(),
   related: z.array(z.string()).optional(),
   image: z.string().optional(),
+  thumbnailTreatment: z.enum(['blur-contain']).optional(),
   featured: z.boolean().optional(),
   linkedinFirst: z.boolean().optional(),
 });

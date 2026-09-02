@@ -9,7 +9,8 @@ type: "story"
 topics: ["faith-theology", "marriage-family", "health"]
 date: 2025-01-05
 description: "A New Year conversation with Mama about heaven, John 3:16, suffering, and the kind of faith that does not only know Christ but truly desires Him."
-image: "https://res.cloudinary.com/dimapmlre/image/upload/v1777367055/state-heroes/writings-v1-suffering-is-our-medicine.jpg"
+image: "/state-heroes/writings-v2-suffering-is-our-medicine.webp"
+thumbnailTreatment: "blur-contain"
 ---
 
 My mama asked me once, "Is heaven real?"

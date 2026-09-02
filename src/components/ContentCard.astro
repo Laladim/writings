@@ -9,16 +9,31 @@ export interface Props {
   topics: string[];
   image?: string;
   square?: boolean;
+  thumbnailTreatment?: 'blur-contain';
 }
-const { href, title, date, type, topics, image, square = false } = Astro.props;
+const { href, title, date, type, topics, image, square = false, thumbnailTreatment } = Astro.props;
 const optimizedImage = image ? optimizedImageUrl(image, square ? 600 : 900) : undefined;
+const blurContain = square && thumbnailTreatment === 'blur-contain';
 const weekday = date.toLocaleDateString('en-US', { weekday: 'short' });
 const dateStr = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 ---
 <a class:list={['entry', { 'entry-square': square }]} href={href} data-type={type.toLowerCase()} data-topics={topics.join(',')}>
   {image ? (
-    <div class="thumb">
+    <div class:list={['thumb', { 'thumb-blur-contain': blurContain }]}>
+      {blurContain && (
+        <img
+          class="thumb-backdrop"
+          src={optimizedImage}
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          width="600"
+          height="600"
+          decoding="async"
+        />
+      )}
       <img
+        class="thumb-foreground"
         src={optimizedImage}
         alt=""
         loading="lazy"
@@ -64,6 +79,24 @@ const dateStr = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric
     height: 100%;
     object-fit: cover;
     display: block;
+  }
+  .thumb-blur-contain {
+    position: relative;
+    background: #201b29;
+    isolation: isolate;
+  }
+  .thumb-blur-contain .thumb-backdrop {
+    position: absolute;
+    inset: -8%;
+    width: 116%;
+    height: 116%;
+    filter: blur(18px) brightness(0.58);
+    transform: scale(1.04);
+  }
+  .thumb-blur-contain .thumb-foreground {
+    position: relative;
+    z-index: 1;
+    object-fit: contain;
   }
   .thumb-text {
     background: repeating-linear-gradient(

@@ -47,6 +47,7 @@ const related = Array.from(relatedTopics.entries())
           type={entry.data.type}
           topics={entry.data.topics}
           image={entry.data.image}
+          thumbnailTreatment={entry.data.thumbnailTreatment}
         />
       ))}
       {entries.length === 0 && <p class="empty">No entries on this topic yet.</p>}
