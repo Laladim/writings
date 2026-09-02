@@ -554,7 +554,7 @@ Optical-sized serif optimized for long-form reading. Body text 16–18 px / 1.65
 Inter
 
 <!-- wbl-text:0187 -->
-Library · Ministry · About — clean, unobtrusive, high-readability for navigation and labels.
+Library · About — clean, unobtrusive, high-readability for navigation and labels.
 
 <!-- wbl-text:0188 -->
 Sans-serif for navigation, captions, eyebrow labels, and metadata. Weight 400–600. Letter-spacing +0.02em for uppercase labels.
