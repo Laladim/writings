@@ -39,6 +39,7 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 const base = import.meta.env.BASE_URL;
 const heroImage = entry.data.image ? optimizedImageUrl(entry.data.image, 1400) : undefined;
+const purpleGradient = entry.data.thumbnailTreatment === 'blur-contain';
 
 const weekdayStr = entry.data.date.toLocaleDateString('en-US', { weekday: 'long' });
 const dateStr = entry.data.date.toLocaleDateString('en-US', {
@@ -80,7 +81,13 @@ const sameTopicAuto = all
     </header>
 
     {entry.data.image && (
-      <img src={heroImage} alt="" class="hero-image" width="1400" decoding="async" />
+      purpleGradient ? (
+        <div class="hero-purple-gradient">
+          <img src={heroImage} alt="" class="hero-image" width="1400" decoding="async" />
+        </div>
+      ) : (
+        <img src={heroImage} alt="" class="hero-image" width="1400" decoding="async" />
+      )
     )}
 
     <div class="prose">
@@ -119,6 +126,33 @@ const sameTopicAuto = all
   }
   .topic-tag:hover { background: rgba(90, 74, 122, 0.16); text-decoration: none; }
   .hero-image { width: 100%; height: auto; border-radius: 4px; margin: 1.5rem 0; box-shadow: var(--shadow); }
+  .hero-purple-gradient {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    border-radius: 4px;
+    margin: 1.5rem 0;
+    box-shadow: var(--shadow);
+  }
+  .hero-purple-gradient::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+      138deg,
+      oklch(52% 0.15 305 / 0.26) 0%,
+      oklch(46% 0.14 324 / 0.1) 48%,
+      oklch(35% 0.14 284 / 0.24) 100%
+    );
+    pointer-events: none;
+  }
+  .hero-purple-gradient .hero-image {
+    display: block;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
   .prose { font-size: clamp(17px, 1rem + 0.15vw, 19px); line-height: 1.75; }
   .prose p { margin: 0 0 1.4rem; }
   .prose h2 { margin-top: 2.75rem; }

@@ -13,13 +13,14 @@ export interface Props {
 }
 const { href, title, date, type, topics, image, square = false, thumbnailTreatment } = Astro.props;
 const optimizedImage = image ? optimizedImageUrl(image, square ? 600 : 900) : undefined;
+const purpleGradient = thumbnailTreatment === 'blur-contain';
 const blurContain = square && thumbnailTreatment === 'blur-contain';
 const weekday = date.toLocaleDateString('en-US', { weekday: 'short' });
 const dateStr = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 ---
 <a class:list={['entry', { 'entry-square': square }]} href={href} data-type={type.toLowerCase()} data-topics={topics.join(',')}>
   {image ? (
-    <div class:list={['thumb', { 'thumb-blur-contain': blurContain }]}>
+    <div class:list={['thumb', { 'thumb-purple-gradient': purpleGradient, 'thumb-blur-contain': blurContain }]}>
       {blurContain && (
         <img
           class="thumb-backdrop"
@@ -80,10 +81,26 @@ const dateStr = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric
     object-fit: cover;
     display: block;
   }
+  .thumb-purple-gradient,
   .thumb-blur-contain {
     position: relative;
-    background: #201b29;
     isolation: isolate;
+  }
+  .thumb-purple-gradient::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient(
+      138deg,
+      oklch(52% 0.15 305 / 0.26) 0%,
+      oklch(46% 0.14 324 / 0.1) 48%,
+      oklch(35% 0.14 284 / 0.24) 100%
+    );
+    pointer-events: none;
+  }
+  .thumb-blur-contain {
+    background: #201b29;
   }
   .thumb-blur-contain .thumb-backdrop {
     position: absolute;
