@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-02T01:03:27",
+  "generated_at": "2026-09-03T01:08:32",
   "sources": [
     {
       "source": "MultiplyMii",
       "status": "ok",
       "fetched_count": 54,
-      "accepted_count": 4,
+      "accepted_count": 3,
       "last_error": ""
     },
     {
@@ -18,14 +18,14 @@
     {
       "source": "Extend Your Team",
       "status": "ok",
-      "fetched_count": 41,
+      "fetched_count": 42,
       "accepted_count": 1,
       "last_error": ""
     },
     {
       "source": "ClickUp",
       "status": "ok",
-      "fetched_count": 67,
+      "fetched_count": 66,
       "accepted_count": 0,
       "last_error": ""
     },
@@ -39,8 +39,8 @@
     {
       "source": "Workable",
       "status": "ok",
-      "fetched_count": 55,
-      "accepted_count": 12,
+      "fetched_count": 57,
+      "accepted_count": 13,
       "last_error": ""
     },
     {
