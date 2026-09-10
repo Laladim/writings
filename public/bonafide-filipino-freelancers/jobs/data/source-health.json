@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-09T01:16:17",
+  "generated_at": "2026-09-10T01:07:21",
   "sources": [
     {
       "source": "MultiplyMii",
       "status": "ok",
-      "fetched_count": 58,
-      "accepted_count": 3,
+      "fetched_count": 56,
+      "accepted_count": 2,
       "last_error": ""
     },
     {
@@ -25,7 +25,7 @@
     {
       "source": "ClickUp",
       "status": "ok",
-      "fetched_count": 62,
+      "fetched_count": 63,
       "accepted_count": 1,
       "last_error": ""
     },
@@ -39,8 +39,8 @@
     {
       "source": "Workable",
       "status": "ok",
-      "fetched_count": 60,
-      "accepted_count": 13,
+      "fetched_count": 61,
+      "accepted_count": 9,
       "last_error": ""
     },
     {
@@ -60,14 +60,14 @@
     {
       "source": "Remote OK",
       "status": "ok",
-      "fetched_count": 100,
+      "fetched_count": 99,
       "accepted_count": 0,
       "last_error": ""
     },
     {
       "source": "Remotive",
       "status": "ok",
-      "fetched_count": 18,
+      "fetched_count": 17,
       "accepted_count": 0,
       "last_error": ""
     },
