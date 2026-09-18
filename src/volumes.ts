@@ -12,7 +12,7 @@ export type Volume = {
 
 export type VolumeResource = {
   title: string;
-  action: 'Download' | 'Open guide' | 'Open tool' | 'Open list' | 'Open board';
+  action: 'Request' | 'Open guide' | 'Open tool' | 'Open list' | 'Open board';
   href?: string;
 };
 
@@ -35,9 +35,9 @@ export const VOLUMES = [
     color: '#efc0a6',
     ink: '#513428',
     resources: [
-      { title: 'CCA-F Mock Up Exam Guide', action: 'Download' },
-      { title: 'Newsletter Workflow', action: 'Download' },
-      { title: 'Content-To-Revenue Intelligence System', action: 'Download' },
+      { title: 'CCA-F Mock Up Exam Guide', action: 'Request' },
+      { title: 'Newsletter Workflow', action: 'Request' },
+      { title: 'Content-To-Revenue Intelligence System', action: 'Request' },
     ],
   },
   {
@@ -82,8 +82,8 @@ export const VOLUMES = [
     color: '#b9d3e2',
     ink: '#28414e',
     resources: [
-      { title: 'Anti-Inflammation Diet Guide', action: 'Download' },
-      { title: 'Work Station & Learning Habits Guide', action: 'Download' },
+      { title: 'Anti-Inflammation Diet Guide', action: 'Request' },
+      { title: 'Work Station & Learning Habits Guide', action: 'Request' },
     ],
   },
   {
@@ -96,8 +96,8 @@ export const VOLUMES = [
     color: '#cad9b6',
     ink: '#354429',
     resources: [
-      { title: '7 Day Bible Devotional', action: 'Download' },
-      { title: 'Send a Prayer Request', action: 'Download' },
+      { title: '7 Day Bible Devotional', action: 'Request' },
+      { title: 'Send a Prayer Request', action: 'Request' },
     ],
   },
 ] as const satisfies readonly Volume[];

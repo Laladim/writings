@@ -23,6 +23,7 @@ const pageCount = Math.max(1, Math.ceil(entries.length / pageSize));
 const pages = Array.from({ length: pageCount }, (_, pageIndex) =>
   entries.slice(pageIndex * pageSize, (pageIndex + 1) * pageSize)
 );
+const hasRequestableResources = volume.resources.some((resource) => !resource.href);
 ---
 
 <Base
@@ -144,18 +145,53 @@ const pages = Array.from({ length: pageCount }, (_, pageIndex) =>
             {resource.href ? (
               <a class="resource-action" href={resource.href}>{resource.action}</a>
             ) : (
-              <a
+              <button
+                type="button"
                 class="resource-action"
-                href="#take-something"
-                aria-disabled="true"
-                data-placeholder-link
-                aria-label={`${resource.action} ${resource.title} placeholder`}
-              >{resource.action}</a>
+                data-request-resource={resource.title}
+                aria-haspopup="dialog"
+                aria-label={`${resource.action} ${resource.title}`}
+              >{resource.action}</button>
             )}
           </li>
         ))}
       </ul>
     </section>
+
+    {hasRequestableResources && (
+      <dialog class="request-dialog" data-request-dialog aria-labelledby="request-dialog-title">
+        <form class="request-form" data-request-form>
+          <button class="request-close" type="button" data-request-close aria-label="Close request form">Close</button>
+          <p class="handwritten">take something with you</p>
+          <h2 id="request-dialog-title">Request this resource</h2>
+          <p class="request-intro">
+            Add your details below. Your email app will open with the request prepared for you to review and send.
+          </p>
+
+          <label>
+            <span>Name</span>
+            <input type="text" name="requesterName" autocomplete="name" required />
+          </label>
+
+          <label>
+            <span>Email</span>
+            <input type="email" name="requesterEmail" autocomplete="email" required />
+          </label>
+
+          <label>
+            <span>Resource</span>
+            <input type="text" name="resourceTitle" data-request-resource-title readonly required />
+          </label>
+
+          <label>
+            <span>Message <small>Optional</small></span>
+            <textarea name="requesterMessage" rows="4"></textarea>
+          </label>
+
+          <button class="request-submit" type="submit">Open email to send request</button>
+        </form>
+      </dialog>
+    )}
   </section>
 </Base>
 
@@ -523,7 +559,11 @@ const pages = Array.from({ length: pageCount }, (_, pageIndex) =>
     min-height: 44px;
     display: inline-flex;
     align-items: center;
+    padding: 0;
+    border: 0;
+    background: transparent;
     color: var(--volume-ink);
+    cursor: pointer;
     font-family: 'Inter', sans-serif;
     font-size: 0.73rem;
     font-weight: 600;
@@ -533,7 +573,125 @@ const pages = Array.from({ length: pageCount }, (_, pageIndex) =>
     text-underline-offset: 0.3rem;
   }
 
-  .resource-action[aria-disabled='true'] { opacity: 0.76; }
+  .resource-action:hover,
+  .resource-action:focus-visible {
+    color: var(--ink);
+    text-decoration-thickness: 0.24rem;
+  }
+
+  .request-dialog {
+    width: min(34rem, calc(100% - 2rem));
+    max-height: calc(100svh - 2rem);
+    padding: 0;
+    overflow: auto;
+    border: 1px solid rgba(91, 68, 43, 0.28);
+    border-radius: 0.55rem;
+    background: #fffaf1;
+    color: var(--ink);
+    box-shadow: 0 1.5rem 4rem rgba(52, 35, 20, 0.28);
+  }
+
+  .request-dialog::backdrop {
+    background: rgba(48, 35, 23, 0.48);
+    backdrop-filter: blur(3px);
+  }
+
+  .request-form {
+    position: relative;
+    display: grid;
+    gap: 1rem;
+    padding: clamp(1.5rem, 5vw, 2.5rem);
+  }
+
+  .request-form > .handwritten { margin-bottom: -0.8rem; }
+
+  .request-form h2 {
+    max-width: 10em;
+    margin: 0;
+    font-size: clamp(2.1rem, 7vw, 3.25rem);
+    font-weight: 500;
+    line-height: 0.96;
+  }
+
+  .request-intro {
+    max-width: 34rem;
+    margin: 0 0 0.3rem;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+
+  .request-form label {
+    display: grid;
+    gap: 0.4rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+
+  .request-form label small {
+    color: var(--ink-faded);
+    font-size: 0.68rem;
+    font-weight: 400;
+  }
+
+  .request-form input,
+  .request-form textarea {
+    width: 100%;
+    border: 1px solid rgba(91, 68, 43, 0.34);
+    border-radius: 0.2rem;
+    background: #fffdf8;
+    color: var(--ink);
+    font: inherit;
+    font-weight: 400;
+  }
+
+  .request-form input { min-height: 44px; padding: 0.7rem 0.75rem; }
+  .request-form textarea { min-height: 6.5rem; padding: 0.75rem; resize: vertical; }
+
+  .request-form input[readonly] {
+    background: color-mix(in srgb, var(--volume-accent) 18%, #fffdf8);
+  }
+
+  .request-form input:focus-visible,
+  .request-form textarea:focus-visible {
+    outline: 0.18rem solid color-mix(in srgb, var(--volume-accent) 78%, #4f3927);
+    outline-offset: 0.1rem;
+  }
+
+  .request-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    min-height: 44px;
+    padding: 0 0.35rem;
+    border: 0;
+    background: transparent;
+    color: var(--ink-faded);
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    text-decoration: underline;
+    text-underline-offset: 0.2rem;
+  }
+
+  .request-submit {
+    min-height: 48px;
+    margin-top: 0.25rem;
+    padding: 0.8rem 1.1rem;
+    border: 1px solid var(--volume-ink);
+    border-radius: 0.2rem;
+    background: var(--volume-ink);
+    color: #fffaf1;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+
+  .request-submit:hover,
+  .request-submit:focus-visible {
+    background: var(--ink);
+  }
 
   @media (max-width: 960px) {
     .volume-reader { padding-right: 6rem; }
@@ -615,7 +773,11 @@ const pages = Array.from({ length: pageCount }, (_, pageIndex) =>
   const pageLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>('[data-page-link]'));
   const pageSteps = Array.from(document.querySelectorAll<HTMLAnchorElement>('[data-page-step]'));
   const folio = document.querySelector<HTMLElement>('[data-folio-page]');
-  const placeholderLinks = document.querySelectorAll<HTMLAnchorElement>('[data-placeholder-link]');
+  const requestButtons = document.querySelectorAll<HTMLButtonElement>('[data-request-resource]');
+  const requestDialog = document.querySelector<HTMLDialogElement>('[data-request-dialog]');
+  const requestForm = document.querySelector<HTMLFormElement>('[data-request-form]');
+  const requestClose = document.querySelector<HTMLButtonElement>('[data-request-close]');
+  const requestResourceTitle = document.querySelector<HTMLInputElement>('[data-request-resource-title]');
   const volumeLinks = document.querySelectorAll<HTMLAnchorElement>('[data-book-tab]');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const pageCount = Math.max(1, Number(reader?.dataset.pageCount || sheets.length || 1));
@@ -674,7 +836,44 @@ const pages = Array.from({ length: pageCount }, (_, pageIndex) =>
     });
   });
 
-  placeholderLinks.forEach((link) => link.addEventListener('click', (event) => event.preventDefault()));
+  requestButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      if (!requestDialog || !requestResourceTitle) return;
+      requestResourceTitle.value = button.dataset.requestResource || '';
+      requestDialog.showModal();
+      requestForm?.querySelector<HTMLInputElement>('[name="requesterName"]')?.focus();
+    });
+  });
+
+  requestClose?.addEventListener('click', () => requestDialog?.close());
+
+  requestDialog?.addEventListener('click', (event) => {
+    if (event.target === requestDialog) requestDialog.close();
+  });
+
+  requestForm?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!requestForm.reportValidity()) return;
+
+    const data = new FormData(requestForm);
+    const name = String(data.get('requesterName') || '').trim();
+    const email = String(data.get('requesterEmail') || '').trim();
+    const resource = String(data.get('resourceTitle') || '').trim();
+    const message = String(data.get('requesterMessage') || '').trim();
+    const subject = `Resource request: ${resource}`;
+    const body = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Resource: ${resource}`,
+      '',
+      message ? `Message:\n${message}` : 'Message:',
+      '',
+      `Requested from: ${window.location.href}`,
+    ].join('\n');
+
+    window.location.href = `mailto:hello@writingsbylala.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+
   window.addEventListener('popstate', () => updatePage(requestedPage()));
   updatePage(requestedPage());
 
