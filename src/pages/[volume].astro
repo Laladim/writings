@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import BookTabs from '../components/BookTabs.astro';
 import { getAllEntries, entryUrl } from '../lib/content';
-import { VOLUMES, entryBelongsToVolume, type Volume } from '../volumes';
+import { VOLUMES, entryBelongsToVolume, orderVolumeEntries, type Volume } from '../volumes';
 
 export function getStaticPaths() {
   return VOLUMES.map((volume) => ({
@@ -16,7 +16,10 @@ interface Props {
 }
 
 const { volume } = Astro.props;
-const entries = (await getAllEntries()).filter((entry) => entryBelongsToVolume(entry.data.topics, volume));
+const entries = orderVolumeEntries(
+  (await getAllEntries()).filter((entry) => entryBelongsToVolume(entry.data.topics, volume)),
+  volume
+);
 const base = import.meta.env.BASE_URL;
 const pageSize = 6;
 const pageCount = Math.max(1, Math.ceil(entries.length / pageSize));

@@ -8,6 +8,8 @@ export type Volume = {
   color: string;
   ink: string;
   resources: readonly VolumeResource[];
+  /** Fixed 1-based Contents positions requested by Lala, keyed by entry id. Unlisted entries keep date order. */
+  contentsPositions?: Readonly<Record<string, number>>;
 };
 
 export type VolumeResource = {
@@ -39,6 +41,9 @@ export const VOLUMES = [
       { title: 'Newsletter Workflow', action: 'Request' },
       { title: 'Content-To-Revenue Intelligence System', action: 'Request' },
     ],
+    contentsPositions: {
+      'what-is-the-folder-system-that-makes-my-ai-engineering-better': 6,
+    },
   },
   {
     slug: 'community',
@@ -108,4 +113,18 @@ export function volumeBySlug(slug: string): Volume | undefined {
 
 export function entryBelongsToVolume(topics: readonly string[], volume: Volume): boolean {
   return topics.some((topic) => volume.topics.includes(topic));
+}
+
+/** Place entries with a fixed Contents position; every other entry keeps its incoming (date) order. */
+export function orderVolumeEntries<T extends { id: string }>(entries: readonly T[], volume: Volume): T[] {
+  const positions: Readonly<Record<string, number>> = volume.contentsPositions ?? {};
+  const positionOf = (entry: T) => positions[entry.id.replace(/\.md$/, '')];
+  const ordered = entries.filter((entry) => positionOf(entry) === undefined);
+  const pinned = entries
+    .filter((entry) => positionOf(entry) !== undefined)
+    .sort((a, b) => positionOf(a) - positionOf(b));
+  for (const entry of pinned) {
+    ordered.splice(Math.min(positionOf(entry) - 1, ordered.length), 0, entry);
+  }
+  return ordered;
 }
