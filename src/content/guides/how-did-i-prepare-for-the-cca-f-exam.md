@@ -1,5 +1,5 @@
 ---
-title: "How Did I Prepare for the CCA-F Exam?"
+title: "How Did I Become a Claude Certified Architect?"
 type: "guide"
 topics: ["ai-content-systems", "automation"]
 date: 2026-09-19
