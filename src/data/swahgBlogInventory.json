@@ -163,7 +163,7 @@
       {
         "slug": "pending",
         "label": "Not yet published",
-        "count": 62
+        "count": 64
       },
       {
         "slug": "draft-started",
@@ -173,7 +173,7 @@
       {
         "slug": "published",
         "label": "Published",
-        "count": 35
+        "count": 33
       }
     ]
   },
@@ -197,11 +197,11 @@
       "angle": "Use 10 Secret Skills as a source note for a practical WBL blog post aimed at beginners building a freelance life from home.",
       "excerpt": "## 10 Secret Skills ## EVERY SUCCESSFUL BONAFIDE FILIPINO FREELANCER Here are the 10 Important Skills that will help you achieve success in the Freelancing Industry.",
       "publication": {
-        "status": "published",
-        "statusLabel": "Published",
-        "path": "src/content/guides/what-beginners-can-learn-from-10-secret-skills.md",
-        "title": "What beginners can learn from 10 Secret Skills",
-        "slug": "what-beginners-can-learn-from-10-secret-skills"
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
       }
     },
     {
@@ -253,11 +253,11 @@
       "angle": "Use this as a setup checklist that helps a new freelancer remove friction before paid work begins.",
       "excerpt": "## Browser Expert Secrets ## Google Chrome for the WIN! Don't be messy. It doesn't matter if you have a great computer if you are not organized, your productivity will still be compromised. You will never go wrong if you will master the use of Google Chrome...",
       "publication": {
-        "status": "published",
-        "statusLabel": "Published",
-        "path": "src/content/guides/the-beginner-freelancer-guide-to-browser-expert-secrets.md",
-        "title": "The beginner freelancer guide to Browser Expert Secrets",
-        "slug": "the-beginner-freelancer-guide-to-browser-expert-secrets"
+        "status": "pending",
+        "statusLabel": "Not yet published",
+        "path": "",
+        "title": "",
+        "slug": ""
       }
     },
     {
