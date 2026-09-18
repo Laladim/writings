@@ -6,6 +6,7 @@
 <script>document.documentElement.className+=" js"</script>
 <title>Free Virtual Assistant Resume Converter, No VA Experience Needed</title>
 <meta name="description" content="Free virtual assistant resume converter for applicants in any country, no VA experience needed. One target role, nothing invented, six documents in one email.">
+<link rel="icon" type="image/png" href="/brand/favicon.png">
 <link rel="canonical" href="https://writingsbylala.com/bonafide-filipino-freelancers/va-resume-converter/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://writingsbylala.com/bonafide-filipino-freelancers/va-resume-converter/">
@@ -29,13 +30,6 @@
 html{overflow-x:hidden;scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.55}
 a{color:inherit}
-.topnav{position:sticky;top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);z-index:50}
-.topnav-inner{max-width:1080px;width:100%;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.logo{font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--primary);font-size:22px;text-decoration:none}
-.logo .sub{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-deep);display:block;margin-top:-3px;font-weight:600;font-family:'Inter',sans-serif}
-.nav-links{display:flex;gap:20px;font-size:14px;flex-wrap:wrap;align-items:center}
-.nav-links a{color:var(--text-soft);text-decoration:none;white-space:nowrap}
-.nav-links a:hover{color:var(--primary)}
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
 
 /* Hero */
@@ -144,8 +138,6 @@ html.js .clamped .expand:hover{background:var(--primary-deep)}
 .band .trust{margin-top:18px;font-size:14px}
 .band .join{margin-top:10px;font-size:14px}
 .band .join a{color:#fff;font-weight:700}
-footer{padding:34px 0 46px;color:var(--text-soft);font-size:13px}
-
 /* Mobile sticky button */
 .sticky-cta{display:none}
 @media(max-width:860px){
@@ -169,16 +161,18 @@ footer{padding:34px 0 46px;color:var(--text-soft);font-size:13px}
 }
 @media(max-width:560px){.flow-steps{grid-template-columns:1fr}.stamp{position:static;display:inline-block;transform:rotate(-2deg);margin:0 0 14px 2px}.paper-name,.doc-title{padding-right:0}.draft-bar{padding-right:12px}html.js .clamped{max-height:560px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.sticky-cta{transition:none}}
+body{background:#c8baa3;padding:clamp(14px,3vw,40px)}
+.book-companion-page{max-width:1160px;margin:0 auto;background:var(--bg);border:1px solid rgba(86,62,38,.18);border-radius:16px;box-shadow:0 28px 55px rgba(66,43,22,.2),0 4px 12px rgba(66,43,22,.14);overflow:hidden}
+.book-return-row{padding:16px clamp(20px,4vw,52px);background:#fffdfa;border-bottom:1px solid var(--border)}
+.book-return{display:inline-flex;align-items:center;min-height:44px;padding:10px 16px;border:1px solid #aa96cd;border-radius:999px;background:#cec0ef;color:#3f3157;font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 3px 0 rgba(74,58,106,.16)}
+.book-return:hover{background:#c3b2e7;color:#30243f}
+.book-return:focus-visible{outline:3px solid var(--primary);outline-offset:3px}
+@media(max-width:860px){body{padding:0 0 72px}.book-companion-page{border:0;border-radius:0;box-shadow:none}.book-return-row{padding:10px 16px}}
 </style>
 </head>
 <body>
-<nav class="topnav"><div class="topnav-inner">
-  <a class="logo" href="/">Writings by Lala<span class="sub">Bonafide Filipino Freelancers</span></a>
-  <div class="nav-links">
-    <a href="/bonafide-filipino-freelancers/jobs/">Job Board</a>
-    <a href="/bonafide-filipino-freelancers/va-resume-converter/" aria-current="page">VA Resume Converter</a>
-  </div>
-</div></nav>
+<main class="book-companion-page">
+<div class="book-return-row"><a class="book-return" href="/community/">Go back to the book</a></div>
 
 <header class="hero"><div class="wrap">
   <div class="eyebrow">Free · No VA experience needed</div>
@@ -596,9 +590,7 @@ footer{padding:34px 0 46px;color:var(--text-soft);font-size:13px}
   <p class="join"><a href="https://facebook.com/groups/workathomegeek" target="_blank" rel="noopener">Join 27,000 members of this community</a></p>
 </div></section>
 
-<footer><div class="wrap">
-  Part of the Bonafide Filipino Freelancers project · <a href="/bonafide-filipino-freelancers/jobs/">Browse the live job board</a>
-</div></footer>
+</main>
 
 <div class="sticky-cta" id="sticky-cta"><a href="https://tally.so/r/ODyPJ8" data-cta="sticky">Submit your resume <small>Free · 7 questions</small></a></div>
 

@@ -6,6 +6,7 @@ const contentSchema = z.object({
   type: z.enum(['guide', 'story', 'note', 'reflection', 'tool', 'watch']),
   topics: z.array(z.string()).min(1).max(3),
   date: z.coerce.date(),
+  modified: z.coerce.date().optional(),
   description: z.string(),
   related: z.array(z.string()).optional(),
   image: z.string().optional(),

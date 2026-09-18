@@ -30,6 +30,48 @@ const tagMarkup = `    <!-- WBL Google Analytics -->
       gtag('config', '${GA_MEASUREMENT_ID}');
     </script>`;
 
+const eventMarker = 'data-wbl-analytics="v1"';
+const eventMarkup = `    <!-- WBL privacy-safe interaction events -->
+    <script ${eventMarker}>
+      (() => {
+        const allowed = new Set(['wbl_internal_cta','wbl_external_cta','wbl_resource_download','wbl_tool_start','wbl_tool_complete']);
+        const safePath = (value) => {
+          try { return new URL(value, location.href).pathname; } catch { return ''; }
+        };
+        window.wblTrack = (eventName, fields = {}) => {
+          if (!allowed.has(eventName) || typeof window.gtag !== 'function') return;
+          const safe = { page_path: location.pathname };
+          for (const key of ['cta_location','destination_path','destination_domain','resource_name','tool_name']) {
+            if (typeof fields[key] === 'string') safe[key] = fields[key].slice(0, 100);
+          }
+          window.gtag('event', eventName, { ...safe, transport_type: 'beacon' });
+        };
+        document.addEventListener('click', (event) => {
+          const element = event.target.closest('[data-wbl-event],a[data-wbl-cta],a[data-cta],a[download]');
+          if (!element) return;
+          const explicit = element.getAttribute('data-wbl-event');
+          if (explicit) {
+            window.wblTrack(explicit, {
+              cta_location: element.getAttribute('data-wbl-location') || '',
+              resource_name: element.getAttribute('data-wbl-resource') || '',
+              tool_name: element.getAttribute('data-wbl-tool') || '',
+            });
+            return;
+          }
+          if (!(element instanceof HTMLAnchorElement)) return;
+          const destination = new URL(element.href, location.href);
+          const isDownload = element.hasAttribute('download') || /\.(pdf|docx?|xlsx?|csv|zip)$/i.test(destination.pathname);
+          const eventName = isDownload ? 'wbl_resource_download' : destination.origin === location.origin ? 'wbl_internal_cta' : 'wbl_external_cta';
+          window.wblTrack(eventName, {
+            cta_location: element.getAttribute('data-wbl-location') || element.getAttribute('data-cta') || '',
+            destination_path: safePath(destination.href),
+            destination_domain: destination.hostname,
+            resource_name: isDownload ? destination.pathname.split('/').pop() : '',
+          });
+        });
+      })();
+    </script>`;
+
 async function findHtmlFiles(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
   const files = [];
@@ -80,8 +122,24 @@ for (const filePath of htmlFiles) {
     injectedCount += 1;
   }
 
+  if (!html.includes(eventMarker) && mode === 'inject') {
+    const bodyCloseIndex = html.search(/<\/body\s*>/i);
+    if (bodyCloseIndex === -1) {
+      failures.push(`${filePath}: missing </body>`);
+      continue;
+    }
+    html = `${html.slice(0, bodyCloseIndex)}${eventMarkup}\n${html.slice(bodyCloseIndex)}`;
+    await writeFile(filePath, html, 'utf8');
+  }
+
   if (!html.includes(tagUrl) || !html.includes(`gtag('config', '${GA_MEASUREMENT_ID}')`) && !html.includes('gtag(\'config\', gaMeasurementId)')) {
     failures.push(`${filePath}: Analytics tag or config call is missing`);
+  }
+  if (!html.includes(eventMarker)) {
+    failures.push(`${filePath}: WBL privacy-safe event tracker is missing`);
+  }
+  for (const eventName of ['wbl_internal_cta','wbl_external_cta','wbl_resource_download','wbl_tool_start','wbl_tool_complete']) {
+    if (!html.includes(eventName)) failures.push(`${filePath}: event contract missing ${eventName}`);
   }
 }
 

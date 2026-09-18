@@ -1,0 +1,691 @@
+---
+import Base from '../layouts/Base.astro';
+import BookTabs from '../components/BookTabs.astro';
+import { getAllEntries, entryUrl } from '../lib/content';
+import { VOLUMES, entryBelongsToVolume, type Volume } from '../volumes';
+
+export function getStaticPaths() {
+  return VOLUMES.map((volume) => ({
+    params: { volume: volume.slug },
+    props: { volume },
+  }));
+}
+
+interface Props {
+  volume: Volume;
+}
+
+const { volume } = Astro.props;
+const entries = (await getAllEntries()).filter((entry) => entryBelongsToVolume(entry.data.topics, volume));
+const base = import.meta.env.BASE_URL;
+const pageSize = 6;
+const pageCount = Math.max(1, Math.ceil(entries.length / pageSize));
+const pages = Array.from({ length: pageCount }, (_, pageIndex) =>
+  entries.slice(pageIndex * pageSize, (pageIndex + 1) * pageSize)
+);
+---
+
+<Base
+  title={`${volume.label} | Writings by Lala`}
+  description={volume.statement}
+  immersive
+>
+  <a class="skip-link" href="#contents">Skip to contents</a>
+
+  <section
+    class="volume-reader"
+    data-volume-reader
+    data-volume-page={volume.slug}
+    data-volume-entry-count={entries.length}
+    data-page-count={pageCount}
+    style={`--volume-accent: ${volume.color}; --volume-ink: ${volume.ink};`}
+  >
+    <div class="book-object" data-book-object>
+      <div class="page-edges" aria-hidden="true"></div>
+
+      <div class="open-book">
+        <section class="paper-page left-page frontispiece" aria-labelledby="volume-title">
+          <header class="running-head">
+            <a href="/">Writings by Lala</a>
+            <span>Volume {volume.roman}</span>
+          </header>
+
+          <div class="frontispiece-body">
+            <p class="volume-number" aria-hidden="true">{volume.roman}</p>
+            <p class="volume-name">{volume.label}</p>
+            <h1 id="volume-title">{volume.statement}</h1>
+            <span class="thread-mark" aria-hidden="true"></span>
+            <p class="frontispiece-note">{volume.note}</p>
+          </div>
+
+          <footer class="folio">
+            <a href="/">Close the book</a>
+          </footer>
+        </section>
+
+        <section class="paper-page right-page contents-page" id="contents" data-turn-surface>
+          <header class="running-head">
+            <span>Volume {volume.roman}</span>
+            <span>Contents</span>
+          </header>
+
+          <div class="contents-body">
+            <p class="handwritten">inside {volume.label}</p>
+            <h2>Contents</h2>
+
+            <div class="toc-pages" aria-live="polite">
+              {pages.map((pageEntries, pageIndex) => (
+                <div
+                  class:list={['toc-sheet', { 'is-active': pageIndex === 0 }]}
+                  data-toc-page={pageIndex + 1}
+                  aria-label={`${volume.label} contents page ${pageIndex + 1} of ${pageCount}`}
+                >
+                  {pageEntries.length > 0 ? (
+                    <ol class="toc-list" start={pageIndex * pageSize + 1}>
+                      {pageEntries.map((entry, entryIndex) => (
+                        <li class="toc-row">
+                          <span class="toc-number">
+                            {String(pageIndex * pageSize + entryIndex + 1).padStart(2, '0')}
+                          </span>
+                          <a class="toc-title" href={entryUrl(entry, base)}>{entry.data.title}</a>
+                          <span class="toc-kind">{entry.data.type}</span>
+                        </li>
+                      ))}
+                    </ol>
+                  ) : (
+                    <p class="empty-volume">The first piece for this volume is still being written.</p>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {pageCount > 1 && (
+              <nav class="book-pagination" aria-label={`${volume.label} contents pages`}>
+                <a
+                  class="page-direction is-muted"
+                  href={`/${volume.slug}/?page=1#contents`}
+                  data-page-step="-1"
+                  aria-disabled="true"
+                >Previous</a>
+                {pages.map((_, pageIndex) => (
+                  <a
+                    class:list={['page-number', { 'is-current': pageIndex === 0 }]}
+                    href={`/${volume.slug}/?page=${pageIndex + 1}#contents`}
+                    data-page-link={pageIndex + 1}
+                    aria-current={pageIndex === 0 ? 'page' : undefined}
+                  >{pageIndex + 1}</a>
+                ))}
+                <a
+                  class="page-direction"
+                  href={`/${volume.slug}/?page=2#contents`}
+                  data-page-step="1"
+                >Next page</a>
+              </nav>
+            )}
+          </div>
+
+          <footer class="folio">
+            <span>{volume.label}</span>
+            <span data-folio-page>1</span>
+          </footer>
+        </section>
+      </div>
+
+      <BookTabs active={volume.slug} />
+    </div>
+
+    <section class="resource-pocket" id="take-something" aria-labelledby="resources-title">
+      <span class="pocket-tab" aria-hidden="true"></span>
+      <h2 class="handwritten" id="resources-title">take something with you</h2>
+      <ul class="resource-slips">
+        {volume.resources.map((resource) => (
+          <li class:list={['resource-slip', { 'is-ready': Boolean(resource.href) }]}>
+            <span class="resource-title">{resource.title}</span>
+            {resource.href ? (
+              <a class="resource-action" href={resource.href}>{resource.action}</a>
+            ) : (
+              <a
+                class="resource-action"
+                href="#take-something"
+                aria-disabled="true"
+                data-placeholder-link
+                aria-label={`${resource.action} ${resource.title} placeholder`}
+              >{resource.action}</a>
+            )}
+          </li>
+        ))}
+      </ul>
+    </section>
+  </section>
+</Base>
+
+<style>
+  :global(body.is-immersive) {
+    background:
+      linear-gradient(90deg, rgba(84, 61, 36, 0.035) 1px, transparent 1px) 0 0 / 5.4rem 100%,
+      linear-gradient(rgba(84, 61, 36, 0.026) 1px, transparent 1px) 0 0 / 100% 4.8rem,
+      #c8baa3;
+  }
+
+  .skip-link {
+    position: fixed;
+    z-index: 100;
+    top: 0.75rem;
+    left: 0.75rem;
+    transform: translateY(-180%);
+    padding: 0.7rem 1rem;
+    border-radius: 0.25rem;
+    background: #fffaf1;
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+  }
+
+  .skip-link:focus { transform: none; }
+
+  .volume-reader {
+    min-height: 100svh;
+    padding: clamp(2rem, 6vw, 5rem) clamp(6.5rem, 10vw, 9rem) clamp(5rem, 10vw, 9rem)
+      clamp(1rem, 4vw, 3.5rem);
+  }
+
+  .book-object {
+    position: relative;
+    width: min(69rem, 100%);
+    margin: 0 auto;
+    filter: drop-shadow(0 1.4rem 1.25rem rgba(66, 44, 24, 0.2));
+    isolation: isolate;
+  }
+
+  .page-edges {
+    position: absolute;
+    z-index: -1;
+    inset: 0.75rem -0.65rem -0.8rem 0.7rem;
+    border-radius: 0.8rem;
+    background:
+      repeating-linear-gradient(180deg, #eee3ce 0 2px, #fbf4e8 2px 5px),
+      #f4ead7;
+    box-shadow: 0.3rem 0.5rem 0.6rem rgba(74, 49, 26, 0.16);
+  }
+
+  .open-book {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    min-height: clamp(40rem, 72vw, 46rem);
+    overflow: hidden;
+    border: 1px solid rgba(91, 68, 43, 0.17);
+    border-radius: 0.75rem 0.8rem 0.8rem 0.75rem;
+    background: #fffaf1;
+  }
+
+  .open-book::after {
+    content: '';
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2rem;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, transparent, rgba(77, 54, 33, 0.11), rgba(255, 255, 255, 0.52), rgba(77, 54, 33, 0.08), transparent);
+    pointer-events: none;
+  }
+
+  .paper-page {
+    position: relative;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    padding: clamp(2rem, 4vw, 3.2rem) clamp(2rem, 4vw, 3.55rem) 1.25rem;
+    background: #fffaf1;
+  }
+
+  .left-page {
+    background:
+      linear-gradient(135deg, color-mix(in srgb, var(--volume-accent) 26%, #fffaf1), #fffaf1 58%);
+  }
+
+  .right-page {
+    transform-origin: left center;
+    backface-visibility: hidden;
+  }
+
+  .book-object.is-turning .right-page {
+    animation: turn-page 520ms cubic-bezier(0.72, 0, 0.22, 1) both;
+  }
+
+  @keyframes turn-page {
+    0% { transform: rotateY(0); opacity: 1; }
+    48% { transform: rotateY(-28deg); opacity: 0.88; }
+    100% { transform: rotateY(-76deg); opacity: 0.18; }
+  }
+
+  .running-head,
+  .folio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    color: var(--ink-faded);
+  }
+
+  .running-head {
+    min-height: 2rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid rgba(95, 72, 46, 0.23);
+  }
+
+  .running-head a,
+  .folio a { color: inherit; }
+
+  .folio {
+    margin-top: auto;
+    padding-top: 1.1rem;
+    border-top: 1px solid rgba(95, 72, 46, 0.23);
+  }
+
+  .frontispiece-body {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0.5rem;
+    text-align: center;
+  }
+
+  .volume-number {
+    position: absolute;
+    top: 10%;
+    margin: 0;
+    color: color-mix(in srgb, var(--volume-ink) 11%, transparent);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(8rem, 15vw, 13rem);
+    line-height: 0.8;
+  }
+
+  .volume-name {
+    position: relative;
+    margin: 0 0 1.15rem;
+    color: var(--volume-ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.17em;
+  }
+
+  .frontispiece h1 {
+    position: relative;
+    max-width: 9.2em;
+    margin: 0;
+    font-size: clamp(2.35rem, 4.7vw, 4.15rem);
+    font-weight: 500;
+    line-height: 1.02;
+    text-wrap: balance;
+  }
+
+  .thread-mark {
+    width: 3.2rem;
+    height: 0.5rem;
+    margin: 2rem 0 1.3rem;
+    border-top: 0.22rem solid var(--volume-accent);
+    border-bottom: 0.08rem solid color-mix(in srgb, var(--volume-ink) 30%, transparent);
+  }
+
+  .frontispiece-note {
+    max-width: 18rem;
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: clamp(0.98rem, 0.9rem + 0.25vw, 1.12rem);
+    line-height: 1.45;
+  }
+
+  .contents-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: clamp(1.7rem, 3vw, 2.4rem) 0 1.35rem;
+  }
+
+  .handwritten {
+    margin: 0;
+    color: var(--volume-ink);
+    font-family: 'Caveat', cursive;
+    font-size: 1.15rem;
+    font-weight: 600;
+    transform: rotate(-2deg);
+  }
+
+  .contents-body > h2 {
+    margin: -0.1rem 0 1.25rem;
+    font-size: clamp(3.1rem, 6vw, 4.9rem);
+    font-weight: 500;
+    line-height: 0.95;
+  }
+
+  .toc-pages { flex: 1; }
+
+  :global(.js) .toc-sheet:not(.is-active) { display: none; }
+
+  .toc-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid rgba(95, 72, 46, 0.25);
+  }
+
+  .toc-row {
+    display: grid;
+    grid-template-columns: 2.25rem minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.85rem;
+    min-height: 4rem;
+    border-bottom: 1px solid rgba(95, 72, 46, 0.25);
+  }
+
+  .toc-number,
+  .toc-kind {
+    color: var(--ink-faded);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.66rem;
+  }
+
+  .toc-kind { text-transform: capitalize; }
+
+  .toc-title {
+    padding: 0.6rem 0;
+    color: var(--ink);
+    font-size: clamp(0.93rem, 0.84rem + 0.24vw, 1.08rem);
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration-thickness: 0.08em;
+  }
+
+  .toc-title:hover,
+  .toc-title:focus-visible {
+    color: var(--volume-ink);
+    text-decoration-color: var(--volume-accent);
+  }
+
+  .empty-volume {
+    padding: 2.2rem 0;
+    border-top: 1px solid rgba(95, 72, 46, 0.25);
+    border-bottom: 1px solid rgba(95, 72, 46, 0.25);
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+
+  .book-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.35rem;
+    margin-top: 1.2rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+  }
+
+  .book-pagination a {
+    min-width: 2.35rem;
+    min-height: 2.35rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.35rem 0.55rem;
+    border: 1px solid transparent;
+    color: var(--ink-faded);
+  }
+
+  .book-pagination a:hover,
+  .book-pagination a:focus-visible,
+  .book-pagination a.is-current {
+    border-color: color-mix(in srgb, var(--volume-ink) 45%, transparent);
+    color: var(--volume-ink);
+    text-decoration: none;
+  }
+
+  .book-pagination a.is-current {
+    background: color-mix(in srgb, var(--volume-accent) 45%, #fffaf1);
+  }
+
+  .book-pagination .page-direction { min-width: auto; }
+
+  .book-pagination .is-muted {
+    opacity: 0.42;
+    pointer-events: none;
+  }
+
+  .resource-pocket {
+    position: relative;
+    width: min(62rem, calc(100% - 1rem));
+    margin: clamp(3.25rem, 7vw, 5.75rem) auto 0;
+    padding: clamp(2.25rem, 4vw, 3.1rem);
+    border: 1px solid rgba(91, 68, 43, 0.22);
+    border-radius: 0.35rem 0.35rem 0.75rem 0.75rem;
+    background: #f8f3e7;
+    box-shadow: 0 1rem 1.5rem rgba(66, 44, 24, 0.16);
+  }
+
+  .pocket-tab {
+    position: absolute;
+    top: -0.8rem;
+    left: 4.5rem;
+    width: 13.5rem;
+    height: 0.9rem;
+    border: 1px solid rgba(91, 68, 43, 0.2);
+    border-bottom: 0;
+    border-radius: 0.65rem 0.65rem 0 0;
+    background: #f8f3e7;
+  }
+
+  .resource-pocket > h2 {
+    margin: 0 0 1.4rem;
+    font-size: clamp(1.15rem, 1rem + 0.45vw, 1.45rem);
+  }
+
+  .resource-slips {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin: 0;
+    padding: 1.25rem 0 0;
+    border-top: 1px solid rgba(95, 72, 46, 0.25);
+    list-style: none;
+  }
+
+  .resource-slip {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 4.8rem;
+    padding: 1rem 1.1rem;
+    border: 1px solid color-mix(in srgb, var(--volume-ink) 23%, #c8baa3);
+    background: color-mix(in srgb, var(--volume-accent) 20%, #fffdf8);
+    box-shadow: 0 0.2rem 0.35rem rgba(66, 44, 24, 0.08);
+  }
+
+  .resource-slip.is-ready { border-left: 0.34rem solid var(--volume-accent); }
+
+  .resource-title {
+    min-width: 0;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  .resource-action {
+    flex: none;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    color: var(--volume-ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.73rem;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: var(--volume-accent);
+    text-decoration-thickness: 0.18rem;
+    text-underline-offset: 0.3rem;
+  }
+
+  .resource-action[aria-disabled='true'] { opacity: 0.76; }
+
+  @media (max-width: 960px) {
+    .volume-reader { padding-right: 6rem; }
+    .paper-page { padding-right: 2rem; padding-left: 2rem; }
+    .toc-row { gap: 0.55rem; }
+  }
+
+  @media (max-width: 760px) {
+    :global(body.is-immersive) { background: #c8baa3; }
+
+    .volume-reader { padding: 1rem 0.65rem 4rem; }
+
+    .book-object {
+      display: flex;
+      flex-direction: column;
+      filter: drop-shadow(0 0.8rem 0.8rem rgba(66, 44, 24, 0.17));
+    }
+
+    .page-edges { inset: 3.5rem -0.2rem -0.55rem 0.25rem; }
+
+    .open-book {
+      grid-template-columns: 1fr;
+      min-height: 0;
+      border-radius: 0.5rem;
+    }
+
+    .open-book::after { display: none; }
+    .paper-page { min-height: auto; }
+
+    .left-page {
+      min-height: 32rem;
+      border-bottom: 1px solid rgba(95, 72, 46, 0.25);
+    }
+
+    .right-page { min-height: 37rem; }
+    .frontispiece-body { padding: 3.2rem 0.5rem; }
+    .frontispiece h1 { font-size: clamp(2.5rem, 12vw, 3.7rem); }
+    .volume-number { font-size: 10rem; }
+
+    .resource-pocket {
+      width: calc(100% - 0.8rem);
+      margin-top: 3.2rem;
+      padding: 2rem 1.1rem 1.2rem;
+    }
+
+    .pocket-tab { left: 2rem; width: 10rem; }
+    .resource-slips { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 460px) {
+    .paper-page { padding: 1.35rem 1.15rem 1rem; }
+    .running-head,
+    .folio { font-size: 0.62rem; }
+    .contents-body > h2 { font-size: 3.25rem; }
+
+    .toc-row {
+      grid-template-columns: 1.8rem minmax(0, 1fr);
+      min-height: 4.25rem;
+    }
+
+    .toc-kind {
+      grid-column: 2;
+      margin-top: -0.7rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .book-pagination { justify-content: center; flex-wrap: wrap; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .book-object.is-turning .right-page { animation: none; }
+  }
+</style>
+
+<script>
+  const reader = document.querySelector<HTMLElement>('[data-volume-reader]');
+  const book = document.querySelector<HTMLElement>('[data-book-object]');
+  const sheets = Array.from(document.querySelectorAll<HTMLElement>('[data-toc-page]'));
+  const pageLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>('[data-page-link]'));
+  const pageSteps = Array.from(document.querySelectorAll<HTMLAnchorElement>('[data-page-step]'));
+  const folio = document.querySelector<HTMLElement>('[data-folio-page]');
+  const placeholderLinks = document.querySelectorAll<HTMLAnchorElement>('[data-placeholder-link]');
+  const volumeLinks = document.querySelectorAll<HTMLAnchorElement>('[data-book-tab]');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const pageCount = Math.max(1, Number(reader?.dataset.pageCount || sheets.length || 1));
+  let currentPage = 1;
+
+  const requestedPage = () => {
+    const value = Number(new URL(window.location.href).searchParams.get('page') || 1);
+    return Number.isFinite(value) ? Math.min(pageCount, Math.max(1, Math.floor(value))) : 1;
+  };
+
+  const updatePage = (nextPage: number, push = false) => {
+    currentPage = Math.min(pageCount, Math.max(1, nextPage));
+    sheets.forEach((sheet) => {
+      const active = Number(sheet.dataset.tocPage) === currentPage;
+      sheet.classList.toggle('is-active', active);
+      sheet.hidden = !active;
+    });
+    pageLinks.forEach((link) => {
+      const active = Number(link.dataset.pageLink) === currentPage;
+      link.classList.toggle('is-current', active);
+      if (active) link.setAttribute('aria-current', 'page');
+      else link.removeAttribute('aria-current');
+    });
+    pageSteps.forEach((link) => {
+      const step = Number(link.dataset.pageStep);
+      const target = Math.min(pageCount, Math.max(1, currentPage + step));
+      const disabled = target === currentPage;
+      link.href = `${window.location.pathname}?page=${target}#contents`;
+      link.classList.toggle('is-muted', disabled);
+      link.setAttribute('aria-disabled', String(disabled));
+    });
+    if (folio) folio.textContent = String(currentPage).padStart(2, '0');
+
+    if (push) {
+      const url = new URL(window.location.href);
+      if (currentPage === 1) url.searchParams.delete('page');
+      else url.searchParams.set('page', String(currentPage));
+      url.hash = 'contents';
+      history.pushState({ page: currentPage }, '', url);
+      document.querySelector('#contents')?.scrollIntoView({ block: 'start' });
+    }
+  };
+
+  pageLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      updatePage(Number(link.dataset.pageLink), true);
+    });
+  });
+
+  pageSteps.forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      if (link.getAttribute('aria-disabled') === 'true') return;
+      updatePage(currentPage + Number(link.dataset.pageStep), true);
+    });
+  });
+
+  placeholderLinks.forEach((link) => link.addEventListener('click', (event) => event.preventDefault()));
+  window.addEventListener('popstate', () => updatePage(requestedPage()));
+  updatePage(requestedPage());
+
+  volumeLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
+      if (!book || reduceMotion.matches || link.getAttribute('aria-current') === 'page') return;
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      book.classList.add('is-turning');
+      book.setAttribute('aria-busy', 'true');
+      window.setTimeout(() => window.location.assign(link.href), 460);
+    });
+  });
+</script>

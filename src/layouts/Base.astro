@@ -4,14 +4,29 @@ import { GA_MEASUREMENT_ID } from '../../site.config.mjs';
 export interface Props {
   title: string;
   description?: string;
+  image?: string;
+  ogType?: 'website' | 'article';
+  publishedTime?: string;
+  modifiedTime?: string;
+  structuredData?: Record<string, unknown>;
+  immersive?: boolean;
 }
-const { title, description = 'Writings by Lala — a content library for the long haul.' } = Astro.props;
+const {
+  title,
+  description = 'Writings by Lala, a content library for the long haul.',
+  image,
+  ogType = 'website',
+  publishedTime,
+  modifiedTime,
+  structuredData,
+  immersive = false,
+} = Astro.props;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString();
 const gaMeasurementId = GA_MEASUREMENT_ID;
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 ---
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
   <head>
     <meta charset="utf-8" />
     {googleSiteVerification && <meta name="google-site-verification" content={googleSiteVerification} />}
@@ -25,13 +40,22 @@ const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
       </script>
     )}
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <script is:inline>document.documentElement.classList.replace('no-js', 'js');</script>
     <meta name="theme-color" content="#5a4a7a" />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonicalUrl} />
+    {image && <meta property="og:image" content={image} />}
+    {publishedTime && <meta property="article:published_time" content={publishedTime} />}
+    {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+    <meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {image && <meta name="twitter:image" content={image} />}
+    {structuredData && <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />}
     <link rel="icon" type="image/png" href="/brand/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -83,33 +107,37 @@ const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
       }
     </style>
   </head>
-  <body>
-    <header class="site-nav">
-      <div class="container nav-row">
-        <a href="/" class="brand">
-          <span class="hand brand-hand">Writings</span>
-          <span class="nav-font brand-sub">by Lala</span>
-        </a>
-        <nav class="nav-font main-nav">
-          <a href="/">Home</a>
-          <a href="/library/">Library</a>
-          <a href="/bonafide-filipino-freelancers/">Bonafide Filipino Freelancers Open University</a>
-          <a href="/about/">About</a>
-        </nav>
-      </div>
-    </header>
+  <body class:list={{ 'is-immersive': immersive }}>
+    {!immersive && (
+      <header class="site-nav">
+        <div class="container nav-row">
+          <a href="/" class="brand">
+            <span class="hand brand-hand">Writings</span>
+            <span class="nav-font brand-sub">by Lala</span>
+          </a>
+          <nav class="nav-font main-nav">
+            <a href="/">Home</a>
+            <a href="/library/">Library</a>
+            <a href="/bonafide-filipino-freelancers/">Bonafide Filipino Freelancers Open University</a>
+            <a href="/about/">About</a>
+          </nav>
+        </div>
+      </header>
+    )}
 
-    <main class="fade-in">
+    <main class:list={{ 'fade-in': !immersive, 'immersive-main': immersive }}>
       <slot />
     </main>
 
-    <footer class="site-footer nav-font">
-      <div class="container footer-row">
-        <span>© {new Date().getFullYear()} Lala</span>
-        <span class="dot">·</span>
-        <span>For the glory of God.</span>
-      </div>
-    </footer>
+    {!immersive && (
+      <footer class="site-footer nav-font">
+        <div class="container footer-row">
+          <span>© {new Date().getFullYear()} Lala</span>
+          <span class="dot">·</span>
+          <span>For the glory of God.</span>
+        </div>
+      </footer>
+    )}
 
     <style>
       .site-nav {
@@ -159,6 +187,12 @@ const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
       }
       .footer-row { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
       .dot { color: var(--ink-faded); }
+      :global(body.is-immersive) {
+        overflow-x: hidden;
+      }
+      .immersive-main {
+        min-height: 100svh;
+      }
     </style>
   </body>
 </html>

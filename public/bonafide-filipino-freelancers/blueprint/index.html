@@ -51,31 +51,6 @@
     font-size:16px;line-height:1.6;
   }
 
-  .topnav{
-    position:sticky;top:0;background:rgba(255,255,255,0.96);
-    backdrop-filter:blur(8px);border-bottom:1px solid var(--border);z-index:50;
-  }
-  .topnav-inner{
-    max-width:1280px;margin:0 auto;padding:14px 24px;
-    display:flex;align-items:center;justify-content:space-between;gap:24px;
-  }
-  .logo{
-    font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--primary);
-    font-size:22px;letter-spacing:-.01em;text-decoration:none;
-  }
-  .logo .sub{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-deep);display:block;margin-top:-3px;font-weight:600;font-family:'Inter',sans-serif}
-  .nav-links{display:flex;gap:22px;font-size:14px;flex-wrap:wrap;align-items:center}
-  .nav-links a{color:var(--text-soft);text-decoration:none;transition:color .15s;white-space:nowrap}
-  .nav-links a:hover{color:var(--primary)}
-  .nav-links a[aria-current="page"]{color:var(--primary);font-weight:600;border-bottom:2px solid var(--accent);padding-bottom:2px}
-  .nav-links a.cta{background:var(--primary);color:#fff;padding:8px 16px;border-radius:6px;font-weight:500}
-  .nav-links a.cta:hover{background:var(--primary-deep);color:#fff}
-  @media (max-width:768px){
-    .nav-links{display:flex;overflow-x:auto;gap:14px;font-size:13px;-webkit-overflow-scrolling:touch;padding-bottom:4px}
-    .nav-links::-webkit-scrollbar{display:none}
-    .nav-links a.cta{flex-shrink:0}
-  }
-
   section{padding:50px 20px;border-bottom:1px solid var(--border)}
   .wrap{max-width:1280px;margin:0 auto}
   .narrow{max-width:780px;margin:0 auto}
@@ -325,29 +300,19 @@
   .btn-ghost{background:transparent;color:var(--primary);border:1.5px solid var(--primary)}
   .btn-ghost:hover{background:var(--primary);color:#fff}
 
-  footer{padding:50px 20px 70px;background:var(--primary);color:#fff;text-align:center}
-  footer h3{color:#fff;font-family:'Cormorant Garamond',serif;font-size:26px;margin-bottom:8px;font-weight:600}
-  footer p{color:rgba(255,255,255,0.85);max-width:600px;margin:0 auto 22px;font-size:15px}
-  footer a.foot-link{color:#fff;text-decoration:underline;margin:0 12px;font-size:14px;display:inline-block;margin-bottom:6px}
-  footer .credit{margin-top:24px;font-size:12px;color:rgba(255,255,255,0.55)}
+  body{background:#c8baa3;padding:clamp(14px,3vw,40px)}
+  .book-companion-page{max-width:1380px;margin:0 auto;background:var(--bg);border:1px solid rgba(86,62,38,.18);border-radius:16px;box-shadow:0 28px 55px rgba(66,43,22,.2),0 4px 12px rgba(66,43,22,.14);overflow:hidden}
+  .book-return-row{padding:16px clamp(20px,4vw,52px);background:#fffdfa;border-bottom:1px solid var(--border)}
+  .book-return{display:inline-flex;align-items:center;min-height:44px;padding:10px 16px;border:1px solid #aa96cd;border-radius:999px;background:#cec0ef;color:#3f3157;font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 3px 0 rgba(74,58,106,.16)}
+  .book-return:hover{background:#c3b2e7;color:#30243f}
+  .book-return:focus-visible{outline:3px solid var(--primary);outline-offset:3px}
+  @media(max-width:720px){body{padding:0}.book-companion-page{border:0;border-radius:0;box-shadow:none}.book-return-row{padding:10px 16px}}
 </style>
 </head>
 <body>
 
-<nav class="topnav">
-  <div class="topnav-inner">
-    <a href="../index.html" class="logo">Bonafide Filipino Freelancers<span class="sub">Open University</span></a>
-    <div class="nav-links">
-      <a href="../index.html">Home</a>
-      <a href="../blueprint/index.html" aria-current="page">Bonafide Filipino Freelancers Blueprint</a>
-      <a href="../archetype/index.html">Archetype Finder</a>
-      <a href="../va-resume-converter/">VA Resume Converter</a>
-      <a href="../va-resume-converter/index.html">VA Resume Converter</a>
-      <a href="../curriculum/index.html">My Curriculum</a>
-      <a href="../jobs/index.html">Job Board</a>
-    </div>
-  </div>
-</nav>
+<main class="book-companion-page">
+<div class="book-return-row"><a class="book-return" href="/community/">Go back to the book</a></div>
 
 <section id="hero">
   <div class="wrap">
@@ -368,7 +333,7 @@
     <!-- TOP BAND — linear path -->
     <div class="topband">
       <div class="topband-grid">
-        <div class="stage-col" data-stage="prep">
+        <div class="stage-col" id="preparation" data-stage="prep">
           <div class="stage-label">Preparation</div>
           <button class="sub-box" data-box="prep-1"><span class="box-num">1</span><span class="label">Choosing your Computer</span><span class="hint">The right specs without overspending</span></button>
           <button class="sub-box" data-box="prep-2"><span class="box-num">2</span><span class="label">Creating Work Emails <span class="badge-inline rew">Rewriting</span></span><span class="hint">A work email clients take seriously</span></button>
@@ -377,7 +342,7 @@
           <button class="sub-box" data-box="prep-5"><span class="box-num">5</span><span class="label">Setting up Work Accessories <span class="badge-inline">New</span></span><span class="hint">A workspace built for real client work</span></button>
         </div>
 
-        <div class="stage-col" data-stage="warmup">
+        <div class="stage-col" id="warming-up" data-stage="warmup">
           <div class="stage-label">Warming Up</div>
           <button class="sub-box" data-box="warm-1"><span class="box-num">6</span><span class="label">Choose Career Path</span><span class="hint">Remote job, VA, or specialist?</span></button>
           <button class="sub-box" data-box="warm-2"><span class="box-num">7</span><span class="label">Planning</span><span class="hint">Map your hours before you commit</span></button>
@@ -492,19 +457,7 @@
   </div>
 </section>
 
-<footer>
-  <h3>This is the map. The lessons are the steps.</h3>
-  <p>BFF Open University is free, faith-warm, and built for the Filipino freelancer who hasn't said "I made it" yet. Pick a box. Open a lesson. Take one step today.</p>
-  <div>
-    <a href="../archetype/index.html" class="foot-link">Archetype Finder</a>
-    <a href="../va-resume-converter/" class="foot-link">VA Resume Converter</a>
-    <a href="../curriculum/index.html" class="foot-link">My Curriculum</a>
-    <a href="../bff-blueprint-printable-guide.pdf" class="foot-link">Printable BFF Guide</a>
-    <a href="../index.html" class="foot-link">BFF Home</a>
-    <a href="../" class="foot-link">← Writings by Lala</a>
-  </div>
-  <div class="credit">Bonafide Filipino Freelancer Simplified Blueprint · Rebuild v2 · May 2026</div>
-</footer>
+</main>
 
 <script src="../lessons.js"></script>
 

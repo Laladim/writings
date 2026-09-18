@@ -9,6 +9,7 @@
     "dev": "astro dev",
     "build": "astro build && node scripts/google-analytics.mjs inject",
     "analytics:verify": "node scripts/google-analytics.mjs verify",
+    "site:verify": "node scripts/verify-technical-eligibility.mjs",
     "obsidian:export": "python3 scripts/obsidian_pages.py export",
     "obsidian:sync": "python3 scripts/obsidian_pages.py sync",
     "obsidian:verify": "python3 scripts/obsidian_pages.py verify",

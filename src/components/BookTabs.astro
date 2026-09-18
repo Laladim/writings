@@ -1,0 +1,125 @@
+---
+import { VOLUMES } from '../volumes';
+
+export interface Props {
+  active?: string;
+}
+
+const { active } = Astro.props;
+---
+
+<div class="book-tabs-rail">
+  <nav class="book-tabs" aria-label="Open another volume">
+    {VOLUMES.map((volume) => (
+      <a
+        href={`/${volume.slug}/`}
+        aria-current={active === volume.slug ? 'page' : undefined}
+        style={`--tab-color: ${volume.color}; --tab-ink: ${volume.ink};`}
+        data-book-tab
+      >
+        {volume.label}
+      </a>
+    ))}
+  </nav>
+</div>
+
+<style>
+  .book-tabs-rail {
+    position: absolute;
+    z-index: 8;
+    top: 0;
+    right: clamp(-6.4rem, -8vw, -4.9rem);
+    bottom: 0;
+    width: clamp(5.2rem, 8vw, 6.7rem);
+    pointer-events: none;
+  }
+
+  .book-tabs {
+    position: sticky;
+    top: 2.4rem;
+    display: grid;
+    gap: 0.42rem;
+    width: 100%;
+    pointer-events: auto;
+  }
+
+  .book-tabs a {
+    min-height: 3.85rem;
+    display: flex;
+    align-items: center;
+    padding: 0.65rem 0.85rem;
+    border: 1px solid color-mix(in srgb, var(--tab-ink) 24%, transparent);
+    border-left: 0;
+    border-radius: 0 0.72rem 0.72rem 0;
+    background: var(--tab-color);
+    box-shadow: 0.25rem 0.32rem 0.42rem rgba(65, 45, 27, 0.14);
+    color: var(--tab-ink);
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.7rem, 0.64rem + 0.12vw, 0.8rem);
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+    transition: transform 160ms ease, box-shadow 160ms ease;
+  }
+
+  .book-tabs a:hover,
+  .book-tabs a:focus-visible {
+    transform: translateX(0.28rem);
+    text-decoration: none;
+  }
+
+  .book-tabs a:focus-visible {
+    outline: 3px solid var(--tab-ink);
+    outline-offset: 3px;
+  }
+
+  .book-tabs a[aria-current='page'] {
+    transform: translateX(0.35rem);
+    box-shadow:
+      0 0 0 3px #fffaf1,
+      0 0 0 5px var(--tab-ink),
+      0.3rem 0.4rem 0.5rem rgba(65, 45, 27, 0.16);
+  }
+
+  @media (max-width: 760px) {
+    .book-tabs-rail {
+      position: relative;
+      top: auto;
+      right: auto;
+      bottom: auto;
+      order: -1;
+      width: 100%;
+      pointer-events: auto;
+    }
+
+    .book-tabs {
+      position: relative;
+      top: auto;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.25rem;
+      margin: 0 0 -0.12rem;
+      padding: 0 0.55rem;
+    }
+
+    .book-tabs a {
+      min-height: 2.9rem;
+      justify-content: center;
+      padding: 0.55rem 0.3rem;
+      border-left: 1px solid color-mix(in srgb, var(--tab-ink) 24%, transparent);
+      border-bottom: 0;
+      border-radius: 0.6rem 0.6rem 0 0;
+      box-shadow: 0 -0.15rem 0.35rem rgba(65, 45, 27, 0.08);
+      font-size: 0.65rem;
+    }
+
+    .book-tabs a:hover,
+    .book-tabs a:focus-visible,
+    .book-tabs a[aria-current='page'] {
+      transform: translateY(-0.16rem);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .book-tabs a { transition: none; }
+  }
+</style>
