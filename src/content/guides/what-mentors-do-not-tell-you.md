@@ -1,7 +1,7 @@
 ---
 title: "What Mentors Do Not Tell You"
 type: "guide"
-topics: ["freelancing", "content-strategy"]
+topics: ["freelancing"]
 date: 2021-07-20
 description: "Many so-called mentors do not want their students to learn certain things. That is why many freelancers stay stuck or unhappy. Two wrong mindsets to throw out today, and the right ones to keep."
 image: "https://res.cloudinary.com/dimapmlre/image/upload/v1778784349/state-heroes/writings-v1-what-mentors-do-not-tell-you.jpg"

@@ -1,7 +1,7 @@
 ---
 title: "Every Post Is a Hollow Block"
 type: "tool"
-topics: ["content-strategy", "ai-content-systems", "faith-theology"]
+topics: ["community"]
 date: 2023-09-20
 description: "A mental model I come back to every time I am about to post. You cannot post your way into an audience. You have to build your way into one."
 image: "https://res.cloudinary.com/dimapmlre/image/upload/v1777045957/state-heroes/writings-v5-every-post-is-a-hollow-block.jpg"

@@ -1,7 +1,7 @@
 ---
 title: "Three Ways to Make a Client Trust You"
 type: "guide"
-topics: ["freelancing", "b2b-saas", "content-strategy"]
+topics: ["freelancing"]
 date: 2021-09-25
 description: "Nine out of ten interviews fail because of the wrong things. Three ways to make a client like and trust you fast, without faking expertise or chasing attention."
 image: "https://res.cloudinary.com/dimapmlre/image/upload/v1778784546/state-heroes/writings-v1-three-ways-to-make-a-client-trust-you.jpg"

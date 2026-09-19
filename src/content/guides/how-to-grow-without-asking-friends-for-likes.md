@@ -1,7 +1,7 @@
 ---
 title: "How to Grow Without Asking Friends for Likes"
 type: "guide"
-topics: ["content-strategy", "freelancing"]
+topics: ["freelancing"]
 date: 2022-02-18
 description: "Why don't my friends like my page? Why am I not getting sales even though I have a lot of friends? You are asking the wrong question. Here is the right one."
 image: "https://res.cloudinary.com/dimapmlre/image/upload/v1778784475/state-heroes/writings-v1-how-to-grow-without-asking-friends-for-likes.jpg"

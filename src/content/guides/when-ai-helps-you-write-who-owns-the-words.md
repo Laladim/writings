@@ -1,7 +1,7 @@
 ---
 title: "When AI Helps You Write, Who Owns the Words?"
 type: "guide"
-topics: ["ai-content-systems", "content-strategy", "faith-theology"]
+topics: ["community"]
 date: 2024-05-14
 description: "A Christian writer's reflection on AI-generated content, ownership, and the integrity required when a tool can produce words faster than the heart can examine them."
 image: "/state-heroes/writings-v2-when-ai-helps-you-write-who-owns-the-words.webp"
