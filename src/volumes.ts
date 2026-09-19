@@ -115,8 +115,19 @@ export function volumeBySlug(slug: string): Volume | undefined {
   return VOLUMES.find((volume) => volume.slug === slug);
 }
 
+/**
+ * A post's first topic is its editorially selected primary topic. Secondary
+ * topics may support discovery and related-post matching, but they must not
+ * place the same post in more than one book volume.
+ */
+export function primaryVolumeForTopics(topics: readonly string[]): Volume | undefined {
+  const primaryTopic = topics[0];
+  if (!primaryTopic) return undefined;
+  return VOLUMES.find((volume) => volume.topics.includes(primaryTopic));
+}
+
 export function entryBelongsToVolume(topics: readonly string[], volume: Volume): boolean {
-  return topics.some((topic) => volume.topics.includes(topic));
+  return primaryVolumeForTopics(topics)?.slug === volume.slug;
 }
 
 /** Place entries with a fixed Contents position; every other entry keeps its incoming (date) order. */

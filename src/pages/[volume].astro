@@ -91,7 +91,11 @@ const hasRequestableResources = volume.resources.some((resource) => !resource.hr
                           <span class="toc-number">
                             {String(pageIndex * pageSize + entryIndex + 1).padStart(2, '0')}
                           </span>
-                          <a class="toc-title" href={entryUrl(entry, base)}>{entry.data.title}</a>
+                          <a
+                            class="toc-title"
+                            href={entryUrl(entry, base)}
+                            data-volume-entry={entryUrl(entry, base)}
+                          >{entry.data.title}</a>
                           <span class="toc-kind">{entry.data.type}</span>
                         </li>
                       ))}

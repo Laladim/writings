@@ -92,6 +92,7 @@ for (const volume of volumeContracts) {
 }
 await checkInternalLinks('/', homeHtml, 'https://writingsbylala.com/');
 
+const volumeMemberships = new Map();
 for (const volume of volumeContracts) {
   const route = `/${volume.slug}/`;
   if (!await routeExists(route)) {
@@ -108,7 +109,23 @@ for (const volume of volumeContracts) {
   if (!hasCloseBookLink(html)) failures.push(`${route}: Close the book is not a homepage link`);
   if (/<span\b[^>]*>\s*Close the book\s*<\/span>/i.test(html)) failures.push(`${route}: Close the book is still plain text`);
   if (/\b(?:coming soon|tbd)\b/i.test(html)) failures.push(`${route}: public planning language present`);
+  const volumeEntries = [...html.matchAll(/data-volume-entry="([^"]+)"/g)].map((match) => match[1]);
+  if (new Set(volumeEntries).size !== volumeEntries.length) failures.push(`${route}: contains a duplicate contents entry`);
+  for (const entryRoute of volumeEntries) {
+    const memberships = volumeMemberships.get(entryRoute) ?? [];
+    memberships.push(volume.slug);
+    volumeMemberships.set(entryRoute, memberships);
+  }
   await checkInternalLinks(route, html, `https://writingsbylala.com${route}`);
+}
+for (const route of editorialRoutes) {
+  const memberships = volumeMemberships.get(route) ?? [];
+  if (memberships.length !== 1) {
+    failures.push(`${route}: expected exactly one primary volume, found ${memberships.join(', ') || 'none'}`);
+  }
+}
+for (const route of volumeMemberships.keys()) {
+  if (!editorialRoutes.includes(route)) failures.push(`${route}: volume entry is not an editorial route`);
 }
 if (/\b(?:coming soon|tbd)\b/i.test(homeHtml)) failures.push('/: public planning language present');
 
