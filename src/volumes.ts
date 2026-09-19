@@ -45,6 +45,7 @@ export const VOLUMES = [
     contentsPositions: {
       'how-did-i-prepare-for-the-cca-f-exam': 1,
       'what-ai-systems-do-i-use-for-work': 2,
+      'how-my-ai-content-to-revenue-intelligence-system-doubled-my-clients-revenue': 4,
       'how-i-use-my-claude-code-and-codex': 5,
       'what-is-the-folder-system-that-makes-my-ai-engineering-better': 6,
     },
