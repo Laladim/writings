@@ -19,7 +19,8 @@ const HEADERS = [
   "CRM Status",
   "Email Status",
   "Brevo Status",
-  "Notes"
+  "Notes",
+  "Lead Magnet"
 ];
 
 function doPost(e) {
@@ -56,7 +57,9 @@ function register_(data) {
   if (data.website) throw new Error("Spam check failed.");
   const email = String(data.email || "").trim().toLowerCase();
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) throw new Error("Valid email is required.");
-  if (!data.archetype) throw new Error("Archetype is required.");
+  const leadMagnet = String(data.lead_magnet || "").trim();
+  if (leadMagnet && !/^[a-z0-9-]{1,64}$/.test(leadMagnet)) throw new Error("Lead magnet is invalid.");
+  if (!data.archetype && !leadMagnet) throw new Error("Archetype or lead magnet is required.");
 
   const sheet = getSheet_();
   const registrationId = "BFF-REG-" + Utilities.getUuid().replace(/-/g, "").slice(0, 16).toUpperCase();
@@ -79,7 +82,8 @@ function register_(data) {
     "new",
     "not-configured",
     "not-configured",
-    ""
+    "",
+    leadMagnet
   ]);
   return { registrationId: registrationId };
 }
@@ -93,6 +97,9 @@ function getSheet_() {
   if (sheet.getLastRow() === 0) {
     sheet.appendRow(HEADERS);
     sheet.setFrozenRows(1);
+  } else if (sheet.getLastColumn() < HEADERS.length) {
+    const lastColumn = sheet.getLastColumn();
+    sheet.getRange(1, lastColumn + 1, 1, HEADERS.length - lastColumn).setValues([HEADERS.slice(lastColumn)]);
   }
   return sheet;
 }

@@ -1,0 +1,157 @@
+---
+import Base from '../layouts/Base.astro';
+
+const heroImage = 'https://res.cloudinary.com/dimapmlre/image/upload/v1789785886/state-heroes/writings-v1-what-ai-systems-do-i-use-for-work.jpg';
+const guidePdf = '/ai-systems-guide/ai-systems-guide.pdf';
+---
+<Base
+  title="AI Systems Guide for Claude Code and Codex · Writings by Lala"
+  description="A guide you can keep: one page per problem, with the steps, snippets and starter files for running Claude Code and Codex."
+  image={heroImage}
+>
+  <article class="container-narrow guide-gate">
+    <p class="hand kicker">take something with you</p>
+    <h1>AI Systems Guide for Claude Code and Codex</h1>
+    <p class="lede">
+      This guide condenses <em>What AI Systems Do I Use for Work?</em> to one page per problem,
+      with the steps and snippets together. It adds a starter <code>AGENTS.md</code> and
+      <code>CLAUDE.md</code> pair, a memory template, a stage-folder template, a done checklist,
+      a banned-words starter and an order for setting it all up in your first week.
+    </p>
+    <p class="guide-meta nav-font">PDF · 20 pages</p>
+
+    <section class="gate-card" aria-labelledby="gate-heading">
+      <h2 id="gate-heading">Where should I send it?</h2>
+      <form class="gate-form" data-gate-form novalidate>
+        <input type="hidden" name="lead_magnet" value="ai-systems-guide" />
+        <input type="hidden" name="source_page" value="/ai-systems-guide/" data-source-page />
+        <label class="visually-hidden" for="gate-website">Leave this field empty</label>
+        <input class="visually-hidden" id="gate-website" type="text" name="website" tabindex="-1" autocomplete="off" />
+        <label class="gate-label nav-font" for="gate-email">Your email</label>
+        <div class="gate-row">
+          <input id="gate-email" type="email" name="email" autocomplete="email" required placeholder="you@example.com" />
+          <button class="gate-button nav-font" type="submit">Send me the guide</button>
+        </div>
+        <p class="gate-note nav-font">
+          Your email is added to my Bonafide Filipino Freelancers email list. You can ask me to
+          remove it anytime at <a href="mailto:hello@writingsbylala.com">hello@writingsbylala.com</a>.
+          See the <a href="/privacy-policy/">privacy policy</a>.
+        </p>
+      </form>
+      <p class="gate-error nav-font" data-gate-error role="alert" hidden></p>
+      <div class="gate-ready" data-gate-ready hidden>
+        <p class="hand ready-kicker">here it is</p>
+        <p>Your guide is ready.</p>
+        <a class="gate-button nav-font" href={guidePdf} download="AI-Systems-Guide-Claude-Code-Codex.pdf" data-gate-download>Download the guide (PDF)</a>
+      </div>
+      <noscript><p class="gate-note nav-font">This page needs JavaScript to show the download.</p></noscript>
+    </section>
+  </article>
+
+  <script is:inline src="/bonafide-filipino-freelancers/shared/bff-capture-config.js"></script>
+  <script is:inline>
+    (function () {
+      var form = document.querySelector('[data-gate-form]');
+      if (!form) return;
+      var errorBox = document.querySelector('[data-gate-error]');
+      var ready = document.querySelector('[data-gate-ready]');
+      var button = form.querySelector('button[type="submit"]');
+      var email = form.querySelector('input[name="email"]');
+      form.querySelector('[data-source-page]').value = window.location.pathname;
+
+      function showError(message) {
+        errorBox.textContent = message;
+        errorBox.hidden = false;
+        button.disabled = false;
+      }
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        errorBox.hidden = true;
+        if (!email.value || !email.checkValidity()) {
+          showError('Please enter a valid email address.');
+          email.focus();
+          return;
+        }
+        var endpoint = window.BFF_CAPTURE_ENDPOINT || '';
+        if (!endpoint) {
+          showError('Something went wrong. Please try again in a minute.');
+          return;
+        }
+        button.disabled = true;
+        var body = new URLSearchParams(new FormData(form));
+        fetch(endpoint, { method: 'POST', mode: 'no-cors', body: body })
+          .then(function () {
+            form.hidden = true;
+            ready.hidden = false;
+            var link = ready.querySelector('[data-gate-download]');
+            if (link) link.focus();
+          })
+          .catch(function () {
+            showError('Something went wrong. Please try again in a minute.');
+          });
+      });
+    })();
+  </script>
+
+  <style>
+    .guide-gate { padding-top: clamp(2rem, 5vw, 4rem); padding-bottom: clamp(3rem, 6vw, 5rem); }
+    .kicker { color: var(--accent); font-size: 1.6rem; margin: 0 0 0.25rem; }
+    .lede { font-size: 1.1rem; color: var(--ink-soft); }
+    .lede code { font-size: 0.9em; background: var(--paper); border: 1px solid var(--line); border-radius: 4px; padding: 0 0.3em; }
+    .guide-meta { color: var(--ink-faded); font-size: 0.85rem; letter-spacing: 0.04em; text-transform: uppercase; }
+    .gate-card {
+      margin-top: 2rem;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      padding: clamp(1.25rem, 4vw, 2rem);
+    }
+    .gate-card h2 { margin-top: 0; }
+    .gate-label { display: block; font-size: 0.9rem; font-weight: 600; color: var(--ink-soft); margin-bottom: 0.4rem; }
+    .gate-row { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+    .gate-row input {
+      flex: 1 1 220px;
+      min-height: 48px;
+      padding: 0.6rem 0.9rem;
+      font: inherit;
+      color: var(--ink);
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+    .gate-row input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .gate-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0.6rem 1.2rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #fff;
+      background: var(--accent);
+      border: 0;
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .gate-button:hover { background: #4a3c68; text-decoration: none; }
+    .gate-button:disabled { opacity: 0.6; cursor: progress; }
+    .gate-note { font-size: 0.85rem; color: var(--ink-faded); margin: 0.9rem 0 0; }
+    .gate-error { color: #8d3b3b; font-size: 0.9rem; margin: 0.8rem 0 0; }
+    .ready-kicker { color: var(--gold); font-size: 1.5rem; margin: 0; }
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+</Base>

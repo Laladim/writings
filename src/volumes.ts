@@ -14,7 +14,7 @@ export type Volume = {
 
 export type VolumeResource = {
   title: string;
-  action: 'Request' | 'Open guide' | 'Open tool' | 'Open list' | 'Open board';
+  action: 'Request' | 'Download' | 'Open guide' | 'Open tool' | 'Open list' | 'Open board';
   href?: string;
 };
 
@@ -40,8 +40,11 @@ export const VOLUMES = [
       { title: 'CCA-F Mock Up Exam Guide', action: 'Request' },
       { title: 'Newsletter Workflow', action: 'Request' },
       { title: 'Content-To-Revenue Intelligence System', action: 'Request' },
+      { title: 'AI Systems Guide', action: 'Download', href: '/ai-systems-guide/' },
     ],
     contentsPositions: {
+      'how-did-i-prepare-for-the-cca-f-exam': 1,
+      'what-ai-systems-do-i-use-for-work': 2,
       'what-is-the-folder-system-that-makes-my-ai-engineering-better': 6,
     },
   },
