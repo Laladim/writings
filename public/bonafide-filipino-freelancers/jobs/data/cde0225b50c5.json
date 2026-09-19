@@ -1,6 +1,6 @@
 {
-  "id": "8f8b55f0a557",
-  "date_added": "2026-09-18",
+  "id": "cde0225b50c5",
+  "date_added": "2026-09-19",
   "status": "New",
   "title": "Executive Assistant",
   "company": "Donna",
@@ -23,7 +23,7 @@
   "newbie_friendly": false,
   "why_it_fits": "Executive Assistant match. 3 skills: excel, customer support, admin. Yes PH eligibility signal",
   "why_it_might_not": "Salary not disclosed",
-  "apply_url": "https://jobs.workable.com/view/oMUr6xw3cHoyHvRpkv1RtZ/remote-executive-assistant-in-davao-region-at-donna",
+  "apply_url": "https://jobs.workable.com/view/iUfQE6nDNfBQ6cqyGaJ8zG/remote-executive-assistant-in-philippines-at-donna",
   "ats_platform": "Workable",
   "industry": "",
   "about_the_company": "",
@@ -44,7 +44,7 @@
   "resume_match_profile": "{\"profile_version\": \"1.0\", \"best_archetypes\": [\"Generalist Admin\", \"Corporate Transitioner\", \"Fresh Starter\"], \"primary_archetype\": \"Generalist Admin\", \"resume_keywords\": \"Executive Assistant, excel, customer support, admin, Workable\", \"resume_angle\": \"Position your resume around executive assistant reliability, written remote work, and proof with excel, customer support, admin.\", \"missing_skill_suggestions\": [\"Prepare one relevant work sample\", \"Mirror the job title and tools in the resume\"]}",
   "quality_label": "Good match",
   "quality_reasons": "yes PH signal; clear posting details",
-  "job_id": "8f8b55f0a557",
+  "job_id": "cde0225b50c5",
   "source": "Workable",
   "source_mode": "direct_ats",
   "source_url": "https://jobs.workable.com/company/vzGUxMNL5StHZx1P35UEwu/jobs-at-donna",
@@ -57,6 +57,6 @@
   "quality_status": "accepted",
   "reject_reasons": "",
   "description_hash": "f4c053ef52688a66",
-  "duplicate_keys": "[\"8f8b55f0a557\"]",
-  "duplicate_sources": "[{\"source\": \"Workable\", \"url\": \"https://jobs.workable.com/view/oMUr6xw3cHoyHvRpkv1RtZ/remote-executive-assistant-in-davao-region-at-donna\"}]"
+  "duplicate_keys": "[\"cde0225b50c5\"]",
+  "duplicate_sources": "[{\"source\": \"Workable\", \"url\": \"https://jobs.workable.com/view/iUfQE6nDNfBQ6cqyGaJ8zG/remote-executive-assistant-in-philippines-at-donna\"}]"
 }
