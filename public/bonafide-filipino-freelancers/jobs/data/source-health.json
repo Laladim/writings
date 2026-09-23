@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-22T01:37:35",
+  "generated_at": "2026-09-23T01:32:03",
   "sources": [
     {
       "source": "MultiplyMii",
       "status": "ok",
-      "fetched_count": 49,
-      "accepted_count": 3,
+      "fetched_count": 52,
+      "accepted_count": 4,
       "last_error": ""
     },
     {
@@ -25,22 +25,22 @@
     {
       "source": "ClickUp",
       "status": "ok",
-      "fetched_count": 58,
+      "fetched_count": 59,
       "accepted_count": 0,
       "last_error": ""
     },
     {
       "source": "Clipboard Health",
       "status": "ok",
-      "fetched_count": 41,
+      "fetched_count": 36,
       "accepted_count": 0,
       "last_error": ""
     },
     {
       "source": "Workable",
       "status": "ok",
-      "fetched_count": 52,
-      "accepted_count": 11,
+      "fetched_count": 53,
+      "accepted_count": 14,
       "last_error": ""
     },
     {
