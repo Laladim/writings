@@ -7,6 +7,8 @@
   },
   "scripts": {
     "dev": "astro dev",
+    "editor:dev": "node scripts/wbl-editor/start.mjs",
+    "editor:test": "node --test scripts/wbl-editor/test-action-layer.mjs scripts/wbl-editor/test-publisher.mjs",
     "build": "astro build && node scripts/google-analytics.mjs inject",
     "analytics:verify": "node scripts/google-analytics.mjs verify",
     "site:verify": "node scripts/verify-technical-eligibility.mjs",

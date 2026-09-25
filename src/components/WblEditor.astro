@@ -1,0 +1,906 @@
+<aside id="wbl-editor" class="wbl-editor" hidden aria-label="WBL page editor">
+  <div class="wbl-editor__edge" aria-hidden="true"></div>
+  <header class="wbl-editor__header">
+    <div>
+      <p class="wbl-editor__mode">Editor mode</p>
+      <h2>Change the page here</h2>
+    </div>
+    <button id="wbl-editor-minimize" class="wbl-editor__icon" type="button" aria-label="Minimize editor">−</button>
+  </header>
+
+  <div id="wbl-editor-body" class="wbl-editor__body">
+    <p class="wbl-editor__intro">
+      Edit the outlined text, save as often as you need, then publish the saved version when you are done.
+    </p>
+
+    <div class="wbl-editor__meter" aria-live="polite">
+      <span id="wbl-editor-count">0 changes</span>
+      <span id="wbl-editor-state" data-state="ready">Ready</span>
+    </div>
+
+    <ol id="wbl-editor-ledger" class="wbl-editor__ledger">
+      <li class="wbl-editor__empty">Your edits will appear here.</li>
+    </ol>
+
+    <div id="wbl-editor-result" class="wbl-editor__result" hidden>
+      <p id="wbl-editor-result-title" class="wbl-editor__result-title"></p>
+      <pre id="wbl-editor-diff" tabindex="0"></pre>
+    </div>
+
+    <p id="wbl-editor-message" class="wbl-editor__message" role="status" aria-live="polite">
+      The homepage headline, introduction, and browse labels are ready to edit.
+    </p>
+
+    <div class="wbl-editor__actions">
+      <button id="wbl-editor-discard" class="wbl-editor__secondary" type="button">Discard edits</button>
+      <button id="wbl-editor-save" class="wbl-editor__primary" type="button" disabled>Save changes</button>
+    </div>
+    <button id="wbl-editor-publish" class="wbl-editor__publish" type="button" disabled>Checking publish status…</button>
+    <button id="wbl-editor-rollback" class="wbl-editor__rollback" type="button" hidden>Undo saved batch</button>
+  </div>
+</aside>
+
+<style>
+  .wbl-editor[hidden] { display: none; }
+  .wbl-editor {
+    --editor-paper: #fffdf8;
+    --editor-ink: #1a1623;
+    --editor-violet: #5a4a7a;
+    --editor-redline: #a33a5b;
+    --editor-verified: #2e6b57;
+    --editor-rule: #e4ded2;
+    position: fixed;
+    z-index: 1000;
+    top: 5.25rem;
+    right: 1.25rem;
+    width: min(22rem, calc(100vw - 2rem));
+    max-height: calc(100vh - 6.5rem);
+    overflow: hidden;
+    color: var(--editor-ink);
+    background: var(--editor-paper);
+    border: 1px solid var(--editor-rule);
+    border-radius: 0.35rem;
+    box-shadow: 0 18px 45px rgba(26, 22, 35, 0.2);
+    font-family: 'Inter', sans-serif;
+  }
+  .wbl-editor__edge {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 4px;
+    background: var(--editor-redline);
+  }
+  .wbl-editor__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.15rem 1.1rem 1rem 1.35rem;
+    border-bottom: 1px solid var(--editor-rule);
+  }
+  .wbl-editor__mode {
+    margin: 0 0 0.15rem;
+    color: var(--editor-redline);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+  .wbl-editor h2 {
+    margin: 0;
+    color: var(--editor-ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0;
+  }
+  .wbl-editor__icon {
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    border: 1px solid var(--editor-rule);
+    border-radius: 50%;
+    color: var(--editor-violet);
+    background: transparent;
+    cursor: pointer;
+    font: inherit;
+  }
+  .wbl-editor__body {
+    max-height: calc(100vh - 11rem);
+    overflow-y: auto;
+    padding: 1rem 1.1rem 1.2rem 1.35rem;
+  }
+  .wbl-editor__intro,
+  .wbl-editor__message {
+    margin: 0;
+    color: #4a4358;
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+  .wbl-editor__meter {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin: 1rem 0 0;
+    padding: 0.65rem 0;
+    border-top: 1px solid var(--editor-rule);
+    border-bottom: 1px solid var(--editor-rule);
+    color: #4a4358;
+    font-size: 0.76rem;
+  }
+  #wbl-editor-state[data-state="dirty"] { color: var(--editor-redline); }
+  #wbl-editor-state[data-state="saving"] { color: var(--editor-violet); }
+  #wbl-editor-state[data-state="verified"] { color: var(--editor-verified); }
+  #wbl-editor-state[data-state="error"] { color: #8d2727; }
+  .wbl-editor__ledger {
+    display: grid;
+    gap: 0.6rem;
+    margin: 0.9rem 0;
+    padding: 0;
+    list-style: none;
+  }
+  .wbl-editor__ledger li {
+    padding-left: 0.75rem;
+    border-left: 2px solid var(--editor-redline);
+  }
+  .wbl-editor__ledger button {
+    width: 100%;
+    padding: 0;
+    border: 0;
+    color: inherit;
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+  }
+  .wbl-editor__ledger strong {
+    display: block;
+    margin-bottom: 0.12rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+  .wbl-editor__ledger span {
+    display: block;
+    overflow: hidden;
+    color: #6b6377;
+    font-size: 0.73rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .wbl-editor__ledger .wbl-editor__empty {
+    border-left-color: var(--editor-rule);
+    color: #7a7388;
+    font-size: 0.78rem;
+  }
+  .wbl-editor__result {
+    margin: 0.9rem 0;
+    border-top: 1px solid var(--editor-rule);
+  }
+  .wbl-editor__result-title {
+    margin: 0.75rem 0 0.5rem;
+    color: var(--editor-verified);
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+  .wbl-editor__result pre {
+    max-height: 11rem;
+    margin: 0;
+    overflow: auto;
+    padding: 0.75rem;
+    color: #30293b;
+    background: #f2eee7;
+    border: 1px solid var(--editor-rule);
+    border-radius: 0.2rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.68rem;
+    line-height: 1.5;
+    white-space: pre;
+  }
+  .wbl-editor__message { min-height: 2.5rem; margin-top: 0.85rem; }
+  .wbl-editor__actions {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 0.55rem;
+    margin-top: 0.85rem;
+  }
+  .wbl-editor__actions button,
+  .wbl-editor__publish,
+  .wbl-editor__rollback {
+    min-height: 2.65rem;
+    padding: 0.65rem 0.8rem;
+    border: 1px solid var(--editor-violet);
+    border-radius: 0.2rem;
+    font: 600 0.78rem/1.2 'Inter', sans-serif;
+    cursor: pointer;
+  }
+  .wbl-editor__primary {
+    color: #fff;
+    background: var(--editor-violet);
+  }
+  .wbl-editor__secondary {
+    color: var(--editor-violet);
+    background: transparent;
+  }
+  .wbl-editor__publish {
+    width: 100%;
+    margin-top: 0.55rem;
+    color: #fff;
+    background: var(--editor-verified);
+    border-color: var(--editor-verified);
+  }
+  .wbl-editor__actions button:disabled,
+  .wbl-editor__publish:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+  }
+  .wbl-editor__rollback {
+    width: 100%;
+    margin-top: 0.55rem;
+    color: var(--editor-redline);
+    background: transparent;
+    border-color: var(--editor-redline);
+  }
+  .wbl-editor button:focus-visible,
+  :global([data-wbl-edit-active]:focus-visible) {
+    outline: 3px solid #c99caf;
+    outline-offset: 3px;
+  }
+  :global([data-wbl-edit-active]) {
+    position: relative;
+    border-radius: 0.1rem;
+    outline: 2px solid rgba(163, 58, 91, 0.7);
+    outline-offset: 5px;
+    background: rgba(255, 253, 248, 0.82);
+    cursor: text;
+  }
+  :global([data-wbl-edit-active]::selection) {
+    color: var(--editor-ink);
+    background: #e8cbd5;
+  }
+  :global([data-wbl-edit-dirty]) {
+    outline-style: dashed;
+    outline-width: 3px;
+  }
+  @media (max-width: 720px) {
+    .wbl-editor {
+      top: auto;
+      right: 0.75rem;
+      bottom: calc(0.75rem + env(safe-area-inset-bottom));
+      left: 0.75rem;
+      width: auto;
+      max-height: min(60vh, 34rem);
+    }
+    .wbl-editor__body { max-height: calc(60vh - 4.2rem); }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .wbl-editor { animation: wbl-editor-arrive 180ms ease-out both; }
+    @keyframes wbl-editor-arrive {
+      from { opacity: 0; transform: translateX(0.5rem); }
+      to { opacity: 1; transform: none; }
+    }
+  }
+</style>
+
+<script is:inline>
+  (() => {
+    const params = new URLSearchParams(window.location.search);
+    const storageKey = 'wbl-editor-token';
+    const frozenStorageKey = 'wbl-editor-frozen-session';
+    const rollbackStorageKey = 'wbl-editor-rollback-request';
+    const lastSavedStorageKey = 'wbl-editor-last-saved';
+    const suppliedToken = params.get('token');
+    const storedToken = sessionStorage.getItem(storageKey);
+    if (params.get('wblEdit') !== '1' && !suppliedToken && !storedToken) return;
+    if (suppliedToken) {
+      sessionStorage.setItem(storageKey, suppliedToken);
+      params.delete('token');
+      const query = params.toString();
+      history.replaceState(null, '', `${location.pathname}${query ? `?${query}` : ''}${location.hash}`);
+    }
+    const token = suppliedToken || storedToken;
+    if (!token) return;
+
+    const editor = document.getElementById('wbl-editor');
+    const editorBody = document.getElementById('wbl-editor-body');
+    const minimizeButton = document.getElementById('wbl-editor-minimize');
+    const count = document.getElementById('wbl-editor-count');
+    const status = document.getElementById('wbl-editor-state');
+    const ledger = document.getElementById('wbl-editor-ledger');
+    const message = document.getElementById('wbl-editor-message');
+    const saveButton = document.getElementById('wbl-editor-save');
+    const discardButton = document.getElementById('wbl-editor-discard');
+    const publishButton = document.getElementById('wbl-editor-publish');
+    const rollbackButton = document.getElementById('wbl-editor-rollback');
+    const result = document.getElementById('wbl-editor-result');
+    const resultTitle = document.getElementById('wbl-editor-result-title');
+    const diff = document.getElementById('wbl-editor-diff');
+    const elements = [...document.querySelectorAll('[data-wbl-edit-id]')];
+    if (!editor) return;
+    editor.dataset.documentId = crypto.randomUUID();
+
+    let storedFrozen = null;
+    try {
+      storedFrozen = JSON.parse(sessionStorage.getItem(frozenStorageKey) || 'null');
+      if (storedFrozen?.page_route !== location.pathname) storedFrozen = null;
+    } catch {
+      sessionStorage.removeItem(frozenStorageKey);
+    }
+
+    let storedLastSaved = null;
+    try {
+      storedLastSaved = JSON.parse(sessionStorage.getItem(lastSavedStorageKey) || 'null');
+      if (storedLastSaved?.session?.page_route !== location.pathname) storedLastSaved = null;
+    } catch {
+      sessionStorage.removeItem(lastSavedStorageKey);
+    }
+
+    editor.hidden = false;
+    let sessionId = storedFrozen?.session_id || crypto.randomUUID();
+    let startedAt = storedFrozen?.started_at || new Date().toISOString();
+    const events = [];
+    const fieldState = new Map();
+    let eventSequence = 0;
+    let captureTimer;
+    let frozenSession = storedFrozen;
+    let savedReceipt = storedLastSaved?.receipt || null;
+    let lastSavedSession = storedLastSaved?.session || null;
+    let lastEditedId = '';
+    let publishStatus = null;
+
+    const normalize = (value) => String(value ?? '').replace(/\u00a0/g, ' ').replace(/\s+/g, ' ').trim();
+    const selectorFor = (editId) => `[data-wbl-edit-id="${CSS.escape(editId)}"]`;
+    const setStatus = (label, state, detail = '') => {
+      status.textContent = label;
+      status.dataset.state = state;
+      if (detail) message.textContent = detail;
+    };
+    const digest = async (value) => {
+      const bytes = new TextEncoder().encode(value);
+      const hash = await crypto.subtle.digest('SHA-256', bytes);
+      return [...new Uint8Array(hash)].map((byte) => byte.toString(16).padStart(2, '0')).join('');
+    };
+    let baselinePromise;
+
+    for (const element of elements) {
+      const editId = element.dataset.wblEditId;
+      const original = normalize(element.textContent);
+      fieldState.set(editId, {
+        element,
+        editId,
+        label: element.dataset.wblEditLabel || editId,
+        original,
+        current: original,
+        previous: original,
+        firstChangedAt: '',
+        lastChangedAt: '',
+        mutationCount: 0,
+        firstSequence: 0,
+      });
+      element.setAttribute('contenteditable', 'plaintext-only');
+      element.setAttribute('role', 'textbox');
+      element.setAttribute('aria-label', `Edit ${element.dataset.wblEditLabel || editId}`);
+      element.setAttribute('spellcheck', 'true');
+      element.dataset.wblEditActive = 'true';
+      element.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') event.preventDefault();
+      });
+      element.addEventListener('paste', (event) => {
+        event.preventDefault();
+        const plain = normalize(event.clipboardData?.getData('text/plain'));
+        document.execCommand('insertText', false, plain);
+      });
+      element.addEventListener('input', () => recordInput(editId));
+    }
+
+    if (frozenSession) {
+      events.push(...frozenSession.events.map((event) => structuredClone(event)));
+      eventSequence = events.reduce((maximum, event) => Math.max(maximum, event.sequence), 0);
+      for (const edit of frozenSession.edits) {
+        const field = fieldState.get(edit.edit_id);
+        if (!field) continue;
+        field.original = normalize(edit.before_text);
+        field.current = normalize(edit.after_text);
+        field.previous = field.current;
+        field.firstChangedAt = edit.first_changed_at;
+        field.lastChangedAt = edit.last_changed_at;
+        field.mutationCount = edit.mutation_count;
+        field.firstSequence = edit.sequence;
+        field.element.textContent = field.current;
+        field.element.toggleAttribute('data-wbl-edit-dirty', field.current !== field.original);
+      }
+    }
+
+    const refreshBaselineDigest = () => {
+      baselinePromise = digest(JSON.stringify({
+        route: location.pathname,
+        fields: [...fieldState.values()].map((field) => ({
+          edit_id: field.editId,
+          text: field.original,
+        })),
+      }));
+    };
+    refreshBaselineDigest();
+
+    function changedFields() {
+      return [...fieldState.values()]
+        .filter((field) => field.current !== field.original)
+        .sort((a, b) => a.firstSequence - b.firstSequence);
+    }
+
+    function beginFreshSession({ adoptCurrent = false, preserveDirty = false } = {}) {
+      sessionId = crypto.randomUUID();
+      startedAt = new Date().toISOString();
+      frozenSession = null;
+      sessionStorage.removeItem(frozenStorageKey);
+      events.length = 0;
+      eventSequence = 0;
+      const now = new Date().toISOString();
+      for (const field of fieldState.values()) {
+        if (adoptCurrent) field.original = field.current;
+        field.previous = field.current;
+        field.firstChangedAt = '';
+        field.lastChangedAt = '';
+        field.mutationCount = 0;
+        field.firstSequence = 0;
+        field.element.toggleAttribute('data-wbl-edit-dirty', field.current !== field.original);
+        if (preserveDirty && field.current !== field.original) {
+          eventSequence += 1;
+          events.push({
+            sequence: eventSequence,
+            at: now,
+            edit_id: field.editId,
+            selector: selectorFor(field.editId),
+            before_text: field.original,
+            after_text: field.current,
+          });
+          field.firstChangedAt = now;
+          field.lastChangedAt = now;
+          field.mutationCount = 1;
+          field.firstSequence = eventSequence;
+        }
+      }
+      refreshBaselineDigest();
+    }
+
+    function recordInput(editId) {
+      if (frozenSession) return;
+      const field = fieldState.get(editId);
+      const current = normalize(field.element.textContent);
+      if (current === field.previous) return;
+      lastEditedId = editId;
+      const at = new Date().toISOString();
+      eventSequence += 1;
+      events.push({
+        sequence: eventSequence,
+        at,
+        edit_id: editId,
+        selector: selectorFor(editId),
+        before_text: field.previous,
+        after_text: current,
+      });
+      field.current = current;
+      field.previous = current;
+      field.firstChangedAt ||= at;
+      field.lastChangedAt = at;
+      field.mutationCount += 1;
+      field.firstSequence ||= eventSequence;
+      field.element.toggleAttribute('data-wbl-edit-dirty', current !== field.original);
+      renderLedger();
+      scheduleCapture();
+    }
+
+    function renderLedger() {
+      const changed = changedFields();
+      count.textContent = `${changed.length} ${changed.length === 1 ? 'change' : 'changes'}`;
+      ledger.replaceChildren();
+      if (!changed.length) {
+        const empty = document.createElement('li');
+        empty.className = 'wbl-editor__empty';
+        empty.textContent = elements.length
+          ? 'Your edits will appear here.'
+          : 'No source-backed text is mapped on this page yet.';
+        ledger.append(empty);
+        saveButton.disabled = true;
+        saveButton.textContent = savedReceipt ? 'Ready for next edit' : 'Save changes';
+        discardButton.disabled = true;
+        rollbackButton.disabled = !savedReceipt;
+        publishButton.disabled = true;
+        publishButton.textContent = 'Checking publish status…';
+        setStatus(
+          elements.length ? 'Ready' : 'View only',
+          'ready',
+          elements.length
+            ? 'Edit any outlined text to begin.'
+            : 'Editor Mode is active, but this route has no approved source mapping.',
+        );
+        window.queueMicrotask(refreshPublishStatus);
+        return;
+      }
+      saveButton.textContent = 'Save changes';
+      changed.forEach((field) => {
+        const item = document.createElement('li');
+        const focusButton = document.createElement('button');
+        focusButton.type = 'button';
+        const label = document.createElement('strong');
+        label.textContent = field.label;
+        const change = document.createElement('span');
+        change.textContent = `${field.original} → ${field.current}`;
+        focusButton.append(label, change);
+        focusButton.addEventListener('click', () => {
+          field.element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          field.element.focus({ preventScroll: true });
+        });
+        item.append(focusButton);
+        ledger.append(item);
+      });
+      saveButton.disabled = false;
+      discardButton.disabled = false;
+      rollbackButton.disabled = true;
+      publishButton.disabled = true;
+      publishButton.textContent = 'Save before publishing';
+      setStatus('Unsaved', 'dirty', 'The agent can inspect this session. Source is still unchanged.');
+    }
+
+    async function refreshPublishStatus() {
+      if (changedFields().length || frozenSession) {
+        publishButton.disabled = true;
+        publishButton.textContent = 'Save before publishing';
+        return;
+      }
+      try {
+        publishStatus = await inspect('/__wbl-editor/publish-status');
+        if (publishStatus.ready) {
+          publishButton.disabled = false;
+          publishButton.textContent = publishStatus.status === 'retry-ready'
+            ? 'Retry publish'
+            : 'Publish saved changes';
+          setStatus(
+            publishStatus.status === 'retry-ready' ? 'Publish stopped' : 'Saved · Ready to publish',
+            publishStatus.status === 'retry-ready' ? 'error' : 'verified',
+            publishStatus.message,
+          );
+        } else if (publishStatus.status === 'published') {
+          publishButton.disabled = true;
+          publishButton.textContent = 'Published';
+          setStatus('Published', 'verified', publishStatus.message);
+        } else {
+          publishButton.disabled = true;
+          publishButton.textContent = 'Publish saved changes';
+        }
+      } catch (error) {
+        publishButton.disabled = true;
+        publishButton.textContent = 'Publish unavailable';
+        setStatus('Publish stopped', 'error', `${error.code ? `${error.code}: ` : ''}${error.message}`);
+      }
+    }
+
+    async function sessionPayload() {
+      const changed = changedFields();
+      return {
+        session_id: sessionId,
+        started_at: startedAt,
+        page_route: location.pathname,
+        viewport: { width: window.innerWidth, height: window.innerHeight },
+        baseline_rendered_sha256: await baselinePromise,
+        events: events.slice(),
+        edits: changed.map((field, index) => ({
+          sequence: index + 1,
+          edit_id: field.editId,
+          selector: selectorFor(field.editId),
+          before_text: field.original,
+          after_text: field.current,
+          first_changed_at: field.firstChangedAt,
+          last_changed_at: field.lastChangedAt,
+          mutation_count: field.mutationCount,
+          edit_class: 'site-interface',
+        })),
+      };
+    }
+
+    async function request(endpoint, payload) {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          'x-wbl-editor-token': token,
+        },
+        body: JSON.stringify(payload),
+      });
+      const value = await response.json();
+      if (!response.ok) {
+        const error = new Error(value.message || 'Editor action failed');
+        error.code = value.code;
+        throw error;
+      }
+      return value;
+    }
+
+    async function inspect(endpoint) {
+      const response = await fetch(endpoint, {
+        method: 'GET',
+        headers: { 'x-wbl-editor-token': token },
+        cache: 'no-store',
+      });
+      const value = await response.json();
+      if (!response.ok) {
+        const error = new Error(value.message || 'Editor inspection failed');
+        error.code = value.code;
+        throw error;
+      }
+      return value;
+    }
+
+    function scheduleCapture() {
+      window.clearTimeout(captureTimer);
+      captureTimer = window.setTimeout(async () => {
+        try {
+          const session = await sessionPayload();
+          if (session.edits.length) await request('/__wbl-editor/session', { session });
+        } catch (error) {
+          setStatus('Monitor offline', 'error', error.message);
+        }
+      }, 120);
+    }
+
+    function setEditing(enabled) {
+      for (const field of fieldState.values()) {
+        field.element.setAttribute('contenteditable', enabled ? 'plaintext-only' : 'false');
+      }
+    }
+
+    async function pollParity(edits, key) {
+      for (let attempt = 0; attempt < 40; attempt += 1) {
+        const response = await fetch(`${location.pathname}?wblParity=${Date.now()}`, {
+          cache: 'no-store',
+        });
+        const html = await response.text();
+        const page = new DOMParser().parseFromString(html, 'text/html');
+        const matches = edits.every((edit) => {
+          const element = page.querySelector(edit.selector);
+          return element && normalize(element.textContent) === normalize(edit[key]);
+        });
+        if (matches) return true;
+        await new Promise((resolve) => window.setTimeout(resolve, 150));
+      }
+      return false;
+    }
+
+    const wait = (milliseconds) => new Promise((resolve) => window.setTimeout(resolve, milliseconds));
+
+    async function showSavedReceipt(receipt) {
+      const savedSession = structuredClone(frozenSession);
+      const focusId = savedSession.edits.at(-1)?.edit_id || lastEditedId;
+      setEditing(false);
+      const parity = await pollParity(savedSession.edits, 'after_text');
+      if (!parity) throw new Error('Source changed, but the refreshed route did not match the saved text.');
+      savedReceipt = receipt;
+      lastSavedSession = savedSession;
+      sessionStorage.setItem(lastSavedStorageKey, JSON.stringify({
+        session: lastSavedSession,
+        receipt: savedReceipt,
+      }));
+      beginFreshSession({ adoptCurrent: true });
+      setEditing(true);
+      renderLedger();
+      fieldState.get(focusId)?.element.focus({ preventScroll: true });
+      result.hidden = false;
+      resultTitle.textContent = receipt.idempotent
+        ? 'No second write. This batch was already saved.'
+        : 'Saved to source and verified on the refreshed page.';
+      diff.textContent = receipt.source_diff;
+      rollbackButton.hidden = false;
+      rollbackButton.disabled = false;
+      saveButton.textContent = 'Ready for next edit';
+      setStatus('Saved · Ready', 'verified', 'Source and rendered text match. Keep editing or move to another page.');
+      await refreshPublishStatus();
+    }
+
+    async function resumeFrozenSave() {
+      setEditing(false);
+      saveButton.disabled = true;
+      discardButton.disabled = true;
+      setStatus('Recovering', 'saving', 'Recovering the exact frozen Save batch.');
+      let receipt = await inspect(
+        `/__wbl-editor/receipt?session_id=${encodeURIComponent(frozenSession.session_id)}`,
+      );
+      if (receipt.status === 'pending') {
+        receipt = await request('/__wbl-editor/save', { session: frozenSession });
+      }
+      if (receipt.status === 'applied') {
+        await showSavedReceipt(receipt);
+        return;
+      }
+      for (let attempt = 0; attempt < 40; attempt += 1) {
+        receipt = await inspect(
+          `/__wbl-editor/receipt?session_id=${encodeURIComponent(frozenSession.session_id)}`,
+        );
+        if (receipt.status === 'applied') {
+          await showSavedReceipt(receipt);
+          return;
+        }
+        await wait(150);
+      }
+      throw new Error('The source receipt did not appear after recovery.');
+    }
+
+    async function showRollbackReceipt(receipt) {
+      if (!lastSavedSession) throw new Error('The saved batch needed for rollback is unavailable.');
+      const parity = await pollParity(lastSavedSession.edits, 'before_text');
+      if (!parity) throw new Error('Rollback completed, but the refreshed route did not match the original text.');
+      for (const edit of lastSavedSession.edits) {
+        const field = fieldState.get(edit.edit_id);
+        if (!field) continue;
+        field.current = normalize(edit.before_text);
+        field.element.textContent = field.current;
+      }
+      const restoredDiff = lastSavedSession.edits
+        .map((edit) => `@@ ${edit.edit_id} @@\n-${edit.after_text}\n+${edit.before_text}`)
+        .join('\n\n');
+      savedReceipt = null;
+      lastSavedSession = null;
+      sessionStorage.removeItem(lastSavedStorageKey);
+      sessionStorage.removeItem(rollbackStorageKey);
+      beginFreshSession({ adoptCurrent: true });
+      setEditing(true);
+      renderLedger();
+      result.hidden = false;
+      resultTitle.textContent = receipt.idempotent
+        ? 'This batch was already restored.'
+        : 'Saved batch restored to its original source values.';
+      diff.textContent = restoredDiff;
+      rollbackButton.hidden = true;
+      setStatus('Restored · Ready', 'verified', 'The saved batch was restored. You can keep editing.');
+      await refreshPublishStatus();
+    }
+
+    async function resumeRollback(requestHash) {
+      setEditing(false);
+      saveButton.disabled = true;
+      discardButton.disabled = true;
+      rollbackButton.hidden = false;
+      rollbackButton.disabled = true;
+      setStatus('Recovering', 'saving', 'The page refreshed. Recovering the rollback receipt.');
+      for (let attempt = 0; attempt < 40; attempt += 1) {
+        const receipt = await inspect(
+          `/__wbl-editor/rollback?request_hash=${encodeURIComponent(requestHash)}`,
+        );
+        if (receipt.status === 'rolled-back') {
+          await showRollbackReceipt(receipt);
+          return;
+        }
+        await wait(150);
+      }
+      throw new Error('The rollback receipt did not appear after the page refresh.');
+    }
+
+    async function save() {
+      if (!changedFields().length) return;
+      saveButton.disabled = true;
+      discardButton.disabled = true;
+      setStatus('Saving', 'saving', 'Freezing this exact batch and applying mapped source values.');
+      try {
+        if (!frozenSession) {
+          frozenSession = await sessionPayload();
+          frozenSession.save_clicked_at = new Date().toISOString();
+          frozenSession = structuredClone(frozenSession);
+        }
+        sessionStorage.setItem(frozenStorageKey, JSON.stringify(frozenSession));
+        const receipt = await request('/__wbl-editor/save', { session: frozenSession });
+        await showSavedReceipt(receipt);
+      } catch (error) {
+        beginFreshSession({ preserveDirty: true });
+        setEditing(true);
+        renderLedger();
+        setStatus('Save stopped', 'error', `${error.code ? `${error.code}: ` : ''}${error.message}`);
+      }
+    }
+
+    function discard() {
+      if (frozenSession) return;
+      sessionStorage.removeItem(frozenStorageKey);
+      sessionStorage.removeItem(rollbackStorageKey);
+      events.length = 0;
+      eventSequence = 0;
+      for (const field of fieldState.values()) {
+        field.current = field.original;
+        field.previous = field.original;
+        field.firstChangedAt = '';
+        field.lastChangedAt = '';
+        field.mutationCount = 0;
+        field.firstSequence = 0;
+        field.element.textContent = field.original;
+        field.element.removeAttribute('data-wbl-edit-dirty');
+      }
+      renderLedger();
+    }
+
+    async function rollback() {
+      if (!savedReceipt) return;
+      rollbackButton.disabled = true;
+      setStatus('Restoring', 'saving', 'Checking the saved values before restoring the baseline text.');
+      try {
+        sessionStorage.setItem(rollbackStorageKey, savedReceipt.request_hash);
+        const receipt = await request('/__wbl-editor/rollback', {
+          request_hash: savedReceipt.request_hash,
+        });
+        await showRollbackReceipt(receipt);
+      } catch (error) {
+        rollbackButton.disabled = false;
+        setStatus('Rollback stopped', 'error', `${error.code ? `${error.code}: ` : ''}${error.message}`);
+      }
+    }
+
+    async function publishSaved() {
+      const unsavedCount = changedFields().length;
+      if (unsavedCount || frozenSession || !publishStatus?.ready) return;
+      setEditing(false);
+      publishButton.disabled = true;
+      saveButton.disabled = true;
+      discardButton.disabled = true;
+      rollbackButton.disabled = true;
+      setStatus(
+        'Publishing',
+        'saving',
+        'Running site checks, reconciling current main, deploying, and verifying the live text.',
+      );
+      try {
+        const receipt = await request('/__wbl-editor/publish', {
+          authorization: 'publish-button',
+          page_route: location.pathname,
+          unsaved_count: 0,
+        });
+        publishStatus = { status: 'published', ready: false };
+        result.hidden = false;
+        resultTitle.textContent = 'Published and verified on the live website.';
+        diff.textContent = [
+          `Commit: ${receipt.commit_sha}`,
+          ...receipt.live_urls.map((url) => `Live: ${url}`),
+        ].join('\n');
+        publishButton.textContent = 'Published';
+        setStatus('Published', 'verified', 'The exact saved text is live. You can keep editing and publish again later.');
+      } catch (error) {
+        publishStatus = null;
+        publishButton.textContent = 'Retry publish';
+        setStatus('Publish stopped', 'error', `${error.code ? `${error.code}: ` : ''}${error.message}`);
+      } finally {
+        setEditing(true);
+        saveButton.disabled = changedFields().length === 0;
+        discardButton.disabled = changedFields().length === 0;
+        rollbackButton.disabled = !savedReceipt;
+        if (!publishStatus || publishStatus.ready) await refreshPublishStatus();
+      }
+    }
+
+    let minimized = false;
+    minimizeButton.addEventListener('click', () => {
+      minimized = !minimized;
+      editorBody.hidden = minimized;
+      minimizeButton.textContent = minimized ? '+' : '−';
+      minimizeButton.setAttribute('aria-label', minimized ? 'Expand editor' : 'Minimize editor');
+    });
+    saveButton.addEventListener('click', save);
+    discardButton.addEventListener('click', discard);
+    rollbackButton.addEventListener('click', rollback);
+    publishButton.addEventListener('click', publishSaved);
+    window.addEventListener('keydown', (event) => {
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 's') {
+        event.preventDefault();
+        save();
+      }
+    });
+    renderLedger();
+    const pendingRollback = sessionStorage.getItem(rollbackStorageKey);
+    if (pendingRollback && lastSavedSession) {
+      resumeRollback(pendingRollback).catch((error) => {
+        setStatus('Recovery stopped', 'error', `${error.code ? `${error.code}: ` : ''}${error.message}`);
+      });
+    } else if (frozenSession) {
+      resumeFrozenSave().catch((error) => {
+        beginFreshSession({ preserveDirty: true });
+        setEditing(true);
+        renderLedger();
+        setStatus('Recovery stopped', 'error', `${error.code ? `${error.code}: ` : ''}${error.message}`);
+      });
+    } else if (savedReceipt && lastSavedSession) {
+      rollbackButton.hidden = false;
+      rollbackButton.disabled = false;
+    }
+  })();
+</script>

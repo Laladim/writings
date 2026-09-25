@@ -6,12 +6,16 @@ import { TOPICS, TYPES } from '../topics';
 
 const entries = await getAllEntries();
 const base = import.meta.env.BASE_URL;
+const editorProps = (editId: string, label: string) =>
+  import.meta.env.DEV
+    ? { 'data-wbl-edit-id': editId, 'data-wbl-edit-label': label }
+    : {};
 ---
 <Base title="Library — Writings" description="Every entry, filterable by type and topic.">
   <section class="library-head">
-    <p class="hand kicker">library</p>
-    <h1>Every entry, filterable.</h1>
-    <p class="subtitle">The more gets written, the richer the web.</p>
+    <p class="hand kicker" {...editorProps('library.hero.kicker', 'Library kicker')}>{/* wbl-edit:start library.hero.kicker */}library{/* wbl-edit:end library.hero.kicker */}</p>
+    <h1 {...editorProps('library.hero.headline', 'Library headline')}>{/* wbl-edit:start library.hero.headline */}Every entry, filterable.{/* wbl-edit:end library.hero.headline */}</h1>
+    <p class="subtitle" {...editorProps('library.hero.subtitle', 'Library introduction')}>{/* wbl-edit:start library.hero.subtitle */}The more gets written, the richer the web.{/* wbl-edit:end library.hero.subtitle */}</p>
   </section>
 
   <section class="filters-section">

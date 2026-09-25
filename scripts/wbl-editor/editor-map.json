@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "routes": {
+    "/": {
+      "home.hero.headline": {
+        "label": "Homepage headline",
+        "selector": "[data-wbl-edit-id=\"home\\.hero\\.headline\"]",
+        "source": "src/pages/index.astro",
+        "start_marker": "{/* wbl-edit:start home.hero.headline */}",
+        "end_marker": "{/* wbl-edit:end home.hero.headline */}",
+        "edit_class": "site-interface",
+        "max_length": 120
+      },
+      "home.hero.introduction": {
+        "label": "Homepage introduction",
+        "selector": "[data-wbl-edit-id=\"home\\.hero\\.introduction\"]",
+        "source": "src/pages/index.astro",
+        "start_marker": "{/* wbl-edit:start home.hero.introduction */}",
+        "end_marker": "{/* wbl-edit:end home.hero.introduction */}",
+        "edit_class": "site-interface",
+        "max_length": 400
+      },
+      "home.browse.topic-label": {
+        "label": "Browse by topic",
+        "selector": "[data-wbl-edit-id=\"home\\.browse\\.topic-label\"]",
+        "source": "src/pages/index.astro",
+        "start_marker": "{/* wbl-edit:start home.browse.topic-label */}",
+        "end_marker": "{/* wbl-edit:end home.browse.topic-label */}",
+        "edit_class": "site-interface",
+        "max_length": 80
+      },
+      "home.browse.type-label": {
+        "label": "Browse by type",
+        "selector": "[data-wbl-edit-id=\"home\\.browse\\.type-label\"]",
+        "source": "src/pages/index.astro",
+        "start_marker": "{/* wbl-edit:start home.browse.type-label */}",
+        "end_marker": "{/* wbl-edit:end home.browse.type-label */}",
+        "edit_class": "site-interface",
+        "max_length": 80
+      }
+    },
+    "/library/": {
+      "library.hero.kicker": {
+        "label": "Library kicker",
+        "selector": "[data-wbl-edit-id=\"library\\.hero\\.kicker\"]",
+        "source": "src/pages/library.astro",
+        "start_marker": "{/* wbl-edit:start library.hero.kicker */}",
+        "end_marker": "{/* wbl-edit:end library.hero.kicker */}",
+        "edit_class": "site-interface",
+        "max_length": 80
+      },
+      "library.hero.headline": {
+        "label": "Library headline",
+        "selector": "[data-wbl-edit-id=\"library\\.hero\\.headline\"]",
+        "source": "src/pages/library.astro",
+        "start_marker": "{/* wbl-edit:start library.hero.headline */}",
+        "end_marker": "{/* wbl-edit:end library.hero.headline */}",
+        "edit_class": "site-interface",
+        "max_length": 120
+      },
+      "library.hero.subtitle": {
+        "label": "Library introduction",
+        "selector": "[data-wbl-edit-id=\"library\\.hero\\.subtitle\"]",
+        "source": "src/pages/library.astro",
+        "start_marker": "{/* wbl-edit:start library.hero.subtitle */}",
+        "end_marker": "{/* wbl-edit:end library.hero.subtitle */}",
+        "edit_class": "site-interface",
+        "max_length": 240
+      }
+    },
+    "/about/": {
+      "about.hero.kicker": {
+        "label": "About kicker",
+        "selector": "[data-wbl-edit-id=\"about\\.hero\\.kicker\"]",
+        "source": "src/pages/about.astro",
+        "start_marker": "{/* wbl-edit:start about.hero.kicker */}",
+        "end_marker": "{/* wbl-edit:end about.hero.kicker */}",
+        "edit_class": "site-interface",
+        "max_length": 80
+      },
+      "about.hero.headline": {
+        "label": "About headline",
+        "selector": "[data-wbl-edit-id=\"about\\.hero\\.headline\"]",
+        "source": "src/pages/about.astro",
+        "start_marker": "{/* wbl-edit:start about.hero.headline */}",
+        "end_marker": "{/* wbl-edit:end about.hero.headline */}",
+        "edit_class": "site-interface",
+        "max_length": 120
+      },
+      "about.hero.lede": {
+        "label": "About introduction",
+        "selector": "[data-wbl-edit-id=\"about\\.hero\\.lede\"]",
+        "source": "src/pages/about.astro",
+        "start_marker": "{/* wbl-edit:start about.hero.lede */}",
+        "end_marker": "{/* wbl-edit:end about.hero.lede */}",
+        "edit_class": "site-interface",
+        "max_length": 500
+      },
+      "about.intro.work": {
+        "label": "About work paragraph",
+        "selector": "[data-wbl-edit-id=\"about\\.intro\\.work\"]",
+        "source": "src/pages/about.astro",
+        "start_marker": "{/* wbl-edit:start about.intro.work */}",
+        "end_marker": "{/* wbl-edit:end about.intro.work */}",
+        "edit_class": "site-interface",
+        "max_length": 600
+      },
+      "about.intro.purpose": {
+        "label": "About purpose paragraph",
+        "selector": "[data-wbl-edit-id=\"about\\.intro\\.purpose\"]",
+        "source": "src/pages/about.astro",
+        "start_marker": "{/* wbl-edit:start about.intro.purpose */}",
+        "end_marker": "{/* wbl-edit:end about.intro.purpose */}",
+        "edit_class": "site-interface",
+        "max_length": 500
+      },
+      "about.faq.kicker": {
+        "label": "FAQ kicker",
+        "selector": "[data-wbl-edit-id=\"about\\.faq\\.kicker\"]",
+        "source": "src/pages/about.astro",
+        "start_marker": "{/* wbl-edit:start about.faq.kicker */}",
+        "end_marker": "{/* wbl-edit:end about.faq.kicker */}",
+        "edit_class": "site-interface",
+        "max_length": 80
+      },
+      "about.faq.headline": {
+        "label": "FAQ headline",
+        "selector": "[data-wbl-edit-id=\"about\\.faq\\.headline\"]",
+        "source": "src/pages/about.astro",
+        "start_marker": "{/* wbl-edit:start about.faq.headline */}",
+        "end_marker": "{/* wbl-edit:end about.faq.headline */}",
+        "edit_class": "site-interface",
+        "max_length": 120
+      },
+      "about.closing.glory": {
+        "label": "About closing",
+        "selector": "[data-wbl-edit-id=\"about\\.closing\\.glory\"]",
+        "source": "src/pages/about.astro",
+        "start_marker": "{/* wbl-edit:start about.closing.glory */}",
+        "end_marker": "{/* wbl-edit:end about.closing.glory */}",
+        "edit_class": "site-interface",
+        "max_length": 160
+      },
+      "about.closing.signature": {
+        "label": "About signature",
+        "selector": "[data-wbl-edit-id=\"about\\.closing\\.signature\"]",
+        "source": "src/pages/about.astro",
+        "start_marker": "{/* wbl-edit:start about.closing.signature */}",
+        "end_marker": "{/* wbl-edit:end about.closing.signature */}",
+        "edit_class": "site-interface",
+        "max_length": 80
+      }
+    }
+  }
+}

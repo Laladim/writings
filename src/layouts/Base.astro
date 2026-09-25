@@ -1,5 +1,6 @@
 ---
 import { GA_MEASUREMENT_ID } from '../../site.config.mjs';
+import WblEditor from '../components/WblEditor.astro';
 
 export interface Props {
   title: string;
@@ -138,6 +139,8 @@ const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
         </div>
       </footer>
     )}
+
+    {import.meta.env.DEV && <WblEditor />}
 
     <style>
       .site-nav {
