@@ -4,6 +4,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { EditorError, createActionLayer } from './action-layer.mjs';
+import { createArticleLayer } from './article-layer.mjs';
 import { createPublisher } from './publisher.mjs';
 
 const folder = path.dirname(fileURLToPath(import.meta.url));
@@ -16,6 +17,14 @@ function json(res, status, value) {
   res.setHeader('cache-control', 'no-store');
   res.setHeader('content-length', Buffer.byteLength(body));
   res.end(body);
+}
+
+function restartAfterResponse(res, server) {
+  res.once('finish', () => {
+    server.restart().catch((error) => {
+      console.error(`WBL Editor could not refresh the source-backed preview: ${error.message}`);
+    });
+  });
 }
 
 function isLoopback(address) {
@@ -85,6 +94,11 @@ export function wblEditorPlugin() {
         manifestPath,
         baselineCommit: currentCommit,
       });
+      const articles = await createArticleLayer({
+        root,
+        recordRoot,
+        baselineCommit: currentCommit,
+      });
       const publisher = await createPublisher({
         root,
         recordRoot,
@@ -96,6 +110,12 @@ export function wblEditorPlugin() {
         const requestUrl = new URL(req.url ?? '/', `http://${req.headers.host ?? '127.0.0.1'}`);
         if (!requestUrl.pathname.startsWith('/__wbl-editor/')) return next();
         try {
+          if (requestUrl.pathname === '/__wbl-editor/bootstrap' && req.method === 'GET') {
+            if (!isLoopback(req.socket.remoteAddress) || req.headers['x-wbl-editor-launch'] !== 'chrome-extension') {
+              throw new EditorError('extension-launch-required', 'Use the installed WBL editor extension to start this session', 403);
+            }
+            return json(res, 200, { status: 'ready', token });
+          }
           if (requestUrl.pathname === '/__wbl-editor/health' && req.method === 'GET') {
             authorize(req, token);
             return json(res, 200, {
@@ -134,6 +154,10 @@ export function wblEditorPlugin() {
             authorize(req, token);
             return json(res, 200, await publisher.status());
           }
+          if (requestUrl.pathname === '/__wbl-editor/article' && req.method === 'GET') {
+            authorize(req, token);
+            return json(res, 200, await articles.load(requestUrl.searchParams.get('route') ?? ''));
+          }
           if (requestUrl.pathname === '/__wbl-editor/session' && req.method === 'POST') {
             authorize(req, token, { mutation: true });
             const payload = await body(req);
@@ -143,6 +167,13 @@ export function wblEditorPlugin() {
             authorize(req, token, { mutation: true });
             const payload = await body(req);
             return json(res, 200, await layer.save(payload.session));
+          }
+          if (requestUrl.pathname === '/__wbl-editor/article-save' && req.method === 'POST') {
+            authorize(req, token, { mutation: true });
+            const payload = await body(req);
+            const receipt = await articles.save(payload);
+            restartAfterResponse(res, server);
+            return json(res, 200, receipt);
           }
           if (requestUrl.pathname === '/__wbl-editor/rollback' && req.method === 'POST') {
             authorize(req, token, { mutation: true });

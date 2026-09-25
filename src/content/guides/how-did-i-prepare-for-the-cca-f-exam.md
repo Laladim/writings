@@ -31,7 +31,7 @@ My experience is so real and so true that I want more of it. I want more people 
 
 Anthropic Certification is exclusive to Partner Networks only.
 
-I am part of a company called Autonomee. This is being led by Goda Go. She is one of the Claude Ambassadors in Berlin, Germany and working as a Senior AI Solution Engineer. She herself is a Claude Certified Architect.
+I am part of a company called [**Autonomee**](https://www.skool.com/autonomee). This is being led by Goda Go. She is one of the Claude Ambassadors in Berlin, Germany and working as a Senior AI Solution Engineer. She herself is a Claude Certified Architect.
 
 She runs a very sophisticated program in Skool Community for ordinary folks like me to become more adept in using AI tools such as Claude Code.
 

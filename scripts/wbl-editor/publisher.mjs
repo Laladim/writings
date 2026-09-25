@@ -27,21 +27,34 @@ export const EDITOR_BOOTSTRAP_PATHS = [
   'astro.config.mjs',
   'package.json',
   'scripts/wbl-editor/action-layer.mjs',
+  'scripts/wbl-editor/article-layer.mjs',
   'scripts/wbl-editor/editor-map.json',
   'scripts/wbl-editor/publisher.mjs',
   'scripts/wbl-editor/start.mjs',
   'scripts/wbl-editor/test-action-layer.mjs',
+  'scripts/wbl-editor/test-article-layer.mjs',
   'scripts/wbl-editor/test-publisher.mjs',
   'scripts/wbl-editor/vite-plugin.mjs',
   'src/components/WblEditor.astro',
+  'src/components/WblArticleEditor.astro',
   'src/layouts/Base.astro',
   'src/pages/about.astro',
   'src/pages/index.astro',
   'src/pages/library.astro',
+  'src/pages/[type]/[...slug].astro',
 ];
 
 function normalizeText(value) {
   return String(value ?? '').replace(/\u00a0/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+export function visibleFormattingText(value) {
+  return normalizeText(
+    String(value ?? '')
+      .replace(/<\/?u>/gi, '')
+      .replace(/[*_]{1,3}/g, '')
+      .replace(/`([^`]+)`/g, '$1'),
+  );
 }
 
 function decodeEntities(value) {
@@ -295,7 +308,7 @@ export async function createPublisher({
     return { digest, receipt: matches.at(-1) ?? null };
   }
 
-  async function deriveExpectations(paths) {
+  async function deriveExpectations(paths, receipts) {
     const expectations = [];
     for (const filePath of paths) {
       const mappings = sourceMappings.get(filePath) ?? [];
@@ -310,6 +323,10 @@ export async function createPublisher({
         });
       }
       for (const [route, values] of byRoute) expectations.push({ route, values });
+    }
+    for (const receipt of receipts) {
+      if (!receipt.changed_files?.some((changed) => paths.includes(changed.path))) continue;
+      for (const expectation of receipt.live_expectations ?? []) expectations.push(expectation);
     }
     expectations.sort((left, right) => left.route.localeCompare(right.route));
     return expectations;
@@ -347,6 +364,16 @@ export async function createPublisher({
         rejected.push(`${filePath} (no current immutable Save receipt)`);
         continue;
       }
+      if (/^src\/content\/(?:guides|stories|notes|reflections|tools)\/[a-z0-9-]+\.md$/.test(filePath)) {
+        const evidence = await sourceAuthorization(filePath, receipts);
+        if (evidence.receipt?.live_expectations?.length) {
+          authorized.push(filePath);
+          sourceEvidence.push({ path: filePath, sha256: evidence.digest, request_hash: evidence.receipt.request_hash });
+          continue;
+        }
+        rejected.push(`${filePath} (no current formatting Save receipt)`);
+        continue;
+      }
       if (bootstrapActive && bootstrapSet.has(filePath)) {
         authorized.push(filePath);
       } else {
@@ -368,7 +395,11 @@ export async function createPublisher({
         sha256: sha256(await readFile(path.join(resolvedRoot, filePath))),
       });
     }
-    const expectations = await deriveExpectations(authorized);
+    const authorizedRequestHashes = new Set(sourceEvidence.map((entry) => entry.request_hash).filter(Boolean));
+    const expectations = await deriveExpectations(
+      authorized,
+      receipts.filter((receipt) => authorizedRequestHashes.has(receipt.request_hash)),
+    );
     if (!expectations.length) {
       throw new EditorError('missing-live-expectation', 'No fixed live text expectation could be derived', 409);
     }
@@ -604,14 +635,23 @@ export async function createPublisher({
           });
           const html = await response.text();
           const text = htmlText(html);
-          const missing = expectation.values.filter((value) => !text.includes(normalizeText(value.text)));
+          const missing = expectation.values
+            ? expectation.values.filter((value) => !text.includes(normalizeText(value.text)))
+            : (expectation.fragments ?? []).filter((fragment) => {
+                if (fragment.kind === 'link') {
+                  return !html.includes(`href="${fragment.href}"`) || !text.includes(visibleFormattingText(fragment.text));
+                }
+                return !html.includes(fragment.html);
+              });
           const pass = response.ok && missing.length === 0;
           checks.push({
             route: expectation.route,
             url: liveUrl,
             status_code: response.status,
-            expected_edit_ids: expectation.values.map((value) => value.edit_id),
-            missing_edit_ids: missing.map((value) => value.edit_id),
+            expected_edit_ids: expectation.values
+              ? expectation.values.map((value) => value.edit_id)
+              : (expectation.fragments ?? []).map((fragment) => fragment.kind),
+            missing_edit_ids: missing.map((value) => value.edit_id ?? value.kind),
             result: pass ? 'pass' : 'fail',
           });
           if (!pass) allPass = false;

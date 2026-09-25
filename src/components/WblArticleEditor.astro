@@ -1,0 +1,191 @@
+---
+export interface Props {
+  route: string;
+  source: string;
+  body: string;
+}
+const { route, source, body } = Astro.props;
+---
+
+<aside id="wbl-article-editor" class="article-editor" hidden data-route={route} data-source={source}>
+  <header>
+    <div><p>Article editor</p><h2>Format this published post</h2></div>
+    <button id="wbl-article-close" type="button" aria-label="Close article editor">×</button>
+  </header>
+  <div class="toolbar" aria-label="Article formatting">
+    <button type="button" data-format="bold"><strong>B</strong><span>Bold</span></button>
+    <button type="button" data-format="underline"><u>U</u><span>Underline</span></button>
+    <label><span>URL</span><input id="wbl-article-url" type="url" placeholder="https://…" /></label>
+    <button type="button" data-format="link"><span>Link selection</span></button>
+  </div>
+  <label class="body-label" for="wbl-article-body">Article Markdown</label>
+  <textarea id="wbl-article-body" spellcheck="true">{body}</textarea>
+  <p id="wbl-article-status" role="status">Select text, then choose Bold, Underline, or add a URL.</p>
+  <div class="actions">
+    <button id="wbl-article-reset" type="button">Discard</button>
+    <button id="wbl-article-save" type="button" disabled>Save formatting</button>
+  </div>
+  <button id="wbl-article-publish" class="publish" type="button" disabled>Checking publish status…</button>
+</aside>
+
+<style>
+  .article-editor[hidden] { display: none; }
+  .article-editor { position: fixed; z-index: 1200; top: 1rem; right: 1rem; bottom: 1rem; width: min(34rem, calc(100vw - 2rem)); display: grid; grid-template-rows: auto auto auto minmax(12rem, 1fr) auto auto auto; gap: .75rem; padding: 1rem; border: 1px solid #d8cfbf; border-radius: .45rem; background: #fffdf8; box-shadow: 0 1.5rem 4rem rgba(26,22,35,.25); color: #1a1623; font-family: Inter, sans-serif; }
+  header { display: flex; align-items: start; justify-content: space-between; gap: 1rem; }
+  header p { margin: 0; color: #a33a5b; font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; }
+  h2 { margin: .15rem 0 0; font: 600 1rem/1.2 Inter, sans-serif; }
+  header button { border: 0; background: transparent; font-size: 1.6rem; cursor: pointer; }
+  .toolbar { display: grid; grid-template-columns: auto auto minmax(9rem, 1fr) auto; gap: .45rem; align-items: end; padding: .75rem; background: #f3efe7; }
+  .toolbar button, .actions button, .toolbar input { min-height: 2.5rem; border: 1px solid #8a7aaa; border-radius: .2rem; background: #fff; color: #332c52; font: 600 .78rem/1 Inter, sans-serif; }
+  .toolbar button { padding: .55rem .75rem; cursor: pointer; }
+  .toolbar button span { display: block; margin-top: .2rem; font-size: .65rem; font-weight: 500; }
+  .toolbar label span, .body-label { display: block; margin-bottom: .3rem; color: #5b5367; font-size: .72rem; font-weight: 700; }
+  .toolbar input { width: 100%; padding: .5rem .65rem; font-weight: 400; }
+  textarea { width: 100%; min-height: 0; resize: none; padding: 1rem; border: 1px solid #cfc6b8; background: #fff; color: #211c2a; font: 14px/1.55 ui-monospace, SFMono-Regular, Menlo, monospace; }
+  #wbl-article-status { min-height: 2.4rem; margin: 0; color: #5b5367; font-size: .78rem; line-height: 1.45; }
+  .actions { display: grid; grid-template-columns: 1fr 1.2fr; gap: .55rem; }
+  .actions button { cursor: pointer; }
+  #wbl-article-save { color: #fff; background: #5a4a7a; }
+  .publish { min-height: 2.65rem; border: 1px solid #2e6b57; border-radius: .2rem; color: #fff; background: #2e6b57; font: 700 .8rem/1 Inter, sans-serif; cursor: pointer; }
+  .actions button:disabled, .publish:disabled { cursor: not-allowed; opacity: .45; }
+  @media (max-width: 680px) { .toolbar { grid-template-columns: 1fr 1fr; } }
+</style>
+
+<script is:inline>
+  (() => {
+    const params = new URLSearchParams(location.search);
+    const token = params.get('token') || sessionStorage.getItem('wbl-editor-token');
+    if (!token || params.get('wblEdit') !== '1') return;
+    if (params.get('token')) {
+      sessionStorage.setItem('wbl-editor-token', token);
+      params.delete('token');
+      history.replaceState({}, '', `${location.pathname}?${params.toString()}${location.hash}`);
+    }
+    const panel = document.getElementById('wbl-article-editor');
+    const body = document.getElementById('wbl-article-body');
+    const url = document.getElementById('wbl-article-url');
+    const status = document.getElementById('wbl-article-status');
+    const save = document.getElementById('wbl-article-save');
+    const reset = document.getElementById('wbl-article-reset');
+    const publish = document.getElementById('wbl-article-publish');
+    if (!panel || !body) return;
+    panel.hidden = false;
+    const baseline = body.value;
+    let sourceSha = '';
+
+    const setStatus = (text, error = false) => { status.textContent = text; status.style.color = error ? '#922f2f' : '#5b5367'; };
+    const refresh = () => { const dirty = body.value !== baseline; save.disabled = !dirty; reset.disabled = !dirty; if (dirty) { publish.disabled = true; publish.textContent = 'Save before publishing'; } };
+    const wrap = (before, after) => {
+      const start = body.selectionStart;
+      const end = body.selectionEnd;
+      const selected = body.value.slice(start, end);
+      if (!selected) return setStatus('Select the words you want to format.', true);
+      body.setRangeText(`${before}${selected}${after}`, start, end, 'select');
+      refresh();
+      body.focus();
+    };
+    panel.querySelectorAll('[data-format]').forEach((button) => button.addEventListener('click', () => {
+      const format = button.dataset.format;
+      if (format === 'bold') wrap('**', '**');
+      if (format === 'underline') wrap('<u>', '</u>');
+      if (format === 'link') {
+        const href = url.value.trim();
+        if (!/^https?:\/\//i.test(href)) return setStatus('Enter a complete http or https URL first.', true);
+        wrap('[', `](${href})`);
+      }
+    }));
+    body.addEventListener('input', refresh);
+    reset.addEventListener('click', async () => {
+      body.value = baseline;
+      refresh();
+      setStatus('Unsaved formatting was discarded.');
+      await refreshPublish();
+    });
+    document.getElementById('wbl-article-close')?.addEventListener('click', () => { panel.hidden = true; });
+
+    const request = async (endpoint, payload) => {
+      const response = await fetch(endpoint, {
+        method: payload ? 'POST' : 'GET',
+        headers: { 'content-type': 'application/json', 'x-wbl-editor-token': token },
+        body: payload ? JSON.stringify(payload) : undefined,
+      });
+      const data = await response.json();
+      if (!response.ok) throw Object.assign(new Error(data.message || 'Editor request failed'), data);
+      return data;
+    };
+    const refreshPublish = async () => {
+      try {
+        const data = await request('/__wbl-editor/publish-status');
+        publish.disabled = !data.ready;
+        publish.textContent = data.status === 'published' ? 'Published' : data.ready ? 'Publish saved formatting' : 'Save formatting before publishing';
+        if (data.ready) setStatus(data.message);
+      } catch (error) {
+        if (error.code !== 'missing-live-expectation') throw error;
+        publish.disabled = true;
+        publish.textContent = 'Save formatting before publishing';
+      }
+    };
+    const waitForSavedPreview = async (expectedBody) => {
+      const deadline = Date.now() + 15_000;
+      while (Date.now() < deadline) {
+        try {
+          const response = await fetch(`${location.pathname}?wblEdit=1&saved=${Date.now()}`, { cache: 'no-store' });
+          if (response.ok) {
+            const preview = new DOMParser().parseFromString(await response.text(), 'text/html');
+            if (preview.getElementById('wbl-article-body')?.value === expectedBody) return;
+          }
+        } catch {
+          // The local server is briefly unavailable while it refreshes its source-backed route.
+        }
+        await new Promise((resolve) => setTimeout(resolve, 200));
+      }
+      throw new Error('Formatting was saved, but the preview did not refresh. Reopen the editor.');
+    };
+    request(`/__wbl-editor/article?route=${encodeURIComponent(panel.dataset.route)}`)
+      .then(async (data) => { sourceSha = data.source_sha256; if (data.body !== baseline) throw new Error('Local source does not match this editor page. Reload it.'); setStatus('Ready. Formatting changes stay local until you click Publish.'); await refreshPublish(); })
+      .catch((error) => { save.disabled = true; setStatus(error.message, true); });
+
+    save.addEventListener('click', async () => {
+      save.disabled = true;
+      setStatus('Saving the exact formatting revision…');
+      const afterBody = body.value;
+      try {
+        await request('/__wbl-editor/article-save', {
+          authorization: 'save-button',
+          page_route: panel.dataset.route,
+          source: panel.dataset.source,
+          before_source_sha256: sourceSha,
+          before_body: baseline,
+          after_body: afterBody,
+        });
+      } catch (error) {
+        save.disabled = false;
+        setStatus(error.message, true);
+        return;
+      }
+      try {
+        setStatus('Saved to the isolated source. Refreshing the preview…');
+        await waitForSavedPreview(afterBody);
+        location.reload();
+      } catch (error) {
+        save.disabled = true;
+        setStatus(error.message, true);
+      }
+    });
+    publish.addEventListener('click', async () => {
+      if (body.value !== baseline) return;
+      publish.disabled = true;
+      setStatus('Publishing the exact saved formatting and verifying the live article…');
+      try {
+        const receipt = await request('/__wbl-editor/publish', { authorization: 'publish-button', page_route: panel.dataset.route, unsaved_count: 0 });
+        publish.textContent = 'Published';
+        setStatus(`Published and verified at ${receipt.live_urls?.[0] ?? panel.dataset.route}`);
+      } catch (error) {
+        publish.textContent = 'Retry publish';
+        publish.disabled = false;
+        setStatus(error.message, true);
+      }
+    });
+    refresh();
+  })();
+</script>

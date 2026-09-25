@@ -1,44 +1,6 @@
 {
   "schema_version": 1,
   "routes": {
-    "/": {
-      "home.hero.headline": {
-        "label": "Homepage headline",
-        "selector": "[data-wbl-edit-id=\"home\\.hero\\.headline\"]",
-        "source": "src/pages/index.astro",
-        "start_marker": "{/* wbl-edit:start home.hero.headline */}",
-        "end_marker": "{/* wbl-edit:end home.hero.headline */}",
-        "edit_class": "site-interface",
-        "max_length": 120
-      },
-      "home.hero.introduction": {
-        "label": "Homepage introduction",
-        "selector": "[data-wbl-edit-id=\"home\\.hero\\.introduction\"]",
-        "source": "src/pages/index.astro",
-        "start_marker": "{/* wbl-edit:start home.hero.introduction */}",
-        "end_marker": "{/* wbl-edit:end home.hero.introduction */}",
-        "edit_class": "site-interface",
-        "max_length": 400
-      },
-      "home.browse.topic-label": {
-        "label": "Browse by topic",
-        "selector": "[data-wbl-edit-id=\"home\\.browse\\.topic-label\"]",
-        "source": "src/pages/index.astro",
-        "start_marker": "{/* wbl-edit:start home.browse.topic-label */}",
-        "end_marker": "{/* wbl-edit:end home.browse.topic-label */}",
-        "edit_class": "site-interface",
-        "max_length": 80
-      },
-      "home.browse.type-label": {
-        "label": "Browse by type",
-        "selector": "[data-wbl-edit-id=\"home\\.browse\\.type-label\"]",
-        "source": "src/pages/index.astro",
-        "start_marker": "{/* wbl-edit:start home.browse.type-label */}",
-        "end_marker": "{/* wbl-edit:end home.browse.type-label */}",
-        "edit_class": "site-interface",
-        "max_length": 80
-      }
-    },
     "/library/": {
       "library.hero.kicker": {
         "label": "Library kicker",

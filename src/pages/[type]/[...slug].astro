@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import BookTabs from '../../components/BookTabs.astro';
+import WblArticleEditor from '../../components/WblArticleEditor.astro';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import { TYPES, topicBySlug } from '../../topics';
 import { getAllEntries, entryUrl } from '../../lib/content';
@@ -38,6 +39,7 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content, headings } = await render(entry);
+const editorSource = `src/content/${entry.collection}/${entry.id}`;
 const base = import.meta.env.BASE_URL;
 const heroImage = entry.data.image ? optimizedImageUrl(entry.data.image, 1400) : undefined;
 const purpleGradient = entry.data.thumbnailTreatment === 'blur-contain';
@@ -101,6 +103,9 @@ const sameTopicAuto = all
   structuredData={structuredData}
   immersive
 >
+  {import.meta.env.DEV && (
+    <WblArticleEditor route={Astro.url.pathname} source={editorSource} body={entry.body ?? ''} />
+  )}
   <a class="skip-link" href="#article-body">Skip to the article</a>
   <div class="reading-progress" aria-hidden="true"><span data-reading-progress></span></div>
 

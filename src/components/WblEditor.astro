@@ -280,6 +280,7 @@
 
 <script is:inline>
   (() => {
+    if (document.getElementById('wbl-article-editor')) return;
     const params = new URLSearchParams(window.location.search);
     const storageKey = 'wbl-editor-token';
     const frozenStorageKey = 'wbl-editor-frozen-session';

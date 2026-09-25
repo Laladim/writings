@@ -333,11 +333,11 @@ test('a saved receipt can be recovered by session ID after a page reload', async
   assert.equal(recovered.request_hash, saved.request_hash);
 });
 
-test('the real Home, Library, and About mappings have unique source markers', async () => {
+test('the current Library and About mappings have unique source markers', async () => {
   const folder = path.dirname(fileURLToPath(import.meta.url));
   const siteRoot = path.resolve(folder, '../..');
   const manifest = JSON.parse(await readFile(path.join(folder, 'editor-map.json'), 'utf8'));
-  assert.deepEqual(Object.keys(manifest.routes).sort(), ['/', '/about/', '/library/']);
+  assert.deepEqual(Object.keys(manifest.routes).sort(), ['/about/', '/library/']);
   for (const route of Object.values(manifest.routes)) {
     for (const mapping of Object.values(route)) {
       const source = await readFile(path.join(siteRoot, mapping.source), 'utf8');
@@ -356,4 +356,13 @@ test('editor mode disables HMR without changing ordinary Astro development', asy
   assert.match(component, /lastEditedId = editId/);
   assert.match(component, /Ready for next edit/);
   assert.match(component, /fieldState\.get\(focusId\)\?\.element\.focus/);
+});
+
+test('article save refreshes the source-backed route before reloading the preview', async () => {
+  const component = await readFile(path.join(editorRoot, 'src/components/WblArticleEditor.astro'), 'utf8');
+  const plugin = await readFile(path.join(editorRoot, 'scripts/wbl-editor/vite-plugin.mjs'), 'utf8');
+  assert.match(component, /waitForSavedPreview\(afterBody\)/);
+  assert.match(component, /preview\.getElementById\('wbl-article-body'\)\?\.value === expectedBody/);
+  assert.match(plugin, /restartAfterResponse\(res, server\)/);
+  assert.match(plugin, /server\.restart\(\)/);
 });

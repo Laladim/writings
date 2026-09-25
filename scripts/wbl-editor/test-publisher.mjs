@@ -6,10 +6,15 @@ import path from 'node:path';
 import test from 'node:test';
 
 import { sha256 } from './action-layer.mjs';
-import { createPublisher } from './publisher.mjs';
+import { createPublisher, visibleFormattingText } from './publisher.mjs';
 
 const startMarker = '{/* wbl-edit:start home.hero.headline */}';
 const endMarker = '{/* wbl-edit:end home.hero.headline */}';
+
+test('live link text compares rendered wording instead of nested formatting syntax', () => {
+  assert.equal(visibleFormattingText('**Autonomee**'), 'Autonomee');
+  assert.equal(visibleFormattingText('<u>Autonomee</u>'), 'Autonomee');
+});
 
 function git(root, ...args) {
   return execFileSync('git', args, { cwd: root, encoding: 'utf8' }).trim();
