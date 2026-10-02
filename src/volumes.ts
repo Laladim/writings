@@ -14,7 +14,7 @@ export type Volume = {
 
 export type VolumeResource = {
   title: string;
-  action: 'Request' | 'Download' | 'Open guide' | 'Open tool' | 'Open list' | 'Open board';
+  action: 'Request' | 'Download' | 'Open guide' | 'Open tool' | 'Open list' | 'Open board' | 'Open app';
   href?: string;
 };
 
@@ -71,9 +71,9 @@ export const VOLUMES = [
         href: '/bonafide-filipino-freelancers/va-resume-converter/',
       },
       {
-        title: '100+ Remote Job Platforms',
-        action: 'Open list',
-        href: '/guide/remote-job-sites-for-filipinos/',
+        title: 'Tadhana: Job at First Swipe',
+        action: 'Open app',
+        href: '/bonafide-filipino-freelancers/tadhana/',
       },
       {
         title: 'VA Job Board',
