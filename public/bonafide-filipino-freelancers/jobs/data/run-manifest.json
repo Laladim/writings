@@ -1,10 +1,10 @@
 {
   "manifest_version": "2.0",
-  "run_id": "20261001T021139",
-  "generated_at": "2026-10-01T02:11:39",
+  "run_id": "20261002T021832",
+  "generated_at": "2026-10-02T02:18:32",
   "job_count": 16,
   "direct_application_count": 16,
-  "distinct_sources": 3,
+  "distinct_sources": 4,
   "source_caps": {
     "MultiplyMii": 9,
     "VA4U": 7,
@@ -19,20 +19,19 @@
     "Jobicy": 0
   },
   "newest_posting": "2026-10-01",
-  "oldest_posting": "2026-09-28",
+  "oldest_posting": "2026-09-29",
   "source_counts": {
+    "MultiplyMii": 1,
     "VA4U": 2,
-    "Workable": 13,
+    "Workable": 12,
     "Freshteam": 1
   },
   "role_counts": {
+    "Operations & Admin": 3,
     "Content Specialist": 2,
     "Customer Support": 3,
-    "Operations & Admin": 2,
-    "SEO": 2,
     "Virtual Assistant": 1,
-    "Executive Assistant": 4,
-    "Accounting & Bookkeeping": 2
+    "Executive Assistant": 7
   },
   "publish_status": "publishable",
   "refresh_mode": "github-actions-direct-ats-no-secret",

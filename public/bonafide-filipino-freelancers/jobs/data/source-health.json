@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-01T02:11:39",
+  "generated_at": "2026-10-02T02:18:32",
   "sources": [
     {
       "source": "MultiplyMii",
       "status": "ok",
-      "fetched_count": 49,
-      "accepted_count": 0,
+      "fetched_count": 48,
+      "accepted_count": 1,
       "last_error": ""
     },
     {
@@ -18,7 +18,7 @@
     {
       "source": "Extend Your Team",
       "status": "ok",
-      "fetched_count": 28,
+      "fetched_count": 24,
       "accepted_count": 0,
       "last_error": ""
     },
@@ -39,8 +39,8 @@
     {
       "source": "Workable",
       "status": "ok",
-      "fetched_count": 58,
-      "accepted_count": 13,
+      "fetched_count": 56,
+      "accepted_count": 12,
       "last_error": ""
     },
     {
@@ -53,7 +53,7 @@
     {
       "source": "Himalayas",
       "status": "ok",
-      "fetched_count": 60,
+      "fetched_count": 59,
       "accepted_count": 0,
       "last_error": ""
     },
@@ -74,7 +74,7 @@
     {
       "source": "Jobicy",
       "status": "ok",
-      "fetched_count": 100,
+      "fetched_count": 30,
       "accepted_count": 0,
       "last_error": ""
     }
