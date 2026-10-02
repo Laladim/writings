@@ -528,11 +528,14 @@ def extract_description_sections(text: str) -> dict[str, str]:
         preamble = text
         sections["position_overview"] = readable_section(text, 10000)
     schedule = re.search(
-        r"\bSchedule:\s*(.+?)(?=\s+(?:Engagement|Total Monthly Cost|Salary|Compensation|About the Company)\b|$)",
+        r"\bSchedule:\s*(.+?)(?=\s+(?:Engagement|Total Monthly Cost|Salary|Compensation|Rate|About the Company)\b|$)",
         text,
         re.I,
     )
     compensation = re.search(
+        r"(?im)^\s*(?:Total Monthly Cost|Salary|Compensation|Rate):\s*([^\r\n]+)",
+        text,
+    ) or re.search(
         r"\b(?:Total Monthly Cost|Salary|Compensation):\s*(.+?)(?=\s+About the Company\b|$)",
         text,
         re.I,

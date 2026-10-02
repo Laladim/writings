@@ -65,6 +65,22 @@ class ClassificationTests(unittest.TestCase):
         self.assertIn("Comprehensive Fringe Benefits package.", sections["what_we_offer"])
         self.assertEqual(sections["application_process"], "Two interviews.")
 
+    def test_standalone_rate_is_captured_without_the_following_section(self):
+        text = (
+            "Location: Remote\n"
+            "Schedule: Full-Time | EST U.S. Hours\n"
+            "Rate: USD $1,000 to $1,300 per month, commensurate to experience\n\n"
+            "About the Role\n\nExecutive support."
+        )
+
+        sections = jobs.extract_description_sections(text)
+
+        self.assertEqual(
+            sections["salary_range"],
+            "USD $1,000 to $1,300 per month, commensurate to experience",
+        )
+        self.assertEqual(sections["hours_schedule"], "Full-Time | EST U.S. Hours")
+
     def test_freshteam_role_headings_map_to_standard_sections(self):
         text = (
             "Role Overview\n\nSupport the people operations team.\n\n"
