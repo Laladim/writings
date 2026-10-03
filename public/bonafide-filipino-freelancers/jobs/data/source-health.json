@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-02T02:18:32",
+  "generated_at": "2026-10-03T02:02:08",
   "sources": [
     {
       "source": "MultiplyMii",
       "status": "ok",
-      "fetched_count": 48,
+      "fetched_count": 50,
       "accepted_count": 1,
       "last_error": ""
     },
@@ -25,7 +25,7 @@
     {
       "source": "ClickUp",
       "status": "ok",
-      "fetched_count": 52,
+      "fetched_count": 48,
       "accepted_count": 0,
       "last_error": ""
     },
@@ -39,8 +39,8 @@
     {
       "source": "Workable",
       "status": "ok",
-      "fetched_count": 56,
-      "accepted_count": 12,
+      "fetched_count": 55,
+      "accepted_count": 14,
       "last_error": ""
     },
     {
@@ -53,7 +53,7 @@
     {
       "source": "Himalayas",
       "status": "ok",
-      "fetched_count": 59,
+      "fetched_count": 60,
       "accepted_count": 0,
       "last_error": ""
     },
@@ -67,14 +67,14 @@
     {
       "source": "Remotive",
       "status": "ok",
-      "fetched_count": 16,
+      "fetched_count": 17,
       "accepted_count": 0,
       "last_error": ""
     },
     {
       "source": "Jobicy",
       "status": "ok",
-      "fetched_count": 30,
+      "fetched_count": 23,
       "accepted_count": 0,
       "last_error": ""
     }
