@@ -1,7 +1,7 @@
 {
   "manifest_version": "2.0",
-  "run_id": "20261003T020208",
-  "generated_at": "2026-10-03T02:02:08",
+  "run_id": "20261004T024254",
+  "generated_at": "2026-10-04T02:42:54",
   "job_count": 18,
   "direct_application_count": 18,
   "distinct_sources": 4,
@@ -18,7 +18,7 @@
     "Himalayas": 0,
     "Jobicy": 0
   },
-  "newest_posting": "2026-10-03",
+  "newest_posting": "2026-10-04",
   "oldest_posting": "2026-09-29",
   "source_counts": {
     "MultiplyMii": 1,
