@@ -1,9 +1,9 @@
 {
   "manifest_version": "2.0",
-  "run_id": "20261004T024254",
-  "generated_at": "2026-10-04T02:42:54",
-  "job_count": 18,
-  "direct_application_count": 18,
+  "run_id": "20261005T020258",
+  "generated_at": "2026-10-05T02:02:58",
+  "job_count": 17,
+  "direct_application_count": 17,
   "distinct_sources": 4,
   "source_caps": {
     "MultiplyMii": 9,
@@ -18,20 +18,20 @@
     "Himalayas": 0,
     "Jobicy": 0
   },
-  "newest_posting": "2026-10-04",
-  "oldest_posting": "2026-09-29",
+  "newest_posting": "2026-10-05",
+  "oldest_posting": "2026-09-30",
   "source_counts": {
     "MultiplyMii": 1,
-    "VA4U": 2,
+    "VA4U": 1,
     "Workable": 14,
     "Freshteam": 1
   },
   "role_counts": {
     "Operations & Admin": 3,
-    "Content Specialist": 2,
-    "Customer Support": 6,
+    "Content Specialist": 1,
+    "Customer Support": 5,
     "Virtual Assistant": 1,
-    "Executive Assistant": 5,
+    "Executive Assistant": 6,
     "E-commerce": 1
   },
   "publish_status": "publishable",

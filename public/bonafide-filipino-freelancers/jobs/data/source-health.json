@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-04T02:42:54",
+  "generated_at": "2026-10-05T02:02:58",
   "sources": [
     {
       "source": "MultiplyMii",
@@ -12,7 +12,7 @@
       "source": "VA4U",
       "status": "ok",
       "fetched_count": 10,
-      "accepted_count": 2,
+      "accepted_count": 1,
       "last_error": ""
     },
     {
@@ -39,7 +39,7 @@
     {
       "source": "Workable",
       "status": "ok",
-      "fetched_count": 55,
+      "fetched_count": 57,
       "accepted_count": 14,
       "last_error": ""
     },
@@ -67,14 +67,14 @@
     {
       "source": "Remotive",
       "status": "ok",
-      "fetched_count": 16,
+      "fetched_count": 18,
       "accepted_count": 0,
       "last_error": ""
     },
     {
       "source": "Jobicy",
       "status": "ok",
-      "fetched_count": 37,
+      "fetched_count": 43,
       "accepted_count": 0,
       "last_error": ""
     }
