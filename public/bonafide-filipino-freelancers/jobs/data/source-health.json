@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-11T01:57:33",
+  "generated_at": "2026-10-12T02:27:20",
   "sources": [
     {
       "source": "MultiplyMii",
       "status": "ok",
       "fetched_count": 58,
-      "accepted_count": 8,
+      "accepted_count": 5,
       "last_error": ""
     },
     {
@@ -40,7 +40,7 @@
       "source": "Workable",
       "status": "ok",
       "fetched_count": 58,
-      "accepted_count": 20,
+      "accepted_count": 18,
       "last_error": ""
     },
     {
@@ -74,7 +74,7 @@
     {
       "source": "Jobicy",
       "status": "ok",
-      "fetched_count": 38,
+      "fetched_count": 54,
       "accepted_count": 0,
       "last_error": ""
     }
