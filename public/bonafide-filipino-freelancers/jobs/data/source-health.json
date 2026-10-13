@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-12T02:27:20",
+  "generated_at": "2026-10-13T03:36:11",
   "sources": [
     {
       "source": "MultiplyMii",
       "status": "ok",
-      "fetched_count": 58,
-      "accepted_count": 5,
+      "fetched_count": 55,
+      "accepted_count": 2,
       "last_error": ""
     },
     {
@@ -18,28 +18,28 @@
     {
       "source": "Extend Your Team",
       "status": "ok",
-      "fetched_count": 23,
+      "fetched_count": 20,
       "accepted_count": 0,
       "last_error": ""
     },
     {
       "source": "ClickUp",
       "status": "ok",
-      "fetched_count": 47,
+      "fetched_count": 46,
       "accepted_count": 0,
       "last_error": ""
     },
     {
       "source": "Clipboard Health",
       "status": "ok",
-      "fetched_count": 37,
+      "fetched_count": 38,
       "accepted_count": 0,
       "last_error": ""
     },
     {
       "source": "Workable",
       "status": "ok",
-      "fetched_count": 58,
+      "fetched_count": 59,
       "accepted_count": 18,
       "last_error": ""
     },
@@ -67,14 +67,14 @@
     {
       "source": "Remotive",
       "status": "ok",
-      "fetched_count": 18,
+      "fetched_count": 15,
       "accepted_count": 0,
       "last_error": ""
     },
     {
       "source": "Jobicy",
       "status": "ok",
-      "fetched_count": 54,
+      "fetched_count": 62,
       "accepted_count": 0,
       "last_error": ""
     }
