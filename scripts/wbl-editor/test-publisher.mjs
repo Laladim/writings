@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
-import { mkdtemp, mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdtemp, mkdir, readFile, realpath, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import test from 'node:test';
@@ -20,19 +20,22 @@ function git(root, ...args) {
   return execFileSync('git', args, { cwd: root, encoding: 'utf8' }).trim();
 }
 
-async function fixture({ deployFails = false, siteVerifier = true } = {}) {
+async function fixture({ deployFails = false, siteVerifier = true, staticPage = false } = {}) {
   const sandbox = await mkdtemp(path.join(tmpdir(), 'wbl-publisher-test-'));
   const root = path.join(sandbox, 'site');
   const recordRoot = path.join(sandbox, 'records', 'change-one');
   const recordsRoot = path.dirname(recordRoot);
   const sourcePath = path.join(root, 'src/pages/index.astro');
+  const staticPath = path.join(root, 'public/bonafide-filipino-freelancers/example/index.html');
   const manifestPath = path.join(root, 'scripts/wbl-editor/editor-map.json');
   await mkdir(path.dirname(sourcePath), { recursive: true });
+  if (staticPage) await mkdir(path.dirname(staticPath), { recursive: true });
   await mkdir(path.dirname(manifestPath), { recursive: true });
   await mkdir(path.join(recordRoot, '05_isolated_implementation/output'), { recursive: true });
   await mkdir(path.join(recordRoot, '07_site_handoff/output'), { recursive: true });
 
   await writeFile(sourcePath, `<h1>${startMarker}Original headline${endMarker}</h1>\n`);
+  if (staticPage) await writeFile(staticPath, '<h1>Original static page</h1>\n');
   await writeFile(
     manifestPath,
     `${JSON.stringify({
@@ -86,23 +89,43 @@ async function fixture({ deployFails = false, siteVerifier = true } = {}) {
   git(remoteWriter, 'push', 'origin', 'main');
 
   const savedSource = `<h1>${startMarker}Saved headline${endMarker}</h1>\n`;
-  await writeFile(sourcePath, savedSource);
-  await writeFile(
-    path.join(recordRoot, '05_isolated_implementation/output/implementation.json'),
-    `${JSON.stringify({
+  if (staticPage) {
+    const savedStatic = '<h1>Saved static page</h1>\n';
+    await writeFile(staticPath, savedStatic);
+    const evidenceRoot = path.join(path.dirname(staticPath), '.index.html.local-html-editor');
+    await mkdir(evidenceRoot, { recursive: true });
+    await writeFile(path.join(evidenceRoot, 'publish-20261016T010101000Z-static.json'), `${JSON.stringify({
       schema_version: 1,
-      status: 'applied',
-      request_hash: 'a'.repeat(64),
-      applied_at: '2026-09-17T01:00:00.000Z',
-      page_route: '/',
-      changed_files: [{
-        path: 'src/pages/index.astro',
-        before_sha256: sha256(`<h1>${startMarker}Original headline${endMarker}</h1>\n`),
-        after_sha256: sha256(savedSource),
-      }],
-      edits: [{ edit_id: 'home.hero.headline', after_text: 'Saved headline' }],
-    }, null, 2)}\n`,
-  );
+      published_at_utc: '2026-10-16T01:01:01.000Z',
+      target: await realpath(staticPath),
+      before_sha256: sha256('<h1>Original static page</h1>\n'),
+      after_sha256: sha256(savedStatic),
+      revision_id: 'revision_static',
+      backup: 'backup-static.html',
+      policy_id: 'wbl-isolated-static-html-v1',
+      readback_matches_expected: true,
+      owner_review_required: 'WBL Site review',
+      authority: 'local-filesystem-replacement-only',
+    }, null, 2)}\n`);
+  } else {
+    await writeFile(sourcePath, savedSource);
+    await writeFile(
+      path.join(recordRoot, '05_isolated_implementation/output/implementation.json'),
+      `${JSON.stringify({
+        schema_version: 1,
+        status: 'applied',
+        request_hash: 'a'.repeat(64),
+        applied_at: '2026-09-17T01:00:00.000Z',
+        page_route: '/',
+        changed_files: [{
+          path: 'src/pages/index.astro',
+          before_sha256: sha256(`<h1>${startMarker}Original headline${endMarker}</h1>\n`),
+          after_sha256: sha256(savedSource),
+        }],
+        edits: [{ edit_id: 'home.hero.headline', after_text: 'Saved headline' }],
+      }, null, 2)}\n`,
+    );
+  }
 
   const deployCalls = [];
   const liveCalls = [];
@@ -121,11 +144,16 @@ async function fixture({ deployFails = false, siteVerifier = true } = {}) {
     },
     liveVerifier: async (expectations) => {
       liveCalls.push(expectations);
-      assert.equal(expectations[0].route, '/');
-      assert.deepEqual(expectations[0].values, [{
-        edit_id: 'home.hero.headline',
-        text: 'Saved headline',
-      }]);
+      if (staticPage) {
+        assert.equal(expectations[0].route, '/bonafide-filipino-freelancers/example/');
+        assert.deepEqual(expectations[0].values, [{ edit_id: 'static-page-full-text', text: 'Saved static page' }]);
+      } else {
+        assert.equal(expectations[0].route, '/');
+        assert.deepEqual(expectations[0].values, [{
+          edit_id: 'home.hero.headline',
+          text: 'Saved headline',
+        }]);
+      }
       return {
         status: 'verified',
         checks: [{ route: '/', url: 'https://example.invalid/', result: 'pass' }],
@@ -139,6 +167,7 @@ async function fixture({ deployFails = false, siteVerifier = true } = {}) {
     remote,
     recordRoot,
     sourcePath,
+    staticPath,
     baselineCommit,
     publisher,
     deployCalls,
@@ -191,6 +220,21 @@ test('Publish stages only receipt-bound source, rebases remote drift, pushes mai
     execFileSync('git', ['--git-dir', current.remote, 'show', 'main:remote.txt'], { encoding: 'utf8' }),
     'concurrent remote change\n',
   );
+});
+
+test('Publish accepts a hash-matching WBL static-page receipt and ignores its local evidence folder', async () => {
+  const current = await fixture({ staticPage: true });
+  const ready = await current.publisher.status();
+  assert.equal(ready.status, 'ready');
+  assert.deepEqual(ready.paths, ['public/bonafide-filipino-freelancers/example/index.html']);
+  const receipt = await current.publisher.publish({
+    authorization: 'publish-button',
+    page_route: '/bonafide-filipino-freelancers/example/',
+    unsaved_count: 0,
+  });
+  assert.equal(receipt.status, 'published');
+  assert.deepEqual(receipt.paths, ['public/bonafide-filipino-freelancers/example/index.html']);
+  assert.equal(receipt.source_evidence[0].revision_id, 'revision_static');
 });
 
 test('Publish rejects unsaved browser edits before Git mutation', async () => {

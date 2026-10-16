@@ -48,7 +48,9 @@ function authorize(req, token, { mutation = false } = {}) {
   if (mutation) {
     const host = req.headers.host;
     const origin = req.headers.origin;
-    if (!host || (origin !== `http://${host}` && origin !== `https://${host}`)) {
+    const trustedExtension = req.headers['x-wbl-editor-launch'] === 'chrome-extension'
+      && /^chrome-extension:\/\/[a-p]{32}$/.test(origin ?? '');
+    if (!host || (!trustedExtension && origin !== `http://${host}` && origin !== `https://${host}`)) {
       throw new EditorError('origin-mismatch', 'Mutation origin does not match the editor page', 403);
     }
   }

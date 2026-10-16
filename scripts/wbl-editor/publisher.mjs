@@ -22,6 +22,9 @@ const DEFAULT_WORKFLOW = 'deploy.yml';
 const DEFAULT_RECORD_PREFIX =
   '/Users/laladimalanta/Life-Dashboard/cowork-outputs/wbl-interface-editor/changes';
 const IGNORED_WORKTREE_PREFIXES = ['node_modules/', 'dist/', '.astro/'];
+const STATIC_WBL_SOURCE_ROOT = 'public/bonafide-filipino-freelancers/';
+const STATIC_WBL_ROUTE_ROOT = '/bonafide-filipino-freelancers/';
+const LOCAL_HTML_EDITOR_EVIDENCE = /(?:^|\/)\.[^/]+\.local-html-editor\//;
 
 export const EDITOR_BOOTSTRAP_PATHS = [
   'astro.config.mjs',
@@ -130,7 +133,17 @@ function parseRemote(remote) {
 
 function isIgnoredWorktreePath(filePath) {
   const normalized = filePath.replaceAll('\\', '/');
-  return IGNORED_WORKTREE_PREFIXES.some((prefix) => normalized === prefix.slice(0, -1) || normalized.startsWith(prefix));
+  return LOCAL_HTML_EDITOR_EVIDENCE.test(normalized)
+    || IGNORED_WORKTREE_PREFIXES.some((prefix) => normalized === prefix.slice(0, -1) || normalized.startsWith(prefix));
+}
+
+function staticRouteForSource(filePath) {
+  if (!filePath.startsWith(STATIC_WBL_SOURCE_ROOT)) return null;
+  const relative = filePath.slice('public'.length);
+  if (!relative.endsWith('/index.html')) return null;
+  const route = relative.slice(0, -'index.html'.length);
+  if (!route.startsWith(STATIC_WBL_ROUTE_ROOT) || route.includes('..') || route.includes('\\')) return null;
+  return route;
 }
 
 function defaultRunner(command, args, options = {}) {
@@ -308,9 +321,44 @@ export async function createPublisher({
     return { digest, receipt: matches.at(-1) ?? null };
   }
 
+  async function localHtmlAuthorization(filePath) {
+    const absoluteSource = path.join(resolvedRoot, filePath);
+    const evidenceRoot = path.join(path.dirname(absoluteSource), `.${path.basename(absoluteSource)}.local-html-editor`);
+    let names = [];
+    try {
+      names = await readdir(evidenceRoot);
+    } catch (error) {
+      if (error?.code === 'ENOENT') return null;
+      throw error;
+    }
+    const digest = sha256(await readFile(absoluteSource));
+    const receipts = [];
+    for (const name of names.filter((value) => /^publish-[a-zA-Z0-9_-]+\.json$/.test(value)).sort()) {
+      const receipt = await loadJson(path.join(evidenceRoot, name));
+      if (
+        receipt.schema_version === 1
+        && receipt.target === absoluteSource
+        && receipt.after_sha256 === digest
+        && receipt.policy_id === 'wbl-isolated-static-html-v1'
+        && receipt.readback_matches_expected === true
+        && receipt.authority === 'local-filesystem-replacement-only'
+      ) receipts.push({ ...receipt, receipt_file: name });
+    }
+    return receipts.at(-1) ?? null;
+  }
+
   async function deriveExpectations(paths, receipts) {
     const expectations = [];
     for (const filePath of paths) {
+      const staticRoute = staticRouteForSource(filePath);
+      if (staticRoute) {
+        const content = await readFile(path.join(resolvedRoot, filePath), 'utf8');
+        expectations.push({
+          route: staticRoute,
+          values: [{ edit_id: 'static-page-full-text', text: htmlText(content) }],
+        });
+        continue;
+      }
       const mappings = sourceMappings.get(filePath) ?? [];
       if (!mappings.length) continue;
       const content = await readFile(path.join(resolvedRoot, filePath), 'utf8');
@@ -345,6 +393,22 @@ export async function createPublisher({
     const sourceEvidence = [];
     const rejected = [];
     for (const filePath of paths) {
+      const staticRoute = staticRouteForSource(filePath);
+      if (staticRoute) {
+        const receipt = await localHtmlAuthorization(filePath);
+        if (receipt) {
+          authorized.push(filePath);
+          sourceEvidence.push({
+            path: filePath,
+            sha256: receipt.after_sha256,
+            revision_id: receipt.revision_id,
+            local_publish_receipt: receipt.receipt_file,
+          });
+          continue;
+        }
+        rejected.push(`${filePath} (no matching WBL Local HTML Editor publish receipt)`);
+        continue;
+      }
       if (sourceMappings.has(filePath)) {
         const evidence = await sourceAuthorization(filePath, receipts);
         if (evidence.receipt) {
@@ -714,6 +778,9 @@ export async function createPublisher({
       }
     } else {
       plan = await authorizeCurrentState();
+      if (!plan.expectations.some((expectation) => expectation.route === payload.page_route)) {
+        throw new EditorError('invalid-route', 'The visible editor route does not match the saved publication', 409);
+      }
       const completed = await completedReceipt(plan.publication_id);
       if (completed) return { ...completed, idempotent: true };
       pending = {
