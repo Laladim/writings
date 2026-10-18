@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T01:20:43",
+  "generated_at": "2026-10-18T01:07:26",
   "sources": [
     {
       "source": "MultiplyMii",
@@ -40,7 +40,7 @@
       "source": "Workable",
       "status": "ok",
       "fetched_count": 62,
-      "accepted_count": 17,
+      "accepted_count": 16,
       "last_error": ""
     },
     {
@@ -67,14 +67,14 @@
     {
       "source": "Remotive",
       "status": "ok",
-      "fetched_count": 15,
+      "fetched_count": 13,
       "accepted_count": 0,
       "last_error": ""
     },
     {
       "source": "Jobicy",
       "status": "ok",
-      "fetched_count": 76,
+      "fetched_count": 93,
       "accepted_count": 0,
       "last_error": ""
     }
