@@ -4,10 +4,10 @@ type: guide
 topics:
   - ai-content-systems
 date: 2026-10-23T00:00:00.000Z
-description: A private canary page for proving that TinaCMS can edit Writings by Lala Markdown through the browser and keep every change in Git.
+description: An isolated canary page for testing how TinaCMS edits Writings by Lala Markdown through the browser and saves changes to Git.
 ---
 
-This is a safe test page. It is not part of the live Writings by Lala website.
+This test page is on a separate Cloudflare address. It is not part of the live Writings by Lala website.
 
 ## What this canary proves
 
