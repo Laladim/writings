@@ -1,4 +1,4 @@
-import { readdirSync, readFileSync, statSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
 import { getAllEntries, entryUrl } from '../lib/content';
 import { TOPICS } from '../topics';
@@ -42,7 +42,7 @@ function discoverPublicHtmlPaths(dir: string): string[] {
   return paths;
 }
 
-const publicHtmlPaths = statSync(publicRoot).isDirectory()
+const publicHtmlPaths = existsSync(publicRoot) && statSync(publicRoot).isDirectory()
   ? discoverPublicHtmlPaths(publicRoot).sort()
   : [];
 

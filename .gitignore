@@ -20,6 +20,13 @@ __pycache__/
 # environment variables
 .env
 .env.production
+.env.local
+.env.development.local
+.env.production.local
+
+# TinaCMS and Cloudflare generated state
+tina/__generated__/
+.wrangler/
 
 # macOS-specific files
 .DS_Store

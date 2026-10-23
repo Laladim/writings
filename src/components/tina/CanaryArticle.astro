@@ -1,0 +1,80 @@
+---
+import TinaMarkdown from '@tinacms/astro/TinaMarkdown.astro';
+import { tinaField } from '@tinacms/astro/tina-field';
+import type { CmsCanary } from '../../lib/tina-canary';
+
+interface Props {
+  data?: CmsCanary | null;
+}
+
+const { data } = Astro.props;
+---
+
+{data && (
+  <div class="canary-sheet">
+    <p class="canary-label">WBL TinaCMS canary</p>
+    <h1 data-tina-field={tinaField(data, 'title')}>{data.title}</h1>
+    <p class="canary-description" data-tina-field={tinaField(data, 'description')}>
+      {data.description}
+    </p>
+    {data.body && (
+      <div class="canary-body" data-tina-field={tinaField(data, 'body')}>
+        <TinaMarkdown content={data.body} />
+      </div>
+    )}
+  </div>
+)}
+
+<style>
+  .canary-sheet {
+    width: min(760px, calc(100% - 2rem));
+    margin: 3rem auto 6rem;
+    padding: clamp(2rem, 6vw, 5rem);
+    background: #fffaf1;
+    color: #29251f;
+    border: 1px solid rgba(75, 63, 49, 0.18);
+    box-shadow: 0 22px 70px rgba(42, 34, 24, 0.16);
+  }
+
+  .canary-label {
+    margin: 0 0 1rem;
+    color: #7359a3;
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: clamp(2.4rem, 7vw, 4.8rem);
+    font-weight: 500;
+    letter-spacing: -0.045em;
+    line-height: 0.98;
+  }
+
+  .canary-description {
+    margin: 1.5rem 0 3rem;
+    color: #665f56;
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.65;
+  }
+
+  .canary-body {
+    font-family: Georgia, serif;
+    font-size: 1.15rem;
+    line-height: 1.85;
+  }
+
+  .canary-body :global(h2) {
+    margin-top: 2.5rem;
+    font-size: 1.7rem;
+  }
+
+  .canary-body :global(p) {
+    margin: 1.25rem 0;
+  }
+</style>

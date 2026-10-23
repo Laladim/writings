@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+import TinaIsland from '@tinacms/astro/TinaIsland.astro';
+import CanaryArticle from '../components/tina/CanaryArticle.astro';
+import { getCanary } from '../lib/tina-canary';
+import { tinaIslands } from '../lib/tina-islands';
+
+const result = await getCanary();
+const data = result.data?.canary;
+
+if (!data) {
+  return new Response('Canary page not found', { status: 404 });
+}
+---
+
+<Base title={data.title} description={data.description}>
+  <main class="canary-stage">
+    <TinaIsland name="canary" wrapper={tinaIslands.canary.wrapper} primary>
+      <CanaryArticle data={data} />
+    </TinaIsland>
+  </main>
+</Base>
+
+<style>
+  .canary-stage {
+    min-height: 100vh;
+    overflow: auto;
+    background:
+      radial-gradient(circle at top left, rgba(207, 196, 236, 0.62), transparent 38rem),
+      #c8baa3;
+  }
+</style>

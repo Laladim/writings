@@ -1,9 +1,9 @@
-import { readdir, readFile } from 'node:fs/promises';
+import { access, readdir, readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { builtRouteExists } from './built-route-exists.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
-const dist = path.join(root, 'dist');
+const distRoot = path.join(root, 'dist');
 const editorialRoute = /^\/(guide|story|note|reflection|tool)\/[^/]+\/$/;
 const volumeContracts = [
   { label: 'Work', slug: 'work', statement: 'Building AI Systems for Content Marketing' },
@@ -11,6 +11,21 @@ const volumeContracts = [
   { label: 'Life', slug: 'life', statement: 'Battling Blood Cancer & Chronic Diseases' },
   { label: 'Faith', slug: 'faith', statement: 'Believing God & Making Sense of Life' },
 ];
+
+async function resolveBuildRoot() {
+  const candidates = [path.join(distRoot, 'client'), distRoot];
+  for (const candidate of candidates) {
+    try {
+      await access(path.join(candidate, 'index.html'));
+      return candidate;
+    } catch {
+      // Continue to the next supported build layout.
+    }
+  }
+  throw new Error('WBL technical eligibility failed: no built homepage at dist/client/index.html or dist/index.html');
+}
+
+const dist = await resolveBuildRoot();
 
 async function filesUnder(directory, suffix) {
   const found = [];
@@ -147,4 +162,4 @@ for (const value of sitemapUrls) {
 if (editorialCount === 0) failures.push('no editorial pages found');
 
 if (failures.length) throw new Error(`WBL technical eligibility failed:\n${failures.join('\n')}`);
-console.log(`WBL technical eligibility PASS: ${editorialCount} editorial pages, ${htmlFiles.length} HTML pages, ${sitemapCount} sitemap URLs`);
+console.log(`WBL technical eligibility PASS: ${editorialCount} editorial pages, ${htmlFiles.length} HTML pages, ${sitemapCount} sitemap URLs from ${path.relative(root, dist)}`);
