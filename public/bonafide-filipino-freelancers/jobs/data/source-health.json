@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T01:34:01",
+  "generated_at": "2026-10-24T01:38:34",
   "sources": [
     {
       "source": "MultiplyMii",
@@ -32,14 +32,14 @@
     {
       "source": "Clipboard Health",
       "status": "ok",
-      "fetched_count": 39,
+      "fetched_count": 38,
       "accepted_count": 0,
       "last_error": ""
     },
     {
       "source": "Workable",
       "status": "ok",
-      "fetched_count": 61,
+      "fetched_count": 59,
       "accepted_count": 20,
       "last_error": ""
     },
@@ -67,14 +67,14 @@
     {
       "source": "Remotive",
       "status": "ok",
-      "fetched_count": 10,
+      "fetched_count": 9,
       "accepted_count": 0,
       "last_error": ""
     },
     {
       "source": "Jobicy",
       "status": "ok",
-      "fetched_count": 76,
+      "fetched_count": 80,
       "accepted_count": 0,
       "last_error": ""
     }
