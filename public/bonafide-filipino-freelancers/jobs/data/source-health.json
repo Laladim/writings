@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-25T01:14:15",
+  "generated_at": "2026-10-26T01:14:57",
   "sources": [
     {
       "source": "MultiplyMii",
       "status": "ok",
       "fetched_count": 56,
-      "accepted_count": 2,
+      "accepted_count": 1,
       "last_error": ""
     },
     {
@@ -32,7 +32,7 @@
     {
       "source": "Clipboard Health",
       "status": "ok",
-      "fetched_count": 38,
+      "fetched_count": 39,
       "accepted_count": 0,
       "last_error": ""
     },
@@ -40,7 +40,7 @@
       "source": "Workable",
       "status": "ok",
       "fetched_count": 58,
-      "accepted_count": 17,
+      "accepted_count": 15,
       "last_error": ""
     },
     {
